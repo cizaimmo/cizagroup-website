@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CIZA IMMO — Immobilier Burundi</title>
+  <meta name="description" content="CIZA IMMO — Vente et location immobilière au Burundi (toutes provinces). Contact: cizaimmo@yahoo.com" />
+  <style>
+    :root{--bg:#f7f8fb;--card:#ffffff;--accent:#0b67ff;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;background:var(--bg);color:#111}
+    header{background:linear-gradient(90deg,#0b67ff 0%,#4ea8ff 100%);color:#fff;padding:18px 20px;position:sticky;top:0;z-index:50;box-shadow:0 3px 12px rgba(11,103,255,0.12)}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:700}
+    .brand .logo{width:44px;height:44px;border-radius:8px;background:#fff;color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;margin:0 8px;font-weight:600}
+    nav a.button{background:rgba(255,255,255,0.12);padding:8px 12px;border-radius:8px}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;padding:48px 0}
+    .hero h1{font-size:32px;margin:0 0 10px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .cta-row{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#fff;padding:12px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+    .ghost{background:transparent;border:2px solid rgba(255,255,255,0.18);}
+
+    /* Sections */
+    section{padding:40px 0}
+    h2{margin:0 0 16px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(12,20,40,0.06)}
+    .small{font-size:14px;color:var(--muted)}
+
+    /* Properties */
+    .listings{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .listing img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .listing .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+
+    /* Forms */
+    form{display:grid;gap:10px}
+    input,textarea,select{padding:10px;border-radius:8px;border:1px solid #e6e9ef;font-size:14px}
+    textarea{min-height:110px}
+
+    footer{padding:24px 0;background:#fff;margin-top:36px;border-top:1px solid #eef2f7}
+
+    /* Responsive */
+    @media (max-width:980px){.hero{grid-template-columns:1fr} .grid,.listings{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.grid,.listings{grid-template-columns:1fr} nav a{display:none} .nav{justify-content:space-between}}
+
+    /* small UI bits */
+    .contacts a{display:inline-block;margin-right:10px}
+    .reviews .review{border-left:4px solid #eee;padding:12px;margin-bottom:10px}
+
+    /* admin toolbar */
+    .admin-tip{font-size:13px;color:var(--muted);background:#fff;padding:8px;border-radius:8px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">CI</div>
+        <div>
+          <div style="font-size:18px">CIZA IMMO</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.9)">Bujumbura — Burundi (toutes provinces)</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#accueil" data-link>Accueil</a>
+        <a href="#a-propos" data-link>À propos</a>
+        <a href="#proprietes" data-link>Propriétés</a>
+        <a href="#publier" data-link>Publier annonce</a>
+        <a href="#avis" data-link>Avis</a>
+        <a href="#contact" data-link class="button">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ACCUEIL -->
+    <section id="accueil" class="hero">
+      <div>
+        <h1>Vendez, achetez ou louez au Burundi — facilement.</h1>
+        <p>Nous aidons les propriétaires et acheteurs à se connecter dans toutes les provinces du Burundi. Annonces vérifiées, contact direct, service en français.</p>
+        <div class="cta-row">
+          <button class="btn" onclick="scrollToSection('publier')">Publier une annonce</button>
+          <button class="btn ghost" onclick="scrollToSection('proprietes')">Voir les propriétés</button>
+        </div>
+        <div style="margin-top:18px;font-size:14px;color:var(--muted)">
+          <strong>Adresse :</strong> Bujumbura — Burundi<br>
+          <strong>Email :</strong> <a href="mailto:cizaimmo@yahoo.com">cizaimmo@yahoo.com</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">Contact rapide</h3>
+        <p class="small">Clique sur un numéro pour appeler ou lancer WhatsApp</p>
+        <div class="contacts">
+          <a href="tel:+15145029503">Canada: +1 514 502 9503</a><br>
+          <a href="tel:+25779945007">Burundi: +257 79 945 007</a><br>
+          <!-- WhatsApp links: replace numbers without +, e.g. 15145029503 -->
+          <a href="https://wa.me/15145029503" target="_blank" rel="noopener">WhatsApp Canada</a><br>
+          <a href="https://wa.me/25779945007" target="_blank" rel="noopener">WhatsApp Burundi</a>
+        </div>
+        <hr style="margin:12px 0">
+        <div class="admin-tip">Nous travaillons dans toutes les provinces du Burundi. Pour gérer les annonces, va à Publier annonce.</div>
+      </div>
+    </section>
+
+    <!-- A PROPOS -->
+    <section id="a-propos">
+      <h2>À propos de CIZA IMMO</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Notre mission</h3>
+          <p class="small">Faciliter les transactions immobilières au Burundi, offrir un service fiable, transparent et multirégional.</p>
+        </div>
+        <div class="card">
+          <h3>Services</h3>
+          <ul class="small">
+            <li>Vente & location</li>
+            <li>Visites & évaluation</li>
+            <li>Conseils pour investissement locatif</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Contactez-nous</h3>
+          <p class="small">Email: <a href="mailto:cizaimmo@yahoo.com">cizaimmo@yahoo.com</a><br>Tel CA: <a href="tel:+15145029503">+1 514 502 9503</a><br>Tel BI: <a href="tel:+25779945007">+257 79 945 007</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROPRIETES -->
+    <section id="proprietes">
+      <h2>Propriétés disponibles</h2>
+      <p class="small">Annonces récentes — (les données sont stockées localement dans ton navigateur). Pour publier, utilise le formulaire "Publier annonce".</p>
+      <div id="listings" class="listings" aria-live="polite"></div>
+    </section>
+
+    <!-- PUBLIER ANNONCE -->
+    <section id="publier">
+      <h2>Publier une annonce</h2>
+      <p class="small">Utilise ce formulaire pour ajouter une annonce. Les annonces sont stockées dans ton navigateur (localStorage). Pour un vrai site en production, connecte-toi à un backend ou un CMS.</p>
+      <div class="card">
+        <form id="adForm">
+          <label>Titre</label>
+          <input type="text" id="title" required placeholder="Ex: Appartement 2 chambres à Bujumbura">
+
+          <label>Description</label>
+          <textarea id="description" placeholder="Description courte" required></textarea>
+
+          <label>Prix (ex: 150000 BIF)</label>
+          <input id="price" placeholder="Prix en BIF" required>
+
+          <label>Province / Ville</label>
+          <input id="location" placeholder="Bujumbura, Gitega..." required>
+
+          <label>Photo (jpg, png) — max 5MB</label>
+          <input type="file" id="photo" accept="image/*">
+          <div id="preview"></div>
+
+          <button class="btn" type="submit">Publier l'annonce</button>
+        </form>
+        <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+          <strong>Note pour l'admin :</strong> les images sont enregistrées en base64 dans ton navigateur. Si tu veux les conserver à long terme ou partager, télécharge les fichiers ou connecte-toi à un stockage (ex: S3, Cloudinary).
+        </div>
+      </div>
+    </section>
+
+    <!-- AVIS -->
+    <section id="avis">
+      <h2>Avis des clients</h2>
+      <p class="small">Les clients laissent des avis ici — visible publiquement.</p>
+      <div class="card">
+        <form id="reviewForm">
+          <input id="reviewer" placeholder="Ton nom" required>
+          <textarea id="reviewText" placeholder="Ton avis" required></textarea>
+          <button class="btn" type="submit">Ajouter avis</button>
+        </form>
+      </div>
+      <div class="reviews card" id="reviewsList" style="margin-top:12px"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Formulaire de contact</h3>
+          <form id="contactForm">
+            <input id="cname" placeholder="Ton nom" required>
+            <input id="cemail" type="email" placeholder="Ton e-mail" required>
+            <textarea id="cmessage" placeholder="Message" required></textarea>
+            <button class="btn" type="submit">Envoyer</button>
+          </form>
+          <p class="small" style="margin-top:8px">(Le formulaire ouvre ton client mail. Les messages sont aussi gardés localement pour consultation.)</p>
+        </div>
+        <div class="card">
+          <h3>Coordonnées</h3>
+          <p class="small">
+            Email: <a href="mailto:cizaimmo@yahoo.com">cizaimmo@yahoo.com</a><br>
+            Téléphone CA: <a href="tel:+15145029503">+1 514 502 9503</a><br>
+            Téléphone BI: <a href="tel:+25779945007">+257 79 945 007</a><br>
+            WhatsApp: <a href="https://wa.me/15145029503" target="_blank">Canada</a> • <a href="https://wa.me/25779945007" target="_blank">Burundi</a>
+          </p>
+          <h4>Adresse</h4>
+          <p class="small">Bujumbura — Burundi</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>
+        © <strong>CIZA IMMO</strong> — Bujumbura, Burundi
+      </div>
+      <div style="font-size:14px;color:var(--muted)">Contact: <a href="mailto:cizaimmo@yahoo.com">cizaimmo@yahoo.com</a> • <a href="tel:+15145029503">+1 514 502 9503</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // --- Navigation smooth behavior ---
+    document.querySelectorAll('[data-link]').forEach(a=>{
+      a.addEventListener('click', e=>{e.preventDefault(); const id = a.getAttribute('href').replace('#',''); scrollToSection(id)});
+    });
+    function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+
+    // --- Local storage keys ---
+    const LS_LISTINGS = 'ciza_listings_v1';
+    const LS_REVIEWS = 'ciza_reviews_v1';
+    const LS_MESSAGES = 'ciza_messages_v1';
+
+    // --- Load existing listings on page load ---
+    function loadListings(){
+      const container = document.getElementById('listings'); container.innerHTML='';
+      const raw = localStorage.getItem(LS_LISTINGS); if(!raw) return;
+      let arr = JSON.parse(raw);
+      arr.reverse().forEach(item=>{
+        const el = document.createElement('div'); el.className='card listing';
+        el.innerHTML = `
+          ${item.photo?`<img src="${item.photo}" alt="${escapeHtml(item.title)}">`:'<div style="height:160px;background:#f0f3f8;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted)">Pas d\'image</div>'}
+          <h3 style="margin:8px 0 4px">${escapeHtml(item.title)}</h3>
+          <div class="meta"><div><strong>${escapeHtml(item.price)}</strong><div style="font-size:13px;color:var(--muted)">${escapeHtml(item.location)}</div></div>
+          <div><a href="mailto:cizaimmo@yahoo.com?subject=Intérêt: ${encodeURIComponent(item.title)}">Contacter</a></div></div>
+          <p class="small" style="margin-top:8px">${escapeHtml(item.description || '')}</p>
+        `;
+        container.appendChild(el);
+      });
+    }
+
+    // --- Submit new ad ---
+    document.getElementById('adForm').addEventListener('submit', async function(e){
+      e.preventDefault();
+      const title = document.getElementById('title').value.trim();
+      const description = document.getElementById('description').value.trim();
+      const price = document.getElementById('price').value.trim();
+      const location = document.getElementById('location').value.trim();
+      const photoInput = document.getElementById('photo');
+      let photoData = null;
+      if(photoInput.files && photoInput.files[0]){
+        const file = photoInput.files[0];
+        if(file.size > 5*1024*1024){alert('L\'image est trop grande (max 5MB).'); return}
+        photoData = await readFileAsDataURL(file);
+      }
+      const newItem = {id:Date.now(),title,description,price,location,photo:photoData};
+      const arr = JSON.parse(localStorage.getItem(LS_LISTINGS) || '[]'); arr.push(newItem);
+      localStorage.setItem(LS_LISTINGS, JSON.stringify(arr));
+      this.reset(); document.getElementById('preview').innerHTML=''; loadListings(); alert('Annonce publiée localement.');
+    });
+
+    // --- File preview ---
+    document.getElementById('photo').addEventListener('change', function(){
+      const p = document.getElementById('preview'); p.innerHTML='';
+      const f = this.files[0]; if(!f) return;
+      const reader = new FileReader();
+      reader.onload = ()=>{ const img = document.createElement('img'); img.src = reader.result; img.style.maxWidth='100%'; img.style.borderRadius='8px'; p.appendChild(img)};
+      reader.readAsDataURL(f);
+    });
+
+    // --- Reviews ---
+    function loadReviews(){
+      const raw = localStorage.getItem(LS_REVIEWS); const container = document.getElementById('reviewsList'); container.innerHTML=''; if(!raw) return;
+      const arr = JSON.parse(raw); arr.reverse().forEach(r=>{
+        const div = document.createElement('div'); div.className='review'; div.innerHTML = `<strong>${escapeHtml(r.name)}</strong><div style="font-size:13px;color:var(--muted)">${new Date(r.created).toLocaleString()}</div><p style="margin:8px 0">${escapeHtml(r.text)}</p>`; container.appendChild(div);
+      });
+    }
+    document.getElementById('reviewForm').addEventListener('submit', function(e){e.preventDefault(); const name=document.getElementById('reviewer').value.trim(); const text=document.getElementById('reviewText').value.trim(); if(!name||!text) return; const arr=JSON.parse(localStorage.getItem(LS_REVIEWS)||'[]'); arr.push({name,text,created:Date.now()}); localStorage.setItem(LS_REVIEWS,JSON.stringify(arr)); this.reset(); loadReviews(); alert('Merci ! Ton avis est ajouté.');});
+
+    // --- Contact form ---
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('cname').value.trim();
+      const email = document.getElementById('cemail').value.trim();
+      const message = document.getElementById('cmessage').value.trim();
+      if(!name||!email||!message) return;
+      // Save locally
+      const arr = JSON.parse(localStorage.getItem(LS_MESSAGES)||'[]'); arr.push({name,email,message,created:Date.now()}); localStorage.setItem(LS_MESSAGES,JSON.stringify(arr));
+      // Try to open mail client as fallback
+      const subject = encodeURIComponent('Contact via site — ' + name);
+      const body = encodeURIComponent(message + '\n\nCoordonnées:\n' + name + '\n' + email);
+      window.location.href = `mailto:cizaimmo@yahoo.com?subject=${subject}&body=${body}`;
+    });
+
+    // --- Utilities ---
+    function readFileAsDataURL(file){return new Promise((res,rej)=>{const r=new FileReader(); r.onload=()=>res(r.result); r.onerror=rej; r.readAsDataURL(file);});}
+    function escapeHtml(str){ if(!str) return ''; return String(str).replace(/[&<>"']/g, function(s){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[s];}); }
+
+    // Initial render
+    loadListings(); loadReviews();
+
+    // Optional: admin helper to export listings/messages as JSON file
+    function downloadJSON(key,filename){ const data = localStorage.getItem(key)||'[]'; const blob = new Blob([data],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=filename; a.click(); }
+    // Expose to global for quick admin use in console:
+    window.cizaAdmin = {downloadListings:()=>downloadJSON(LS_LISTINGS,'ciza_listings.json'), downloadMessages:()=>downloadJSON(LS_MESSAGES,'ciza_messages.json')};
+
+    /*
+      NOTES pour déployer / modifier :
+      - Sauvegarde : le site actuel stocke tout localement (localStorage). Pour production, branche un backend ou un service (ex: Formspree pour formulaires, Cloudinary/AWS S3 pour images).
+      - Pour télécharger une photo d'un immeuble : va dans Publier annonce → Choisir fichier → sélectionne l'image → prévisualise → Publier l'annonce. L'image est enregistrée en base64 dans ton navigateur.
+      - Pour récupérer toutes les annonces/messages : ouvre la console du navigateur et appelle cizaAdmin.downloadListings() et cizaAdmin.downloadMessages().
+      - Hébergement GitHub Pages : crée un repo, ajoute ce fichier nommé index.html (et d'autres si tu veux), active GitHub Pages sur la branche main / docs.
+    */
+  </script>
+</body>
+</html>
