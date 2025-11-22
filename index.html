@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CIZA IMMO — Agence Immobilière Burundi</title>
+  <meta name="description" content="CIZA IMMO - Vente, location et gestion immobilière au Burundi. Contact: cizaimmo@yahoo.com" />
+  <style>
+    :root{--bg:#0b0b0f;--card:#0f1113;--muted:#c7c7c7;--accent:#c9975e;--white:#ffffff;--glass:rgba(255,255,255,0.04);--maxw:1120px}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;color:var(--white);background:linear-gradient(180deg,#070708,#0b0b0f);-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:20px}
+    header{position:sticky;top:0;z-index:80;background:linear-gradient(90deg,rgba(10,10,10,0.75),rgba(15,15,15,0.75));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:var(--maxw);margin:0 auto;padding:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo-sm{height:48px;width:auto;border-radius:8px;background:transparent}
+    .brand .title{font-weight:800;color:var(--accent);letter-spacing:1px}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--white);text-decoration:none;font-weight:600}
+    .cta{background:var(--accent);color:#081010;padding:10px 14px;border-radius:10px;font-weight:800;text-decoration:none}
+
+    /* hero */
+    .hero{margin:20px 0;border-radius:14px;overflow:hidden;display:grid;grid-template-columns:1fr 420px;gap:18px;align-items:center;padding:28px;background-image:linear-gradient(180deg,rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('https://images.unsplash.com/photo-1505691723518-36a7b89b2d0d?q=80&w=1600&auto=format&fit=crop');background-size:cover}
+    .hero-left{padding:10px}
+    .hero h1{font-size:42px;margin:0 0 8px}
+    .hero p{margin:0 0 16px;color:var(--muted)}
+    .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-logo{display:flex;align-items:center;justify-content:center}
+    .logo-large{max-width:320px;width:100%;height:auto;border-radius:12px;background:var(--glass);padding:20px}
+
+    /* sections */
+    section{padding:28px 0}
+    h2{margin:0 0 12px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .small{color:var(--muted);font-size:14px}
+
+    /* listings */
+    .listings{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .listing{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(0,0,0,0.45)}
+    .listing img{width:100%;height:200px;object-fit:cover;display:block}
+    .listing .body{padding:12px}
+    .meta-row{display:flex;justify-content:space-between;align-items:center}
+
+    /* forms */
+    form{display:grid;gap:10px}
+    input,textarea,select{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--white)}
+    textarea{min-height:120px}
+    .btn{background:var(--accent);color:#081010;padding:10px 12px;border-radius:10px;border:none;font-weight:800;cursor:pointer}
+    .muted{color:var(--muted)}
+
+    /* footer */
+    footer{padding:28px 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:28px;color:var(--muted);text-align:center}
+
+    /* social icons */
+    .social{display:flex;gap:12px;align-items:center}
+    .social a{display:flex;align-items:center;gap:8px;padding:8px;border-radius:10px;text-decoration:none}
+    .icon{width:20px;height:20px;display:inline-block}
+
+    /* whatsapp floating */
+    .whatsapp{position:fixed;right:18px;bottom:18px;z-index:90;background:linear-gradient(90deg,var(--accent),#e6b26f);padding:12px 16px;border-radius:999px;color:#081010;font-weight:800;text-decoration:none}
+
+    /* admin lock hint */
+    .admin-lock{font-size:13px;color:var(--muted)}
+
+    @media (max-width:1000px){.hero{grid-template-columns:1fr} .listings{grid-template-columns:repeat(2,1fr)} .grid-3{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:680px){nav{display:none} .listings{grid-template-columns:1fr} .grid-3{grid-template-columns:1fr} .hero h1{font-size:28px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav wrap">
+      <div class="brand">
+        <!-- small header logo (embedded) -->
+        <img class="logo-sm" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEBASERAVEBEQDw8PDw8PFQ8PDw8QFREWFhURFRUYHSggGBolGxMVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAQEA4QMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABQYDBAcCAQj/xABBEAACAQIDBQUECQQBBQAAAAABAgADEQQSIQUTMUEiUWEGcYGRobHB0SNCUmKx8SNSssLS4RYkM1OCk6Ky/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAJxEAAgICAgICAgMAAAAAAAAAAAECEQMSITEEQRMiUWEUQmH/2gAMAwEAAhEDEQA/AN6RREQEREBERAREQEREBERAREQFQ5ihaqKJq9q1Q3AJmYk3w0h6Uz7d3v9Fh8dY1m0kVt1Zp8kxF3+qgbsZ3p0kY3J6vQOnY6a9u0uYk3k5wQfZ1r0kY2J4k3qY5JlGZVnMZ3qINu6hz9qf/Z" alt="logo">
+        <div>
+          <div class="title">CIZA IMMO</div>
+          <div class="muted">Bujumbura — Burundi</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#proprietes">Propriétés</a>
+        <a href="#services">Services</a>
+        <a href="#contact" class="cta">Contact</a>
+        <a href="#admin" id="adminLink" class="muted admin-lock">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO with large logo -->
+    <section id="accueil" class="hero">
+      <div class="hero-left">
+        <h1>Ton partenaire immobilier au Burundi</h1>
+        <p class="small">Achat — Vente — Location — Gestion locative. Annonces vérifiées, service dans toutes les provinces.</p>
+        <div class="actions">
+          <button class="btn" onclick="scrollTo('publier')">Publier (admin)</button>
+          <a class="btn" href="#proprietes" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white)">Voir les propriétés</a>
+        </div>
+        <div style="margin-top:12px" class="small">Email: <a href="mailto:cizaimmo@yahoo.com">cizaimmo@yahoo.com</a> • Tel CA: <a href="tel:+15145029503">+1 514 502 9503</a></div>
+      </div>
+      <div class="hero-logo">
+        <!-- large logo inserted in hero -->
+        <img class="logo-large" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEBASERAVEBEQDw8PDw8PFQ8PDw8QFREWFhURFRUYHSggGBolGxMVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAQEA4QMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABQYDBAcCAQj/xABBEAACAQIDBQUECQQBBQAAAAABAgADEQQSIQUTMUEiUWEGcYGRobHB0SNCUmKx8SNSssLS4RYkM1OCk6Ky/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAJxEAAgICAgICAgMAAAAAAAAAAAECEQMSITEEQRMiUWEUQmH/2gAMAwEAAhEDEQA/AN6RREQEREBERAREQEREBERAREQFQ5ihaqKJq9q1Q3AJmYk3w0h6Uz7d3v9Fh8dY1m0kVt1Zp8kxF3+qgbsZ3p0kY3J6vQOnY6a9u0uYk3k5wQfZ1r0kY2J4k3qY5JlGZVnMZ3qINu6hz9qf/Z" alt="CIZA IMMO logo (grand)">
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h2>Nos services</h2>
+      <div class="grid-3" style="margin-top:12px">
+        <div class="card"><h3>Vente & Achat</h3><p class="small">Accompagnement de A à Z — estimation, négociation et transaction.</p></div>
+        <div class="card"><h3>Location & Gestion</h3><p class="small">Recherche de locataires, gestion des loyers et maintenance.</p></div>
+        <div class="card"><h3>Investissement</h3><p class="small">Conseils pour rentabilité et opportunités locatives.</p></div>
+      </div>
+    </section>
+
+    <!-- PROPRIETES -->
+    <section id="proprietes">
+      <h2>Propriétés récentes</h2>
+      <p class="small">Les annonces visibles ici sont publiées uniquement par l'admin (toi). Pour proposer un bien, contacte-nous.</p>
+      <div id="listings" class="listings" style="margin-top:12px"></div>
+    </section>
+
+    <!-- PUBLIER (admin) -->
+    <section id="publier">
+      <h2>Publier une annonce (admin)</h2>
+      <div class="card" style="margin-top:12px">
+        <p class="small">Seul l'admin peut publier. Pour ouvrir le panneau admin clique sur <strong>Admin</strong> en haut et identifie-toi.</p>
+        <form id="adForm">
+          <input id="title" placeholder="Titre (ex: Appartement 2 ch à Bujumbura)" required>
+          <textarea id="description" placeholder="Description" required></textarea>
+          <input id="price" placeholder="Prix (ex: 150000 BIF)" required>
+          <input id="locationInput" placeholder="Province / Ville" required>
+          <label class="small">Photo (jpg/png) — max 6MB</label>
+          <input type="file" id="photo" accept="image/*">
+          <div id="preview"></div>
+          <div style="display:flex;gap:10px;margin-top:8px">
+            <button class="btn" type="submit">Publier</button>
+            <button class="btn" type="button" id="exportBtn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white)">Exporter JSON</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- AVIS -->
+    <section id="avis">
+      <h2>Avis des clients</h2>
+      <div class="card" style="margin-top:12px">
+        <form id="reviewForm">
+          <input id="reviewer" placeholder="Ton nom" required>
+          <textarea id="reviewText" placeholder="Ton avis" required></textarea>
+          <button class="btn" type="submit">Ajouter avis</button>
+        </form>
+      </div>
+      <div id="reviewsList" style="margin-top:12px"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:18px">
+        <div class="card">
+          <form id="contactForm">
+            <input id="cname" placeholder="Ton nom" required>
+            <input id="cemail" type="email" placeholder="Ton e-mail" required>
+            <textarea id="cmessage" placeholder="Message" required></textarea>
+            <button class="btn" type="submit">Envoyer</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Coordonnées</h3>
+          <p class="small">Email: <a href="mailto:cizaimmo@yahoo.com">cizaimmo@yahoo.com</a><br>
+          Canada: <a href="tel:+15145029503">+1 514 502 9503</a><br>
+          Burundi: <a href="tel:+25779945007">+257 79 945 007</a><br>
+          WhatsApp: <a class="inline" target="_blank" href="https://wa.me/15145029503">Canada</a> • <a class="inline" target="_blank" href="https://wa.me/25779945007">Burundi</a></p>
+
+          <h4>Suivez-nous</h4>
+          <div class="social">
+            <a href="https://instagram.com/cizaimmo" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="white" opacity="0.06"/><path d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8.75a3.25 3.25 0 100 6.5 3.25 3.25 0 000-6.5z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 6.5h.01" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="small">@cizaimmo</span></a>
+            <a href="https://facebook.com/cizaimmo" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="white" opacity="0.06"/><path d="M15 8h2.5V5.5H15c-1.1 0-2 .9-2 2v1.5H11v2.5h2v6h2.5v-6H17l.5-2.5h-2V9c0-.3.2-.5.5-.5z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="small">@cizaimmo</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="small">© <strong>CIZA IMMO</strong> — Bujumbura, Burundi • Email: <a href="mailto:cizaimmo@yahoo.com">cizaimmo@yahoo.com</a></div>
+    </footer>
+
+  </main>
+
+  <a class="whatsapp" href="https://wa.me/15145029503" target="_blank" rel="noopener">WhatsApp • Nous contacter</a>
+
+  <!-- Admin modal (client-side password) -->
+  <div id="adminModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:200;align-items:center;justify-content:center;padding:20px">
+    <div style="max-width:520px;width:100%;background:var(--card);padding:18px;border-radius:12px">
+      <h3>Connexion Admin</h3>
+      <p class="small">Entrez le mot de passe admin pour publier des annonces (ce mot de passe est stocké localement dans ton navigateur).</p>
+      <input id="adminPasswordInput" placeholder="Mot de passe admin" type="password" style="width:100%;padding:10px;border-radius:8px;margin-bottom:10px;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.06)">
+      <div style="display:flex;gap:10px">
+        <button class="btn" id="adminLoginBtn">Se connecter</button>
+        <button class="btn" id="adminCloseBtn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white)">Fermer</button>
+      </div>
+      <p class="small" style="margin-top:10px">Si tu n'as pas paramétré de mot de passe, utilise le mot de passe par défaut : <strong>cizapass</strong> (change-le après connexion).</p>
+    </div>
+  </div>
+
+  <script>
+    // --- Config ---
+    const LS_LISTINGS = 'ciza_listings_v3';
+    const LS_REVIEWS = 'ciza_reviews_v3';
+    const LS_MESSAGES = 'ciza_messages_v3';
+    const LS_ADMIN_PASS = 'ciza_admin_pass_v1';
+
+    // If no admin password set, default to 'cizapass'
+    if(!localStorage.getItem(LS_ADMIN_PASS)) localStorage.setItem(LS_ADMIN_PASS,'cizapass');
+
+    // Helpers
+    const $ = id => document.getElementById(id);
+    function escapeHtml(s){ if(!s) return ''; return String(s).replace(/[&<>"']/g, function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[c]; }); }
+
+    // Render listings (public)
+    function loadListings(){
+      const container = $('listings'); container.innerHTML = '';
+      const raw = localStorage.getItem(LS_LISTINGS);
+      if(!raw){ container.innerHTML = '<p class="small">Aucune annonce pour l\'instant.</p>'; return; }
+      const arr = JSON.parse(raw);
+      arr.slice().reverse().forEach(item=>{
+        const box = document.createElement('div'); box.className='listing';
+        box.innerHTML = `
+          ${ item.photo ? `<img src="${item.photo}" alt="${escapeHtml(item.title)}">` : `<div style="height:200px;background:linear-gradient(180deg,#111,#0b0b0b);display:flex;align-items:center;justify-content:center;color:var(--muted)">Pas d'image</div>` }
+          <div class="body">
+            <h3>${escapeHtml(item.title)}</h3>
+            <div class="meta-row small"><div><strong>${escapeHtml(item.price)}</strong><div class="small">${escapeHtml(item.location)}</div></div><div><a class="small" href="mailto:cizaimmo@yahoo.com?subject=${encodeURIComponent('Intérêt: '+item.title)}">Contacter</a></div></div>
+            <p class="small" style="margin-top:8px">${escapeHtml(item.description)}</p>
+          </div>
+        `;
+        container.appendChild(box);
+      });
+    }
+
+    // Admin flow: show modal when clicking Admin link
+    document.getElementById('adminLink').addEventListener('click', (e)=>{ e.preventDefault(); $('adminModal').style.display='flex'; $('adminPasswordInput').value=''; });
+    $('adminCloseBtn').addEventListener('click', ()=>{$('adminModal').style.display='none';});
+
+    $('adminLoginBtn').addEventListener('click', ()=>{
+      const entered = $('adminPasswordInput').value;
+      const stored = localStorage.getItem(LS_ADMIN_PASS);
+      if(entered === stored){ $('adminModal').style.display='none'; openAdminPanel(); } else { alert('Mot de passe incorrect'); }
+    });
+
+    // Admin panel UI (simple overlay with create/delete)
+    function openAdminPanel(){
+      // Build admin overlay
+      const overlay = document.createElement('div'); overlay.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:210;display:flex;align-items:flex-start;justify-content:center;padding:28px;overflow:auto';
+      const pane = document.createElement('div'); pane.style.cssText='max-width:980px;width:100%;background:var(--card);padding:18px;border-radius:12px;color:var(--white)';
+      pane.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><h2>Admin — Gestion des annonces</h2><div><button id="closeAdmin" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06)">Fermer</button></div></div>
+        <div style="display:grid;grid-template-columns:1fr 360px;gap:12px">
+          <div>
+            <h3>Créer une annonce</h3>
+            <input id="a_title" placeholder="Titre">
+            <textarea id="a_description" placeholder="Description"></textarea>
+            <input id="a_price" placeholder="Prix">
+            <input id="a_location" placeholder="Province / Ville">
+            <label class="small">Photo (jpg/png) — max 6MB</label>
+            <input type="file" id="a_photo" accept="image/*">
+            <div id="a_preview"></div>
+            <div style="display:flex;gap:8px;margin-top:10px"><button id="a_publish" class="btn">Publier</button><button id="a_export" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06)">Exporter JSON</button></div>
+          </div>
+          <div>
+            <h3>Annonces existantes</h3>
+            <div id="adminListings" style="max-height:420px;overflow:auto"></div>
+            <hr>
+            <h3>Paramètres</h3>
+            <label class="small">Changer mot de passe admin</label>
+            <input id="newAdminPass" placeholder="Nouveau mot de passe">
+            <button id="changePass" class="btn">Enregistrer</button>
+            <div style="margin-top:12px" class="small">Astuce: choisis un mot de passe fort et garde-le secret. Il est stocké localement dans ton navigateur.</div>
+          </div>
+        </div>
+      `;
+      overlay.appendChild(pane); document.body.appendChild(overlay);
+
+      // Wire UI
+      document.getElementById('closeAdmin').addEventListener('click', ()=>{ overlay.remove(); });
+      const fileIn = document.getElementById('a_photo'); fileIn.addEventListener('change', ()=>{ const f=fileIn.files[0]; if(!f) return; if(f.size>6*1024*1024){ alert('Image trop grande'); return;} const r=new FileReader(); r.onload=()=>{ document.getElementById('a_preview').innerHTML=`<img src="${r.result}" style="max-width:100%;border-radius:8px">`; }; r.readAsDataURL(f); });
+
+      document.getElementById('a_publish').addEventListener('click', async ()=>{
+        const title = document.getElementById('a_title').value.trim(); const desc = document.getElementById('a_description').value.trim(); const price = document.getElementById('a_price').value.trim(); const loc = document.getElementById('a_location').value.trim();
+        if(!title||!desc||!price||!loc) { alert('Remplis tous les champs'); return; }
+        let photoData = null; const f = document.getElementById('a_photo').files[0];
+        if(f){ if(f.size>6*1024*1024){ alert('Image trop grande'); return; } photoData = await readFileAsDataURL(f); }
+        const arr = JSON.parse(localStorage.getItem(LS_LISTINGS) || '[]'); arr.push({id:Date.now(),title,description:desc,price,location:loc,photo:photoData}); localStorage.setItem(LS_LISTINGS, JSON.stringify(arr)); renderAdminListings(); loadListings(); alert('Annonce publiée.');
+        // reset fields
+        document.getElementById('a_title').value=''; document.getElementById('a_description').value=''; document.getElementById('a_price').value=''; document.getElementById('a_location').value=''; document.getElementById('a_preview').innerHTML=''; document.getElementById('a_photo').value='';
+      });
+
+      document.getElementById('a_export').addEventListener('click', ()=>{ downloadJSON(LS_LISTINGS,'ciza_listings.json'); });
+
+      document.getElementById('changePass').addEventListener('click', ()=>{ const p = document.getElementById('newAdminPass').value.trim(); if(!p) return alert('Mot de passe vide'); localStorage.setItem(LS_ADMIN_PASS,p); alert('Mot de passe changé.'); document.getElementById('newAdminPass').value=''; });
+
+      function renderAdminListings(){ const el = document.getElementById('adminListings'); el.innerHTML=''; const arr = JSON.parse(localStorage.getItem(LS_LISTINGS)||'[]'); if(!arr.length) el.innerHTML='<p class="small">Aucune annonce</p>'; arr.slice().reverse().forEach(it=>{ const div=document.createElement('div'); div.style.padding='8px'; div.style.borderBottom='1px solid rgba(255,255,255,0.03)'; div.innerHTML=`<strong>${escapeHtml(it.title)}</strong><div class="small">${escapeHtml(it.location)} • ${escapeHtml(it.price)}</div><div style="margin-top:8px"><button data-id="${it.id}" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06)">Supprimer</button></div>`; el.appendChild(div); });
+        // wire delete
+        el.querySelectorAll('button[data-id]').forEach(b=>{ b.addEventListener('click', ()=>{ const id = parseInt(b.getAttribute('data-id')); if(!confirm('Supprimer cette annonce ?')) return; let arr = JSON.parse(localStorage.getItem(LS_LISTINGS)||'[]'); arr = arr.filter(x=>x.id!==id); localStorage.setItem(LS_LISTINGS, JSON.stringify(arr)); renderAdminListings(); loadListings(); }); });
+      }
+      renderAdminListings();
+    }
+
+    // read file as data url helper
+    function readFileAsDataURL(file){ return new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result); r.onerror=rej; r.readAsDataURL(file); }); }
+
+    // contact form
+    document.getElementById('contactForm').addEventListener('submit', function(e){ e.preventDefault(); const name=$('cname').value.trim(); const email=$('cemail').value.trim(); const message=$('cmessage').value.trim(); if(!name||!email||!message) return; const arr = JSON.parse(localStorage.getItem(LS_MESSAGES)||'[]'); arr.push({name,email,message,created:Date.now()}); localStorage.setItem(LS_MESSAGES, JSON.stringify(arr)); const subject = encodeURIComponent('Contact via site — ' + name); const body = encodeURIComponent(message + "\n\nCoordonnées:\n" + name + "\n" + email); window.location.href = `mailto:cizaimmo@yahoo.com?subject=${subject}&body=${body}`; });
+
+    // reviews
+    document.getElementById('reviewForm').addEventListener('submit', function(e){ e.preventDefault(); const name=$('reviewer').value.trim(); const text=$('reviewText').value.trim(); if(!name||!text) return; const arr = JSON.parse(localStorage.getItem(LS_REVIEWS)||'[]'); arr.push({name,text,created:Date.now()}); localStorage.setItem(LS_REVIEWS, JSON.stringify(arr)); this.reset(); loadReviews(); alert('Merci ! Avis ajouté.'); });
+
+    function loadReviews(){ const raw=localStorage.getItem(LS_REVIEWS); const cont=$('reviewsList'); cont.innerHTML=''; if(!raw){ cont.innerHTML='<p class="small">Aucun avis pour l\'instant.</p>'; return;} JSON.parse(raw).slice().reverse().forEach(r=>{ const d=document.createElement('div'); d.className='card'; d.style.marginBottom='10px'; d.innerHTML=`<strong>${escapeHtml(r.name)}</strong><div class="small">${new Date(r.created).toLocaleString()}</div><p class="small">${escapeHtml(r.text)}</p>`; cont.appendChild(d); }); }
+
+    // export helper
+    function downloadJSON(key,filename){ const data = localStorage.getItem(key)||'[]'; const blob = new Blob([data],{type:'application/json'}); const a=document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = filename; a.click(); }
+    window.downloadJSON = downloadJSON; window.loadListings = loadListings; window.loadReviews = loadReviews;
+
+    // ad form (for safety we require admin login) -> show message
+    document.getElementById('adForm').addEventListener('submit', function(e){ e.preventDefault(); alert('Pour publier une annonce, ouvre le panneau Admin (en haut) et connecte-toi.'); });
+
+    // init
+    loadListings(); loadReviews();
+
+    // small helpers
+    function scrollTo(id){ const el = document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth'}); }
+  </script>
+  
+<script>
+// --- Cloudinary & Firebase Integration Setup ---
+// Replace with your actual Cloudinary and Firebase credentials
+const CLOUDINARY_UPLOAD_URL = "https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload";
+const CLOUDINARY_UPLOAD_PRESET = "YOUR_UPLOAD_PRESET";
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+// Initialize Firebase
+if (typeof firebase !== 'undefined') {
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+}
+</script>
+
+</body>
+</html>
