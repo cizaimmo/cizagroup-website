@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIZA IMMO – Luxe & Immobilier au Burundi</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: #111;
+        color: #fff;
+    }
+
+    /* HEADER */
+    header {
+        background: #000;
+        padding: 25px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #d4af37;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        font-size: 32px;
+        font-weight: 700;
+        color: #d4af37;
+        letter-spacing: 2px;
+    }
+
+    nav a {
+        margin-left: 25px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #d4af37;
+    }
+
+    /* HERO */
+    .hero {
+        background: url("https://i.imgur.com/zY8Yt7y.jpg") center/cover no-repeat;
+        height: 65vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        color: white;
+        position: relative;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+        font-weight: 700;
+        text-shadow: 0 0 20px black;
+    }
+
+    .hero p {
+        font-size: 20px;
+        margin-top: 10px;
+        text-shadow: 0 0 10px black;
+    }
+
+    /* SECTIONS */
+    section {
+        padding: 60px 40px;
+    }
+
+    h2 {
+        font-size: 35px;
+        color: #d4af37;
+        margin-bottom: 25px;
+        border-left: 5px solid #d4af37;
+        padding-left: 15px;
+    }
+
+    /* GRID ANNONCES */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+
+    .card {
+        background: #1b1b1b;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: 0.3s;
+        border: 1px solid #333;
+    }
+
+    .card:hover {
+        transform: scale(1.03);
+        border-color: #d4af37;
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .price {
+        color: #d4af37;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 12px 20px;
+        background: #d4af37;
+        color: #000;
+        text-decoration: none;
+        font-weight: 700;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #b9962c;
+    }
+
+    /* FOOTER */
+    footer {
+        background: #000;
+        padding: 40px;
+        text-align: center;
+        border-top: 2px solid #d4af37;
+    }
+
+    .social-icons img {
+        width: 35px;
+        margin: 0 10px;
+        filter: invert(80%);
+        transition: 0.3s;
+    }
+
+    .social-icons img:hover {
+        filter: invert(50%) sepia(80%) hue-rotate(20deg);
+    }
+</style>
+
+</head>
+<body>
+
+<header>
+    <div class="logo">CIZA IMMO</div>
+    <nav>
+        <a href="#quartiers">Quartiers</a>
+        <a href="#provinces">Provinces</a>
+        <a href="#annonces">Annonces</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h1>L’immobilier de Luxe au Burundi</h1>
+        <p>Locations & ventes haut de gamme à Bujumbura et dans tout le pays.</p>
+    </div>
+</div>
+
+
+<!-- QUARTIERS -->
+<section id="quartiers">
+    <h2>Quartiers populaires de Bujumbura</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://i.imgur.com/8Cyk2BP.jpeg">
+            <div class="card-body">
+                <h3>Kiriri</h3>
+                <a class="btn" href="#annonces">Voir les biens</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.imgur.com/Z2rZ7dH.jpeg">
+            <div class="card-body">
+                <h3>Kabondo</h3>
+                <a class="btn" href="#annonces">Voir les biens</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.imgur.com/m9bTbtG.jpeg">
+            <div class="card-body">
+                <h3>Rohero</h3>
+                <a class="btn" href="#annonces">Voir les biens</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- PROVINCES -->
+<section id="provinces">
+    <h2>Provinces</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://i.imgur.com/8LqN5Su.jpeg">
+            <div class="card-body">
+                <h3>Gitega</h3>
+                <a class="btn" href="#annonces">Voir les biens</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.imgur.com/EiYDkWn.jpeg">
+            <div class="card-body">
+                <h3>Muramvya</h3>
+                <a class="btn" href="#annonces">Voir les biens</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.imgur.com/Kmmu9tX.jpeg">
+            <div class="card-body">
+                <h3>Ngozi</h3>
+                <a class="btn" href="#annonces">Voir les biens</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ANNONCES -->
+<section id="annonces">
+    <h2>Annonces en vedette</h2>
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://i.imgur.com/KaEz1MK.jpeg">
+            <div class="card-body">
+                <h3>Maison moderne – Kiriri</h3>
+                <p class="price">850 000 BIF / mois</p>
+                <p>3 chambres – Salon – Cuisine moderne – Vue panoramique</p>
+                <a class="btn">Voir détails</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.imgur.com/zfEctbC.jpeg">
+            <div class="card-body">
+                <h3>Appartement – Rohero</h3>
+                <p class="price">650 000 BIF / mois</p>
+                <p>2 chambres – Meublé – Sécurisé 24/7</p>
+                <a class="btn">Voir détails</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.imgur.com/WBaZP10.jpeg">
+            <div class="card-body">
+                <h3>Villa – Kabondo</h3>
+                <p class="price">1 400 000 BIF / mois</p>
+                <p>4 chambres – Grand jardin – Piscine</p>
+                <a class="btn">Voir détails</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email : <b>cizaimmo@yahoo.com</b></p>
+    <p>Téléphone : <b>+257 79 000 000</b></p>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    <p>CIZA IMMO – Excellence & Luxe Immobilier</p>
+
+    <div class="social-icons">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733603.png"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"></a>
+    </div>
+
+    <p style="margin-top:15px;color:#d4af37;">© 2025 – Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>
