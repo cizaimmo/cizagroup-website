@@ -1,0 +1,54 @@
+<div id="loginPanel" style="margin-top:12px">
+  <div style="color:var(--muted);margin-bottom:8px">Connexion admin — entre le mot de passe (nom d'utilisateur implicite : cizaimmo).</div>
+  <input id="adminPwd" type="password" placeholder="Mot de passe admin">
+  <div style="display:flex;gap:8px;margin-top:10px"><button id="adminLoginBtn" class="btn">Se connecter</button><button id="showSetupBtn" class="btn btn-ghost">Créer / Réinitialiser mot de passe local</button></div>
+  <div class="small" style="margin-top:10px;color:var(--muted)">Mot de passe initial (local) : <strong>Missi890</strong> — stocké haché, non visible publiquement.</div>
+</div>
+
+<div id="setupPanel" style="display:none;margin-top:12px">
+  <div style="margin-bottom:8px;color:var(--muted)">Créer / modifier le mot de passe admin pour ce navigateur (stocké localement hashé).</div>
+  <input id="setupPass" type="password" placeholder="Nouveau mot de passe">
+  <input id="setupPass2" type="password" placeholder="Confirmer le mot de passe" style="margin-top:8px">
+  <div style="display:flex;gap:8px;margin-top:8px"><button id="setupSave" class="btn">Enregistrer</button><button id="setupCancel" class="btn btn-ghost">Annuler</button></div>
+</div>
+
+<div id="dashboard" style="display:none;margin-top:12px">
+  <div style="display:grid;grid-template-columns:1fr 380px;gap:12px">
+    <div>
+      <div style="background:var(--card);padding:12px;border-radius:10px">
+        <h3 style="color:var(--gold)">Nouvelle annonce</h3>
+        <input id="a_title" placeholder="Titre (ex: Maison Kiriri)">
+        <input id="a_price" placeholder="Prix (ex: 850000000)">
+        <input id="a_loc" placeholder="Quartier (ex: Kigobe)">
+        <select id="a_type"><option>Maison</option><option>Appartement</option><option>Villa</option><option>Terrain</option></select>
+        <textarea id="a_desc" placeholder="Description courte"></textarea>
+        <label class="small">Photos (JPG/PNG, max 6MB chacune)</label>
+        <input id="a_photos" type="file" accept="image/*" multiple>
+        <div style="display:flex;gap:8px;margin-top:10px"><button id="a_publish" class="btn">Publier</button><button id="a_export" class="btn btn-ghost">Exporter JSON</button><button id="a_import_btn" class="btn btn-ghost">Importer JSON</button><input id="a_import" type="file" accept="application/json" style="display:none"></div>
+      </div>
+
+      <div style="margin-top:12px;background:var(--card);padding:12px;border-radius:10px">
+        <h3 style="color:var(--gold)">Témoignages en attente</h3>
+        <div id="pendingTestimonials" style="max-height:220px;overflow:auto"></div>
+      </div>
+    </div>
+
+    <div>
+      <div style="background:var(--card);padding:12px;border-radius:10px">
+        <h3 style="color:var(--gold)">Sécurité</h3>
+        <div class="small" style="margin-bottom:8px;color:var(--muted)">Changer mot de passe admin (nécessite mot de passe actuel)</div>
+        <input id="oldPass" type="password" placeholder="Mot de passe actuel">
+        <input id="newPass" type="password" placeholder="Nouveau mot de passe" style="margin-top:8px">
+        <button id="changePassBtn" class="btn btn-ghost" style="margin-top:8px">Changer le mot de passe</button>
+      </div>
+
+      <div style="margin-top:12px;background:var(--card);padding:12px;border-radius:10px">
+        <h3 style="color:var(--gold)">Utilitaires</h3>
+        <button id="downloadPages" class="btn">Télécharger pages annonces (HTML)</button>
+        <button id="clearAllBtn" class="btn btn-ghost" style="margin-top:8px">Supprimer toutes les annonces</button>
+        <div class="small" style="margin-top:8px;color:var(--muted)">Exporter pour sauvegarde locale.</div>
+        <div style="margin-top:12px"><button id="adminLogout" class="btn btn-ghost">Se déconnecter</button></div>
+      </div>
+    </div>
+  </div>
+</div>
