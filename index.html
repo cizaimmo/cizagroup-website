@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CIZA IMMO — Immobilier de prestige</title>
+
+  <!-- STYLE COMPLET -->
+  <style>
+    :root{--bg:#030303;--gold:#caa94a;--muted:#bfb6a8;--card:#0f1113;--white:#fff}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:linear-gradient(180deg,#020203,#0b0b0f);color:var(--white);font-family:Inter,Arial}
+    .wrap{max-width:1200px;margin:0 auto;padding:28px}
+    header{border-bottom:1px solid rgba(255,255,255,0.05)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{height:64px;border-radius:10px}
+    .company{font-weight:800;color:var(--gold);font-size:20px}
+    .tag{color:var(--muted);font-size:13px;margin-top:-4px}
+    nav a{margin-left:12px;color:var(--white);text-decoration:none;font-weight:600}
+    nav a:hover{color:var(--gold)}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;padding:36px 0;align-items:center}
+    .hero h1{font-size:40px;margin-bottom:12px}
+    .lead{color:var(--muted);margin-bottom:20px;font-size:17px}
+    .btn{background:var(--gold);color:#000;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:800;display:inline-block}
+    .btn:hover{opacity:0.85}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white)}
+    .section{padding:40px 0}
+    .section h2{font-size:28px;margin-bottom:10px}
+    .lead-muted{color:var(--muted);margin-bottom:20px}
+    .tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .tag{background:rgba(255,255,255,0.04);padding:9px 14px;border-radius:999px;color:var(--muted);font-weight:700;text-decoration:none}
+    .tag:hover{background:var(--gold);color:#000}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:20px}
+    .card{background:rgba(255,255,255,0.03);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.05)}
+    .media{height:220px;border-radius:10px;overflow:hidden;margin-bottom:12px;background:#0b0b0b}
+    .media img{width:100%;height:100%;object-fit:cover}
+    .price{color:var(--gold);font-weight:700;margin-top:6px}
+    .small{color:var(--muted);font-size:14px}
+    .contact-card{background:var(--card);padding:20px;border-radius:12px;margin-top:20px}
+    footer{border-top:1px solid rgba(255,255,255,0.05);padding:22px 0;margin-top:20px;color:var(--muted);text-align:center}
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="wrap header-inner">
+      <div class="brand">
+        <img class="logo" src="/mnt/data/2EB6642D-0002-460C-ABAF-F292C4362039.png">
+        <div>
+          <div class="company">CIZA IMMO</div>
+          <div class="tag">Bujumbura — Burundi</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#quartiers">Quartiers</a>
+        <a href="#annonces">Annonces</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- HERO -->
+    <section id="accueil" class="hero">
+      <div>
+        <h1>Immobilier de prestige au Burundi</h1>
+        <p class="lead">Vente, location, gestion et accompagnement premium.</p>
+        <a class="btn" href="#annonces">Voir les annonces</a>
+        <a class="btn ghost" href="#contact">Contact</a>
+      </div>
+
+      <div>
+        <img src="/mnt/data/2EB6642D-0002-460C-ABAF-F292C4362039.png" class="logo" style="height:180px;border-radius:20px">
+      </div>
+    </section>
+
+    <!-- QUARTIERS -->
+    <section id="quartiers" class="section">
+      <h2>Quartiers & Provinces</h2>
+      <p class="lead-muted">Sélection des zones les plus demandées.</p>
+
+      <div class="tags">
+        <a class="tag">Kiriri</a>
+        <a class="tag">Rohero</a>
+        <a class="tag">Kinindo</a>
+        <a class="tag">Ngagara</a>
+        <a class="tag">Mutanga</a>
+        <a class="tag">Gihosha</a>
+        <a class="tag">Ngozi</a>
+        <a class="tag">Gitega</a>
+      </div>
+    </section>
+
+    <!-- ANNONCES -->
+    <section id="annonces" class="section">
+      <h2>Annonces disponibles</h2>
+
+      <div class="grid">
+
+        <!-- CARD 1 -->
+        <div class="card">
+          <div class="media">
+            <img src="/mnt/data/7BEE443C-D37B-4DD8-9B11-576D1DF9BD65.jpeg">
+          </div>
+          <h3>Maison 3 chambres — Kiriri</h3>
+          <div class="price">850 000 FBu</div>
+          <p class="small">Quartier résidentiel — Vue panoramique</p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+          <div class="media">
+            <img src="/mnt/data/57ED7445-F5C1-4248-9C3E-045D28D1C707.jpeg">
+          </div>
+          <h3>Villa luxe — Mutanga</h3>
+          <div class="price">1 200 000 FBu</div>
+          <p class="small">Piscine — Finitions premium</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+
+      <div class="contact-card">
+        <p>Email : <a href="mailto:cizaimmo@yahoo.com">cizaimmo@yahoo.com</a></p>
+        <p>WhatsApp Burundi : <a href="tel:+25779945007">+257 79 945 007</a></p>
+        <p>WhatsApp Canada : <a href="tel:+15145029503">+1 514 502 9503</a></p>
+
+        <p style="margin-top:12px">Réseaux sociaux :</p>
+        <p>
+          <a href="#">Instagram</a> •
+          <a href="#">Facebook</a> •
+          <a href="#">TikTok</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>© 2025 CIZA IMMO — Immobilier de prestige</footer>
+
+</body>
+</html>
