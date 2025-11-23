@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CIZA IMMO — Luxe Noir & Or (Avec Météo & Actualités)</title>
+<meta name="description" content="CIZA IMMO — Agence immobilière de prestige. Contact : cizaimmo@yahoo.com • WhatsApp +25779945007" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+  :root{
+    --noir:#0d0d0d; --noir-clair:#141414; --or:#D4AF37; --blanc:#ffffff; --muted:#bdbdbd;
+    --card:#0f1213; --glass:rgba(255,255,255,0.03); --radius:14px; --maxw:1200px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:linear-gradient(180deg,var(--noir),#050505);color:var(--blanc);font-family:Inter,system-ui,Arial;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:20px}
+
+  /* header */
+  header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand img{height:64px;border-radius:12px;object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+  .brand .title{font-weight:900;color:var(--or);font-size:20px}
+  nav{display:flex;gap:12px;align-items:center}
+  nav a{padding:8px 10px;border-radius:8px;color:var(--muted);text-decoration:none;font-weight:700}
+  nav a:hover{color:var(--or)}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start;margin-top:18px}
+  .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:22px;border-radius:16px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 30px 60px rgba(0,0,0,0.6)}
+  h1{margin:0;color:var(--or);font-family:serif;font-size:28px}
+  .lead{color:var(--muted);margin-top:8px}
+
+  .controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  input,select,textarea{padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--blanc)}
+  .btn{background:var(--or);color:#081010;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:800}
+  .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+  /* chips */
+  .chip-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+  .chip{padding:10px 14px;border-radius:999px;background:var(--card);border:1px solid rgba(255,255,255,0.03);cursor:pointer;font-weight:700;color:var(--muted)}
+  .chip.active{outline:2px solid rgba(212,175,55,0.14);box-shadow:0 8px 30px rgba(212,175,55,0.06);color:var(--or)}
+
+  /* layout listings */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:18px}
+  .card{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);transition:transform .18s}
+  .card:hover{transform:translateY(-6px)}
+  .media{height:220px;overflow:hidden;background:#0a0a0a}
+  .media img{width:100%;height:100%;object-fit:cover;display:block}
+  .body{padding:12px}
+  .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+  .price{font-weight:900;color:var(--or)}
+
+  /* weather + news */
+  .widgets{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+  .widget{background:var(--card);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+  .widget h3{margin:0;color:var(--or)}
+
+  /* testimonials */
+  .testimonials{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:18px}
+  .testimonial{background:linear-gradient(180deg,rgba(212,175,55,0.04),rgba(212,175,55,0.01));padding:12px;border-radius:10px;color:var(--muted)}
+
+  /* contact */
+  form.contact{display:grid;gap:10px;margin-top:12px}
+  input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:12px;border-radius:10px;color:var(--blanc)}
+
+  /* footer */
+  footer{margin-top:28px;padding:18px;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted);text-align:center}
+
+  /* modal */
+  .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;padding:18px;z-index:999}
+  .modal{width:100%;max-width:980px;background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);overflow:auto}
+  .modal h2{color:var(--or)}
+
+  /* admin overlay */
+  #adminOverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;padding:18px;z-index:1000}
+  .adminBox{width:95%;max-width:1000px;background:var(--card);padding:18px;border-radius:12px}
+
+  /* floating whatsapp */
+  .whatsapp{position:fixed;right:18px;bottom:18px;z-index:120;background:linear-gradient(90deg,var(--or),#e6c775);padding:12px 16px;border-radius:999px;color:#081010;font-weight:900;text-decoration:none}
+
+  @media(max-width:980px){
+    .hero{grid-template-columns:1fr}
+    .widgets{grid-template-columns:1fr}
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+    <div class="brand">
+      <img src="/mnt/data/2EB6642D-0002-460C-ABAF-F292C4362039.png" alt="CIZA IMMO">
+      <div>
+        <div class="title">CIZA IMMO</div>
+        <div style="font-size:12px;color:var(--muted)">Bujumbura — Burundi</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#annonces">Annonces</a>
+      <a href="#quartiers">Quartiers</a>
+      <a href="#provinces">Provinces</a>
+      <a href="#contact">Contact</a>
+      <a id="openAdminLink" href="#" class="small">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="mainWrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-card">
+      <div class="eyebrow small">IMMOBILIER DE PRESTIGE</div>
+      <h1>CIZA IMMO — Maisons & Villas</h1>
+      <p class="lead">Bujumbura & provinces — contact direct par WhatsApp ou email.</p>
+
+      <div class="controls">
+        <input id="searchInput" placeholder="Rechercher (quartier, titre, prix...)">
+        <select id="filterType"><option value="">Type (tous)</option><option>Maison</option><option>Appartement</option><option>Villa</option><option>Terrain</option></select>
+        <input id="priceMin" placeholder="Prix min (FBu)">
+        <input id="priceMax" placeholder="Prix max (FBu)">
+        <button id="applyFilters" class="btn">Appliquer</button>
+        <button id="clearFilters" class="btn ghost">Réinitialiser</button>
+      </div>
+
+      <div style="margin-top:12px" class="chip-grid" id="quickChips"></div>
+    </div>
+
+    <aside style="width:360px">
+      <div style="background:var(--card);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)">
+        <div style="font-weight:900;color:var(--or)">Contact & Réseaux</div>
+        <div style="margin-top:8px;color:var(--muted)">Email: <a href="mailto:cizaimmo@yahoo.com" style="color:var(--or)">cizaimmo@yahoo.com</a></div>
+        <div style="margin-top:6px;color:var(--muted)">WhatsApp: <a href="https://wa.me/25779945007" style="color:var(--or)">+257 79 945 007</a></div>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <a class="btn" href="https://wa.me/25779945007" target="_blank">WhatsApp</a>
+          <a class="btn ghost" href="mailto:cizaimmo@yahoo.com">Email</a>
+        </div>
+      </div>
+
+      <div style="margin-top:12px" class="widget">
+        <h3>Heures</h3>
+        <div class="small" style="color:var(--muted);margin-top:6px">Lun–Sam 9:00–18:00</div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- QUARTIERS -->
+  <section id="quartiers" style="margin-top:18px">
+    <h2 style="color:var(--or)">Quartiers de Bujumbura</h2>
+    <div id="quarters" class="chip-grid"></div>
+  </section>
+
+  <!-- PROVINCES -->
+  <section id="provinces" style="margin-top:18px">
+    <h2 style="color:var(--or)">Provinces</h2>
+    <div id="provs" class="chip-grid"></div>
+  </section>
+
+  <!-- WEATHER & NEWS -->
+  <section style="margin-top:18px">
+    <div class="widgets">
+      <div class="widget">
+        <h3>🌤️ Météo — Bujumbura</h3>
+        <!-- meteoblue free widget (embedded iframe) -->
+        <div style="margin-top:10px">
+          <iframe
+            src="https://www.meteoblue.com/en/weather/widget/daily/bujumbura_burundi_433635"
+            style="border:2px solid var(--or);border-radius:10px;width:100%;height:420px;background:transparent"
+            frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+        <div style="font-size:12px;color:var(--muted);margin-top:8px">Source : meteoblue</div>
+      </div>
+
+      <div class="widget">
+        <h3>📰 Actualité mondiale</h3>
+        <!-- simple news embed via Bing news search results in an iframe -->
+        <div style="margin-top:10px">
+          <iframe
+            src="https://www.bing.com/news/search?q=world+news&FORM=HDRSC6"
+            style="border:2px solid var(--or);border-radius:10px;width:100%;height:420px;background:transparent"
+            frameborder="0" loading="lazy"></iframe>
+        </div>
+        <div style="font-size:12px;color:var(--muted);margin-top:8px">Source : Bing News</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANNONCES -->
+  <section id="annonces" style="margin-top:18px">
+    <h2 style="color:var(--or)">Annonces</h2>
+    <div id="listings" class="grid"></div>
+    <div class="small" style="margin-top:12px;color:var(--muted)">Ouvre Admin (top right) pour ajouter/modifier annonces. Admin local (Missi890).</div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="temoignages" style="margin-top:18px">
+    <h2 style="color:var(--or)">Témoignages</h2>
+    <div id="testimonials" class="testimonials"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="margin-top:18px">
+    <h2 style="color:var(--or)">Contact</h2>
+    <!-- FormSubmit integration to send directly to cizaimmo@yahoo.com -->
+    <form id="contactForm" class="contact" action="https://formsubmit.co/cizaimmo@yahoo.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input name="Nom" placeholder="Nom" required>
+      <input name="Email" type="email" placeholder="Email" required>
+      <input name="Téléphone" placeholder="Téléphone" required>
+      <textarea name="Message" rows="5" placeholder="Votre message" required></textarea>
+      <button class="btn" type="submit">Envoyer</button>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+    <div>
+      <div style="font-weight:900;color:var(--or)">CIZA IMMO</div>
+      <div style="font-size:13px;color:var(--muted)">cizaimmo@yahoo.com • +257 79 945 007</div>
+    </div>
+    <div style="color:var(--muted)">© CIZA IMMO — Tous droits réservés</div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/25779945007" target="_blank">WhatsApp • +257 79 945 007</a>
+
+<!-- LISTING DETAIL MODAL -->
+<div id="modalBg" class="modal-bg"><div class="modal" id="modalBox"></div></div>
+
+<!-- ADMIN OVERLAY -->
+<div id="adminOverlay">
+  <div class="adminBox">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h2 style="color:var(--or);margin:0">Panneau Admin</h2>
+      <div><button id="closeAdminBtn" class="btn btn-ghost" style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)">Fermer</button></div>
+    </div>
+
+    <div id="adminLogin" style="margin-top:12px">
+      <input id="adminPwd" type="password" placeholder="Mot de passe admin (Missi890)">
+      <div style="margin-top:8px"><button id="adminLoginBtn" class="btn">Se connecter</button></div>
+    </div>
+
+    <div id="adminUI" style="display:none;margin-top:12px">
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:12px">
+        <div style="background:var(--card);padding:12px;border-radius:10px">
+          <h3>Nouvelle annonce</h3>
+          <input id="a_title" placeholder="Titre">
+          <input id="a_price" placeholder="Prix (chiffres)">
+          <input id="a_loc" placeholder="Quartier">
+          <select id="a_type"><option>Maison</option><option>Appartement</option><option>Villa</option><option>Terrain</option></select>
+          <textarea id="a_desc" placeholder="Description"></textarea>
+          <input id="a_photos" type="file" multiple accept="image/*">
+          <div style="margin-top:8px"><button id="a_publish" class="btn">Publier</button> <button id="a_export" class="btn btn-ghost">Exporter JSON</button></div>
+        </div>
+
+        <div style="background:var(--card);padding:12px;border-radius:10px">
+          <h3>Annonces publiées</h3>
+          <div id="adminListings" style="max-height:420px;overflow:auto"></div>
+          <div style="margin-top:12px"><button id="adminLogout" class="btn btn-ghost">Se déconnecter</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ========== DATA ========== */
+const LS_LISTINGS = 'ciza_listings_v_final';
+const LS_TEST = 'ciza_testimonials_v_final';
+const defaultListings = [
+  {id:'kiriri-1',title:'Maison Kiriri',price:850000000,location:'Kigobe',province:'Bujumbura',type:'Maison',beds:3,photos:['/mnt/data/7BEE443C-D37B-4DD8-9B11-576D1DF9BD65.jpeg'],desc:'3 chambres • Jardin • Proche écoles',created:Date.now()-86400000},
+  {id:'mutanga-1',title:'Villa Mutanga',price:1200000000,location:'Mutanga',province:'Bujumbura',type:'Villa',beds:5,photos:['/mnt/data/57ED7445-F5C1-4248-9C3E-045D28D1C707.jpeg'],desc:'Piscine • Finitions premium',created:Date.now()-3600000}
+];
+if(!localStorage.getItem(LS_LISTINGS)) localStorage.setItem(LS_LISTINGS, JSON.stringify(defaultListings));
+if(!localStorage.getItem(LS_TEST)) localStorage.setItem(LS_TEST, JSON.stringify([{name:'Jean N.',text:'Service impeccable.'},{name:'Aline K.',text:'Très professionnelle.'}]));
+
+/* ========== HELPERS ========== */
+function getListings(){ return JSON.parse(localStorage.getItem(LS_LISTINGS) || '[]'); }
+function saveListings(arr){ localStorage.setItem(LS_LISTINGS, JSON.stringify(arr)); }
+function formatPrice(n){ try{ return new Intl.NumberFormat('fr-FR').format(n) + ' FBu'; }catch(e){ return n + ' FBu'; } }
+
+/* ========== RENDER UI ========== */
+const quarters = ['Kigobe','Rohero','Kabondo','Kinindo','Nyakabiga','Ngagara','Mutanga','Musaga'];
+const provinces = ['Bujumbura','Gitega','Ngozi','Kayanza','Rumonge','Bururi','Cibitoke','Makamba'];
+
+function renderChips(){
+  const quartersEl = document.getElementById('quarters'); quartersEl.innerHTML='';
+  quarters.forEach(q=>{
+    const b = document.createElement('div'); b.className='chip'; b.textContent=q;
+    b.addEventListener('click', ()=>{ openAreaModal(q,'quartier'); setActiveChip(b); });
+    quartersEl.appendChild(b);
+  });
+
+  const provsEl = document.getElementById('provs'); provsEl.innerHTML='';
+  provinces.forEach(p=>{
+    const b = document.createElement('div'); b.className='chip'; b.textContent=p;
+    b.addEventListener('click', ()=>{ openAreaModal(p,'province'); setActiveChip(b); });
+    provsEl.appendChild(b);
+  });
+
+  // quick chips under hero (popular)
+  const quick = document.getElementById('quickChips'); quick.innerHTML='';
+  ['Kigobe','Mutanga','Rohero'].forEach(q=>{
+    const el=document.createElement('div'); el.className='chip'; el.textContent=q; el.addEventListener('click', ()=>{ openAreaModal(q,'quartier'); setActiveChip(el);}); quick.appendChild(el);
+  });
+}
+
+function renderListings(list){
+  const wrap = document.getElementById('listings'); wrap.innerHTML='';
+  if(!list || !list.length){ wrap.innerHTML = '<div class="small" style="color:var(--muted)">Aucune annonce</div>'; return; }
+  list.slice().reverse().forEach(it=>{
+    const card = document.createElement('div'); card.className='card';
+    card.innerHTML = `<div class="media"><img src="${it.photos && it.photos.length? it.photos[0] : '/mnt/data/9F8A140A-6F9D-4F6F-B814-A457DFB8039E.jpeg'}" alt="${it.title}"></div>
+      <div class="body">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div><strong>${it.title}</strong><div class="small" style="color:var(--muted)">${it.location} • ${it.type}</div></div>
+          <div class="price">${formatPrice(it.price)}</div>
+        </div>
+        <p style="margin-top:8px;color:var(--muted)">${it.desc}</p>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button class="btn view" data-id="${it.id}">Voir</button>
+          <button class="btn btn-ghost share" data-id="${it.id}">Partager</button>
+          <button class="btn btn-ghost fav" data-id="${it.id}">❤</button>
+        </div>
+      </div>`;
+    wrap.appendChild(card);
+  });
+  attachListingEvents();
+}
+
+function attachListingEvents(){
+  document.querySelectorAll('.view').forEach(b=>b.addEventListener('click', e=>openDetail(e.target.dataset.id)));
+  document.querySelectorAll('.share').forEach(b=>b.addEventListener('click', e=>shareListing(e.target.dataset.id)));
+  document.querySelectorAll('.fav').forEach(b=>b.addEventListener('click', e=>toggleFav(e.target.dataset.id, e.target)));
+}
+
+/* ========== AREA MODAL (Quartier / Province) ========== */
+function openAreaModal(name, kind){
+  const modalBg = document.getElementById('modalBg'); const box = document.getElementById('modalBox');
+  const all = getListings();
+  const list = all.filter(x => (kind==='quartier' ? x.location : x.province).toLowerCase().includes(name.toLowerCase()));
+  box.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center"><h2>${name} — ${kind}</h2><button onclick="closeModal()" class="btn btn-ghost">Fermer</button></div>
+    <div style="margin-top:12px">${list.length? list.map(i=>`<div style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.03)"><strong>${i.title}</strong><div class="small" style="color:var(--muted)">${formatPrice(i.price)} • ${i.type}</div></div>`).join('') : '<div class="small" style="color:var(--muted)">Aucune annonce pour le moment</div>'}</div>`;
+  modalBg.style.display='flex';
+}
+function closeModal(){ document.getElementById('modalBg').style.display='none'; }
+function setActiveChip(el){ el.parentNode.querySelectorAll('.chip').forEach(c=>c.classList.remove('active')); el.classList.add('active'); }
+
+/* ========== FILTERS ========== */
+document.getElementById('applyFilters').addEventListener('click', ()=>{
+  const q = (document.getElementById('searchInput').value||'').toLowerCase();
+  const type = document.getElementById('filterType').value;
+  const pmin = parseInt((document.getElementById('priceMin').value||'').replace(/\D/g,'')) || 0;
+  const pmax = parseInt((document.getElementById('priceMax').value||'').replace(/\D/g,'')) || Infinity;
+  let arr = getListings();
+  if(q) arr = arr.filter(x=> (x.title+' '+(x.desc||'')+' '+x.location+' '+(x.province||'')).toLowerCase().includes(q));
+  if(type) arr = arr.filter(x=> x.type === type);
+  arr = arr.filter(x=> (x.price||0) >= pmin && (x.price||0) <= pmax);
+  renderListings(arr);
+});
+document.getElementById('clearFilters').addEventListener('click', ()=>{ document.getElementById('searchInput').value=''; document.getElementById('filterType').value=''; document.getElementById('priceMin').value=''; document.getElementById('priceMax').value=''; renderListings(getListings()); });
+
+/* ========== DETAIL / SHARE / FAV ========== */
+function openDetail(id){
+  const it = getListings().find(x=>x.id===id); if(!it) return alert('Annonce introuvable');
+  const box = document.getElementById('modalBox'); const modalBg = document.getElementById('modalBg');
+  box.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center"><h2>${it.title}</h2><button onclick="closeModal()" class="btn btn-ghost">Fermer</button></div>
+    <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+      <div style="flex:1;min-width:260px"><img src="${it.photos[0]}" style="width:100%;height:320px;object-fit:cover;border-radius:8px"></div>
+      <div style="flex:1;min-width:260px"><h3 style="color:var(--or)">${formatPrice(it.price)}</h3><p class="small" style="color:var(--muted)">${it.location} • ${it.type}</p><p style="margin-top:12px">${it.desc}</p>
+      <div style="margin-top:12px;display:flex;gap:8px"><a class="btn" href="mailto:cizaimmo@yahoo.com?subject=${encodeURIComponent('Intérêt: '+it.title)}">Email</a><a class="btn" href="https://wa.me/25779945007?text=${encodeURIComponent('Bonjour, je suis intéressé par: '+it.title)}" target="_blank">WhatsApp</a></div></div>
+    </div>`;
+  modalBg.style.display='flex';
+}
+function shareListing(id){ const url = location.origin + location.pathname + '#prop-' + id; if(navigator.share){ navigator.share({title:'CIZA IMMO',text:'Regarde cette annonce',url}).catch(()=>{}); } else { navigator.clipboard.writeText(url).then(()=>alert('Lien copié')); } }
+function toggleFav(id, btn){ const KEY='ciza_favs_v1'; let favs = JSON.parse(localStorage.getItem(KEY)||'[]'); if(favs.includes(id)){ favs = favs.filter(x=>x!==id); btn.style.opacity=0.6 } else { favs.push(id); btn.style.opacity=1 } localStorage.setItem(KEY, JSON.stringify(favs)); }
+
+/* ========== ADMIN (client-side) ========== */
+document.getElementById('openAdminLink').addEventListener('click', e=>{ e.preventDefault(); document.getElementById('adminOverlay').style.display='flex'; });
+document.getElementById('closeAdminBtn').addEventListener('click', ()=>{ document.getElementById('adminOverlay').style.display='none'; document.getElementById('adminUI').style.display='none'; document.getElementById('adminLogin').style.display='block'; });
+
+document.getElementById('adminLoginBtn').addEventListener('click', ()=>{
+  const v = document.getElementById('adminPwd').value || '';
+  if(v === 'Missi890'){ document.getElementById('adminLogin').style.display='none'; document.getElementById('adminUI').style.display='block'; renderAdminListings(); sessionStorage.setItem('ciza_admin_session','1'); }
+  else alert('Mot de passe incorrect');
+});
+
+function renderAdminListings(){
+  const wrap = document.getElementById('adminListings'); wrap.innerHTML=''; const arr=getListings();
+  arr.slice().reverse().forEach(it=>{ const d=document.createElement('div'); d.style.padding='8px'; d.style.borderBottom='1px solid rgba(255,255,255,0.03)'; d.innerHTML = `<strong>${it.title}</strong><div class="small" style="color:var(--muted)">${it.location} • ${formatPrice(it.price)}</div><div style="margin-top:8px"><button class="btn btn-ghost" onclick="deleteListing('${it.id}')">Supprimer</button> <button class="btn" onclick="editListing('${it.id}')">Modifier</button></div>`; wrap.appendChild(d); });
+}
+function deleteListing(id){ if(!confirm('Supprimer cette annonce ?')) return; let arr=getListings(); arr = arr.filter(x=>x.id !== id); saveListings(arr); renderListings(arr); renderAdminListings(); }
+function editListing(id){ const arr=getListings(); const it = arr.find(x=>x.id===id); if(!it) return alert('Introuvable'); document.getElementById('a_title').value=it.title; document.getElementById('a_price').value=it.price; document.getElementById('a_loc').value=it.location; document.getElementById('a_type').value=it.type; document.getElementById('a_desc').value=it.desc; deleteListing(id); }
+
+document.getElementById('a_publish').addEventListener('click', async ()=>{
+  const title = document.getElementById('a_title').value.trim(); const price = parseInt((document.getElementById('a_price').value||'').replace(/\D/g,'')) || 0;
+  const loc = document.getElementById('a_loc').value.trim(); const type = document.getElementById('a_type').value; const desc = document.getElementById('a_desc').value.trim();
+  if(!title||!price||!loc) return alert('Titre, prix et localisation requis');
+  let photos = []; const files = document.getElementById('a_photos').files;
+  if(files && files.length){ for(const f of files){ if(f.size > 6*1024*1024) return alert('Image trop grande (max 6MB)'); photos.push(await readFileAsDataURL(f)); } }
+  const arr = getListings(); const id = 'id'+Date.now();
+  arr.push({id,title,price,location:loc,province:loc,type,beds:3,photos: photos.length? photos : ['/mnt/data/9F8A140A-6F9D-4F6F-B814-A457DFB8039E.jpeg'],desc,created:Date.now()});
+  saveListings(arr); renderListings(arr); renderAdminListings();
+  document.getElementById('a_title').value=''; document.getElementById('a_price').value=''; document.getElementById('a_loc').value=''; document.getElementById('a_desc').value=''; document.getElementById('a_photos').value='';
+  alert('Annonce publiée');
+});
+
+document.getElementById('a_export').addEventListener('click', ()=>{ const data = localStorage.getItem(LS_LISTINGS) || '[]'; const blob = new Blob([data], {type:'application/json'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'ciza_listings.json'; a.click(); });
+
+document.getElementById('adminLogout').addEventListener('click', ()=>{ document.getElementById('adminOverlay').style.display='none'; document.getElementById('adminUI').style.display='none'; document.getElementById('adminLogin').style.display='block'; sessionStorage.removeItem('ciza_admin_session'); });
+
+/* ========== UTIL ========== */
+function readFileAsDataURL(file){ return new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result); r.onerror=rej; r.readAsDataURL(file); }); }
+
+/* ========== TESTIMONIALS & INIT ========== */
+function renderTestimonials(){ const t = JSON.parse(localStorage.getItem(LS_TEST) || '[]'); const wrap = document.getElementById('testimonials'); wrap.innerHTML=''; t.forEach(tt=>{ const d=document.createElement('div'); d.className='testimonial'; d.innerHTML = `<strong style="color:var(--or)">${tt.name || 'Client'}</strong><p style="margin-top:8px;color:var(--muted)">${tt.text}</p>`; wrap.appendChild(d); }); }
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  renderChips();
+  renderListings(getListings());
+  renderTestimonials();
+  if(sessionStorage.getItem('ciza_admin_session')==='1'){ document.getElementById('adminOverlay').style.display='flex'; document.getElementById('adminUI').style.display='block'; document.getElementById('adminLogin').style.display='none'; renderAdminListings(); }
+  if(location.hash){ const h = location.hash.replace('#',''); if(h.startsWith('prop-')){ const id = h.replace('prop-',''); setTimeout(()=>openDetail(id),400); } }
+});
+
+/* ========== CONTACT FORM local save (optionnel) ========== */
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  // FormSubmit will send the message — also keep local copy
+  const name = this.Nom.value, email = this.Email.value || this.Email?.value, phone = this['Téléphone'].value, msg = this.Message.value;
+  let msgs = JSON.parse(localStorage.getItem('ciza_msgs_v1')||'[]'); msgs.push({name,email,phone,msg,date:Date.now()}); localStorage.setItem('ciza_msgs_v1', JSON.stringify(msgs));
+});
+
+/* ========== SHARE URL handling ========== */
+function shareListingURL(id){ const url = location.origin + location.pathname + '#prop-' + id; return url; }
+function shareListingPrompt(id){ const u = shareListingURL(id); if(navigator.share){ navigator.share({title:'CIZA IMMO',text:'Regarde cette annonce',url:u}).catch(()=>{}); } else { navigator.clipboard.writeText(u).then(()=>alert('Lien copié')); } }
+
+/* small bindings to ensure dynamic elements (fav/share) use new handlers */
+function shareListing(id){ shareListingPrompt(id); }
+function toggleFav(id,btn){ toggleFav(id,btn); } // already defined above; kept for compatibility
+</script>
+</body>
+</html>
