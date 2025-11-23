@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CIZA IMMO — Immobilier Luxe Burundi</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0a0a0a;
+        color: white;
+    }
+
+    header {
+        padding: 30px;
+        text-align: center;
+        background: #000;
+        color: #d4af37;
+        font-size: 32px;
+        font-weight: bold;
+        letter-spacing: 3px;
+    }
+
+    section {
+        padding: 40px 20px;
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    h2 {
+        color: #d4af37;
+        margin-bottom: 10px;
+    }
+
+    .card {
+        background: #111;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 25px;
+        border: 1px solid #222;
+    }
+
+    .btn {
+        padding: 10px 18px;
+        border-radius: 8px;
+        background: #d4af37;
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 15px;
+    }
+
+    footer {
+        background: #000;
+        padding: 30px;
+        margin-top: 40px;
+        text-align: center;
+        color: #aaa;
+    }
+
+    .admin-box {
+        background: #111;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        background: #222;
+        border: 1px solid #333;
+        border-radius: 6px;
+        color: white;
+        margin-top: 10px;
+    }
+
+    .property-img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+</style>
+
+<script>
+    // ===== ADMIN PASSWORD SIMPLE =====
+    const ADMIN_PASSWORD = "Missi890";  // change ici si tu veux
+
+    function openAdmin() {
+        let pass = prompt("Mot de passe Admin :");
+        if (pass === ADMIN_PASSWORD) {
+            document.getElementById("adminPanel").style.display = "block";
+            window.location="#admin";
+        } else {
+            alert("Mot de passe incorrect.");
+        }
+    }
+</script>
+
+</head>
+<body>
+
+<header>
+    CIZA IMMO — LUXURY REAL ESTATE
+</header>
+
+<section>
+    <h2>🏡 Propriétés en vedette</h2>
+
+    <div class="card">
+        <img src="https://raw.githubusercontent.com/cizaimmo/cizaimmo.github.io/main/house1.jpg" class="property-img">
+        <h3>Maison moderne — Kiriri</h3>
+        <p>3 chambres • Jardin • Quartier sécurisé</p>
+        <p><strong>Prix : 850 000 BIF / mois</strong></p>
+        <a class="btn" href="tel:+25779945007">Contacter</a>
+    </div>
+
+    <div class="card">
+        <img src="https://raw.githubusercontent.com/cizaimmo/cizaimmo.github.io/main/house2.jpg" class="property-img">
+        <h3>Villa — Mutanga Nord</h3>
+        <p>4 chambres • Vue Lac Tanganyika</p>
+        <p><strong>Prix : 1 200 000 BIF / mois</strong></p>
+        <a class="btn" href="tel:+25779945007">Contacter</a>
+    </div>
+</section>
+
+<section>
+    <h2 id="contact">📞 Contact</h2>
+
+    <div class="card">
+        <p>Email : <strong>cizaimmo@yahoo.com</strong></p>
+        <p>Canada : +1 514 502 9503</p>
+        <p>Burundi : +257 79 945 007</p>
+    </div>
+
+    <h3>Suivez-nous</h3>
+    <p>📘 Facebook • 📸 Instagram • 🟨 TikTok</p>
+</section>
+
+<section>
+    <h2>🔐 Zone Admin (sécurisée)</h2>
+    <a class="btn" onclick="openAdmin()">Entrer dans l’Admin</a>
+
+    <div id="adminPanel" class="admin-box" style="display:none;">
+        <h3>Ajouter une nouvelle annonce</h3>
+        <p>(les annonces seront générées automatiquement en HTML)</p>
+
+        <textarea rows="6" placeholder="Description"></textarea>
+        <input type="text" placeholder="Prix">
+        <input type="text" placeholder="Lien photo">
+        <a class="btn">Générer l’annonce</a>
+    </div>
+</section>
+
+<footer>
+    © 2025 — CIZA IMMO. Tous droits réservés.
+</footer>
+
+</body>
+</html>
