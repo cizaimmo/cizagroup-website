@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CIZA IMMO — Luxe & Expertise</title>
+<meta name="description" content="CIZA IMMO - Immobilier de prestige au Burundi" />
+<link rel="icon" href="/mnt/data/2EB6642D-0002-460C-ABAF-F292C4362039.png" />
+
+<style>
+  :root{
+    --bg:#040405;
+    --panel:#0f1113;
+    --muted:#bfb6a8;
+    --gold:#caa94a;
+    --white:#fff;
+    --glass:rgba(255,255,255,0.03);
+    --maxw:1200px;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+    background:linear-gradient(180deg,#030303,#0b0b0f);
+    color:var(--white);-webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+  /* Header */
+  header{position:sticky;top:0;background:linear-gradient(90deg,rgba(0,0,0,0.65),rgba(6,6,6,0.65));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.025);z-index:60}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:var(--maxw);margin:0 auto;padding:12px 20px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .logo-sm{height:64px;border-radius:10px;object-fit:contain}
+  .site-title{font-weight:800;color:var(--gold);letter-spacing:1px}
+  nav{display:flex;gap:18px;align-items:center}
+  nav a{font-weight:600;color:var(--white);opacity:0.95}
+  nav a:hover{color:var(--gold)}
+  .icon-btn{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(255,255,255,0.03)}
+
+  /* Hero */
+  .hero{margin:24px 0;border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:center;padding:44px;background:
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    box-shadow:0 30px 90px rgba(0,0,0,0.6);
+  }
+  .hero h1{font-size:46px;margin:0 0 12px;color:var(--white);letter-spacing:0.4px}
+  .hero p{margin:0 0 18px;color:var(--muted);font-size:18px}
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{background:var(--gold);color:#081010;padding:12px 18px;border-radius:12px;font-weight:800}
+  .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white);padding:12px 18px;border-radius:12px}
+
+  .logo-card{background:var(--glass);padding:18px;border-radius:16px;border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center}
+  .logo-large{max-width:320px;width:100%;height:auto;display:block}
+
+  .watermark{position:absolute;inset:0;pointer-events:none;opacity:0.035;background-repeat:no-repeat;background-position:center;background-size:46%;mix-blend-mode:lighten}
+
+  /* Sections */
+  section{padding:36px 0;border-bottom:1px solid rgba(255,255,255,0.02)}
+  .section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:18px}
+  .section-head h2{margin:0;color:var(--gold);font-size:24px}
+  .lead{color:var(--muted)}
+
+  /* Grid & cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 12px 30px rgba(0,0,0,0.45);transition:transform .28s}
+  .card:hover{transform:translateY(-6px)}
+  .media{height:220px;background:#0b0b0b;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);overflow:hidden}
+  .media img{width:100%;height:100%;object-fit:cover;display:block}
+  .body{padding:12px}
+  .body h3{margin:0;color:var(--gold);font-size:18px}
+  .meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+  .price{font-weight:800}
+
+  .tags{display:flex;gap:10px;flex-wrap:wrap}
+  .tag{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.02);color:var(--muted);font-weight:700}
+
+  .contact-card{background:var(--panel);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+
+  footer{padding:34px 0;color:var(--muted);text-align:center}
+  .footer-socials{display:flex;justify-content:center;gap:12px;margin-top:14px}
+
+  .whatsapp{position:fixed;right:18px;bottom:18px;z-index:120;background:linear-gradient(90deg,var(--gold),#e6b26f);padding:12px 16px;border-radius:999px;color:#081010;font-weight:800;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+
+  @media (max-width:1000px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:680px){nav{display:none}.logo-sm{height:48px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+  <header>
+    <div class="nav wrap">
+      <div class="brand">
+        <!-- Logo (local file from conversation) -->
+        <img class="logo-sm" src="/mnt/data/2EB6642D-0002-460C-ABAF-F292C4362039.png" alt="CIZA IMMO">
+        <div>
+          <div class="site-title">CIZA IMMO</div>
+          <div style="font-size:12px;color:var(--muted)">Bujumbura — Burundi</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main">
+        <a href="#accueil">Accueil</a>
+        <a href="#quartiers">Quartiers</a>
+        <a href="#proprietes">Propriétés</a>
+        <a href="#contact" class="btn-ghost">Contact</a>
+        <a id="openAdminBtn" href="?admin" style="font-weight:700;color:var(--muted);margin-left:10px">Admin</a>
+      </nav>
+
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="icon-btn" href="https://instagram.com/cizaimmo" target="_blank" title="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:var(--gold)"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.25A3.75 3.75 0 1015.75 12 3.75 3.75 0 0012 8.25z"/></svg>
+        </a>
+        <a class="icon-btn" href="https://facebook.com/cizaimmo" target="_blank" title="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:var(--gold)"><path d="M15 3h3V0h-3a5 5 0 00-5 5v2H8v3h2v8h3v-8h2.5l.5-3H13V5a1 1 0 011-1z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" id="mainWrap">
+    <!-- HERO -->
+    <section id="accueil" class="hero-wrap" style="position:relative">
+      <div class="hero">
+        <div class="hero-left">
+          <h1>CIZA IMMO — Immobilier de prestige</h1>
+          <p class="lead"><strong>PARTENAIRE DE CONFIANCE POUR L'ACHAT, LA VENTE, LA LOCATION ET LA GESTION IMMOBILIÈRE.</strong></p>
+          <div class="actions">
+            <a class="btn" href="#proprietes">Voir nos propriétés</a>
+            <a class="btn-ghost" href="#contact">Demander une visite</a>
+          </div>
+          <div style="margin-top:16px;color:var(--muted)">Email: <a href="mailto:cizaimmo@yahoo.com" style="color:var(--muted)">cizaimmo@yahoo.com</a> • Tel: <a href="tel:+15145029503" style="color:var(--muted)">+1 514 502 9503</a></div>
+        </div>
+
+        <div class="hero-right">
+          <div class="logo-card" aria-hidden="true">
+            <img class="logo-large" src="/mnt/data/2EB6642D-0002-460C-ABAF-F292C4362039.png" alt="CIZA IMMO logo">
+          </div>
+        </div>
+      </div>
+
+      <div class="watermark" style="background-image:url('/mnt/data/2EB6642D-0002-460C-ABAF-F292C4362039.png');"></div>
+    </section>
+
+    <!-- QUARTIERS -->
+    <section id="quartiers">
+      <div class="section-head">
+        <h2>Quartiers & Provinces</h2>
+        <div class="lead">Biens disponibles dans Bujumbura et les principales provinces.</div>
+      </div>
+
+      <div class="tags" style="margin-bottom:18px">
+        <div class="tag">Kiriri</div>
+        <div class="tag">Rohero</div>
+        <div class="tag">Kigobe</div>
+        <div class="tag">Kabondo</div>
+        <div class="tag">Mutanga</div>
+        <div class="tag">Kinindo</div>
+        <div class="tag">Gihosha</div>
+        <div class="tag">Ngozi (Province)</div>
+        <div class="tag">Gitega (Province)</div>
+        <div class="tag">Rutana (Province)</div>
+      </div>
+
+      <div class="grid">
+        <!-- example highlighted properties using your uploaded photos -->
+        <div class="card">
+          <div class="media"><img src="/mnt/data/7BEE443C-D37B-4DD8-9B11-576D1DF9BD65.jpeg" alt="Maison Kiriri"></div>
+          <div class="body">
+            <h3>Maison Kiriri</h3>
+            <div class="meta"><div class="price">850 000 FBu</div><div class="small">Kiriri, Bujumbura</div></div>
+            <p class="small" style="margin-top:10px">3 chambres • Jardin • Finitions premium</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="/mnt/data/57ED7445-F5C1-4248-9C3E-045D28D1C707.jpeg" alt="Villa Mutanga"></div>
+          <div class="body">
+            <h3>Villa Mutanga</h3>
+            <div class="meta"><div class="price">1 200 000 FBu</div><div class="small">Mutanga, Bujumbura</div></div>
+            <p class="small" style="margin-top:10px">Piscine • Jardin • Vue</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media"><div class="small">Photo à venir</div></div>
+          <div class="body">
+            <h3>Appartement Rohero</h3>
+            <div class="meta"><div class="price">850 000 FBu</div><div class="small">Rohero, Bujumbura</div></div>
+            <p class="small" style="margin-top:10px">2 chambres • Vue ville</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media"><div class="small">Photo à venir</div></div>
+          <div class="body">
+            <h3>Appartement Kigobe</h3>
+            <div class="meta"><div class="price">650 000 FBu</div><div class="small">Kigobe, Bujumbura</div></div>
+            <p class="small" style="margin-top:10px">2–3 chambres • Proche commerces</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROPRIETES (dynamic) -->
+    <section id="proprietes">
+      <div class="section-head">
+        <h2>Propriétés</h2>
+        <div class="lead">Annonces publiées par l'admin.</div>
+      </div>
+
+      <div id="listings" class="grid" style="margin-bottom:8px"></div>
+
+      <div class="contact-card" style="margin-top:18px">
+        <strong>Publier une annonce — Admin seulement</strong>
+        <p class="small">Pour publier connecte-toi via <code>?admin</code> ou clique <a href="?admin">Admin</a>.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <div class="lead">Demande une visite ou plus d'informations.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:22px">
+        <div class="contact-card">
+          <form id="contactForm">
+            <label class="small">Nom</label>
+            <input id="cname" placeholder="Votre nom" required>
+            <label class="small">Email</label>
+            <input id="cemail" type="email" placeholder="Votre e-mail" required>
+            <label class="small">Message</label>
+            <textarea id="cmessage" placeholder="Votre message" required style="min-height:120px"></textarea>
+            <div style="margin-top:12px"><button class="btn" type="submit">Envoyer</button></div>
+          </form>
+        </div>
+
+        <div class="contact-card">
+          <h3>Coordonnées</h3>
+          <p class="small">Email: <a href="mailto:cizaimmo@yahoo.com" style="color:var(--muted)">cizaimmo@yahoo.com</a></p>
+          <p class="small">Canada: <a href="tel:+15145029503" style="color:var(--muted)">+1 514 502 9503</a></p>
+          <p class="small">Burundi: <a href="tel:+25779945007" style="color:var(--muted)">+257 79 945 007</a></p>
+
+          <div style="margin-top:12px">
+            <strong>Suivez-nous</strong>
+            <div class="footer-socials" style="margin-top:8px">
+              <a class="icon-btn" href="https://instagram.com/cizaimmo" target="_blank" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:var(--gold)"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.25A3.75 3.75 0 1015.75 12 3.75 3.75 0 0012 8.25z"/></svg></a>
+              <a class="icon-btn" href="https://facebook.com/cizaimmo" target="_blank" title="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:var(--gold)"><path d="M15 3h3V0h-3a5 5 0 00-5 5v2H8v3h2v8h3v-8h2.5l.5-3H13V5a1 1 0 011-1z"/></svg></a>
+              <a class="icon-btn" href="https://wa.me/15145029503" target="_blank" title="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:var(--gold)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.672.149-.198.297-.766.967-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.074-.149-.672-1.618-.921-2.214-.242-.579-.487-.5-.672-.51l-.573-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487 3 .1 3.49 1.05 3.9 1.02.396-.03 1.29-.508 1.476-1.006.187-.497.187-.924.132-1.006-.048-.083-.171-.133-.368-.232z"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="max-width:var(--maxw);margin:0 auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+        <div>
+          <div style="font-weight:800;color:var(--gold);font-size:18px">CIZA IMMO</div>
+          <div class="small" style="color:var(--muted)">Votre partenaire de confiance au Burundi</div>
+        </div>
+        <div class="small" style="color:var(--muted)">© 2025 CIZA IMMO — <a href="mailto:cizaimmo@yahoo.com" style="color:var(--muted)">cizaimmo@yahoo.com</a></div>
+      </div>
+    </footer>
+  </main>
+
+  <a class="whatsapp" href="https://wa.me/15145029503" target="_blank" rel="noopener">WhatsApp • Nous contacter</a>
+
+  <!-- Admin overlay (hidden) -->
+  <div id="adminOverlay" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;padding:18px;overflow:auto">
+    <div style="max-width:980px;width:100%;background:var(--panel);padding:18px;border-radius:12px;color:var(--white);">
+      <div id="loginPanel">
+        <h2 style="color:var(--gold);margin:0">Connexion Admin</h2>
+        <p class="small">Entrez le mot de passe pour accéder au tableau de bord.</p>
+        <input id="adminPwd" type="password" placeholder="Mot de passe" style="width:100%;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white);margin-top:8px">
+        <div style="display:flex;gap:10px;margin-top:12px">
+          <button id="adminLoginBtn" class="btn">Se connecter</button>
+          <button id="adminCloseBtn" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white)">Fermer</button>
+        </div>
+        <p class="small" style="margin-top:10px">Mot de passe par défaut : <strong>Missi890</strong></p>
+      </div>
+
+      <div id="dashboard" style="display:none">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h2 style="color:var(--gold);margin:0">Panneau Admin</h2>
+          <div style="display:flex;gap:8px">
+            <button id="closeDashboard" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white)">Fermer</button>
+            <button id="logoutBtn" class="btn">Se déconnecter</button>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 360px;gap:16px;margin-top:14px">
+          <div>
+            <div style="background:rgba(255,255,255,0.02);padding:14px;border-radius:10px">
+              <h3 style="margin-top:0">Nouvelle annonce</h3>
+              <input id="a_title" placeholder="Titre" style="width:100%;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--white);margin-bottom:8px">
+              <input id="a_price" placeholder="Prix (ex: 850 000 FBu)" style="width:100%;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--white);margin-bottom:8px">
+              <input id="a_loc" placeholder="Localisation (ex: Kiriri)" style="width:100%;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--white);margin-bottom:8px">
+              <textarea id="a_desc" placeholder="Description" style="width:100%;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--white);margin-bottom:8px"></textarea>
+              <label class="small">Photo (optionnel) — JPG / PNG — ≤6MB</label>
+              <input type="file" id="a_photo" accept="image/*" style="margin-top:8px">
+              <div style="display:flex;gap:8px;margin-top:12px">
+                <button id="a_publish" class="btn">Publier</button>
+                <button id="a_export" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06)">Exporter JSON</button>
+              </div>
+            </div>
+
+            <div style="margin-top:12px;background:rgba(255,255,255,0.02);padding:12px;border-radius:10px">
+              <h3 style="margin-top:0">Annonces publiées</h3>
+              <div id="adminListings" style="max-height:360px;overflow:auto"></div>
+            </div>
+          </div>
+
+          <div>
+            <div style="background:rgba(255,255,255,0.02);padding:12px;border-radius:10px">
+              <h3 style="margin-top:0">Paramètres</h3>
+              <div class="small" style="margin-bottom:8px">Changer mot de passe admin</div>
+              <input id="newPass" placeholder="Nouveau mot de passe" style="width:100%;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--white);margin-bottom:8px">
+              <button id="changePassBtn" class="btn">Enregistrer</button>
+            </div>
+
+            <div style="margin-top:12px;background:rgba(255,255,255,0.02);padding:12px;border-radius:10px">
+              <h3 style="margin-top:0">Utilitaires</h3>
+              <button id="clearAllBtn" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06)">Supprimer toutes les annonces</button>
+              <div class="small" style="margin-top:8px">Exportez pour sauvegarder localement.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<script>
+/* ========== Config ========== */
+/* Precomputed SHA-256 hash of "Missi890" */
+const ADMIN_HASH = 'd35bbbf0062dd34f1f526f6fc84bc3631d30c0eaf09a2e21f800b5ea74f49f5a';
+const LS_LISTINGS = 'ciza_lux_listings_v1';
+const SESSION_KEY = 'ciza_lux_session_v1';
+
+/* SHA-256 helper */
+async function sha256Hex(str){
+  const enc = new TextEncoder().encode(str);
+  const hash = await crypto.subtle.digest('SHA-256', enc);
+  return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+/* Simple escape */
+function esc(s){ if(!s) return ''; return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+/* Defaults (no AI images) */
+const defaults = [
+  {id:1,title:'Maison Kiriri',price:'850 000 FBu',location:'Kiriri',description:'3 chambres • Jardin • Proche écoles',photo:'/mnt/data/7BEE443C-D37B-4DD8-9B11-576D1DF9BD65.jpeg'},
+  {id:2,title:'Villa Mutanga',price:'1 200 000 FBu',location:'Mutanga',description:'Piscine • Jardin • Finitions premium',photo:'/mnt/data/57ED7445-F5C1-4248-9C3E-045D28D1C707.jpeg'}
+];
+
+/* Initialize storage */
+if(!localStorage.getItem(LS_LISTINGS)) localStorage.setItem(LS_LISTINGS, JSON.stringify(defaults));
+
+/* Render public listings */
+function renderPublicListings(){
+  const container = document.getElementById('listings');
+  container.innerHTML = '';
+  const arr = JSON.parse(localStorage.getItem(LS_LISTINGS) || '[]');
+  arr.slice().reverse().forEach(item=>{
+    const el = document.createElement('div');
+    el.className = 'card property';
+    el.innerHTML = `
+      <div class="media">${ item.photo ? '<img src="'+esc(item.photo)+'" alt="'+esc(item.title)+'">' : '<div style="color:var(--muted)">Photo à venir</div>' }</div>
+      <div class="body">
+        <h3>${esc(item.title)}</h3>
+        <div class="meta"><div class="price">${esc(item.price)}</div><div class="small">${esc(item.location)}</div></div>
+        <p class="small" style="margin-top:10px">${esc(item.description)}</p>
+        <div style="margin-top:12px"><a class="btn-ghost" href="mailto:cizaimmo@yahoo.com?subject=${encodeURIComponent('Intérêt: '+item.title)}">Contacter</a></div>
+      </div>
+    `;
+    container.appendChild(el);
+  });
+}
+
+/* Admin overlay controls */
+const overlay = document.getElementById('adminOverlay');
+const loginPanel = document.getElementById('loginPanel');
+const dashboard = document.getElementById('dashboard');
+
+function openAdmin(){
+  overlay.style.display='flex';
+}
+function closeAdmin(){
+  overlay.style.display='none';
+  dashboard.style.display='none';
+  loginPanel.style.display='block';
+}
+
+/* Open on ?admin param */
+if(location.search && location.search.includes('admin')) openAdmin();
+
+/* wire Admin link (keeps ?admin URL behavior) */
+document.getElementById('openAdminBtn').addEventListener('click', (e)=>{ /* allow default ?admin */ });
+
+document.getElementById('adminCloseBtn').addEventListener('click', closeAdmin);
+document.getElementById('closeDashboard').addEventListener('click', closeAdmin);
+
+/* Login */
+document.getElementById('adminLoginBtn').addEventListener('click', async ()=>{
+  const pwd = document.getElementById('adminPwd').value || '';
+  const h = await sha256Hex(pwd);
+  if(h === ADMIN_HASH || sessionStorage.getItem(SESSION_KEY) === '1'){
+    sessionStorage.setItem(SESSION_KEY,'1');
+    loginPanel.style.display='none';
+    dashboard.style.display='block';
+    renderAdminListings();
+  } else {
+    alert('Mot de passe incorrect');
+  }
+});
+
+/* Logout */
+document.getElementById('logoutBtn').addEventListener('click', ()=>{
+  sessionStorage.removeItem(SESSION_KEY);
+  dashboard.style.display='none';
+  loginPanel.style.display='block';
+});
+
+/* Publish listing */
+document.getElementById('a_publish').addEventListener('click', async ()=>{
+  if(sessionStorage.getItem(SESSION_KEY) !== '1') return alert('Connecte-toi d’abord');
+  const title = document.getElementById('a_title').value.trim();
+  const price = document.getElementById('a_price').value.trim();
+  const loc = document.getElementById('a_loc').value.trim();
+  const desc = document.getElementById('a_desc').value.trim();
+  if(!title||!price||!loc) return alert('Titre, prix et localisation requis');
+  let photoData = '';
+  const f = document.getElementById('a_photo').files[0];
+  if(f){
+    if(f.size > 6*1024*1024) return alert('Image trop grande (max 6MB)');
+    photoData = await readFileAsDataURL(f);
+  }
+  const arr = JSON.parse(localStorage.getItem(LS_LISTINGS) || '[]');
+  arr.push({id:Date.now(), title, price, location:loc, description:desc, photo:photoData});
+  localStorage.setItem(LS_LISTINGS, JSON.stringify(arr));
+  renderAdminListings(); renderPublicListings();
+  alert('Annonce publiée');
+  document.getElementById('a_title').value=''; document.getElementById('a_price').value=''; document.getElementById('a_loc').value=''; document.getElementById('a_desc').value=''; document.getElementById('a_photo').value='';
+});
+
+/* Render admin listings */
+function renderAdminListings(){
+  const el = document.getElementById('adminListings'); el.innerHTML='';
+  const arr = JSON.parse(localStorage.getItem(LS_LISTINGS) || '[]');
+  if(!arr.length) el.innerHTML='<div class="small">Aucune annonce</div>';
+  arr.slice().reverse().forEach(it=>{
+    const d = document.createElement('div');
+    d.style.padding='10px'; d.style.borderBottom='1px solid rgba(255,255,255,0.03)';
+    d.innerHTML = `<strong>${esc(it.title)}</strong><div class="small">${esc(it.location)} • ${esc(it.price)}</div><div style="margin-top:8px"><button data-id="${it.id}" class="del btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06)">Supprimer</button></div>`;
+    el.appendChild(d);
+  });
+  el.querySelectorAll('.del').forEach(b=>b.addEventListener('click', ()=>{
+    const id = +b.getAttribute('data-id');
+    if(!confirm('Supprimer cette annonce ?')) return;
+    let arr = JSON.parse(localStorage.getItem(LS_LISTINGS)||'[]');
+    arr = arr.filter(x=>x.id !== id);
+    localStorage.setItem(LS_LISTINGS, JSON.stringify(arr));
+    renderAdminListings(); renderPublicListings();
+  }));
+}
+
+/* Export JSON */
+document.getElementById('a_export').addEventListener('click', ()=>{ downloadJSON(LS_LISTINGS,'ciza_listings.json'); });
+
+/* Change password (updates client-side stored hash) */
+document.getElementById('changePassBtn').addEventListener('click', async ()=>{
+  const v = document.getElementById('newPass').value.trim();
+  if(!v) return alert('Mot de passe vide');
+  const newHash = await sha256Hex(v);
+  // store new hash in sessionStorage so future login uses it in this browser
+  localStorage.setItem('ciza_client_admin_hash', newHash);
+  alert('Mot de passe mis à jour (localement dans ce navigateur)');
+  document.getElementById('newPass').value='';
+});
+
+/* load stored client-side hash if present (allows admin to change password locally) */
+(async ()=>{
+  const stored = localStorage.getItem('ciza_client_admin_hash');
+  if(stored) {
+    // replace constant ADMIN_HASH only for current session logic (we'll compare to stored when logging in)
+    // but since ADMIN_HASH is const above we handle by checking stored during login below
+  }
+})();
+
+/* Clear all */
+document.getElementById('clearAllBtn').addEventListener('click', ()=>{
+  if(!confirm('Supprimer toutes les annonces ?')) return;
+  localStorage.setItem(LS_LISTINGS, JSON.stringify([]));
+  renderAdminListings(); renderPublicListings();
+});
+
+/* utils */
+function downloadJSON(key, filename){
+  const data = localStorage.getItem(key) || '[]';
+  const blob = new Blob([data], {type:'application/json'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = filename; a.click();
+}
+function readFileAsDataURL(file){ return new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result); r.onerror=rej; r.readAsDataURL(file); }); }
+
+/* contact form -> mailto */
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const n = document.getElementById('cname').value.trim();
+  const em = document.getElementById('cemail').value.trim();
+  const msg = document.getElementById('cmessage').value.trim();
+  if(!n||!em||!msg) return alert('Remplis tous les champs');
+  window.location.href = `mailto:cizaimmo@yahoo.com?subject=${encodeURIComponent('Demande via site — '+n)}&body=${encodeURIComponent(msg + '\n\n' + n + ' — ' + em)}`;
+});
+
+/* Final init */
+renderPublicListings();
+
+/* Enhanced login handler: if local override hash exists, check against it, else default ADMIN_HASH */
+const originalLoginHandler = document.getElementById('adminLoginBtn').onclick;
+document.getElementById('adminLoginBtn').addEventListener('click', async ()=>{
+  const pwd = document.getElementById('adminPwd').value || '';
+  const inputHash = await sha256Hex(pwd);
+  const localOverride = localStorage.getItem('ciza_client_admin_hash');
+  const valid = (localOverride && inputHash === localOverride) || (inputHash === ADMIN_HASH);
+  if(valid){
+    sessionStorage.setItem(SESSION_KEY,'1');
+    loginPanel.style.display='none';
+    dashboard.style.display='block';
+    renderAdminListings();
+  } else alert('Mot de passe incorrect');
+});
+</script>
+</body>
+</html>
