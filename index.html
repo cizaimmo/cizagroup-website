@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CIZA IMMO — Luxe Noir & Or (Dynamique)</title>
+<meta name="description" content="CIZA IMMO — Immobilier prestige. Contact : cizaimmo@yahoo.com • WhatsApp +25779945007" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<!-- TradingView widget (indices) will load below in body -->
+<style>
+  :root{
+    --bg:#0f0f0f; --card:#141414; --gold:#c9a86a; --muted:#bdb7a8; --soft:#f2efe6;
+    --glass:rgba(255,255,255,0.03); --radius:14px; --maxw:1200px;
+    --accent-shadow: 0 10px 40px rgba(201,168,106,0.06);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:linear-gradient(180deg,var(--bg),#070707);color:var(--soft);font-family:Inter,system-ui,Arial,-apple-system;line-height:1.4}
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:20px}
+
+  /* Header */
+  header{background:linear-gradient(90deg,#080808,#0d0d0d);padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.03);position:sticky;top:0;z-index:40}
+  .nav{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 18px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .logo-img{height:64px;border-radius:10px;object-fit:contain;box-shadow:var(--accent-shadow)}
+  .site-title{font-weight:900;color:var(--gold);font-size:20px;letter-spacing:1px}
+  .site-sub{font-size:12px;color:var(--muted)}
+  nav a{margin-left:12px;color:var(--muted);text-decoration:none;font-weight:700;padding:8px 10px;border-radius:8px}
+  nav a:hover{color:black;background:var(--gold)}
+
+  /* Hero */
+  .hero{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start;margin-top:18px}
+  .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:26px;border-radius:16px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 30px 60px rgba(0,0,0,0.6)}
+  h1{margin:0;color:var(--gold);font-family:Georgia,serif;font-size:30px}
+  .lead{color:var(--muted);margin-top:10px}
+
+  .controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  input,select,textarea{padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--soft)}
+  .btn{background:var(--gold);color:#081010;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:800}
+  .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+  /* chips */
+  .chip-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+  .chip{padding:10px 14px;border-radius:999px;background:var(--card);border:1px solid rgba(255,255,255,0.03);cursor:pointer;font-weight:700;color:var(--muted)}
+  .chip.active{outline:2px solid rgba(201,168,106,0.12);box-shadow:var(--accent-shadow);color:var(--gold)}
+
+  /* listings */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:18px}
+  .card{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);transition:transform .18s}
+  .card:hover{transform:translateY(-6px)}
+  .media{height:220px;overflow:hidden;background:#0a0a0a;display:flex;align-items:center;justify-content:center}
+  .media img{width:100%;height:100%;object-fit:cover;display:block}
+  .body{padding:14px}
+  .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+  .price{font-weight:900;color:var(--gold)}
+
+  /* widgets */
+  .widgets{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+  .widget{background:var(--card);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+  .widget h3{margin:0;color:var(--gold)}
+
+  /* testimonials */
+  .testimonials{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:18px}
+  .testimonial{background:linear-gradient(180deg,rgba(201,168,106,0.04),rgba(201,168,106,0.01));padding:12px;border-radius:10px;color:var(--muted)}
+
+  /* contact */
+  form.contact{display:grid;gap:10px;margin-top:12px}
+  .small{color:var(--muted);font-size:13px}
+
+  footer{margin-top:28px;padding:18px;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted);text-align:center}
+
+  .whatsapp{position:fixed;right:18px;bottom:18px;z-index:120;background:linear-gradient(90deg,var(--gold),#e6c775);padding:12px 16px;border-radius:999px;color:#081010;font-weight:900;text-decoration:none}
+
+  /* modal */
+  .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;padding:18px;z-index:999}
+  .modal{width:100%;max-width:1100px;background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);overflow:auto}
+  .modal h2{color:var(--gold)}
+
+  @media(max-width:980px){.hero{grid-template-columns:1fr}.widgets{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav wrap">
+    <div class="brand">
+      <!-- Logo (local) -->
+      <img class="logo-img" src="/mnt/data/D0D51A21-2D41-4456-B343-A74111949C58.png" alt="CIZA IMMO">
+      <div>
+        <div class="site-title">CIZA IMMO</div>
+        <div class="site-sub">Bujumbura — Burundi • Immobilier de prestige</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#annonces">Annonces</a>
+      <a href="#quartiers">Quartiers</a>
+      <a href="#provinces">Provinces</a>
+      <a href="#news">Actualités</a>
+      <a href="#meteo">Météo</a>
+      <a id="openAdminLink" href="#">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="mainWrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-card">
+      <div class="small">IMMOBILIER DE PRESTIGE</div>
+      <h1>CIZA IMMO — Maisons, Villas & Terrains</h1>
+      <p class="lead">Achat • Vente • Location • Gestion locative — Service local dans toutes les provinces du Burundi.</p>
+
+      <div class="controls">
+        <input id="searchInput" placeholder="Rechercher (quartier, titre, description...)">
+        <select id="filterType"><option value="">Type (tous)</option><option>Maison</option><option>Appartement</option><option>Villa</option><option>Terrain</option></select>
+        <input id="priceMin" placeholder="Prix min (FBu)">
+        <input id="priceMax" placeholder="Prix max (FBu)">
+        <button id="applyFilters" class="btn">Filtrer</button>
+        <button id="clearFilters" class="btn ghost">Réinitialiser</button>
+      </div>
+
+      <div class="chip-grid" id="quickChips" aria-hidden="false"></div>
+    </div>
+
+    <aside style="width:360px">
+      <div style="background:var(--card);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)">
+        <div style="font-weight:900;color:var(--gold)">Contact & Réseaux</div>
+        <div style="margin-top:8px;color:var(--muted)">Email: <a href="mailto:cizaimmo@yahoo.com" style="color:var(--gold)">cizaimmo@yahoo.com</a></div>
+        <div style="margin-top:6px;color:var(--muted)">WhatsApp: <a href="https://wa.me/25779945007" style="color:var(--gold)">+257 79 945 007</a></div>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <a class="btn" href="https://wa.me/25779945007" target="_blank">WhatsApp</a>
+          <a class="btn ghost" href="mailto:cizaimmo@yahoo.com">Email</a>
+        </div>
+      </div>
+
+      <div style="margin-top:12px" class="widget">
+        <h3 style="color:var(--gold);margin:0">Indices Boursiers</h3>
+        <!-- TradingView mini widget -->
+        <div id="tradingview-widget" style="margin-top:8px"></div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- QUARTIERS -->
+  <section id="quartiers" style="margin-top:20px">
+    <h2 style="color:var(--gold)">Quartiers de Bujumbura</h2>
+    <div id="quarters" class="chip-grid"></div>
+  </section>
+
+  <!-- PROVINCES -->
+  <section id="provinces" style="margin-top:18px">
+    <h2 style="color:var(--gold)">Provinces</h2>
+    <div id="provs" class="chip-grid"></div>
+  </section>
+
+  <!-- WEATHER & NEWS -->
+  <section style="margin-top:18px">
+    <div class="widgets">
+      <div class="widget">
+        <h3>🌤️ Météo — Bujumbura</h3>
+        <div style="margin-top:10px">
+          <iframe
+            src="https://www.meteoblue.com/en/weather/widget/daily/bujumbura_burundi_433635"
+            style="border:2px solid var(--gold);border-radius:10px;width:100%;height:320px;background:transparent"
+            frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+        <div class="small" style="margin-top:8px;color:var(--muted)">Source : meteoblue</div>
+      </div>
+
+      <div class="widget">
+        <h3>📰 Actualité mondiale</h3>
+        <div style="margin-top:10px">
+          <iframe
+            src="https://www.bing.com/news/search?q=world+news&FORM=HDRSC6"
+            style="border:2px solid var(--gold);border-radius:10px;width:100%;height:320px;background:transparent"
+            frameborder="0" loading="lazy"></iframe>
+        </div>
+        <div class="small" style="margin-top:8px;color:var(--muted)">Source : Bing News</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANNONCES -->
+  <section id="annonces" style="margin-top:18px">
+    <h2 style="color:var(--gold)">Annonces</h2>
+    <div id="listings" class="grid" aria-live="polite"></div>
+    <div class="small" style="margin-top:12px;color:var(--muted)">Seul l'admin peut publier — visiteurs ne peuvent pas publier.</div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="temoignages" style="margin-top:18px">
+    <h2 style="color:var(--gold)">Témoignages</h2>
+    <div id="testimonials" class="testimonials"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="margin-top:18px">
+    <h2 style="color:var(--gold)">Contact</h2>
+    <form id="contactForm" class="contact" action="https://formsubmit.co/cizaimmo@yahoo.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input name="Nom" placeholder="Nom" required>
+      <input name="Email" type="email" placeholder="Email" required>
+      <input name="Téléphone" placeholder="Téléphone" required>
+      <textarea name="Message" rows="5" placeholder="Votre message" required></textarea>
+      <button class="btn" type="submit">Envoyer</button>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+    <div>
+      <div style="font-weight:900;color:var(--gold)">CIZA IMMO</div>
+      <div class="small">cizaimmo@yahoo.com • +257 79 945 007</div>
+    </div>
+    <div class="small">© CIZA IMMO — Tous droits réservés</div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/25779945007" target="_blank">WhatsApp • +257 79 945 007</a>
+
+<!-- Listing detail modal -->
+<div id="modal" class="modal-bg" aria-hidden="true"><div class="modal" role="dialog" aria-modal="true"><button id="closeModal" style="float:right;background:transparent;border:none;color:var(--muted);font-weight:800">FERMER ✕</button><div id="modalContent"></div></div></div>
+
+<!-- Admin overlay (login + dashboard) -->
+<div id="adminOverlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;padding:18px;z-index:1000">
+  <div class="modal" style="max-width:1000px">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h2 style="color:var(--gold);margin:0">Panneau Admin</h2>
+      <div style="display:flex;gap:8px">
+        <button id="closeAdminBtn" class="btn btn-ghost">Fermer</button>
+      </div>
+    </div>
+
+    <div id="loginPanel" style="margin-top:12px">
+      <div style="color:var(--muted);margin-bottom:8px">Connexion admin — entre le mot de passe (nom d'utilisateur implicite).</div>
+      <input id="adminPwd" type="password" placeholder="Mot de passe admin">
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button id="adminLoginBtn" class="btn">Se connecter</button>
+        <button id="showSetupBtn" class="btn btn-ghost">Créer / Réinitialiser mot de passe local</button>
+      </div>
+      <div class="small" style="margin-top:10px;color:var(--muted)">Mot de passe par défaut (initial) : <strong>Missi890</strong> — il est **stocké haché** et **n'est pas visible** par les visiteurs.</div>
+    </div>
+
+    <div id="setupPanel" style="display:none;margin-top:12px">
+      <div style="margin-bottom:8px;color:var(--muted)">Créer / modifier le mot de passe admin pour ce navigateur (stocké localement hashé).</div>
+      <input id="setupPass" type="password" placeholder="Nouveau mot de passe">
+      <input id="setupPass2" type="password" placeholder="Confirmer le mot de passe" style="margin-top:8px">
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <button id="setupSave" class="btn">Enregistrer</button>
+        <button id="setupCancel" class="btn btn-ghost">Annuler</button>
+      </div>
+    </div>
+
+    <div id="dashboard" style="display:none;margin-top:12px">
+      <div style="display:grid;grid-template-columns:1fr 380px;gap:12px">
+        <div>
+          <div style="background:var(--card);padding:12px;border-radius:10px">
+            <h3 style="color:var(--gold)">Nouvelle annonce</h3>
+            <input id="a_title" placeholder="Titre (ex: Maison Kiriri)">
+            <input id="a_price" placeholder="Prix (ex: 850000000)">
+            <input id="a_loc" placeholder="Quartier (ex: Kigobe)">
+            <select id="a_type"><option>Maison</option><option>Appartement</option><option>Villa</option><option>Terrain</option></select>
+            <textarea id="a_desc" placeholder="Description courte"></textarea>
+            <label class="small">Photos (JPG/PNG, max 6MB chacune)</label>
+            <input id="a_photos" type="file" accept="image/*" multiple>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <button id="a_publish" class="btn">Publier</button>
+              <button id="a_export" class="btn btn-ghost">Exporter JSON</button>
+              <button id="a_import_btn" class="btn btn-ghost">Importer JSON</button>
+              <input id="a_import" type="file" accept="application/json" style="display:none">
+            </div>
+          </div>
+
+          <div style="margin-top:12px;background:var(--card);padding:12px;border-radius:10px">
+            <h3 style="color:var(--gold)">Annonces publiées</h3>
+            <div id="adminListings" style="max-height:360px;overflow:auto"></div>
+          </div>
+        </div>
+
+        <div>
+          <div style="background:var(--card);padding:12px;border-radius:10px">
+            <h3 style="color:var(--gold)">Sécurité</h3>
+            <div class="small" style="margin-bottom:8px;color:var(--muted)">Changer mot de passe admin (nécessite mot de passe actuel)</div>
+            <input id="oldPass" type="password" placeholder="Mot de passe actuel">
+            <input id="newPass" type="password" placeholder="Nouveau mot de passe" style="margin-top:8px">
+            <button id="changePassBtn" class="btn btn-ghost" style="margin-top:8px">Changer le mot de passe</button>
+          </div>
+
+          <div style="margin-top:12px;background:var(--card);padding:12px;border-radius:10px">
+            <h3 style="color:var(--gold)">Utilitaires</h3>
+            <button id="downloadPages" class="btn">Télécharger pages annonces (HTML)</button>
+            <button id="clearAllBtn" class="btn btn-ghost" style="margin-top:8px">Supprimer toutes les annonces</button>
+            <div class="small" style="margin-top:8px;color:var(--muted)">Exporter pour sauvegarde locale.</div>
+            <div style="margin-top:12px"><button id="adminLogout" class="btn btn-ghost">Se déconnecter</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Hidden form to send new listing summary to your email via FormSubmit (optional) -->
+<form id="publishEmailForm" action="https://formsubmit.co/cizaimmo@yahoo.com" method="POST" style="display:none" target="_blank">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="Titre" id="email_Titre">
+  <input type="hidden" name="Prix" id="email_Prix">
+  <input type="hidden" name="Quartier" id="email_Quartier">
+  <input type="hidden" name="Type" id="email_Type">
+  <input type="hidden" name="Description" id="email_Description">
+  <input type="hidden" name="ImageData" id="email_ImageData">
+</form>
+
+<script>
+/* =================== CONFIG & STORAGE KEYS =================== */
+const LS_LISTINGS = 'ciza_listings_v_final';
+const LS_TESTIMONIALS = 'ciza_testimonials_v_final';
+const ADMIN_HASH_KEY = 'ciza_admin_hash_local_v2';
+const ADMIN_SESSION = 'ciza_admin_session_v2';
+
+/* Default demo data (only if not present) */
+const defaultListings = [
+  {id:'kiriri-1', title:'Maison Kiriri', price:850000000, location:'Kigobe', province:'Bujumbura', type:'Maison', desc:'3 chambres • Jardin • Proche écoles', photos:['/mnt/data/7BEE443C-D37B-4DD8-9B11-576D1DF9BD65.jpeg'], created: Date.now()-86400000},
+  {id:'mutanga-1', title:'Villa Mutanga', price:1200000000, location:'Mutanga', province:'Bujumbura', type:'Villa', desc:'Piscine • Finitions premium', photos:['/mnt/data/57ED7445-F5C1-4248-9C3E-045D28D1C707.jpeg'], created: Date.now()-3600000}
+];
+const defaultTestimonials = [{name:'Jean N.', text:'Service impeccable, merci CIZA IMMO.'},{name:'Aline K.', text:'Professionnalisme remarquable.'}];
+
+/* Ensure initial storage */
+if(!localStorage.getItem(LS_LISTINGS)) localStorage.setItem(LS_LISTINGS, JSON.stringify(defaultListings));
+if(!localStorage.getItem(LS_TESTIMONIALS)) localStorage.setItem(LS_TESTIMONIALS, JSON.stringify(defaultTestimonials));
+
+/* Helpers */
+function getListings(){ return JSON.parse(localStorage.getItem(LS_LISTINGS) || '[]'); }
+function saveListings(arr){ localStorage.setItem(LS_LISTINGS, JSON.stringify(arr)); }
+function getTestimonials(){ return JSON.parse(localStorage.getItem(LS_TESTIMONIALS) || '[]'); }
+function formatPrice(n){ try{ return new Intl.NumberFormat('fr-FR').format(n) + ' FBu'; }catch(e){ return n + ' FBu'; } }
+function readFileAsDataURL(file){ return new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result); r.onerror=rej; r.readAsDataURL(file); }); }
+async function sha256Hex(str){ const enc = new TextEncoder().encode(str); const hash = await crypto.subtle.digest('SHA-256', enc); return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join(''); }
+
+/* UI elements */
+const listingsEl = document.getElementById('listings');
+const quartersEl = document.getElementById('quarters');
+const provsEl = document.getElementById('provs');
+const searchInput = document.getElementById('searchInput');
+const filterType = document.getElementById('filterType');
+const priceMin = document.getElementById('priceMin');
+const priceMax = document.getElementById('priceMax');
+const applyFilters = document.getElementById('applyFilters');
+const clearFilters = document.getElementById('clearFilters');
+const modalBg = document.getElementById('modal');
+const modalContent = document.getElementById('modalContent');
+const closeModalBtn = document.getElementById('closeModal');
+
+/* Area lists */
+const quarters = ['Kigobe','Rohero','Kabondo','Kinindo','Nyakabiga','Ngagara','Mutanga','Musaga'];
+const provinces = ['Bujumbura','Gitega','Ngozi','Kayanza','Rumonge','Bururi','Cibitoke','Makamba'];
+
+/* ========== RENDER UI ========== */
+function renderChips(){
+  quartersEl.innerHTML=''; provsEl.innerHTML='';
+  quarters.forEach(q=>{ const d=document.createElement('div'); d.className='chip'; d.textContent=q; d.addEventListener('click', ()=>{ openArea(q,'quartier'); setActiveChip(d); }); quartersEl.appendChild(d); });
+  provinces.forEach(p=>{ const d=document.createElement('div'); d.className='chip'; d.textContent=p; d.addEventListener('click', ()=>{ openArea(p,'province'); setActiveChip(d); }); provsEl.appendChild(d); });
+
+  // quick chips
+  const quick = document.getElementById('quickChips'); quick.innerHTML=''; ['Kigobe','Mutanga','Rohero'].forEach(q=>{ const el=document.createElement('div'); el.className='chip'; el.textContent=q; el.addEventListener('click', ()=>{ openArea(q,'quartier'); setActiveChip(el);}); quick.appendChild(el); });
+}
+
+function renderListings(list = null){
+  const arr = list || getListings();
+  listingsEl.innerHTML = '';
+  if(!arr.length){ listingsEl.innerHTML = '<div class="small">Aucune annonce</div>'; return; }
+  arr.slice().reverse().forEach(item=>{
+    const card = document.createElement('div'); card.className='card';
+    card.innerHTML = `
+      <div class="media">${ item.photos && item.photos.length ? `<img src="${escapeHtml(item.photos[0])}" alt="${escapeHtml(item.title)}">` : '<div class="small">Photo à venir</div>' }</div>
+      <div class="body">
+        <div style="display:flex;justify-content:space-between;align-items:start">
+          <div style="max-width:70%"><strong>${escapeHtml(item.title)}</strong><div class="small" style="color:var(--muted)">${escapeHtml(item.location)} • ${escapeHtml(item.type)}</div></div>
+          <div class="price">${formatPrice(item.price)}</div>
+        </div>
+        <p class="small" style="margin-top:8px;color:var(--muted)">${escapeHtml(item.desc || '')}</p>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn viewBtn" data-id="${item.id}">Voir</button>
+          <button class="btn btn-ghost shareBtn" data-id="${item.id}">Partager</button>
+          <button class="btn btn-ghost favBtn" data-id="${item.id}">❤ Favori</button>
+        </div>
+      </div>
+    `;
+    listingsEl.appendChild(card);
+  });
+
+  // attach events
+  document.querySelectorAll('.viewBtn').forEach(b=>b.addEventListener('click', e=>openDetail(e.currentTarget.dataset.id)));
+  document.querySelectorAll('.shareBtn').forEach(b=>b.addEventListener('click', e=>shareListing(e.currentTarget.dataset.id)));
+  document.querySelectorAll('.favBtn').forEach(b=>b.addEventListener('click', e=>toggleFav(e.currentTarget.dataset.id, e.currentTarget)));
+}
+
+/* Safe escape */
+function escapeHtml(s){ if(!s) return ''; return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+/* Area modal (dynamic) */
+function openArea(name, kind){
+  const all = getListings();
+  const list = all.filter(x => (kind==='quartier'? x.location : x.province).toLowerCase().includes(name.toLowerCase()));
+  const html = `<div style="display:flex;justify-content:space-between;align-items:center"><h2>${escapeHtml(name)} — ${kind}</h2><div><button onclick="closeModal()" class="btn btn-ghost">Fermer</button></div></div>
+    <div style="margin-top:12px">${list.length ? list.map(i=>`<div style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.03)"><strong>${escapeHtml(i.title)}</strong><div class="small" style="color:var(--muted)">${formatPrice(i.price)} • ${escapeHtml(i.type)}</div></div>`).join('') : '<div class="small" style="color:var(--muted)">Aucune annonce pour le moment</div>'}</div>`;
+  showModal(html);
+}
+
+/* Open modal helper */
+function showModal(innerHtml){
+  modalContent.innerHTML = innerHtml;
+  modalBg.style.display = 'flex';
+}
+function closeModal(){ modalBg.style.display = 'none'; }
+closeModalBtn.addEventListener('click', closeModal);
+modalBg.addEventListener('click', e=>{ if(e.target === modalBg) closeModal(); });
+
+function setActiveChip(el){ el.parentNode.querySelectorAll('.chip').forEach(c=>c.classList.remove('active')); el.classList.add('active'); }
+
+/* Filters */
+applyFilters.addEventListener('click', ()=>{
+  const q = (searchInput.value||'').toLowerCase();
+  const type = filterType.value;
+  const min = parseInt((priceMin.value||'').replace(/\D/g,'')) || 0;
+  const max = parseInt((priceMax.value||'').replace(/\D/g,'')) || Infinity;
+  let arr = getListings();
+  if(q) arr = arr.filter(x=> (x.title+' '+(x.desc||'')+' '+x.location+' '+(x.province||'')).toLowerCase().includes(q));
+  if(type) arr = arr.filter(x=> x.type === type);
+  arr = arr.filter(x=> (x.price||0) >= min && (x.price||0) <= max);
+  renderListings(arr);
+});
+clearFilters.addEventListener('click', ()=>{ searchInput.value=''; filterType.value=''; priceMin.value=''; priceMax.value=''; renderListings(getListings()); });
+
+/* Listing detail */
+function openDetail(id){
+  const it = getListings().find(x=>x.id === id);
+  if(!it) return alert('Annonce introuvable');
+  const photosHtml = (it.photos || []).map(p=>`<img src="${escapeHtml(p)}" style="width:32%;height:140px;object-fit:cover;border-radius:6px;margin-right:8px">`).join('');
+  const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(it.location + ', ' + (it.province||'Bujumbura'))}&z=15&output=embed`;
+  const html = `<div style="display:flex;justify-content:space-between;align-items:center"><h2>${escapeHtml(it.title)}</h2><div><button onclick="closeModal()" class="btn btn-ghost">Fermer</button></div></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+      <div style="flex:1;min-width:260px">${it.photos && it.photos.length ? `<img src="${escapeHtml(it.photos[0])}" style="width:100%;height:320px;object-fit:cover;border-radius:8px">` : ''}</div>
+      <div style="flex:1;min-width:260px"><h3 style="color:var(--gold)">${formatPrice(it.price)}</h3><p class="small" style="color:var(--muted)">${escapeHtml(it.location)} • ${escapeHtml(it.type)}</p><p style="margin-top:12px">${escapeHtml(it.desc)}</p>
+      <div style="margin-top:12px;display:flex;gap:8px"><a class="btn" href="mailto:cizaimmo@yahoo.com?subject=${encodeURIComponent('Intérêt: '+it.title)}">Email</a><a class="btn" href="https://wa.me/25779945007?text=${encodeURIComponent('Bonjour, je suis intéressé par: '+it.title)}" target="_blank">WhatsApp</a></div></div>
+    </div>
+    ${it.photos && it.photos.length>1 ? `<div style="margin-top:14px;display:flex;gap:8px">${photosHtml}</div>` : ''}
+    <div style="margin-top:14px"><strong>Localisation</strong><div style="height:260px;margin-top:8px;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.04)"><iframe src="${mapSrc}" style="width:100%;height:100%;border:0"></iframe></div></div>`;
+  showModal(html);
+}
+
+/* Share & favorites */
+function shareListing(id){
+  const url = location.origin + location.pathname + '#prop-' + id;
+  if(navigator.share){ navigator.share({title:'CIZA IMMO',text:'Regarde cette annonce',url}).catch(()=>{}); }
+  else { navigator.clipboard.writeText(url).then(()=>alert('Lien copié')); }
+}
+function toggleFav(id, btn){
+  const KEY='ciza_favs_v2';
+  let favs = JSON.parse(localStorage.getItem(KEY) || '[]');
+  if(favs.includes(id)){ favs = favs.filter(x=>x!==id); btn.style.opacity=0.6; } else { favs.push(id); btn.style.opacity=1; }
+  localStorage.setItem(KEY, JSON.stringify(favs));
+}
+
+/* =================== ADMIN (secure) =================== */
+/* Setup: ensure a hash exists for default Missi890 (only stored hashed) */
+(async function ensureDefaultAdmin(){
+  if(!localStorage.getItem(ADMIN_HASH_KEY)){
+    const h = await sha256Hex('Missi890');
+    localStorage.setItem(ADMIN_HASH_KEY, h);
+  }
+})();
+
+/* Admin UI references */
+const adminOverlay = document.getElementById('adminOverlay');
+const loginPanel = document.getElementById('loginPanel');
+const setupPanel = document.getElementById('setupPanel');
+const dashboard = document.getElementById('dashboard');
+
+document.getElementById('openAdminLink').addEventListener('click', (e)=>{ e.preventDefault(); adminOverlay.style.display='flex'; checkAdminState(); });
+document.getElementById('closeAdminBtn').addEventListener('click', ()=>{ adminOverlay.style.display='none'; });
+
+async function checkAdminState(){
+  const has = !!localStorage.getItem(ADMIN_HASH_KEY);
+  if(has){ loginPanel.style.display='block'; setupPanel.style.display='none'; dashboard.style.display='none'; }
+  else { loginPanel.style.display='none'; setupPanel.style.display='block'; dashboard.style.display='none'; }
+}
+
+/* Show setup */
+document.getElementById('showSetupBtn').addEventListener('click', ()=>{ loginPanel.style.display='none'; setupPanel.style.display='block'; dashboard.style.display='none'; });
+
+/* Setup: save new pass */
+document.getElementById('setupSave').addEventListener('click', async ()=>{
+  const p1 = document.getElementById('setupPass').value || '';
+  const p2 = document.getElementById('setupPass2').value || '';
+  if(!p1 || !p2) return alert('Remplis les deux champs');
+  if(p1 !== p2) return alert('Les mots de passe ne correspondent pas');
+  if(p1.length < 6) return alert('Choisis un mot de passe d’au moins 6 caractères');
+  const h = await sha256Hex(p1);
+  localStorage.setItem(ADMIN_HASH_KEY, h);
+  alert('Mot de passe créé localement. Connecte-toi maintenant.');
+  document.getElementById('setupPass').value=''; document.getElementById('setupPass2').value='';
+  loginPanel.style.display='block'; setupPanel.style.display='none';
+});
+
+/* Cancel setup */
+document.getElementById('setupCancel').addEventListener('click', ()=>{ setupPanel.style.display='none'; loginPanel.style.display='block'; });
+
+/* Login */
+document.getElementById('adminLoginBtn').addEventListener('click', async ()=>{
+  const pass = (document.getElementById('adminPwd').value||'').trim();
+  if(!pass) return alert('Mot de passe requis');
+  const inputHash = await sha256Hex(pass);
+  const stored = localStorage.getItem(ADMIN_HASH_KEY);
+  if(!stored) return alert('Aucun mot de passe défini — crée-en un depuis ce panneau.');
+  if(inputHash === stored){
+    sessionStorage.setItem(ADMIN_SESSION,'1');
+    document.getElementById('adminPwd').value='';
+    loginPanel.style.display='none';
+    setupPanel.style.display='none';
+    dashboard.style.display='block';
+    renderAdminListings();
+    alert('Connecté en tant qu\\'admin');
+  } else alert('Mot de passe incorrect');
+});
+
+/* Change password (requires old) */
+document.getElementById('changePassBtn').addEventListener('click', async ()=>{
+  if(sessionStorage.getItem(ADMIN_SESSION) !== '1') return alert('Connecte-toi d\\'abord');
+  const oldP = (document.getElementById('oldPass').value||'').trim();
+  const newP = (document.getElementById('newPass').value||'').trim();
+  if(!oldP || !newP) return alert('Ancien et nouveau mots de passe requis');
+  const oldHash = await sha256Hex(oldP);
+  const stored = localStorage.getItem(ADMIN_HASH_KEY);
+  if(oldHash !== stored) return alert('Ancien mot de passe incorrect');
+  if(newP.length < 6) return alert('Nouveau mot de passe trop court');
+  const newHash = await sha256Hex(newP);
+  localStorage.setItem(ADMIN_HASH_KEY, newHash);
+  document.getElementById('oldPass').value=''; document.getElementById('newPass').value='';
+  alert('Mot de passe changé');
+});
+
+/* Logout */
+document.getElementById('adminLogout').addEventListener('click', ()=>{ sessionStorage.removeItem(ADMIN_SESSION); adminOverlay.style.display='none'; dashboard.style.display='none'; loginPanel.style.display='block'; alert('Déconnecté'); });
+
+/* =================== Admin: publish/edit/delete =================== */
+/* Render admin listing list */
+function renderAdminListings(){
+  const wrap = document.getElementById('adminListings'); wrap.innerHTML='';
+  const arr = getListings();
+  arr.slice().reverse().forEach(item=>{
+    const d = document.createElement('div'); d.style.padding='10px'; d.style.borderBottom='1px solid rgba(255,255,255,0.03)';
+    d.innerHTML = `<strong>${escapeHtml(item.title)}</strong><div class="small" style="color:var(--muted)">${escapeHtml(item.location)} • ${formatPrice(item.price)}</div>
+      <div style="margin-top:8px"><button class="btn btn-ghost" data-id="${item.id}" data-act="del">Supprimer</button> <button class="btn" data-id="${item.id}" data-act="edit">Modifier</button></div>`;
+    wrap.appendChild(d);
+  });
+  // attach events
+  wrap.querySelectorAll('button[data-act="del"]').forEach(b=>b.addEventListener('click', (e)=>{ const id=e.currentTarget.getAttribute('data-id'); if(!confirm('Supprimer cette annonce ?')) return; let arr=getListings(); arr = arr.filter(x=>x.id!==id); saveListings(arr); renderListings(arr); renderAdminListings(); }));
+  wrap.querySelectorAll('button[data-act="edit"]').forEach(b=>b.addEventListener('click', (e)=>{ const id=e.currentTarget.getAttribute('data-id'); const arr=getListings(); const it = arr.find(x=>x.id===id); if(!it) return alert('Introuvable'); // populate form
+    document.getElementById('a_title').value = it.title; document.getElementById('a_price').value = it.price; document.getElementById('a_loc').value = it.location; document.getElementById('a_type').value = it.type; document.getElementById('a_desc').value = it.desc; // remove old so publishing will re-add
+    if(confirm('Tu vas modifier: après avoir changé, clique Publier — l\\'ancienne annonce sera supprimée')){ let newArr = arr.filter(x=>x.id!==id); saveListings(newArr); renderListings(newArr); renderAdminListings(); }
+  }));
+}
+
+/* Publish listing (admin only) */
+document.getElementById('a_publish').addEventListener('click', async ()=>{
+  if(sessionStorage.getItem(ADMIN_SESSION) !== '1') return alert('Connecte-toi d\\'abord');
+  const title = (document.getElementById('a_title').value||'').trim();
+  const price = parseInt((document.getElementById('a_price').value||'').replace(/\D/g,'')) || 0;
+  const loc = (document.getElementById('a_loc').value||'').trim();
+  const type = document.getElementById('a_type').value;
+  const desc = (document.getElementById('a_desc').value||'').trim();
+  if(!title || !price || !loc) return alert('Titre, prix et localisation requis');
+  // photos
+  const files = document.getElementById('a_photos').files;
+  let photos = [];
+  if(files && files.length){
+    for(const f of files){
+      if(f.size > 6*1024*1024) return alert('Image trop grande (max 6MB)');
+      photos.push(await readFileAsDataURL(f));
+    }
+  }
+  const arr = getListings();
+  const id = 'id'+Date.now();
+  const listing = {id,title,price,location:loc,province:loc,type,desc,photos: photos.length? photos : ['/mnt/data/9F8A140A-6F9D-4F6F-B814-A457DFB8039E.jpeg'],created:Date.now()};
+  arr.push(listing); saveListings(arr); renderListings(arr); renderAdminListings();
+
+  // send email summary via hidden form (opens new tab to submit)
+  try{
+    document.getElementById('email_Titre').value = title;
+    document.getElementById('email_Prix').value = price;
+    document.getElementById('email_Quartier').value = loc;
+    document.getElementById('email_Type').value = type;
+    document.getElementById('email_Description').value = desc;
+    document.getElementById('email_ImageData').value = photos.length? photos[0].slice(0,8192) : '';
+    document.getElementById('publishEmailForm').submit();
+  }catch(err){
+    console.warn('Email submit failed', err);
+  }
+
+  // clear fields
+  document.getElementById('a_title').value=''; document.getElementById('a_price').value=''; document.getElementById('a_loc').value=''; document.getElementById('a_desc').value=''; document.getElementById('a_photos').value='';
+  alert('Annonce publiée (et copie envoyée par email si possible).');
+});
+
+/* Export / Import / Clear */
+document.getElementById('a_export').addEventListener('click', ()=>{
+  const data = localStorage.getItem(LS_LISTINGS) || '[]';
+  const blob = new Blob([data], {type:'application/json'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'ciza_listings.json'; a.click();
+});
+document.getElementById('a_import_btn').addEventListener('click', ()=> document.getElementById('a_import').click());
+document.getElementById('a_import').addEventListener('change', (e)=>{
+  const f = e.target.files[0]; if(!f) return;
+  const r = new FileReader(); r.onload = ()=>{ try{ const arr = JSON.parse(r.result); if(Array.isArray(arr)){ localStorage.setItem(LS_LISTINGS, JSON.stringify(arr)); renderListings(arr); renderAdminListings(); alert('Importé'); } else alert('JSON invalide'); } catch(err){ alert('Erreur import: '+err.message); } }; r.readAsText(f);
+});
+document.getElementById('clearAllBtn').addEventListener('click', ()=>{ if(!confirm('Supprimer toutes les annonces ?')) return; localStorage.setItem(LS_LISTINGS, JSON.stringify([])); renderListings([]); renderAdminListings(); });
+
+/* download HTML pages for each listing */
+document.getElementById('downloadPages').addEventListener('click', ()=>{
+  const arr = getListings();
+  arr.forEach(item=>{
+    const h = generateListingHTML(item);
+    const blob = new Blob([h], {type:'text/html'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `${item.id}.html`; a.click();
+  });
+  alert('Pages HTML générées en local (téléchargées).');
+});
+function generateListingHTML(item){
+  return `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(item.title)} — CIZA IMMO</title></head><body style="font-family:Arial;background:#000;color:#fff;padding:28px"><h1>${escapeHtml(item.title)}</h1>${ item.photos && item.photos.length ? `<img src="${escapeHtml(item.photos[0])}" style="max-width:800px;width:100%;height:auto">` : '' }<h2>${formatPrice(item.price)}</h2><p>${escapeHtml(item.desc)}</p><p>Localisation: ${escapeHtml(item.location)}</p><p><a href="mailto:cizaimmo@yahoo.com?subject=${encodeURIComponent('Intérêt: '+item.title)}">Contacter</a></p></body></html>`;
+}
+
+/* =================== Contact backup (local) =================== */
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  // allow default formsubmit to work (it will open mail client). We also save locally.
+  const name = this.Nom.value, email = this.Email.value || this.Email?.value, phone = this['Téléphone'].value, msg = this.Message.value;
+  let msgs = JSON.parse(localStorage.getItem('ciza_msgs_v1')||'[]'); msgs.push({name,email,phone,msg,date:Date.now()}); localStorage.setItem('ciza_msgs_v1', JSON.stringify(msgs));
+});
+
+/* =================== Testimonials render =================== */
+function renderTestimonials(){
+  const arr = getTestimonials();
+  const wrap = document.getElementById('testimonials'); wrap.innerHTML='';
+  arr.forEach(t=>{
+    const d = document.createElement('div'); d.className='testimonial';
+    d.innerHTML = `<strong style="color:var(--gold)">${escapeHtml(t.name)}</strong><p style="margin-top:8px;color:var(--muted)">${escapeHtml(t.text)}</p>`;
+    wrap.appendChild(d);
+  });
+}
+
+/* =================== Init =================== */
+document.addEventListener('DOMContentLoaded', ()=>{
+  renderChips();
+  renderListings(getListings());
+  renderTestimonials();
+  // auto-open admin if session
+  if(sessionStorage.getItem(ADMIN_SESSION) === '1'){ adminOverlay.style.display='flex'; dashboard.style.display='block'; loginPanel.style.display='none'; renderAdminListings(); }
+  // open listing from hash
+  if(location.hash){ const h=location.hash.replace('#',''); if(h.startsWith('prop-')){ const id=h.replace('prop-',''); setTimeout(()=>openDetail(id),300); } }
+});
+
+/* ========== Small utilities ========== */
+function escapeHtml(s){ if(!s) return ''; return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+/* TradingView widget (indices) insertion */
+(function loadTradingView(){
+  const container = document.getElementById('tradingview-widget');
+  // Use TradingView mini-widget embed (no API key). You can replace symbols as needed.
+  container.innerHTML = `<iframe src="https://s.tradingview.com/embed-widget/ticker-tape/?locale=fr&symbols=%5B%7B%22proName%22%3A%22FOREX%3AEURUSD%22%2C%22title%22%3A%22EUR%2FUSD%22%7D%2C%7B%22proName%22%3A%22FOREX%3AUSDJPY%22%2C%22title%22%3A%22USD%2FJPY%22%7D%2C%7B%22proName%22%3A%22INDEX%3AGSPC%22%2C%22title%22%3A%22S%26P500%22%7D%2C%7B%22proName%22%3A%22INDEX%3AHSI%22%2C%22title%22%3A%22HANGSENG%22%7D%5D" style="width:100%;height:50px;border:0;"></iframe>`;
+})();
+
+</script>
+</body>
+</html>
