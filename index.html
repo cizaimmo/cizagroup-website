@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CIZA GROUP — Écosystème de services | Accueil</title>
+  <meta name="description" content="CIZA GROUP — Mobilité, Paiement, Logistique, Immobilier, Livraison, Tech, Formation et Services. Solutions pour le Burundi avec impact social." />
+  <style>
+    :root{
+      --primary:#0A3D91; /* bleu foncé */
+      --accent:#F2B840;  /* doré */
+      --muted:#6B7280;
+      --bg:#ffffff;
+      --card:#f7f9fc;
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0b1220;line-height:1.5}
+    header{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;border-bottom:1px solid #eef2f6}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{width:56px;height:56px;object-fit:contain}
+    nav a{margin-left:16px;color:var(--primary);text-decoration:none;font-weight:600}
+
+    .container{max-width:1100px;margin:28px auto;padding:0 20px}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    .hero h1{font-size:34px;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px}
+    .btn{background:var(--primary);color:#fff;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700}
+    .btn-ghost{background:transparent;border:2px solid var(--primary);color:var(--primary);padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700}
+
+    .card{background:var(--card);padding:18px;border-radius:12px}
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:28px}
+    .service{background:#fff;padding:18px;border-radius:10px;border:1px solid #eef2f6}
+    .service h3{margin:0 0 8px}
+    .kpi{font-weight:700;color:var(--primary)}
+
+    section{margin:40px 0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+    footer{background:#071336;color:#fff;padding:28px 20px}
+    footer a{color:var(--accent)}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="/assets/logo.png" alt="CIZA GROUP logo">
+      <div>
+        <div style="font-weight:800;color:var(--primary)">CIZA GROUP</div>
+        <div style="font-size:12px;color:var(--muted)">Écosystème de services — Burundi</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#plan">Plan</a>
+      <a href="#investisseurs">Investisseurs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Les services essentiels, réunis dans un même groupe — pour un Burundi plus simple et plus moderne</h1>
+        <p>Mobilité, paiements, livraison, logistique, immobilier, formation et services à la personne : des solutions accessibles, numériques et orientées impact social.</p>
+        <div class="cta">
+          <a class="btn" href="#contact">Demander financement</a>
+          <a class="btn-ghost" href="#plan">Voir le plan</a>
+        </div>
+
+        <div style="margin-top:22px;display:flex;gap:8px;color:var(--muted);font-size:14px">
+          <div>Objectif 2030 : <strong class="kpi">1M utilisateurs</strong></div>
+          <div>•</div>
+          <div>Emplois directs : <strong class="kpi">3 000</strong></div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3 style="margin-top:0">Résumé financier initial</h3>
+        <p style="margin:6px 0;color:var(--muted)">Coût de lancement estimé pour les services prioritaires</p>
+        <ul style="padding-left:18px;margin:8px 0">
+          <li><strong>Phase 1 (pilot)</strong> : 700 000 000 BIF</li>
+          <li><strong>Phase 1+ (déploiement)</strong> : 1 500 000 000 BIF</li>
+        </ul>
+        <p style="font-size:13px;color:var(--muted)">Ces chiffres sont des estimations initiales — nous présenterons un plan détaillé financier dans le dossier investisseur.</p>
+      </aside>
+    </section>
+
+    <section id="services">
+      <h2>Nos services (détaillés)</h2>
+      <div class="services">
+        <div class="service">
+          <h3>CizaRide+ — Mobilité</h3>
+          <p>Transport moto, voiture, premium. Application avec géolocalisation et paiement intégré.</p>
+          <p><strong>Impact :</strong> 1 200 emplois prévus — revenus chauffeurs +40% en moyenne.</p>
+        </div>
+
+        <div class="service">
+          <h3>CizaPay+ — Paiement</h3>
+          <p>Portefeuille digital, paiements marchands, transferts et intégration pour partenaires.</p>
+          <p><strong>Objectif :</strong> 100 000 paiements digitalisés la 1ère année.</p>
+        </div>
+
+        <div class="service">
+          <h3>CizaDelivery — Livraison</h3>
+          <p>Livraison express pour e‑commerce, documents et repas. Suivi en temps réel.</p>
+          <p><strong>KPIs :</strong> délai moyen < 4h (ville).</p>
+        </div>
+
+        <div class="service">
+          <h3>CizaImmo — Immobilier</h3>
+          <p>Listing sécurisé, gestion locative et accompagnement légal.</p>
+          <p><strong>But :</strong> sécuriser le marché et offrir confiance aux locataires.</p>
+        </div>
+
+        <div class="service">
+          <h3>CizaLogistics — Fret</h3>
+          <p>Transport interprovincial, mini‑hubs et distribution pour PME.</p>
+          <p><strong>Impact :</strong> baisse des coûts logistiques pour les PME locales.</p>
+        </div>
+
+        <div class="service">
+          <h3>CizaTech — IT</h3>
+          <p>Développement apps, sécurité, maintenance et R&D produit.</p>
+          <p><strong>Rôle :</strong> garantir uptime et sécurité des plateformes.</p>
+        </div>
+
+        <div class="service">
+          <h3>CizaMarket — Marketplace</h3>
+          <p>Place de marché pour petits vendeurs, intégrée à CizaDelivery et CizaPay+.</p>
+        </div>
+
+        <div class="service">
+          <h3>CizaJobs & CizaAcademy</h3>
+          <p>Mise en relation, vérification, formation professionnelle certifiante.</p>
+        </div>
+
+        <div class="service">
+          <h3>CizaAssist & CizaCarWash+</h3>
+          <p>Conciergerie, démarches, lavage auto mobile — services pour faciliter la vie quotidienne.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="plan">
+      <h2>Plan de lancement (phases)</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Phase 1 — Pilote (6–12 mois)</h3>
+          <ul>
+            <li>Lancer CizaRide+, CizaPay+ et CizaDelivery dans la ville pilote</li>
+            <li>Recruter & former 300 chauffeurs/livreurs</li>
+            <li>Installer hubs logistiques et agents CizaPay</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Phase 2 — Déploiement national (12–36 mois)</h3>
+          <ul>
+            <li>Étendre services à toutes les provinces</li>
+            <li>Lancer CizaImmo et CizaLogistics</li>
+            <li>Déployer CizaAcademy pour la formation continue</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="investisseurs">
+      <h2>Dossier Investisseurs — Points clés</h2>
+      <p><strong>Pourquoi investir :</strong> écosystème intégré, fort potentiel de marché, impact social et modèle multi‑revenu (commissions, abonnements, services B2B).</p>
+      <ul>
+        <li>Estimations capex initial : ~1,5 milliards BIF (phase 1+)</li>
+        <li>Horizon de rentabilité : 3–5 ans selon déploiement</li>
+        <li>Stratégie de monétisation : commissions 5–15%, abonnements premium, B2B contracts</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact & demande de financement</h2>
+      <p>Pour le dossier financier complet (tableaux, prévisions, CAPEX / OPEX détaillés) : envoyez un e‑mail à <a href="mailto:contact@cizagroup.com">contact@cizagroup.com</a> ou remplissez le formulaire ci‑dessous.</p>
+
+      <form action="#" onsubmit="alert('Formulaire local — intégrer endpoint backend pour envoyer.');return false;" style="max-width:640px">
+        <div style="display:flex;gap:8px;margin-bottom:8px">
+          <input placeholder="Nom" required style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef8">
+          <input placeholder="Email" type="email" required style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef8">
+        </div>
+        <textarea placeholder="Message / demande (financement, partenariat)" required style="width:100%;padding:12px;border-radius:8px;border:1px solid #e6eef8"></textarea>
+        <div style="margin-top:10px"><button class="btn">Envoyer la demande</button></div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container" style="color:#fff;display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-weight:800">CIZA GROUP</div>
+        <div style="font-size:13px;color:#cbd5e1">© Ciza Group — Tous droits réservés</div>
+      </div>
+      <div style="text-align:right">
+        <div>Adresse : Bujumbura, Burundi</div>
+        <div>Contact : <a href="mailto:contact@cizagroup.com">contact@cizagroup.com</a></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
