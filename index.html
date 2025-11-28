@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CIZA GROUP — Écosystème de services</title>
+<meta name="description" content="CIZA GROUP — Mobilité, Paiement, Logistique, Immobilier, Livraison, Tech, Formation et Services." />
+<style>
+  :root{
+    --primary:#0A3D91;
+    --muted:#6B7280;
+    --bg:#ffffff;
+    --card:#f8fbff;
+    --radius:12px;
+    --maxw:1100px;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:var(--bg);color:#0b1220}
+  a{color:var(--primary);text-decoration:none}
+  img{max-width:100%;display:block}
+
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(255,255,255,0.95);
+    border-bottom:1px solid #eef2f6;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 18px
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{width:56px;height:56px;object-fit:contain}
+  .brand .title{font-weight:800;color:var(--primary);letter-spacing:0.6px}
+  nav{display:flex;gap:12px;align-items:center}
+  nav a{padding:8px 12px;border-radius:9px;font-weight:600;color:var(--primary)}
+  nav a:hover{background:rgba(10,61,145,0.06)}
+
+  .container{max-width:var(--maxw);margin:28px auto;padding:0 18px}
+  .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
+  .hero-left h1{font-size:32px;margin:0 0 8px}
+  .hero-left p{color:var(--muted);margin:0 0 16px}
+  .buttons{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{background:var(--primary);color:#fff;padding:10px 16px;border-radius:999px;border:0;cursor:pointer;font-weight:700}
+  .btn.ghost{background:transparent;border:2px solid var(--primary);color:var(--primary)}
+
+  aside.card{
+    background:var(--card);padding:18px;border-radius:12px;
+    border:1px solid #e6eef8
+  }
+  aside.card h4{margin:0 0 8px}
+  .kpi{font-weight:800;color:var(--primary)}
+
+  section h2{margin-top:36px}
+  .services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:16px;margin-top:18px
+  }
+  .service{
+    background:#fff;padding:14px;border-radius:12px;
+    border:1px solid #eef4ff;cursor:pointer;
+    transition:transform .15s,box-shadow .15s;
+    display:flex;gap:12px;align-items:center
+  }
+  .service:hover{transform:translateY(-6px);box-shadow:0 8px 30px rgba(13,38,84,0.08)}
+  .svc-preview{
+    width:86px;height:64px;border-radius:8px;
+    overflow:hidden;flex-shrink:0;
+    border:1px solid #eef2f8;
+    display:flex;align-items:center;justify-content:center;
+    background:#f6fbff
+  }
+  .service h3{margin:0 0 6px;font-size:16px}
+  .service p{margin:0;color:var(--muted);font-size:13px}
+
+  /* Modal */
+  .modal-backdrop{
+    position:fixed;inset:0;background:rgba(5,10,30,0.45);
+    display:none;align-items:center;justify-content:center;
+    padding:20px;z-index:200
+  }
+  .modal{
+    max-width:920px;background:#fff;border-radius:12px;
+    padding:22px;box-shadow:0 30px 80px rgba(10,61,145,0.18);
+    display:grid;grid-template-columns:1fr 360px;gap:18px;
+    position:relative
+  }
+  .modal h3{margin-top:0}
+  .modal .close{
+    position:absolute;right:18px;top:12px;
+    background:transparent;border:0;font-weight:700;
+    color:var(--muted);cursor:pointer;font-size:20px
+  }
+  .svc-large{
+    width:100%;height:100%;border-radius:10px;
+    overflow:hidden;background:#f2f8ff;
+    display:flex;align-items:center;justify-content:center
+  }
+  .svc-large svg{
+    width:100%;height:100%;object-fit:contain;
+    transform:scale(1.05)
+  }
+
+  .grid-2{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
+  form input, form textarea, form select{
+    width:100%;padding:10px;border-radius:8px;
+    border:1px solid #e6eef8;margin-top:8px
+  }
+  form button{margin-top:10px}
+
+  footer{
+    background:#071336;color:#fff;
+    padding:28px 18px;margin-top:40px
+  }
+  footer .inner{
+    max-width:var(--maxw);margin:0 auto;
+    display:flex;justify-content:space-between;
+    gap:16px;align-items:center
+  }
+
+  /* Paiement & sous-services */
+  .payment-panel{
+    margin-top:16px;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #e6eef8;
+    background:#f9fbff;
+    max-height:320px;
+    overflow-y:auto;
+    font-size:13px;
+  }
+  .payment-panel h4{margin:4px 0 6px}
+  .pay-methods{display:flex;gap:8px;margin:6px 0 10px;flex-wrap:wrap}
+  .pay-method{
+    border:1px solid #cbd5f5;
+    background:#fff;
+    border-radius:999px;
+    padding:6px 12px;
+    font-size:12px;
+    cursor:pointer;
+  }
+  .pay-method.selected{
+    background:var(--primary);
+    color:#fff;
+    border-color:var(--primary);
+  }
+  .payment-row{margin-top:8px}
+  .payment-row label{display:block;font-size:12px;margin-bottom:2px}
+  .payment-row input, .payment-row textarea{
+    width:100%;padding:8px;border-radius:6px;
+    border:1px solid #d5e1ff;font-size:12px;
+  }
+  .payment-actions{
+    margin-top:12px;
+    display:flex;justify-content:space-between;align-items:center;gap:8px;
+    flex-wrap:wrap;
+  }
+  .btn.secondary{
+    background:#fff;
+    color:var(--primary);
+    border:1px solid #cbd5f5;
+  }
+
+  /* News & météo */
+  .news-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+    margin-top:10px;
+  }
+  .news-card{
+    background:#fff;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #eef4ff;
+    font-size:13px;
+  }
+  .news-card img{
+    width:100%;height:130px;
+    object-fit:cover;border-radius:8px;
+    margin-bottom:6px;
+  }
+  #weatherBox{
+    background:#fff;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #eef4ff;
+    font-size:12px;
+  }
+
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr}
+    .grid-2{grid-template-columns:1fr}
+    nav{display:none}
+    .modal{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <!-- logo bleu (ajuste le chemin quand tu auras le fichier) -->
+    <img src="assets/ciza-group-logo-blue.png" alt="CIZA GROUP logo" id="top-logo" onerror="this.style.display='none'">
+    <div>
+      <div class="title">CIZA GROUP</div>
+      <div style="font-size:12px;color:var(--muted)">Écosystème de services • Burundi</div>
+    </div>
+  </div>
+
+  <nav aria-label="Navigation principale">
+    <a href="#services">Services</a>
+    <a href="#about">À propos</a>
+    <a href="#team">Équipe</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main class="container" id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-left">
+      <h1 id="hero-title">Tous les services essentiels réunis — simples, numériques, accessibles.</h1>
+      <p>Mobilité, paiements, livraison, logistique, immobilier, formation, assistance et entretien — une seule plateforme pour faciliter la vie des citoyens et des entreprises.</p>
+
+      <div class="buttons">
+        <button class="btn" onclick="scrollToId('services')">Voir les services</button>
+        <button class="btn ghost" onclick="scrollToId('contact')">Contact / Partenariat</button>
+      </div>
+
+      <div style="margin-top:16px;color:var(--muted);font-size:14px">
+        <strong>Impact local</strong> — création d'emplois et formalisation.
+      </div>
+    </div>
+
+    <aside class="card" aria-labelledby="summary-title" role="region">
+      <h4 id="summary-title">Résumé rapide</h4>
+      <div style="font-size:13px;color:var(--muted);margin-bottom:10px">
+        Écosystème intégré pour particuliers et entreprises.
+      </div>
+      <div>
+        <span class="kpi">Services :</span>
+        Mobilité • Paiement • Livraison • Immobilier • Logistique • Tech • Formation • Carwash
+      </div>
+      <div style="margin-top:10px"><a href="#about">En savoir plus →</a></div>
+      <hr style="margin:12px 0">
+      <!-- Météo dynamique -->
+      <div id="weatherBox">Météo en cours…</div>
+    </aside>
+  </section>
+
+  <!-- Services -->
+  <section id="services" aria-labelledby="services-title">
+    <h2 id="services-title">Nos services</h2>
+    <div class="services" id="services-grid" role="list"></div>
+  </section>
+
+  <!-- Actualités internationales -->
+  <section id="news">
+    <h2>Actualités internationales</h2>
+    <div id="newsGrid" class="news-grid">Chargement des actualités…</div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>À propos de CIZA GROUP</h2>
+    <div class="grid-2">
+      <div>
+        <p>CIZA GROUP est un groupe burundais réunissant plusieurs services complémentaires, conçus pour simplifier les activités quotidiennes des citoyens et des entreprises. Chaque service est pensé pour être numérique, accessible et fiable.</p>
+        <h4>Valeur pour la population</h4>
+        <ul>
+          <li>Accès rapide à la mobilité et à la livraison;</li>
+          <li>Solutions de paiement intégrées;</li>
+          <li>Formation professionnelle pour développer des compétences locales;</li>
+          <li>Services à la personne et aux entreprises pour gagner du temps.</li>
+        </ul>
+      </div>
+
+      <aside class="card" aria-labelledby="contact-cta">
+        <h4 id="contact-cta">Prêt à collaborer ?</h4>
+        <p style="color:var(--muted)">Contactez-nous pour partenariat, pilote ou intégration.</p>
+        <div style="display:flex;gap:8px">
+          <button class="btn" onclick="scrollToId('contact')">Contact</button>
+          <a class="btn ghost" href="#services" style="display:inline-flex;align-items:center">Voir services</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="team">
+    <h2>Travailler avec nous</h2>
+    <p>Nous recrutons chauffeurs, livreurs, techniciens et formateurs. Envoyez votre CV via le formulaire de contact.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="grid-2">
+      <div>
+        <form id="contact-form" onsubmit="handleContact(event)" aria-label="Formulaire de contact">
+          <label>Nom complet
+            <input id="c-name" type="text" required placeholder="Votre nom">
+          </label>
+          <label>Email
+            <input id="c-email" type="email" required placeholder="email@exemple.com">
+          </label>
+          <label>Service concerné
+            <select id="c-service"><option value="">— Sélectionnez —</option></select>
+          </label>
+          <label>Message
+            <textarea id="c-message" rows="5" required placeholder="Votre message"></textarea>
+          </label>
+          <button type="submit" class="btn">Envoyer</button>
+          <div id="contact-status" style="margin-top:10px;color:green;display:none">Message enregistré localement.</div>
+        </form>
+      </div>
+
+      <aside class="card">
+        <h4>Coordonnées</h4>
+        <p>Email : <a href="mailto:contact@cizagroup.com">contact@cizagroup.com</a></p>
+        <p>Téléphone : +257 00 00 000</p>
+        <p>Siège : Bujumbura, Burundi</p>
+        <hr>
+        <button class="btn ghost" onclick="exportContacts()">Exporter demandes (JSON)</button>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="inner">
+    <div>
+      <div style="font-weight:800">CIZA GROUP</div>
+      <div style="font-size:13px;color:#bfcfe8">© CIZA GROUP — Tous droits réservés</div>
+    </div>
+    <div style="text-align:right">
+      <div style="font-size:14px">Réseaux</div>
+      <div style="margin-top:6px"><a href="#" style="color:#fff;margin-right:10px">LinkedIn</a><a href="#" style="color:#fff">Twitter</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal -->
+<div id="modal-backdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal" role="document">
+    <button class="close" aria-label="Fermer" onclick="closeModal()">✕</button>
+    <div id="modal-left"></div>
+    <aside id="modal-right" class="card"></aside>
+  </div>
+</div>
+
+<script>
+/* ======================
+   SERVICES (avec sous-services)
+   ====================== */
+const SERVICES = [
+  {
+    key:'cizaride',
+    title:'CizaRide+',
+    short:'Mobilité : motos & voitures',
+    details: `
+      <p>CizaRide+ permet de réserver des motos et voitures pour des trajets urbains ou interprovinciaux, avec géolocalisation, estimation de l'heure d'arrivée et chauffeurs vérifiés.</p>
+      <p>Adapté pour travailleurs, étudiants, familles et entreprises qui veulent des déplacements fiables.</p>
+    `,
+    offers:[
+      'Course moto (économique en ville)',
+      'Course voiture standard',
+      'Course premium (voiture climatisée)',
+      'Course interprovinciale',
+      'Course business pour entreprise'
+    ]
+  },
+  {
+    key:'cizapay',
+    title:'CizaPay+',
+    short:'Portefeuille numérique',
+    details: `
+      <p>CizaPay+ est un portefeuille numérique pour payer, encaisser et transférer de l’argent. Il s’intègre à tous les services CIZA GROUP.</p>
+      <p>Paiements sécurisés pour particuliers, commerçants et entreprises.</p>
+    `,
+    offers:[
+      'Portefeuille personnel (CizaPay+)',
+      'Paiement marchands (QR / code marchand)',
+      'Paiement factures et services',
+      'Transfert P2P entre utilisateurs',
+      'Encaissement pour entreprise'
+    ]
+  },
+  {
+    key:'cizadelivery',
+    title:'CizaDelivery',
+    short:'Livraison express',
+    details: `
+      <p>CizaDelivery gère la livraison de documents, colis, repas et commandes e-commerce avec suivi en temps réel.</p>
+      <p>Idéal pour restaurants, boutiques, pharmacies, e-commerce et particuliers.</p>
+    `,
+    offers:[
+      'Livraison documents (administratif, contrats)',
+      'Livraison colis & e-commerce',
+      'Livraison repas (restaurants partenaires)',
+      'Livraison programmée (heure choisie)',
+      'Service entreprise (tournées récurrentes)'
+    ]
+  },
+  {
+    key:'cizaimmo',
+    title:'CizaImmo',
+    short:'Immobilier & gestion',
+    details: `
+      <p>CizaImmo centralise annonces, visites, gestion locative et accompagnement administratif.</p>
+      <p>Sécurise les transactions entre propriétaires, agences et locataires.</p>
+    `,
+    offers:[
+      'Location maisons / appartements',
+      'Vente terrains & propriétés',
+      'Gestion locative complète',
+      'Accompagnement administratif & contrats',
+      'Pack investisseurs diaspora'
+    ]
+  },
+  {
+    key:'cizalog',
+    title:'CizaLogistics',
+    short:'Transport & fret',
+    details: `
+      <p>CizaLogistics propose des solutions de transport de marchandises entre provinces, gestion de flotte et distribution pour entreprises.</p>
+      <p>Suivi, sécurité et optimisation des tournées.</p>
+    `,
+    offers:[
+      'Transport interprovincial de marchandises',
+      'Flotte vans & camions légers',
+      'Distribution pour commerces & grossistes',
+      'Logistique pour e-commerce',
+      'Contrats logistiques B2B'
+    ]
+  },
+  {
+    key:'cizatech',
+    title:'CizaTech',
+    short:'Développement & support',
+    details: `
+      <p>CizaTech développe et maintient les plateformes digitales du groupe : applications mobiles, back-office, APIs et intégrations.</p>
+      <p>Garantit la sécurité et la disponibilité des services.</p>
+    `,
+    offers:[
+      'Développement d’app mobiles',
+      'Intégrations API & systèmes',
+      'Maintenance & mises à jour',
+      'Support technique 24/7',
+      'Projets digitaux pour clients B2B'
+    ]
+  },
+  {
+    key:'cizamarket',
+    title:'CizaMarket',
+    short:'Marketplace local',
+    details: `
+      <p>CizaMarket est une marketplace pour les commerçants locaux : mise en ligne de produits, gestion des commandes, paiement et livraison intégrés.</p>
+      <p>Une vitrine digitale pour le commerce burundais.</p>
+    `,
+    offers:[
+      'Boutique en ligne pour commerçants',
+      'Catalogue produits & promotions',
+      'Paiement via CizaPay+',
+      'Livraison via CizaDelivery',
+      'Espace vendeur (tableau de bord)'
+    ]
+  },
+  {
+    key:'cizajobs',
+    title:'CizaJobs',
+    short:'Emploi & mise en relation',
+    details: `
+      <p>CizaJobs connecte travailleurs (chauffeurs, livreurs, artisans, employés de maison…) et employeurs.</p>
+      <p>Profils vérifiés et liens avec CizaAcademy pour la formation.</p>
+    `,
+    offers:[
+      'Mise en relation chauffeurs & livreurs',
+      'Offres pour agents CizaPay+',
+      'Offres ménage, sécurité, artisans',
+      'Vérification & screening des profils',
+      'Programme insertion via CizaAcademy'
+    ]
+  },
+  {
+    key:'cizaacademy',
+    title:'CizaAcademy',
+    short:'Formation professionnelle',
+    details: `
+      <p>CizaAcademy forme les conducteurs, livreurs, agents et jeunes entrepreneurs aux standards du groupe.</p>
+      <p>Objectif : créer des emplois qualifiés et durables.</p>
+    `,
+    offers:[
+      'Formation chauffeurs (sécurité, service)',
+      'Formation livreurs & logistique',
+      'Formations digitales & bureautique',
+      'Programme entrepreneuriat',
+      'Certifications CIZA GROUP'
+    ]
+  },
+  {
+    key:'cizaassist',
+    title:'CizaAssist',
+    short:'Conciergerie & démarches',
+    details: `
+      <p>CizaAssist accompagne les particuliers et entreprises pour leurs démarches quotidiennes : factures, réservations, démarches administratives.</p>
+      <p>Un interlocuteur unique pour gagner du temps.</p>
+    `,
+    offers:[
+      'Paiement factures à distance',
+      'Démarches administratives',
+      'Réservations (transport, services)',
+      'Assistance pour entreprises',
+      'Support clients CIZA GROUP'
+    ]
+  },
+  {
+    key:'cizacarwash',
+    title:'CizaCarWash+',
+    short:'Lavage automobile mobile',
+    details: `
+      <p>CizaCarWash+ propose le lavage de véhicules sur site (domicile, bureau, flotte entreprise) avec réservation à l’avance.</p>
+      <p>Service premium pour garder les véhicules propres sans se déplacer.</p>
+    `,
+    offers:[
+      'Lavage complet extérieur',
+      'Lavage intérieur + extérieur',
+      'Forfait abonnement mensuel',
+      'Service flotte pour entreprises',
+      'Option écologique (économie d’eau)'
+    ]
+  }
+];
+
+/* SVG existants (on ne touche pas le design global) */
+function svgRide(){ return `<svg width="86" height="64" viewBox="0 0 86 64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#eef7ff"/><g transform="translate(8,10)"><rect x="0" y="10" rx="6" ry="6" width="54" height="20" fill="#0A3D91"/><circle cx="14" cy="36" r="4" fill="#0A3D91"/><circle cx="40" cy="36" r="4" fill="#0A3D91"/></g></svg>` }
+function svgPay(){ return `<svg width="86" height="64" viewBox="0 0 86 64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#fff7ec"/><g transform="translate(12,10)"><rect width="60" height="36" rx="6" fill="#F2B840"/><circle cx="18" cy="28" r="4" fill="#fff"/></g></svg>` }
+function svgDelivery(){ return `<svg width="86" height="64" viewBox="0 0 86 64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#f0fff3"/><g transform="translate(6,8)"><rect width="50" height="22" rx="4" fill="#2EC48D"/><rect x="44" y="10" width="18" height="12" rx="3" fill="#0A3D91"/></g></svg>` }
+function svgImmo(){ return `<svg width="86" height="64" viewBox="0 0 86 64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#f7f7ff"/><g transform="translate(10,8)"><rect width="24" height="36" fill="#012A4A"/><rect x="30" y="12" width="24" height="32" fill="#0A3D91"/></g></svg>` }
+function svgLogistics(){ return `<svg width="86" height="64" viewBox="0 0 86 64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#fff8f3"/><g transform="translate(6,10)"><rect width="36" height="18" fill="#0A3D91"/><rect x="40" y="6" width="26" height="14" fill="#F2B840"/></g></svg>` }
+function svgTech(){ return `<svg width="86" height="64" viewBox="0 0 86 64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#f3f6ff"/><g transform="translate(12,8)"><rect width="46" height="36" rx="6" fill="#0A3D91"/><circle cx="10" cy="18" r="3" fill="#F2B840"/></g></svg>` }
+function svgMarket(){ return `<svg width="86" height="64" viewBox="0 0 86 64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#fffaf6"/><g transform="translate(8,12)"><rect width="70" height="16" rx="8" fill="#0A3D91"/><rect y="20" width="16" height="20" rx="4" fill="#F2B840"/></g></svg>` }
+function svgJobs(){ return `<svg width="86" height="64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#f8fffb"/><g transform="translate(12,8)"><circle cx="10" cy="12" r="8" fill="#0A3D91"/><rect x="28" y="6" width="22" height="24" rx="4" fill="#2EC48D"/></g></svg>` }
+function svgAcademy(){ return `<svg width="86" height="64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#f7f8ff"/><g transform="translate(10,8)"><polygon points="34,6 6,20 62,20" fill="#0A3D91"/><rect y="22" width="64" height="12" fill="#F2B840"/></g></svg>` }
+function svgAssist(){ return `<svg width="86" height="64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#fff"/></svg>` }
+function svgCarwash(){ return `<svg width="86" height="64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#f0f8ff"/><g transform="translate(8,8)"><rect width="48" height="22" rx="4" fill="#0A3D91"/><path d="M0 4c8-6 40-6 48 0" stroke="#fff" stroke-width="2" fill="none"/></g></svg>` }
+
+/* associer les SVG */
+const svgByKey = {
+  cizaride:svgRide(),
+  cizapay:svgPay(),
+  cizadelivery:svgDelivery(),
+  cizaimmo:svgImmo(),
+  cizalog:svgLogistics(),
+  cizatech:svgTech(),
+  cizamarket:svgMarket(),
+  cizajobs:svgJobs(),
+  cizaacademy:svgAcademy(),
+  cizaassist:svgAssist(),
+  cizacarwash:svgCarwash()
+};
+
+/* ======================
+   RENDU CARDS + SELECT
+   ====================== */
+const grid = document.getElementById('services-grid');
+const sel = document.getElementById('c-service');
+SERVICES.forEach(s=>{
+  const card = document.createElement('div');
+  card.className='service';
+  const svg = svgByKey[s.key] || '';
+  card.innerHTML = `
+    <div class="svc-preview" aria-hidden="true">${svg}</div>
+    <div>
+      <h3>${s.title}</h3>
+      <p>${s.short}</p>
+    </div>`;
+  card.addEventListener('click', ()=> openModal(s));
+  grid.appendChild(card);
+
+  const opt = document.createElement('option');
+  opt.value=s.title;
+  opt.textContent=s.title;
+  sel.appendChild(opt);
+});
+
+/* ======================
+   MODAL (zoom + sous-service + paiement)
+   ====================== */
+const backdrop = document.getElementById('modal-backdrop');
+const modalLeft = document.getElementById('modal-left');
+const modalRight = document.getElementById('modal-right');
+let currentPayMethod = null;
+
+function openModal(service){
+  const svg = svgByKey[service.key] || '';
+  modalLeft.innerHTML = `<div class="svc-large" aria-hidden="true">${svg}</div>`;
+
+  const offersOptions = (service.offers || [])
+    .map(o=>`<option value="${o}">${o}</option>`).join('');
+
+  modalRight.innerHTML = `
+    <h3>${service.title}</h3>
+    ${service.details}
+    ${offersOptions ? `
+      <h4>Choisir un sous-service</h4>
+      <select id="subservice-select">
+        <option value="">— Sélectionnez un sous-service —</option>
+        ${offersOptions}
+      </select>
+    ` : ''}
+    <div style="margin-top:10px">
+      <button class="btn" onclick="showPayment('${service.key}','${service.title.replace(/'/g,"&#39;")}')">Je veux ce service</button>
+    </div>
+    <div id="payment-panel" class="payment-panel" style="display:none">
+      <h4>Paiement</h4>
+      <p style="margin:0 0 6px;font-size:12px">
+        Service sélectionné : <strong id="pay-service-label"></strong><br>
+        Sous-service : <span id="pay-subservice-label">—</span>
+      </p>
+      <div class="payment-row">
+        <label>Méthode de paiement</label>
+        <div class="pay-methods">
+          <button type="button" class="pay-method" data-method="mastercard" onclick="selectPayMethod('mastercard')">Mastercard</button>
+          <button type="button" class="pay-method" data-method="visa" onclick="selectPayMethod('visa')">Visa</button>
+          <button type="button" class="pay-method" data-method="cizapay" onclick="selectPayMethod('cizapay')">CizaPay+ / Mobile</button>
+        </div>
+      </div>
+
+      <div id="card-fields" class="payment-row" style="display:none">
+        <label>Nom sur la carte</label>
+        <input type="text" id="card-name" placeholder="Nom complet">
+        <label>Numéro de carte</label>
+        <input type="text" id="card-number" placeholder="0000 0000 0000 0000">
+        <div style="display:flex;gap:6px;margin-top:8px">
+          <div style="flex:1">
+            <label>Expiration</label>
+            <input type="text" id="card-exp" placeholder="MM/AA">
+          </div>
+          <div style="flex:1">
+            <label>CVV</label>
+            <input type="password" id="card-cvv" placeholder="***">
+          </div>
+        </div>
+      </div>
+
+      <div id="mobile-fields" class="payment-row" style="display:none">
+        <label>Numéro CizaPay+ / Mobile</label>
+        <input type="text" id="mobile-number" placeholder="+257 …">
+      </div>
+
+      <div class="payment-row">
+        <label>Détails de la demande</label>
+        <textarea id="payment-message" rows="3" placeholder="Décrivez précisément ce que vous souhaitez (date, heure, adresse, besoin spécifique)…"></textarea>
+      </div>
+
+      <div class="payment-actions">
+        <button type="button" class="btn secondary" onclick="hidePayment()">← Retour</button>
+        <button type="button" class="btn" onclick="submitPayment()">Payer</button>
+      </div>
+
+      <div style="margin-top:8px;font-size:11px;color:var(--muted)">
+        Vous serez contacté par un agent CIZA GROUP pour confirmation après votre demande.
+      </div>
+    </div>
+    <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+      ${service.short}
+    </div>
+  `;
+
+  document.getElementById('pay-service-label').textContent = service.title;
+  const subLabel = document.getElementById('pay-subservice-label');
+  const subSelect = document.getElementById('subservice-select');
+  if(subSelect){
+    subSelect.addEventListener('change', ()=>{
+      subLabel.textContent = subSelect.value || '—';
+    });
+  }
+
+  backdrop.style.display='flex';
+  backdrop.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  currentPayMethod = null;
+}
+
+function closeModal(){
+  backdrop.style.display='none';
+  backdrop.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+}
+backdrop.addEventListener('click', (e)=> { if(e.target===backdrop) closeModal(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+
+function showPayment(key,title){
+  const panel = document.getElementById('payment-panel');
+  if(!panel) return;
+  const subSelect = document.getElementById('subservice-select');
+  const subLabel = document.getElementById('pay-subservice-label');
+  if(subSelect && subLabel){
+    subLabel.textContent = subSelect.value || '—';
+  }
+  panel.style.display='block';
+  panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function hidePayment(){
+  const panel = document.getElementById('payment-panel');
+  if(panel) panel.style.display='none';
+}
+
+function selectPayMethod(method){
+  currentPayMethod = method;
+  document.querySelectorAll('.pay-method').forEach(btn=>{
+    btn.classList.toggle('selected', btn.dataset.method===method);
+  });
+  const card = document.getElementById('card-fields');
+  const mobile = document.getElementById('mobile-fields');
+  if(method==='mastercard' || method==='visa'){
+    if(card) card.style.display='block';
+    if(mobile) mobile.style.display='none';
+  }else if(method==='cizapay'){
+    if(card) card.style.display='none';
+    if(mobile) mobile.style.display='block';
+  }
+}
+
+function submitPayment(){
+  const method = currentPayMethod;
+  if(!method){
+    alert('Veuillez choisir un mode de paiement.');
+    return;
+  }
+  const serviceName = document.getElementById('pay-service-label')?.textContent || 'Service';
+  const subservice = document.getElementById('subservice-select')?.value || '';
+  const message = document.getElementById('payment-message')?.value || '';
+
+  // Ici on simule simplement l’enregistrement côté client
+  console.log('Paiement demandé', {method, serviceName, subservice, message});
+  alert('Votre demande pour ' + serviceName + (subservice ? ' — ' + subservice : '') + ' a été envoyée. Merci !');
+  closeModal();
+}
+
+/* ======================
+   CONTACT STORAGE
+   ====================== */
+function handleContact(e){
+  e.preventDefault();
+  const n = document.getElementById('c-name').value.trim();
+  const em = document.getElementById('c-email').value.trim();
+  const svc = document.getElementById('c-service').value;
+  const msg = document.getElementById('c-message').value.trim();
+  if(!n||!em||!msg){ alert('Veuillez remplir tous les champs'); return; }
+  const store = JSON.parse(localStorage.getItem('ciza_contacts')||'[]');
+  store.push({id:Date.now(),name:n,email:em,service:svc,message:msg,created_at:new Date().toISOString()});
+  localStorage.setItem('ciza_contacts', JSON.stringify(store));
+  document.getElementById('contact-status').style.display='block';
+  document.getElementById('contact-form').reset();
+  setTimeout(()=>document.getElementById('contact-status').style.display='none',4000);
+}
+function exportContacts(){
+  const store = JSON.parse(localStorage.getItem('ciza_contacts')||'[]');
+  if(!store.length){ alert('Aucune demande enregistrée'); return; }
+  const blob = new Blob([JSON.stringify(store,null,2)],{type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href=url; a.download='ciza_contacts.json'; a.click(); URL.revokeObjectURL(url);
+}
+
+/* ======================
+   Météo (Bujumbura)
+   ====================== */
+async function loadWeather(){
+  try{
+    const lat=-3.3616, lon=29.3599;
+    const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&timezone=auto`);
+    const j = await res.json();
+    const w = j.current_weather;
+    const tC = w.temperature;
+    document.getElementById('weatherBox').innerHTML =
+      `<strong>Bujumbura</strong><br>${tC}°C — vent ${w.windspeed} km/h`;
+  }catch(err){
+    const box = document.getElementById('weatherBox');
+    if(box) box.textContent = 'Météo indisponible pour le moment.';
+  }
+}
+
+/* ======================
+   Actualités (RSS simple)
+   ====================== */
+async function loadNews(){
+  const RSS_URL = 'https://www.rfi.fr/fr/rss'; // exemple de flux
+  const proxy = 'https://api.allorigins.win/raw?url=';
+  try{
+    const res = await fetch(proxy + encodeURIComponent(RSS_URL));
+    const xmlText = await res.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xmlText, 'text/xml');
+    const items = Array.from(doc.querySelectorAll('item')).slice(0,6);
+    const grid = document.getElementById('newsGrid');
+    grid.innerHTML = '';
+    items.forEach(item=>{
+      const title = item.querySelector('title') ? item.querySelector('title').textContent : '—';
+      const link = item.querySelector('link') ? item.querySelector('link').textContent : '#';
+      let img = null;
+      const m = item.getElementsByTagName('media:content')[0];
+      if(m && m.getAttribute('url')) img = m.getAttribute('url');
+      if(!img){
+        const enc = item.querySelector('enclosure');
+        if(enc && enc.getAttribute('url')) img = enc.getAttribute('url');
+      }
+      if(!img){
+        const desc = item.querySelector('description') ? item.querySelector('description').textContent : '';
+        const match = desc.match(/<img[^>]+src=["']([^"']+)["']/i);
+        if(match) img = match[1];
+      }
+      if(!img){
+        img = 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=60';
+      }
+      const card = document.createElement('div');
+      card.className='news-card';
+      card.innerHTML = `
+        <img src="${img}" alt="" loading="lazy">
+        <h4 style="margin:4px 0 6px;font-size:14px">${title}</h4>
+        <a href="${link}" target="_blank">Lire →</a>
+      `;
+      grid.appendChild(card);
+    });
+  }catch(e){
+    const grid = document.getElementById('newsGrid');
+    if(grid) grid.textContent = 'Actualités indisponibles pour le moment.';
+  }
+}
+
+/* ======================
+   Utilitaires
+   ====================== */
+function scrollToId(id){
+  const el=document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+/* Init */
+loadWeather();
+loadNews();
+</script>
+</body>
+</html>
