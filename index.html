@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CIZA GROUP — Écosystème de services</title>
+<style>
+  :root{
+    --primary:#0A3D91;
+    --muted:#6B7280;
+    --bg:#ffffff;
+    --card:#f8fbff;
+    --radius:12px;
+    --maxw:1100px;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:var(--bg);color:#0b1220}
+  a{color:var(--primary);text-decoration:none}
+  img{max-width:100%;display:block}
+
+  header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,0.95);border-bottom:1px solid #eef2f6;display:flex;align-items:center;justify-content:space-between;padding:14px 18px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{width:56px;height:56px;object-fit:contain}
+  .brand .title{font-weight:800;color:var(--primary);letter-spacing:0.6px}
+  nav{display:flex;gap:12px;align-items:center}
+  nav a{padding:8px 12px;border-radius:9px;font-weight:600;color:var(--primary)}
+  nav a:hover{background:rgba(10,61,145,0.06)}
+
+  .container{max-width:var(--maxw);margin:28px auto;padding:0 18px}
+  .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
+  .hero-left h1{font-size:32px;margin:0 0 8px}
+  .hero-left p{color:var(--muted);margin:0 0 16px}
+  .buttons{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{background:var(--primary);color:#fff;padding:10px 16px;border-radius:999px;border:0;cursor:pointer;font-weight:700}
+  .btn.ghost{background:transparent;border:2px solid var(--primary);color:var(--primary)}
+
+  aside.card{background:var(--card);padding:18px;border-radius:12px;border:1px solid #e6eef8}
+  aside.card h4{margin:0 0 8px}
+  .kpi{font-weight:800;color:var(--primary)}
+
+  section h2{margin-top:36px}
+  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px}
+  .service{background:#fff;padding:14px;border-radius:12px;border:1px solid #eef4ff;cursor:pointer;transition:transform .15s,box-shadow .15s; display:flex; gap:12px; align-items:center}
+  .service:hover{transform:translateY(-6px);box-shadow:0 8px 30px rgba(13,38,84,0.08)}
+  .svc-preview{width:86px;height:64px;border-radius:8px;overflow:hidden;flex-shrink:0;border:1px solid #eef2f8;display:flex;align-items:center;justify-content:center;background:#f6fbff}
+  .service h3{margin:0 0 6px;font-size:16px}
+  .service p{margin:0;color:var(--muted);font-size:13px}
+
+  /* Modal */
+  .modal-backdrop{position:fixed;inset:0;background:rgba(5,10,30,0.45);display:none;align-items:center;justify-content:center;padding:20px;z-index:200}
+  .modal{max-width:920px;background:#fff;border-radius:12px;padding:22px;box-shadow:0 30px 80px rgba(10,61,145,0.18);display:grid;grid-template-columns:1fr 360px;gap:18px}
+  .modal h3{margin-top:0}
+  .modal .close{position:absolute;right:18px;top:12px;background:transparent;border:0;font-weight:700;color:var(--muted);cursor:pointer;font-size:20px}
+
+  .svc-large{width:100%;height:100%;border-radius:10px;overflow:hidden;background:#f2f8ff; display:flex;align-items:center;justify-content:center}
+  .svc-large img{width:100%;height:100%;object-fit:cover}
+
+  .grid-2{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
+  form input, form textarea, form select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;margin-top:8px}
+  form button{margin-top:10px}
+
+  footer{background:#071336;color:#fff;padding:28px 18px;margin-top:40px}
+  footer .inner{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;gap:16px;align-items:center}
+
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr}
+    .grid-2{grid-template-columns:1fr}
+    nav{display:none}
+    .modal{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <!-- Si tu as un logo remplace src par /assets/logo.png -->
+    <img src="" alt="logo" id="top-logo" onerror="this.style.display='none'">
+    <div>
+      <div class="title">CIZA GROUP</div>
+      <div style="font-size:12px;color:var(--muted)">Écosystème de services • Burundi</div>
+    </div>
+  </div>
+
+  <nav aria-label="Navigation principale">
+    <a href="#services">Services</a>
+    <a href="#about">À propos</a>
+    <a href="#team">Équipe</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main class="container" id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-left">
+      <h1 id="hero-title">Tous les services essentiels réunis — simples, numériques, accessibles.</h1>
+      <p>Mobilité, paiements, livraison, logistique, immobilier, formation, assistance et entretien — une seule plateforme pour faciliter la vie des citoyens et des entreprises.</p>
+
+      <div class="buttons">
+        <button class="btn" onclick="scrollToId('services')">Voir les services</button>
+        <button class="btn ghost" onclick="scrollToId('contact')">Contact / Partenariat</button>
+      </div>
+
+      <div style="margin-top:16px;color:var(--muted);font-size:14px"><strong>Impact local</strong> — création d'emplois et formalisation.</div>
+    </div>
+
+    <aside class="card" aria-labelledby="summary-title" role="region">
+      <h4 id="summary-title">Résumé rapide</h4>
+      <div style="font-size:13px;color:var(--muted);margin-bottom:10px">Écosystème intégré pour particuliers et entreprises.</div>
+      <div><span class="kpi">Services :</span> Mobilité • Paiement • Livraison • Immobilier • Logistique • Tech • Formation • Carwash</div>
+      <div style="margin-top:10px"><a href="#about">En savoir plus →</a></div>
+    </aside>
+  </section>
+
+  <!-- Services -->
+  <section id="services" aria-labelledby="services-title">
+    <h2 id="services-title">Nos services</h2>
+    <div class="services" id="services-grid" role="list"></div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>À propos de CIZA GROUP</h2>
+    <div class="grid-2">
+      <div>
+        <p>CIZA GROUP est un groupe burundais réunissant plusieurs services complémentaires, conçus pour simplifier les activités quotidiennes des citoyens et des entreprises. Chaque service est pensé pour être numérique, accessible et fiable.</p>
+        <h4>Valeur pour la population</h4>
+        <ul>
+          <li>Accès rapide à la mobilité et à la livraison;</li>
+          <li>Solutions de paiement intégrées;</li>
+          <li>Formation professionnelle pour développer des compétences locales;</li>
+          <li>Services à la personne et aux entreprises pour gagner du temps.</li>
+        </ul>
+      </div>
+
+      <aside class="card" aria-labelledby="contact-cta">
+        <h4 id="contact-cta">Prêt à collaborer ?</h4>
+        <p style="color:var(--muted)">Contactez-nous pour partenariat, pilote ou intégration.</p>
+        <div style="display:flex;gap:8px">
+          <button class="btn" onclick="scrollToId('contact')">Contact</button>
+          <a class="btn ghost" href="#services" style="display:inline-flex;align-items:center">Voir services</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="team">
+    <h2>Travailler avec nous</h2>
+    <p>Nous recrutons chauffeurs, livreurs, techniciens et formateurs. Envoyez votre CV via le formulaire de contact.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="grid-2">
+      <div>
+        <form id="contact-form" onsubmit="handleContact(event)" aria-label="Formulaire de contact">
+          <label>Nom complet
+            <input id="c-name" type="text" required placeholder="Votre nom">
+          </label>
+          <label>Email
+            <input id="c-email" type="email" required placeholder="email@exemple.com">
+          </label>
+          <label>Service concerné
+            <select id="c-service"><option value="">— Sélectionnez —</option></select>
+          </label>
+          <label>Message
+            <textarea id="c-message" rows="5" required placeholder="Votre message"></textarea>
+          </label>
+          <button type="submit" class="btn">Envoyer</button>
+          <div id="contact-status" style="margin-top:10px;color:green;display:none">Message enregistré localement.</div>
+        </form>
+      </div>
+
+      <aside class="card">
+        <h4>Coordonnées</h4>
+        <p>Email : <a href="mailto:contact@cizagroup.com">contact@cizagroup.com</a></p>
+        <p>Téléphone : +257 00 00 000</p>
+        <p>Siège : Bujumbura, Burundi</p>
+        <hr>
+        <button class="btn ghost" onclick="exportContacts()">Exporter demandes (JSON)</button>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="inner">
+    <div>
+      <div style="font-weight:800">CIZA GROUP</div>
+      <div style="font-size:13px;color:#bfcfe8">© CIZA GROUP — Tous droits réservés</div>
+    </div>
+    <div style="text-align:right">
+      <div style="font-size:14px">Réseaux</div>
+      <div style="margin-top:6px"><a href="#" style="color:#fff;margin-right:10px">LinkedIn</a><a href="#" style="color:#fff">Twitter</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal -->
+<div id="modal-backdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal" role="document">
+    <button class="close" aria-label="Fermer" onclick="closeModal()">✕</button>
+    <div id="modal-left"></div>
+    <aside id="modal-right" class="card"></aside>
+  </div>
+</div>
+
+<script>
+/* === Services list — même liste que précédemment, avec une illustration SVG inline pour chaque service === */
+const SERVICES = [
+  { key:'cizaride', title:'CizaRide+', short:'Mobilité : motos & voitures', svg: svgRide(), details:`<p>CizaRide+ propose des trajets urbains et interprovinciaux via une application simple: géolocalisation, estimation du temps d'arrivée et notation. Conducteurs vérifiés et formés.</p>` },
+  { key:'cizapay', title:'CizaPay+', short:'Portefeuille numérique', svg: svgPay(), details:`<p>CizaPay+ est un portefeuille digital intégré pour paiements P2P, factures et marchands. Sécurisé et simple.</p>` },
+  { key:'cizadelivery', title:'CizaDelivery', short:'Livraison express', svg: svgDelivery(), details:`<p>Livraison pour colis, documents et e-commerce, avec suivi en temps réel et preuve de livraison.</p>` },
+  { key:'cizaimmo', title:'CizaImmo', short:'Immobilier & gestion', svg: svgImmo(), details:`<p>Listing sécurisé, gestion locative et accompagnement administratif pour transactions immobilières.</p>` },
+  { key:'cizalog', title:'CizaLogistics', short:'Transport & fret', svg: svgLogistics(), details:`<p>Solutions pour transport interprovincial, flotte et hubs régionaux.</p>` },
+  { key:'cizatech', title:'CizaTech', short:'Développement & support', svg: svgTech(), details:`<p>Développement d’applications, APIs et support technique 24/7.</p>` },
+  { key:'cizamarket', title:'CizaMarket', short:'Marketplace local', svg: svgMarket(), details:`<p>Place de marché pour commerçants locaux, intégration paiement et livraison.</p>` },
+  { key:'cizajobs', title:'CizaJobs', short:'Emploi & mise en relation', svg: svgJobs(), details:`<p>Mise en relation entre employeurs et travailleurs (chauffeurs, artisans...).</p>` },
+  { key:'cizaacademy', title:'CizaAcademy', short:'Formation professionnelle', svg: svgAcademy(), details:`<p>Formations pour conducteurs, livreurs, techniciens et entrepreneurs, avec certifications.</p>` },
+  { key:'cizaassist', title:'CizaAssist', short:'Conciergerie & démarches', svg: svgAssist(), details:`<p>Assistance pour paiements, réservations et démarches administratives.</p>` },
+  { key:'cizacarwash', title:'CizaCarWash+', short:'Lavage automobile mobile', svg: svgCarwash(), details:`<p>Lavage mobile, abonnements et prestations premium à domicile ou au bureau.</p>` }
+];
+
+/* === Render cards and fill select === */
+const grid = document.getElementById('services-grid');
+const sel = document.getElementById('c-service');
+SERVICES.forEach(s => {
+  const card = document.createElement('div');
+  card.className = 'service';
+  card.innerHTML = `
+    <div class="svc-preview" aria-hidden="true">${s.svg}</div>
+    <div>
+      <h3>${s.title}</h3>
+      <p>${s.short}</p>
+    </div>
+  `;
+  card.addEventListener('click', ()=> openModal(s));
+  grid.appendChild(card);
+
+  const opt = document.createElement('option'); opt.value = s.title; opt.textContent = s.title; sel.appendChild(opt);
+});
+
+/* === Modal logic === */
+const backdrop = document.getElementById('modal-backdrop');
+const modalLeft = document.getElementById('modal-left');
+const modalRight = document.getElementById('modal-right');
+function openModal(s){
+  // left: large image (reuse SVG but bigger); right: details
+  modalLeft.innerHTML = `<div class="svc-large" aria-hidden="true">${s.svg.replace(/width="86" height="64"/,'width="100%" height="100%"')}</div>`;
+  modalRight.innerHTML = `<h3>${s.title}</h3>${s.details}<div style="margin-top:12px;font-size:13px;color:var(--muted)">${s.short}</div>`;
+  backdrop.style.display='flex'; backdrop.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+}
+function closeModal(){ backdrop.style.display='none'; backdrop.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+backdrop.addEventListener('click', (e)=> { if(e.target===backdrop) closeModal(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+
+/* === Contact (localStorage) === */
+function handleContact(e){
+  e.preventDefault();
+  const n = document.getElementById('c-name').value.trim();
+  const em = document.getElementById('c-email').value.trim();
+  const service = document.getElementById('c-service').value;
+  const msg = document.getElementById('c-message').value.trim();
+  if(!n||!em||!msg){ alert('Veuillez remplir tous les champs'); return; }
+  const store = JSON.parse(localStorage.getItem('ciza_contacts')||'[]');
+  store.push({id:Date.now(), name:n, email:em, service, message:msg, created_at:new Date().toISOString()});
+  localStorage.setItem('ciza_contacts', JSON.stringify(store));
+  document.getElementById('contact-status').style.display='block';
+  document.getElementById('contact-form').reset();
+  setTimeout(()=>document.getElementById('contact-status').style.display='none',4000);
+}
+function exportContacts(){
+  const store = JSON.parse(localStorage.getItem('ciza_contacts')||'[]');
+  if(!store.length){ alert('Aucune demande enregistrée'); return; }
+  const blob = new Blob([JSON.stringify(store,null,2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href=url; a.download='ciza_contacts.json'; a.click(); URL.revokeObjectURL(url);
+}
+
+/* === Utils === */
+function scrollToId(id){ const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); }
+
+/* === SVG icon generators (inline) === */
+function svgRide(){ return `<svg width="86" height="64" viewBox="0 0 86 64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#eef7ff"/><g transform="translate(8,10)"><rect x="0" y="10" rx="6" ry="6" width="54" height="20" fill="#0A3D91"/><circle cx="14" cy="36" r="4" fill="#0A3D91"/><circle cx="40" cy="36" r="4" fill="#0A3D91"/></g></svg>` }
+function svgPay(){ return `<svg width="86" height="64" viewBox="0 0 86 64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#fff7ec"/><g transform="translate(12,10)"><rect width="60" height="36" rx="6" fill="#F2B840"/><circle cx="18" cy="28" r="4" fill="#fff"/></g></svg>` }
+function svgDelivery(){ return `<svg width="86" height="64" viewBox="0 0 86 64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#f0fff3"/><g transform="translate(6,8)"><rect width="50" height="22" rx="4" fill="#2EC48D"/><rect x="44" y="10" width="18" height="12" rx="3" fill="#0A3D91"/></g></svg>` }
+function svgImmo(){ return `<svg width="86" height="64" viewBox="0 0 86 64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#f7f7ff"/><g transform="translate(10,8)"><rect width="24" height="36" fill="#012A4A"/><rect x="30" y="12" width="24" height="32" fill="#0A3D91"/></g></svg>` }
+function svgLogistics(){ return `<svg width="86" height="64" viewBox="0 0 86 64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#fff8f3"/><g transform="translate(6,10)"><rect width="36" height="18" fill="#0A3D91"/><rect x="40" y="6" width="26" height="14" fill="#F2B840"/></g></svg>` }
+function svgTech(){ return `<svg width="86" height="64" viewBox="0 0 86 64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#f3f6ff"/><g transform="translate(12,8)"><rect width="46" height="36" rx="6" fill="#0A3D91"/><circle cx="10" cy="18" r="3" fill="#F2B840"/></g></svg>` }
+function svgMarket(){ return `<svg width="86" height="64" viewBox="0 0 86 64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#fffaf6"/><g transform="translate(8,12)"><rect width="70" height="16" rx="8" fill="#0A3D91"/><rect y="20" width="16" height="20" rx="4" fill="#F2B840"/></g></svg>` }
+function svgJobs(){ return `<svg width="86" height="64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#f8fffb"/><g transform="translate(12,8)"><circle cx="10" cy="12" r="8" fill="#0A3D91"/><rect x="28" y="6" width="22" height="24" rx="4" fill="#2EC48D"/></g></svg>` }
+function svgAcademy(){ return `<svg width="86" height="64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#f7f8ff"/><g transform="translate(10,8)"><polygon points="34,6 6,20 62,20" fill="#0A3D91"/><rect y="22" width="64" height="12" fill="#F2B840"/></g></svg>` }
+function svgAssist(){ return `<svg width="86" height="64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#fff"/></svg>` }
+function svgCarwash(){ return `<svg width="86" height="64" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="64" fill="#f0f8ff"/><g transform="translate(8,8)"><rect width="48" height="22" rx="4" fill="#0A3D91"/><path d="M0 4c8-6 40-6 48 0" stroke="#fff" stroke-width="2" fill="none"/></g></svg>` }
+
+/* Keyboard escape for modal */
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+
+</script>
+</body>
+</html>
