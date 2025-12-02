@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -372,6 +373,12 @@
     <a href="#contact">Contact</a>
   </nav>
 </header>
+  <!-- 🌍 Sélecteur de langue -->
+<div class="lang-switcher" style="display:flex; gap:10px; margin-left:20px;">
+    <img src="https://flagcdn.com/fr.svg" width="26" style="cursor:pointer;" onclick="setLang('fr')" title="Français">
+    <img src="https://flagcdn.com/gb.svg" width="26" style="cursor:pointer;" onclick="setLang('en')" title="English">
+    <img src="https://flagcdn.com/bi.svg" width="26" style="cursor:pointer;" onclick="setLang('ki')" title="Kirundi">
+</div>
 
 <main class="container" id="top">
   <section class="hero" aria-labelledby="hero-title">
@@ -1194,6 +1201,22 @@ window.addEventListener('load', ()=>{
   const loader = document.getElementById('loader');
   if(loader){ loader.classList.add('hide'); }
 });
+</script>
+  <script>
+function setLang(lang) {
+    localStorage.setItem("ciza_lang", lang);
+
+    document.querySelectorAll("[data-fr]").forEach(el => {
+        if (el.dataset[lang]) {
+            el.innerHTML = el.dataset[lang];
+        }
+    });
+}
+
+(function() {
+    const saved = localStorage.getItem("ciza_lang") || "fr";
+    setLang(saved);
+})();
 </script>
 </body>
 </html>
