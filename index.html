@@ -1203,8 +1203,7 @@ window.addEventListener('load', ()=>{
   if(loader){ loader.classList.add('hide'); }
 });
 </script>
-
-  <script>function setLang(lang) {
+ <script>function setLang(lang) {
     localStorage.setItem("ciza_lang", lang);
 
     document.querySelectorAll("[data-fr]").forEach(el => {
@@ -1218,5 +1217,6 @@ window.addEventListener('load', ()=>{
     const saved = localStorage.getItem("ciza_lang") || "fr";
     setLang(saved);
 })();
-</script></body>
+</script>
+ </body>
 </html>
