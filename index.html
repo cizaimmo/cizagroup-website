@@ -266,7 +266,75 @@ aside.card {
 @keyframes fadeInWhy {
   to {
     opacity: 1;
+    transform: translateY(0);/* À PROPOS – VERSION CORPORATE PREMIUM */
+
+#about {
+  padding: 60px 0;
+}
+
+#about h2 {
+  font-size: 30px;
+  font-weight: 900;
+  color: #0A3D91;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Grid corporate */
+#about .grid-2 {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Texte gauche */
+#about p, 
+#about li {
+  font-size: 16px;
+  color: #4e5562;
+  line-height: 1.6;
+}
+
+/* Petit titre interne */
+#about h4 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0A3D91;
+  margin-top: 20px;
+}
+
+/* Card premium (la colonne droite) */
+#about aside.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.06);
+  border: 1px solid #e6ebf4;
+}
+
+#about aside.card p {
+  font-size: 14px;
+  color: #5d6573;
+  line-height: 1.5;
+}
+
+/* Animation fade-in corporate */
+#about .grid-2 > * {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeInAbout 0.6s ease forwards;
+}
+
+#about .grid-2 > :nth-child(1) { animation-delay: 0.1s; }
+#about .grid-2 > :nth-child(2) { animation-delay: 0.2s; }
+
+@keyframes fadeInAbout {
+  to {
+    opacity: 1;
     transform: translateY(0);
+  }
+}
   }
 }
 :root{
