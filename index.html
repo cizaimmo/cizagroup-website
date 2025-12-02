@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CIZA GROUP — Écosystème de services</title>
+
+  <!-- SEO -->
+  <meta name="description" content="CIZA GROUP — Mobilité, paiement, logistique, immobilier, tech, gestion, carwash et services au Burundi et pour la diaspora." />
+  <meta name="keywords" content="CIZA GROUP, CizaRide+, CizaPay+, CizaImmo, CizaLogistics, Burundi, paiement, mobilité, livraison, services" />
+
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="TON_CODE_VERIFICATION_ICI" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CIZA GROUP — Écosystème de services au Burundi" />
+  <meta property="og:description" content="Tous vos services en une seule plateforme : mobilité, paiement, immobilier, logistique, carwash, tech et plus." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cizagroup.com" />
+  <meta property="og:image" content="https://cizagroup.com/share-image.png" />
+
+  <!-- Styles -->
+  <style>
+    :root{
+      --primary:#0A3D91;
+      --primary-dark:#061c4d;
+      --gold:#F2B840;
+      --gold-dark:#d9a021;
+      --muted:#6B7280;
+      --bg:#ffffff;
+      --card:#f8fbff;
+      font-family:Inter,Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:#fff;color:#0b1220;scroll-behavior:smooth}
+
+    /* LOADER PREMIUM */
+    .loader-overlay{
+      position:fixed;inset:0;
+      background:radial-gradient(circle at top,#0A3D91,#020617);
+      display:flex;justify-content:center;align-items:center;
+      flex-direction:column;z-index:9999;
+      transition:opacity .35s ease-out,visibility .35s ease-out;
+    }
+    .loader-overlay.hide{opacity:0;visibility:hidden}
+    .loader-mark{
+      width:70px;height:70px;border-radius:50%;
+      background:var(--gold);border:3px solid var(--gold-dark);
+      display:flex;align-items:center;justify-content:center;
+      font-size:36px;font-weight:900;color:#0A3D91;
+      animation:pulse 1.2s infinite;
+    }
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+    .loader-title{color:#fff;margin-top:10px;font-size:14px;font-weight:700}
+
+    /* HEADER PREMIUM */
+    header{
+      background:#0A3D91;border-bottom:1px solid rgba(255,255,255,0.1);
+      padding:10px 18px;display:flex;justify-content:space-between;
+      align-items:center;position:sticky;top:0;z-index:1000;
+    }
+    .brand-box{
+      display:flex;align-items:center;gap:10px;
+      background:#0A3D91;border-radius:14px;
+      padding:6px 12px;border:1px solid rgba(255,255,255,0.2);
+    }
+    .c-mark{
+      width:34px;height:34px;border-radius:50%;
+      background:var(--gold);border:2px solid var(--gold-dark);
+      display:flex;align-items:center;justify-content:center;
+      font-size:18px;font-weight:900;color:#0A3D91;
+    }
+    .brand-title{color:#fff;font-weight:800;font-size:14px;letter-spacing:0.08em}
+    .brand-tag{font-size:11px;color:#cbd5ff}
+
+    nav a{
+      color:#fff;font-size:13px;padding:6px 12px;border-radius:12px;
+    }
+    nav a:hover{background:rgba(255,255,255,0.12)}
+
+    /* LANGUAGES */
+    .lang-btn{
+      border:1px solid rgba(255,255,255,0.3);
+      background:transparent;color:#fff;
+      font-size:11px;padding:4px 8px;border-radius:10px;
+      cursor:pointer;
+    }
+    .lang-btn.active{background:var(--gold);color:#0A3D91}
+
+    /* CONTAINER */
+    .container{max-width:1100px;margin:30px auto;padding:0 18px}
+
+  </style>
+</head>
+
+<body>
+<!-- LOADER -->
+<div id="loader" class="loader-overlay">
+  <div class="loader-mark">C</div>
+  <div class="loader-title">CIZA GROUP</div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="brand-box">
+    <div class="c-mark">C</div>
+    <div>
+      <div class="brand-title">CIZA GROUP</div>
+      <div class="brand-tag">Écosystème de services • Burundi</div>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#why">Pourquoi nous ?</a>
+    <a href="#about">À propos</a>
+    <a href="#contact">Contact</a>
+
+    <button class="lang-btn active" data-lang="fr">🇫🇷</button>
+    <button class="lang-btn" data-lang="rn">🇧🇮</button>
+    <button class="lang-btn" data-lang="en">🇬🇧</button>
+  </nav>
+</header>
+<main class="container" id="top"><!-- HEADER -->
+<header>
+  <div class="brand-box">
+    <div class="c-mark">C</div>
+    <div>
+      <div class="brand-title">CIZA GROUP</div>
+      <div class="brand-tag">Écosystème de services • Burundi</div>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#why">Pourquoi nous ?</a>
+    <a href="#about">À propos</a>
+    <a href="#contact">Contact</a>
+
+    <button class="lang-btn active" data-lang="fr">🇫🇷</button>
+    <button class="lang-btn" data-lang="rn">🇧🇮</button>
+    <button class="lang-btn" data-lang="en">🇬🇧</button>
+  </nav>
+</header>
+
+<main class="container" id="top">
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-left">
+      <div class="hero-slogan">Écosystème de services pour le Burundi & la diaspora</div>
+
+      <h1>Votre écosystème moderne, digital & fiable.</h1>
+
+      <p>
+        Mobilité, paiement, logistique, immobilier, assistance, carwash, tech — 
+        tous vos services essentiels réunis dans une seule plateforme.
+      </p>
+
+      <div class="buttons">
+        <button class="btn" onclick="scrollToId('services')">
+          Découvrir les services
+        </button>
+        <button class="btn ghost" onclick="scrollToId('contact')">
+          Contact & partenariats
+        </button>
+      </div>
+
+      <!-- App Soon Section -->
+      <div style="margin-top:18px">
+        <div style="font-weight:600;color:var(--primary-dark);margin-bottom:6px;">
+          📱 Application mobile CIZA GROUP — bientôt disponible
+        </div>
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <img src="assets/appstore_real.png" alt="App Store" style="height:42px;">
+          <img src="assets/googleplay_real.png" alt="Google Play" style="height:42px;">
+        </div>
+      </div>
+    </div>
+  </section><!-- HERO SECTION -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <div class="hero-slogan">Écosystème de services pour le Burundi & la diaspora</div>
+
+    <h1>Votre écosystème moderne, digital & fiable.</h1>
+
+    <p>
+      Mobilité, paiement, logistique, immobilier, assistance, carwash, tech —
+      tous vos services essentiels réunis dans une seule plateforme.
+    </p>
+
+    <div class="buttons">
+      <button class="btn" onclick="scrollToId('services')">
+        Découvrir les services
+      </button>
+      <button class="btn ghost" onclick="scrollToId('contact')">
+        Contact & partenariats
+      </button>
+    </div>
+
+    <!-- App Soon REAL BADGES -->
+    <div style="margin-top:18px">
+      <div style="font-weight:600;color:var(--primary-dark);margin-bottom:6px;">
+        📱 Application mobile CIZA GROUP — bientôt disponible
+      </div>
+
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <img src="assets/appstore_real.png" alt="App Store" style="height:42px;">
+        <img src="assets/googleplay_real.png" alt="Google Play" style="height:42px;">
+      </div>
+    </div>
+  </div>
+
+  <aside class="card">
+    <h4>Résumé rapide</h4>
+    <p style="color:var(--muted)">Services unifiés pour particuliers, entreprises et diaspora.</p>
+
+    <div>
+      <strong>Services :</strong> Mobilité • Paiement • Livraison • Immobilier • Logistique • Tech • Carwash • Gestion
+    </div>
+
+    <hr style="margin:12px 0">
+
+    <div id="weatherBox">Météo en chargement…</div>
+
+    <div id="newsWidget" style="margin-top:12px">
+      <h5 style="margin:0;font-size:13px;color:var(--muted)">Actualités internationales</h5>
+      <div id="newsWidgetList" class="news-widget-list">
+        <div style="font-size:12px;color:var(--muted)">Chargement…</div>
+      </div>
+    </div>
+  </aside>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="margin-top:40px">
+  <h2>Nos services</h2>
+  <div class="services" id="services-grid"></div>
+</section>
+
+<!-- WHY -->
+<section id="why" style="margin-top:50px">
+  <h2>Pourquoi choisir CIZA GROUP ?</h2>
+  <div class="why-grid">
+
+    <div class="why-card">
+      <strong>Écosystème complet</strong>
+      Tous vos services : mobilité, paiement, immobilier, logistique, carwash, tech.
+    </div>
+
+    <div class="why-card">
+      <strong>Digital & fiable</strong>
+      Suivi, paiement, demande et reporting — tout depuis votre téléphone.
+    </div>
+
+    <div class="why-card">
+      <strong>Impact local</strong>
+      Création d’emplois, formation, accompagnement des chauffeurs & agents.
+    </div>
+
+    <div class="why-card">
+      <strong>Qualité premium</strong>
+      Standards internationaux, interface moderne, sécurité optimisée.
+    </div>
+
+  </div>
+</section><!-- =========================== BLOC 4 =============================== -->
+
+<!-- SECTION : À PROPOS -->
+<section id="about" class="container" style="margin-top:50px">
+  <h2>À propos de CIZA GROUP</h2>
+
+  <div class="grid-2">
+    <div>
+      <p>
+        CIZA GROUP est un écosystème moderne réunissant mobilité, paiement, livraison,
+        immobilier, logistique, tech, carwash, assistance et gestion — conçu pour le Burundi
+        et la diaspora.  
+        Notre objectif : digitaliser les services essentiels pour offrir fiabilité,
+        rapidité et transparence.
+      </p>
+
+      <h4>Mission</h4>
+      <ul>
+        <li>Simplifier le quotidien des citoyens et entreprises ;</li>
+        <li>Créer des emplois formels et durables ;</li>
+        <li>Accélérer l’adoption numérique au Burundi ;</li>
+        <li>Offrir une solution complète pour la diaspora.</li>
+      </ul>
+
+      <h4>Vision</h4>
+      <p>
+        Devenir la plateforme multiservices la plus fiable d’Afrique de l’Est, en alliant
+        technologie, simplicité et impact local.
+      </p>
+    </div>
+
+    <!-- CARTE BURUNDI + PIN -->
+    <div>
+      <div class="coords-card">
+        <div class="coords-label">Adresse principale</div>
+        <div class="coords-value">Bujumbura — Centre-Ville</div>
+
+        <div class="coords-label" style="margin-top:6px">Téléphone</div>
+        <div class="coords-value">+257 79 94 50 07</div>
+
+        <div class="coords-label" style="margin-top:6px">E-mail</div>
+        <div class="coords-value">cizaimmo@yahoo.com</div>
+
+        <div class="coords-lock">
+          🔒 Connexion sécurisée — Google Maps certifié
+        </div>
+      </div>
+
+      <div class="map-card">
+        <div class="map-pin">📍 CIZA GROUP</div>
+
+        <iframe
+          width="100%" height="220" frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-FAKE-KEY-CHANGE-ME&q=Bujumbura"
+          allowfullscreen
+        ></iframe>
+
+        <div class="map-footer">
+          <span>Localisation</span>
+          <a href="https://maps.google.com/?q=Bujumbura" target="_blank">Y aller →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== FIN BLOC 4 =============================== --><!-- =======================  BLOC 5 – SERVICES + MODAL + PAYMENT ======================= -->
+
+<!-- GRID SERVICES AUTO -->
+<section id="services" class="container" style="margin-top:40px">
+  <h2>Nos services</h2>
+  <div id="services-grid" class="services"></div>
+</section>
+
+<!-- MODAL SERVICE (Slide B) -->
+<div id="modal-backdrop" class="modal-backdrop" style="display:none;">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">✕</button>
+    <div id="modal-left"></div>
+    <aside id="modal-right" class="card" style="border:none;background:transparent;padding:0;"></aside>
+  </div>
+</div>
+
+<!-- PAYMENT PANEL -->
+<div id="payment-panel" class="payment-panel" aria-hidden="true">
+  <div class="payment-inner">
+    <button class="payment-close" onclick="closePayment()">✕</button>
+    <h3>Paiement du service</h3>
+
+    <div style="font-size:13px;color:var(--muted)">
+      Service : <strong id="pay-service-label"></strong><br>
+      Sous-service : <span id="pay-offer-label"></span>
+    </div>
+
+    <div class="payment-section-title">Méthodes disponibles</div>
+    <div class="pay-methods">
+      <button class="pay-method" data-method="lumicash">Lumicash</button>
+      <button class="pay-method" data-method="ecocash">Ecocash</button>
+      <button class="pay-method" data-method="inote">Inote (Bancobu)</button>
+    </div>
+
+    <div id="payment-form-zone" style="display:none;margin-top:10px">
+      <div class="payment-section-title">Instructions</div>
+      <div id="payment-instructions" style="font-size:13px;padding:10px;background:#eef4ff;border-radius:10px;border:1px solid #d1d5db">
+        Sélectionnez un mode de paiement.
+      </div>
+
+      <div class="payment-section-title" style="margin-top:12px">Votre message</div>
+      <textarea id="pay-message" rows="3" style="width:100%;border-radius:10px;border:1px solid #ccc;padding:8px"></textarea>
+
+      <button class="btn" style="margin-top:12px;width:100%" onclick="confirmPayment()">
+        Confirmer
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= JAVASCRIPT SERVICES ======================= -->
+<script>
+const SERVICES = [
+  {
+    key:"ride",
+    title:"CizaRide+",
+    short:"Service de mobilité au Burundi",
+    details:"Déplacements moto, voiture, premium, interprovincial et navettes entreprises.",
+    svg:`<div style='width:100%;height:100%;display:flex;align-items:center;justify-content:center'>🚕</div>`,
+    offers:["Moto","Voiture standard","Premium","Navette","Trajet longue distance"],
+    showVehicle:true
+  },
+  {
+    key:"carwash",
+    title:"CizaCarWash+",
+    short:"Lavage mobile à domicile",
+    details:"Lavage intérieur/extérieur, sièges, flottes entreprises.",
+    svg:`<div style='width:100%;height:100%;display:flex;align-items:center;justify-content:center'>🧼</div>`,
+    offers:["Extérieur","Complet","Sièges","Flotte"],
+    showVehicle:true
+  },
+  {
+    key:"pay",
+    title:"CizaPay+",
+    short:"Paiements digitaux Burundi",
+    details:"Paiements, encaissements, transferts et QR code.",
+    svg:`<div style='width:100%;height:100%;display:flex;align-items:center;justify-content:center'>💳</div>`,
+    offers:["Paiement marchand","Transfert","Encaissement"],
+    showVehicle:false
+  },
+  {
+    key:"immo",
+    title:"CizaImmo",
+    short:"Immobilier & gestion locative",
+    details:"Vente, location, gestion complète pour propriétaires.",
+    svg:`<div style='width:100%;height:100%;display:flex;align-items:center;justify-content:center'>🏠</div>`,
+    offers:["Location","Vente","Gestion"],
+    showVehicle:false
+  }
+];
+
+/* INJECT SERVICES */
+const grid = document.getElementById("services-grid");
+SERVICES.forEach(s=>{
+  const card = document.createElement("div");
+  card.className = "service";
+  card.innerHTML = `
+    <div class="svc-preview">${s.svg}</div>
+    <div><h3>${s.title}</h3><p>${s.short}</p></div>
+  `;
+  card.onclick = ()=> openModal(s);
+  grid.appendChild(card);
+});
+
+/* OPEN MODAL */
+function openModal(s){
+  currentService = s;
+
+  document.getElementById("modal-left").innerHTML = `
+    <div class="svc-large">${s.svg}</div>
+  `;
+
+  const offers = s.offers.map(o=>`
+    <label style="font-size:13px">
+      <input type="radio" name="offer" value="${o}"> ${o}
+    </label><br>`).join("");
+
+  const vehicleField = s.showVehicle ?
+    `<label>Type de véhicule
+       <input id="req-type" placeholder="Moto, berline, SUV…">
+     </label>`
+     : "";
+
+  document.getElementById("modal-right").innerHTML = `
+    <h3>${s.title}</h3>
+    <p>${s.details}</p>
+
+    <h4>Sous-services</h4>
+    ${offers}
+
+    <h4>Votre demande</h4>
+    ${vehicleField}
+
+    <label>Adresse
+      <input id="req-location" placeholder="Kinindo, Rohero…">
+    </label>
+
+    <label>Heure
+      <input id="req-time" placeholder="Ex : 15h - 17h">
+    </label>
+
+    <label>Message
+      <textarea id="req-message" rows="3"></textarea>
+    </label>
+
+    <button class="btn" onclick="sendWhatsAppRequest()">Envoyer via WhatsApp</button>
+    <button class="btn ghost" onclick="startPayment()">Payer</button>
+    <button class="btn ghost" onclick="closeModal()">Retour</button>
+  `;
+
+  document.getElementById("modal-backdrop").style.display="flex";
+  document.body.style.overflow="hidden";
+}
+
+/* CLOSE MODAL */
+function closeModal(){
+  document.getElementById("modal-backdrop").style.display="none";
+  document.body.style.overflow="";
+}
+
+/* SEND WHATSAPP */
+function sendWhatsAppRequest(){
+  const offer = document.querySelector("input[name='offer']:checked")?.value || "";
+  const type = document.getElementById("req-type")?.value || "";
+  const loc = document.getElementById("req-location").value;
+  const time = document.getElementById("req-time").value;
+  const message = document.getElementById("req-message").value;
+
+  const text =
+    `Demande service CIZA GROUP\n`+
+    `Service : ${currentService.title}\n`+
+    `Sous-service : ${offer}\n`+
+    (type ? `Type : ${type}\n` : "")+
+    `Adresse : ${loc}\nHeure : ${time}\nMessage : ${message}`;
+
+  window.open(`https://wa.me/15145029503?text=${encodeURIComponent(text)}`,"_blank");
+}
+
+/* PAYMENT */
+function startPayment(){
+  const offer = document.querySelector("input[name='offer']:checked")?.value || "";
+  document.getElementById("pay-service-label").innerText = currentService.title;
+  document.getElementById("pay-offer-label").innerText = offer;
+  document.getElementById("payment-panel").classList.add("open");
+}
+
+function closePayment(){
+  document.getElementById("payment-panel").classList.remove("open");
+}
+
+function confirmPayment(){
+  alert("Votre paiement a été enregistré. (Simulation)");
+  closePayment();
+}
+</script><!-- ========================= BLOC 5 — SERVICES / MODAL / FORM / PAIEMENT ========================= -->
+
+<script>
+/* ============================================================
+   LISTE OFFICIELLE DES SERVICES (Version A Optimisée)
+============================================================ */
+
+const SERVICES = [
+  {
+    key: "cizaride",
+    title: "CizaRide+",
+    short: "Solution de mobilité fiable au Burundi.",
+    details: "Trajets moto, voiture, premium, interprovincial et navettes.",
+    showVehicle: true,
+    offers: [
+      "Moto économique",
+      "Voiture standard",
+      "Voiture premium",
+      "Navette entreprise",
+      "Trajet interprovincial"
+    ],
+    svg: `<div style="padding:20px;font-weight:700;color:#0A3D91">CizaRide+</div>`
+  },
+  {
+    key: "cizacarwash",
+    title: "CizaCarWash+",
+    short: "Lavage automobile à domicile.",
+    details: "Lavage intérieur/extérieur, complet, sièges et flottes.",
+    showVehicle: true,
+    offers: [
+      "Lavage extérieur",
+      "Lavage complet",
+      "Nettoyage sièges",
+      "Service flottes"
+    ],
+    svg: `<div style="padding:20px;font-weight:700;color:#0A3D91">CarWash</div>`
+  },
+  {
+    key: "cizapay",
+    title: "CizaPay+",
+    short: "Paiements digitaux & wallet.",
+    details: "Paiement marchand, transferts, encaissements.",
+    showVehicle: false,
+    offers: [
+      "Paiement marchand",
+      "Transfert P2P",
+      "Encaissement entreprise"
+    ],
+    svg: `<div style="padding:20px;font-weight:700;color:#0A3D91">CizaPay+</div>`
+  },
+  {
+    key: "cizaimmo",
+    title: "CizaImmo",
+    short: "Immobilier & gestion locative.",
+    details: "Locations, ventes, gestion immobilière.",
+    showVehicle: false,
+    offers: [
+      "Location",
+      "Vente",
+      "Gestion locative"
+    ],
+    svg: `<div style="padding:20px;font-weight:700;color:#0A3D91">CizaImmo</div>`
+  },
+  {
+    key: "cizacarrier",
+    title: "CizaLogistics",
+    short: "Livraison & logistique.",
+    details: "Livraison rapide, flottes, logistique entreprise.",
+    showVehicle: false,
+    offers: [
+      "Livraison express",
+      "Livraison entreprise",
+      "Logistique e-commerce"
+    ],
+    svg: `<div style="padding:20px;font-weight:700;color:#0A3D91">Logistics</div>`
+  },
+  {
+    key: "cizagestion",
+    title: "CizaGestion",
+    short: "Gestion entreprise & reporting.",
+    details: "Comptabilité, reporting, optimisation de processus.",
+    showVehicle: false,
+    offers: [
+      "Gestion financière",
+      "Reporting",
+      "Optimisation entreprise"
+    ],
+    svg: `<div style="padding:20px;font-weight:700;color:#0A3D91">Gestion</div>`
+  }
+];
+
+/* ============================================================
+   AFFICHAGE AUTOMATIQUE DES SERVICES DANS LE GRID
+============================================================ */
+const grid = document.getElementById("services-grid");
+SERVICES.forEach(s=>{
+  const div = document.createElement("div");
+  div.className="service";
+  div.innerHTML = `
+    <div class="svc-preview">${s.svg}</div>
+    <div>
+      <h3>${s.title}</h3>
+      <p>${s.short}</p>
+    </div>
+  `;
+  div.onclick = ()=> openModal(s);
+  grid.appendChild(div);
+});
+
+/* ============================================================
+   OUVERTURE DU SLIDE SERVICE (Slide B)
+============================================================ */
+function openModal(s){
+  document.getElementById("modal-left").innerHTML = `
+    <div class="svc-large">${s.svg}</div>
+  `;
+
+  // Sous-services
+  const offers = s.offers.map(o=>`
+    <label style="font-size:13px;">
+      <input type="radio" name="offer" value="${o}">
+      ${o}
+    </label><br>
+  `).join("");
+
+  // Champs spéciaux uniquement Ride+ et CarWash+
+  const vehicleField = s.showVehicle
+    ? `
+      <label>Type de véhicule
+        <input id="req-type" placeholder="Moto, voiture, SUV…">
+      </label>
+    `
+    : "";
+
+  // Contenu du slide
+  document.getElementById("modal-right").innerHTML = `
+    <h3>${s.title}</h3>
+    <p>${s.details}</p>
+
+    <h4>Sous-services</h4>
+    ${offers}
+
+    <h4>Votre demande</h4>
+    <form id="svc-form">
+      ${vehicleField}
+      <label>Adresse
+        <input id="req-location" placeholder="Votre adresse">
+      </label>
+      <label>Heure souhaitée
+        <input id="req-time" placeholder="Ex : 14h - 16h">
+      </label>
+      <label>Message
+        <textarea id="req-message" rows="3"></textarea>
+      </label>
+
+      <button type="button" class="btn" onclick="sendWhatsApp('${s.title}')">Envoyer via WhatsApp</button>
+      <button type="button" class="btn ghost" onclick="startPayment('${s.title}')">Payer</button>
+      <button type="button" class="btn ghost" onclick="closeModal()">Fermer</button>
+    </form>
+  `;
+
+  document.getElementById("modal-backdrop").style.display = "flex";
+  document.body.style.overflow="hidden";
+}
+
+/* FERMETURE SLIDE */
+function closeModal(){
+  document.getElementById("modal-backdrop").style.display = "none";
+  document.body.style.overflow="";
+}
+
+/* ============================================================
+   WHATSApp AUTOMATIQUE
+============================================================ */
+function sendWhatsApp(service){
+  const offer = document.querySelector("input[name='offer']:checked")?.value || "Non précisé";
+
+  const msg = [
+    `Demande CIZA GROUP`,
+    `Service : ${service}`,
+    `Sous-service : ${offer}`,
+    document.getElementById("req-type") ? "Type : "+document.getElementById("req-type").value : "",
+    "Adresse : "+document.getElementById("req-location").value,
+    "Heure : "+document.getElementById("req-time").value,
+    "Message : "+document.getElementById("req-message").value
+  ].join("\n");
+
+  window.open(
+    "https://wa.me/15145029503?text=" + encodeURIComponent(msg),
+    "_blank"
+  );
+}
+
+/* ============================================================
+   PAIEMENT BURUNDI – Lumicash / Ecocash / Inote
+============================================================ */
+function startPayment(service){
+  document.getElementById("payment-panel").classList.add("open");
+  document.getElementById("pay-service-label").innerText = service;
+
+  const offer = document.querySelector("input[name='offer']:checked")?.value || "Non précisé";
+  document.getElementById("pay-offer-label").innerText = offer;
+}
+
+function closePayment(){
+  document.getElementById("payment-panel").classList.remove("open");
+}
+
+/* Confirmation paiement */
+function confirmPayment(){
+  alert("Votre paiement a été enregistré (mode démonstration).");
+  closePayment();
+}
+
+</script><!-- ============================
+   FIN : ACTUALITÉS (NEWS)
+============================= -->
+async function loadNews(){
+  try{
+    const r = await fetch("https://newsdata.io/api/1/news?apikey=pub_29469a2d18f4df85ac8b83e960&country=us&language=fr");
+    const j = await r.json();
+
+    const box = document.getElementById("newsWidgetList");
+    box.innerHTML = "";
+
+    j.results.slice(0,4).forEach(n=>{
+      box.innerHTML += `
+        <div class="news-item">
+          <div class="news-thumb"><img src="${n.image_url || ''}"></div>
+          <div>${n.title}</div>
+        </div>
+      `;
+    });
+  }catch(e){
+    document.getElementById("newsWidgetList").innerHTML = "Actualités indisponibles";
+  }
+}
+loadNews();
+</script>
+
+<!-- ============================
+   BOUTON WHATSAPP FLOAT
+============================= -->
+<a href="https://wa.me/15145029503" class="whatsapp-float">💬</a>
+
+</body>
+</html>
