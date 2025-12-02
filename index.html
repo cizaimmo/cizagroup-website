@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CIZA GROUP — Écosystème de services</title>
+
+  <!-- SEO de base -->
+  <meta name="description" content="CIZA GROUP — Mobilité, paiement, immobilier, logistique, livraison, tech, formation, carwash et gestion réunis dans un écosystème de services au Burundi." />
+  <meta name="keywords" content="CIZA GROUP, CizaRide+, CizaPay+, CizaImmo, CizaLogistics, CizaTech, CizaMarket, CizaJobs, CizaAcademy, CizaAssist, CizaCarWash+, CizaGestion, Burundi, mobilité, paiement, livraison, immobilier, services" />
+
+  <!-- Google Search Console (remplace par ton code) -->
+  <meta name="google-site-verification" content="TON_CODE_VERIFICATION_ICI" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CIZA GROUP — Écosystème de services au Burundi" />
+  <meta property="og:description" content="Mobilité, paiement, immobilier, logistique, livraison, tech, formation, carwash et gestion réunis dans un seul écosystème." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cizagroup.com" />
+  <meta property="og:site_name" content="CIZA GROUP" />
+  <meta property="og:image" content="https://cizagroup.com/share-image.png" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CIZA GROUP — Écosystème de services au Burundi" />
+  <meta name="twitter:description" content="Tous les services essentiels réunis — simples, numériques, accessibles." />
+  <meta name="twitter:image" content="https://cizagroup.com/share-image.png" />
+
+  <!-- Google Analytics (remplace G-XXXXXXXXXX par ton ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <style>
+    :root{
+      --primary:#0A3D91;
+      --primary-dark:#061c4d;
+      --muted:#6B7280;
+      --bg:#ffffff;
+      --card:#f8fbff;
+      --radius:12px;
+      --maxw:1100px;
+      --gold:#F2B840;
+      --gold-dark:#d9a021;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:#0b1220;scroll-behavior:smooth}
+    a{color:var(--primary);text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Loader premium */
+    .loader-overlay{
+      position:fixed;inset:0;
+      background:radial-gradient(circle at top,#0A3D91,#020617);
+      display:flex;flex-direction:column;
+      align-items:center;justify-content:center;
+      z-index:9999;
+      transition:opacity .35s ease-out,visibility .35s ease-out;
+    }
+    .loader-overlay.hide{
+      opacity:0;visibility:hidden;pointer-events:none;
+    }
+    .loader-mark-wrapper{
+      background:#0A3D91;
+      border-radius:18px;
+      padding:10px 24px 16px;
+      box-shadow:0 24px 60px rgba(0,0,0,0.45);
+      text-align:center;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+    .loader-mark{
+      width:70px;height:70px;
+      border-radius:50%;
+      background:var(--gold);
+      border:3px solid var(--gold-dark);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;font-size:36px;color:#0A3D91;
+      margin:0 auto 8px;
+      animation:pulseLoader 1.2s infinite ease-in-out;
+    }
+    .loader-text-main{
+      color:#fff;
+      font-weight:800;
+      letter-spacing:0.18em;
+      font-size:12px;
+    }
+    .loader-text-sub{
+      margin-top:6px;
+      color:#cbd5f5;
+      font-size:11px;
+    }
+    @keyframes pulseLoader{
+      0%,100%{transform:scale(1)}
+      50%{transform:scale(1.08)}
+    }
+
+    /* Header premium */
+    header{
+      position:sticky;top:0;z-index:60;
+      background:rgba(10,61,145,0.98);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      display:flex;align-items:center;justify-content:space-between;
+      padding:8px 18px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;
+    }
+    .brand-logo-box{
+      background:#0A3D91;
+      border-radius:16px;
+      padding:6px 12px 8px;
+      display:flex;align-items:center;gap:8px;
+      border:1px solid rgba(255,255,255,0.18);
+    }
+    .brand-c-mark{
+      width:32px;height:32px;
+      border-radius:50%;
+      background:var(--gold);
+      border:2px solid var(--gold-dark);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;
+      font-size:18px;
+      color:#0A3D91;
+      flex-shrink:0;
+    }
+    .brand-text-stack{
+      display:flex;flex-direction:column;
+      line-height:1.1;
+    }
+    .brand-name{
+      font-weight:800;
+      color:#fff;
+      letter-spacing:0.12em;
+      font-size:12px;
+      text-transform:uppercase;
+    }
+    .brand-tagline{
+      font-size:11px;
+      color:#cbd5ff;
+    }
+    .brand img{
+      width:40px;height:40px;object-fit:contain;display:none;
+    }
+
+    nav{
+      display:flex;gap:8px;align-items:center;
+    }
+    nav a{
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:500;
+      color:#e5edff;
+      font-size:13px;
+    }
+    nav a:hover{
+      background:rgba(15,23,42,0.4);
+    }
+    .lang-switch{
+      display:flex;
+      gap:4px;
+      margin-left:8px;
+    }
+    .lang-btn{
+      border-radius:999px;
+      border:1px solid rgba(226,232,255,0.5);
+      background:rgba(15,23,42,0.35);
+      color:#e5edff;
+      font-size:11px;
+      padding:4px 8px;
+      cursor:pointer;
+    }
+    .lang-btn.active{
+      background:#F2B840;
+      color:#0A3D91;
+      border-color:#d9a021;
+      font-weight:600;
+    }
+
+    .container{max-width:var(--maxw);margin:28px auto;padding:0 18px}
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.3fr 0.9fr;
+      gap:28px;
+      align-items:center;
+    }
+    .hero-slogan{
+      color:var(--gold);
+      font-weight:600;
+      font-size:14px;
+      margin-bottom:6px;
+    }
+    .hero-left h1{font-size:32px;margin:0 0 8px}
+    .hero-left p{color:var(--muted);margin:0 0 14px}
+    .buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .btn{
+      background:var(--gold);
+      color:#0A3D91;
+      padding:10px 16px;
+      border-radius:999px;
+      border:0;
+      cursor:pointer;
+      font-weight:700;
+      font-size:14px;
+    }
+    .btn.ghost{
+      background:transparent;
+      border:2px solid var(--gold);
+      color:var(--gold);
+    }
+
+    .store-badges{
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;
+    }
+    .store-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 10px;
+      border-radius:8px;
+      border:1px solid #d1d5db;
+      font-size:12px;
+      color:#0b1220;
+      background:#fff;
+    }
+    .store-badge span.icon{
+      width:16px;height:16px;
+      border-radius:4px;
+      background:#111827;
+    }
+    .store-note{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:4px;
+    }
+
+    aside.card{
+      background:var(--card);
+      padding:18px;
+      border-radius:12px;
+      border:1px solid #e6eef8;
+    }
+    aside.card h4{margin:0 0 8px}
+    .kpi{font-weight:800;color:var(--primary)}
+
+    section h2{margin-top:36px}
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+    .service{
+      background:#fff;
+      padding:14px;
+      border-radius:12px;
+      border:1px solid #eef4ff;
+      cursor:pointer;
+      transition:transform .15s,box-shadow .15s;
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .service:hover{
+      transform:translateY(-6px);
+      box-shadow:0 8px 30px rgba(13,38,84,0.08);
+    }
+    .svc-preview{
+      width:86px;height:64px;border-radius:8px;overflow:hidden;
+      flex-shrink:0;border:1px solid #eef2f8;
+      display:flex;align-items:center;justify-content:center;background:#f6fbff;
+    }
+    .service h3{margin:0 0 6px;font-size:16px}
+    .service p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Pourquoi CIZA GROUP */
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:14px;
+      margin-top:14px;
+    }
+    .why-card{
+      background:#fff;
+      border-radius:12px;
+      border:1px solid #e5edff;
+      padding:12px 14px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .why-card strong{display:block;margin-bottom:4px;color:#0b1220;font-size:13px}
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:20px;
+      align-items:start;
+    }
+    form input, form textarea, form select{
+      width:100%;padding:10px;border-radius:8px;
+      border:1px solid #e6eef8;margin-top:8px;font-size:14px;
+    }
+    form button{margin-top:10px}
