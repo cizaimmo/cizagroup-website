@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CIZA GROUP — Entreprises & Diaspora</title>
+
+  <style>
+    :root{
+      --primary:#0A3D91;
+      --muted:#6B7280;
+      --bg:#ffffff;
+      --card:#f8fbff;
+      --radius:12px;
+      --maxw:1100px;
+      --gold:#F2B840;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto;
+    }
+    body{margin:0;background:#fff;color:#0b1220}
+    a{text-decoration:none;color:var(--primary)}
+
+    header{
+      position:sticky;top:0;z-index:50;
+      background:#fff;border-bottom:1px solid #e5e9f2;
+      padding:12px 18px;display:flex;justify-content:space-between;align-items:center;
+    }
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{width:48px;height:48px;object-fit:contain}
+    .brand .title{font-weight:800;font-size:18px;color:var(--primary)}
+
+    .container{max-width:var(--maxw);margin:30px auto;padding:0 18px;}
+
+    h1,h2,h3{color:var(--primary)}
+    section{margin:40px 0}
+
+    .grid-3{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:16px;margin-top:20px;
+    }
+    .card{
+      background:#fff;border:1px solid #eef2f8;border-radius:12px;
+      padding:18px;box-shadow:0 6px 20px rgba(0,0,0,0.05);
+    }
+    .card h3{margin-top:0}
+    .cta-btn{
+      background:var(--primary);color:#fff;padding:12px 20px;
+      border-radius:999px;font-weight:700;border:0;cursor:pointer;
+    }
+    .cta-btn.ghost{
+      background:transparent;color:var(--primary);
+      border:2px solid var(--primary);
+    }
+    form input, form textarea, form select{
+      width:100%;padding:10px;border-radius:8px;
+      border:1px solid #dce3f5;margin-top:8px;font-size:14px;
+    }
+    form button{margin-top:14px}
+
+    footer{
+      margin-top:50px;background:#071336;color:#fff;
+      padding:22px;text-align:center;font-size:13px;
+    }
+    .whatsapp-float{
+      position:fixed;right:16px;bottom:16px;
+      width:58px;height:58px;border-radius:50%;
+      background:#25D366;color:#fff;font-size:26px;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 10px 25px rgba(0,0,0,0.35);
+      z-index:300;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    <img src="assets/ciza_logo.png" alt="CIZA GROUP">
+    <div class="title">CIZA GROUP</div>
+  </div>
+  <nav>
+    <a href="index.html">Accueil</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section>
+    <h1>Solutions Entreprises & Diaspora</h1>
+    <p style="color:var(--muted);max-width:620px">
+      Des solutions professionnelles pour les entreprises, flottes, e-commerce, propriétaires,
+      et pour la diaspora souhaitant gérer leurs biens et opérations au Burundi.
+    </p>
+
+    <div style="margin-top:20px;display:flex;gap:14px;flex-wrap:wrap">
+      <a href="#form" class="cta-btn">Demander un partenariat</a>
+      <a href="#diaspora" class="cta-btn ghost">Solutions Diaspora</a>
+    </div>
+  </section>
+
+  <!-- ENTREPRISE -->
+  <section id="entreprise">
+    <h2>Solutions Entreprises</h2>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Gestion de flotte & mobilité</h3>
+        <p>
+          Gestion complète des chauffeurs, motos, voitures, trajets entreprise, reporting, 
+          optimisation des coûts et suivi en temps réel.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Livraison & e-commerce</h3>
+        <p>
+          Livraison express, distribution, gestion commande, cash collection,
+          intégration directe à CizaDelivery.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Paiement & facturation CizaPay+</h3>
+        <p>
+          Facturation automatisée, paiements marchands, QR code, cashless pour flottes,
+          encaissement entreprise et diaspora.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top:16px">
+      <div class="card">
+        <h3>Logistique nationale</h3>
+        <p>
+          Transport inter-provincial, distribution, tournées programmées, gestion entrepôt.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Immobilier entreprise</h3>
+        <p>
+          Bureaux, entrepôts, boutiques, gestion locative et administrative pour entreprises.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Solutions sur mesure</h3>
+        <p>
+          Intégration API, services personnalisés, volumétrie spéciale, contrats longue durée.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIASPORA -->
+  <section id="diaspora">
+    <h2>Solutions Diaspora</h2>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Gestion locative diaspora</h3>
+        <p>
+          Gestion complète des loyers, états des lieux, visites, paiement, rénovation,
+          transparence totale et reporting.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Démarches & assistance</h3>
+        <p>
+          Paiement factures à distance, réservation, démarches administratives,
+          accompagnement personnalisé.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Projets personnels & familiaux</h3>
+        <p>
+          Suivi de travaux, gestion familiale, opérations diverses au Burundi
+          avec reporting régulier.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARIFS -->
+  <section>
+    <h2>Tarification (sur devis)</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Forfait Entreprise</h3>
+        <p>Mobilité, logistique, livraison, paiement & reporting — tarifs selon volume.</p>
+      </div>
+      <div class="card">
+        <h3>Forfait Flotte</h3>
+        <p>Chauffeurs, véhicules, gestion carburant, suivi, sécurité — sur mesure.</p>
+      </div>
+      <div class="card">
+        <h3>Forfait Diaspora</h3>
+        <p>Gestion locative + démarches + reporting — prix variable selon mission.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULAIRE -->
+  <section id="form">
+    <h2>Demande Business / Diaspora</h2>
+    <p style="color:var(--muted)">Nous vous répondons sous 24h.</p>
+
+    <form onsubmit="sendBiz(event)">
+      <label>Nom complet
+        <input type="text" id="biz-name" required>
+      </label>
+      <label>Email
+        <input type="email" id="biz-email" required>
+      </label>
+      <label>Pays
+        <input type="text" id="biz-pays" required placeholder="Canada, Belgique, Burundi…">
+      </label>
+      <label>Type de demande
+        <select id="biz-type" required>
+          <option>Entreprise</option>
+          <option>Diaspora</option>
+          <option>Flotte</option>
+          <option>Immobilier</option>
+          <option>Logistique</option>
+          <option>Autre</option>
+        </select>
+      </label>
+      <label>Détails de votre demande
+        <textarea id="biz-msg" rows="5" required></textarea>
+      </label>
+
+      <button class="cta-btn" type="submit">Envoyer via WhatsApp</button>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 CIZA GROUP — Solutions Entreprises & Diaspora
+</footer>
+
+<a href="https://wa.me/15145029503" target="_blank" class="whatsapp-float">💬</a>
+
+<script>
+function sendBiz(e){
+  e.preventDefault();
+  const n=document.getElementById("biz-name").value;
+  const em=document.getElementById("biz-email").value;
+  const pays=document.getElementById("biz-pays").value;
+  const type=document.getElementById("biz-type").value;
+  const msg=document.getElementById("biz-msg").value;
+
+  const text =
+`Demande Business/Diaspora :
+Nom : ${n}
+Email : ${em}
+Pays : ${pays}
+Type : ${type}
+Message : ${msg}`;
+
+  window.open("https://wa.me/15145029503?text="+encodeURIComponent(text), "_blank");
+}
+</script>
+
+</body>
+</html>
