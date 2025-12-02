@@ -1203,7 +1203,11 @@ window.addEventListener('load', ()=>{
   if(loader){ loader.classList.add('hide'); }
 });
 </script>
- <script>function setLang(lang) {
+</script> <!-- ceci est la fin du dernier script de ton site -->
+
+<!-- SCRIPT MULTILINGUE -->
+<script>
+function setLang(lang) {
     localStorage.setItem("ciza_lang", lang);
 
     document.querySelectorAll("[data-fr]").forEach(el => {
@@ -1218,5 +1222,6 @@ window.addEventListener('load', ()=>{
     setLang(saved);
 })();
 </script>
- </body>
+
+</body>
 </html>
