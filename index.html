@@ -787,46 +787,101 @@ aside.card {
     <p>Nous recrutons chauffeurs, livreurs, agents terrain, techniciens, commerciaux et formateurs. Envoyez votre CV et vos informations via le formulaire de contact en précisant “Recrutement”.</p>
   </section>
 
-  <section id="contact">
-    <h2>Contact & partenariats</h2>
-    <div class="grid-2">
-      <div>
-        <form id="contact-form" onsubmit="handleContact(event)" aria-label="Formulaire de contact">
+<section id="contact">
+  <h2>Contact & partenariats</h2>
+
+  <div class="contact-grid">
+
+    <!-- 🎯 Colonne FORMULAIRE + sections -->
+    <div>
+
+      <!-- Formulaire principal -->
+      <div class="contact-card">
+        <h3>Formulaire de contact</h3>
+        <p>Envoyez votre demande : partenariat, test pilote, recrutement ou support.</p>
+
+        <form id="contact-form" onsubmit="handleContact(event)">
           <label>Nom complet
             <input id="c-name" type="text" required placeholder="Votre nom complet">
           </label>
+
           <label>Email professionnel
-            <input id="c-email" type="email" required placeholder="email@entreprise.com">
+            <input id="c-email" type="email" required placeholder="email@exemple.com">
           </label>
+
           <label>Type de demande
             <select id="c-service">
               <option value="">— Sélectionnez —</option>
               <option>Partenariat entreprise</option>
               <option>Test pilote / POC</option>
-              <option>Recrutement / Candidature</option>
+              <option>Recrutement</option>
               <option>Support client</option>
               <option>Autre demande</option>
             </select>
           </label>
+
           <label>Message détaillé
-            <textarea id="c-message" rows="5" required placeholder="Expliquez votre besoin, votre activité et vos attentes."></textarea>
+            <textarea id="c-message" rows="4" required placeholder="Expliquez votre besoin..."></textarea>
           </label>
-          <button type="submit" class="btn">Envoyer la demande</button>
-          <div id="contact-status" style="margin-top:10px;color:green;display:none">Message enregistré dans votre navigateur (local).</div>
+
+          <button class="btn" type="submit">Envoyer la demande</button>
         </form>
       </div>
 
-      <aside class="card">
-        <h4>Coordonnées</h4>
-        <p>Email : <a href="mailto:info@cizagroup.com">info@cizagroup.com</a></p>
-        <p>Téléphone Burundi : +257 79 94 50 07</p>
-        <p>Téléphone Canada / WhatsApp : +1 514 502 9503</p>
-        <p>Siège : Bujumbura, Burundi</p>
-        <hr>
-        <button class="btn ghost" onclick="exportContacts()">Exporter les demandes (JSON)</button>
-      </aside>
+      <!-- Entreprises -->
+      <div class="contact-card">
+        <h3>Entreprises & Partenariats</h3>
+        <p>Solutions : flotte, livraison, immobilier, digital, logistique, paiements.</p>
+        <ul>
+          <li>Contrats entreprise</li>
+          <li>Intégration API / Digital</li>
+          <li>Gestion de flotte</li>
+          <li>Logistique & distribution</li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div class="contact-card">
+        <h3>Support client</h3>
+        <p>Nous vous assistons pour toutes vos questions liées aux services et plateformes.</p>
+        <ul>
+          <li>Problème technique</li>
+          <li>Demande chauffeur / livreur</li>
+          <li>Assistance CizaRide+, CizaPay+</li>
+        </ul>
+      </div>
+
+      <!-- Recrutement -->
+      <div class="contact-card">
+        <h3>Recrutement</h3>
+        <p>Candidatures chauffeurs, livreurs, agents terrain, techniciens & formateurs.</p>
+      </div>
+
     </div>
-  </section>
+
+    <!-- 📞 Colonne coordonnées -->
+    <aside class="card">
+      <h3>Coordonnées officielles</h3>
+
+      <p>📧 Email : 
+        <a href="mailto:info@cizagroup.com">info@cizagroup.com</a>
+      </p>
+
+      <p>📞 Téléphone Burundi :  
+        <br><strong>+257 79 94 50 07</strong>
+      </p>
+
+      <p>📱 WhatsApp Canada :  
+        <br><strong>+1 514 502 9503</strong>
+      </p>
+
+      <p>📍 Siège :  
+        <br>Bujumbura, Burundi
+      </p>
+    </aside>
+
+  </div>
+</section>
 </main>
 
         <a href="https://wa.me/15145029503" target="_blank" style="color:#e5edff">WhatsApp</a> •
