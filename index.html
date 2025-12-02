@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CIZA GROUP — Écosystème de services</title>
+
+  <!-- SEO -->
+  <meta name="description" content="CIZA GROUP — Mobilité, paiement, logistique, immobilier, tech, gestion, carwash et services au Burundi et pour la diaspora." />
+  <meta name="keywords" content="CIZA GROUP, CizaRide+, CizaPay+, CizaImmo, CizaLogistics, Burundi, paiement, mobilité, livraison, services" />
+
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="TON_CODE_VERIFICATION_ICI" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CIZA GROUP — Écosystème de services au Burundi" />
+  <meta property="og:description" content="Tous vos services en une seule plateforme : mobilité, paiement, immobilier, logistique, carwash, tech et plus." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cizagroup.com" />
+  <meta property="og:image" content="https://cizagroup.com/share-image.png" />
+
+  <!-- Styles -->
+  <style>
+    :root{
+      --primary:#0A3D91;
+      --primary-dark:#061c4d;
+      --gold:#F2B840;
+      --gold-dark:#d9a021;
+      --muted:#6B7280;
+      --bg:#ffffff;
+      --card:#f8fbff;
+      font-family:Inter,Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:#fff;color:#0b1220;scroll-behavior:smooth}
+
+    /* LOADER PREMIUM */
+    .loader-overlay{
+      position:fixed;inset:0;
+      background:radial-gradient(circle at top,#0A3D91,#020617);
+      display:flex;justify-content:center;align-items:center;
+      flex-direction:column;z-index:9999;
+      transition:opacity .35s ease-out,visibility .35s ease-out;
+    }
+    .loader-overlay.hide{opacity:0;visibility:hidden}
+    .loader-mark{
+      width:70px;height:70px;border-radius:50%;
+      background:var(--gold);border:3px solid var(--gold-dark);
+      display:flex;align-items:center;justify-content:center;
+      font-size:36px;font-weight:900;color:#0A3D91;
+      animation:pulse 1.2s infinite;
+    }
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+    .loader-title{color:#fff;margin-top:10px;font-size:14px;font-weight:700}
+
+    /* HEADER PREMIUM */
+    header{
+      background:#0A3D91;border-bottom:1px solid rgba(255,255,255,0.1);
+      padding:10px 18px;display:flex;justify-content:space-between;
+      align-items:center;position:sticky;top:0;z-index:1000;
+    }
+    .brand-box{
+      display:flex;align-items:center;gap:10px;
+      background:#0A3D91;border-radius:14px;
+      padding:6px 12px;border:1px solid rgba(255,255,255,0.2);
+    }
+    .c-mark{
+      width:34px;height:34px;border-radius:50%;
+      background:var(--gold);border:2px solid var(--gold-dark);
+      display:flex;align-items:center;justify-content:center;
+      font-size:18px;font-weight:900;color:#0A3D91;
+    }
+    .brand-title{color:#fff;font-weight:800;font-size:14px;letter-spacing:0.08em}
+    .brand-tag{font-size:11px;color:#cbd5ff}
+
+    nav a{
+      color:#fff;font-size:13px;padding:6px 12px;border-radius:12px;
+    }
+    nav a:hover{background:rgba(255,255,255,0.12)}
+
+    /* LANGUAGES */
+    .lang-btn{
+      border:1px solid rgba(255,255,255,0.3);
+      background:transparent;color:#fff;
+      font-size:11px;padding:4px 8px;border-radius:10px;
+      cursor:pointer;
+    }
+    .lang-btn.active{background:var(--gold);color:#0A3D91}
+
+    /* CONTAINER */
+    .container{max-width:1100px;margin:30px auto;padding:0 18px}
+
+  </style>
+</head>
+
+<body>
+<!-- LOADER -->
+<div id="loader" class="loader-overlay">
+  <div class="loader-mark">C</div>
+  <div class="loader-title">CIZA GROUP</div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="brand-box">
+    <div class="c-mark">C</div>
+    <div>
+      <div class="brand-title">CIZA GROUP</div>
+      <div class="brand-tag">Écosystème de services • Burundi</div>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#why">Pourquoi nous ?</a>
+    <a href="#about">À propos</a>
+    <a href="#contact">Contact</a>
+
+    <button class="lang-btn active" data-lang="fr">🇫🇷</button>
+    <button class="lang-btn" data-lang="rn">🇧🇮</button>
+    <button class="lang-btn" data-lang="en">🇬🇧</button>
+  </nav>
+</header>
