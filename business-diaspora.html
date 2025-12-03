@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CIZA GROUP — Business Diaspora</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary:#0A3D91;
+    --gold:#F2B840;
+    --dark:#071336;
+    --muted:#6B7280;
+    --radius:14px;
+    font-family:Inter, sans-serif;
+}
+
+/* GLOBAL */
+body {
+    margin:0;
+    background:#f5f6fa;
+    overflow-x:hidden;
+}
+
+/* HEADER PREMIUM */
+header {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 28px;
+    border-bottom:1px solid rgba(0,0,0,0.1);
+    z-index:99999;
+}
+
+.header-left {
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.header-left img {
+    height:50px;
+}
+
+.header-title {
+    font-size:1rem;
+    font-weight:800;
+    color:var(--primary);
+}
+
+nav a {
+    color:var(--primary);
+    font-weight:600;
+    margin-left:22px;
+    text-decoration:none;
+}
+
+.lang-switcher img {
+    width:28px;
+    cursor:pointer;
+    border-radius:4px;
+}
+
+/* HERO SLIDER */
+.hero-slider {
+    margin-top:85px;
+    position:relative;
+    height:70vh;
+    overflow:hidden;
+}
+
+.slide {
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    transition:opacity 1.2s ease;
+}
+.slide.active {
+    opacity:1;
+}
+
+.hero-overlay {
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    position:absolute;
+    bottom:12%;
+    left:6%;
+    color:white;
+    max-width:500px;
+}
+
+.hero-content h1 {
+    font-size:2.8rem;
+    font-weight:900;
+    text-shadow:0 4px 14px black;
+}
+
+.hero-btn {
+    margin-top:20px;
+    background:var(--gold);
+    padding:14px 24px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    color:black;
+    font-weight:800;
+    font-size:1.1rem;
+}
+
+/* PROGRAMMES */
+.section {
+    padding:60px 20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.program-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+    gap:20px;
+}
+
+.program-card {
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:var(--radius);
+    padding:20px;
+    text-align:center;
+    transition:0.2s;
+}
+
+.program-card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+
+.program-icon {
+    font-size:40px;
+    color:var(--primary);
+}
+
+/* CONTACT */
+#contact {
+    background:white;
+    padding:60px 20px;
+    max-width:1200px;
+    margin:auto;
+    border-radius:var(--radius);
+}
+
+.contact-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+    gap:30px;
+}
+
+.contact-box {
+    background:#f0f4ff;
+    border-radius:var(--radius);
+    padding:20px;
+}
+
+/* FOOTER PREMIUM */
+footer {
+    background:var(--primary);
+    color:white;
+    padding:50px 20px;
+    margin-top:60px;
+}
+
+footer a {
+    color:#ffe9b0;
+    text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-left">
+        <img src="9EDFDC7B-7956-4874-A436-A108D72FA51E.png" alt="Logo">
+        <div class="header-title">CIZA GROUP — Écosystème de services</div>
+    </div>
+
+    <nav>
+        <a href="index.html" class="lang" data-fr="Accueil" data-en="Home" data-ki="Ahabanza">Accueil</a>
+        <a href="#programmes" class="lang" data-fr="Programmes" data-en="Programs" data-ki="Porogarama">Programmes</a>
+        <a href="#contact" class="lang" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe">Contact</a>
+    </nav>
+
+    <div class="lang-switcher">
+        <img src="https://flagcdn.com/fr.svg" onclick="setLang('fr')">
+        <img src="https://flagcdn.com/gb.svg" onclick="setLang('en')">
+        <img src="https://flagcdn.com/bi.svg" onclick="setLang('ki')">
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-slider">
+
+    <div class="slide active" style="background-image:url('038E3EC2-468F-4C6B-91DD-D077368508FD.png');"></div>
+    <div class="slide" style="background-image:url('0CD5D803-FB19-4139-B96D-CABF88F5964C.png');"></div>
+    <div class="slide" style="background-image:url('752313D3-3321-4323-BE30-ACA03C349863.png');"></div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1 class="lang"
+            data-fr="Programme Business Diaspora"
+            data-en="Diaspora Business Program"
+            data-ki="Porogarama y'Abari mu Mahanga">
+            Programme Business Diaspora
+        </h1>
+
+        <a href="#programmes" class="hero-btn lang"
+           data-fr="Rejoindre le programme"
+           data-en="Join the Program"
+           data-ki="Kwiyandikisha">
+           Rejoindre le programme
+        </a>
+    </div>
+
+</section>
+
+<!-- PROGRAMMES -->
+<section class="section" id="programmes">
+    <h2 class="lang" data-fr="Programmes pour la Diaspora" data-en="Diaspora Programs" data-ki="Porogaramu za Diaspora">
+        Programmes pour la Diaspora
+    </h2>
+
+    <div class="program-grid">
+
+        <div class="program-card">
+            <div class="program-icon">🏠</div>
+            <h3>Immobilier Premium</h3>
+        </div>
+
+        <div class="program-card">
+            <div class="program-icon">🚗</div>
+            <h3>Mobilité & Chauffeur</h3>
+        </div>
+
+        <div class="program-card">
+            <div class="program-icon">📦</div>
+            <h3>Logistique & Envois</h3>
+        </div>
+
+        <div class="program-card">
+            <div class="program-icon">💳</div>
+            <h3>CizaPay Diaspora</h3>
+        </div>
+
+        <div class="program-card">
+            <div class="program-icon">📋</div>
+            <h3>Gestion & Audit</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2 class="lang" data-fr="Contact & Support" data-en="Contact & Support" data-ki="Twandikire">
+        Contact & Support
+    </h2>
+
+    <div class="contact-grid">
+
+        <div class="contact-box">
+            <h3>Burundi</h3>
+            <iframe src="https://www.google.com/maps?q=Bujumbura&output=embed" width="100%" height="250" style="border:0;"></iframe>
+        </div>
+
+        <div class="contact-box">
+            <h3>Canada</h3>
+            <iframe src="https://www.google.com/maps?q=Montreal&output=embed" width="100%" height="250" style="border:0;"></iframe>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER PREMIUM -->
+<footer>
+
+  <div style="max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;">
+
+    <div>
+      <h3 class="lang" data-fr="Entreprise" data-en="Company" data-ki="Isosiyete">Entreprise</h3>
+      <p><a href="a-propos.html">À propos</a></p>
+      <p><a href="#programmes">Programmes</a></p>
+      <p><a href="#contact">Contact</a></p>
+    </div>
+
+    <div>
+      <h3 class="lang" data-fr="Légal" data-en="Legal" data-ki="Amategeko">Légal</h3>
+      <p><a href="politique-confidentialite.html">Politique de confidentialité</a></p>
+      <p><a href="cgu.html">CGU</a></p>
+      <p><a href="mentions-legales.html">Mentions légales</a></p>
+    </div>
+
+    <div>
+      <h3 class="lang" data-fr="Contact & Support" data-en="Contact & Support" data-ki="Twandikire">Contact</h3>
+      <p>📧 info@cizagroup.com</p>
+      <p>💬 WhatsApp : +1 514 502 9503</p>
+      <p>Bujumbura, Burundi</p>
+      <p>Montréal, Canada</p>
+    </div>
+
+  </div>
+
+  <p style="text-align:center;margin-top:30px;opacity:0.8;">
+    © 2025 CIZA GROUP — All Rights Reserved
+  </p>
+
+</footer>
+
+<script>
+/* SLIDER */
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlides() {
+    slides.forEach(s => s.classList.remove("active"));
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add("active");
+}
+setInterval(showSlides, 5000);
+
+/* MULTILINGUE */
+function setLang(lang){
+    localStorage.setItem("ciza_lang", lang);
+    document.querySelectorAll(".lang").forEach(el=>{
+        if(el.dataset[lang]) el.innerHTML = el.dataset[lang];
+    });
+}
+setLang(localStorage.getItem("ciza_lang") || "fr");
+</script>
+
+</body>
+</html>
