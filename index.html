@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CIZA GROUP — Écosystème Multiservices</title>
+
+<!-- SEO -->
+<meta name="description" content="CIZA GROUP — Mobilité, Paiements, Immobilier, Logistique, Tech, Formation, Conciergerie, Carwash et Services pour la diaspora.">
+<meta name="keywords" content="Burundi, Diaspora, Services, Logistic, Transport, Carwash, Immo, Tech, Formation, Paiement">
+
+<style>
+:root{
+  --primary:#0A3D91;
+  --gold:#F2B840;
+  --muted:#6B7280;
+  --bg:#ffffff;
+  --card:#f8fbff;
+  --radius:12px;
+  --maxw:1200px;
+  font-family: "Inter", system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#ffffff;color:#0b1220;overflow-x:hidden;}
+a{text-decoration:none;color:var(--primary);}
+
+/* ======== LOADER PREMIUM ======== */
+#loader {
+    position:fixed; inset:0;
+    background:#071336;
+    display:flex;flex-direction:column;
+    justify-content:center;align-items:center;
+    z-index:9999;
+    transition:.35s ease-out;
+}
+#loader .mark {
+    width:72px;height:72px;border-radius:50%;
+    background:var(--gold);
+    display:flex;justify-content:center;align-items:center;
+    font-size:34px;font-weight:900;color:#071336;
+    animation:pulse 1.5s infinite ease-in-out;
+}
+@keyframes pulse {
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.12);}
+}
+#loader p {color:white;margin-top:12px;font-weight:600;letter-spacing:1px;}
+
+/* ======== HEADER PREMIUM ======== */
+header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid #eceff5;
+  padding:14px 20px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand img{width:58px;height:58px;object-fit:contain;}
+.brand-title{font-size:20px;font-weight:900;color:var(--primary);}
+.brand-sub{font-size:12px;color:var(--gold);font-weight:600;}
+
+nav{display:flex;gap:16px;}
+nav a{
+  padding:8px 14px;border-radius:999px;
+  font-weight:600;font-size:14px;
+}
+nav a:hover{background:rgba(10,61,145,0.07);}
+
+/* ======== LANG SELECTOR ======== */
+.lang-box{
+  display:flex;gap:10px;align-items:center;
+}
+.lang-box img{
+  width:28px;height:28px;object-fit:cover;
+  border-radius:6px;border:1px solid #e2e2e2;
+  cursor:pointer;transition:transform .15s;
+}
+.lang-box img:hover{
+  transform:scale(1.10);
+  border-color:var(--primary);
+}
+
+/* ======== HERO SECTION ======== */
+.hero{
+  max-width:var(--maxw);
+  margin:50px auto;
+  display:grid;
+  grid-template-columns:1.3fr 0.9fr;
+  gap:40px;
+  padding:0 20px;
+  align-items:center;
+}
+.hero h1{
+  font-size:38px;
+  font-weight:900;
+  color:var(--primary);
+  margin-bottom:12px;
+}
+.hero p{
+  font-size:16px;
+  color:var(--muted);
+  line-height:1.6;
+}
+.buttons{display:flex;gap:12px;margin-top:20px;}
+.btn{
+  padding:12px 20px;
+  border-radius:999px;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  border:none;
+}
+.btn.primary{background:var(--primary);color:white;}
+.btn.ghost{background:transparent;border:2px solid var(--primary);color:var(--primary);}
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="mark">C</div>
+  <p>CIZA GROUP</p>
+</div>
+
+<script>
+window.addEventListener("load",()=>{
+  const loader=document.getElementById("loader");
+  loader.style.opacity="0";
+  setTimeout(()=>loader.style.display="none",400);
+});
+</script>
+
+<!-- HEADER -->
+<header>
+  <div class="brand">
+    <img src="data:image/png;base64,
+PASTE_HERE_BASE64_LOGO
+    " alt="CIZA GROUP">
+    <div>
+      <div class="brand-title"
+           data-fr="CIZA GROUP"
+           data-en="CIZA GROUP"
+           data-ki="CIZA GROUP">
+           CIZA GROUP
+      </div>
+
+      <div class="brand-sub"
+           data-fr="Écosystème de services"
+           data-en="Integrated service ecosystem"
+           data-ki="Ishirahamwe ry'amaserivisi">
+           Écosystème de services
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#services"
+       data-fr="Services"
+       data-en="Services"
+       data-ki="Amaserivisi">
+       Services
+    </a>
+
+    <a href="#about"
+       data-fr="À propos"
+       data-en="About"
+       data-ki="Ibimenyeshwa">
+       À propos
+    </a>
+
+    <a href="business-diaspora.html"
+       data-fr="Diaspora"
+       data-en="Diaspora"
+       data-ki="Abari hanze">
+       Diaspora
+    </a>
+
+    <a href="#contact"
+       data-fr="Contact"
+       data-en="Contact"
+       data-ki="Aho mudushikira">
+       Contact
+    </a>
+  </nav>
+
+  <!-- SELECTEUR DE LANGUE -->
+  <div class="lang-box">
+      <img src="https://flagcdn.com/fr.svg" onclick="setLang('fr')" title="Français">
+      <img src="https://flagcdn.com/gb.svg" onclick="setLang('en')" title="English">
+      <img src="https://flagcdn.com/bi.svg" onclick="setLang('ki')" title="Kirundi">
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1
+      data-fr="Votre écosystème de services au Burundi."
+      data-en="Your integrated service ecosystem in Burundi."
+      data-ki="Ishirahamwe ritanga amaserivisi mu Burundi."
+    >
+      Votre écosystème de services au Burundi.
+    </h1>
+
+    <p
+      data-fr="Mobilité, paiements, livraison, immobilier, logistique, tech, formation, gestion et assistance — une seule plateforme pour particuliers, entreprises et diaspora."
+      data-en="Mobility, payments, delivery, real estate, logistics, tech, training, management and assistance — all in one platform."
+      data-ki="Ubwikwerebwe bw'imodoka, ubwishyu, kurungika ibintu, ibikorwa vy'ubudandaji, ubuhinga bwa none, inyigisho n'ibindi — vyose biri kuri uru rubuga rumwe."
+    >
+      Mobilité, paiements, livraison, immobilier, logistique, tech.
+    </p>
+
+    <div class="buttons">
+      <button class="btn primary"
+        data-fr="Découvrir les services"
+        data-en="Explore services"
+        data-ki="Raba aserivisi"
+      >Découvrir les services</button>
+
+      <button class="btn ghost"
+        data-fr="Contact & partenariats"
+        data-en="Contact & partnerships"
+        data-ki="Aho mudushikira n’amasezerano"
+      >Contact & partenariats</button>
+    </div>
+  </div>
