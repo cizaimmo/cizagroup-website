@@ -196,4 +196,200 @@ header nav a:hover {
     </div>
 
 </div>
-</section>
+</section><!-- ============================== -->
+<!-- 🌟 BLOC 2 — STYLE + HERO SLIDER -->
+<!-- ============================== -->
+
+<style>
+    :root {
+        --primary:#0A3D91;
+        --gold:#F2B840;
+        --dark:#0b1220;
+        --muted:#6B7280;
+        --radius:14px;
+        font-family:Inter, system-ui, sans-serif;
+    }
+
+    body {
+        margin:0;
+        background:#ffffff;
+        color:var(--dark);
+    }
+
+    img { max-width:100%; display:block; }
+
+    /* ------------------------------
+       HERO SLIDER
+    --------------------------------*/
+    .hero-slider {
+        position:relative;
+        height:480px;
+        overflow:hidden;
+        border-radius:0 0 22px 22px;
+    }
+
+    .hero-slide {
+        position:absolute;
+        inset:0;
+        background-size:cover;
+        background-position:center;
+        opacity:0;
+        transition:opacity 1.3s ease;
+    }
+
+    .hero-slide.active {
+        opacity:1;
+    }
+
+    /* Dark overlay */
+    .hero-overlay {
+        position:absolute;
+        inset:0;
+        background:rgba(0,0,0,0.50);
+        backdrop-filter:blur(2px);
+    }
+
+    /* Text zone */
+    .hero-content {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        text-align:center;
+        width:90%;
+        max-width:600px;
+        color:white;
+    }
+
+    .hero-content h1 {
+        font-size:32px;
+        margin-bottom:12px;
+        font-weight:800;
+        line-height:1.2;
+    }
+
+    .hero-content p {
+        font-size:16px;
+        margin-bottom:20px;
+        color:#f4f4f4;
+    }
+
+    .hero-btn {
+        background:var(--gold);
+        color:#000;
+        padding:12px 28px;
+        border-radius:var(--radius);
+        font-weight:800;
+        font-size:16px;
+        border:0;
+        cursor:pointer;
+        transition:0.25s;
+    }
+
+    .hero-btn:hover {
+        background:#ffcf58;
+        transform:scale(1.03);
+    }
+
+    /* ------------------------------
+       PROGRAMMES GRID
+    --------------------------------*/
+    .section {
+        padding:50px 20px;
+        max-width:1100px;
+        margin:auto;
+    }
+
+    h2 {
+        text-align:center;
+        font-size:27px;
+        margin-bottom:25px;
+        font-weight:800;
+        color:var(--primary);
+    }
+
+    .program-grid {
+        display:grid;
+        gap:18px;
+        grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+    }
+
+    .program-card {
+        background:white;
+        border:1px solid #eaeaea;
+        padding:18px;
+        border-radius:var(--radius);
+        cursor:pointer;
+        transition:0.25s;
+        text-align:center;
+    }
+
+    .program-card:hover {
+        transform:translateY(-6px);
+        box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .program-icon {
+        font-size:38px;
+        margin-bottom:10px;
+        color:var(--primary);
+    }
+
+    /* ------------------------------
+       POPUP (MODAL)
+    --------------------------------*/
+    .modal {
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,0.55);
+        display:none;
+        align-items:center;
+        justify-content:center;
+        padding:20px;
+        z-index:9999;
+    }
+
+    .modal-content {
+        background:white;
+        max-width:520px;
+        width:100%;
+        border-radius:var(--radius);
+        padding:25px;
+        animation:zoomIn .35s ease;
+    }
+
+    @keyframes zoomIn {
+        from { transform:scale(0.8); opacity:0; }
+        to { transform:scale(1); opacity:1; }
+    }
+
+    .modal-content h3 {
+        margin-top:0;
+        font-size:22px;
+        color:var(--primary);
+    }
+
+    .modal-close {
+        margin-top:18px;
+        background:var(--primary);
+        color:white;
+        padding:10px 18px;
+        border-radius:var(--radius);
+        border:none;
+        cursor:pointer;
+        float:right;
+    }
+
+    /* ------------------------------
+       FOOTER
+    --------------------------------*/
+    footer {
+        background:#0A3D91;
+        padding:30px 20px;
+        margin-top:40px;
+        text-align:center;
+        color:white;
+    }
+
+    footer a { color:#ffe9b0; }
+</style>
