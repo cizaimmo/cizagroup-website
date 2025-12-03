@@ -1,216 +1,199 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CIZA GROUP – Business Diaspora</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CIZA GROUP – Business Diaspora</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f7f9fc;
-            color: #0a1a33;
-        }
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
-        /* --- HERO SLIDER --- */
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 95vh;
-            overflow: hidden;
-        }
+<style>
+/* -------------------- GLOBAL -------------------- */
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #f5f6fa;
+    overflow-x: hidden;
+}
 
-        .hero-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            transition: opacity 1s ease;
-            opacity: 0;
-        }
+h2 {
+    font-weight: 800;
+    color: #0A3D91;
+}
 
-        .hero-slide.active {
-            opacity: 1;
-        }
+section {
+    padding: 70px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
 
-        .hero-overlay {
-            position: absolute;
-            bottom: 10%;
-            left: 5%;
-            width: 90%;
-            color: white;
-            text-shadow: 0px 5px 20px rgba(0,0,0,0.60);
-        }
+/* -------------------- HEADER PREMIUM -------------------- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 28px;
+    z-index: 99999;
+    border-bottom: 1px solid rgba(0,0,0,0.10);
+}
 
-        .hero-title {
-            font-size: 42px;
-            font-weight: 900;
-        }
-        .hero-sub {
-            font-size: 20px;
-            margin-top: 10px;
-            line-height: 1.4;
-        }
+.header-logo {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #0A3D91;
+    letter-spacing: 1px;
+}
 
-        .hero-btn {
-            margin-top: 25px;
-            padding: 15px 30px;
-            background: linear-gradient(90deg, #d7a437, #e8c46d);
-            border: none;
-            border-radius: 10px;
-            font-size: 20px;
-            font-weight: bold;
-            cursor: pointer;
-            color: #0a1a33;
-        }
+header nav a {
+    color: #0A3D91;
+    font-weight: 600;
+    margin-left: 22px;
+    text-decoration: none;
+    transition: 0.25s;
+}
+header nav a:hover {
+    color: #F2B840;
+}
 
-        /* --- PROGRAMMES --- */
-        .section {
-            padding: 50px 8%;
-        }
+/* MULTILINGUE */
+.lang-switcher {
+    display: flex;
+    gap: 8px;
+}
+.lang-switcher img {
+    width: 28px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+.lang-switcher img:hover {
+    transform: scale(1.1);
+}
 
-        .section-title {
-            font-size: 36px;
-            font-weight: 900;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+/* -------------------- SLIDER -------------------- */
+.hero {
+    margin-top: 70px;
+}
 
-        .program-card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 14px rgba(0,0,0,0.08);
-            margin-bottom: 15px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .program-card:hover {
-            transform: scale(1.02);
-        }
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+}
 
-        .program-details {
-            display: none;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid #ccc;
-            line-height: 1.6;
-        }
+.slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center top;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+.slide.active {
+    opacity: 1;
+}
 
-        .back-btn {
-            margin-top: 20px;
-            display: inline-block;
-            padding: 10px 18px;
-            background: #0a1a33;
-            color: white;
-            border-radius: 8px;
-            cursor: pointer;
-        }
+.hero-content {
+    position: absolute;
+    bottom: 12%;
+    left: 6%;
+    width: 90%;
+    max-width: 650px;
+    color: white;
+    text-shadow: 0 4px 14px rgba(0,0,0,0.60);
+    animation: fadeInUp 1.4s ease;
+}
 
-        /* --- FOOTER --- */
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            padding: 20px;
-            color: #555;
-        }
-    </style>
+.hero-title {
+    font-size: 3.1rem;
+    font-weight: 900;
+}
+
+.hero-sub {
+    margin-top: 10px;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.hero-btn {
+    margin-top: 22px;
+    display: inline-block;
+    padding: 16px 28px;
+    background: #F2B840;
+    color: #000;
+    font-weight: 700;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.15rem;
+    transition: 0.3s;
+}
+.hero-btn:hover { background: #d3a034; }
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- 🔥 HERO AUTO-SLIDER : Homme + Femme -->
-    <div class="hero">
-        <div class="hero-slide active" style="background-image:url('038E3EC2-468F-4C6B-91DD-D077368508FD.png');"></div>
-        <div class="hero-slide" style="background-image:url('0CD5D803-FB19-4139-B96D-CABF88F5964C.png');"></div>
+<header>
+    <div class="header-logo">CIZA GROUP</div>
 
-        <div class="hero-overlay">
-            <div class="hero-title">Programme Business Diaspora</div>
-            <div class="hero-sub">
-                Investissez, gérez et développez vos activités au Burundi  
-                avec un partenaire fiable et professionnel.
-            </div>
+    <nav>
+        <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza">Accueil</a>
+        <a href="#programmes" data-fr="Programmes" data-en="Programs" data-ki="Porogarama">Programmes</a>
+        <a href="#contact" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe">Contact</a>
+    </nav>
 
-            <button class="hero-btn">Rejoindre le programme</button>
-        </div>
+    <div class="lang-switcher">
+        <img src="https://flagcdn.com/fr.svg" onclick="setLang('fr')" title="Français">
+        <img src="https://flagcdn.com/gb.svg" onclick="setLang('en')" title="English">
+        <img src="https://flagcdn.com/bi.svg" onclick="setLang('ki')" title="Kirundi">
+    </div>
+</header>
+
+<!-- HERO / SLIDER -->
+<section class="hero">
+
+<div class="hero-slider">
+
+    <div class="slide active"
+         style="background-image:url('038E3EC2-468F-4C6B-91DD-D077368508FD.png');"></div>
+
+    <div class="slide"
+         style="background-image:url('0CD5D803-FB19-4139-B96D-CABF88F5964C.png');"></div>
+
+    <div class="slide"
+         style="background-image:url('752313D3-3321-4323-BE30-ACA03C349863.png');"></div>
+
+    <div class="hero-content">
+        <div class="hero-title"
+            data-fr="Programme Business Diaspora"
+            data-en="Diaspora Business Program"
+            data-ki="Porogarama y'Abari mu Mahanga"></div>
+
+        <div class="hero-sub"
+            data-fr="Investissez, dirigez et développez vos projets au Burundi en toute sérénité."
+            data-en="Invest, manage and grow your projects in Burundi with full confidence."
+            data-ki="Ishoramari, imicungire n'iterambere ry'imishinga yawe mu mutekano."></div>
+
+        <a href="#programmes" class="hero-btn"
+           data-fr="Rejoindre le programme"
+           data-en="Join the Program"
+           data-ki="Kwiyandikisha"></a>
     </div>
 
-    <!-- ⭐ SECTION PROGRAMMES -->
-    <div class="section">
-        <div class="section-title">Nos programmes pour la diaspora</div>
-
-        <!-- Programme 1 -->
-        <div class="program-card" onclick="toggleDetails('p1')">
-            📦 Gestion & Supervision des biens
-            <div id="p1" class="program-details">
-                Notre équipe supervise vos maisons, terrains et biens commerciaux.  
-                Vous recevez des rapports mensuels + photos + vidéos.  
-                Assistance locale 24/7.
-                <br><br>
-                <span class="back-btn" onclick="event.stopPropagation(); toggleDetails('p1')">Retour</span>
-            </div>
-        </div>
-
-        <!-- Programme 2 -->
-        <div class="program-card" onclick="toggleDetails('p2')">
-            🚗 Gestion de flotte & mobilité
-            <div id="p2" class="program-details">
-                Gestion complète de vos chauffeurs, motos, voitures, trajets,  
-                optimisation des coûts et reporting en temps réel.
-                <br><br>
-                <span class="back-btn" onclick="event.stopPropagation(); toggleDetails('p2')">Retour</span>
-            </div>
-        </div>
-
-        <!-- Programme 3 -->
-        <div class="program-card" onclick="toggleDetails('p3')">
-            💼 Assistance administrative & entreprises
-            <div id="p3" class="program-details">
-                Création d'entreprise, impôts, documents, suivi administratif  
-                et représentation locale professionnelle.
-                <br><br>
-                <span class="back-btn" onclick="event.stopPropagation(); toggleDetails('p3')">Retour</span>
-            </div>
-        </div>
-
-        <!-- Programme 4 -->
-        <div class="program-card" onclick="toggleDetails('p4')">
-            🏠 Immobilier / Construction & rénovation
-            <div id="p4" class="program-details">
-                Suivi de chantier, contrôle qualité, suivi photos/vidéos,  
-                devis, inspections, réception de travaux.
-                <br><br>
-                <span class="back-btn" onclick="event.stopPropagation(); toggleDetails('p4')">Retour</span>
-            </div>
-        </div>
-
-    </div>
-
-    <footer>
-        © 2025 CIZA GROUP — Programme Business Diaspora
-    </footer>
-
-    <script>
-        /* Slider automatique toutes les 4 secondes */
-        let slides = document.querySelectorAll('.hero-slide');
-        let index = 0;
-
-        setInterval(() => {
-            slides[index].classList.remove('active');
-            index = (index + 1) % slides.length;
-            slides[index].classList.add('active');
-        }, 4000);
-
-        /* Programmes toggle */
-        function toggleDetails(id) {
-            var box = document.getElementById(id);
-            box.style.display = box.style.display === "block" ? "none" : "block";
-        }
-    </script>
-
-</body>
-</html>
+</div>
+</section>
