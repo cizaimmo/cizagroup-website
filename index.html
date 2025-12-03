@@ -1,41 +1,178 @@
 <!doctype html>
-
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CIZA GROUP — Écosystème de services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CIZA GROUP — Écosystème de services premium</title>
 
-  <!-- SEO de base -->
-  <meta name="description" content="CIZA GROUP — Mobilité, Paiement, Logistique, Immobilier, Livraison, Tech, Formation, CarWash et Gestion au Burundi." />
-  <meta name="keywords" content="CIZA GROUP, CizaRide, CizaPay, CizaImmo, CizaLogistics, CizaTech, CizaMarket, CizaJobs, CizaAcademy, CizaAssist, CizaCarWash, CizaGestion, Burundi, mobilité, paiement, livraison, immobilier, services" />
-  <link rel="canonical" href="https://cizagroup.com" />
+  <!-- SEO -->
+  <meta name="description" content="CIZA GROUP — Groupe premium offrant mobilité, paiement, livraison, logistique, immobilier, tech et services professionnels au Burundi.">
+  <meta name="keywords" content="CIZA GROUP, services, mobilité, paiement, Burundi, diaspora, business, premium, livraison, immobilier, logistique">
+  <link rel="canonical" href="https://cizagroup.com">
 
-  <!-- Search Console (à remplacer par ton vrai code) -->
-  <meta name="google-site-verification" content="TON_CODE_VERIFICATION_ICI" />
+  <!-- OpenGraph -->
+  <meta property="og:title" content="CIZA GROUP — Écosystème premium au Burundi">
+  <meta property="og:description" content="Mobilité, paiement, immobilier, tech et services premium réunis dans un écosystème unique.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/df97a8223e698494602d5ac8cadf50b753d47729/hero-ciza-premium.png">
+  <meta property="og:type" content="website">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="CIZA GROUP — Écosystème de services au Burundi" />
-  <meta property="og:description" content="Mobilité, paiement, immobilier, logistique, livraison, tech, formation, carwash et gestion réunis dans un seul écosystème." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://cizagroup.com" />
-  <meta property="og:site_name" content="CIZA GROUP" />
-  <meta property="og:image" content="https://cizagroup.com/share-image.png" />
-  <meta property="og:locale" content="fr_FR" />
+  <!-- Styles Premium -->
+  <style>
+    :root {
+      --primary:#0A1E3F; /* Bleu nuit corporate */
+      --gold:#F2B840;    /* Doré premium */
+      --text-light:#f8f9fc;
+      --radius:14px;
+      font-family: "Inter", sans-serif;
+    }
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CIZA GROUP — Écosystème de services au Burundi" />
-  <meta name="twitter:description" content="Tous les services essentiels réunis — simples, numériques, accessibles." />
-  <meta name="twitter:image" content="https://cizagroup.com/share-image.png" />
+    body {
+      margin:0;
+      background:#ffffff;
+      color:#0b1220;
+      overflow-x:hidden;
+    }
 
-  <!-- Google Analytics (remplace G-XXXXXXXXXX par ton ID réel) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    /* Header transparent + transition premium */
+    header {
+      position:fixed;
+      top:0; left:0;
+      width:100%;
+      padding:16px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:1000;
+      transition: background 0.35s ease, box-shadow 0.35s;
+      background:rgba(0,0,0,0); 
+    }
+
+    header.scrolled {
+      background:#ffffff;
+      box-shadow:0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    header img.logo {
+      height:58px;
+      width:auto;
+    }
+
+    nav a {
+      margin:0 14px;
+      font-weight:600;
+      color:#fff;
+      text-decoration:none;
+      transition:0.2s;
+      font-size:15px;
+    }
+
+    header.scrolled nav a {
+      color:var(--primary);
+    }
+
+    nav a:hover {
+      color:var(--gold);
+    }
+
+    /* HERO Premium Parallax */
+    .hero {
+      position:relative;
+      height:100vh;
+      width:100%;
+      background-image:url("https://raw.githubusercontent.com/cizaimmo/cizagroup-website/df97a8223e698494602d5ac8cadf50b753d47729/hero-ciza-premium.png");
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .hero::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(5,12,32,0.65); /* overlay bleu nuit */
+      backdrop-filter: blur(2px);
+    }
+
+    .hero-content {
+      position:relative;
+      text-align:center;
+      color:white;
+      max-width:850px;
+      padding:20px;
+      z-index:10;
+      animation:fadeInUp 1s ease forwards;
+    }
+
+    .hero-title {
+      font-size:54px;
+      font-weight:900;
+      letter-spacing:0.5px;
+      margin-bottom:12px;
+      color:white;
+    }
+
+    .hero-subtitle {
+      font-size:20px;
+      opacity:0.88;
+      margin-bottom:30px;
+    }
+
+    .hero-btn {
+      display:inline-block;
+      padding:14px 28px;
+      font-size:16px;
+      font-weight:700;
+      border-radius:var(--radius);
+      background:var(--gold);
+      color:#0A1E3F;
+      text-decoration:none;
+      transition:0.2s;
+    }
+    .hero-btn:hover {
+      background:#ffcf5c;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(20px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header id="main-header">
+  <img src="assets/ciza_logo.png" alt="CIZA GROUP" class="logo">
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#why">Pourquoi CIZA</a>
+    <a href="#about">À propos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO PARALLAX PREMIUM -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Votre écosystème premium de services au Burundi</h1>
+    <p class="hero-subtitle">Mobilité • Paiement • Logistique • Livraison • Immobilier • Tech • Diaspora Business</p>
+    <a href="#services" class="hero-btn">Découvrir nos services</a>
+  </div>
+</section>
+
+<script>
+  // Transition header transparent → blanc
+  window.addEventListener("scroll", () => {
+    const header = document.getElementById("main-header");
+    if (window.scrollY > 80) header.classList.add("scrolled");
+    else header.classList.remove("scrolled");
+  });
+</script>
+ gtag('config', 'G-XXXXXXXXXX');
   </script>
 
   <style>
