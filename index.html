@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CIZA GROUP — Écosystème Multiservices</title>
+
+<!-- SEO -->
+<meta name="description" content="CIZA GROUP — Mobilité, Paiements, Immobilier, Logistique, Tech, Formation, Conciergerie, Carwash et Services pour la diaspora.">
+<meta name="keywords" content="Burundi, Diaspora, Services, Logistic, Transport, Carwash, Immo, Tech, Formation, Paiement">
+
+<!-- Styles globaux -->
+<style>
+:root{
+  --primary:#0A3D91;
+  --gold:#F2B840;
+  --muted:#6B7280;
+  --bg:#ffffff;
+  --card:#f8fbff;
+  --radius:12px;
+  --maxw:1200px;
+  font-family: "Inter", system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#ffffff;color:#0b1220;overflow-x:hidden;}
+a{text-decoration:none;color:var(--primary);}
+
+/* ======== LOADER PREMIUM ======== */
+#loader {
+    position:fixed; inset:0;
+    background:#071336;
+    display:flex;flex-direction:column;
+    justify-content:center;align-items:center;
+    z-index:9999;
+    transition:.35s ease-out;
+}
+#loader .mark {
+    width:72px;height:72px;border-radius:50%;
+    background:var(--gold);
+    display:flex;justify-content:center;align-items:center;
+    font-size:34px;font-weight:900;color:#071336;
+    animation:pulse 1.5s infinite ease-in-out;
+}
+@keyframes pulse {
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.12);}
+}
+#loader p {color:white;margin-top:12px;font-weight:600;letter-spacing:1px;}
+
+/* ======== HEADER PREMIUM ======== */
+header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid #eceff5;
+  padding:14px 20px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand img{width:54px;height:54px;object-fit:contain;}
+.brand-title{font-size:20px;font-weight:900;color:var(--primary);}
+.brand-sub{font-size:12px;color:var(--gold);font-weight:600;}
+
+nav{display:flex;gap:16px;}
+nav a{
+  padding:8px 14px;border-radius:999px;
+  font-weight:600;font-size:14px;
+}
+nav a:hover{background:rgba(10,61,145,0.07);}
+
+/* ======== LANG SELECTOR ======== */
+.lang-box{
+  display:flex;gap:10px;align-items:center;
+}
+.lang-box img{
+  width:28px;height:28px;object-fit:cover;
+  border-radius:6px;border:1px solid #e2e2e2;
+  cursor:pointer;transition:transform .15s;
+}
+.lang-box img:hover{
+  transform:scale(1.10);
+  border-color:var(--primary);
+}
+
+/* ======== HERO SECTION ======== */
+.hero{
+  max-width:var(--maxw);
+  margin:50px auto;
+  display:grid;
+  grid-template-columns:1.3fr 0.9fr;
+  gap:40px;
+  padding:0 20px;
+  align-items:center;
+}
+.hero h1{
+  font-size:38px;
+  font-weight:900;
+  color:var(--primary);
+  margin-bottom:12px;
+}
+.hero p{
+  font-size:16px;
+  color:var(--muted);
+  line-height:1.6;
+}
+.buttons{display:flex;gap:12px;margin-top:20px;}
+.btn{
+  padding:12px 20px;
+  border-radius:999px;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  border:none;
+}
+.btn.primary{background:var(--primary);color:white;}
+.btn.ghost{background:transparent;border:2px solid var(--primary);color:var(--primary);}
+
+/* Résumé */
+aside.card{
+  background:#f8fbff;
+  border-radius:12px;
+  padding:20px;
+  border:1px solid #e6eef8;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="mark">C</div>
+  <p>CIZA GROUP</p>
+</div>
+
+<script>
+window.addEventListener("load",()=>{
+  const loader=document.getElementById("loader");
+  loader.style.opacity="0";
+  setTimeout(()=>loader.style.display="none",400);
+});
+</script>
+
+<!-- HEADER -->
+<header>
+  <div class="brand">
+    <img src="logo.png" alt="CIZA GROUP">
+    <div>
+      <div class="brand-title" 
+           data-fr="CIZA GROUP"
+           data-en="CIZA GROUP"
+           data-ki="CIZA GROUP">
+           CIZA GROUP
+      </div>
+      <div class="brand-sub"
+           data-fr="Écosystème de services"
+           data-en="Integrated service ecosystem"
+           data-ki="Ishirahamwe ry'ubushikiranganji n'ibitangwa vy'amaserivisi">
+           Écosystème de services
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#services"
+       data-fr="Services"
+       data-en="Services"
+       data-ki="Amaserivisi">
+       Services
+    </a>
+
+    <a href="#about"
+       data-fr="À propos"
+       data-en="About"
+       data-ki="Ibimenyeshwa">
+       À propos
+    </a>
+
+    <a href="business-diaspora.html"
+       data-fr="Diaspora"
+       data-en="Diaspora"
+       data-ki="Abari hanze">
+       Diaspora
+    </a>
+
+    <a href="#contact"
+       data-fr="Contact"
+       data-en="Contact"
+       data-ki="Aho mudushikira">
+       Contact
+    </a>
+  </nav>
+
+  <!-- SELECTEUR DE LANGUE -->
+  <div class="lang-box">
+      <img src="https://flagcdn.com/fr.svg" onclick="setLang('fr')" title="Français">
+      <img src="https://flagcdn.com/gb.svg" onclick="setLang('en')" title="English">
+      <img src="https://flagcdn.com/bi.svg" onclick="setLang('ki')" title="Kirundi">
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1
+      data-fr="Votre écosystème de services au Burundi."
+      data-en="Your integrated service ecosystem in Burundi."
+      data-ki="Ishirahamwe rishinzwe gutanga serivisi z’ubuhinga n’ugushikira abanyagihugu mu Burundi."
+    >
+      Votre écosystème de services au Burundi.
+    </h1>
+
+    <p
+      data-fr="Mobilité, paiements, livraison, immobilier, logistique, tech, formation, gestion et assistance — une seule plateforme pour particuliers, entreprises et diaspora."
+      data-en="Mobility, payments, delivery, real estate, logistics, tech, training, management and assistance — all in one platform for individuals, businesses, and the diaspora."
+      data-ki="Ubwikwerebwe bw'imodoka, ubwishyu, kurungika ibintu, ibikorwa vy'ubudandaji n'uburaro, ubuhinga bwa none, inyigisho, imicungararo hamwe n'ugufasha — vyose biri kuri uru rubuga rumwe rw’abanyagihugu, amashirahamwe n’abari hanze y’igihugu."
+    >
+      Mobilité, paiements, livraison, immobilier, logistique, tech, formation, gestion et assistance — une seule plateforme.
+    </p>
+
+    <div class="buttons">
+      <button class="btn primary"
+        data-fr="Découvrir les services"
+        data-en="Explore services"
+        data-ki="Raba aserivisi"
+      >Découvrir les services</button>
+
+      <button class="btn ghost"
+        data-fr="Contact & partenariats"
+        data-en="Contact & partnerships"
+        data-ki="Aho mudushikira n’amasezerano"
+      >Contact & partenariats</button>
+    </div>
+  </div>
+
+  <aside class="card">
+    <h3
+      data-fr="Résumé rapide"
+      data-en="Quick summary"
+      data-ki="Incamake yihuta"
+    >Résumé rapide</h3>
+
+    <p
+      data-fr="Écosystème intégré pour particuliers, entreprises et diaspora."
+      data-en="Integrated ecosystem for individuals, businesses, and the diaspora."
+      data-ki="Ubushikiranganji bwuzuye bushikiriza serivisi ku banyagihugu, amashirahamwe hamwe n’abari hanze."
+    >
+      Écosystème intégré pour particuliers.
+    </p>
+
+    <p id="weatherBox"
+       data-fr="Météo en chargement…"
+       data-en="Loading weather…"
+       data-ki="Ibihe biri kwishurwa…"
+    >
+       Météo en chargement…
+    </p>
+
+    <div id="newsWidget"
+      data-fr="Actualités en chargement…"
+      data-en="Loading news…"
+      data-ki="Inkuru ziri kwishurwa…"
+    >
+      Actualités en chargement…
+    </div>
+  </aside>
+</section>
+
+<script>
+function setLang(lang){
+  localStorage.setItem("ciza_lang", lang);
+  document.querySelectorAll("[data-fr]").forEach(el=>{
+    if(el.dataset[lang]) el.innerHTML = el.dataset[lang];
+  });
+}
+(function(){
+  const saved=localStorage.getItem("ciza_lang")||"fr";
+  setLang(saved);
+})();
+</script><!-- =============================== -->
+<!--   SECTION : SERVICES MULTILANG  -->
+<!-- =============================== -->
+<section id="services" style="max-width:1200px;margin:40px auto;padding:0 20px;">
+  <h2 
+    style="font-size:28px;font-weight:900;color:#0A3D91;margin-bottom:20px;"
+    data-fr="Nos services"
+    data-en="Our services"
+    data-ki="Amaserivisi dutanga"
+  >
+    Nos services
+  </h2>
+
+  <div id="services-grid" 
+       style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
+  </div>
+</section>
+
+<!-- =============================================== -->
+<!--  SCRIPT SERVICES — 13 services + IcizaMarketing -->
+<!-- =============================================== -->
+<script>
+const SERVICES = [
+  {
+    key:'cizaride',
+    title:{
+      fr:'CizaRide+',
+      en:'CizaRide+',
+      ki:'CizaRide+'
+    },
+    short:{
+      fr:'Mobilité motos et voitures',
+      en:'Motorbike & car mobility',
+      ki:'Ubwikwerebwe bw’imiduga n’amapikipiki'
+    },
+    details:{
+      fr:`<p>CizaRide+ propose des trajets urbains et interprovinciaux avec conducteurs vérifiés.</p>`,
+      en:`<p>CizaRide+ offers urban and interprovincial rides with verified drivers.</p>`,
+      ki:`<p>CizaRide+ itanga ingendo zo mu gisagara no hagati y’intara, habanje kugenzurwa abashoferi.</p>`
+    },
+    offers:{
+      fr:['Course moto','Course voiture','Course premium','Trajet interprovincial','Navette entreprise'],
+      en:['Motorbike ride','Car ride','Premium ride','Interprovincial travel','Corporate shuttle'],
+      ki:['Inyakamwe ya pikipiki','Inyakamwe y’imodoka','Serivisi yihariye','Ingendo hagati y’intara','Serivisi y’amashirahamwe']
+    }
+  },
+
+  {
+    key:'cizapay',
+    title:{fr:'CizaPay+',en:'CizaPay+',ki:'CizaPay+'},
+    short:{
+      fr:'Portefeuille numérique',
+      en:'Digital wallet',
+      ki:'Ububikira bw’amafaranga bwa dijitali'
+    },
+    details:{
+      fr:`<p>Paiements, transferts, factures et opérations intégrées.</p>`,
+      en:`<p>Payments, transfers, bills and integrated operations.</p>`,
+      ki:`<p>Ukwishura, uburyo bwo kurungika amafaranga, imisoro n’ibikorwa vyose hamwe.</p>`
+    },
+    offers:{
+      fr:['Création de compte','Paiement marchand','Factures','Transfert','Encaissement entreprise'],
+      en:['Account creation','Merchant payment','Bills','Transfer','Corporate collection'],
+      ki:['Gufungura konti','Ukwishura abacuruzi','Imisoro','Ukurungika amafaranga','Ukugemura kw’amashirahamwe']
+    }
+  },
+
+  {
+    key:'cizadelivery',
+    title:{fr:'CizaDelivery',en:'CizaDelivery',ki:'CizaDelivery'},
+    short:{
+      fr:'Livraison express',
+      en:'Express delivery',
+      ki:'Kurungika ibintu biranguye'
+    },
+    details:{
+      fr:`<p>Livraison de documents, colis, repas et e-commerce avec suivi.</p>`,
+      en:`<p>Delivery of documents, parcels, food and e-commerce with tracking.</p>`,
+      ki:`<p>Kuzana no kurungika ibidandazwa, inyandiko, ibifungurwa n’ibindi bifise ukugenzurwa.</p>`
+    },
+    offers:{
+      fr:['Documents','Colis','Repas','Programmée','Entreprise'],
+      en:['Documents','Packages','Meals','Scheduled','Corporate'],
+      ki:['Inyandiko','Ibintu','Ibiribwa','Vyateguwe','Ibikorwa vy’amashirahamwe']
+    }
+  },
+
+  {
+    key:'cizaimmo',
+    title:{fr:'CizaImmo',en:'CizaImmo',ki:'CizaImmo'},
+    short:{
+      fr:'Immobilier et gestion',
+      en:'Real estate & management',
+      ki:'Ibikorwa vy’ubudandaji n’uburaro'
+    },
+    details:{
+      fr:`<p>Locations, ventes, gestion locative, accompagnement administratif.</p>`,
+      en:`<p>Rentals, sales, management and administrative support.</p>`,
+      ki:`<p>Ugutanga uburaro, kugurisha, imicungararo y’imitunga n’ugufashwa mu vy’inyandiko.</p>`
+    },
+    offers:{
+      fr:['Location','Vente','Gestion locative','Accompagnement diaspora','Bureaux'],
+      en:['Rental','Sale','Property management','Diaspora support','Offices'],
+      ki:['Ugutanga uburaro','Kugurisha','Imicungararo','Ubufasha bw’abari hanze','Ibiro']
+    }
+  },
+
+  {
+    key:'cizalog',
+    title:{fr:'CizaLogistics',en:'CizaLogistics',ki:'CizaLogistics'},
+    short:{
+      fr:'Fret et distribution',
+      en:'Freight & distribution',
+      ki:'Imizigo n’ugutanga ibintu'
+    },
+    details:{
+      fr:`<p>Transport interprovincial, fret, distribution et gestion de flotte.</p>`,
+      en:`<p>Interprovincial transport, freight, distribution and fleet management.</p>`,
+      ki:`<p>Ingendo hagati y’intara, imizigo, ugutwara ibintu n’imicungararo y’ibinyabiziga.</p>`
+    },
+    offers:{
+      fr:['Transport','Distribution','Marchandises','Flotte','Contrats'],
+      en:['Transport','Distribution','Goods','Fleet','Contracts'],
+      ki:['Ingendo','Ugutanga ibintu','Imizigo','Imodoka nyinshi','Amasezerano']
+    }
+  },
+
+  {
+    key:'cizatech',
+    title:{fr:'CizaTech',en:'CizaTech',ki:'CizaTech'},
+    short:{
+      fr:'Solutions tech',
+      en:'Tech solutions',
+      ki:'Ibisubizo vy’ikoranabuhinga'
+    },
+    details:{
+      fr:`<p>Développement mobile, API, sites web, systèmes internes.</p>`,
+      en:`<p>Mobile development, API, websites and internal systems.</p>`,
+      ki:`<p>Iterambere rya porogaramu, API, imirongo ngurukanabumenyi n’ibindi.</p>`
+    },
+    offers:{
+      fr:['App mobile','API','Sites web','Support','Audit'],
+      en:['Mobile App','API','Websites','Support','Audit'],
+      ki:['Porogaramu','API','Imbuga','Gufashanya','Isuzuma']
+    }
+  },
+
+  {
+    key:'cizamarket',
+    title:{fr:'CizaMarket',en:'CizaMarket',ki:'CizaMarket'},
+    short:{
+      fr:'Marketplace local',
+      en:'Local marketplace',
+      ki:'Isoko ryo kuri internet'
+    },
+    details:{
+      fr:`<p>Catalogue produits, vendeurs, paiement CizaPay+, livraison intégrée.</p>`,
+      en:`<p>Product catalog, sellers, CizaPay+ payments, integrated delivery.</p>`,
+      ki:`<p>Ibitangazwa vy’ibidandazwa, abacuruzi, ubwishyu bwa CizaPay+, n’ugutanga ibintu.</p>`
+    },
+    offers:{
+      fr:['Boutique','Catalogue','Marketing','Livraison','Abonnements'],
+      en:['Store','Catalog','Marketing','Delivery','Subscriptions'],
+      ki:['Iduka','Ibitangazwa','Kumenyekanisha','Ugutanga','Ubwishyu']
+    }
+  },
+
+  {
+    key:'cizajobs',
+    title:{fr:'CizaJobs',en:'CizaJobs',ki:'CizaJobs'},
+    short:{
+      fr:'Emploi et missions',
+      en:'Jobs & missions',
+      ki:'Akazi n’ibikorwa'
+    },
+    details:{
+      fr:`<p>Opportunités pour chauffeurs, livreurs, artisans et agents.</p>`,
+      en:`<p>Opportunities for drivers, couriers, artisans and field agents.</p>`,
+      ki:`<p>Amahirwe ku bashoferi, abashikana ibintu, abanyamwuga n’abandi.</p>`
+    },
+    offers:{
+      fr:['Chauffeurs','Livreurs','Artisans','Offres','Missions'],
+      en:['Drivers','Couriers','Artisans','Offers','Assignments'],
+      ki:['Abashoferi','Abashikana','Abanyamwuga','Amahanga','Ibikorwa']
+    }
+  },
+
+  {
+    key:'cizaacademy',
+    title:{fr:'CizaAcademy',en:'CizaAcademy',ki:'CizaAcademy'},
+    short:{
+      fr:'Formation professionnelle',
+      en:'Professional training',
+      ki:'Amahugurwa y’abanyamwuga'
+    },
+    details:{
+      fr:`<p>Programmes certifiants pour divers métiers.</p>`,
+      en:`<p>Certified training programs for various fields.</p>`,
+      ki:`<p>Amahugurwa afise ivyemezo ku bikorwa bitandukanye.</p>`
+    },
+    offers:{
+      fr:['Chauffeur','Livreur','Service client','Digital','Certificats'],
+      en:['Driver','Courier','Customer service','Digital','Certificates'],
+      ki:['Umushoferi','Uwushikana','Serivisi y’abakiriya','Ikoranabuhinga','Ivyemezo']
+    }
+  },
+
+  {
+    key:'cizagestion',
+    title:{fr:'CizaGestion',en:'CizaGestion',ki:'CizaGestion'},
+    short:{
+      fr:'Gestion & pilotage',
+      en:'Management & coordination',
+      ki:'Imicungararo n’ugushikiranganji'
+    },
+    details:{
+      fr:`<p>Gestion locative, reporting, projets diaspora.</p>`,
+      en:`<p>Property management, reporting, diaspora projects.</p>`,
+      ki:`<p>Imicungararo y’uburaro, ivyegeranyo n’ibikorwa vy’abari hanze.</p>`
+    },
+    offers:{
+      fr:['Locatif','Reporting','Projets diaspora','Structuration','Tableaux'],
+      en:['Rental','Reporting','Diaspora projects','Structuring','Dashboards'],
+      ki:['Uburaro','Ivyegeranyo','Ibikorwa vy’abari hanze','Imigenderanire','Amakaye']
+    }
+  },
+
+  {
+    key:'cizaassist',
+    title:{fr:'CizaAssist',en:'CizaAssist',ki:'CizaAssist'},
+    short:{
+      fr:'Conciergerie & démarches',
+      en:'Concierge & assistance',
+      ki:'Amaserivisi y’ugufasha'
+    },
+    details:{
+      fr:`<p>Factures, démarches, réservations, assistance.</p>`,
+      en:`<p>Bills, procedures, reservations and general assistance.</p>`,
+      ki:`<p>Imisoro, ibikorwa vy’inyandiko, ibitabu vy’ukwezi n’ubundi bufasha.</p>`
+    },
+    offers:{
+      fr:['Paiements','Démarches','Réservations','Assistance','Support'],
+      en:['Payments','Procedures','Bookings','Assistance','Support'],
+      ki:['Ukwishura','Inyandiko','Ibitabu','Ubufasha','Gufashanya']
+    }
+  },
+
+  {
+    key:'cizacarwash',
+    title:{fr:'CizaCarWash+',en:'CizaCarWash+',ki:'CizaCarWash+'},
+    short:{
+      fr:'Lavage automobile',
+      en:'Car washing',
+      ki:'Gukaraba imodoka'
+    },
+    details:{
+      fr:`<p>Lavage mobile à domicile ou au bureau.</p>`,
+      en:`<p>Mobile car washing at home or office.</p>`,
+      ki:`<p>Gukaraba imodoka mu rugo canke ku biro.</p>`
+    },
+    offers:{
+      fr:['Extérieur','Complet','Sièges','Abonnement','Flotte'],
+      en:['Exterior','Complete','Seats','Subscription','Fleet'],
+      ki:['Ahandaraye','Kosheje neza','Intebe','Akarongo','Imodoka nyinshi']
+    }
+  },
+
+  {
+    key:'icizamarketing',
+    title:{fr:'IcizaMarketing',en:'IcizaMarketing',ki:'IcizaMarketing'},
+    short:{
+      fr:'Marketing & communication',
+      en:'Marketing & communication',
+      ki:'Kumenyekanisha n’ukumenyesha amakuru'
+    },
+    details:{
+      fr:`<p>Création de contenus, branding, campagnes, médias et stratégies.</p>`,
+      en:`<p>Content creation, branding, campaigns, media and strategies.</p>`,
+      ki:`<p>Gutanga amakuru, gukora ivyerekana ishusho, ibikorwa vy’ukumenyekanisha n’ubundi.</p>`
+    },
+    offers:{
+      fr:['Branding','Réseaux sociaux','Affiches','Publicité','Stratégies'],
+      en:['Branding','Social media','Posters','Advertising','Strategy'],
+      ki:['Isanamu','Imbuga','Amatangazo','Reklama','Ingene bikorwa']
+    }
+  }
+];
+
+/* RENDER CARDS */
+const grid = document.getElementById("services-grid");
+function renderServices(){
+  const lang = localStorage.getItem("ciza_lang") || "fr";
+
+  grid.innerHTML = "";
+
+  SERVICES.forEach(s=>{
+    const card = document.createElement("div");
+    card.className = "service-card";
+    card.style = `
+      background:white;
+      border-radius:12px;
+      padding:16px;
+      border:1px solid #eef2f7;
+      box-shadow:0 3px 10px rgba(0,0,0,.06);
+      cursor:pointer;
+      transition:.2s;
+      display:flex;gap:12px;align-items:center;
+    `;
+    card.onmouseover = ()=> card.style.transform="translateY(-4px)";
+    card.onmouseout = ()=> card.style.transform="translateY(0)";
+
+    card.innerHTML = `
+      <div style="width:80px;height:60px;background:#f3f7ff;border-radius:10px;"></div>
+      <div>
+        <h3 style="margin:0;font-size:18px;color:#0A3D91;">${s.title[lang]}</h3>
+        <p style="margin:0;font-size:13px;color:#6B7280;">${s.short[lang]}</p>
+      </div>
+    `;
+
+    card.addEventListener("click",()=>openModal(s));
+    grid.appendChild(card);
+  });
+}
+renderServices();
+
+/* =============================== */
+/*   MODAL SERVICE SLIDE-IN        */
+/* =============================== */
+document.write(`
+<div id="modal-backdrop" style="
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.55);
+  display:none; justify-content:flex-end;
+  z-index:9995;
+">
+  <div id="modal" style="
+    background:white;
+    width:90%;max-width:400px;
+    height:100%;
+    border-radius:16px 0 0 16px;
+    padding:20px;
+    overflow:auto;
+    animation:slide 0.25s ease-out;
+  ">
+      <button onclick="closeModal()" 
+        style="position:absolute;top:10px;right:14px;font-size:22px;background:none;border:none;cursor:pointer;">✕</button>
+      <div id="modal-title"></div>
+      <div id="modal-body"></div>
+  </div>
+</div>
+
+<style>
+@keyframes slide{
+  from{transform:translateX(100%);}
+  to{transform:translateX(0);}
+}
+</style>
+`);
+
+let currentService = null;
+
+function openModal(s){
+  currentService = s;
+  const lang = localStorage.getItem("ciza_lang") || "fr";
+
+  document.getElementById("modal-title").innerHTML =
+    `<h2 style="color:#0A3D91;">${s.title[lang]}</h2>`;
+
+  let offersHTML = "";
+  s.offers[lang].forEach(o=>{
+    offersHTML += `<li>${o}</li>`;
+  });
+
+  document.getElementById("modal-body").innerHTML = `
+    ${s.details[lang]}
+    <h4 style="margin-top:12px;color:#0A3D91;">${
+      lang=="fr"?"Sous-services":
+      lang=="en"?"Sub-services":
+      "Ivyinjana"
+    }</h4>
+    <ul style="margin-left:18px;color:#6B7280;font-size:14px;">
+      ${offersHTML}
+    </ul>
+  `;
+
+  document.getElementById("modal-backdrop").style.display="flex";
+}
+
+function closeModal(){
+  document.getElementById("modal-backdrop").style.display="none";
+}
+
+/* =============================== */
+/* SECTION : À PROPOS & ÉQUIPE     */
+/* =============================== */
+
+document.write(`
+<section id="about" style="max-width:1200px;margin:60px auto;padding:0 20px;">
+  <h2 style="font-size:28px;font-weight:900;color:#0A3D91;margin-bottom:20px;"
+      data-fr="À propos de CIZA GROUP"
+      data-en="About CIZA GROUP"
+      data-ki="Ibimenyeshwa kuri CIZA GROUP">
+      À propos de CIZA GROUP
+  </h2>
+
+  <p style="font-size:16px;color:#6B7280;line-height:1.6;"
+     data-fr="CIZA GROUP est un écosystème multiservices opérant au Burundi et pour la diaspora."
+     data-en="CIZA GROUP is a multiservice ecosystem operating in Burundi and for the diaspora."
+     data-ki="CIZA GROUP ni ishirahamwe rikomatanya amaserivisi menshi akorera mu Burundi no ku banyagihugu baba hanze."
+  >
+     CIZA GROUP est un écosystème multiservices opérant au Burundi.
+  </p>
+
+  <h3 style="margin-top:20px;color:#0A3D91;font-size:20px;"
+      data-fr="Notre mission"
+      data-en="Our mission"
+      data-ki="Ingingo zacu"
+  >
+    Notre mission
+  </h3>
+
+  <p style="color:#6B7280;"
+     data-fr="Offrir des services fiables, innovants et accessibles."
+     data-en="Provide reliable, innovative and accessible services."
+     data-ki="Gutanga amaserivisi yizigirwa, agezweho kandi aboneka vyoroshe."
+  >
+    Offrir des services fiables.
+  </p>
+
+  <h3 style="margin-top:20px;color:#0A3D91;"
+      data-fr="Notre vision"
+      data-en="Our vision"
+      data-ki="Inyonga yacu"
+  >
+    Notre vision
+  </h3>
+
+  <p style="color:#6B7280;"
+    data-fr="Devenir un leader régional en services intégrés."
+    data-en="Become a regional leader in integrated services."
+    data-ki="Guhinduka umurongozi mu karere mu gutanga amaserivisi akomatanye."
+  >
+    Devenir un leader régional.
+  </p>
+</section>
+
+<section id="team" style="max-width:1200px;margin:40px auto;padding:0 20px;">
+  <h2 style="font-size:28px;font-weight:900;color:#0A3D91;margin-bottom:16px;"
+      data-fr="Travailler avec nous"
+      data-en="Work with us"
+      data-ki="Gukorana natwe"
+  >
+    Travailler avec nous
+  </h2>
+
+  <p style="color:#6B7280;"
+     data-fr="Nous recrutons chauffeurs, livreurs, agents, techniciens et formateurs."
+     data-en="We recruit drivers, couriers, agents, technicians and trainers."
+     data-ki="Turarondera abashoferi, abashikana ibintu, abakozi, abatekinisiye hamwe n’abahinga b’amahugurwa."
+  >
+    Nous recrutons chauffeurs et livreurs.
+  </p>
+</section>
+`);
+
+ /* =============================== */
+ /* SECTION CONTACT                 */
+ /* =============================== */
+document.write(`
+<section id="contact" style="max-width:1200px;margin:60px auto;padding:0 20px;">
+  <h2 style="font-size:28px;font-weight:900;color:#0A3D91;margin-bottom:20px;"
+      data-fr="Contact & partenariats"
+      data-en="Contact & partnerships"
+      data-ki="Aho mudushikira n’amasezerano"
+  >
+    Contact & partenariats
+  </h2>
+
+  <div style="display:grid;grid-template-columns:1fr 350px;gap:20px;">
+
+    <div>
+      <h3 style="color:#0A3D91;font-size:20px;margin-bottom:10px;"
+        data-fr="Formulaire de contact"
+        data-en="Contact form"
+        data-ki="Ifishi yo kudushikira"
+      >
+        Formulaire de contact
+      </h3>
+
+      <form id="contact-form" onsubmit="handleSubmit(event)">
+        <label 
+          data-fr="Nom complet" 
+          data-en="Full name" 
+          data-ki="Izina ryuzuye"
+        >Nom complet</label>
+        <input id="c-name" type="text" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #dce3f0;">
+        
+        <label 
+          data-fr="Adresse email" 
+          data-en="Email" 
+          data-ki="Posita"
+        >Adresse email</label>
+        <input id="c-email" type="email" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #dce3f0;">
+
+        <label 
+          data-fr="Message"
+          data-en="Message"
+          data-ki="Ubutumwa"
+        >Message</label>
+        <textarea id="c-message" rows="4" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #dce3f0;"></textarea>
+
+        <button type="submit" class="btn primary" style="margin-top:10px;"
+            data-fr="Envoyer"
+            data-en="Send"
+            data-ki="Rungika"
+        >
+          Envoyer
+        </button>
+      </form>
+    </div>
+
+    <aside class="card" style="padding:20px;border:1px solid #e6eef8;border-radius:12px;">
+      <h3 style="color:#0A3D91;"
+         data-fr="Coordonnées"
+         data-en="Contact details"
+         data-ki="Aho mudushikira"
+      >
+         Coordonnées
+      </h3>
+
+      <p>📧 info@cizagroup.com</p>
+      <p>📞 +257 79 94 50 07</p>
+      <p>📱 WhatsApp : +1 514 502 9503</p>
+      <p>Bujumbura, Burundi</p>
+    </aside>
+
+  </div>
+</section>
+`);
+
+function handleSubmit(e){
+  e.preventDefault();
+  alert("Votre message a été envoyé.");
+}
+</script><!-- =========================== -->
+<!--        FOOTER PREMIUM       -->
+<!-- =========================== -->
+<footer style="background:#071336;color:white;padding:40px 20px;margin-top:80px;">
+  <div style="max-width:1200px;margin:auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+
+    <div>
+      <div style="font-size:22px;font-weight:900;color:#F2B840;">CIZA GROUP © 2025</div>
+      <div style="opacity:.75;margin-top:8px;"
+        data-fr="Écosystème de services au Burundi et pour la diaspora."
+        data-en="Service ecosystem in Burundi and for the diaspora."
+        data-ki="Ishirahamwe ritanga amaserivisi mu Burundi no ku banyagihugu baba hanze."
+      >
+        Écosystème de services au Burundi et diaspora.
+      </div>
+      <div style="opacity:.75;">📧 info@cizagroup.com</div>
+      <div style="opacity:.75;">📍 Bujumbura, Burundi</div>
+    </div>
+
+    <div style="text-align:right;">
+      <div style="opacity:.75;margin-bottom:6px;">
+        🔗 
+        <a href="https://instagram.com/cizagroup_official" style="color:#F2B840;">Instagram</a> •
+        <a href="https://wa.me/15145029503" style="color:#F2B840;">WhatsApp</a> •
+        <a href="#" style="color:#F2B840;">LinkedIn</a>
+      </div>
+
+      <div style="opacity:.75;font-size:13px;">
+        🛡️ 
+        <a href="#" onclick="openPrivacy()" 
+           style="color:#F2B840;cursor:pointer;"
+           data-fr="Politique de confidentialité"
+           data-en="Privacy policy"
+           data-ki="Ingingo zo gukingira amakuru"
+        >
+          Politique de confidentialité
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- =========================== -->
+<!--      PRIVACY MODAL          -->
+<!-- =========================== -->
+<div id="privacy-modal" style="
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.55);
+  display:none; justify-content:center; align-items:center;
+  z-index:999999;
+">
+  <div style="
+    background:white; width:90%; max-width:650px;
+    padding:25px; border-radius:14px;
+    max-height:90vh; overflow:auto; position:relative;
+  ">
+    <button onclick="closePrivacy()" style="
+      position:absolute;right:15px;top:12px;
+      border:none;background:none;font-size:24px;cursor:pointer;
+    ">✕</button>
+
+    <h2
+      data-fr="Politique de confidentialité"
+      data-en="Privacy policy"
+      data-ki="Ingingo zo gukingira amakuru"
+    >Politique de confidentialité</h2>
+
+    <p
+      data-fr="Nous collectons uniquement les données fournies via les formulaires du site."
+      data-en="We only collect data submitted through the site's forms."
+      data-ki="Dukoresha gusa amakuru atangwa n'abakoresha uru rubuga mu mafishi."
+    >
+      Nous collectons uniquement les données fournies via les formulaires du site.
+    </p>
+
+    <p
+      data-fr="Vous pouvez demander la suppression de vos données en contactant : info@cizagroup.com"
+      data-en="You may request deletion of your data by contacting: info@cizagroup.com"
+      data-ki="Mushobora gusaba gukurwamwo amakuru yanyu mwandikiye: info@cizagroup.com"
+    >
+      Vous pouvez demander la suppression de vos données en contactant : info@cizagroup.com
+    </p>
+  </div>
+</div>
+
+<script>
+function openPrivacy(){
+  document.getElementById("privacy-modal").style.display="flex";
+}
+function closePrivacy(){
+  document.getElementById("privacy-modal").style.display="none";
+}
+</script>
+
+<!-- =========================== -->
+<!--     MULTILINGUE FINAL       -->
+<!-- =========================== -->
+<script>
+function setLang(lang){
+  localStorage.setItem("ciza_lang", lang);
+  document.querySelectorAll("[data-fr]").forEach(el=>{
+    if(el.dataset[lang]) el.innerHTML = el.dataset[lang];
+  });
+}
+(function(){
+  const saved = localStorage.getItem("ciza_lang") || "fr";
+  setLang(saved);
+})();
+</script>
+
+<!-- =========================== -->
+<!--     METEO BUJUMBURA         -->
+<!-- =========================== -->
+<script>
+async function loadWeather(){
+  try{
+    const res = await fetch(
+      "https://api.open-meteo.com/v1/forecast?latitude=-3.3616&longitude=29.3599&current_weather=true"
+    );
+    const j = await res.json();
+    const t = j.current_weather.temperature;
+    const wind = j.current_weather.windspeed;
+
+    document.getElementById("weatherBox").innerHTML = `
+      <strong>Bujumbura</strong><br>
+      ${t}°C — ${wind} km/h
+    `;
+  }catch(e){
+    document.getElementById("weatherBox").innerHTML = "⛅ Météo indisponible";
+  }
+}
+loadWeather();
+</script>
+
+<!-- =========================== -->
+<!--          NEWS RSS           -->
+<!-- =========================== -->
+<script>
+async function loadNews(){
+  const container = document.getElementById("newsWidget");
+  const proxy = "https://api.allorigins.win/raw?url=";
+  const RSS = "https://www.rfi.fr/fr/rss";
+
+  try{
+    const res = await fetch(proxy + encodeURIComponent(RSS));
+    const xml = await res.text();
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xml, "text/xml");
+    const items = Array.from(doc.querySelectorAll("item")).slice(0,3);
+
+    container.innerHTML = "";
+    items.forEach(item=>{
+      const title = item.querySelector("title").textContent;
+      const link = item.querySelector("link").textContent;
+
+      const el = document.createElement("div");
+      el.style.marginBottom="8px";
+      el.innerHTML = `
+        <a href="${link}" target="_blank" 
+           style="color:#0A3D91;font-size:13px;">
+          ${title}
+        </a>`;
+      container.appendChild(el);
+    });
+  }catch(e){
+    container.innerHTML = "📰 Actualités indisponibles";
+  }
+}
+loadNews();
+</script>
+
+<!-- =========================== -->
+<!--   WHATSAPP FLOAT BUTTON     -->
+<!-- =========================== -->
+<a href="https://wa.me/15145029503"
+   target="_blank"
+   style="
+      position:fixed;
+      bottom:20px; right:20px;
+      width:60px; height:60px;
+      background:#25D366;
+      color:white;font-size:28px;
+      border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 4px 14px rgba(0,0,0,.3);
+      z-index:9999;
+   ">💬</a>
+
+</body>
+</html>
