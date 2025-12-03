@@ -1,563 +1,110 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CIZA GROUP — Écosystème de services premium</title>
+<!-- HERO PREMIUM RESPONSIVE -->
+<section id="hero-ciza">
 
-  <!-- SEO -->
-  <meta name="description" content="CIZA GROUP — Groupe premium offrant mobilité, paiement, livraison, logistique, immobilier, tech et services professionnels au Burundi.">
-  <meta name="keywords" content="CIZA GROUP, services, mobilité, paiement, Burundi, diaspora, business, premium, livraison, immobilier, logistique">
-  <link rel="canonical" href="https://cizagroup.com">
+  <div class="hero-overlay"></div>
 
-  <!-- OpenGraph -->
-  <meta property="og:title" content="CIZA GROUP — Écosystème premium au Burundi">
-  <meta property="og:description" content="Mobilité, paiement, immobilier, tech et services premium réunis dans un écosystème unique.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/df97a8223e698494602d5ac8cadf50b753d47729/hero-ciza-premium.png">
-  <meta property="og:type" content="website">
-
-  <!-- Styles Premium -->
-  <style>
-    :root {
-      --primary:#0A1E3F; /* Bleu nuit corporate */
-      --gold:#F2B840;    /* Doré premium */
-      --text-light:#f8f9fc;
-      --radius:14px;
-      font-family: "Inter", sans-serif;
-    }
-
-    body {
-      margin:0;
-      background:#ffffff;
-      color:#0b1220;
-      overflow-x:hidden;
-    }
-
-    /* Header transparent + transition premium */
-    header {
-      position:fixed;
-      top:0; left:0;
-      width:100%;
-      padding:16px 40px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      z-index:1000;
-      transition: background 0.35s ease, box-shadow 0.35s;
-      background:rgba(0,0,0,0); 
-    }
-
-    header.scrolled {
-      background:#ffffff;
-      box-shadow:0 4px 16px rgba(0,0,0,0.08);
-    }
-
-    header img.logo {
-      height:58px;
-      width:auto;
-    }
-
-    nav a {
-      margin:0 14px;
-      font-weight:600;
-      color:#fff;
-      text-decoration:none;
-      transition:0.2s;
-      font-size:15px;
-    }
-
-    header.scrolled nav a {
-      color:var(--primary);
-    }
-
-    nav a:hover {
-      color:var(--gold);
-    }
-
-    /* HERO Premium Parallax */
-    .hero {
-      position:relative;
-      height:100vh;
-      width:100%;
-      background-image:url("https://raw.githubusercontent.com/cizaimmo/cizagroup-website/df97a8223e698494602d5ac8cadf50b753d47729/hero-ciza-premium.png");
-      background-size:cover;
-      background-position:center;
-      background-attachment:fixed;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .hero::before {
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(5,12,32,0.65); /* overlay bleu nuit */
-      backdrop-filter: blur(2px);
-    }
-
-    .hero-content {
-      position:relative;
-      text-align:center;
-      color:white;
-      max-width:850px;
-      padding:20px;
-      z-index:10;
-      animation:fadeInUp 1s ease forwards;
-    }
-
-    .hero-title {
-      font-size:54px;
-      font-weight:900;
-      letter-spacing:0.5px;
-      margin-bottom:12px;
-      color:white;
-    }
-
-    .hero-subtitle {
-      font-size:20px;
-      opacity:0.88;
-      margin-bottom:30px;
-    }
-
-    .hero-btn {
-      display:inline-block;
-      padding:14px 28px;
-      font-size:16px;
-      font-weight:700;
-      border-radius:var(--radius);
-      background:var(--gold);
-      color:#0A1E3F;
-      text-decoration:none;
-      transition:0.2s;
-    }
-    .hero-btn:hover {
-      background:#ffcf5c;
-    }
-
-    @keyframes fadeInUp {
-      from { opacity:0; transform:translateY(20px); }
-      to { opacity:1; transform:translateY(0); }
-    }
-  </style>
-</head>
-
-<body>
-
-<!-- HEADER -->
-<header id="main-header">
-  <img src="assets/ciza_logo.png" alt="CIZA GROUP" class="logo">
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#why">Pourquoi CIZA</a>
-    <a href="#about">À propos</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<!-- HERO PARALLAX PREMIUM -->
-<section class="hero">
   <div class="hero-content">
-    <h1 class="hero-title">Votre écosystème premium de services au Burundi</h1>
-    <p class="hero-subtitle">Mobilité • Paiement • Logistique • Livraison • Immobilier • Tech • Diaspora Business</p>
-    <a href="#services" class="hero-btn">Découvrir nos services</a>
+    <h1>Des services premium pour particuliers, entreprises et diaspora</h1>
+
+    <a href="#services" class="btn-gold-outline">
+      Découvrir nos services
+    </a>
   </div>
+
 </section>
 
-<script>
-  // Transition header transparent → blanc
-  window.addEventListener("scroll", () => {
-    const header = document.getElementById("main-header");
-    if (window.scrollY > 80) header.classList.add("scrolled");
-    else header.classList.remove("scrolled");
-  });
-</script>
-<!-- =======================================================
-     SECTION SERVICES PREMIUM
-======================================================= -->
-<section id="services" style="padding:80px 40px; max-width:1300px; margin:auto;">
-  <h2 style="
-    text-align:center;
-    font-size:34px;
-    font-weight:900;
-    color:var(--primary);
-    margin-bottom:40px;">
-    Nos Services Premium
-  </h2>
+<style>
+/* SECTION HERO */
+#hero-ciza {
+  position: relative;
+  height: 78vh;
+  min-height: 520px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  <div style="
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-    gap:22px;">
-    
-    <!-- Service Card -->
-    <div style="
-      padding:22px;
-      background:white;
-      border-radius:var(--radius);
-      border:1px solid #e5e9f3;
-      box-shadow:0 6px 18px rgba(0,0,0,0.05);
-      transition:0.25s;">
-      <h3 style="color:var(--primary); margin-top:0;">CizaRide+</h3>
-      <p style="color:#555;">Mobilité premium : motos, voitures, navettes et trajets interprovinciaux.</p>
-    </div>
-
-    <div style="
-      padding:22px; background:white; border-radius:var(--radius);
-      border:1px solid #e5e9f3; box-shadow:0 6px 18px rgba(0,0,0,0.05);">
-      <h3 style="color:var(--primary); margin-top:0;">CizaPay+</h3>
-      <p style="color:#555;">Portefeuille numérique, paiements QR, transferts et factures.</p>
-    </div>
-
-    <div style="
-      padding:22px; background:white; border-radius:var(--radius);
-      border:1px solid #e5e9f3; box-shadow:0 6px 18px rgba(0,0,0,0.05);">
-      <h3 style="color:var(--primary); margin-top:0;">CizaDelivery</h3>
-      <p style="color:#555;">Livraison express, e-commerce, documents, colis, repas.</p>
-    </div>
-
-    <div style="
-      padding:22px; background:white; border-radius:var(--radius);
-      border:1px solid #e5e9f3; box-shadow:0 6px 18px rgba(0,0,0,0.05);">
-      <h3 style="color:var(--primary); margin-top:0;">CizaImmo</h3>
-      <p style="color:#555;">Gestion immobilière, location, ventes, suivi locatif — diaspora friendly.</p>
-    </div>
-
-    <div style="
-      padding:22px; background:white; border-radius:var(--radius);
-      border:1px solid #e5e9f3; box-shadow:0 6px 18px rgba(0,0,0,0.05);">
-      <h3 style="color:var(--primary); margin-top:0;">CizaTech</h3>
-      <p style="color:#555;">Développement apps, intégration API, sites web modernes et sécurisés.</p>
-    </div>
-
-    <div style="
-      padding:22px; background:white; border-radius:var(--radius);
-      border:1px solid #e5e9f3; box-shadow:0 6px 18px rgba(0,0,0,0.05);">
-      <h3 style="color:var(--primary); margin-top:0;">CizaLogistics</h3>
-      <p style="color:#555;">Transport marchandises, distribution entreprise, flotte & opérations.</p>
-    </div>
-  </div>
-</section>
-
-<!-- =======================================================
-     SECTION POURQUOI NOUS
-======================================================= -->
-<section id="why" style="background:#f7f9fc; padding:80px 40px;">
-  <h2 style="
-    text-align:center;
-    font-size:34px;
-    font-weight:900;
-    color:var(--primary);
-    margin-bottom:30px;">
-    Pourquoi choisir CIZA GROUP ?
-  </h2>
-
-  <div style="
-    max-width:1200px; margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-    gap:22px;">
-    
-    <div style="background:white; padding:20px; border-radius:var(--radius); box-shadow:0 4px 14px rgba(0,0,0,0.06);">
-      <strong style="color:var(--primary);">Écosystème complet</strong><br>
-      Mobilité, paiement, livraison, immobilier, tech et gestion.
-    </div>
-
-    <div style="background:white; padding:20px; border-radius:var(--radius); box-shadow:0 4px 14px rgba(0,0,0,0.06);">
-      <strong style="color:var(--primary);">Impact local</strong><br>
-      Création d’emplois, accompagnement chauffeurs, agents & diaspora.
-    </div>
-
-    <div style="background:white; padding:20px; border-radius:var(--radius); box-shadow:0 4px 14px rgba(0,0,0,0.06);">
-      <strong style="color:var(--primary);">Digital & premium</strong><br>
-      Expérience moderne, simple et centralisée.
-    </div>
-
-    <div style="background:white; padding:20px; border-radius:var(--radius); box-shadow:0 4px 14px rgba(0,0,0,0.06);">
-      <strong style="color:var(--primary);">Partenariats entreprise</strong><br>
-      Solutions sur mesure pour flottes, paiements, e-commerce & immobilier.
-    </div>
-  </div>
-</section>
-
-<!-- =======================================================
-     SECTION À PROPOS
-======================================================= -->
-<section id="about" style="padding:80px 40px; max-width:1200px; margin:auto;">
-  <h2 style="
-    text-align:center;
-    font-size:34px;
-    font-weight:900;
-    color:var(--primary);
-    margin-bottom:40px;">
-    À propos de CIZA GROUP
-  </h2>
-
-  <div style="
-    display:grid;
-    grid-template-columns:1.4fr 1fr;
-    gap:40px;">
-    
-    <div style="font-size:18px; color:#333; line-height:1.6;">
-      <p>
-        CIZA GROUP est un groupe burundais moderne réunissant des services stratégiques : mobilité, livraison, paiement digital, tech, immobilier, logistique, formation et services à la diaspora.
-      </p>
-      <p>
-        Notre mission est de rendre le quotidien plus simple, plus digital et plus fiable pour les citoyens, entreprises et la diaspora burundaise.
-      </p>
-      <ul>
-        <li>Plateforme premium unifiée</li>
-        <li>Services rapides, fiables et traçables</li>
-        <li>Accompagnement entreprises & diaspora</li>
-      </ul>
-    </div>
-
-    <div style="
-      background:white;
-      padding:24px;
-      border-radius:var(--radius);
-      box-shadow:0 6px 20px rgba(0,0,0,0.08);">
-      <h3 style="margin-top:0; color:var(--primary);">Solutions entreprises</h3>
-      <p style="color:#555; line-height:1.5;">
-        Contrats dédiés, flotte, opérations terrain, services immobiliers, distribution, digitalisation et paiements intégrés.
-      </p>
-      <a href="#contact" style="
-        display:inline-block;
-        margin-top:12px;
-        padding:12px 22px;
-        background:var(--primary);
-        color:white;
-        border-radius:var(--radius);
-        text-decoration:none;">
-        Nous contacter →
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- =======================================================
-     SECTION ÉQUIPE
-======================================================= -->
-<section id="team" style="padding:80px 40px; background:#f7f9fc;">
-  <h2 style="
-    text-align:center;
-    font-size:34px;
-    font-weight:900;
-    color:var(--primary);
-    margin-bottom:20px;">
-    Travailler avec nous
-  </h2>
-
-  <p style="
-    max-width:900px;
-    margin:auto;
-    text-align:center;
-    font-size:18px;
-    color:#444;">
-    Nous recrutons chauffeurs, livreurs, agents, techniciens, commerciaux et formateurs.  
-    Envoyez votre CV via le formulaire en précisant “Recrutement”.
-  </p>
-</section>
-<!-- =======================================================
-     SECTION CONTACT
-======================================================= -->
-<section id="contact" style="padding:80px 40px; max-width:1200px; margin:auto;">
-  <h2 style="
-    text-align:center;
-    font-size:34px;
-    font-weight:900;
-    color:var(--primary);
-    margin-bottom:40px;">
-    Contact & Partenariats
-  </h2>
-
-  <div style="
-    display:grid;
-    grid-template-columns:1.2fr 0.8fr;
-    gap:40px;">
-
-    <!-- FORMULAIRE -->
-    <div style="background:white; padding:30px; border-radius:var(--radius); box-shadow:0 6px 20px rgba(0,0,0,0.06);">
-      <h3 style="margin-top:0; color:var(--primary);">Envoyer une demande</h3>
-      <p style="color:#555;">Partenariat, support, recrutement, test pilote, entreprise & diaspora.</p>
-
-      <form id="contact-form" onsubmit="submitContact(event)">
-        <label>Nom complet<br>
-          <input id="c-name" type="text" required style="width:100%; padding:12px; border-radius:var(--radius); border:1px solid #e1e5ee; margin-bottom:14px;">
-        </label>
-
-        <label>Email<br>
-          <input id="c-email" type="email" required style="width:100%; padding:12px; border-radius:var(--radius); border:1px solid #e1e5ee; margin-bottom:14px;">
-        </label>
-
-        <label>Type de demande<br>
-          <select id="c-type" style="width:100%; padding:12px; border-radius:var(--radius); border:1px solid #e1e5ee; margin-bottom:14px;">
-            <option value="">— Sélectionnez —</option>
-            <option>Partenariat entreprise</option>
-            <option>Recrutement</option>
-            <option>Test Pilote / POC</option>
-            <option>Support</option>
-            <option>Autre demande</option>
-          </select>
-        </label>
-
-        <label>Message<br>
-          <textarea id="c-message" rows="4" required style="width:100%; padding:12px; border-radius:var(--radius); border:1px solid #e1e5ee;"></textarea>
-        </label>
-
-        <button type="submit" style="
-          margin-top:16px;
-          background:var(--primary);
-          color:white;
-          padding:14px 22px;
-          font-weight:700;
-          border-radius:var(--radius);
-          border:none;
-          cursor:pointer;">
-          Envoyer la demande
-        </button>
-
-        <div id="contact-success" style="
-          display:none;
-          margin-top:20px;
-          padding:12px;
-          background:#e7ffe9;
-          color:#2a6b34;
-          border:1px solid #b6e8c4;
-          border-radius:var(--radius);
-          font-weight:600;">
-          Votre demande a été enregistrée avec succès !
-        </div>
-      </form>
-    </div>
-
-    <!-- COORDONNÉES -->
-    <div style="background:white; padding:30px; border-radius:var(--radius); box-shadow:0 6px 20px rgba(0,0,0,0.06);">
-      <h3 style="margin-top:0; color:var(--primary);">Coordonnées CIZA GROUP</h3>
-
-      <p>📧 Email : <br>
-        <a href="mailto:info@cizagroup.com">info@cizagroup.com</a>
-      </p>
-
-      <p>📞 Téléphone Burundi :<br>
-        <strong>+257 79 94 50 07</strong>
-      </p>
-
-      <p>📱 WhatsApp Canada :<br>
-        <strong>+1 514 502 9503</strong>
-      </p>
-
-      <p>📍 Siège :<br>
-        Bujumbura, Burundi
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- =======================================================
-     FOOTER PREMIUM
-======================================================= -->
-<footer style="background:#0A1E3F; padding:40px 40px; color:white;">
-  <div style="
-    max-width:1300px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:20px;">
-
-    <div>
-      <div style="font-size:20px; font-weight:900; color:var(--gold);">CIZA GROUP © 2025</div>
-      <div style="font-size:14px; opacity:0.8;">Écosystème de services Premium – Burundi</div>
-      <div style="margin-top:10px;">
-        📧 <a href="mailto:info@cizagroup.com" style="color:#dfe7ff;">info@cizagroup.com</a>
-      </div>
-      <div style="color:#dfe7ff; font-size:14px;">📍 Bujumbura, Burundi</div>
-      <div style="margin-top:8px;">
-        🛡️ <a onclick="openPrivacy()" style="cursor:pointer; color:#dfe7ff;">Politique de confidentialité</a>
-      </div>
-    </div>
-
-    <div style="text-align:right;">
-      <div style="font-size:14px;">
-        🔗
-        <a href="https://instagram.com/cizagroup_official" target="_blank" style="color:#dfe7ff;">Instagram</a> •
-        <a href="https://wa.me/15145029503" target="_blank" style="color:#dfe7ff;">WhatsApp</a> •
-        <a href="#" style="color:#dfe7ff;">LinkedIn</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- =======================================================
-     POP-UP CONFIDENTIALITÉ
-======================================================= -->
-<div id="privacy-modal" style="
-  position:fixed; inset:0;
-  background:rgba(0,0,0,0.55);
-  display:none; justify-content:center; align-items:center;
-  z-index:9999;">
-  <div style="
-    background:white; width:90%; max-width:700px;
-    padding:20px; border-radius:var(--radius);
-    max-height:90vh; overflow:auto; position:relative;">
-
-    <button onclick="closePrivacy()" style="
-      position:absolute; right:15px; top:10px;
-      background:none; border:none; font-size:20px; cursor:pointer;">✕</button>
-
-    <h2>Politique de Confidentialité</h2>
-
-    <p><strong>Données collectées</strong><br>
-    Formulaires, demandes, messages, et données locales (paiement, services).</p>
-
-    <p><strong>Cookies</strong><br>
-    Cookies techniques + Google Analytics.</p>
-
-    <p><strong>Droits</strong><br>
-    Vous pouvez demander la suppression à : <a href="mailto:info@cizagroup.com">info@cizagroup.com</a></p>
-  </div>
-</div>
-
-<!-- =======================================================
-     WHATSAPP FLOATING BUTTON
-======================================================= -->
-<a href="https://wa.me/15145029503" target="_blank" style="
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  width:60px;
-  height:60px;
-  background:#25D366;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  font-size:30px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.3);
-  z-index:999;">
-  💬
-</a>
-
-<!-- =======================================================
-     SCRIPTS PREMIUM
-======================================================= -->
-<script>
-function submitContact(event){
-  event.preventDefault();
-  localStorage.setItem("contact_"+Date.now(), JSON.stringify({
-    name:document.getElementById("c-name").value,
-    email:document.getElementById("c-email").value,
-    type:document.getElementById("c-type").value,
-    message:document.getElementById("c-message").value,
-    created_at:new Date().toISOString()
-  }));
-  document.getElementById("contact-success").style.display = "block";
-  document.getElementById("contact-form").reset();
+  background-image: url('https://raw.githubusercontent.com/cizaimmo/cizagroup-website/51d2fb13156aa5b87536ee9e0c307838a0d249f7/background-image.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  color: white;
 }
 
-/* Modal confidentialité */
-function openPrivacy(){ document.getElementById("privacy-modal").style.display = "flex"; }
-function closePrivacy(){ document.getElementById("privacy-modal").style.display = "none"; }
-</script>
+/* Overlay pour lisibilité */
+#hero-ciza .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.32);
+}
+
+/* Contenu centré */
+#hero-ciza .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  padding: 20px;
+}
+
+/* TEXTE PRINCIPAL */
+#hero-ciza h1 {
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 18px;
+}
+
+/* BOUTON DORÉ TRANSPARENT */
+.btn-gold-outline {
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: 2px solid #F2B840;
+  color: #F2B840;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.btn-gold-outline:hover {
+  background: rgba(242,184,64,0.12);
+}
+
+/* ======== MOBILE RESPONSIVE ======== */
+@media (max-width: 900px) {
+  #hero-ciza {
+    background-attachment: scroll; /* supprime parallax mobile */
+    height: 70vh;
+    min-height: 420px;
+  }
+
+  #hero-ciza h1 {
+    font-size: 26px;
+    line-height: 1.35;
+  }
+
+  .btn-gold-outline {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero-ciza {
+    height: 62vh;
+    min-height: 380px;
+  }
+
+  #hero-ciza h1 {
+    font-size: 22px;
+  }
+
+  .btn-gold-outline {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+}
+</style>
