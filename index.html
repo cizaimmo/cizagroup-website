@@ -1,122 +1,23 @@
-<!-- ===============================
-      HERO PREMIUM CIZA GROUP
-=============================== -->
-<section id="hero-ciza">
-
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-    <h1>Des services premium pour particuliers,<br>entreprises et diaspora</h1>
-
-    <a href="#services" class="btn-gold-filled">
-      Découvrir nos services
-    </a>
-  </div>
-
-</section>
-
-<style>
-/* ===============================
-      HERO SECTION
-=============================== */
 #hero-ciza {
   position: relative;
   width: 100%;
   height: 78vh;
-  min-height: 500px;
+  min-height: 520px;
 
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-
-  /* ⚠️ IMAGE HERO – NON ZOOMÉE */
-  background-image: url('https://raw.githubusercontent.com/cizaimmo/cizagroup-website/f62d4b093c99adcd9510b97f3b084a9b048a7ed3/hero-ciza-premium.png');
-  background-size: contain;          /* empêche le débordement */
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #061D46;         /* bleu foncé autour */
-}
-
-/* Overlay pour foncer légèrement */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.25);
-}
-
-/* Contenu */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 780px;
-  padding: 20px;
-}
-
-/* Titre */
-#hero-ciza h1 {
   color: white;
-  font-size: 42px;
-  font-weight: 900;
-  line-height: 1.25;
-  margin-bottom: 28px;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+
+  background-image: url('https://raw.githubusercontent.com/cizaimmo/cizagroup-website/f62d4b093c99adcd9510b97f3b084a9b048a7ed3/hero-ciza-premium.png');
+  
+  /* 👉 La solution parfaite */
+  background-size: cover;        /* Remplit l'écran sans répéter */
+  background-repeat: no-repeat;
+  background-position: center top;  /* Décale l'image vers le haut pour éviter le zoom du C */
+  background-attachment: fixed;
+
+  /* Fond bleu derrière si besoin */
+  background-color: #001f3f;
 }
-
-/* Bouton premium doré */
-.btn-gold-filled {
-  display: inline-block;
-  padding: 14px 36px;
-  font-size: 18px;
-  font-weight: 800;
-  border-radius: 50px;
-  color: #111;
-  background: linear-gradient(135deg, #F7C948, #E0A526);
-  border: 2px solid #F2B840;
-  text-decoration: none;
-  box-shadow: 0px 6px 20px rgba(0,0,0,0.3);
-  transition: 0.25s ease-out;
-}
-
-.btn-gold-filled:hover {
-  background: linear-gradient(135deg, #FFD970, #D9A221);
-  transform: translateY(-2px);
-  box-shadow: 0px 8px 28px rgba(0,0,0,0.35);
-}
-
-/* ===============================
-      RESPONSIVE
-=============================== */
-@media (max-width: 900px) {
-  #hero-ciza {
-    background-size: contain;
-    height: 65vh;
-    min-height: 420px;
-  }
-
-  #hero-ciza h1 {
-    font-size: 28px;
-  }
-
-  .btn-gold-filled {
-    font-size: 15px;
-    padding: 12px 28px;
-  }
-}
-
-@media (max-width: 480px) {
-  #hero-ciza {
-    height: 60vh;
-    min-height: 360px;
-  }
-
-  #hero-ciza h1 {
-    font-size: 22px;
-  }
-
-  .btn-gold-filled {
-    font-size: 14px;
-    padding: 10px 22px;
-  }
-}
-</style>
