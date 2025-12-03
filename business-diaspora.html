@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CIZA GROUP – Business Diaspora</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* -------------------- GLOBAL -------------------- */
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #f5f6fa;
+    overflow-x: hidden;
+}
+
+h2 {
+    font-weight: 800;
+    color: #0A3D91;
+}
+
+section {
+    padding: 70px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* -------------------- HEADER PREMIUM -------------------- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 28px;
+    z-index: 99999;
+    border-bottom: 1px solid rgba(0,0,0,0.10);
+}
+
+.header-logo {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #0A3D91;
+    letter-spacing: 1px;
+}
+
+header nav a {
+    color: #0A3D91;
+    font-weight: 600;
+    margin-left: 22px;
+    text-decoration: none;
+    transition: 0.25s;
+}
+header nav a:hover {
+    color: #F2B840;
+}
+
+/* MULTILINGUE */
+.lang-switcher {
+    display: flex;
+    gap: 8px;
+}
+.lang-switcher img {
+    width: 28px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+.lang-switcher img:hover {
+    transform: scale(1.1);
+}
+
+/* -------------------- SLIDER -------------------- */
+.hero {
+    margin-top: 70px;
+}
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center top;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+.slide.active {
+    opacity: 1;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 12%;
+    left: 6%;
+    width: 90%;
+    max-width: 650px;
+    color: white;
+    text-shadow: 0 4px 14px rgba(0,0,0,0.60);
+    animation: fadeInUp 1.4s ease;
+}
+
+.hero-title {
+    font-size: 3.1rem;
+    font-weight: 900;
+}
+
+.hero-sub {
+    margin-top: 10px;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.hero-btn {
+    margin-top: 22px;
+    display: inline-block;
+    padding: 16px 28px;
+    background: #F2B840;
+    color: #000;
+    font-weight: 700;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.15rem;
+    transition: 0.3s;
+}
+.hero-btn:hover { background: #d3a034; }
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-logo">CIZA GROUP</div>
+
+    <nav>
+        <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza">Accueil</a>
+        <a href="#programmes" data-fr="Programmes" data-en="Programs" data-ki="Porogarama">Programmes</a>
+        <a href="#contact" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe">Contact</a>
+    </nav>
+
+    <div class="lang-switcher">
+        <img src="https://flagcdn.com/fr.svg" onclick="setLang('fr')" title="Français">
+        <img src="https://flagcdn.com/gb.svg" onclick="setLang('en')" title="English">
+        <img src="https://flagcdn.com/bi.svg" onclick="setLang('ki')" title="Kirundi">
+    </div>
+</header>
+
+<!-- HERO / SLIDER -->
+<section class="hero">
+
+<div class="hero-slider">
+
+    <div class="slide active"
+         style="background-image:url('038E3EC2-468F-4C6B-91DD-D077368508FD.png');"></div>
+
+    <div class="slide"
+         style="background-image:url('0CD5D803-FB19-4139-B96D-CABF88F5964C.png');"></div>
+
+    <div class="slide"
+         style="background-image:url('752313D3-3321-4323-BE30-ACA03C349863.png');"></div>
+
+    <div class="hero-content">
+        <div class="hero-title"
+            data-fr="Programme Business Diaspora"
+            data-en="Diaspora Business Program"
+            data-ki="Porogarama y'Abari mu Mahanga"></div>
+
+        <div class="hero-sub"
+            data-fr="Investissez, dirigez et développez vos projets au Burundi en toute sérénité."
+            data-en="Invest, manage and grow your projects in Burundi with full confidence."
+            data-ki="Ishoramari, imicungire n'iterambere ry'imishinga yawe mu mutekano."></div>
+
+        <a href="#programmes" class="hero-btn"
+           data-fr="Rejoindre le programme"
+           data-en="Join the Program"
+           data-ki="Kwiyandikisha"></a>
+    </div>
+
+</div>
+</section>
+
+<!-- ============================== -->
+<!-- 🌟 BLOC 2 — STYLE + HERO SLIDER -->
+<!-- ============================== -->
+
+<style>
+    :root {
+        --primary:#0A3D91;
+        --gold:#F2B840;
+        --dark:#0b1220;
+        --muted:#6B7280;
+        --radius:14px;
+        font-family:Inter, system-ui, sans-serif;
+    }
+
+    body {
+        margin:0;
+        background:#ffffff;
+        color:var(--dark);
+    }
+
+    img { max-width:100%; display:block; }
+
+    /* ------------------------------
+       HERO SLIDER
+    --------------------------------*/
+    .hero-slider {
+        position:relative;
+        height:480px;
+        overflow:hidden;
+        border-radius:0 0 22px 22px;
+    }
+
+    .hero-slide {
+        position:absolute;
+        inset:0;
+        background-size:cover;
+        background-position:center;
+        opacity:0;
+        transition:opacity 1.3s ease;
+    }
+
+    .hero-slide.active {
+        opacity:1;
+    }
+
+    /* Dark overlay */
+    .hero-overlay {
+        position:absolute;
+        inset:0;
+        background:rgba(0,0,0,0.50);
+        backdrop-filter:blur(2px);
+    }
+
+    /* Text zone */
+    .hero-content {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        text-align:center;
+        width:90%;
+        max-width:600px;
+        color:white;
+    }
+
+    .hero-content h1 {
+        font-size:32px;
+        margin-bottom:12px;
+        font-weight:800;
+        line-height:1.2;
+    }
+
+    .hero-content p {
+        font-size:16px;
+        margin-bottom:20px;
+        color:#f4f4f4;
+    }
+
+    .hero-btn {
+        background:var(--gold);
+        color:#000;
+        padding:12px 28px;
+        border-radius:var(--radius);
+        font-weight:800;
+        font-size:16px;
+        border:0;
+        cursor:pointer;
+        transition:0.25s;
+    }
+
+    .hero-btn:hover {
+        background:#ffcf58;
+        transform:scale(1.03);
+    }
+
+    /* ------------------------------
+       PROGRAMMES GRID
+    --------------------------------*/
+    .section {
+        padding:50px 20px;
+        max-width:1100px;
+        margin:auto;
+    }
+
+    h2 {
+        text-align:center;
+        font-size:27px;
+        margin-bottom:25px;
+        font-weight:800;
+        color:var(--primary);
+    }
+
+    .program-grid {
+        display:grid;
+        gap:18px;
+        grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+    }
+
+    .program-card {
+        background:white;
+        border:1px solid #eaeaea;
+        padding:18px;
+        border-radius:var(--radius);
+        cursor:pointer;
+        transition:0.25s;
+        text-align:center;
+    }
+
+    .program-card:hover {
+        transform:translateY(-6px);
+        box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .program-icon {
+        font-size:38px;
+        margin-bottom:10px;
+        color:var(--primary);
+    }
+
+    /* ------------------------------
+       POPUP (MODAL)
+    --------------------------------*/
+    .modal {
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,0.55);
+        display:none;
+        align-items:center;
+        justify-content:center;
+        padding:20px;
+        z-index:9999;
+    }
+
+    .modal-content {
+        background:white;
+        max-width:520px;
+        width:100%;
+        border-radius:var(--radius);
+        padding:25px;
+        animation:zoomIn .35s ease;
+    }
+
+    @keyframes zoomIn {
+        from { transform:scale(0.8); opacity:0; }
+        to { transform:scale(1); opacity:1; }
+    }
+
+    .modal-content h3 {
+        margin-top:0;
+        font-size:22px;
+        color:var(--primary);
+    }
+
+    .modal-close {
+        margin-top:18px;
+        background:var(--primary);
+        color:white;
+        padding:10px 18px;
+        border-radius:var(--radius);
+        border:none;
+        cursor:pointer;
+        float:right;
+    }
+
+    /* ------------------------------
+       FOOTER
+    --------------------------------*/
+    footer {
+        background:#0A3D91;
+        padding:30px 20px;
+        margin-top:40px;
+        text-align:center;
+        color:white;
+    }
+
+    footer a { color:#ffe9b0; }
+</style>
+
+<!-- ============================== -->
+<!-- 🌍 BLOC 3 — PROGRAMMES DIASPORA -->
+<!-- ============================== -->
+
+<!-- 🌟 SECTION PROGRAMMES -->
+<section class="section" id="programmes">
+
+    <h2 class="lang" 
+        data-fr="Programmes pour la Diaspora"
+        data-en="Diaspora Programs"
+        data-ki="Porogaramu za Diaspora">
+        Programmes pour la Diaspora
+    </h2>
+
+    <div class="program-grid">
+
+        <!-- Programme 1 -->
+        <div class="program-card" onclick="openModal('modal1')">
+            <div class="program-icon">🏠</div>
+            <h3>Immobilier Premium</h3>
+            <p class="lang" data-fr="Investissement sécurisé"
+               data-en="Secure investment" data-ki="Ishoramari ryizewe">
+               Investissement sécurisé
+            </p>
+        </div>
+
+        <!-- Programme 2 -->
+        <div class="program-card" onclick="openModal('modal2')">
+            <div class="program-icon">🚗</div>
+            <h3>Mobilité & Chauffeur</h3>
+            <p class="lang" data-fr="Service complet"
+               data-en="Full service" data-ki="Serivisi yuzuye">
+               Service complet
+            </p>
+        </div>
+
+        <!-- Programme 3 -->
+        <div class="program-card" onclick="openModal('modal3')">
+            <div class="program-icon">📦</div>
+            <h3>Logistique & Envois</h3>
+            <p class="lang" data-fr="Rapide & fiable"
+               data-en="Fast & reliable" data-ki="Bwihuse kandi bwizewe">
+               Rapide & fiable
+            </p>
+        </div>
+
+        <!-- Programme 4 -->
+        <div class="program-card" onclick="openModal('modal4')">
+            <div class="program-icon">💳</div>
+            <h3>CizaPay Diaspora</h3>
+            <p class="lang" data-fr="Paiement intelligent"
+               data-en="Smart payment" data-ki="Kwishura buhoro">
+               Paiement intelligent
+            </p>
+        </div>
+
+        <!-- Programme 5 -->
+        <div class="program-card" onclick="openModal('modal5')">
+            <div class="program-icon">📋</div>
+            <h3>Gestion & Audit</h3>
+            <p class="lang" data-fr="Transparence totale"
+               data-en="Full transparency" data-ki="Ukugenzura kwose">
+               Transparence totale
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ============================== -->
+<!-- 🪟 POPUPS DÉTAILLÉS -->
+<!-- ============================== -->
+
+<!-- MODAL 1 -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h3>Immobilier Premium</h3>
+    <p>
+      Accédez à des projets immobiliers fiables : construction, achat, gestion locative,
+      suivi en ligne, rapports vidéo et transparence totale.
+    </p>
+    <button class="modal-close" onclick="closeModal('modal1')">Fermer</button>
+  </div>
+</div>
+
+<!-- MODAL 2 -->
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <h3>Mobilité & Chauffeur</h3>
+    <p>
+      Chauffeurs professionnels, gestion de flotte, déplacements sécurisés
+      avec suivi et rapports mensuels.
+    </p>
+    <button class="modal-close" onclick="closeModal('modal2')">Fermer</button>
+  </div>
+</div>
+
+<!-- MODAL 3 -->
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <h3>Logistique & Envois</h3>
+    <p>
+      Envois de colis, achats locaux, livraison express et suivi complet 
+      pour la diaspora et leurs familles.
+    </p>
+    <button class="modal-close" onclick="closeModal('modal3')">Fermer</button>
+  </div>
+</div>
+
+<!-- MODAL 4 -->
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <h3>CizaPay Diaspora</h3>
+    <p>
+      Transferts, paiements, factures, écoles, soutien familial —
+      tout via CizaPay en quelques secondes.
+    </p>
+    <button class="modal-close" onclick="closeModal('modal4')">Fermer</button>
+  </div>
+</div>
+
+<!-- MODAL 5 -->
+<div id="modal5" class="modal">
+  <div class="modal-content">
+    <h3>Gestion & Audit</h3>
+    <p>
+      Audits, contrôles, suivi terrain, rapports vidéo, gestion
+      immobilière & opérationnelle complète.
+    </p>
+    <button class="modal-close" onclick="closeModal('modal5')">Fermer</button>
+  </div>
+</div>
+
+
+<!-- ============================== -->
+<!-- 🔙 BOUTON RETOUR ACCUEIL -->
+<!-- ============================== -->
+
+<div style="text-align:center; margin-top:40px;">
+    <a href="index.html" 
+       style="background:var(--primary);color:white;padding:14px 22px;
+              border-radius:var(--radius);font-weight:700;">
+        ← Retour à l’accueil
+    </a>
+</div>
+
+
+<!-- ============================== -->
+<!-- 🦶 FOOTER -->
+<!-- ============================== -->
+
+<footer>
+    <p>© 2025 CIZA GROUP — Tous droits réservés</p>
+    <p>
+        <a href="https://wa.me/15145029503">WhatsApp</a> •
+        <a href="mailto:info@cizagroup.com">Email</a>
+    </p>
+</footer> <!-- ============================== -->
+<!-- 🌐 BLOC 4 — JAVASCRIPT GLOBAL -->
+<!-- ============================== -->
+
+<script>
+/* ============================
+   1) SLIDER AUTO (3 images)
+============================ */
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlides() {
+    slides.forEach(s => s.classList.remove("active"));
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add("active");
+}
+
+if (slides.length > 0) {
+    slides[0].classList.add("active");
+    setInterval(showSlides, 5000);
+}
+
+/* ============================
+   2) POPUPS PROGRAMMES
+============================ */
+function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+}
+
+/* ============================
+   3) MULTILINGUE (FR / EN / KI)
+============================ */
+function setLang(lang) {
+    localStorage.setItem("ciza_lang", lang);
+
+    document.querySelectorAll(".lang").forEach(el => {
+        if (el.dataset[lang]) {
+            el.innerHTML = el.dataset[lang];
+        }
+    });
+}
+
+(function () {
+    const saved = localStorage.getItem("ciza_lang") || "fr";
+    setLang(saved);
+})();
+
+/* ============================
+   4) ANIMATION PREMIUM
+============================ */
+document.addEventListener("DOMContentLoaded", () => {
+    const premium = document.querySelector(".premium-badge");
+    if (premium) {
+        setTimeout(() => premium.classList.add("show"), 300);
+    }
+});
+</script> <style>
+
+/* ============================
+    🔹 GLOBAL PAGE BUSINESS
+============================ */
+:root {
+  --blue: #0A3D91;
+  --gold: #F2B840;
+  --dark: #071336;
+  --text: #0b1220;
+  --muted: #6B7280;
+  --radius: 14px;
+  --card-bg: #f8fbff;
+  --maxw: 1200px;
+  font-family: Inter, sans-serif;
+}
+
+/* ============================
+     🔹 HERO SLIDER
+============================ */
+.hero-slider {
+  position: relative;
+  height: 70vh;
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 0 0 24px 24px;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  background-size: cover;
+  background-position: center top;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.65));
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 12%;
+  left: 7%;
+  color: #fff;
+  max-width: 480px;
+}
+
+.hero-content h1 {
+  font-size: 40px;
+  margin: 0 0 10px;
+  font-weight: 800;
+}
+
+.hero-content p {
+  font-size: 17px;
+  margin: 0 0 18px;
+  opacity: 0.92;
+}
+
+.hero-btn {
+  background: var(--gold);
+  color: var(--dark);
+  padding: 12px 22px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 15px;
+  transition: 0.2s;
+  border: 0;
+  cursor: pointer;
+}
+
+.hero-btn:hover {
+  background: #ffcc52;
+}
+
+/* ============================
+     🔹 BADGE PREMIUM
+============================ */
+.premium-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(242,184,64,0.15);
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: 0.4s ease;
+}
+
+.premium-badge.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================
+     🔹 SECTION PROGRAMMES
+============================ */
+.programs {
+  max-width: var(--maxw);
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.programs h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: var(--blue);
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.program-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: var(--radius);
+  border: 1px solid #e5edff;
+  box-shadow: 0 4px 12px rgba(14,34,78,0.06);
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+}
+
+.program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(14,34,78,0.14);
+}
+
+.program-card img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.program-card h3 {
+  margin: 6px 0;
+  font-size: 18px;
+  color: var(--blue);
+}
+
+.program-card p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ============================
+     🔹 POPUP / MODAL
+============================ */
+.modal-full {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.modal-box {
+  width: 90%;
+  max-width: 560px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  animation: zoomIn 0.25s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.modal-box h3 {
+  margin-top: 0;
+  font-size: 22px;
+  color: var(--blue);
+}
+
+.modal-box p {
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.btn-return {
+  padding: 10px 18px;
+  background: var(--blue);
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-return:hover {
+  background: #0C4CBA;
+}
+
+/* ============================
+     🔹 FOOTER
+============================ */
+footer {
+  background: var(--dark);
+  color: #fff;
+  padding: 24px 0;
+  margin-top: 60px;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer a {
+  color: var(--gold);
+}
+
+</style>
