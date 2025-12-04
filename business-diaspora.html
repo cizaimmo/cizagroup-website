@@ -1,194 +1,241 @@
-<!DOCTYPE html><html lang="fr"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>CIZA GROUP – Business Diaspora</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Diaspora Business — CIZA GROUP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-:root{--primary:#0A3D91;--gold:#F2B840;--dark:#071336;--text:#0b1220;--muted:#6B7280;--radius:14px;font-family:Inter,sans-serif}
-body{margin:0;background:#f8fafc;color:var(--text)}
-header{position:fixed;top:0;left:0;width:100%;background:#fff;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ddd;z-index:9999}
-.header-left{display:flex;align-items:center;gap:12px}
-.header-left img{height:50px}
-.header-left .slogan{font-size:13px;font-weight:700;color:var(--gold);margin-top:-6px}
-nav a{margin-left:18px;text-decoration:none;color:var(--primary);font-weight:600}
-nav a:hover{color:var(--gold)}
-.lang-switcher img{width:26px;border-radius:4px;cursor:pointer;margin-left:6px}
+body {
+  margin:0;
+  font-family: Inter, Arial, sans-serif;
+  background:#f5f7fc;
+  color:#1b2432;
+}
 
-.hero{margin-top:95px}
-.hero-slider{position:relative;height:70vh;min-height:420px;overflow:hidden;border-radius:0 0 24px 24px}
-.slide{position:absolute;inset:0;background-size:cover;background-position:center center;background-repeat:no-repeat;opacity:0;transition:1s ease}
-.slide.active{opacity:1}
-.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.45)}
-.hero-content{position:absolute;bottom:16%;left:7%;color:#fff;max-width:580px}
-.hero-content h1{font-size:38px;margin:0;font-weight:900}
-.hero-content .hero-slogan{color:var(--gold);font-size:20px;margin:10px 0 10px;font-weight:700}
-.hero-content p{margin:6px 0 20px;font-size:17px;opacity:0.9}
-.hero-btn{background:var(--gold);color:#000;padding:14px 26px;border-radius:var(--radius);font-weight:800;text-decoration:none}
+/* HEADER */
+header {
+  background:white;
+  padding:12px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid #e5e7eb;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+header .brand { display:flex; align-items:center; gap:12px; }
+header img { width:48px; height:48px; object-fit:contain; }
+nav a {
+  margin-left:15px;
+  text-decoration:none;
+  font-weight:600;
+  color:#0A3D91;
+}
 
-.section{max-width:1100px;margin:auto;padding:60px 20px}
-.section-title{text-align:center;font-size:28px;font-weight:900;color:var(--primary);margin-bottom:30px}
+/* HERO */
+#hero-diaspora {
+  background:url('herodiaspora.png') center/cover;
+  padding:90px 20px;
+  text-align:center;
+  color:white;
+  position:relative;
+}
+#hero-diaspora::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+}
+#hero-diaspora .content {
+  position:relative;
+  z-index:3;
+}
+#hero-diaspora h1 {
+  font-size:34px;
+  font-weight:900;
+  margin-bottom:10px;
+}
+#hero-diaspora p {
+  font-size:17px;
+  max-width:650px;
+  margin:auto;
+}
 
-.why-grid,.program-grid,.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.why-card,.program-card,.test-card{background:#fff;padding:22px;border-radius:var(--radius);box-shadow:0 4px 16px rgba(0,0,0,0.08);text-align:center}
-.program-card{cursor:pointer;font-size:18px;font-weight:700}
+/* CONTAINER */
+.container {
+  max-width:1150px;
+  margin:40px auto;
+  padding:0 20px;
+}
 
-.faq-item{background:#fff;padding:18px;border-radius:var(--radius);box-shadow:0 4px 18px rgba(0,0,0,0.06);margin-bottom:10px;cursor:pointer}
-.faq-answer{display:none;margin-top:6px;color:var(--muted)}
+/* SECTION */
+.section-title {
+  font-size:26px;
+  font-weight:900;
+  color:#0A3D91;
+  margin-bottom:15px;
+  border-left:4px solid #F2B840;
+  padding-left:10px;
+}
 
-.contact-card{background:#fff;padding:22px;border-radius:var(--radius);box-shadow:0 4px 22px rgba(0,0,0,0.08)}
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(290px, 1fr));
+  gap:25px;
+}
+.card {
+  background:white;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.07);
+  border:1px solid #e5e7eb;
+  transition:.25s;
+}
+.card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 8px 28px rgba(0,0,0,0.08);
+}
+.card h3 {
+  font-size:20px;
+  font-weight:900;
+  color:#0A3D91;
+}
+.card p {
+  font-size:15px;
+  color:#4b5563;
+  margin-bottom:12px;
+}
+.btn {
+  display:inline-block;
+  padding:10px 22px;
+  border-radius:50px;
+  background:#F2B840;
+  color:#0A3D91;
+  font-weight:700;
+  text-decoration:none;
+  transition:.25s;
+}
+.btn:hover { background:#dca72f; }
 
-footer{background:var(--primary);color:#fff;padding:40px 20px;margin-top:40px}
-footer a{color:#ffe9b0;text-decoration:none}
+/* FOOTER */
+footer {
+  background:#071336;
+  color:white;
+  padding:40px 20px;
+  margin-top:50px;
+}
+footer a { color:#e5edff; text-decoration:none; }
 
-.modal{position:fixed;inset:0;background:rgba(0,0,0,0.55);display:none;justify-content:center;align-items:center;z-index:99999}
-.modal-content{background:#fff;padding:24px;border-radius:var(--radius);max-width:480px;width:90%}
-.modal-close{background:var(--primary);color:#fff;border:none;padding:10px 18px;border-radius:var(--radius);cursor:pointer}
 </style>
-</head>
-
-<body>
-
-<header>
-<div class="header-left">
-    <img src="9EDFDC7B-7956-4874-A436-A108D72FA51E.png">
-    <div>
-        <div style="font-weight:900;font-size:18px;color:var(--primary)">CIZA GROUP</div>
-        <div class="slogan lang"
-         data-fr="Écosystème de services"
-         data-en="Service Ecosystem"
-         data-ki="Uruvyiriro rw’amaserivisi">
-         Écosystème de services
-        </div>
-    </div>
-</div>
-
-<nav>
-    <a href="index.html" class="lang" data-fr="Accueil" data-en="Home" data-ki="Ahabanza">Accueil</a>
-    <a href="business-diaspora.html" class="lang" data-fr="Diaspora" data-en="Diaspora" data-ki="Abari hanze">Diaspora</a>
-    <a href="contact.html" class="lang" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe">Contact</a>
-</nav>
-
-<div class="lang-switcher">
-    <img src="https://flagcdn.com/fr.svg" onclick="setLang('fr')" title="FR">
-    <img src="https://flagcdn.com/gb.svg" onclick="setLang('en')" title="EN">
-    <img src="https://flagcdn.com/bi.svg" onclick="setLang('ki')" title="KI">
-</div>
-</header>
-
-<section class="hero">
-<div class="hero-slider">
-    <div class="slide active" style="background-image:url('038E3EC2-468F-4C6B-91DD-D077368508FD.png')"></div>
-    <div class="slide" style="background-image:url('0CD5D803-FB19-4139-B96D-CABF88F5964C.png')"></div>
-    <div class="slide" style="background-image:url('752313D3-3321-4323-BE30-ACA03C349863.png')"></div>
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-        <h1 class="lang"
-         data-fr="Programme Diaspora"
-         data-en="Diaspora Program"
-         data-ki="Porogarama y'Abari hanze">
-         Programme Diaspora
-        </h1>
-
-        <div class="hero-slogan lang"
-         data-fr="Écosystème de services"
-         data-en="Service Ecosystem"
-         data-ki="Uruvyiriro rw’amaserivisi">
-         Écosystème de services
-        </div>
-
-        <p class="lang"
-         data-fr="Investissez et développez vos projets au Burundi en toute confiance."
-         data-en="Invest and grow your projects in Burundi with confidence."
-         data-ki="Shora imari no guteza imbere imishinga yawe mu mutekano.">
-         Investissez et développez vos projets au Burundi.
-        </p>
-
-        <a href="#programmes" class="hero-btn lang"
-         data-fr="Voir les Programmes"
-         data-en="See Programs"
-         data-ki="Raba Porogarama">
-         Voir les Programmes
-        </a>
-    </div>
-</div>
-</section>
-
-<section class="section">
-<h2 class="section-title lang" data-fr="Pourquoi choisir CIZA GROUP ?" data-en="Why choose CIZA GROUP?" data-ki="Igitumye uhitemwo CIZA GROUP?">Pourquoi choisir CIZA GROUP ?</h2>
-
-<div class="why-grid">
-    <div class="why-card">🔒<h3>Sécurité & Transparence</h3><p>Suivi clair et rapports réguliers.</p></div>
-    <div class="why-card">🚀<h3>Rapidité & Suivi Direct</h3><p>Mises à jour en temps réel.</p></div>
-    <div class="why-card">🌍<h3>Expertise Diaspora</h3><p>Accompagnement complet.</p></div>
-</div>
-</section>
-
-<section class="section" id="programmes">
-<h2 class="section-title">Programmes Premium</h2>
-
-<div class="program-grid">
-    <div class="program-card" onclick="openModal('m1')">🏠<h3>Immobilier Premium</h3></div>
-    <div class="program-card" onclick="openModal('m2')">🚗<h3>Mobilité & Chauffeur</h3></div>
-    <div class="program-card" onclick="openModal('m3')">📦<h3>Logistique & Envois</h3></div>
-    <div class="program-card" onclick="openModal('m4')">📋<h3>Gestion & Audit</h3></div>
-</div>
-</section>
-
-<div id="m1" class="modal"><div class="modal-content"><h3>Immobilier Premium</h3><p>Construction, achat, gestion locative, suivi vidéo.</p><button class="modal-close" onclick="closeModal('m1')">OK</button></div></div>
-<div id="m2" class="modal"><div class="modal-content"><h3>Mobilité & Chauffeur</h3><p>Flotte, chauffeurs professionnels, sécurité totale.</p><button class="modal-close" onclick="closeModal('m2')">OK</button></div></div>
-<div id="m3" class="modal"><div class="modal-content"><h3>Logistique & Envois</h3><p>Colis, achats locaux, livraison express diaspora.</p><button class="modal-close" onclick="closeModal('m3')">OK</button></div></div>
-<div id="m4" class="modal"><div class="modal-content"><h3>Gestion & Audit</h3><p>Contrôles, audits vidéo, gestion opérationnelle.</p><button class="modal-close" onclick="closeModal('m4')">OK</button></div></div>
-
-<section class="section">
-<h2 class="section-title">Ils nous font confiance</h2>
-<div class="testimonials">
-    <div class="test-card"><h3>Jean M.</h3><p>Service impeccable, très professionnel.</p></div>
-    <div class="test-card"><h3>Aline N.</h3><p>Excellent suivi pour mon investissement.</p></div>
-    <div class="test-card"><h3>Didier K.</h3><p>Logistique rapide et fiable.</p></div>
-</div>
-</section>
-
-<section class="section">
-<h2 class="section-title">FAQ</h2>
-<div class="faq-item" onclick="toggleFAQ(this)"><div>Comment rejoindre ?</div><div class="faq-answer">Cliquez sur un programme et contactez-nous.</div></div>
-<div class="faq-item" onclick="toggleFAQ(this)"><div>Est-ce sécurisé ?</div><div class="faq-answer">Oui, tout est suivi et transparent.</div></div>
-</section>
-
-<section class="section">
-<h2 class="section-title">Contact rapide</h2>
-<div class="contact-card">
-<p>📞 Canada : <a href="tel:+15145029503">+1 514 502 9503</a></p>
-<p>📞 Burundi : <a href="tel:+25779945007">+257 79 94 50 07</a></p>
-<p>💬 WhatsApp : <a href="https://wa.me/15145029503">Contact direct</a></p>
-<p>✉️ Email : <a href="mailto:info@cizagroup.com">info@cizagroup.com</a></p>
-</div>
-
-<h3>📍 Bujumbura</h3>
-<iframe src="https://www.google.com/maps?q=Bujumbura&output=embed" width="100%" height="260"></iframe>
-
-<h3>📍 Montréal</h3>
-<iframe src="https://www.google.com/maps?q=Montreal&output=embed" width="100%" height="260"></iframe>
-</section>
-
-<footer>
-<div style="max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px">
-<div><h3>Entreprise</h3><p><a href="index.html">Accueil</a></p><p><a href="business-diaspora.html">Diaspora</a></p><p><a href="contact.html">Contact</a></p></div>
-<div><h3>Légal</h3><p><a href="politique-confidentialite.html">Confidentialité</a></p></div>
-<div><h3>Contact</h3><p>info@cizagroup.com</p><p>WhatsApp : +1 514 502 9503</p></div>
-</div>
-<p style="text-align:center;margin-top:20px;opacity:0.85">© 2025 CIZA GROUP</p>
-</footer>
 
 <script>
-let i=0;const slides=document.querySelectorAll(".slide");
-setInterval(()=>{slides.forEach(s=>s.classList.remove("active"));i=(i+1)%slides.length;slides[i].classList.add("active")},5000);
-function openModal(id){document.getElementById(id).style.display="flex"}
-function closeModal(id){document.getElementById(id).style.display="none"}
-function toggleFAQ(el){let a=el.querySelector(".faq-answer");a.style.display=a.style.display=="block"?"none":"block"}
-function setLang(l){localStorage.setItem("ciza_lang",l);document.querySelectorAll(".lang").forEach(e=>{if(e.dataset[l])e.innerHTML=e.dataset[l]})}
-setLang(localStorage.getItem("ciza_lang")||"fr");
+function setLang(l){
+  document.querySelectorAll("[data-fr]").forEach(el=>{
+    el.innerHTML = el.dataset[l];
+  });
+  localStorage.setItem("lang_diaspora", l);
+}
+window.onload = () => {
+  const l = localStorage.getItem("lang_diaspora") || "fr";
+  setLang(l);
+}
 </script>
 
-</body></html>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="brand">
+    <img src="logo.png" alt="">
+    <strong style="color:#0A3D91;">CIZA GROUP</strong>
+  </div>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="business-diaspora.html">Diaspora</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="hero-diaspora">
+  <div class="content">
+    <h1 data-fr="Diaspora Business"
+        data-en="Diaspora Business"></h1>
+
+    <p data-fr="Connecter la diaspora burundaise au pays avec des services fiables, vérifiés et sécurisés."
+       data-en="Connecting the Burundian diaspora to home with reliable, verified and secured services."></p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <div class="section-title"
+       data-fr="Solutions pour la diaspora"
+       data-en="Solutions for the diaspora"></div>
+
+  <div class="grid">
+
+    <!-- 1 -->
+    <div class="card">
+      <h3>CizaImmo Diaspora</h3>
+      <p data-fr="Achat, location, vérification de terrain, construction, supervision."
+         data-en="Buying, renting, land checks, construction, supervision."></p>
+      <a href="contact.html" class="btn">Demander</a>
+    </div>
+
+    <!-- 2 -->
+    <div class="card">
+      <h3>CizaAssist Diaspora</h3>
+      <p data-fr="Démarches administratives, documents officiels, vérification sur place."
+         data-en="Admin tasks, official documents, on-site verification."></p>
+      <a href="contact.html" class="btn">Demander</a>
+    </div>
+
+    <!-- 3 -->
+    <div class="card">
+      <h3>CizaDelivery Diaspora</h3>
+      <p data-fr="Livraison Burundi ↔ Diaspora de colis, cadeaux et documents."
+         data-en="Delivery Burundi ↔ Diaspora for parcels, gifts and documents."></p>
+      <a href="contact.html" class="btn">Demander</a>
+    </div>
+
+    <!-- 4 -->
+    <div class="card">
+      <h3>CizaAcademy Diaspora</h3>
+      <p data-fr="Formations en ligne, coaching business, insertion professionnelle."
+         data-en="Online training, business coaching, professional development."></p>
+      <a href="contact.html" class="btn">Demander</a>
+    </div>
+
+    <!-- 5 -->
+    <div class="card">
+      <h3>CizaPay+ Diaspora</h3>
+      <p data-fr="Paiements sécurisés, soutien familial, paiements locaux à distance."
+         data-en="Secure payments, family support, remote local payments."></p>
+      <a href="contact.html" class="btn">Demander</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div style="max-width:1200px;margin:auto;">
+    <div>© 2025 CIZA GROUP — Tous droits réservés</div>
+    <div style="margin-top:10px;">
+      <a href="legales.html">Mentions légales</a> •
+      <a href="cgu.html">CGU</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
