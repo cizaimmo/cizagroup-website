@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CIZA GROUP — Écosystème de Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png"
+    href="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/favicone.png">
+
+  <style>
+    /* GLOBAL */
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: #f4f6fa;
+      color: #1a1f25;
+    }
+
+    /* HEADER */
+    header {
+      background: #0A3D91;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    header img {
+      height: 58px;
+    }
+
+    /* MENU */
+    .menu-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu-btn div {
+      width: 28px;
+      height: 3px;
+      background: #F2B840;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      right: -260px;
+      width: 240px;
+      height: 100%;
+      background: #0A3D91;
+      padding-top: 80px;
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 17px;
+      padding-left: 25px;
+    }
+
+    .nav-open {
+      right: 0 !important;
+    }
+
+    /* HERO */
+    #hero {
+      height: 70vh;
+      background-image: url('https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/hero-premium-clean.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+    }
+
+    #hero h1 {
+      font-size: 30px;
+      font-weight: 800;
+      margin-top: 120px;
+      text-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .gold-line {
+      width: 90px;
+      height: 4px;
+      background: #F2B840;
+      border-radius: 3px;
+      margin: 15px auto;
+    }
+
+    .domains {
+      font-size: 18px;
+      font-weight: 600;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    .diaspora-btn {
+      background: #F2B840;
+      padding: 14px 26px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 18px;
+      color: #1a1f25;
+      text-decoration: none;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+      transition: 0.3s;
+    }
+
+    .diaspora-btn:hover {
+      transform: translateY(-4px);
+    }
+
+    /* SERVICES */
+    h2.section-title {
+      text-align: center;
+      font-size: 28px;
+      color: #0A3D91;
+      padding-top: 40px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #444;
+      margin-bottom: 25px;
+      font-size: 16px;
+    }
+
+    .grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 600;
+      color: #0A3D91;
+      box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1b1f24;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    /* BACK BUTTON */
+    .back-btn {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      background: #F2B840;
+      padding: 12px 18px;
+      border-radius: 50px;
+      border: none;
+      font-weight: 700;
+      color: #1b1f24;
+      cursor: pointer;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav").classList.toggle("nav-open");
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/horizontallogo.png">
+    <button class="menu-btn" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+  </header>
+
+  <!-- MENU -->
+  <nav id="nav">
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="business-diaspora.html">Diaspora</a>
+    <a href="contact.html">Contact</a>
+    <a href="legales.html">Mentions légales</a>
+    <a href="confidentialite.html">Confidentialité</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+
+    <h1>Écosystème de Services — Burundi | Canada</h1>
+
+    <div class="gold-line"></div>
+
+    <div class="domains">
+      Mobilité • Immobilier • Logistique • Diaspora
+    </div>
+
+    <a href="business-diaspora.html" class="diaspora-btn">Découvrir la Diaspora</a>
+
+  </section>
+
+  <!-- SERVICES -->
+  <h2 class="section-title">Nos Services</h2>
+  <p class="section-subtitle">L'écosystème complet de CIZA GROUP</p>
+
+  <div class="grid">
+
+    <div class="card" onclick="location.href='services.html'">CizaRide+</div>
+    <div class="card" onclick="location.href='services.html'">CizaPay+</div>
+    <div class="card" onclick="location.href='services.html'">CizaImmo</div>
+    <div class="card" onclick="location.href='services.html'">CizaDelivery</div>
+    <div class="card" onclick="location.href='services.html'">CizaLogistics</div>
+    <div class="card" onclick="location.href='services.html'">CizaTech</div>
+    <div class="card" onclick="location.href='services.html'">CizaMarketing</div>
+    <div class="card" onclick="location.href='services.html'">CizaAcademy</div>
+    <div class="card" onclick="location.href='services.html'">CizaAssist</div>
+    <div class="card" onclick="location.href='services.html'">CizaCarWash+</div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 CIZA GROUP — Tous droits réservés.</p>
+
+    <div style="margin: 10px 0;">
+      <a href="business-diaspora.html">Diaspora</a>
+      <a href="contact.html">Contact</a>
+      <a href="legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Confidentialité</a>
+    </div>
+
+    <p style="opacity:0.7">Écosystème de Services — Burundi | Canada</p>
+  </footer>
+
+</body>
+
+</html>
