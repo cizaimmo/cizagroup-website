@@ -1,276 +1,258 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>À propos — CIZA GROUP</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
     body {
       margin:0;
+      padding:0;
       font-family: Inter, Arial, sans-serif;
-      background:#f5f7fc;
-      color:#1b1f24;
+      background:#f7f9fc;
+      color:#1b2432;
+      line-height:1.6;
     }
 
-    /* HEADER PREMIUM */
+    /* HEADER SIMPLE */
     header {
       background:#0A3D91;
-      padding:15px 20px;
-      color:white;
+      padding:14px 20px;
       display:flex;
-      justify-content:space-between;
+      justify-content:center;
       align-items:center;
-      position:sticky;
-      top:0;
-      z-index:999;
     }
     header img {
-      width:160px;
-    }
-    .menu-btn { background:none; border:none; cursor:pointer; }
-    .menu-btn div {
-      width:28px; height:3px;
-      background:#F2B840; margin:5px 0; border-radius:2px;
+      height:55px;
     }
 
-    nav {
-      position:fixed; top:0; right:-260px;
-      width:250px; height:100%;
-      background:#0A3D91; padding-top:70px;
-      transition:0.3s ease;
-      display:flex; flex-direction:column; gap:20px;
-    }
-    nav a {
-      color:white; text-decoration:none; font-size:18px; padding-left:20px;
-    }
-    .nav-open { right:0 !important; }
-
-    /* HERO CEO GOLDEN ROYAL */
+    /* HERO CEO */
     #hero-ceo {
-      background: radial-gradient(circle at center, #123a80, #0A2F75, #06225a);
-      padding:70px 20px 90px;
+      background:#0A3D91;
+      padding:65px 20px 80px;
       text-align:center;
       color:white;
       position:relative;
-      overflow:hidden;
     }
 
-    /* Halo doré */
-    #hero-ceo::before {
-      content:"";
-      position:absolute;
-      top:-120px; left:50%;
-      transform:translateX(-50%);
-      width:400px; height:400px;
-      background:radial-gradient(circle, rgba(242,184,64,0.35), transparent 60%);
-      filter:blur(40px);
-      z-index:0;
-    }
-
-    /* Cercle CEO */
-    .ceo-ring {
-      width:220px; height:220px;
+    #hero-ceo .gold-ring {
+      width:170px;
+      height:170px;
       border-radius:50%;
-      background:linear-gradient(145deg, #F2B840, #d9a234);
-      padding:8px;
+      border:5px solid #F2B840;
       margin:0 auto 20px;
-      position:relative;
-      z-index:2;
-      box-shadow:0 0 25px rgba(242,184,64,0.6);
-    }
-    .ceo-ring-inner {
-      width:100%; height:100%;
-      background:white;
-      border-radius:50%;
       overflow:hidden;
-      display:flex; justify-content:center; align-items:center;
+      background:white;
+      padding:6px;
     }
-    .ceo-ring-inner img {
-      width:100%; height:100%;
-      object-fit:contain;
+
+    #hero-ceo img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
     }
 
     #hero-ceo h1 {
-      font-size:32px; font-weight:900; margin:10px 0 5px;
-      position:relative; z-index:2;
+      font-size:32px;
+      font-weight:900;
     }
-
     #hero-ceo h2 {
-      color:#F2B840; margin:0; font-size:18px;
-      position:relative; z-index:2;
+      font-size:18px;
+      font-weight:700;
+      color:#F2B840;
+      margin-top:6px;
     }
 
-    /* CONTENT BOX */
-    .content-box {
-      max-width:1000px;
+    /* CONTAINER */
+    .container {
+      max-width:1100px;
+      margin:30px auto;
       background:white;
-      margin: -50px auto 30px;
       padding:30px;
       border-radius:14px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+      box-shadow:0 4px 18px rgba(0,0,0,0.08);
     }
 
-    /* SECTION TITLES */
     h3 {
       color:#0A3D91;
-      font-size:24px; font-weight:900;
-      margin-top:30px;
-      border-left:5px solid #F2B840;
-      padding-left:12px;
-    }
-
-    /* QUOTE */
-    .quote {
-      font-style:italic;
-      background:#f0f4ff;
-      border-left:4px solid #0A3D91;
-      padding:15px;
-      margin:20px 0;
-      border-radius:8px;
-    }
-
-    /* TIMELINE PREMIUM */
-    .timeline {
-      margin-top:20px;
+      font-weight:900;
       border-left:4px solid #F2B840;
-      padding-left:20px;
-    }
-    .timeline-item {
-      margin-bottom:20px;
-      position:relative;
-    }
-    .timeline-item::before {
-      content:"";
-      width:16px; height:16px;
-      background:#F2B840;
-      border-radius:50%;
-      position:absolute;
-      left:-28px; top:4px;
-      box-shadow:0 0 10px rgba(242,184,64,0.6);
-    }
-    .year {
-      color:#0A3D91; font-weight:900;
+      padding-left:10px;
+      margin-top:30px;
+      font-size:22px;
     }
 
-    /* FOOTER DELUXE */
+    /* TIMELINE */
+    .timeline {
+      border-left:3px solid #0A3D91;
+      padding-left:20px;
+      margin-top:15px;
+    }
+    .timeline div {
+      margin-bottom:15px;
+    }
+    .timeline span.year {
+      font-weight:900;
+      color:#0A3D91;
+    }
+
+    /* TEAM SECTION */
+    .team {
+      margin-top:40px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+    }
+
+    .team-card {
+      background:white;
+      border-radius:14px;
+      padding:20px;
+      text-align:center;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .team-card img {
+      width:160px;
+      height:160px;
+      border-radius:50%;
+      object-fit:cover;
+      border:4px solid #F2B840;
+      margin-bottom:12px;
+    }
+
+    .team-card h4 {
+      font-size:20px;
+      color:#0A3D91;
+      font-weight:900;
+      margin-bottom:6px;
+    }
+
+    .team-card p {
+      color:#555;
+      font-size:15px;
+      font-weight:600;
+    }
+
+    /* MULTILINGUE */
+    .lang-switch {
+      text-align:right;
+      margin-bottom:10px;
+    }
+    .lang-switch button {
+      padding:6px 12px;
+      border:1px solid #ddd;
+      border-radius:6px;
+      background:white;
+      cursor:pointer;
+    }
+
+    /* FOOTER */
     footer {
       background:#1b1f24;
       color:white;
-      text-align:center;
       padding:40px 20px;
+      text-align:center;
       margin-top:40px;
     }
-    footer a { color:white; text-decoration:none; margin:0 10px; }
+    footer p { margin:6px 0; }
 
     /* BOUTON RETOUR */
     .back-btn {
-      position:fixed; bottom:20px; right:20px;
+      position:fixed;
+      bottom:20px;
+      right:20px;
       background:#F2B840;
-      padding:14px 18px;
+      padding:12px 18px;
       border-radius:50px;
       color:#1b1f24;
-      font-weight:800;
+      font-weight:700;
       border:none;
       cursor:pointer;
-      box-shadow:0 4px 12px rgba(0,0,0,0.4);
-      z-index:999;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
     }
 
-    @media (max-width:600px) {
+    @media(max-width:700px){
       #hero-ceo h1 { font-size:26px; }
-      .ceo-ring { width:170px; height:170px; }
+      #hero-ceo h2 { font-size:15px; }
+      #hero-ceo .gold-ring { width:150px; height:150px; }
     }
-
   </style>
 
+  <!-- Multilingue Script -->
   <script>
-    function toggleMenu() {
-      document.getElementById("nav").classList.toggle("nav-open");
+    function setLang(l) {
+      document.querySelectorAll("[data-fr]").forEach(el => {
+        el.innerHTML = el.dataset[l];
+      });
+      localStorage.setItem("lang_about", l);
     }
+    window.onload = () => {
+      const l = localStorage.getItem("lang_about") || "fr";
+      setLang(l);
+    };
   </script>
 
 </head>
-
 <body>
 
 <header>
-  <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/95e5c3b212be1a7c1ae3670ec6ae45b6aac6b401/horizontallogo.png">
-  <button class="menu-btn" onclick="toggleMenu()">
-    <div></div><div></div><div></div>
-  </button>
+  <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/4b361dbc2e9c2a36191386183c6b4c71b173b7cd/logotransparent.png">
 </header>
 
-<nav id="nav">
-  <a href="index.html">Accueil</a>
-  <a href="services.html">Services</a>
-  <a href="a-propos.html">À propos</a>
-  <a href="diaspora-business.html">Diaspora</a>
-  <a href="contact.html">Contact</a>
-  <a href="legales.html">Mentions légales</a>
-  <a href="confidentialite.html">Confidentialité</a>
-</nav>
-
-<!-- HERO CEO LUXE -->
+<!-- HERO CEO -->
 <section id="hero-ceo">
-  <div class="ceo-ring">
-    <div class="ceo-ring-inner">
-      <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/de6cc4921bc9028c6a71f5dd18a8c336662de67e/CEO.png">
-    </div>
+  <div class="gold-ring">
+    <img src="/mnt/data/CEO.png" alt="CEO CIZA GROUP">
   </div>
 
-  <h1>CEO — CIZA GROUP</h1>
-  <h2>Construire le plus grand écosystème de services au Burundi</h2>
+  <h1 data-fr="Ciza M — CEO" data-en="Ciza M — CEO"></h1>
+
+  <h2 data-fr="Construire le plus grand écosystème de services au Burundi"
+      data-en="Building the largest service ecosystem in Burundi"></h2>
 </section>
 
-<!-- CONTENT -->
-<div class="content-box">
+<div class="container">
 
-  <h3>Vision</h3>
-  <p>
-    CIZA GROUP se positionne comme un acteur majeur du développement moderne au Burundi,
-    en proposant un ensemble intégré de services destinés aux particuliers,
-    entreprises et diaspora. Nous créons un écosystème solide, durable et innovant.
-  </p>
-
-  <div class="quote">
-    « Notre ambition est de bâtir les services de demain, accessibles à tous,
-    sécurisés, modernes et alignés avec les standards internationaux. »
+  <div class="lang-switch">
+    <button onclick="setLang('fr')">FR</button>
+    <button onclick="setLang('en')">EN</button>
   </div>
 
-  <h3>Mission</h3>
-  <p>
-    Digitaliser, simplifier et unifier les services essentiels au quotidien.
-    Offrir une expérience fluide grâce à des solutions technologiques puissantes.
-  </p>
+  <h3 data-fr="Notre vision" data-en="Our Vision"></h3>
+  <p data-fr="
+    CIZA GROUP est une entreprise innovante créée avec une ambition claire : offrir au Burundi
+    et à sa diaspora un écosystème complet de services modernes, fiables et accessibles.
+  " data-en="
+    CIZA GROUP is an innovative company created with a clear ambition: to offer Burundi
+    and its diaspora a complete ecosystem of modern, reliable and accessible services.
+  "></p>
 
-  <h3>Historique</h3>
-  <div class="timeline">
-    <div class="timeline-item">
-      <span class="year">2022 :</span> Début du projet CIZA GROUP.
+  <h3 data-fr="Notre équipe dirigeante" data-en="Our Leadership Team"></h3>
+
+  <div class="team">
+    <!-- CEO -->
+    <div class="team-card">
+      <img src="/mnt/data/CEO.png">
+      <h4 data-fr="Ciza M" data-en="Ciza M"></h4>
+      <p data-fr="CEO — Fondateur" data-en="CEO — Founder"></p>
     </div>
-    <div class="timeline-item">
-      <span class="year">2023 :</span> Lancement des premières plateformes digitales.
-    </div>
-    <div class="timeline-item">
-      <span class="year">2024 :</span> Expansion vers mobilité, immobilier et paiement.
-    </div>
-    <div class="timeline-item">
-      <span class="year">2025 :</span> Structuration de l'écosystème complet & services diaspora.
+
+    <!-- Augustin -->
+    <div class="team-card">
+      <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/ac7c9b449ccd1dd59aa791379696f0be721ea474/959AE4B4-DFCB-4381-8005-614A6BB22231.png">
+      <h4 data-fr="Augustin K" data-en="Augustin K"></h4>
+      <p data-fr="Président — Stratégie & Marketing"
+         data-en="President — Strategy & Marketing"></p>
     </div>
   </div>
 
 </div>
 
-<!-- FOOTER DELUXE -->
 <footer>
-  <p>© 2025 CIZA GROUP — Tous droits réservés.</p>
-  <div style="margin:12px 0;">
-    <a href="legales.html">Mentions légales</a>
-    <a href="confidentialite.html">Confidentialité</a>
-    <a href="contact.html">Contact</a>
-    <a href="diaspora-business.html">Diaspora</a>
-  </div>
+  <p>2026 CIZA GROUP — Écosystème de Services | Burundi. Tous droits réservés.</p>
 </footer>
 
 <button class="back-btn" onclick="history.back()">← Retour</button>
