@@ -1,267 +1,279 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>À propos — CIZA GROUP</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
     body {
       margin:0;
-      padding:0;
       font-family: Inter, Arial, sans-serif;
-      background:#f7f9fc;
-      color:#1b2432;
-      line-height:1.6;
+      background:#f5f7fc;
+      color:#1b1f24;
     }
 
-    /* HERO CEO */
-    #hero-ceo {
+    /* HEADER PREMIUM */
+    header {
       background:#0A3D91;
-      padding:60px 20px;
+      padding:15px 20px;
+      color:white;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:999;
+    }
+    header img {
+      width:160px;
+    }
+    .menu-btn { background:none; border:none; cursor:pointer; }
+    .menu-btn div {
+      width:28px; height:3px;
+      background:#F2B840; margin:5px 0; border-radius:2px;
+    }
+
+    nav {
+      position:fixed; top:0; right:-260px;
+      width:250px; height:100%;
+      background:#0A3D91; padding-top:70px;
+      transition:0.3s ease;
+      display:flex; flex-direction:column; gap:20px;
+    }
+    nav a {
+      color:white; text-decoration:none; font-size:18px; padding-left:20px;
+    }
+    .nav-open { right:0 !important; }
+
+    /* HERO CEO GOLDEN ROYAL */
+    #hero-ceo {
+      background: radial-gradient(circle at center, #123a80, #0A2F75, #06225a);
+      padding:70px 20px 90px;
       text-align:center;
       color:white;
       position:relative;
       overflow:hidden;
     }
 
-    #hero-ceo .gold-ring {
-      width:180px;
-      height:180px;
-      border-radius:50%;
-      border:5px solid #F2B840;
-      margin:0 auto 20px;
-      overflow:hidden;
-      background:white;
-      padding:6px;
+    /* Halo doré */
+    #hero-ceo::before {
+      content:"";
+      position:absolute;
+      top:-120px; left:50%;
+      transform:translateX(-50%);
+      width:400px; height:400px;
+      background:radial-gradient(circle, rgba(242,184,64,0.35), transparent 60%);
+      filter:blur(40px);
+      z-index:0;
     }
 
-    #hero-ceo img {
-      width:100%;
-      height:100%;
-      object-fit:cover;
+    /* Cercle CEO */
+    .ceo-ring {
+      width:220px; height:220px;
       border-radius:50%;
+      background:linear-gradient(145deg, #F2B840, #d9a234);
+      padding:8px;
+      margin:0 auto 20px;
+      position:relative;
+      z-index:2;
+      box-shadow:0 0 25px rgba(242,184,64,0.6);
+    }
+    .ceo-ring-inner {
+      width:100%; height:100%;
+      background:white;
+      border-radius:50%;
+      overflow:hidden;
+      display:flex; justify-content:center; align-items:center;
+    }
+    .ceo-ring-inner img {
+      width:100%; height:100%;
+      object-fit:contain;
     }
 
     #hero-ceo h1 {
-      font-size:32px;
-      font-weight:900;
-      margin-bottom:6px;
+      font-size:32px; font-weight:900; margin:10px 0 5px;
+      position:relative; z-index:2;
     }
 
     #hero-ceo h2 {
-      font-size:18px;
-      color:#F2B840;
-      font-weight:700;
-      margin-top:0;
+      color:#F2B840; margin:0; font-size:18px;
+      position:relative; z-index:2;
     }
 
-    /* CONTAINER */
-    .container {
-      max-width:1100px;
-      margin:30px auto;
+    /* CONTENT BOX */
+    .content-box {
+      max-width:1000px;
       background:white;
+      margin: -50px auto 30px;
       padding:30px;
       border-radius:14px;
-      box-shadow:0 4px 18px rgba(0,0,0,0.08);
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
     }
 
+    /* SECTION TITLES */
     h3 {
       color:#0A3D91;
-      font-weight:900;
-      border-left:4px solid #F2B840;
-      padding-left:10px;
+      font-size:24px; font-weight:900;
       margin-top:30px;
+      border-left:5px solid #F2B840;
+      padding-left:12px;
     }
 
-    /* TIMELINE */
+    /* QUOTE */
+    .quote {
+      font-style:italic;
+      background:#f0f4ff;
+      border-left:4px solid #0A3D91;
+      padding:15px;
+      margin:20px 0;
+      border-radius:8px;
+    }
+
+    /* TIMELINE PREMIUM */
     .timeline {
-      border-left:3px solid #0A3D91;
+      margin-top:20px;
+      border-left:4px solid #F2B840;
       padding-left:20px;
-      margin-top:15px;
     }
-    .timeline div {
-      margin-bottom:15px;
+    .timeline-item {
+      margin-bottom:20px;
+      position:relative;
     }
-    .timeline span.year {
-      font-weight:900;
-      color:#0A3D91;
+    .timeline-item::before {
+      content:"";
+      width:16px; height:16px;
+      background:#F2B840;
+      border-radius:50%;
+      position:absolute;
+      left:-28px; top:4px;
+      box-shadow:0 0 10px rgba(242,184,64,0.6);
+    }
+    .year {
+      color:#0A3D91; font-weight:900;
     }
 
-    /* MULTILINGUE */
-    .lang-switch {
-      text-align:right;
-      margin-bottom:10px;
+    /* FOOTER DELUXE */
+    footer {
+      background:#1b1f24;
+      color:white;
+      text-align:center;
+      padding:40px 20px;
+      margin-top:40px;
     }
-    .lang-switch button {
-      padding:6px 12px;
-      border:1px solid #ddd;
-      border-radius:6px;
-      background:white;
+    footer a { color:white; text-decoration:none; margin:0 10px; }
+
+    /* BOUTON RETOUR */
+    .back-btn {
+      position:fixed; bottom:20px; right:20px;
+      background:#F2B840;
+      padding:14px 18px;
+      border-radius:50px;
+      color:#1b1f24;
+      font-weight:800;
+      border:none;
       cursor:pointer;
+      box-shadow:0 4px 12px rgba(0,0,0,0.4);
+      z-index:999;
     }
 
-    @media(max-width:700px){
+    @media (max-width:600px) {
       #hero-ceo h1 { font-size:26px; }
-      #hero-ceo h2 { font-size:15px; }
-      #hero-ceo .gold-ring { width:150px; height:150px; }
+      .ceo-ring { width:170px; height:170px; }
     }
+
   </style>
 
-  <!-- Multilingue -->
   <script>
-    function setLang(l) {
-      document.querySelectorAll("[data-fr]").forEach(el => {
-        el.innerHTML = el.dataset[l];
-      });
-      localStorage.setItem("lang_about", l);
+    function toggleMenu() {
+      document.getElementById("nav").classList.toggle("nav-open");
     }
-    window.onload = () => {
-      const l = localStorage.getItem("lang_about") || "fr";
-      setLang(l);
-    };
   </script>
 
 </head>
+
 <body>
 
-<!-- HERO CEO -->
+<header>
+  <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/95e5c3b212be1a7c1ae3670ec6ae45b6aac6b401/horizontallogo.png">
+  <button class="menu-btn" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </button>
+</header>
+
+<nav id="nav">
+  <a href="index.html">Accueil</a>
+  <a href="services.html">Services</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="diaspora-business.html">Diaspora</a>
+  <a href="contact.html">Contact</a>
+  <a href="legales.html">Mentions légales</a>
+  <a href="confidentialite.html">Confidentialité</a>
+</nav>
+
+<!-- HERO CEO LUXE -->
 <section id="hero-ceo">
-  <div class="gold-ring">
-    <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/de6cc4921bc9028c6a71f5dd18a8c336662de67e/CEO.png" alt="CEO CIZA GROUP">
+  <div class="ceo-ring">
+    <div class="ceo-ring-inner">
+      <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/de6cc4921bc9028c6a71f5dd18a8c336662de67e/CEO.png">
+    </div>
   </div>
 
-  <h1 data-fr="CEO — Fondateur de CIZA GROUP" data-en="CEO — Founder of CIZA GROUP"></h1>
-
-  <h2 data-fr="Construire le plus grand écosystème de services au Burundi"
-      data-en="Building the largest service ecosystem in Burundi"></h2>
+  <h1>CEO — CIZA GROUP</h1>
+  <h2>Construire le plus grand écosystème de services au Burundi</h2>
 </section>
 
-<!-- CONTENU -->
-<div class="container">
+<!-- CONTENT -->
+<div class="content-box">
 
-  <!-- Changement de langue -->
-  <div class="lang-switch">
-    <button onclick="setLang('fr')">FR</button>
-    <button onclick="setLang('en')">EN</button>
+  <h3>Vision</h3>
+  <p>
+    CIZA GROUP se positionne comme un acteur majeur du développement moderne au Burundi,
+    en proposant un ensemble intégré de services destinés aux particuliers,
+    entreprises et diaspora. Nous créons un écosystème solide, durable et innovant.
+  </p>
+
+  <div class="quote">
+    « Notre ambition est de bâtir les services de demain, accessibles à tous,
+    sécurisés, modernes et alignés avec les standards internationaux. »
   </div>
 
-  <h3 data-fr="Notre vision" data-en="Our Vision"></h3>
-  <p data-fr="
-    CIZA GROUP est une entreprise innovante créée avec une ambition claire :
-    offrir au Burundi et à sa diaspora un écosystème complet de services modernes,
-    fiables et accessibles.  
-    Sous la direction du fondateur, le groupe développe des solutions qui
-    transforment la mobilité, le digital, l'immobilier, la logistique et les
-    services urbains.
-  " data-en="
-    CIZA GROUP is an innovative company created with a clear ambition:
-    to offer Burundi and its diaspora a complete ecosystem of modern, reliable,
-    and accessible services.  
-    Under the founder's leadership, the group develops solutions that transform
-    mobility, digital services, real estate, logistics, and urban services.
-  "></p>
+  <h3>Mission</h3>
+  <p>
+    Digitaliser, simplifier et unifier les services essentiels au quotidien.
+    Offrir une expérience fluide grâce à des solutions technologiques puissantes.
+  </p>
 
-  <h3 data-fr="Nos services" data-en="Our Services"></h3>
-  <p data-fr="
-    Le groupe réunit plusieurs branches : CizaRide+, CizaPay+, CizaImmo,  
-    CizaDelivery, CizaLogistics, CizaTech, CizaMarketing, CizaAcademy,  
-    CizaAssist et CizaCarWash+.  
-    Ensemble, ces services créent une chaîne intégrée et cohérente.
-  " data-en="
-    The group brings together several branches: CizaRide+, CizaPay+, CizaImmo,
-    CizaDelivery, CizaLogistics, CizaTech, CizaMarketing, CizaAcademy,
-    CizaAssist and CizaCarWash+.  
-    Together, they form a coherent and integrated service chain.
-  "></p>
-
-  <h3 data-fr="Notre mission" data-en="Our Mission"></h3>
-  <p data-fr="
-    Simplifier le quotidien. Digitaliser les services du Burundi.
-    Offrir des solutions fiables, sécurisées et accessibles pour tous —
-    citoyens, entreprises et diaspora.
-  " data-en="
-    Simplify daily life. Digitize services in Burundi. Provide reliable,
-    secure and accessible solutions for citizens, businesses and the diaspora.
-  "></p>
-
-  <h3 data-fr="Historique & Croissance" data-en="History & Growth"></h3>
+  <h3>Historique</h3>
   <div class="timeline">
-    <div>
-      <span class="year">2022 :</span>
-      <span data-fr="Début du projet — création du noyau CIZA GROUP"
-            data-en="Project launch — creation of the CIZA GROUP core"></span>
+    <div class="timeline-item">
+      <span class="year">2022 :</span> Début du projet CIZA GROUP.
     </div>
-    <div>
-      <span class="year">2023 :</span>
-      <span data-fr="Premières plateformes digitales"
-            data-en="First digital platforms launched"></span>
+    <div class="timeline-item">
+      <span class="year">2023 :</span> Lancement des premières plateformes digitales.
     </div>
-    <div>
-      <span class="year">2024 :</span>
-      <span data-fr="Expansion : mobilité, immobilier, paiement"
-            data-en="Expansion: mobility, real estate, payment"></span>
+    <div class="timeline-item">
+      <span class="year">2024 :</span> Expansion vers mobilité, immobilier et paiement.
     </div>
-    <div>
-      <span class="year">2025 :</span>
-      <span data-fr="Écosystème complet + ouverture diaspora"
-            data-en="Full ecosystem + diaspora services"></span>
+    <div class="timeline-item">
+      <span class="year">2025 :</span> Structuration de l'écosystème complet & services diaspora.
     </div>
   </div>
-
-  <h3 data-fr="Notre équipe" data-en="Our Team"></h3>
-  <p data-fr="
-    L’entreprise est portée par un réseau d'experts, de chauffeurs, de livreurs,
-    de techniciens, d'agents de terrain et de partenaires de la diaspora.
-  " data-en="
-    The company is supported by a network of experts, drivers, delivery agents,
-    technicians, field agents and diaspora partners.
-  "></p>
 
 </div>
-<!-- FOOTER -->
-<footer style="background:#0A3D91; color:white; padding:40px 20px; margin-top:50px;">
-  <div style="max-width:1100px; margin:auto; display:flex; flex-wrap:wrap; gap:30px; justify-content:space-between;">
 
-    <!-- Logo -->
-    <div style="flex:1 1 250px;">
-      <img src="horizontallogo.png" alt="CIZA GROUP" style="width:180px; margin-bottom:10px;">
-      <p style="opacity:0.8; font-size:14px;">Écosystème de Service | Burundi</p>
-    </div>
-
-    <!-- Navigation -->
-    <div style="flex:1 1 200px;">
-      <h3 style="font-size:18px; margin-bottom:10px;">Navigation</h3>
-      <a href="index.html" style="color:white; text-decoration:none; display:block; margin-bottom:6px;">Accueil</a>
-      <a href="services.html" style="color:white; text-decoration:none; display:block; margin-bottom:6px;">Services</a>
-      <a href="a-propos.html" style="color:white; text-decoration:none; display:block; margin-bottom:6px;">À propos</a>
-      <a href="contact.html" style="color:white; text-decoration:none; display:block; margin-bottom:6px;">Contact</a>
-      <a href="diaspora-business.html" style="color:white; text-decoration:none; display:block; margin-bottom:6px;">Diaspora Business</a>
-    </div>
-
-    <!-- Légal -->
-    <div style="flex:1 1 200px;">
-      <h3 style="font-size:18px; margin-bottom:10px;">Légal</h3>
-      <a href="legales.html" style="color:white; text-decoration:none; display:block; margin-bottom:6px;">Mentions légales</a>
-      <a href="confidentialite.html" style="color:white; text-decoration:none; display:block; margin-bottom:6px;">Politique de confidentialité</a>
-    </div>
-
-    <!-- WhatsApp / réseaux -->
-    <div style="flex:1 1 200px;">
-      <h3 style="font-size:18px; margin-bottom:10px;">Nous contacter</h3>
-      <a href="https://wa.me/15145029503" target="_blank" style="color:white; text-decoration:none; display:block; margin-bottom:6px;">
-        WhatsApp Canada : +1 514 502 9503
-      </a>
-      <a href="https://wa.me/25779945007" target="_blank" style="color:white; text-decoration:none; display:block; margin-bottom:6px;">
-        WhatsApp Burundi : +257 79 94 5007
-      </a>
-      <a href="https://instagram.com" target="_blank" style="color:white; text-decoration:none; display:block;">Instagram</a>
-    </div>
-  </div>
-
-  <div style="text-align:center; margin-top:30px; opacity:0.6; font-size:14px;">
-    © 2025 CIZA GROUP — Tous droits réservés.
+<!-- FOOTER DELUXE -->
+<footer>
+  <p>© 2025 CIZA GROUP — Tous droits réservés.</p>
+  <div style="margin:12px 0;">
+    <a href="legales.html">Mentions légales</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="contact.html">Contact</a>
+    <a href="diaspora-business.html">Diaspora</a>
   </div>
 </footer>
+
+<button class="back-btn" onclick="history.back()">← Retour</button>
+
 </body>
 </html>
