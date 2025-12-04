@@ -2,8 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>CIZA GROUP — Écosystème de Services | Burundi</title>
+  <title>CIZA GROUP — Écosystème de Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/favicone.png">
 
   <style>
     body {
@@ -13,132 +16,196 @@
       color: #1a1f25;
     }
 
-    /* HEADER */
+    /* HEADER FIXE PREMIUM */
     header {
       background: #0A3D91;
       padding: 12px 20px;
+      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
-      z-index: 9999;
+      z-index: 1000;
+      height: 70px;
     }
 
     header img {
-      width: 140px;
+      width: 150px;
     }
 
-    /* MENU BUTTON */
+    /* === LANG SWITCH === */
+    .lang-switch {
+      position: absolute;
+      right: 70px;
+      top: 22px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .lang-switch a {
+      color: white;
+      text-decoration: none;
+      margin: 0 4px;
+    }
+
+    .lang-switch a:hover {
+      opacity: 0.7;
+    }
+
+    /* === MENU BURGER === */
     .menu-btn {
       background: none;
       border: none;
       cursor: pointer;
-    }
-    .menu-btn div {
-      width: 28px;
-      height: 3px;
-      margin: 5px 0;
-      background: #F2B840;
-      border-radius: 2px;
+      display: block;
+      z-index: 1100;
     }
 
-    /* SIDE MENU */
+    .menu-btn div {
+      width: 27px;
+      height: 3px;
+      background: #F2B840;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* === NAV MOBILE === */
     nav {
       position: fixed;
       top: 0;
       right: -260px;
-      width: 220px;
+      width: 250px;
       height: 100%;
       background: #0A3D91;
-      padding-top: 80px;
+      padding-top: 90px;
       transition: 0.3s ease;
       display: flex;
       flex-direction: column;
       gap: 18px;
-      z-index: 9999;
+      z-index: 1000;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       font-size: 18px;
-      padding-left: 20px;
-    }
-    .nav-open {
-      right: 0;
+      padding-left: 25px;
+      font-weight: 500;
     }
 
-    /* HERO */
+    .nav-open {
+      right: 0 !important;
+    }
+
+    /* === HERO === */
     #hero {
       background-image: url('https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/hero-premium.png');
-      height: 75vh;
+      height: 70vh;
       background-size: cover;
       background-position: center;
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      color: white;
-      padding: 0 20px;
     }
 
     #hero h1 {
-      font-size: 34px;
+      color: white;
+      font-size: 32px;
       font-weight: 900;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-      margin-bottom: 20px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      padding: 0 20px;
     }
 
-    .hero-domains {
-      font-size: 18px;
-      margin-bottom: 30px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    #hero h3 {
+      color: white;
+      margin-top: 12px;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 1px;
     }
 
-    .btn-hero {
+    .btn-gold {
+      margin-top: 25px;
       background: #F2B840;
       color: #0A3D91;
-      padding: 14px 26px;
-      border-radius: 50px;
-      font-size: 18px;
+      padding: 12px 24px;
+      border-radius: 40px;
+      font-size: 16px;
       font-weight: 700;
       text-decoration: none;
       display: inline-block;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
-    /* SECTIONS */
-    section {
-      padding: 60px 20px;
+    @media (max-width: 600px) {
+      #hero { height: 62vh; }
+      #hero h1 { font-size: 22px; }
+      #hero h3 { font-size: 14px; }
+    }
+
+    /* === SERVICES GRID === */
+    .services {
+      padding: 40px 20px;
       max-width: 1200px;
       margin: auto;
-      text-align: center;
     }
 
-    /* FOOTER 15/10 */
+    .services h2 {
+      text-align: center;
+      color: #0A3D91;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.09);
+      text-align: center;
+      font-weight: 600;
+      color: #0A3D91;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    /* === FOOTER PREMIUM === */
     footer {
-      width: 100%;
-      background: #1b1f24;
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-      margin-top: 0;
-      box-sizing: border-box;
-    }
-
-    footer h3 {
-      color: #F2B840;
-      font-size: 22px;
-      margin-bottom: 10px;
+      background:#1b1f24;
+      color:white;
+      text-align:center;
+      padding:35px 20px;
+      margin-top:40px;
     }
 
     footer a {
-      color: white;
-      text-decoration: none;
+      color:white;
+      text-decoration:none;
+      margin: 0 10px;
     }
 
-    footer p {
-      margin: 6px 0;
+    footer .social {
+      margin-top: 8px;
+      font-size: 16px;
+    }
+
+    footer .copy {
+      opacity:0.7;
+      margin-top:15px;
+      font-size:14px;
     }
 
   </style>
@@ -148,21 +215,32 @@
       document.getElementById("nav").classList.toggle("nav-open");
     }
   </script>
+
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
   <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/horizontallogo.png">
+
+  <!-- SELECTEUR FR | EN -->
+  <div class="lang-switch">
+    <a href="#">FR</a> |
+    <a href="#">EN</a>
+  </div>
+
   <button class="menu-btn" onclick="toggleMenu()">
     <div></div><div></div><div></div>
   </button>
 </header>
 
+<!-- NAVIGATION -->
 <nav id="nav">
   <a href="index.html">Accueil</a>
-  <a href="domaines.html">Domaines</a>
-  <a href="diaspora-business.html">Diaspora</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="services.html">Services</a>
+  <a href="business-diaspora.html">Diaspora</a>
   <a href="contact.html">Contact</a>
   <a href="legales.html">Mentions légales</a>
   <a href="confidentialite.html">Confidentialité</a>
@@ -172,48 +250,46 @@
 <section id="hero">
   <div>
     <h1>Écosystème de Services | Burundi</h1>
-    <div class="hero-domains">Mobilité | Immobilier | Logistique</div>
-    <a href="domaines.html" class="btn-hero">Découvrir nos domaines</a>
+
+    <h3>Mobilité | Immobilier | Logistique | Marketing | Technologies</h3>
+
+    <a class="btn-gold" href="business-diaspora.html">Découvrir nos domaines</a>
   </div>
 </section>
 
-<!-- DOMAINES -->
-<section>
-  <h2>Domaines de Services</h2>
-  <p>L’écosystème complet de CIZA GROUP</p>
+<!-- SERVICES -->
+<section class="services">
+  <h2>Nos Services</h2>
 
-  <div style="display:flex; justify-content:space-around; flex-wrap: wrap; margin-top:40px;">
-
-    <a href="mobilite.html" style="font-size:20px; color:#0A3D91;">Mobilité</a>
-    <a href="immobilier.html" style="font-size:20px; color:#0A3D91;">Immobilier</a>
-    <a href="logistique.html" style="font-size:20px; color:#0A3D91;">Logistique</a>
-    <a href="diaspora-business.html" style="font-size:20px; color:#0A3D91;">Diaspora</a>
-
+  <div class="grid">
+    <div class="card">CizaRide+</div>
+    <div class="card">CizaPay+</div>
+    <div class="card">CizaImmo</div>
+    <div class="card">CizaDelivery</div>
+    <div class="card">CizaLogistics</div>
+    <div class="card">CizaTech</div>
+    <div class="card">CizaMarketing</div>
+    <div class="card">CizaAcademy</div>
+    <div class="card">CizaAssist</div>
+    <div class="card">CizaCarWash+</div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-
-  <h3>Contact</h3>
-  <p>🇧🇮 +257 79945007</p>
-  <p>🇨🇦 +1 514 502 9503</p>
+  <p><strong>Contacts :</strong></p>
+  <p>🇧🇮 +257 79945007 | 🇨🇦 +1 514 502 9503</p>
   <p>Email : infos@cizagroup.com</p>
-  <p>Instagram : @cizagroup_official</p>
+  <p class="social">Instagram : @cizagroup_official</p>
 
-  <br>
+  <div style="margin:12px 0;">
+    <a href="legales.html">Mentions légales</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="contact.html">Contact</a>
+    <a href="business-diaspora.html">Diaspora</a>
+  </div>
 
-  <h3>Navigation</h3>
-  <p><a href="index.html">Accueil</a></p>
-  <p><a href="domaines.html">Domaines</a></p>
-  <p><a href="diaspora-business.html">Diaspora</a></p>
-
-  <br><br>
-
-  <p style="opacity:0.6; font-size:14px;">
-    © 2026 CIZA GROUP — Écosystème de Services | Burundi. Tous droits réservés.
-  </p>
-
+  <p class="copy">© 2026 CIZA GROUP — Écosystème de Services | Burundi. Tous droits réservés.</p>
 </footer>
 
 </body>
