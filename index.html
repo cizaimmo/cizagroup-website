@@ -1,306 +1,267 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<title>CIZA GROUP — Accueil</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>CIZA GROUP — Écosystème de Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-/* RESET */
-body { margin:0; padding:0; font-family: Inter, Arial, sans-serif; color:#131722; background:#f5f7fb; line-height:1.6; }
+  <style>
+    body {
+      margin:0; padding:0;
+      font-family: Inter, Arial, sans-serif;
+      background:#f7f9fc;
+      color:#0A3D91;
+    }
 
-/* HEADER PREMIUM */
-#header-premium {
-  position: sticky; top: 0; z-index: 9999;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(200,200,200,0.35);
-}
-.header-inner {
-  max-width: 1200px; margin:auto;
-  padding:12px 22px; display:flex; align-items:center; justify-content:space-between;
-}
-.logo-area { display:flex; align-items:center; gap:10px; text-decoration:none; }
-.logo-img { width:52px; height:52px; object-fit:contain; }
-.logo-text { font-size:20px; font-weight:900; color:#0A3D91; }
+    /* NAVBAR */
+    header {
+      background:#0A3D91;
+      padding:12px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    header img {
+      height:55px;
+    }
+    nav a {
+      color:white;
+      margin-left:18px;
+      text-decoration:none;
+      font-weight:600;
+    }
 
-.nav-links { display:flex; gap:22px; }
-.nav-links a {
-  text-decoration:none; color:#0A3D91; font-weight:600;
-  padding:8px 12px; border-radius:8px; transition:0.2s;
-}
-.nav-links a:hover { background:rgba(10,61,145,0.08); }
-.nav-links .diaspora { color:#F2B840; font-weight:800; }
+    /* HERO */
+    #hero {
+      position:relative;
+      height:82vh;
+      background-image:url('hero-premium.png');
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    #hero .overlay {
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.35);
+    }
+    #hero .content {
+      z-index:2;
+      text-align:center;
+      color:white;
+      max-width:800px;
+    }
+    #hero h1 {
+      font-size:40px;
+      font-weight:900;
+      margin-bottom:15px;
+    }
+    .btn-gold {
+      background:#F2B840;
+      padding:12px 30px;
+      border-radius:50px;
+      color:black;
+      text-decoration:none;
+      font-weight:700;
+      transition:0.3s;
+    }
+    .btn-gold:hover { background:#d9a432; }
 
-.menu-btn { display:none; font-size:26px; cursor:pointer; }
+    /* SERVICES */
+    .services {
+      text-align:center;
+      padding:60px 20px;
+    }
+    .services h2 {
+      font-size:30px;
+      font-weight:900;
+      margin-bottom:25px;
+      color:#0A3D91;
+    }
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:22px;
+      max-width:1200px;
+      margin:auto;
+    }
+    .card {
+      background:white;
+      padding:25px 15px;
+      border-radius:10px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.06);
+      font-weight:700;
+    }
 
-.lang-switcher img {
-  width:24px; height:24px; border-radius:6px;
-  border:1px solid #ddd; cursor:pointer; margin-left:8px;
-}
+    /* MÉTÉO */
+    .weather {
+      max-width:1100px;
+      margin:40px auto;
+      background:white;
+      padding:25px;
+      border-radius:12px;
+      box-shadow:0 3px 14px rgba(0,0,0,0.08);
+    }
+    .weather h2 {
+      text-align:center;
+      font-size:28px;
+      font-weight:900;
+    }
+    .weather-box {
+      display:flex;
+      justify-content:space-around;
+      margin-top:20px;
+      text-align:center;
+    }
 
-/* MOBILE MENU */
-#mobileMenu { display:none; flex-direction:column; background:white; border-top:1px solid #ddd; }
-#mobileMenu a {
-  padding:12px; text-decoration:none; color:#0A3D91;
-  border-bottom:1px solid #eee; font-weight:600;
-}
+    /* ACTUALITÉS */
+    .news {
+      max-width:1100px;
+      margin:50px auto;
+    }
+    .news h2 {
+      text-align:center;
+      font-size:30px;
+      font-weight:900;
+    }
+    .news-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:20px;
+      margin-top:25px;
+    }
+    .news-item {
+      background:white;
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 4px 16px rgba(0,0,0,0.08);
+    }
+    .news-item img {
+      width:100%;
+      height:170px;
+      object-fit:cover;
+    }
+    .news-item p {
+      padding:12px;
+      font-weight:600;
+    }
 
-@media(max-width:900px){
-  .nav-links { display:none; }
-  .lang-switcher { display:none; }
-  .menu-btn { display:block; }
-}
+    /* FOOTER */
+    footer {
+      background:#0A3D91;
+      padding:25px;
+      text-align:center;
+      color:white;
+      margin-top:50px;
+    }
 
-/* HERO PREMIUM */
-#hero {
-  background-image:url('https://raw.githubusercontent.com/cizaimmo/cizagroup-website/f0ef660926a519b9948fba5a8519b123b6145301/herositenormal.png');
-  background-size:cover; background-position:center;
-  height:78vh; min-height:500px; position:relative; display:flex; align-items:center; justify-content:center; text-align:center;
-}
-.hero-overlay {
-  position:absolute; inset:0; background:rgba(0,0,0,0.35);
-}
-.hero-content {
-  position:relative; z-index:2; color:white; max-width:760px; padding:20px;
-}
-.hero-content h1 { font-size:40px; font-weight:900; line-height:1.2; }
-.hero-content p { font-size:18px; margin-top:10px; opacity:0.92; }
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .grid { grid-template-columns:repeat(2,1fr); }
+      .news-grid { grid-template-columns:1fr; }
+      #hero h1 { font-size:26px; }
+    }
+  </style>
 
-.btn-gold {
-  display:inline-block; margin-top:22px;
-  padding:14px 28px; font-size:16px; font-weight:700;
-  background:#F2B840; color:#071336; border-radius:50px;
-  text-decoration:none; transition:0.3s;
-}
-.btn-gold:hover { background:#ffd563; }
-
-/* SECTIONS */
-.section { max-width:1100px; margin:60px auto; padding:0 20px; }
-.section h2 { font-size:28px; color:#0A3D91; font-weight:900; margin-bottom:14px; }
-
-/* SERVICES */
-.services-grid {
-  display:grid; gap:18px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-.service-card {
-  background:white; padding:20px; border-radius:14px;
-  border:1px solid #e5e9f2; box-shadow:0 4px 16px rgba(0,0,0,0.05);
-  text-align:center; font-weight:600; transition:0.2s;
-}
-.service-card:hover {
-  transform:translateY(-4px); box-shadow:0 8px 22px rgba(0,0,0,0.12);
-}
-
-/* METEO + NEWS */
-.widget-card {
-  background:white; padding:20px; border-radius:14px;
-  border:1px solid #e5e9f2; box-shadow:0 4px 16px rgba(0,0,0,0.06);
-  margin-bottom:18px;
-}
-.news-grid {
-  display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:18px;
-}
-.news-card {
-  background:white; border-radius:14px; overflow:hidden;
-  border:1px solid #e5e9f2; box-shadow:0 4px 16px rgba(0,0,0,0.06);
-}
-.news-card img { width:100%; height:150px; object-fit:cover; }
-
-/* FOOTER */
-#footer-ciza {
-  background:#071336; color:#e5e9f5;
-  padding:50px 20px 20px; margin-top:60px;
-}
-.footer-inner {
-  max-width:1200px; margin:auto;
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:30px;
-}
-.footer-col h4 { color:#F2B840; margin-bottom:12px; }
-.footer-col a { color:white; text-decoration:none; display:block; margin-bottom:6px; }
-.footer-bottom { text-align:center; margin-top:20px; font-size:13px; opacity:0.7; }
-
-</style>
+  <!-- MULTILINGUE -->
+  <script>
+    function setLang(l) {
+      document.querySelectorAll("[data-fr]").forEach(el => {
+        el.innerHTML = el.dataset[l];
+      });
+      localStorage.setItem("lang_home", l);
+    }
+    window.onload = () => setLang(localStorage.getItem("lang_home") || "fr");
+  </script>
 
 </head>
 <body>
 
-<!-- HEADER -->
-<header id="header-premium">
-  <div class="header-inner">
-    <a href="#" class="logo-area">
-      <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/f0ef660926a519b9948fba5a8519b123b6145301/logo.png" class="logo-img">
-      <span class="logo-text">CIZA GROUP</span>
-    </a>
+<!-- NAVBAR -->
+<header>
+  <img src="logo.png" alt="CIZA GROUP">
 
-    <nav class="nav-links">
-      <a href="#">Accueil</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="services.html">Services</a>
-      <a href="business-diaspora.html" class="diaspora">🌍 Diaspora</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  </div>
-
-  <div id="mobileMenu">
-    <a href="#">Accueil</a>
-    <a href="a-propos.html">À propos</a>
-    <a href="services.html">Services</a>
-    <a href="business-diaspora.html">🌍 Diaspora</a>
-    <a href="contact.html">Contact</a>
-  </div>
+  <nav>
+    <a href="index.html" data-fr="Accueil" data-en="Home"></a>
+    <a href="services.html" data-fr="Services" data-en="Services"></a>
+    <a href="a-propos.html" data-fr="À propos" data-en="About"></a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
+  </nav>
 </header>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1>Un écosystème moderne, fiable et international</h1>
-    <p>Mobilité — Paiement — Immobilier — Delivery — Tech — Diaspora Business</p>
-    <a href="business-diaspora.html" class="btn-gold">Découvrir le service diaspora</a>
+  <div class="overlay"></div>
+  <div class="content">
+    <h1 data-fr="Écosystème de Service | Burundi" data-en="Service Ecosystem | Burundi"></h1>
+    <a href="services.html" class="btn-gold" data-fr="Découvrir nos services" data-en="Explore Services"></a>
   </div>
 </section>
 
 <!-- SERVICES -->
-<div class="section">
-  <h2>Nos services</h2>
-  <div class="services-grid">
-    <div class="service-card">CizaRide+</div>
-    <div class="service-card">CizaPay+</div>
-    <div class="service-card">CizaDelivery</div>
-    <div class="service-card">CizaImmo</div>
-    <div class="service-card">CizaLogistics</div>
-    <div class="service-card">CizaTech</div>
-    <div class="service-card">CizaMarketing</div>
-    <div class="service-card">CizaAcademy</div>
-    <div class="service-card">CizaAssist</div>
-    <div class="service-card">CizaCarWash+</div>
+<div class="services">
+  <h2 data-fr="Nos Services" data-en="Our Services"></h2>
+
+  <div class="grid">
+    <div class="card">CizaRide+</div>
+    <div class="card">CizaPay+</div>
+    <div class="card">CizaImmo</div>
+    <div class="card">CizaDelivery</div>
+    <div class="card">CizaLogistics</div>
+    <div class="card">CizaTech</div>
+    <div class="card">CizaMarketing</div>
+    <div class="card">CizaAcademy</div>
+    <div class="card">CizaAssist</div>
+    <div class="card">CizaCarWash+</div>
   </div>
 </div>
 
-<!-- METEO -->
-<div class="section">
-  <h2>Météo en direct</h2>
+<!-- MÉTÉO -->
+<div class="weather">
+  <h2 data-fr="Météo en direct" data-en="Live Weather"></h2>
 
-  <div class="widget-card" id="weather-bu">Bujumbura : Chargement…</div>
-  <div class="widget-card" id="weather-ca">Montréal : Chargement…</div>
+  <div class="weather-box">
+    <div>
+      <h3>🇧🇮 Burundi</h3>
+      <iframe src="https://forecast7.com/fr/--/bujumbura/" frameborder="0" width="250" height="180"></iframe>
+    </div>
+
+    <div>
+      <h3>🇨🇦 Canada</h3>
+      <iframe src="https://forecast7.com/en/45d50n73d56/montreal/" frameborder="0" width="250" height="180"></iframe>
+    </div>
+  </div>
 </div>
 
 <!-- ACTUALITÉS -->
-<div class="section">
-  <h2>Actualités internationales</h2>
-  <div id="news-container" class="news-grid">Chargement…</div>
+<div class="news">
+  <h2 data-fr="Actualités" data-en="News"></h2>
+
+  <div class="news-grid">
+    <div class="news-item">
+      <img src="https://source.unsplash.com/600x400/?technology" alt="">
+      <p>Technologie et Innovation</p>
+    </div>
+
+    <div class="news-item">
+      <img src="https://source.unsplash.com/600x400/?business" alt="">
+      <p>Entrepreneuriat au Burundi</p>
+    </div>
+
+    <div class="news-item">
+      <img src="https://source.unsplash.com/600x400/?africa" alt="">
+      <p>Développement en Afrique</p>
+    </div>
+  </div>
 </div>
 
 <!-- FOOTER -->
-<footer id="footer-ciza">
-  <div class="footer-inner">
-
-    <div class="footer-col">
-      <h4>CIZA GROUP</h4>
-      <p>Écosystème multiservices moderne</p>
-    </div>
-
-    <div class="footer-col">
-      <h4>Navigation</h4>
-      <a href="#">Accueil</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="services.html">Services</a>
-      <a href="business-diaspora.html">Diaspora</a>
-      <a href="contact.html">Contact</a>
-    </div>
-
-    <div class="footer-col">
-      <h4>Légal</h4>
-      <a href="legales.html">Mentions légales</a>
-      <a href="cgu.html">CGU</a>
-    </div>
-
-  </div>
-  <div class="footer-bottom">© 2025 CIZA GROUP — Tous droits réservés.</div>
+<footer>
+  © 2025 CIZA GROUP — Tous droits réservés
 </footer>
-
-<script>
-function toggleMenu(){
-  const m=document.getElementById("mobileMenu");
-  m.style.display = (m.style.display==="flex") ? "none" : "flex";
-}
-</script>
-
-<!-- METEO -->
-<script>
-async function loadWeather() {
-  const locs = [
-    { id:"weather-bu", name:"Bujumbura", lat:-3.38, lon:29.36 },
-    { id:"weather-ca", name:"Montréal", lat:45.50, lon:-73.56 }
-  ];
-
-  for (let loc of locs) {
-    try {
-      const r = await fetch(
-        `https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&current_weather=true&timezone=auto`
-      );
-      const j = await r.json();
-      const w = j.current_weather;
-
-      document.getElementById(loc.id).innerHTML =
-        `${loc.name} : ${w.temperature}°C — Vent ${w.windspeed} km/h`;
-    } catch {
-      document.getElementById(loc.id).innerHTML = loc.name + " : indisponible";
-    }
-  }
-}
-loadWeather();
-</script>
-
-<!-- NEWS -->
-<script>
-async function loadNewsWithImages() {
-  const RSS = "https://feeds.bbci.co.uk/news/world/rss.xml"; 
-  const proxy = "https://api.allorigins.win/raw?url=";
-
-  const container = document.getElementById("news-container");
-
-  try {
-    const r = await fetch(proxy + encodeURIComponent(RSS));
-    const xmlText = await r.text();
-
-    const parser = new DOMParser();
-    const xml = parser.parseFromString(xmlText, "text/xml");
-
-    const items = Array.from(xml.querySelectorAll("item")).slice(0, 6);
-
-    container.innerHTML = "";
-
-    items.forEach(item => {
-      const title = item.querySelector("title")?.textContent || "";
-      const link = item.querySelector("link")?.textContent || "#";
-      let img = item.getElementsByTagName("media:thumbnail")[0]?.getAttribute("url");
-
-      if (!img) img = "https://upload.wikimedia.org/wikipedia/commons/4/47/BBC_News.svg";
-
-      const card = document.createElement("div");
-      card.className = "news-card";
-      card.innerHTML = `
-        <img src="${img}" alt="">
-        <div style="padding:12px;">
-          <a href="${link}" target="_blank" style="font-weight:700; color:#0A3D91; text-decoration:none;">
-            ${title}
-          </a>
-        </div>
-      `;
-      container.appendChild(card);
-    });
-
-  } catch {
-    container.textContent = "Actualités indisponibles.";
-  }
-}
-loadNewsWithImages();
-</script>
 
 </body>
 </html>
