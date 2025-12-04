@@ -16,130 +16,134 @@ body {
   color: #1a1f25;
 }
 
-/* HEADER SIMPLE (REPRISE INDEX) */
+/* HEADER */
 header {
   background: #0A3D91;
   padding: 15px 20px;
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white;
   position: sticky;
   top: 0;
   z-index: 999;
 }
 header img { width: 150px; }
 
-.menu-btn { background: none; border: none; cursor: pointer; }
+.menu-btn { background:none; border:none; cursor:pointer; }
 .menu-btn div {
-  width: 28px; height: 3px; background: #F2B840;
-  margin: 5px 0; border-radius: 2px;
+  width:28px; height:3px;
+  background:#F2B840;
+  margin:5px 0;
+  border-radius:2px;
 }
 
 nav {
-  position: fixed;
-  top: 0; right: -260px;
-  width: 250px; height: 100%;
-  background: #0A3D91;
-  padding-top: 70px;
-  display: flex; flex-direction: column;
-  gap: 18px; transition: 0.3s;
+  position:fixed;
+  top:0; right:-260px;
+  width:250px; height:100%;
+  background:#0A3D91;
+  padding-top:70px;
+  transition:.3s;
+  display:flex; flex-direction:column;
+  gap:18px;
 }
 nav a {
-  color: white; text-decoration: none;
-  font-size: 18px; padding-left: 20px;
+  color:white; text-decoration:none;
+  padding-left:20px;
+  font-size:18px;
 }
-.nav-open { right: 0 !important; }
+.nav-open { right:0 !important; }
 
-/* PAGE TITLE */
+/* TITLE */
 .page-title {
-  text-align: center;
-  margin: 35px auto 10px;
-  font-size: 32px;
-  color: #0A3D91;
-  font-weight: 900;
+  text-align:center;
+  font-size:32px;
+  margin-top:25px;
+  font-weight:900;
+  color:#0A3D91;
 }
 
-/* GRID DOMAINES */
-.domain-grid {
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 20px;
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+/* GRID OF CARDS */
+.grid {
+  max-width:1150px;
+  margin:30px auto;
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:25px;
 }
 
-.domain-card {
-  background: white;
-  border-radius: 14px;
-  padding: 25px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-  border-top: 5px solid #F2B840;
-  transition: 0.3s;
+.card {
+  background:white;
+  padding:30px 25px;
+  border-radius:16px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+  text-align:center;
+  cursor:pointer;
+  transition:.25s;
+  border-top:5px solid #F2B840;
 }
-.domain-card:hover {
-  transform: translateY(-7px);
-}
-
-.domain-title {
-  color: #0A3D91;
-  font-size: 22px;
-  font-weight: 800;
-  margin-bottom: 8px;
+.card:hover {
+  transform:translateY(-6px);
 }
 
-ul.services-list {
-  padding-left: 20px;
-  margin: 12px 0;
-  line-height: 1.5;
-}
-ul.services-list li {
-  margin-bottom: 4px;
+.card h3 {
+  color:#0A3D91;
+  font-size:22px;
+  margin-bottom:8px;
+  font-weight:900;
 }
 
-/* CTA BUTTON */
+.card p {
+  color:#1a1f25;
+  opacity:0.75;
+  font-size:15px;
+  margin-bottom:16px;
+}
+
 .btn-gold {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 20px;
-  background: #F2B840;
-  color: #1b1f24;
-  font-weight: 700;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.3s;
+  display:inline-block;
+  padding:10px 18px;
+  background:#F2B840;
+  color:#1a1f25;
+  border-radius:8px;
+  font-weight:700;
+  text-decoration:none;
+  transition:.3s;
 }
-.btn-gold:hover { background: #dba630; }
+.btn-gold:hover { background:#e3ac34; }
 
 /* LANG SWITCH */
 .lang-switch {
-  text-align: right;
-  padding: 10px 20px;
+  text-align:right;
+  padding:10px 20px;
 }
 .lang-switch button {
-  padding: 6px 12px;
-  border: 1px solid #d5d5d5;
-  background: white;
-  cursor: pointer;
-  border-radius: 5px;
+  padding:6px 12px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  cursor:pointer;
+  background:white;
 }
 
-/* RETURN BUTTON */
+/* BACK BUTTON */
 .back-btn {
-  position: fixed; bottom: 20px; right: 20px;
-  background: #F2B840;
-  padding: 14px 18px;
-  border-radius: 50px;
-  color: #1b1f24;
-  font-weight: 700;
-  border: none; cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  position:fixed;
+  bottom:20px; right:20px;
+  background:#F2B840;
+  padding:14px 18px;
+  border:none;
+  border-radius:50px;
+  font-weight:700;
+  color:#1a1f25;
+  cursor:pointer;
+  box-shadow:0 4px 12px rgba(0,0,0,0.25);
 }
 </style>
 
 <script>
-function toggleMenu() {
+function toggleMenu(){
   document.getElementById("nav").classList.toggle("nav-open");
 }
 
@@ -147,10 +151,10 @@ function setLang(l) {
   document.querySelectorAll("[data-fr]").forEach(el => {
     el.innerHTML = el.dataset[l];
   });
-  localStorage.setItem("lang_domaines", l);
+  localStorage.setItem("lang_domains", l);
 }
 window.onload = () => {
-  const l = localStorage.getItem("lang_domaines") || "fr";
+  const l = localStorage.getItem("lang_domains") || "fr";
   setLang(l);
 };
 </script>
@@ -176,7 +180,7 @@ window.onload = () => {
   <a href="confidentialite.html">Confidentialité</a>
 </nav>
 
-<!-- LANG SWITCH -->
+<!-- LANG -->
 <div class="lang-switch">
   <button onclick="setLang('fr')">FR</button>
   <button onclick="setLang('en')">EN</button>
@@ -184,73 +188,47 @@ window.onload = () => {
 
 <h1 class="page-title"
  data-fr="Nos Domaines"
- data-en="Our Domains"></h1>
+ data-en="Our Divisions"></h1>
 
-<!-- DOMAIN GRID -->
-<div class="domain-grid">
+
+<!-- GRID OF DOMAIN CARDS -->
+<div class="grid">
 
   <!-- MOBILITÉ -->
-  <div class="domain-card">
-    <h3 class="domain-title" data-fr="Mobilité" data-en="Mobility"></h3>
-
-    <ul class="services-list">
-      <li>CizaRide+</li>
-      <li>CizaDelivery</li>
-      <li>CizaCarWash+</li>
-    </ul>
-
-    <a href="services.html#mobilite" class="btn-gold"
-      data-fr="Découvrir"
-      data-en="Discover"></a>
+  <div class="card" onclick="location.href='services.html#mobilite'">
+    <h3 data-fr="Mobilité" data-en="Mobility"></h3>
+    <p data-fr="Transport, livraison, lavage auto mobile"
+       data-en="Transport, delivery, mobile car wash"></p>
+    <a class="btn-gold" data-fr="Découvrir" data-en="Explore"></a>
   </div>
 
   <!-- IMMOBILIER -->
-  <div class="domain-card">
-    <h3 class="domain-title" data-fr="Immobilier" data-en="Real Estate"></h3>
-
-    <ul class="services-list">
-      <li>CizaImmo</li>
-      <li>Diaspora Immobilier</li>
-    </ul>
-
-    <a href="services.html#immobilier" class="btn-gold"
-      data-fr="Découvrir"
-      data-en="Discover"></a>
+  <div class="card" onclick="location.href='services.html#immobilier'">
+    <h3 data-fr="Immobilier" data-en="Real Estate"></h3>
+    <p data-fr="Gestion immobilière & services diaspora"
+       data-en="Real estate management & diaspora assistance"></p>
+    <a class="btn-gold" data-fr="Découvrir" data-en="Explore"></a>
   </div>
 
-  <!-- FINTECH -->
-  <div class="domain-card">
-    <h3 class="domain-title" data-fr="Paiement & FinTech" data-en="Payment & FinTech"></h3>
-
-    <ul class="services-list">
-      <li>CizaPay+</li>
-      <li>CizaTech</li>
-    </ul>
-
-    <a href="services.html#fintech" class="btn-gold"
-      data-fr="Découvrir"
-      data-en="Discover"></a>
+  <!-- PAIEMENT & FINTECH -->
+  <div class="card" onclick="location.href='services.html#fintech'">
+    <h3 data-fr="Paiement & FinTech" data-en="Payment & FinTech"></h3>
+    <p data-fr="Paiement, transfert, solutions digitales"
+       data-en="Payments, transfers, digital solutions"></p>
+    <a class="btn-gold" data-fr="Découvrir" data-en="Explore"></a>
   </div>
 
   <!-- LOGISTIQUE -->
-  <div class="domain-card">
-    <h3 class="domain-title" data-fr="Logistique & Services Urbains" data-en="Logistics & Urban Services"></h3>
-
-    <ul class="services-list">
-      <li>CizaLogistics</li>
-      <li>CizaAssist</li>
-      <li>CizaAcademy</li>
-      <li>CizaMarketing</li>
-    </ul>
-
-    <a href="services.html#logistique" class="btn-gold"
-      data-fr="Découvrir"
-      data-en="Discover"></a>
+  <div class="card" onclick="location.href='services.html#logistique'">
+    <h3 data-fr="Logistique & Services urbains"
+        data-en="Logistics & Urban Services"></h3>
+    <p data-fr="Distribution, aide, formation, marketing"
+       data-en="Distribution, assistance, training, marketing"></p>
+    <a class="btn-gold" data-fr="Découvrir" data-en="Explore"></a>
   </div>
 
 </div>
 
-<!-- RETURN BUTTON -->
 <button class="back-btn" onclick="history.back()">←</button>
 
 </body>
