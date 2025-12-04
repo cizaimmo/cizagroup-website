@@ -6,53 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" 
-        href="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/95e5c3b212be1a7c1ae3670ec6ae45b6aac6b401/favicone.png">
+  <link rel="icon" 
+        href="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/1158d03d77190024127d8654c84b7ad4a311e67b/favicone.png"
+        type="image/png">
 
   <style>
     body {
       margin: 0;
       font-family: Inter, Arial, sans-serif;
-      background: #f5f7fa;
+      background: #f4f6fa;
       color: #1a1f25;
     }
 
-    /* HEADER — TRANSPARENT + PREMIUM */
+    /* ===================== HEADER ===================== */
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 22px;
-      z-index: 9999;
-      background: rgba(0,0,0,0.15);
-      backdrop-filter: blur(6px);
+      background: #0A3D91;
+      padding: 10px 18px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
 
     header img {
-      width: 155px;
+      height: 45px;
+      width: auto;
     }
 
-    /* HAMBURGER MENU */
-    .menu-btn {
-      background: none;
-      border: none;
+    .menu-icon {
+      font-size: 30px;
+      color: #F2B840;
       cursor: pointer;
-      display: block;
     }
 
-    .menu-btn div {
-      width: 28px;
-      height: 3px;
-      background: #F2B840;
-      margin: 5px 0;
-      border-radius: 3px;
-      transition: 0.3s;
-    }
-
-    /* NAVIGATION */
     nav {
       position: fixed;
       top: 0;
@@ -60,12 +48,11 @@
       width: 250px;
       height: 100%;
       background: #0A3D91;
-      padding-top: 90px;
-      transition: 0.35s ease;
+      padding-top: 80px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      z-index: 99999;
+      gap: 18px;
+      transition: 0.3s ease;
     }
 
     nav a {
@@ -73,25 +60,23 @@
       text-decoration: none;
       font-size: 18px;
       padding-left: 25px;
-      font-weight: 600;
     }
 
     .nav-open {
       right: 0 !important;
     }
 
-    /* HERO — OPTION B — 70% HEIGHT + DEZOOM */
+    /* ===================== HERO ===================== */
     #hero {
-      background-image: url('https://raw.githubusercontent.com/cizaimmo/cizagroup-website/ca58019847dab96489fbc67229e2a67ac6c65576/hero-premium.png');
-      height: 70vh;
+      background-image: url('https://raw.githubusercontent.com/cizaimmo/cizagroup-website/1158d03d77190024127d8654c84b7ad4a311e67b/hero-premium.png');
       background-size: cover;
-      background-position: center top;
+      background-position: center;
+      height: 68vh;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 0 20px;
-      margin-top: 0;
+      padding: 25px;
       position: relative;
     }
 
@@ -99,172 +84,139 @@
       color: white;
       font-size: 32px;
       font-weight: 900;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.35);
-      margin-top: 120px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.45);
     }
 
-    #hero h2 {
-      color: #F2B840;
-      font-size: 18px;
-      margin-top: 10px;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    }
-
-    /* CTA GOLD BUTTON */
-    .cta-btn {
-      display: inline-block;
-      margin-top: 22px;
+    .separator {
+      width: 120px;
+      height: 3px;
       background: #F2B840;
-      color: #0A3D91;
-      padding: 14px 30px;
-      border-radius: 50px;
-      font-size: 18px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-      transition: 0.3s;
+      margin: 12px auto;
+      border-radius: 3px;
     }
 
-    .cta-btn:hover {
-      transform: translateY(-4px);
-    }
-
-    /* RESPONSIVE HERO TEXT */
-    @media (max-width: 600px) {
-      #hero h1 {
-        font-size: 24px;
-        margin-top: 150px;
-      }
-      #hero h2 {
-        font-size: 14px;
-      }
-      .cta-btn {
-        font-size: 16px;
-        padding: 12px 25px;
-      }
-    }
-
-    /* DOMAINS SECTION */
     .domains {
-      padding: 50px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .domains h2 {
-      text-align: center;
-      font-size: 28px;
-      color: #0A3D91;
+      color: white;
+      font-size: 18px;
+      font-weight: 500;
       margin-bottom: 30px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 22px;
-    }
-
-    .card {
-      background: white;
-      padding: 22px;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.09);
-      text-align: center;
+    .cta-btn {
+      background: #F2B840;
+      padding: 12px 28px;
+      border-radius: 50px;
       color: #0A3D91;
       font-weight: 700;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-7px);
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-    /* FOOTER 15/10 */
+    @media(max-width: 600px) {
+      #hero h1 {
+        font-size: 23px;
+      }
+      .domains {
+        font-size: 16px;
+      }
+    }
+
+    /* ===================== FOOTER PREMIUM ===================== */
     footer {
-      background: #0A0F1A;
-      color: white;
+      margin-top: 40px;
+      background: #1b1f24;
       padding: 40px 20px;
+      color: white;
       text-align: center;
-      margin-top: 60px;
     }
 
-    footer .links a {
+    footer h3 {
+      color: #F2B840;
+      margin-bottom: 10px;
+    }
+
+    footer a {
       color: white;
       text-decoration: none;
-      margin: 0 12px;
+      display: block;
+      margin: 6px 0;
       font-size: 16px;
     }
 
-    footer p {
-      margin: 8px 0;
+    footer .social {
+      margin: 15px 0;
+    }
+
+    .footer-bottom {
+      margin-top: 20px;
+      opacity: 0.75;
+      font-size: 14px;
     }
   </style>
 
   <script>
     function toggleMenu() {
-      document.getElementById("nav").classList.toggle("nav-open");
+      document.getElementById("menu").classList.toggle("nav-open");
     }
   </script>
+
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ===================== HEADER ===================== -->
 <header>
-  <img src="https://raw.githubusercontentraw.githubusercontent.com/cizaimmo/cizagroup-website/95e5c3b212be1a7c1ae3670ec6ae45b6aac6b401/horizontallogo.png" alt="Ciza Group">
-  <button class="menu-btn" onclick="toggleMenu()">
-    <div></div><div></div><div></div>
-  </button>
+  <a href="index.html">
+    <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/1158d03d77190024127d8654c84b7ad4a311e67b/horizontallogo.png" 
+         alt="CIZA GROUP">
+  </a>
+
+  <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
 </header>
 
-<!-- NAV -->
-<nav id="nav">
+<nav id="menu">
   <a href="index.html">Accueil</a>
   <a href="domaines.html">Domaines</a>
-  <a href="a-propos.html">À propos</a>
   <a href="business-diaspora.html">Diaspora</a>
   <a href="contact.html">Contact</a>
   <a href="legales.html">Mentions légales</a>
   <a href="confidentialite.html">Confidentialité</a>
 </nav>
 
-<!-- HERO -->
+<!-- ===================== HERO ===================== -->
 <section id="hero">
   <div>
     <h1>Écosystème de Services | Burundi</h1>
-    <h2>Mobilité • Immobilier • Logistique • Diaspora</h2>
-    <a class="cta-btn" href="business-diaspora.html">Découvrir nos domaines</a>
+
+    <div class="separator"></div>
+
+    <p class="domains">Mobilité | Immobilier | Logistique</p>
+
+    <a href="domaines.html" class="cta-btn">Découvrir nos domaines</a>
   </div>
 </section>
 
-<!-- DOMAINS -->
-<section class="domains">
-  <h2>Domaines de Services</h2>
-  <div class="grid">
-    <div class="card" onclick="location.href='domaines.html#mobilite'">Mobilité</div>
-    <div class="card" onclick="location.href='domaines.html#immobilier'">Immobilier</div>
-    <div class="card" onclick="location.href='domaines.html#logistique'">Logistique</div>
-    <div class="card" onclick="location.href='domaines.html#diaspora'">Diaspora</div>
-  </div>
-</section>
-
-<!-- FOOTER -->
+<!-- ===================== FOOTER ===================== -->
 <footer>
-  <p>📞 Burundi : (+257) 799 45007</p>
-  <p>📞 Canada : (+1) 514 502 9503</p>
-  <p>📧 Email : infos@cizagroup.com</p>
-  <p>📸 Instagram : @cizagroup_official</p>
 
-  <div class="links">
-    <a href="legales.html">Mentions légales</a>
-    <a href="confidentialite.html">Confidentialité</a>
-    <a href="contact.html">Contact</a>
-    <a href="business-diaspora.html">Diaspora</a>
+  <h3>Contact</h3>
+  <a>🇧🇮 +257 79945007</a>
+  <a>🇨🇦 +1 514 502 9503</a>
+  <a>Email : infos@cizagroup.com</a>
+  <a>Instagram : @cizagroup_official</a>
+
+  <h3>Navigation</h3>
+  <a href="index.html">Accueil</a>
+  <a href="domaines.html">Domaines</a>
+  <a href="business-diaspora.html">Diaspora</a>
+  <a href="contact.html">Contact</a>
+  <a href="legales.html">Mentions légales</a>
+  <a href="confidentialite.html">Confidentialité</a>
+
+  <div class="footer-bottom">
+    © 2026 CIZA GROUP — Écosystème de Services | Burundi. Tous droits réservés.
   </div>
 
-  <p style="opacity:0.7; margin-top:10px;">
-    © 2026 CIZA GROUP — Écosystème de Services | Burundi. Tous droits réservés.
-  </p>
 </footer>
 
 </body>
