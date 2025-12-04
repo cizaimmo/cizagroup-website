@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>CIZA GROUP — Écosystème de Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicone.png">
+
+  <!-- STYLES GLOBAUX -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: #f7f9fc;
+      color: #1a1f25;
+    }
+
+    /* HEADER PREMIUM */
+    header {
+      background: #004AAD;
+      padding: 12px 18px;
+      position: sticky;
+      top: 0;
+      z-index: 3000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Logo transparent */
+    .logo {
+      height: 58px;
+      width: auto;
+    }
+
+    /* FR / EN SWITCH */
+    .lang-switch {
+      color: white;
+      font-weight: 600;
+      margin-right: 14px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* MENU HAMBURGER */
+    .menu-btn {
+      width: 32px;
+      cursor: pointer;
+      display: block;
+    }
+    .menu-btn div {
+      width: 100%;
+      height: 4px;
+      background: #F2B840;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* MENU OUVERT */
+    nav {
+      position: fixed;
+      top: 0;
+      right: -280px;
+      height: 100%;
+      width: 260px;
+      background: #004AAD;
+      padding-top: 90px;
+      transition: 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      z-index: 3500;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      padding-left: 20px;
+    }
+
+    .nav-open {
+      right: 0 !important;
+    }
+  </style>
+
+  <!-- MULTILINGUE SCRIPT -->
+  <script>
+    function setLang(l) {
+      document.querySelectorAll("[data-fr]").forEach(el => {
+        el.innerHTML = el.dataset[l];
+      });
+      localStorage.setItem("lang", l);
+    }
+
+    window.onload = () => {
+      const l = localStorage.getItem("lang") || "fr";
+      setLang(l);
+    };
+
+    function toggleMenu() {
+      document.getElementById("nav").classList.toggle("nav-open");
+    }
+  </script>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <!-- Logo -->
+  <img src="logotransparent.png" class="logo" alt="CIZA GROUP">
+
+  <!-- FR | EN -->
+  <div>
+    <span class="lang-switch" onclick="setLang('fr')">FR</span> |
+    <span class="lang-switch" onclick="setLang('en')">EN</span>
+  </div>
+
+  <!-- Bouton Menu -->
+  <div class="menu-btn" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </div>
+</header>
+
+<!-- MENU LATERAL -->
+<nav id="nav">
+  <a href="index.html" data-fr="Accueil" data-en="Home"></a>
+  <a href="domaines.html" data-fr="Domaines" data-en="Domains"></a>
+  <a href="a-propos.html" data-fr="À propos" data-en="About"></a>
+  <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora"></a>
+  <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
+  <a href="legales.html" data-fr="Mentions légales" data-en="Legal Notice"></a>
+  <a href="confidentialite.html" data-fr="Confidentialité" data-en="Privacy"></a>
+</nav><!-- ================= HERO PREMIUM ================= -->
+<style>
+  #hero {
+    position: relative;
+    height: 70vh;
+    min-height: 480px;
+    background-image: url('hero-premium.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #hero .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+  }
+
+  #hero .hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 0 20px;
+  }
+
+  #hero h1 {
+    font-size: 34px;
+    font-weight: 900;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+
+  #hero h2 {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #F2B840;
+  }
+
+  @media (max-width: 700px) {
+    #hero h1 { font-size: 24px; }
+    #hero h2 { font-size: 16px; }
+  }
+</style>
+
+<section id="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 data-fr="Écosystème de Services | Burundi" data-en="Ecosystem of Services | Burundi"></h1>
+    <h2 data-fr="Mobilité | Immobilier | Logistique | Technologie" 
+        data-en="Mobility | Real Estate | Logistics | Technology"></h2>
+  </div>
+</section>
+
+
+<!-- ================= DOMAINES STYLE B PREMIUM ================= -->
+
+<style>
+  .domaines-section {
+    padding: 60px 20px;
+    max-width: 1300px;
+    margin: auto;
+  }
+
+  .domaines-section h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #004AAD;
+    font-weight: 900;
+    margin-bottom: 35px;
+  }
+
+  /* Grid premium */
+  .domaines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+  }
+
+  /* Carte premium STYLÉE */
+  .domaine-card {
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.08);
+    padding: 28px 22px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s ease;
+    border-top: 6px solid #F2B840;
+  }
+
+  .domaine-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.13);
+  }
+
+  .domaine-card h3 {
+    color: #004AAD;
+    font-size: 20px;
+    font-weight: 800;
+  }
+</style>
+
+<section class="domaines-section">
+  <h2 data-fr="Nos Domaines" data-en="Our Domains"></h2>
+
+  <div class="domaines-grid">
+
+    <div class="domaine-card" onclick="location.href='domaines.html#mobilite'">
+      <h3 data-fr="Mobilité" data-en="Mobility"></h3>
+    </div>
+
+    <div class="domaine-card" onclick="location.href='domaines.html#immobilier'">
+      <h3 data-fr="Immobilier" data-en="Real Estate"></h3>
+    </div>
+
+    <div class="domaine-card" onclick="location.href='domaines.html#logistique'">
+      <h3 data-fr="Logistique" data-en="Logistics"></h3>
+    </div>
+
+    <div class="domaine-card" onclick="location.href='domaines.html#tech'">
+      <h3 data-fr="Technologie" data-en="Technology"></h3>
+    </div>
+
+    <div class="domaine-card" onclick="location.href='domaines.html#diaspora'">
+      <h3 data-fr="Diaspora Business" data-en="Diaspora Business"></h3>
+    </div>
+
+  </div>
+</section><!-- ========================================= -->
+<!-- ========== BLOC 3 : SECTIONS PREMIUM ===== -->
+<!-- ========================================= -->
+
+<!-- STYLES GLOBAUX -->
+<style>
+  /* SECTION TITLES */
+  .section-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 900;
+    margin: 40px 0 25px;
+    color: #004AAD;
+  }
+
+  /* WHY US (Pourquoi nous choisir) */
+  .why-section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .why-item {
+    background: white;
+    padding: 22px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    border-left: 6px solid #F2B840;
+  }
+
+  .why-item h3 {
+    font-size: 20px;
+    color: #004AAD;
+    margin: 0 0 5px;
+  }
+
+  .why-item p {
+    margin: 0;
+    color: #333;
+  }
+
+
+  /* MÉTÉO + ACTUALITÉS */
+
+  .widgets-container {
+    max-width: 1300px;
+    margin: 50px auto;
+    padding: 20px;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  .widget-box {
+    background: white;
+    border-radius: 14px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+
+  .widget-box h3 {
+    background: #004AAD;
+    color: white;
+    margin: 0;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+  }
+
+
+  /* GOOGLE MAPS */
+  .maps-container {
+    max-width: 1300px;
+    margin: 50px auto;
+    padding: 20px;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  }
+
+  .map-box {
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+
+  .map-box h3 {
+    background: #004AAD;
+    color: white;
+    margin: 0;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  iframe {
+    width: 100%;
+    height: 360px;
+    border: 0;
+  }
+</style>
+
+
+<!-- ========================================= -->
+<!-- ========== POURQUOI NOUS CHOISIR ========= -->
+<!-- ========================================= -->
+
+<h2 class="section-title" data-fr="Pourquoi nous choisir ?" data-en="Why Choose Us?"></h2>
+
+<section class="why-section">
+
+  <div class="why-item">
+    <h3 data-fr="Fiabilité & Sécurité" data-en="Reliability & Safety"></h3>
+    <p data-fr="Nos services sont conçus pour garantir confiance et tranquillité d'esprit."
+       data-en="Our services are designed to ensure trust and peace of mind."></p>
+  </div>
+
+  <div class="why-item">
+    <h3 data-fr="Disponibilité 24/7" data-en="Available 24/7"></h3>
+    <p data-fr="Toujours accessibles, peu importe votre localisation." 
+       data-en="Always accessible, no matter where you are."></p>
+  </div>
+
+  <div class="why-item">
+    <h3 data-fr="Excellence & Innovation" data-en="Excellence & Innovation"></h3>
+    <p data-fr="Nous intégrons les meilleures technologies pour offrir une expérience premium."
+       data-en="We integrate the best technologies to deliver a premium experience."></p>
+  </div>
+
+</section>
+
+
+<!-- ========================================= -->
+<!-- ========== MÉTÉO & ACTUALITÉS ============ -->
+<!-- ========================================= -->
+
+<h2 class="section-title" data-fr="Météo & Actualités" data-en="Weather & News"></h2>
+
+<div class="widgets-container">
+
+  <!-- MÉTÉO BURUNDI -->
+  <div class="widget-box">
+    <h3 data-fr="Météo — Burundi" data-en="Weather — Burundi"></h3>
+    <iframe src="https://widget.timeanddate.com/weather/?n=3448&c=bdi&hdr=0&half=0" 
+            style="height:320px;"></iframe>
+  </div>
+
+  <!-- MÉTÉO CANADA -->
+  <div class="widget-box">
+    <h3 data-fr="Météo — Canada" data-en="Weather — Canada"></h3>
+    <iframe src="https://widget.timeanddate.com/weather/?n=165&c=can&hdr=0&half=0"
+            style="height:320px;"></iframe>
+  </div>
+
+  <!-- ACTUALITÉS BURUNDI -->
+  <div class="widget-box">
+    <h3 data-fr="Actualités — Burundi" data-en="News — Burundi"></h3>
+    <iframe src="https://www.burundinews.net/" style="height:320px;"></iframe>
+  </div>
+
+  <!-- ACTUALITÉS CANADA -->
+  <div class="widget-box">
+    <h3 data-fr="Actualités — Canada" data-en="News — Canada"></h3>
+    <iframe src="https://www.cbc.ca/news" style="height:320px;"></iframe>
+  </div>
+</div>
+
+
+<!-- ========================================= -->
+<!-- ========== GOOGLE MAPS =================== -->
+<!-- ========================================= -->
+
+<h2 class="section-title" data-fr="Localisation — Burundi & Canada"
+    data-en="Locations — Burundi & Canada"></h2>
+
+<div class="maps-container">
+  
+  <div class="map-box">
+    <h3 data-fr="Bureau — Bujumbura" data-en="Office — Bujumbura"></h3>
+    <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA-sample-key&q=Bujumbura,Burundi"></iframe>
+  </div>
+
+  <div class="map-box">
+    <h3 data-fr="Bureau — Montréal" data-en="Office — Montreal"></h3>
+    <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA-sample-key&q=Montreal,Canada"></iframe>
+  </div>
+
+</div><!-- ================================================= -->
+<!-- =============== BLOC 4 : FOOTER PREMIUM ========= -->
+<!-- ================================================= -->
+
+<style>
+/* FOOTER PREMIUM */
+footer {
+  background: #0A0F1A;
+  color: white;
+  padding: 50px 20px;
+  margin-top: 60px;
+}
+
+.footer-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.footer-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: #F2B840;
+  margin-bottom: 12px;
+}
+
+footer a {
+  color: #dfe6f5;
+  text-decoration: none;
+  display: block;
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+footer a:hover {
+  color: white;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* COPYRIGHT */
+.footer-bottom {
+  text-align: center;
+  padding-top: 25px;
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+/* WHATSAPP FLOATING BUTTON */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  width: 62px;
+  height: 62px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
+.whatsapp-btn img {
+  width: 35px;
+}
+
+/* CHATBOT */
+#chatbot-container {
+  position: fixed;
+  bottom: 100px;
+  right: 18px;
+  z-index: 999;
+  width: 360px;
+  max-width: 90%;
+  display: none;
+}
+
+#chatbot-box {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  height: 420px;
+  overflow: hidden;
+}
+
+#chatbot-btn {
+  position: fixed;
+  bottom: 85px;
+  right: 18px;
+  width: 58px;
+  height: 58px;
+  background: #004AAD;
+  color: white;
+  border-radius: 50%;
+  font-size: 26px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+</style>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="footer-grid">
+
+    <!-- COL 1 : CIZA GROUP -->
+    <div>
+      <h3 class="footer-title" data-fr="CIZA GROUP" data-en="CIZA GROUP"></h3>
+      <p data-fr="Écosystème de Services — Burundi | Canada"
+         data-en="Service Ecosystem — Burundi | Canada"></p>
+
+      <p>🇧🇮 +257 79945007</p>
+      <p>🇨🇦 +1 514 502 9503</p>
+      <p>Email : infos@cizagroup.com</p>
+
+      <div class="social-icons">
+        <a href="https://www.instagram.com/cizagroup_official"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"></a>
+        <a href="https://www.facebook.com"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"></a>
+        <a href="https://www.youtube.com/@Cizagroup"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"></a>
+      </div>
+    </div>
+
+    <!-- COL 2 : NAVIGATION -->
+    <div>
+      <h3 class="footer-title" data-fr="Navigation" data-en="Navigation"></h3>
+      <a href="index.html" data-fr="Accueil" data-en="Home"></a>
+      <a href="domaines.html" data-fr="Domaines" data-en="Domains"></a>
+      <a href="services.html" data-fr="Services" data-en="Services"></a>
+      <a href="a-propos.html" data-fr="À propos" data-en="About us"></a>
+      <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
+    </div>
+
+    <!-- COL 3 : LÉGAL -->
+    <div>
+      <h3 class="footer-title" data-fr="Légal" data-en="Legal"></h3>
+      <a href="legales.html" data-fr="Mentions légales" data-en="Legal Notice"></a>
+      <a href="confidentialite.html" data-fr="Confidentialité" data-en="Privacy Policy"></a>
+    </div>
+
+    <!-- COL 4 : DIASPORA -->
+    <div>
+      <h3 class="footer-title" data-fr="Diaspora" data-en="Diaspora"></h3>
+      <a href="business-diaspora.html" data-fr="Services Diaspora" data-en="Diaspora Services"></a>
+      <a href="business-diaspora.html#immobilier" data-fr="Immobilier diaspora" data-en="Real Estate Diaspora"></a>
+      <a href="business-diaspora.html#logistique" data-fr="Logistique diaspora" data-en="Logistics Diaspora"></a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 CIZA GROUP — Écosystème de Services | Burundi. Tous droits réservés.</p>
+  </div>
+</footer>
+
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a class="whatsapp-btn" href="https://wa.me/15145029503" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</a>
+
+
+<!-- CHATBOT BUTTON -->
+<button id="chatbot-btn" onclick="toggleChatbot()">💬</button>
+
+<!-- CHATBOT CONTAINER -->
+<div id="chatbot-container">
+  <div id="chatbot-box">
+    <iframe src="https://www.chatbase.co/chatbot-iframe/YOUR-CHATBOT-ID"
+            width="100%" height="100%"></iframe>
+  </div>
+</div>
+
+<script>
+function toggleChatbot() {
+  let box = document.getElementById("chatbot-container");
+  box.style.display = (box.style.display === "none" || box.style.display === "") ? "block" : "none";
+}
+</script>
