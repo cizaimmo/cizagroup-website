@@ -5,263 +5,235 @@
   <title>CIZA GROUP — Écosystème de Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/95e5c3b212be1a7c1ae3670ec6ae45b6aac6b401/favicone.png">
+
   <style>
     body {
-      margin:0; padding:0;
+      margin: 0;
       font-family: Inter, Arial, sans-serif;
-      background:#f7f9fc;
-      color:#0A3D91;
+      background: #f7f9fc;
+      color: #1a1f25;
     }
 
-    /* NAVBAR */
+    /* MENU HAMBURGER PREMIUM */
     header {
-      background:#0A3D91;
-      padding:12px 20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+      background: #0A3D91;
+      padding: 15px 20px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
+
     header img {
-      height:55px;
+      width: 160px;
     }
+
+    .menu-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: block;
+    }
+
+    .menu-btn div {
+      width: 28px;
+      height: 3px;
+      background: #F2B840;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      right: -260px;
+      width: 250px;
+      height: 100%;
+      background: #0A3D91;
+      padding-top: 70px;
+      transition: 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
     nav a {
-      color:white;
-      margin-left:18px;
-      text-decoration:none;
-      font-weight:600;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding-left: 20px;
     }
 
-    /* HERO */
+    .nav-open {
+      right: 0 !important;
+    }
+
+    /* HERO PREMIUM */
     #hero {
-      position:relative;
-      height:82vh;
-      background-image:url('hero-premium.png');
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
-      display:flex;
-      justify-content:center;
-      align-items:center;
+      background-image: url('https://raw.githubusercontent.com/cizaimmo/cizagroup-website/95e5c3b212be1a7c1ae3670ec6ae45b6aac6b401/hero-premium.png');
+      height: 72vh;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
-    #hero .overlay {
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,0.35);
-    }
-    #hero .content {
-      z-index:2;
-      text-align:center;
-      color:white;
-      max-width:800px;
-    }
+
     #hero h1 {
-      font-size:40px;
-      font-weight:900;
-      margin-bottom:15px;
+      color: white;
+      font-size: 32px;
+      font-weight: 900;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      max-width: 700px;
+      padding: 0 20px;
     }
-    .btn-gold {
-      background:#F2B840;
-      padding:12px 30px;
-      border-radius:50px;
-      color:black;
-      text-decoration:none;
-      font-weight:700;
-      transition:0.3s;
-    }
-    .btn-gold:hover { background:#d9a432; }
 
-    /* SERVICES */
+    @media (max-width: 600px) {
+      #hero h1 {
+        font-size: 22px;
+      }
+    }
+
+    /* SECTION SERVICES */
     .services {
-      text-align:center;
-      padding:60px 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
+
     .services h2 {
-      font-size:30px;
-      font-weight:900;
-      margin-bottom:25px;
-      color:#0A3D91;
+      text-align: center;
+      color: #0A3D91;
+      font-size: 28px;
+      margin-bottom: 20px;
     }
+
     .grid {
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
-      gap:22px;
-      max-width:1200px;
-      margin:auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
     }
+
     .card {
-      background:white;
-      padding:25px 15px;
-      border-radius:10px;
-      box-shadow:0 4px 14px rgba(0,0,0,0.06);
-      font-weight:700;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.09);
+      text-align: center;
+      font-weight: 600;
+      color: #0A3D91;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
-    /* MÉTÉO */
-    .weather {
-      max-width:1100px;
-      margin:40px auto;
-      background:white;
-      padding:25px;
-      border-radius:12px;
-      box-shadow:0 3px 14px rgba(0,0,0,0.08);
-    }
-    .weather h2 {
-      text-align:center;
-      font-size:28px;
-      font-weight:900;
-    }
-    .weather-box {
-      display:flex;
-      justify-content:space-around;
-      margin-top:20px;
-      text-align:center;
+    .card:hover {
+      transform: translateY(-6px);
     }
 
-    /* ACTUALITÉS */
-    .news {
-      max-width:1100px;
-      margin:50px auto;
-    }
-    .news h2 {
-      text-align:center;
-      font-size:30px;
-      font-weight:900;
-    }
-    .news-grid {
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      gap:20px;
-      margin-top:25px;
-    }
-    .news-item {
-      background:white;
-      border-radius:12px;
-      overflow:hidden;
-      box-shadow:0 4px 16px rgba(0,0,0,0.08);
-    }
-    .news-item img {
-      width:100%;
-      height:170px;
-      object-fit:cover;
-    }
-    .news-item p {
-      padding:12px;
-      font-weight:600;
-    }
-
-    /* FOOTER */
+    /* FOOTER PREMIUM */
     footer {
-      background:#0A3D91;
-      padding:25px;
-      text-align:center;
+      background:#1b1f24;
       color:white;
-      margin-top:50px;
+      text-align:center;
+      padding:35px 20px;
+      margin-top:40px;
+    }
+    footer a {
+      color:white;
+      text-decoration:none;
+      margin: 0 10px;
     }
 
-    /* RESPONSIVE */
-    @media(max-width:900px){
-      .grid { grid-template-columns:repeat(2,1fr); }
-      .news-grid { grid-template-columns:1fr; }
-      #hero h1 { font-size:26px; }
+    /* BOUTON RETOUR */
+    .back-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #F2B840;
+      padding: 12px 18px;
+      border-radius: 50px;
+      color: #1b1f24;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
   </style>
 
-  <!-- MULTILINGUE -->
   <script>
-    function setLang(l) {
-      document.querySelectorAll("[data-fr]").forEach(el => {
-        el.innerHTML = el.dataset[l];
-      });
-      localStorage.setItem("lang_home", l);
+    function toggleMenu() {
+      document.getElementById("nav").classList.toggle("nav-open");
     }
-    window.onload = () => setLang(localStorage.getItem("lang_home") || "fr");
   </script>
-
 </head>
+
 <body>
 
-<!-- NAVBAR -->
+<!-- HEADER -->
 <header>
-  <img src="logo.png" alt="CIZA GROUP">
-
-  <nav>
-    <a href="index.html" data-fr="Accueil" data-en="Home"></a>
-    <a href="services.html" data-fr="Services" data-en="Services"></a>
-    <a href="a-propos.html" data-fr="À propos" data-en="About"></a>
-    <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
-  </nav>
+  <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/95e5c3b212be1a7c1ae3670ec6ae45b6aac6b401/horizontallogo.png">
+  <button class="menu-btn" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </button>
 </header>
+
+<nav id="nav">
+  <a href="index.html">Accueil</a>
+  <a href="services.html">Services</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="diaspora-business.html">Diaspora</a>
+  <a href="contact.html">Contact</a>
+  <a href="legales.html">Mentions légales</a>
+  <a href="confidentialite.html">Confidentialité</a>
+</nav>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="overlay"></div>
-  <div class="content">
-    <h1 data-fr="Écosystème de Service | Burundi" data-en="Service Ecosystem | Burundi"></h1>
-    <a href="services.html" class="btn-gold" data-fr="Découvrir nos services" data-en="Explore Services"></a>
-  </div>
+  <h1>Écosystème de Services — Burundi | Canada</h1>
 </section>
 
 <!-- SERVICES -->
-<div class="services">
-  <h2 data-fr="Nos Services" data-en="Our Services"></h2>
+<section class="services">
+  <h2>Nos Services</h2>
 
   <div class="grid">
-    <div class="card">CizaRide+</div>
-    <div class="card">CizaPay+</div>
-    <div class="card">CizaImmo</div>
-    <div class="card">CizaDelivery</div>
-    <div class="card">CizaLogistics</div>
-    <div class="card">CizaTech</div>
-    <div class="card">CizaMarketing</div>
-    <div class="card">CizaAcademy</div>
-    <div class="card">CizaAssist</div>
-    <div class="card">CizaCarWash+</div>
+    <div class="card" onclick="location.href='services.html'">CizaRide+</div>
+    <div class="card" onclick="location.href='services.html'">CizaPay+</div>
+    <div class="card" onclick="location.href='services.html'">CizaImmo</div>
+    <div class="card" onclick="location.href='services.html'">CizaDelivery</div>
+    <div class="card" onclick="location.href='services.html'">CizaLogistics</div>
+    <div class="card" onclick="location.href='services.html'">CizaTech</div>
+    <div class="card" onclick="location.href='services.html'">CizaMarketing</div>
+    <div class="card" onclick="location.href='services.html'">CizaAcademy</div>
+    <div class="card" onclick="location.href='services.html'">CizaAssist</div>
+    <div class="card" onclick="location.href='services.html'">CizaCarWash+</div>
   </div>
-</div>
-
-<!-- MÉTÉO -->
-<div class="weather">
-  <h2 data-fr="Météo en direct" data-en="Live Weather"></h2>
-
-  <div class="weather-box">
-    <div>
-      <h3>🇧🇮 Burundi</h3>
-      <iframe src="https://forecast7.com/fr/--/bujumbura/" frameborder="0" width="250" height="180"></iframe>
-    </div>
-
-    <div>
-      <h3>🇨🇦 Canada</h3>
-      <iframe src="https://forecast7.com/en/45d50n73d56/montreal/" frameborder="0" width="250" height="180"></iframe>
-    </div>
-  </div>
-</div>
-
-<!-- ACTUALITÉS -->
-<div class="news">
-  <h2 data-fr="Actualités" data-en="News"></h2>
-
-  <div class="news-grid">
-    <div class="news-item">
-      <img src="https://source.unsplash.com/600x400/?technology" alt="">
-      <p>Technologie et Innovation</p>
-    </div>
-
-    <div class="news-item">
-      <img src="https://source.unsplash.com/600x400/?business" alt="">
-      <p>Entrepreneuriat au Burundi</p>
-    </div>
-
-    <div class="news-item">
-      <img src="https://source.unsplash.com/600x400/?africa" alt="">
-      <p>Développement en Afrique</p>
-    </div>
-  </div>
-</div>
+</section>
 
 <!-- FOOTER -->
 <footer>
-  © 2025 CIZA GROUP — Tous droits réservés
+  <p>© 2025 CIZA GROUP — Tous droits réservés.</p>
+
+  <div style="margin:12px 0;">
+    <a href="legales.html">Mentions légales</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="contact.html">Contact</a>
+    <a href="diaspora-business.html">Diaspora</a>
+  </div>
+
+  <p style="opacity:0.7; font-size:14px;">Écosystème de Services — Burundi | Canada</p>
 </footer>
+
+<!-- BOUTON RETOUR -->
+<button class="back-btn" onclick="history.back()">← Retour</button>
 
 </body>
 </html>
