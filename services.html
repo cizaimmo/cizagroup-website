@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Nos Services — CIZA GROUP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      margin:0;
+      padding:0;
+      font-family: Inter, Arial, sans-serif;
+      background:#f8f9fc;
+      color:#1b2432;
+    }
+
+    /* HEADER */
+    header {
+      background:white;
+      padding:12px 22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border-bottom:1px solid #e5e7eb;
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+    header .brand {
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    header img {
+      width:48px;
+      height:48px;
+      object-fit:contain;
+    }
+    nav a {
+      margin-left:15px;
+      text-decoration:none;
+      font-weight:600;
+      color:#0A3D91;
+    }
+
+    /* HERO */
+    #hero-services {
+      background:#0A3D91;
+      color:white;
+      padding:70px 20px;
+      text-align:center;
+    }
+    #hero-services h1 {
+      font-size:34px;
+      font-weight:900;
+      margin-bottom:10px;
+    }
+    #hero-services p {
+      font-size:17px;
+      opacity:.9;
+    }
+
+    /* GRID SERVICES */
+    .container {
+      max-width:1200px;
+      margin:40px auto;
+      padding:0 20px;
+    }
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:20px;
+    }
+    .service-card {
+      background:white;
+      padding:25px;
+      border-radius:14px;
+      box-shadow:0 4px 16px rgba(0,0,0,0.07);
+      border:1px solid #e5e8f0;
+      transition:.25s;
+    }
+    .service-card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 8px 30px rgba(0,0,0,0.08);
+    }
+    .service-card h3 {
+      font-size:20px;
+      font-weight:900;
+      color:#0A3D91;
+      margin-bottom:8px;
+    }
+    .service-card p {
+      color:#4b5563;
+      font-size:14px;
+      margin-bottom:12px;
+    }
+    .btn {
+      display:inline-block;
+      padding:10px 20px;
+      border-radius:50px;
+      background:#F2B840;
+      color:#0A3D91;
+      font-weight:700;
+      text-decoration:none;
+      transition:.3s;
+    }
+    .btn:hover {
+      background:#dca72f;
+    }
+
+    /* Footer */
+    footer {
+      background:#071336;
+      color:white;
+      padding:30px 20px;
+      margin-top:40px;
+    }
+    footer a {
+      color:#e5edff;
+      text-decoration:none;
+    }
+
+  </style>
+
+  <script>
+    function setLang(l){
+      document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = el.dataset[l];
+      });
+      localStorage.setItem("lang_services", l);
+    }
+    window.onload = () => {
+      const l = localStorage.getItem("lang_services") || "fr";
+      setLang(l);
+    }
+  </script>
+
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    <img src="logo.png" alt="CIZA GROUP logo">
+    <strong style="color:#0A3D91;">CIZA GROUP</strong>
+  </div>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="business-diaspora.html">Diaspora</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section id="hero-services">
+  <h1 data-fr="Nos services premium"
+      data-en="Our premium services"></h1>
+  <p data-fr="Découvrez l’écosystème complet CIZA GROUP : mobilité, technologie, immobilier, logistique, paiement et services."
+     data-en="Explore the full CIZA GROUP ecosystem: mobility, technology, real estate, logistics, payment and services."></p>
+</section>
+
+<div class="container">
+  <div class="grid">
+
+    <!-- SERVICE 1 -->
+    <div class="service-card">
+      <h3>CizaRide+</h3>
+      <p data-fr="Mobilité moto & voiture, chauffeurs formés et système premium."
+         data-en="Motorcycle & car mobility, trained drivers and premium system."></p>
+      <a href="contact.html" class="btn">Demander</a>
+    </div>
+
+    <!-- SERVICE 2 -->
+    <div class="service-card">
+      <h3>CizaPay+</h3>
+      <p data-fr="Portefeuille numérique pour paiements, factures et transferts."
+         data-en="Digital wallet for payments, bills and transfers."></p>
+      <a href="contact.html" class="btn">Demander</a>
+    </div>
+
+    <!-- SERVICE 3 -->
+    <div class="service-card">
+      <h3>CizaDelivery</h3>
+      <p data-fr="Livraison express documents, colis et e-commerce."
+         data-en="Express delivery for documents, parcels and e-commerce."></p>
+      <a href="contact.html" class="btn">Demander</a>
+    </div>
+
+    <!-- SERVICE 4 -->
+    <div class="service-card">
+      <h3>CizaImmo</h3>
+      <p data-fr="Immobilier, gestion locative et accompagnement diaspora."
+         data-en="Real estate, rental management and diaspora support."></p>
+      <a href="contact.html" class="btn">Demander</a>
+    </div>
+
+    <!-- SERVICE 5 -->
+    <div class="service-card">
+      <h3>CizaLogistics</h3>
+      <p data-fr="Transport, fret, distribution et solutions entreprises."
+         data-en="Transport, freight, distribution and business solutions."></p>
+      <a href="contact.html" class="btn">Demander</a>
+    </div>    <!-- SERVICE 6 -->
+    <div class="service-card">
+      <h3>CizaTech</h3>
+      <p data-fr="Développement digital, applications mobile, sites web, API."
+         data-en="Digital development, mobile apps, websites, APIs."></p>
+      <a href="contact.html" class="btn">Demander</a>
+    </div>
+
+    <!-- SERVICE 7 -->
+    <div class="service-card">
+      <h3>CizaMarketing</h3>
+      <p data-fr="Marketing digital, branding, gestion médias et création contenu."
+         data-en="Digital marketing, branding, media management and content creation."></p>
+      <a href="contact.html" class="btn">Demander</a>
+    </div>
+
+    <!-- SERVICE 8 -->
+    <div class="service-card">
+      <h3>CizaAcademy</h3>
+      <p data-fr="Formation professionnelle mobilité, digital, entreprise."
+         data-en="Professional training mobility, digital, business."></p>
+      <a href="contact.html" class="btn">Demander</a>
+    </div>
+
+    <!-- SERVICE 9 -->
+    <div class="service-card">
+      <h3>CizaAssist</h3>
+      <p data-fr="Services d’assistance, démarches, réservations et support."
+         data-en="Assistance services, paperwork, reservations and support."></p>
+      <a href="contact.html" class="btn">Demander</a>
+    </div>
+
+    <!-- SERVICE 10 -->
+    <div class="service-card">
+      <h3>CizaCarWash+</h3>
+      <p data-fr="Lavage auto domicile & entreprise, entretien et abonnement."
+         data-en="Home & business car wash, maintenance and subscriptions."></p>
+      <a href="contact.html" class="btn">Demander</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER PREMIUM -->
+<footer>
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;">
+
+    <div>
+      <div style="font-weight:800;font-size:18px;color:#F2B840;">CIZA GROUP © 2025</div>
+      <div style="font-size:13px;color:#bfcfe8;">Écosystème de services — Burundi</div>
+      <div style="font-size:13px;color:#bfcfe8;">📧 info@cizagroup.com</div>
+      <div style="font-size:13px;color:#bfcfe8;">📍 Bujumbura, Burundi</div>
+    </div>
+
+    <div style="text-align:right;">
+      <div style="font-size:13px;color:#bfcfe8;">
+        🔗 <a href="https://instagram.com/cizagroup_official" target="_blank">Instagram</a> •
+        <a href="https://wa.me/15145029503" target="_blank">WhatsApp</a>
+      </div>
+
+      <div style="margin-top:8px;font-size:12px;">
+        <a href="legales.html" style="color:#e5edff;">Mentions légales</a> •
+        <a href="politique.html" style="color:#e5edff;">Confidentialité</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
