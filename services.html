@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Services — CIZA GROUP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" type="image/png"
+ href="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/favicone.png">
+
+<style>
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f6f7f9;
+  color: #1a1f25;
+}
+
+/* HEADER */
+header {
+  background: #0A3D91;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+header img {
+  width: 150px;
+}
+
+.menu-btn { background: none; border: none; cursor: pointer; }
+.menu-btn div {
+  width: 28px; height: 3px;
+  background: #F2B840; margin: 5px 0;
+  border-radius: 2px;
+}
+
+nav {
+  position: fixed;
+  top: 0; right: -260px;
+  width: 250px; height: 100%;
+  background: #0A3D91;
+  padding-top: 70px;
+  transition: .3s;
+  display: flex; flex-direction: column;
+  gap: 18px;
+}
+nav a {
+  color: white;
+  padding-left: 20px;
+  text-decoration: none;
+  font-size: 18px;
+}
+.nav-open { right: 0 !important; }
+
+/* TITLE */
+.page-title {
+  text-align: center;
+  font-size: 32px;
+  color: #0A3D91;
+  font-weight: 900;
+  margin-top: 30px;
+}
+
+/* DOMAIN SECTION */
+.domain-block {
+  background: white;
+  margin: 30px auto;
+  max-width: 1100px;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+  border-left: 5px solid #F2B840;
+}
+
+.domain-title {
+  font-size: 26px;
+  font-weight: 900;
+  color: #0A3D91;
+}
+
+.separator {
+  width: 65px; height: 4px;
+  background: #F2B840;
+  border-radius: 3px;
+  margin: 10px 0 18px 0;
+}
+
+/* LISTE DES SERVICES */
+.services-list {
+  margin-left: 20px;
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+/* CTA BUTTON */
+.btn-gold {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 13px 22px;
+  background: #F2B840;
+  color: #1a1f25;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: .3s;
+}
+.btn-gold:hover { background: #dca630; }
+
+/* LANG */
+.lang-switch {
+  text-align: right;
+  padding: 10px 20px;
+}
+.lang-switch button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  position: fixed; bottom: 20px; right: 20px;
+  background: #F2B840;
+  padding: 14px 18px;
+  border-radius: 50px;
+  color: #1a1f25; font-weight: 700;
+  border: none; cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+</style>
+
+<script>
+function toggleMenu() {
+  document.getElementById("nav").classList.toggle("nav-open");
+}
+
+function setLang(l) {
+  document.querySelectorAll("[data-fr]").forEach(el => {
+    el.innerHTML = el.dataset[l];
+  });
+  localStorage.setItem("lang_services", l);
+}
+window.onload = () => {
+  const l = localStorage.getItem("lang_services") || "fr";
+  setLang(l);
+};
+</script>
+
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <img src="logotransparent.png">
+  <button class="menu-btn" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </button>
+</header>
+
+<nav id="nav">
+  <a href="index.html">Accueil</a>
+  <a href="domaines.html">Domaines</a>
+  <a href="services.html">Services</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
+  <a href="legales.html">Mentions légales</a>
+  <a href="confidentialite.html">Confidentialité</a>
+</nav>
+
+<!-- LANG -->
+<div class="lang-switch">
+  <button onclick="setLang('fr')">FR</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+
+<h1 class="page-title"
+ data-fr="Nos Services"
+ data-en="Our Services"></h1>
+
+
+<!-- 🟦 MOBILITÉ -->
+<section id="mobilite" class="domain-block">
+  <h2 class="domain-title" data-fr="Mobilité" data-en="Mobility"></h2>
+  <div class="separator"></div>
+
+  <ul class="services-list">
+    <li>CizaRide+ — Transport premium</li>
+    <li>CizaDelivery — Livraison rapide</li>
+    <li>CizaCarWash+ — Lavage auto mobile</li>
+  </ul>
+
+  <a href="contact.html" class="btn-gold" data-fr="Demander un service" data-en="Request a service"></a>
+</section>
+
+
+<!-- 🟦 IMMOBILIER -->
+<section id="immobilier" class="domain-block">
+  <h2 class="domain-title" data-fr="Immobilier" data-en="Real Estate"></h2>
+  <div class="separator"></div>
+
+  <ul class="services-list">
+    <li>CizaImmo — Gestion immobilière</li>
+    <li>Diaspora Immobilier — Assistance diaspora</li>
+  </ul>
+
+  <a href="contact.html" class="btn-gold" data-fr="Demander un service" data-en="Request a service"></a>
+</section>
+
+
+<!-- 🟦 PAIEMENT & FINTECH -->
+<section id="fintech" class="domain-block">
+  <h2 class="domain-title" data-fr="Paiement & FinTech" data-en="Payment & FinTech"></h2>
+  <div class="separator"></div>
+
+  <ul class="services-list">
+    <li>CizaPay+ — Paiement & transferts</li>
+    <li>CizaTech — Solutions digitales</li>
+  </ul>
+
+  <a href="contact.html" class="btn-gold" data-fr="Demander un service" data-en="Request a service"></a>
+</section>
+
+
+<!-- 🟦 LOGISTIQUE -->
+<section id="logistique" class="domain-block">
+  <h2 class="domain-title" data-fr="Logistique & Services Urbains" data-en="Logistics & Urban Services"></h2>
+  <div class="separator"></div>
+
+  <ul class="services-list">
+    <li>CizaLogistics — Transport & distribution</li>
+    <li>CizaAssist — Services aux particuliers</li>
+    <li>CizaAcademy — Formation professionnelle</li>
+    <li>CizaMarketing — Branding & publicité</li>
+  </ul>
+
+  <a href="contact.html" class="btn-gold" data-fr="Demander un service" data-en="Request a service"></a>
+</section>
+
+<!-- RETOUR -->
+<button class="back-btn" onclick="history.back()">←</button>
+
+</body>
+</html>
