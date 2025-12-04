@@ -1,228 +1,224 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Contact — CIZA GROUP</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Contact — CIZA GROUP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-body {
-  margin:0;
-  font-family: Inter, Arial, sans-serif;
-  background:#f6f8fc;
-  color:#1b2432;
-}
+  <style>
+    body {
+      font-family: Inter, Arial, sans-serif;
+      margin:0; padding:0;
+      background:#f5f8ff;
+      color:#0A3D91;
+    }
 
-/* HEADER */
-header {
-  background:white;
-  padding:12px 22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border-bottom:1px solid #e5e7eb;
-  position:sticky;
-  top:0;
-  z-index:100;
-}
-header .brand { display:flex; align-items:center; gap:10px; }
-header img { width:48px; height:48px; object-fit:contain; }
-nav a {
-  margin-left:15px;
-  text-decoration:none;
-  font-weight:600;
-  color:#0A3D91;
-}
+    /* NAVBAR SIMPLE */
+    header {
+      background:#0A3D91;
+      padding:18px;
+      text-align:center;
+    }
+    header img {
+      height:60px;
+    }
 
-/* HERO */
-#hero-contact {
-  background:#0A3D91;
-  padding:70px 20px;
-  text-align:center;
-  color:white;
-}
-#hero-contact h1 {
-  font-size:34px;
-  font-weight:900;
-}
-#hero-contact p {
-  font-size:17px;
-}
+    /* SECTION TITRE */
+    .title-section {
+      text-align:center;
+      padding:40px 20px 10px;
+    }
+    .title-section h1 {
+      font-size:32px;
+      font-weight:900;
+    }
 
-/* CONTAINER */
-.container {
-  max-width:1100px;
-  margin:40px auto;
-  padding:20px;
-}
+    /* FORMULAIRE + INFOS */
+    .contact-container {
+      max-width:1100px;
+      margin:20px auto;
+      background:white;
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 4px 16px rgba(0,0,0,0.08);
+    }
 
-/* CONTACT GRID */
-.contact-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
-  gap:25px;
-}
+    .contact-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+    }
 
-/* BOX CONTACT */
-.box {
-  background:white;
-  padding:25px;
-  border-radius:14px;
-  border:1px solid #e5e7eb;
-  box-shadow:0 4px 16px rgba(0,0,0,0.05);
-}
-.box h3 {
-  color:#0A3D91;
-  font-size:20px;
-  font-weight:900;
-  margin-bottom:10px;
-}
-.box p { font-size:14px; color:#4b5563; }
+    input, textarea {
+      width:100%;
+      padding:12px;
+      border:1px solid #d5d5d5;
+      border-radius:8px;
+      margin-top:8px;
+      font-size:15px;
+    }
 
-/* FORMULAIRE */
-input, textarea {
-  width:100%;
-  padding:12px;
-  margin-top:8px;
-  border-radius:10px;
-  border:1px solid #d5d8e0;
-  font-size:15px;
-}
-textarea { min-height:120px; }
+    button {
+      background:#F2B840;
+      padding:12px 25px;
+      border:none;
+      border-radius:6px;
+      font-size:16px;
+      font-weight:700;
+      cursor:pointer;
+      margin-top:10px;
+    }
 
-button.send-btn {
-  background:#F2B840;
-  color:#0A3D91;
-  border:none;
-  padding:12px 26px;
-  border-radius:50px;
-  font-weight:800;
-  margin-top:10px;
-  cursor:pointer;
-}
+    /* GOOGLE MAPS */
+    .maps {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:15px;
+      margin-top:25px;
+    }
+    .maps iframe {
+      width:100%;
+      height:320px;
+      border:0;
+      border-radius:12px;
+    }
 
-/* BUTTONS */
-.btn {
-  display:inline-block;
-  padding:12px 20px;
-  background:#F2B840;
-  color:#0A3D91;
-  font-weight:700;
-  border-radius:50px;
-  text-decoration:none;
-  margin-top:12px;
-}
+    /* INSTAGRAM BLOCK */
+    .instagram-block {
+      margin-top:40px;
+      text-align:center;
+      padding:25px;
+      background:white;
+      border-radius:12px;
+      box-shadow:0 3px 14px rgba(0,0,0,0.07);
+    }
+    .instagram-block a {
+      text-decoration:none;
+      background:#F2B840;
+      color:black;
+      padding:10px 20px;
+      border-radius:50px;
+      font-weight:700;
+    }
 
-/* FOOTER */
-footer {
-  background:#071336;
-  color:white;
-  padding:40px 20px;
-  margin-top:50px;
-}
-footer a { color:#e5edff; text-decoration:none; }
+    /* FOOTER */
+    footer {
+      margin-top:40px;
+      background:#0A3D91;
+      padding:25px;
+      text-align:center;
+      color:white;
+    }
 
-</style>
+    /* WHATSAPP CHATBOT */
+    #whatsapp-chat {
+      position:fixed;
+      bottom:20px; right:20px;
+      z-index:999;
+    }
+    #whatsapp-chat img {
+      width:60px;
+      cursor:pointer;
+    }
 
-<script>
-function setLang(l){
-  document.querySelectorAll("[data-fr]").forEach(el=>{
-    el.innerHTML = el.dataset[l];
-  });
-  localStorage.setItem("lang_contact", l);
-}
-window.onload = () => {
-  const l = localStorage.getItem("lang_contact") || "fr";
-  setLang(l);
-}
-</script>
+    /* RESPONSIVE */
+    @media(max-width:900px) {
+      .contact-grid, .maps {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
 
+  <!-- LANGUAGE SYSTEM -->
+  <script>
+    function setLang(l) {
+      document.querySelectorAll("[data-fr]").forEach(el => {
+        el.innerHTML = el.dataset[l];
+      });
+      localStorage.setItem("lang_contact", l);
+    }
+    window.onload = () => {
+      setLang(localStorage.getItem("lang_contact") || "fr");
+    };
+  </script>
 </head>
+
 <body>
 
-<!-- HEADER -->
 <header>
-  <div class="brand">
-    <img src="logo.png">
-    <strong style="color:#0A3D91;">CIZA GROUP</strong>
-  </div>
-
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="services.html">Services</a>
-    <a href="a-propos.html">À propos</a>
-    <a href="business-diaspora.html">Diaspora</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <img src="logo.png" alt="CIZA GROUP">
 </header>
 
-<!-- HERO -->
-<section id="hero-contact">
-  <h1 data-fr="Contactez-nous" data-en="Contact us"></h1>
-  <p data-fr="Nous sommes disponibles pour répondre à vos besoins."
-     data-en="We are available to answer your needs."></p>
-</section>
+<div class="title-section">
+  <h1 data-fr="Contactez-nous" data-en="Contact Us"></h1>
+</div>
 
-<!-- CONTENT -->
-<div class="container">
+<div class="contact-container">
+
+  <div class="lang" style="text-align:right; margin-bottom:10px;">
+    <button onclick="setLang('fr')">FR</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
 
   <div class="contact-grid">
 
     <!-- FORMULAIRE -->
-    <div class="box">
-      <h3 data-fr="Formulaire de contact" data-en="Contact form"></h3>
+    <div>
+      <h2 data-fr="Envoyer un message" data-en="Send a message"></h2>
+      <label data-fr="Nom" data-en="Name"></label>
+      <input type="text" placeholder="Votre nom">
 
-      <form>
-        <label data-fr="Nom complet" data-en="Full name"></label>
-        <input type="text" placeholder="Votre nom">
+      <label data-fr="Email" data-en="Email"></label>
+      <input type="email" placeholder="Votre email">
 
-        <label data-fr="Email" data-en="Email"></label>
-        <input type="email" placeholder="Votre email">
+      <label data-fr="Téléphone" data-en="Phone"></label>
+      <input type="text" placeholder="+1 ...">
 
-        <label data-fr="Téléphone" data-en="Phone"></label>
-        <input type="text" placeholder="+257 … / +1 …">
+      <label data-fr="Message" data-en="Message"></label>
+      <textarea rows="5" placeholder="Votre message..."></textarea>
 
-        <label data-fr="Message" data-en="Message"></label>
-        <textarea placeholder="Votre message..."></textarea>
-
-        <button class="send-btn" type="submit"
-          data-fr="Envoyer"
-          data-en="Send"></button>
-      </form>
+      <button data-fr="Envoyer" data-en="Send">Envoyer</button>
     </div>
 
-    <!-- CONTACT DIRECT -->
-    <div class="box">
-      <h3 data-fr="Contact direct" data-en="Direct contact"></h3>
-      <p>📞 Burundi : +257 799 45 007</p>
-      <p>📞 Canada : +1 514 502 9503</p>
-      <p>📧 Email : info@cizagroup.com</p>
+    <!-- INFORMATIONS -->
+    <div>
+      <h2 data-fr="Nos coordonnées" data-en="Our Contacts"></h2>
 
-      <a class="btn" href="https://wa.me/15145029503" target="_blank">
-        WhatsApp Canada
-      </a>
+      <p><strong>WhatsApp Canada :</strong> +1 514 502 9503</p>
+      <p><strong>Email :</strong> info@cizagroup.com</p>
 
-      <a class="btn" href="https://wa.me/25779945007" target="_blank">
-        WhatsApp Burundi
-      </a>
+      <h3 data-fr="Canada" data-en="Canada"></h3>
+      <p>Montréal, Québec</p>
 
-      <a class="btn" href="tel:+15145029503">📞 Appeler Canada</a>
-      <a class="btn" href="tel:+25779945007">📞 Appeler Burundi</a>
+      <h3 data-fr="Burundi" data-en="Burundi"></h3>
+      <p>Bujumbura</p>
     </div>
+  </div>
 
+  <!-- GOOGLE MAPS -->
+  <div class="maps">
+    <iframe src="https://www.google.com/maps?q=Montreal&output=embed"></iframe>
+    <iframe src="https://www.google.com/maps?q=Bujumbura&output=embed"></iframe>
+  </div>
+
+  <!-- INSTAGRAM -->
+  <div class="instagram-block">
+    <h2 data-fr="Suivez-nous sur Instagram" data-en="Follow us on Instagram"></h2>
+    <a href="https://instagram.com" target="_blank">Instagram</a>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div style="max-width:1200px;margin:auto;">
-    <div>© 2025 CIZA GROUP — Tous droits réservés</div>
-    <div style="margin-top:10px;">
-      <a href="legales.html">Mentions légales</a> •
-      <a href="cgu.html">CGU</a>
-    </div>
-  </div>
+  © 2025 CIZA GROUP — Tous droits réservés
 </footer>
+
+<!-- WHATSAPP CHATBOT -->
+<div id="whatsapp-chat">
+  <a href="https://wa.me/15145029503?text=Bonjour%20CIZA%20GROUP%20!%20J%27aimerais%20plus%20d%27informations." target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+</div>
 
 </body>
 </html>
