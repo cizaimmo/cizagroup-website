@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Domaines — CIZA GROUP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" type="image/png"
+ href="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/favicone.png">
+
+<style>
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f6f7f9;
+  color: #1a1f25;
+}
+
+/* HEADER SIMPLE (REPRISE INDEX) */
+header {
+  background: #0A3D91;
+  padding: 15px 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+header img { width: 150px; }
+
+.menu-btn { background: none; border: none; cursor: pointer; }
+.menu-btn div {
+  width: 28px; height: 3px; background: #F2B840;
+  margin: 5px 0; border-radius: 2px;
+}
+
+nav {
+  position: fixed;
+  top: 0; right: -260px;
+  width: 250px; height: 100%;
+  background: #0A3D91;
+  padding-top: 70px;
+  display: flex; flex-direction: column;
+  gap: 18px; transition: 0.3s;
+}
+nav a {
+  color: white; text-decoration: none;
+  font-size: 18px; padding-left: 20px;
+}
+.nav-open { right: 0 !important; }
+
+/* PAGE TITLE */
+.page-title {
+  text-align: center;
+  margin: 35px auto 10px;
+  font-size: 32px;
+  color: #0A3D91;
+  font-weight: 900;
+}
+
+/* GRID DOMAINES */
+.domain-grid {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.domain-card {
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  border-top: 5px solid #F2B840;
+  transition: 0.3s;
+}
+.domain-card:hover {
+  transform: translateY(-7px);
+}
+
+.domain-title {
+  color: #0A3D91;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+ul.services-list {
+  padding-left: 20px;
+  margin: 12px 0;
+  line-height: 1.5;
+}
+ul.services-list li {
+  margin-bottom: 4px;
+}
+
+/* CTA BUTTON */
+.btn-gold {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: #F2B840;
+  color: #1b1f24;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn-gold:hover { background: #dba630; }
+
+/* LANG SWITCH */
+.lang-switch {
+  text-align: right;
+  padding: 10px 20px;
+}
+.lang-switch button {
+  padding: 6px 12px;
+  border: 1px solid #d5d5d5;
+  background: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* RETURN BUTTON */
+.back-btn {
+  position: fixed; bottom: 20px; right: 20px;
+  background: #F2B840;
+  padding: 14px 18px;
+  border-radius: 50px;
+  color: #1b1f24;
+  font-weight: 700;
+  border: none; cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+function toggleMenu() {
+  document.getElementById("nav").classList.toggle("nav-open");
+}
+
+function setLang(l) {
+  document.querySelectorAll("[data-fr]").forEach(el => {
+    el.innerHTML = el.dataset[l];
+  });
+  localStorage.setItem("lang_domaines", l);
+}
+window.onload = () => {
+  const l = localStorage.getItem("lang_domaines") || "fr";
+  setLang(l);
+};
+</script>
+
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <img src="logotransparent.png">
+  <button class="menu-btn" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </button>
+</header>
+
+<nav id="nav">
+  <a href="index.html">Accueil</a>
+  <a href="domaines.html">Domaines</a>
+  <a href="services.html">Services</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
+  <a href="legales.html">Mentions légales</a>
+  <a href="confidentialite.html">Confidentialité</a>
+</nav>
+
+<!-- LANG SWITCH -->
+<div class="lang-switch">
+  <button onclick="setLang('fr')">FR</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+
+<h1 class="page-title"
+ data-fr="Nos Domaines"
+ data-en="Our Domains"></h1>
+
+<!-- DOMAIN GRID -->
+<div class="domain-grid">
+
+  <!-- MOBILITÉ -->
+  <div class="domain-card">
+    <h3 class="domain-title" data-fr="Mobilité" data-en="Mobility"></h3>
+
+    <ul class="services-list">
+      <li>CizaRide+</li>
+      <li>CizaDelivery</li>
+      <li>CizaCarWash+</li>
+    </ul>
+
+    <a href="services.html#mobilite" class="btn-gold"
+      data-fr="Découvrir"
+      data-en="Discover"></a>
+  </div>
+
+  <!-- IMMOBILIER -->
+  <div class="domain-card">
+    <h3 class="domain-title" data-fr="Immobilier" data-en="Real Estate"></h3>
+
+    <ul class="services-list">
+      <li>CizaImmo</li>
+      <li>Diaspora Immobilier</li>
+    </ul>
+
+    <a href="services.html#immobilier" class="btn-gold"
+      data-fr="Découvrir"
+      data-en="Discover"></a>
+  </div>
+
+  <!-- FINTECH -->
+  <div class="domain-card">
+    <h3 class="domain-title" data-fr="Paiement & FinTech" data-en="Payment & FinTech"></h3>
+
+    <ul class="services-list">
+      <li>CizaPay+</li>
+      <li>CizaTech</li>
+    </ul>
+
+    <a href="services.html#fintech" class="btn-gold"
+      data-fr="Découvrir"
+      data-en="Discover"></a>
+  </div>
+
+  <!-- LOGISTIQUE -->
+  <div class="domain-card">
+    <h3 class="domain-title" data-fr="Logistique & Services Urbains" data-en="Logistics & Urban Services"></h3>
+
+    <ul class="services-list">
+      <li>CizaLogistics</li>
+      <li>CizaAssist</li>
+      <li>CizaAcademy</li>
+      <li>CizaMarketing</li>
+    </ul>
+
+    <a href="services.html#logistique" class="btn-gold"
+      data-fr="Découvrir"
+      data-en="Discover"></a>
+  </div>
+
+</div>
+
+<!-- RETURN BUTTON -->
+<button class="back-btn" onclick="history.back()">←</button>
+
+</body>
+</html>
