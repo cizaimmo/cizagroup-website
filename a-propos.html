@@ -1,193 +1,219 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>À propos – CIZA GROUP</title>
+  <meta charset="UTF-8" />
+  <title>À propos — CIZA GROUP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin:0;
+      padding:0;
+      font-family: Inter, Arial, sans-serif;
+      background:#f7f9fc;
+      color:#1b2432;
+      line-height:1.6;
+    }
 
-<style>
-body {
-  font-family: Inter, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f5f6fa;
-  color: #222;
-  line-height: 1.7;
-}
+    /* HERO CEO */
+    #hero-ceo {
+      background:#0A3D91;
+      padding:60px 20px;
+      text-align:center;
+      color:white;
+      position:relative;
+      overflow:hidden;
+    }
 
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  background: white;
-  padding: 40px 28px;
-  border-radius: 16px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-}
+    #hero-ceo .gold-ring {
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      border:5px solid #F2B840;
+      margin:0 auto 20px;
+      overflow:hidden;
+      background:white;
+      padding:6px;
+    }
 
-h1 {
-  font-size: 32px;
-  font-weight: 900;
-  color: #0A3D91;
-  text-align: center;
-  margin-bottom: 10px;
-}
+    #hero-ceo img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
+    }
 
-h2 {
-  margin-top: 32px;
-  font-size: 22px;
-  color: #0A3D91;
-  font-weight: 700;
-}
+    #hero-ceo h1 {
+      font-size:32px;
+      font-weight:900;
+      margin-bottom:6px;
+    }
 
-/* LANG SWITCH */
-.lang-switcher {
-  text-align: center;
-  margin-bottom: 25px;
-}
-.lang-switcher img {
-  width: 36px;
-  margin: 0 6px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: 0.2s;
-}
-.lang-switcher img:hover { transform: scale(1.1); }
+    #hero-ceo h2 {
+      font-size:18px;
+      color:#F2B840;
+      font-weight:700;
+      margin-top:0;
+    }
 
-a { color:#0A3D91; }
+    /* CONTAINER */
+    .container {
+      max-width:1100px;
+      margin:30px auto;
+      background:white;
+      padding:30px;
+      border-radius:14px;
+      box-shadow:0 4px 18px rgba(0,0,0,0.08);
+    }
 
-.back {
-  display: inline-block;
-  margin-top: 40px;
-  padding: 12px 22px;
-  background: #0A3D91;
-  color: white !important;
-  border-radius: 10px;
-  font-weight: 700;
-  text-decoration: none;
-}
-.back:hover { background: #0d4bb8; }
-</style>
+    h3 {
+      color:#0A3D91;
+      font-weight:900;
+      border-left:4px solid #F2B840;
+      padding-left:10px;
+      margin-top:30px;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      border-left:3px solid #0A3D91;
+      padding-left:20px;
+      margin-top:15px;
+    }
+    .timeline div {
+      margin-bottom:15px;
+    }
+    .timeline span.year {
+      font-weight:900;
+      color:#0A3D91;
+    }
+
+    /* MULTILINGUE */
+    .lang-switch {
+      text-align:right;
+      margin-bottom:10px;
+    }
+    .lang-switch button {
+      padding:6px 12px;
+      border:1px solid #ddd;
+      border-radius:6px;
+      background:white;
+      cursor:pointer;
+    }
+
+    @media(max-width:700px){
+      #hero-ceo h1 { font-size:26px; }
+      #hero-ceo h2 { font-size:15px; }
+      #hero-ceo .gold-ring { width:150px; height:150px; }
+    }
+  </style>
+
+  <!-- Multilingue -->
+  <script>
+    function setLang(l) {
+      document.querySelectorAll("[data-fr]").forEach(el => {
+        el.innerHTML = el.dataset[l];
+      });
+      localStorage.setItem("lang_about", l);
+    }
+    window.onload = () => {
+      const l = localStorage.getItem("lang_about") || "fr";
+      setLang(l);
+    };
+  </script>
+
 </head>
-
 <body>
 
+<!-- HERO CEO -->
+<section id="hero-ceo">
+  <div class="gold-ring">
+    <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/de6cc4921bc9028c6a71f5dd18a8c336662de67e/CEO.png" alt="CEO CIZA GROUP">
+  </div>
+
+  <h1 data-fr="CEO — CIZA GROUP" data-en="CEO — CIZA GROUP"></h1>
+
+  <h2 data-fr="Construire le plus grand écosystème de services au Burundi"
+      data-en="Building the largest service ecosystem in Burundi"></h2>
+</section>
+
+<!-- CONTENU -->
 <div class="container">
 
-<!-- LANGUAGE SWITCH -->
-<div class="lang-switcher">
-  <img src="https://flagcdn.com/fr.svg" onclick="setLang('fr')" title="Français">
-  <img src="https://flagcdn.com/gb.svg" onclick="setLang('en')" title="English">
-  <img src="https://flagcdn.com/bi.svg" onclick="setLang('ki')" title="Kirundi">
-</div>
+  <div class="lang-switch">
+    <button onclick="setLang('fr')">FR</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
 
-<h1 class="lang"
-    data-fr="À propos de CIZA GROUP"
-    data-en="About CIZA GROUP"
-    data-ki="Ivyerekeye CIZA GROUP">
-    À propos de CIZA GROUP
-</h1>
+  <h3 data-fr="Notre vision" data-en="Our Vision"></h3>
+  <p data-fr="
+    CIZA GROUP est une entreprise innovante créée avec une ambition claire : offrir au Burundi
+    et à sa diaspora un écosystème complet de services modernes, fiables et accessibles.
+    Sous la direction du CEO, le groupe développe des solutions qui transforment la mobilité,
+    le digital, l'immobilier, la logistique et les services urbains.
+  " data-en="
+    CIZA GROUP is an innovative company created with a clear ambition: to offer Burundi
+    and its diaspora a complete ecosystem of modern, reliable and accessible services.
+    Led by the CEO, the group develops solutions that transform mobility, digital services,
+    real estate, logistics and urban services.
+  "></p>
 
-<p class="lang" style="text-align:center;"
-   data-fr="Découvrez qui nous sommes, notre mission et notre vision."
-   data-en="Learn who we are, our mission and vision."
-   data-ki="Menya uwo turi we, umugambi n'intumbero vyacu.">
-   Découvrez qui nous sommes.
-</p>
+  <h3 data-fr="Nos services" data-en="Our Services"></h3>
+  <p data-fr="
+    Le groupe réunit plusieurs branches : CizaRide+, CizaPay+, CizaImmo, CizaDelivery,
+    CizaLogistics, CizaTech, CizaMarketing, CizaAcademy, CizaAssist et CizaCarWash+.
+    Ensemble, ces services créent une chaîne intégrée permettant aux particuliers,
+    entreprises et organisations de bénéficier d'une solution complète.
+  " data-en="
+    The group brings together several branches: CizaRide+, CizaPay+, CizaImmo,
+    CizaDelivery, CizaLogistics, CizaTech, CizaMarketing, CizaAcademy,
+    CizaAssist and CizaCarWash+. Together, they create an integrated chain
+    allowing individuals, businesses and organizations to benefit from a complete solution.
+  "></p>
 
-<h2 class="lang"
-    data-fr="1. Notre identité"
-    data-en="1. Our Identity"
-    data-ki="1. Akaranga kacu">
-    1. Notre identité
-</h2>
+  <h3 data-fr="Notre mission" data-en="Our Mission"></h3>
+  <p data-fr="
+    Simplifier le quotidien. Digitaliser les services du Burundi. Offrir des solutions fiables,
+    sécurisées et accessibles pour tous — citoyens, entreprises et diaspora.
+  " data-en="
+    Simplify daily life. Digitize services in Burundi. Provide reliable, secure
+    and accessible solutions for citizens, businesses and the diaspora.
+  "></p>
 
-<p class="lang"
-   data-fr="CIZA GROUP est un écosystème de services innovants destiné à la Diaspora et aux citoyens. Nos activités couvrent l’immobilier, la mobilité, le paiement digital, la logistique, la gestion et bien plus."
-   data-en="CIZA GROUP is an innovative service ecosystem designed for the Diaspora and citizens. Our activities cover real estate, mobility, digital payments, logistics, management and more."
-   data-ki="CIZA GROUP ni urunganwe rw'ibikorwa bijanye n'iterambere vyerekeye ababa mu mahanga n'abanyagihugu. Dukora mu bikorwa vy'ubutaka, gutwara abantu, kwishura, ibidandazwa no gutunganya ibikorwa.">
-   CIZA GROUP est un écosystème de services innovants.
-</p>
+  <h3 data-fr="Historique & Croissance" data-en="History & Growth"></h3>
+  <div class="timeline">
+    <div>
+      <span class="year">2022 :</span>
+      <span data-fr="Début du projet — développement du noyau CIZA GROUP"
+            data-en="Project launch — development of the CIZA GROUP core"></span>
+    </div>
+    <div>
+      <span class="year">2023 :</span>
+      <span data-fr="Lancement des premières plateformes digitales"
+            data-en="Launch of the first digital platforms"></span>
+    </div>
+    <div>
+      <span class="year">2024 :</span>
+      <span data-fr="Expansion vers les services mobilité, immobilier & paiement"
+            data-en="Expansion into mobility, real estate & payment services"></span>
+    </div>
+    <div>
+      <span class="year">2025 :</span>
+      <span data-fr="Structuration de l'écosystème complet & ouverture diaspora"
+            data-en="Structuring of the full ecosystem & diaspora services"></span>
+    </div>
+  </div>
 
-<h2 class="lang"
-    data-fr="2. Notre mission"
-    data-en="2. Our Mission"
-    data-ki="2. Umugambi wacu">
-    2. Notre mission
-</h2>
-
-<p class="lang"
-   data-fr="Faciliter l’investissement, la gestion, la mobilité et l’accès aux services essentiels, tout en offrant transparence, sécurité et innovation."
-   data-en="To simplify investment, management, mobility and access to essential services while offering transparency, security and innovation."
-   data-ki="Gufasha mu gushora imari, gutunganya ibikorwa, gutwara abantu no gutanga serivisi z'ibanze mu kugaragaza umuco, umutekano n'iterambere.">
-   Faciliter l'investissement et la gestion.
-</p>
-
-<h2 class="lang"
-    data-fr="3. Notre vision"
-    data-en="3. Our Vision"
-    data-ki="3. Intumbero yacu">
-    3. Notre vision
-</h2>
-
-<p class="lang"
-   data-fr="Construire un avenir moderne et digitalisé pour la Diaspora et les citoyens, en faisant du Burundi un hub de services de qualité."
-   data-en="To build a modern and digital future for the Diaspora and citizens, making Burundi a hub of premium services."
-   data-ki="Kuzana kazoza k'iterambere n'ubuhinga bushasha ku banya diaspora n'abanyagihugu, mu gutuma Uburundi buba icicaro c'ibikorwa vyiza.">
-   Construire un avenir moderne et digitalisé.
-</p>
-
-<h2 class="lang"
-    data-fr="4. Nos valeurs"
-    data-en="4. Our Values"
-    data-ki="4. Indangagaciro zacu">
-    4. Nos valeurs
-</h2>
-
-<ul>
-<li class="lang" data-fr="Transparence" data-en="Transparency" data-ki="Ukuri">Transparence</li>
-<li class="lang" data-fr="Innovation" data-en="Innovation" data-ki="Udushasha">Innovation</li>
-<li class="lang" data-fr="Fiabilité" data-en="Reliability" data-ki="Kuba uwo woba wizigirwa">Fiabilité</li>
-<li class="lang" data-fr="Respect" data-en="Respect" data-ki="Agahengwe">Respect</li>
-</ul>
-
-<h2 class="lang"
-    data-fr="5. Contact"
-    data-en="5. Contact"
-    data-ki="5. Twandikire">
-    5. Contact
-</h2>
-
-<p>
-📧 Email : <a href="mailto:info@cizagroup.com">info@cizagroup.com</a><br>
-💬 WhatsApp : <a href="https://wa.me/15145029503">+1 514 502 9503</a>
-</p>
-
-<div style="text-align:center;">
-  <a href="business-diaspora.html" class="back lang"
-     data-fr="← Retour"
-     data-en="← Back"
-     data-ki="← Subira">← Retour</a>
-</div>
+  <h3 data-fr="Notre équipe" data-en="Our Team"></h3>
+  <p data-fr="
+    L’entreprise est portée par un réseau d'experts, de chauffeurs, de livreurs,
+    de techniciens, d'agents de terrain et de partenaires de la diaspora.
+  " data-en="
+    The company is supported by a network of experts, drivers, delivery agents,
+    technicians, field agents and diaspora partners.
+  "></p>
 
 </div>
-
-<!-- MULTILINGUE JS -->
-<script>
-function setLang(lang) {
-  localStorage.setItem("ciza_lang_apropos", lang);
-  document.querySelectorAll("[data-fr]").forEach(el => {
-    if (el.dataset[lang]) el.innerHTML = el.dataset[lang];
-  });
-}
-
-(function () {
-  const saved = localStorage.getItem("ciza_lang_apropos") || "fr";
-  setLang(saved);
-})();
-</script>
 
 </body>
 </html>
