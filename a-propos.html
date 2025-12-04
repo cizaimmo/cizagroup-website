@@ -15,12 +15,12 @@
       line-height:1.6;
     }
 
-    /* HEADER SIMPLE */
+    /* HEADER */
     header {
       background:#0A3D91;
       padding:14px 20px;
       display:flex;
-      justify-content:center;
+      justify-content:flex-start;
       align-items:center;
     }
     header img {
@@ -33,36 +33,38 @@
       padding:65px 20px 80px;
       text-align:center;
       color:white;
-      position:relative;
     }
 
-    #hero-ceo .gold-ring {
-      width:170px;
-      height:170px;
+    /* PORTRAIT ZOOM + FLOU */
+    .portrait-box {
+      width:180px;
+      height:180px;
       border-radius:50%;
       border:5px solid #F2B840;
       margin:0 auto 20px;
       overflow:hidden;
-      background:white;
-      padding:6px;
+      position:relative;
     }
 
-    #hero-ceo img {
-      width:100%;
-      height:100%;
+    .portrait-box img {
+      width:160%;
+      height:160%;
       object-fit:cover;
-      border-radius:50%;
+      object-position:center 20%;
+      filter:brightness(1.08) contrast(1.1);
     }
 
     #hero-ceo h1 {
       font-size:32px;
       font-weight:900;
+      margin-bottom:6px;
     }
+
     #hero-ceo h2 {
       font-size:18px;
-      font-weight:700;
       color:#F2B840;
-      margin-top:6px;
+      font-weight:700;
+      margin-top:0;
     }
 
     /* CONTAINER */
@@ -91,9 +93,9 @@
       margin-top:15px;
     }
     .timeline div {
-      margin-bottom:15px;
+      margin-bottom:12px;
     }
-    .timeline span.year {
+    .timeline .year {
       font-weight:900;
       color:#0A3D91;
     }
@@ -105,7 +107,6 @@
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:25px;
     }
-
     .team-card {
       background:white;
       border-radius:14px;
@@ -113,14 +114,14 @@
       text-align:center;
       box-shadow:0 4px 12px rgba(0,0,0,0.08);
     }
-
     .team-card img {
-      width:160px;
-      height:160px;
-      border-radius:50%;
+      width:160%;
+      height:160%;
       object-fit:cover;
+      object-position:center 15%;
+      filter:brightness(1.08) contrast(1.1);
+      border-radius:50%;
       border:4px solid #F2B840;
-      margin-bottom:12px;
     }
 
     .team-card h4 {
@@ -136,7 +137,7 @@
       font-weight:600;
     }
 
-    /* MULTILINGUE */
+    /* MULTILINGUE SWITCH */
     .lang-switch {
       text-align:right;
       margin-bottom:10px;
@@ -173,15 +174,9 @@
       cursor:pointer;
       box-shadow:0 4px 10px rgba(0,0,0,0.3);
     }
-
-    @media(max-width:700px){
-      #hero-ceo h1 { font-size:26px; }
-      #hero-ceo h2 { font-size:15px; }
-      #hero-ceo .gold-ring { width:150px; height:150px; }
-    }
   </style>
 
-  <!-- Multilingue Script -->
+  <!-- Multilingue -->
   <script>
     function setLang(l) {
       document.querySelectorAll("[data-fr]").forEach(el => {
@@ -204,12 +199,12 @@
 
 <!-- HERO CEO -->
 <section id="hero-ceo">
-  <div class="gold-ring">
-    <img src="/mnt/data/CEO.png" alt="CEO CIZA GROUP">
+
+  <div class="portrait-box">
+    <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/de6cc4921bc9028c6a71f5dd18a8c336662de67e/CEO.png" alt="CEO CIZA GROUP">
   </div>
 
   <h1 data-fr="Ciza M — CEO" data-en="Ciza M — CEO"></h1>
-
   <h2 data-fr="Construire le plus grand écosystème de services au Burundi"
       data-en="Building the largest service ecosystem in Burundi"></h2>
 </section>
@@ -230,23 +225,71 @@
     and its diaspora a complete ecosystem of modern, reliable and accessible services.
   "></p>
 
+
+  <h3 data-fr="Nos accomplissements" data-en="Our Achievements"></h3>
+  <p data-fr="
+    Depuis notre lancement, CIZA GROUP a connu une croissance remarquable :
+    <br>• Déploiement de plateformes digitales unifiées pour la mobilité et la logistique.
+    <br>• Création d’un pont direct entre la diaspora et le Burundi.
+    <br>• Développement de services intégrés accessibles depuis une seule interface.
+    <br>• Construction d’un réseau solide de chauffeurs, livreurs, techniciens et partenaires.
+    <br>• accompagnement d’entreprises dans leur transformation numérique.
+    <br>• Mise en place d’un écosystème multiservice pour soutenir la vie quotidienne.
+  " data-en="
+    Since our creation, CIZA GROUP has achieved significant milestones:
+    <br>• Deployment of unified digital platforms for mobility and logistics.
+    <br>• Creation of a direct bridge between the diaspora and Burundi.
+    <br>• Development of integrated services accessible from a single interface.
+    <br>• Building a strong network of drivers, delivery agents, technicians, and partners.
+    <br>• Supporting businesses in their digital transformation.
+    <br>• Building the foundations of a multi-service ecosystem.
+  "></p>
+
+
+  <h3 data-fr="Historique & Croissance" data-en="History & Growth"></h3>
+
+  <div class="timeline">
+    <div><span class="year">2022 :</span>
+      <span data-fr="Début du projet" data-en="Project launch"></span></div>
+
+    <div><span class="year">2023 :</span>
+      <span data-fr="Lancement des premières plateformes" data-en="Launch of first platforms"></span></div>
+
+    <div><span class="year">2024 :</span>
+      <span data-fr="Expansion vers la mobilité et l'immobilier" data-en="Expansion into mobility and real estate"></span></div>
+
+    <div><span class="year">2025 :</span>
+      <span data-fr="Structuration de l'écosystème complet" data-en="Structuring the full ecosystem"></span></div>
+
+    <div><span class="year">2026 :</span>
+      <span data-fr="Lancement officiel de l'écosystème CIZA GROUP"
+            data-en="Official launch of the CIZA GROUP ecosystem"></span></div>
+  </div>
+
+
   <h3 data-fr="Notre équipe dirigeante" data-en="Our Leadership Team"></h3>
 
   <div class="team">
+
     <!-- CEO -->
     <div class="team-card">
-      <img src="/mnt/data/CEO.png">
+      <div class="portrait-box">
+        <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/de6cc4921bc9028c6a71f5dd18a8c336662de67e/CEO.png">
+      </div>
       <h4 data-fr="Ciza M" data-en="Ciza M"></h4>
       <p data-fr="CEO — Fondateur" data-en="CEO — Founder"></p>
     </div>
 
     <!-- Augustin -->
     <div class="team-card">
-      <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/ac7c9b449ccd1dd59aa791379696f0be721ea474/959AE4B4-DFCB-4381-8005-614A6BB22231.png">
+      <div class="portrait-box">
+        <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/ac7c9b449ccd1dd59aa791379696f0be721ea474/959AE4B4-DFCB-4381-8005-614A6BB22231.png">
+      </div>
       <h4 data-fr="Augustin K" data-en="Augustin K"></h4>
-      <p data-fr="Président — Stratégie & Marketing"
-         data-en="President — Strategy & Marketing"></p>
+      <p data-fr="Président Stratégie & Marketing"
+         data-en="President Strategy & Marketing"></p>
     </div>
+
   </div>
 
 </div>
