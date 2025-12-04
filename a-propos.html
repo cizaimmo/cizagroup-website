@@ -1,188 +1,224 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<title>À propos — CIZA GROUP</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>À propos — CIZA GROUP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-body { margin:0; font-family: Inter, Arial, sans-serif; background:#f5f7fb; }
+  <style>
+    body {
+      margin:0;
+      padding:0;
+      font-family: Inter, Arial, sans-serif;
+      background:#f7f9fc;
+      color:#1b2432;
+      line-height:1.6;
+    }
 
-/* HEADER (copie identique index.html) */
-#header-premium {
-  position: sticky; top: 0; z-index: 9999;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(200,200,200,0.35);
-}
-.header-inner {
-  max-width: 1200px; margin:auto;
-  padding:12px 22px; display:flex; align-items:center; justify-content:space-between;
-}
-.logo-area { display:flex; align-items:center; gap:10px; text-decoration:none; }
-.logo-img { width:52px; height:52px; object-fit:contain; }
-.logo-text { font-size:20px; font-weight:900; color:#0A3D91; }
-.nav-links { display:flex; gap:22px; }
-.nav-links a {
-  text-decoration:none; color:#0A3D91; font-weight:600;
-  padding:8px 12px; border-radius:8px; transition:0.2s;
-}
-.nav-links a:hover { background:rgba(10,61,145,0.08); }
-.nav-links .diaspora { color:#F2B840; font-weight:800; }
-.menu-btn { display:none; font-size:26px; cursor:pointer; }
-#mobileMenu { display:none; flex-direction:column; background:white; border-top:1px solid #ddd; }
-#mobileMenu a { padding:12px; text-decoration:none; color:#0A3D91; border-bottom:1px solid #eee; font-weight:600; }
+    /* HERO CEO */
+    #hero-ceo {
+      background:#0A3D91;
+      padding:60px 20px;
+      text-align:center;
+      color:white;
+      position:relative;
+      overflow:hidden;
+    }
 
-@media(max-width:900px){
-  .nav-links { display:none; }
-  .menu-btn { display:block; }
-}
+    #hero-ceo .gold-ring {
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      border:5px solid #F2B840;
+      margin:0 auto 20px;
+      overflow:hidden;
+      background:white;
+      padding:6px;
+    }
 
-/* HERO À PROPOS */
-#hero-about {
-  background:#0A3D91;
-  padding:70px 20px; text-align:center; color:white;
-}
-#hero-about h1 { font-size:36px; font-weight:900; }
-#hero-about p { margin-top:8px; font-size:18px; }
+    #hero-ceo img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
+    }
 
-/* CONTENU */
-.container {
-  max-width:1100px; margin:40px auto; background:white;
-  padding:30px; border-radius:14px;
-  box-shadow:0 4px 16px rgba(0,0,0,0.06);
-}
-.section-title {
-  font-size:26px; font-weight:900; color:#0A3D91; margin-bottom:15px;
-  border-left:4px solid #F2B840; padding-left:10px;
-}
+    #hero-ceo h1 {
+      font-size:32px;
+      font-weight:900;
+      margin-bottom:6px;
+    }
 
-/* CEO */
-.ceo-box {
-  text-align:center; margin:30px 0;
-}
-.ceo-box img {
-  width:160px; height:160px; border-radius:50%;
-  border:5px solid #F2B840; object-fit:cover;
-}
-.ceo-name { margin-top:10px; font-size:22px; font-weight:900; }
-.ceo-title { color:#0A3D91; font-weight:700; }
+    #hero-ceo h2 {
+      font-size:18px;
+      color:#F2B840;
+      font-weight:700;
+      margin-top:0;
+    }
 
-/* FOOTER */
-#footer-ciza {
-  background:#071336; color:#e5e9f5; padding:50px 20px;
-  margin-top:60px;
-}
-.footer-inner {
-  max-width:1200px; margin:auto; display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px;
-}
-.footer-col h4 { color:#F2B840; margin-bottom:12px; }
-.footer-col a { color:white; display:block; margin-bottom:6px; text-decoration:none; }
-.footer-bottom { text-align:center; margin-top:20px; opacity:0.7; font-size:13px; }
-</style>
+    /* CONTAINER */
+    .container {
+      max-width:1100px;
+      margin:30px auto;
+      background:white;
+      padding:30px;
+      border-radius:14px;
+      box-shadow:0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    h3 {
+      color:#0A3D91;
+      font-weight:900;
+      border-left:4px solid #F2B840;
+      padding-left:10px;
+      margin-top:30px;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      border-left:3px solid #0A3D91;
+      padding-left:20px;
+      margin-top:15px;
+    }
+    .timeline div {
+      margin-bottom:15px;
+    }
+    .timeline span.year {
+      font-weight:900;
+      color:#0A3D91;
+    }
+
+    /* MULTILINGUE */
+    .lang-switch {
+      text-align:right;
+      margin-bottom:10px;
+    }
+    .lang-switch button {
+      padding:6px 12px;
+      border:1px solid #ddd;
+      border-radius:6px;
+      background:white;
+      cursor:pointer;
+    }
+
+    @media(max-width:700px){
+      #hero-ceo h1 { font-size:26px; }
+      #hero-ceo h2 { font-size:15px; }
+      #hero-ceo .gold-ring { width:150px; height:150px; }
+    }
+  </style>
+
+  <!-- Multilingue -->
+  <script>
+    function setLang(l) {
+      document.querySelectorAll("[data-fr]").forEach(el => {
+        el.innerHTML = el.dataset[l];
+      });
+      localStorage.setItem("lang_about", l);
+    }
+    window.onload = () => {
+      const l = localStorage.getItem("lang_about") || "fr";
+      setLang(l);
+    };
+  </script>
 
 </head>
 <body>
 
-<!-- HEADER -->
-<header id="header-premium">
-  <div class="header-inner">
-    <a href="index.html" class="logo-area">
-      <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/f0ef660926a519b9948fba5a8519b123b6145301/logo.png" class="logo-img">
-      <span class="logo-text">CIZA GROUP</span>
-    </a>
-
-    <nav class="nav-links">
-      <a href="index.html">Accueil</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="services.html">Services</a>
-      <a href="business-diaspora.html" class="diaspora">🌍 Diaspora</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+<!-- HERO CEO -->
+<section id="hero-ceo">
+  <div class="gold-ring">
+    <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/de6cc4921bc9028c6a71f5dd18a8c336662de67e/CEO.png" alt="CEO CIZA GROUP">
   </div>
 
-  <div id="mobileMenu">
-    <a href="index.html">Accueil</a>
-    <a href="a-propos.html">À propos</a>
-    <a href="services.html">Services</a>
-    <a href="business-diaspora.html">🌍 Diaspora</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</header>
+  <h1 data-fr="CEO — Fondateur de CIZA GROUP" data-en="CEO — Founder of CIZA GROUP"></h1>
 
-<!-- HERO -->
-<section id="hero-about">
-  <h1>À propos de CIZA GROUP</h1>
-  <p>L’écosystème moderne dédié au Burundi, à sa diaspora et au monde.</p>
+  <h2 data-fr="Construire le plus grand écosystème de services au Burundi"
+      data-en="Building the largest service ecosystem in Burundi"></h2>
 </section>
 
 <!-- CONTENU -->
 <div class="container">
 
-  <div class="section-title">Notre vision</div>
-  <p>
-    CIZA GROUP a été créé avec une ambition claire : construire un écosystème moderne,
-    digital et fiable au service du Burundi, de ses citoyens, des entreprises et de sa diaspora.
-  </p>
-
-  <div class="section-title">Notre mission</div>
-  <p>
-    Offrir des solutions accessibles, innovantes et sécurisées dans les secteurs essentiels :
-    mobilité, immobilier, paiement numérique, technologie, logistique, marketing,
-    formation et accompagnement professionnel.
-  </p>
-
-  <div class="section-title">Le fondateur</div>
-  <div class="ceo-box">
-    <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/de6cc4921bc9028c6a71f5dd18a8c336662de67e/CEO.png">
-    <div class="ceo-name">Ciza M.</div>
-    <div class="ceo-title">Fondateur & CEO — CIZA GROUP</div>
+  <!-- Changement de langue -->
+  <div class="lang-switch">
+    <button onclick="setLang('fr')">FR</button>
+    <button onclick="setLang('en')">EN</button>
   </div>
 
-  <div class="section-title">Valeurs</div>
-  <p>
-    🇧🇮 Engagement — 🌍 Innovation — 🤝 Confiance — 💼 Excellence — 🎯 Impact social  
-  </p>
+  <h3 data-fr="Notre vision" data-en="Our Vision"></h3>
+  <p data-fr="
+    CIZA GROUP est une entreprise innovante créée avec une ambition claire :
+    offrir au Burundi et à sa diaspora un écosystème complet de services modernes,
+    fiables et accessibles.  
+    Sous la direction du fondateur, le groupe développe des solutions qui
+    transforment la mobilité, le digital, l'immobilier, la logistique et les
+    services urbains.
+  " data-en="
+    CIZA GROUP is an innovative company created with a clear ambition:
+    to offer Burundi and its diaspora a complete ecosystem of modern, reliable,
+    and accessible services.  
+    Under the founder's leadership, the group develops solutions that transform
+    mobility, digital services, real estate, logistics, and urban services.
+  "></p>
+
+  <h3 data-fr="Nos services" data-en="Our Services"></h3>
+  <p data-fr="
+    Le groupe réunit plusieurs branches : CizaRide+, CizaPay+, CizaImmo,  
+    CizaDelivery, CizaLogistics, CizaTech, CizaMarketing, CizaAcademy,  
+    CizaAssist et CizaCarWash+.  
+    Ensemble, ces services créent une chaîne intégrée et cohérente.
+  " data-en="
+    The group brings together several branches: CizaRide+, CizaPay+, CizaImmo,
+    CizaDelivery, CizaLogistics, CizaTech, CizaMarketing, CizaAcademy,
+    CizaAssist and CizaCarWash+.  
+    Together, they form a coherent and integrated service chain.
+  "></p>
+
+  <h3 data-fr="Notre mission" data-en="Our Mission"></h3>
+  <p data-fr="
+    Simplifier le quotidien. Digitaliser les services du Burundi.
+    Offrir des solutions fiables, sécurisées et accessibles pour tous —
+    citoyens, entreprises et diaspora.
+  " data-en="
+    Simplify daily life. Digitize services in Burundi. Provide reliable,
+    secure and accessible solutions for citizens, businesses and the diaspora.
+  "></p>
+
+  <h3 data-fr="Historique & Croissance" data-en="History & Growth"></h3>
+  <div class="timeline">
+    <div>
+      <span class="year">2022 :</span>
+      <span data-fr="Début du projet — création du noyau CIZA GROUP"
+            data-en="Project launch — creation of the CIZA GROUP core"></span>
+    </div>
+    <div>
+      <span class="year">2023 :</span>
+      <span data-fr="Premières plateformes digitales"
+            data-en="First digital platforms launched"></span>
+    </div>
+    <div>
+      <span class="year">2024 :</span>
+      <span data-fr="Expansion : mobilité, immobilier, paiement"
+            data-en="Expansion: mobility, real estate, payment"></span>
+    </div>
+    <div>
+      <span class="year">2025 :</span>
+      <span data-fr="Écosystème complet + ouverture diaspora"
+            data-en="Full ecosystem + diaspora services"></span>
+    </div>
+  </div>
+
+  <h3 data-fr="Notre équipe" data-en="Our Team"></h3>
+  <p data-fr="
+    L’entreprise est portée par un réseau d'experts, de chauffeurs, de livreurs,
+    de techniciens, d'agents de terrain et de partenaires de la diaspora.
+  " data-en="
+    The company is supported by a network of experts, drivers, delivery agents,
+    technicians, field agents and diaspora partners.
+  "></p>
 
 </div>
-
-<!-- FOOTER -->
-<footer id="footer-ciza">
-  <div class="footer-inner">
-
-    <div class="footer-col">
-      <h4>CIZA GROUP</h4>
-      <p>Écosystème multiservices moderne</p>
-    </div>
-
-    <div class="footer-col">
-      <h4>Navigation</h4>
-      <a href="index.html">Accueil</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="services.html">Services</a>
-      <a href="business-diaspora.html">Diaspora</a>
-      <a href="contact.html">Contact</a>
-    </div>
-
-    <div class="footer-col">
-      <h4>Légal</h4>
-      <a href="legales.html">Mentions légales</a>
-      <a href="cgu.html">CGU</a>
-    </div>
-
-  </div>
-  <div class="footer-bottom">© 2025 CIZA GROUP — Tous droits réservés.</div>
-</footer>
-
-<script>
-function toggleMenu(){
-  const m=document.getElementById("mobileMenu");
-  m.style.display = (m.style.display==="flex") ? "none" : "flex";
-}
-</script>
 
 </body>
 </html>
