@@ -5,6 +5,7 @@
   <title>CIZA GROUP — Écosystème de Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicone.png">
 
   <style>
@@ -13,32 +14,37 @@
       font-family: Inter, Arial, sans-serif;
       background: #f4f6fa;
       color: #1a1f25;
+      overflow-x: hidden;
     }
 
     /* ================= HEADER ================= */
     header {
       background: #004AAD;
-      padding: 14px 22px;
+      padding: 12px 22px;
       position: sticky;
       top: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 3000;
+      z-index: 4000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
 
+    /* LOGO PREMIUM ADAPTATIF */
     .logo {
-      height: 80px; /* Version Premium Confirmée */
+      height: clamp(70px, 8vw, 90px); 
       width: auto;
     }
 
+    /* LANG SWITCH */
     .lang-switch {
       color: white;
       font-weight: 600;
       cursor: pointer;
+      padding: 4px 6px;
     }
 
-    /* MENU */
+    /* MENU BURGER */
     .menu-btn {
       width: 32px;
       cursor: pointer;
@@ -50,18 +56,19 @@
       border-radius: 3px;
     }
 
+    /* MENU LATÉRAL */
     nav {
       position: fixed;
       top: 0;
-      right: -270px;
-      width: 250px;
+      right: -280px;
+      width: 260px;
       height: 100%;
       background: #004AAD;
-      padding-top: 100px;
+      padding-top: 110px;
       transition: 0.35s;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 22px;
       z-index: 3500;
     }
     nav a {
@@ -72,7 +79,43 @@
     }
     .nav-open { right: 0 !important; }
 
-    /* ================= HERO PREMIUM ================= */
+    /* BOUTON DIASPORA PREMIUM */
+    .diaspora-btn {
+      padding: 8px 16px;
+      background: #F2B840;
+      border-radius: 40px;
+      margin-left: 14px;
+      font-weight: 800;
+      color: #000;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+
+    /* MOTION PAGE */
+    .page-enter {
+      animation: fadeSlide 0.6s ease-out;
+    }
+    @keyframes fadeSlide {
+      from { opacity:0; transform:translateY(20px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* GOLD LINE */
+    .gold-line {
+      width: 180px;
+      height: 4px;
+      background: #F2B840;
+      margin: 18px auto;
+      border-radius: 3px;
+      position: relative;
+      animation: shine 1.8s infinite linear;
+    }
+    @keyframes shine {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }    /* ================= HERO PREMIUM ================= */
     #hero {
       position: relative;
       height: 75vh;
@@ -85,12 +128,7 @@
       align-items: center;
       text-align: center;
       padding: 0 20px;
-      animation: fadeIn 0.6s ease-out forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      animation: fadeSlide 0.6s ease-out;
     }
 
     #hero .overlay {
@@ -101,7 +139,7 @@
 
     #hero h1 {
       position: relative;
-      font-size: 38px;
+      font-size: clamp(28px, 6vw, 40px);
       font-weight: 900;
       color: white;
       z-index: 2;
@@ -109,22 +147,14 @@
       text-shadow: 0 4px 12px rgba(0,0,0,0.55);
     }
 
-    .gold-line {
-      width: 180px;
-      height: 4px;
-      background: #F2B840;
-      margin: 18px auto;
-      border-radius: 3px;
-      z-index: 2;
-      position: relative;
-    }
-
     #hero h2 {
       position: relative;
-      font-size: 20px;
+      font-size: clamp(16px, 4vw, 22px);
       font-weight: 700;
       color: #ffffff;
       z-index: 2;
+      margin-top: 8px;
+      letter-spacing: 1px;
     }
 
     .hero-btn {
@@ -132,14 +162,19 @@
       margin-top: 26px;
       z-index: 2;
       background: #F2B840;
-      color: #0a0a0a;
-      padding: 14px 30px;
+      color: #000;
+      padding: 14px 32px;
       border-radius: 50px;
       font-size: 18px;
       font-weight: 800;
       text-decoration: none;
       display: inline-block;
       box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+      transition: 0.3s;
+    }
+
+    .hero-btn:hover {
+      transform: scale(1.05);
     }
 
     /* ================= DOMAINES ================= */
@@ -148,6 +183,7 @@
       max-width: 1200px;
       margin: auto;
     }
+
     .domaines-section h2 {
       text-align: center;
       font-size: 32px;
@@ -155,11 +191,14 @@
       color: #004AAD;
       margin-bottom: 35px;
     }
+
     .domaines-grid {
       display: grid;
-      gap: 20px;
+      gap: 22px;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
+
+    /* CARD PREMIUM ZOOM */
     .domaine-card {
       background: white;
       border-radius: 14px;
@@ -171,9 +210,15 @@
       color: #004AAD;
       cursor: pointer;
       box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
-    /* ================= WIDGETS PREMIUM ================= */
+    .domaine-card:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+    }
+
+    /* ================= WIDGETS (TEMPÉRATURE) ================= */
     .widgets {
       max-width: 1200px;
       margin: 40px auto;
@@ -182,152 +227,82 @@
       gap: 22px;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
+
     .widget {
       background: white;
       border-radius: 14px;
-      padding: 20px;
+      padding: 22px;
       text-align: center;
       box-shadow: 0 5px 16px rgba(0,0,0,0.06);
     }
+
     .widget h3 {
       color: #004AAD;
       font-size: 18px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       font-weight: 900;
     }
+
     .temp {
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 900;
       color: #F2B840;
-    }
-
-    /* ================= APPLICATION PREMIUM ================= */
-    #app-section {
-      background: linear-gradient(135deg,#F9E7B5,#F7E2A0);
-      padding: 80px 20px;
-    }
-    #app-section .container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      gap: 50px;
-      flex-wrap: wrap;
-    }
-    #app-section h2 {
-      font-size: 34px;
-      font-weight: 900;
-      color: #004AAD;
-    }
-    #app-section p {
-      font-size: 18px;
-      line-height: 1.6;
-      font-weight: 500;
-    }
-    #app-section img {
-      width: 100%;
-      max-width: 520px;
-      border-radius: 18px;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.18);
-      object-fit: cover;
-    }
-
-    /* ================= FOOTER ================= */
-    footer {
-      background: #0A0F1A;
-      color: white;
-      padding: 50px 20px;
-      margin-top: 60px;
-    }
-    .footer-grid {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      gap: 30px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
-    .footer-title {
-      color: #F2B840;
-      font-size: 20px;
-      font-weight: 900;
-    }
-    .social-icons img {
-      width: 36px;
-      margin-right: 10px;
-    }
-
-    /* COOKIE NOTICE */
-    #cookie-box {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: #1a1f25;
-      color: white;
-      padding: 16px;
-      text-align: center;
-      display: none;
-      z-index: 9999;
-    }
-    #cookie-box button {
-      margin-left: 20px;
-      padding: 10px 20px;
-      background: #F2B840;
-      border: none;
-      border-radius: 6px;
-      font-weight: 900;
-      cursor: pointer;
     }
   </style>
 
+  <!-- MULTILINGUE -->
   <script>
+    function setLang(l){
+      document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = el.dataset[l];
+      });
+      localStorage.setItem("lang", l);
+    }
+    document.addEventListener("DOMContentLoaded", ()=>{
+      const l = localStorage.getItem("lang") || "fr";
+      setLang(l);
+    });
+
     function toggleMenu(){
       document.getElementById("nav").classList.toggle("nav-open");
     }
 
-    /* METEO LIVE */
+    /* WEATHER */
     async function loadWeather() {
       const cities = {
-        burundi: "Bujumbura",
-        montreal: "Montreal"
+        burundi: {lat:-3.38, lon:29.36},
+        montreal: {lat:45.5019, lon:-73.5674}
       };
-      
-      for (let key in cities) {
+
+      for (let city in cities) {
         try {
-          const url = `https://api.open-meteo.com/v1/forecast?latitude=-3.38&longitude=29.36&current_weather=true`;
+          const {lat, lon} = cities[city];
+          const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`;
           const res = await fetch(url);
           const data = await res.json();
+
           const temp = Math.round(data.current_weather.temperature);
-          document.getElementById(`temp-${key}`).innerText = temp + "°C";
+          document.getElementById(`temp-${city}`).innerText = temp + "°C";
+
         } catch {
-          document.getElementById(`temp-${key}`).innerText = "--°C";
+          document.getElementById(`temp-${city}`).innerText = "--°C";
         }
       }
     }
 
-    /* COOKIE BOX */
-    window.onload = () => {
-      loadWeather();
-      if (!localStorage.getItem("cookies_accepted")) {
-        document.getElementById("cookie-box").style.display = "block";
-      }
-    };
-
-    function acceptCookies() {
-      localStorage.setItem("cookies_accepted", "yes");
-      document.getElementById("cookie-box").style.display = "none";
-    }
+    window.onload = loadWeather;
   </script>
-
 </head>
-<body>
+
+<body class="page-enter">
 
 <header>
   <img src="logotransparent.png" class="logo">
 
   <div>
-    <span class="lang-switch">FR</span> |
-    <span class="lang-switch">EN</span>
+    <span class="lang-switch" onclick="setLang('fr')">FR</span> |
+    <span class="lang-switch" onclick="setLang('en')">EN</span>
+    <a href="business-diaspora.html" class="diaspora-btn">Espace Diaspora</a>
   </div>
 
   <div class="menu-btn" onclick="toggleMenu()">
@@ -336,27 +311,33 @@
 </header>
 
 <nav id="nav">
-  <a href="index.html">Accueil</a>
-  <a href="domaines.html">Domaines</a>
-  <a href="a-propos.html">À propos</a>
-  <a href="business-diaspora.html">Diaspora</a>
-  <a href="contact.html">Contact</a>
+  <a href="index.html" data-fr="Accueil" data-en="Home"></a>
+  <a href="domaines.html" data-fr="Domaines" data-en="Domains"></a>
+  <a href="a-propos.html" data-fr="À propos" data-en="About"></a>
+  <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora"></a>
+  <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="overlay"></div>
 
-  <h1>Écosystème de Services | Burundi</h1>
-  <div class="gold-line"></div>
-  <h2>Mobilité | Immobilier | Logistique | Technologie</h2>
+  <h1 data-fr="Écosystème de Services | Burundi"
+      data-en="Ecosystem of Services | Burundi"></h1>
 
-  <a href="domaines.html" class="hero-btn">Découvrir nos domaines</a>
+  <div class="gold-line"></div>
+
+  <h2 data-fr="Mobilité | Immobilier | Logistique | Technologie"
+      data-en="Mobility | Real Estate | Logistics | Technology"></h2>
+
+  <a href="domaines.html" class="hero-btn"
+     data-fr="Découvrir nos domaines"
+     data-en="Explore Our Domains"></a>
 </section>
 
 <!-- DOMAINES -->
 <section class="domaines-section">
-  <h2>Nos Domaines</h2>
+  <h2 data-fr="Nos Domaines" data-en="Our Domains"></h2>
 
   <div class="domaines-grid">
     <div class="domaine-card" onclick="location.href='domaines.html#immobilier'">Immobilier</div>
@@ -366,7 +347,7 @@
   </div>
 </section>
 
-<!-- WIDGETS PREMIUM -->
+<!-- WIDGETS -->
 <div class="widgets">
   <div class="widget">
     <h3>Météo — Burundi</h3>
@@ -377,73 +358,236 @@
     <h3>Météo — Montréal</h3>
     <div id="temp-montreal" class="temp">--°C</div>
   </div>
-</div>
+</div><!-- ===================== SECTION APPLICATION PREMIUM ===================== -->
+<section id="app-section" style="
+  background: linear-gradient(135deg, #F9E7B5 0%, #F7E2A0 100%);
+  padding: 80px 20px;
+">
+  <div style="
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+  ">
 
-<!-- APPLICATION SECTION -->
-<section id="app-section">
-  <div class="container">
+    <!-- TEXTE -->
+    <div style="flex: 1; min-width: 320px;">
+      <h2 style="
+        font-size: 34px;
+        font-weight: 900;
+        color: #004AAD;
+        margin-bottom: 20px;
+      ">
+        L’Écosystème CIZA GROUP, dans votre main
+      </h2>
 
-    <div style="flex:1;min-width:320px;">
-      <h2>L’Écosystème CIZA GROUP, dans votre main</h2>
-
-      <p>
-        Une plateforme unique qui réunit Mobilité, Immobilier, Logistique et Technologie.<br><br>
-        Pensée pour soutenir la vision <strong>Burundi 2040–2060</strong>, connecter la diaspora et simplifier le quotidien.<br><br>
+      <p style="
+        font-size: 18px;
+        line-height: 1.6;
+        color: #1a1f25;
+        font-weight: 500;
+        margin-bottom: 25px;
+      ">
+        Une plateforme unique qui réunit Mobilité, Immobilier, Logistique et Technologie.
+        <br><br>
+        Pensée pour soutenir la vision <strong>Burundi 2040–2060</strong>, connecter la diaspora et simplifier le quotidien.
+        <br><br>
         Une innovation qui transforme chaque domaine, pour un Burundi moderne, digital et accessible à tous.
       </p>
     </div>
 
-    <div style="flex:1;min-width:320px;display:flex;justify-content:center;">
-      <img src="0CD5D803-FB19-4139-B96D-CABF88F5964C.png" alt="App CIZA GROUP">
+    <!-- IMAGE -->
+    <div style="
+      flex: 1;
+      min-width: 320px;
+      display: flex;
+      justify-content: center;
+    ">
+      <img src="0CD5D803-FB19-4139-B96D-CABF88F5964C.png" alt="App CIZA GROUP" style="
+        width: 100%;
+        max-width: 520px;
+        border-radius: 18px;
+        box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+        object-fit: cover;
+      ">
     </div>
 
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
+<!-- ===================== FOOTER PREMIUM ===================== -->
+<footer style="background:#0A0F1A; color:white; padding:60px 20px; margin-top:70px;">
+
+  <div style="
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  ">
 
     <div>
-      <h3 class="footer-title">CIZA GROUP</h3>
+      <h3 style="color:#F2B840;font-size:20px;font-weight:900;">CIZA GROUP</h3>
       <p>Écosystème de Services — Burundi | Canada</p>
       <p>🇧🇮 +257 79945007</p>
       <p>🇨🇦 +1 514 502 9503</p>
       <p>Email : infos@cizagroup.com</p>
 
-      <div class="social-icons">
-        <a href="https://www.instagram.com/cizagroup_official"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"></a>
-        <a href="https://www.facebook.com"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"></a>
-        <a href="https://www.youtube.com/@Cizagroup"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"></a>
+      <!-- ICÔNES RÉELLES -->
+      <div style="margin-top:10px;">
+        <a href="https://www.instagram.com/cizagroup_official" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" style="width:36px;margin-right:10px;">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" style="width:36px;margin-right:10px;">
+        </a>
+        <a href="https://www.youtube.com/@Cizagroup" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" style="width:36px;">
+        </a>
       </div>
     </div>
 
     <div>
-      <h3 class="footer-title">Navigation</h3>
-      <a href="index.html">Accueil</a>
-      <a href="domaines.html">Domaines</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="contact.html">Contact</a>
+      <h3 style="color:#F2B840;font-size:20px;font-weight:900;">Navigation</h3>
+      <a href="index.html" style="color:#dfe6f5;text-decoration:none;display:block;margin:6px 0;">Accueil</a>
+      <a href="domaines.html" style="color:#dfe6f5;text-decoration:none;display:block;margin:6px 0;">Domaines</a>
+      <a href="a-propos.html" style="color:#dfe6f5;text-decoration:none;display:block;margin:6px 0;">À propos</a>
+      <a href="contact.html" style="color:#dfe6f5;text-decoration:none;display:block;margin:6px 0;">Contact</a>
     </div>
 
     <div>
-      <h3 class="footer-title">Légal</h3>
-      <a href="legales.html">Mentions légales</a>
-      <a href="confidentialite.html">Confidentialité</a>
+      <h3 style="color:#F2B840;font-size:20px;font-weight:900;">Légal</h3>
+      <a href="legales.html" style="color:#dfe6f5;text-decoration:none;display:block;margin:6px 0;">Mentions légales</a>
+      <a href="confidentialite.html" style="color:#dfe6f5;text-decoration:none;display:block;margin:6px 0;">Confidentialité</a>
     </div>
 
   </div>
 
-  <div class="footer-bottom">
+  <div style="text-align:center;margin-top:25px;opacity:0.7;font-size:14px;">
     © 2026 CIZA GROUP — Écosystème de Services | Burundi. Tous droits réservés.
   </div>
 </footer>
 
-<!-- COOKIE BANNER -->
-<div id="cookie-box">
+<!-- ===================== COOKIE BANNER ===================== -->
+<div id="cookie-box" style="
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#1a1f25;
+  color:white;
+  padding:18px;
+  text-align:center;
+  display:none;
+  z-index:9999;
+  font-size:15px;
+">
   Ce site utilise des cookies pour améliorer votre expérience.
-  <button onclick="acceptCookies()">Accepter</button>
+  <button onclick="acceptCookies()" style="
+    margin-left:20px;
+    padding:10px 22px;
+    background:#F2B840;
+    border:none;
+    border-radius:6px;
+    font-weight:900;
+    cursor:pointer;
+  ">Accepter</button>
 </div>
 
+<script>
+  if (!localStorage.getItem("cookies_accepted")) {
+    document.getElementById("cookie-box").style.display = "block";
+  }
+  function acceptCookies() {
+    localStorage.setItem("cookies_accepted","yes");
+    document.getElementById("cookie-box").style.display = "none";
+  }
+</script><!-- ===================== MULTILINGUE PREMIUM ===================== -->
+<script>
+  function setLang(l) {
+    document.querySelectorAll("[data-fr]").forEach(el => {
+      el.innerHTML = el.dataset[l];
+    });
+    localStorage.setItem("lang", l);
+  }
+
+  // Charger la langue
+  window.addEventListener("load", () => {
+    const lang = localStorage.getItem("lang") || "fr";
+    setLang(lang);
+  });
+</script>
+
+<!-- ===================== PAGE TRANSITION ANIMATION ===================== -->
+<style>
+  .page-transition {
+    position: fixed;
+    inset: 0;
+    background: #004AAD;
+    z-index: 999999;
+    transform: translateY(100%);
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  .fade-page {
+    animation: fadePage 0.6s ease-out;
+  }
+
+  @keyframes fadePage {
+    from { opacity:0; transform:translateY(20px); }
+    to { opacity:1; transform:translateY(0); }
+  }
+
+  /* ANIMATION PREMIUM DES DOMAINES (ZOOM) */
+  .domaine-card {
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .domaine-card:hover {
+    transform: scale(1.06);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+  }
+
+  /* FIX RESPONSIVE LOGO & HEADER */
+  @media(max-width: 450px){
+    header {
+      padding: 12px 14px;
+    }
+    .logo {
+      height: 68px; /* plus grand sur mobile */
+    }
+    #hero h1 { font-size: 26px; }
+    #hero h2 { font-size: 14px; }
+    .gold-line { width: 130px; }
+    .hero-btn { font-size: 15px; padding: 12px 22px; }
+  }
+</style>
+
+<script>
+  /* Page transition à CHAQUE changement de page */
+  const links = document.querySelectorAll("a[href]");
+  links.forEach(a => {
+    const url = a.getAttribute("href");
+    if (!url.startsWith("#") && !url.startsWith("mailto:") && !url.startsWith("tel:")) {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        const transition = document.createElement("div");
+        transition.className = "page-transition";
+        document.body.appendChild(transition);
+        setTimeout(() => {
+          window.location.href = url;
+        }, 450);
+      });
+    }
+  });
+</script>
+
+<!-- ===================== FIN DU DOCUMENT ===================== -->
 </body>
 </html>
