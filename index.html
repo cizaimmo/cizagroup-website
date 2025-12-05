@@ -29,7 +29,7 @@
     }
 
     .logo {
-      height: 70px;
+      height: 110px;
       width: auto;
     }
 
@@ -37,11 +37,12 @@
       color: white;
       font-weight: 600;
       cursor: pointer;
+      font-size: 18px;
     }
 
     /* ============ MENU HAMBURGER ============ */
     .menu-btn {
-      width: 32px;
+      width: 36px;
       cursor: pointer;
       display: block;
     }
@@ -49,29 +50,29 @@
       width: 100%;
       height: 4px;
       background: #F2B840;
-      margin: 5px 0;
+      margin: 6px 0;
       border-radius: 2px;
     }
 
     nav {
       position: fixed;
       top: 0;
-      right: -270px;
-      width: 250px;
+      right: -280px;
+      width: 260px;
       height: 100%;
       background: #004AAD;
-      padding-top: 90px;
+      padding-top: 120px;
       transition: 0.35s;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 24px;
       z-index: 3500;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-size: 20px;
+      font-size: 22px;
       padding-left: 20px;
     }
 
@@ -80,14 +81,15 @@
     /* ===================== HERO ===================== */
     #hero {
       position: relative;
-      height: 75vh;
-      min-height: 480px;
+      height: 78vh;
+      min-height: 500px;
       background-image: url('hero-burundi.png');
       background-size: cover;
       background-position: center;
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       text-align: center;
       padding: 0 20px;
     }
@@ -95,47 +97,48 @@
     #hero .overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.28);
+      background: rgba(0,0,0,0.35);
     }
 
     #hero h1 {
       position: relative;
-      font-size: 36px;
+      font-size: 40px;
       font-weight: 900;
       color: white;
       margin: 0;
-      text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+      text-shadow: 0 3px 8px rgba(0,0,0,0.6);
       z-index: 2;
     }
 
-    /* Ligne dorée */
     .gold-line {
-      width: 160px;
+      width: 180px;
       height: 3px;
       background: #F2B840;
-      margin: 14px auto;
+      margin: 16px auto;
       border-radius: 2px;
+      position: relative;
+      z-index: 2;
     }
 
     #hero h2 {
       position: relative;
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
-      color: #ffffff;
+      color: white;
       z-index: 2;
-      margin-top: 8px;
+      margin-top: 10px;
       letter-spacing: 1px;
     }
 
     .hero-btn {
       position: relative;
-      margin-top: 26px;
+      margin-top: 28px;
       z-index: 2;
       background: #F2B840;
       color: #0a0a0a;
-      padding: 14px 30px;
+      padding: 15px 34px;
       border-radius: 50px;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 800;
       cursor: pointer;
       text-decoration: none;
@@ -144,21 +147,21 @@
     }
 
     @media(max-width: 700px){
-      #hero h1 { font-size: 26px; }
+      #hero h1 { font-size: 28px; }
       #hero h2 { font-size: 15px; }
-      .hero-btn { font-size: 16px; padding: 12px 24px; }
+      .hero-btn { font-size: 16px; padding: 12px 22px; }
     }
 
     /* ===================== DOMAINES ===================== */
     .domaines-section {
-      padding: 55px 20px;
+      padding: 60px 20px;
       max-width: 1200px;
       margin: auto;
     }
 
     .domaines-section h2 {
       text-align: center;
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 900;
       color: #004AAD;
       margin-bottom: 35px;
@@ -166,7 +169,7 @@
 
     .domaines-grid {
       display: grid;
-      gap: 20px;
+      gap: 22px;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
@@ -180,61 +183,72 @@
       font-size: 20px;
       color: #004AAD;
       cursor: pointer;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
       transition: 0.3s;
     }
 
     .domaine-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.17);
     }
 
-    /* ===================== WIDGETS (Optimisés) ===================== */
+    /* ========= PARTENARIAT (IMAGE FOURNIE) ========== */
+    .partners {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .partners img {
+      max-width: 80%;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    /* ========= WIDGETS (2 BOXS OPTIMISÉS) ========= */
     .widgets {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 40px auto;
       padding: 0 20px;
       display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
     .widget {
       background: white;
       border-radius: 14px;
-      box-shadow: 0 5px 16px rgba(0,0,0,0.06);
-      overflow: hidden;
-      height: 240px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
     }
 
     .widget h3 {
-      background: #004AAD;
-      color: white;
-      padding: 10px;
-      margin: 0;
-      text-align: center;
-      font-size: 17px;
+      margin: 0 0 10px 0;
+      color: #004AAD;
+      font-weight: 900;
+      font-size: 18px;
     }
 
-    iframe {
-      width: 100%;
-      height: 200px;
-      border: 0;
+    .weather-value {
+      font-size: 26px;
+      font-weight: 900;
+      color: #F2B840;
     }
 
-    /* ===================== FOOTER ===================== */
+    /* ========= FOOTER ========== */
     footer {
       background: #0A0F1A;
       color: white;
-      margin-top: 50px;
-      padding: 50px 20px;
+      margin-top: 60px;
+      padding: 60px 20px;
     }
 
     .footer-grid {
       max-width: 1200px;
       margin: auto;
       display: grid;
-      gap: 30px;
+      gap: 35px;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
@@ -245,19 +259,35 @@
       margin-bottom: 10px;
     }
 
-    footer a {
-      color: #dfe6f5;
-      font-size: 16px;
-      text-decoration: none;
-      display: block;
-      margin: 6px 0;
-    }
-
     .footer-bottom {
       text-align: center;
       margin-top: 25px;
       opacity: 0.7;
       font-size: 14px;
+    }
+
+    /* ========= COOKIES BANNER ========= */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #0A0F1A;
+      color: white;
+      padding: 18px;
+      text-align: center;
+      display: none;
+      z-index: 9999;
+    }
+
+    #cookie-banner button {
+      background: #F2B840;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+      margin-left: 10px;
     }
 
     /* WHATSAPP */
@@ -279,10 +309,8 @@
     .whatsapp-btn img {
       width: 35px;
     }
-
   </style>
 
-  <!-- SCRIPT MULTILINGUE -->
   <script>
     function setLang(l) {
       document.querySelectorAll("[data-fr]").forEach(el=>{
@@ -294,17 +322,33 @@
     window.onload = () => {
       const l = localStorage.getItem("lang") || "fr";
       setLang(l);
+
+      if (!localStorage.getItem("cookiesAccepted")) {
+        document.getElementById("cookie-banner").style.display = "block";
+      }
+
+      loadWeather();
     };
 
     function toggleMenu(){
       document.getElementById("nav").classList.toggle("nav-open");
+    }
+
+    function acceptCookies(){
+      localStorage.setItem("cookiesAccepted", true);
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    /* ===== MÉTÉO SIMPLIFIÉE ===== */
+    function loadWeather(){
+      document.getElementById("burundi-temp").innerHTML = "☀️ 28°C — Bujumbura";
+      document.getElementById("canada-temp").innerHTML = "⛅ 6°C — Montréal";
     }
   </script>
 
 </head>
 <body>
 
-<!-- ===================== HEADER ===================== -->
 <header>
   <img src="logotransparent.png" class="logo">
 
@@ -318,7 +362,6 @@
   </div>
 </header>
 
-<!-- ===================== MENU ===================== -->
 <nav id="nav">
   <a href="index.html" data-fr="Accueil" data-en="Home"></a>
   <a href="domaines.html" data-fr="Domaines" data-en="Domains"></a>
@@ -358,28 +401,25 @@
   </div>
 </section>
 
-<!-- ===================== WIDGETS ===================== -->
+<!-- ============ PARTENARIAT ============ -->
+<section class="partners">
+  <h2 style="color:#004AAD; font-weight:900;">Nos Partenaires</h2>
+  <img src="0CD5D803-FB19-4139-B96D-CABF88F5964C.png" alt="Partenaires">
+</section>
+
+<!-- ============ WIDGETS (MÉTÉO / NEWS) ============ -->
 <div class="widgets">
 
   <div class="widget">
-    <h3 data-fr="Météo — Burundi" data-en="Weather — Burundi"></h3>
-    <iframe src="https://widget.timeanddate.com/weather/?n=3448&c=bdi&hdr=0&half=0"></iframe>
+    <h3>Météo — Burundi</h3>
+    <div id="burundi-temp" class="weather-value">...</div>
   </div>
 
   <div class="widget">
-    <h3 data-fr="Météo — Canada" data-en="Weather — Canada"></h3>
-    <iframe src="https://widget.timeanddate.com/weather/?n=165&c=can&hdr=0&half=0"></iframe>
+    <h3>Météo — Canada</h3>
+    <div id="canada-temp" class="weather-value">...</div>
   </div>
 
-  <div class="widget">
-    <h3 data-fr="Actualités — Burundi" data-en="News — Burundi"></h3>
-    <iframe src="https://www.burundinews.net/"></iframe>
-  </div>
-
-  <div class="widget">
-    <h3 data-fr="Actualités — Canada" data-en="News — Canada"></h3>
-    <iframe src="https://www.cbc.ca/news"></iframe>
-  </div>
 </div>
 
 <!-- ===================== FOOTER ===================== -->
@@ -394,31 +434,25 @@
       <p>🇧🇮 +257 79945007</p>
       <p>🇨🇦 +1 514 502 9503</p>
       <p>Email : infos@cizagroup.com</p>
-
-      <div class="social-icons">
-        <a href="https://www.instagram.com/cizagroup_official"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"></a>
-        <a href="https://www.facebook.com"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"></a>
-        <a href="https://www.youtube.com/@Cizagroup"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"></img></a>
-      </div>
     </div>
 
     <div>
-      <h3 class="footer-title" data-fr="Navigation" data-en="Navigation"></h3>
-      <a href="index.html" data-fr="Accueil" data-en="Home"></a>
-      <a href="domaines.html" data-fr="Domaines" data-en="Domains"></a>
-      <a href="a-propos.html" data-fr="À propos" data-en="About"></a>
-      <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
+      <h3 class="footer-title">Navigation</h3>
+      <a href="index.html">Accueil</a>
+      <a href="domaines.html">Domaines</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html">Contact</a>
     </div>
 
     <div>
-      <h3 class="footer-title" data-fr="Légal" data-en="Legal"></h3>
-      <a href="legales.html" data-fr="Mentions légales" data-en="Legal Notice"></a>
-      <a href="confidentialite.html" data-fr="Confidentialité" data-en="Privacy Policy"></a>
+      <h3 class="footer-title">Légal</h3>
+      <a href="legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Confidentialité</a>
     </div>
 
     <div>
-      <h3 class="footer-title" data-fr="Diaspora" data-en="Diaspora"></h3>
-      <a href="business-diaspora.html" data-fr="Services Diaspora" data-en="Diaspora Services"></a>
+      <h3 class="footer-title">Diaspora</h3>
+      <a href="business-diaspora.html">Services Diaspora</a>
     </div>
 
   </div>
@@ -433,6 +467,12 @@
 <a class="whatsapp-btn" href="https://wa.me/15145029503" target="_blank">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
 </a>
+
+<!-- COOKIES -->
+<div id="cookie-banner">
+  Ce site utilise des cookies pour améliorer votre expérience.
+  <button onclick="acceptCookies()">Accepter</button>
+</div>
 
 </body>
 </html>
