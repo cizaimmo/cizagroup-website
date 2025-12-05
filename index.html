@@ -12,14 +12,14 @@
     body {
       margin: 0;
       font-family: Inter, Arial, sans-serif;
-      background: #f5f7fa;
+      background: #f4f6fa;
       color: #1a1f25;
     }
 
     /* ===================== HEADER ===================== */
     header {
       background: #004AAD;
-      padding: 10px 18px;
+      padding: 12px 20px;
       position: sticky;
       top: 0;
       display: flex;
@@ -29,7 +29,7 @@
     }
 
     .logo {
-      height: 60px;
+      height: 70px;
       width: auto;
     }
 
@@ -37,7 +37,6 @@
       color: white;
       font-weight: 600;
       cursor: pointer;
-      margin-right: 10px;
     }
 
     /* ============ MENU HAMBURGER ============ */
@@ -81,55 +80,73 @@
     /* ===================== HERO ===================== */
     #hero {
       position: relative;
-      height: 70vh;
-      min-height: 460px;
-      background-image: url('hero-premium.png');
+      height: 75vh;
+      min-height: 480px;
+      background-image: url('hero-burundi.png');
       background-size: cover;
       background-position: center;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
+      padding: 0 20px;
     }
 
     #hero .overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.25);
+      background: rgba(0,0,0,0.28);
     }
 
     #hero h1 {
       position: relative;
-      font-size: 34px;
+      font-size: 36px;
       font-weight: 900;
       color: white;
-      text-shadow: 0 3px 8px rgba(0,0,0,0.4);
-      z-index: 2;
       margin: 0;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+      z-index: 2;
+    }
+
+    /* Ligne dorée */
+    .gold-line {
+      width: 160px;
+      height: 3px;
+      background: #F2B840;
+      margin: 14px auto;
+      border-radius: 2px;
     }
 
     #hero h2 {
       position: relative;
       font-size: 20px;
       font-weight: 700;
-      color: #F2B840;
+      color: #ffffff;
       z-index: 2;
-      margin-top: 12px;
+      margin-top: 8px;
+      letter-spacing: 1px;
     }
 
     .hero-btn {
       position: relative;
-      margin-top: 22px;
+      margin-top: 26px;
       z-index: 2;
       background: #F2B840;
       color: #0a0a0a;
-      padding: 12px 26px;
+      padding: 14px 30px;
       border-radius: 50px;
-      font-size: 17px;
-      font-weight: 700;
+      font-size: 18px;
+      font-weight: 800;
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    }
+
+    @media(max-width: 700px){
+      #hero h1 { font-size: 26px; }
+      #hero h2 { font-size: 15px; }
+      .hero-btn { font-size: 16px; padding: 12px 24px; }
     }
 
     /* ===================== DOMAINES ===================== */
@@ -172,39 +189,40 @@
       box-shadow: 0 8px 28px rgba(0,0,0,0.12);
     }
 
-    /* ===================== WIDGETS (light) ===================== */
+    /* ===================== WIDGETS (Optimisés) ===================== */
     .widgets {
       max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
       display: grid;
-      gap: 25px;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
     .widget {
       background: white;
       border-radius: 14px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      box-shadow: 0 5px 16px rgba(0,0,0,0.06);
       overflow: hidden;
+      height: 240px;
     }
 
     .widget h3 {
       background: #004AAD;
       color: white;
-      padding: 12px;
+      padding: 10px;
       margin: 0;
-      font-size: 18px;
       text-align: center;
+      font-size: 17px;
     }
 
     iframe {
       width: 100%;
-      height: 260px;
+      height: 200px;
       border: 0;
     }
 
-    /* ===================== FOOTER PREMIUM ===================== */
+    /* ===================== FOOTER ===================== */
     footer {
       background: #0A0F1A;
       color: white;
@@ -224,7 +242,7 @@
       color: #F2B840;
       font-weight: 900;
       font-size: 20px;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
 
     footer a {
@@ -233,12 +251,6 @@
       text-decoration: none;
       display: block;
       margin: 6px 0;
-    }
-
-    /* SOCIAL ICONS */
-    .social-icons img {
-      width: 32px;
-      margin-right: 10px;
     }
 
     .footer-bottom {
@@ -267,6 +279,7 @@
     .whatsapp-btn img {
       width: 35px;
     }
+
   </style>
 
   <!-- SCRIPT MULTILINGUE -->
@@ -320,12 +333,17 @@
 <section id="hero">
   <div class="overlay"></div>
 
-  <div>
-    <h1 data-fr="Écosystème de Services | Burundi" data-en="Ecosystem of Services | Burundi"></h1>
-    <h2 data-fr="Mobilité | Immobilier | Logistique | Technologie" data-en="Mobility | Real Estate | Logistics | Technology"></h2>
+  <h1 data-fr="Écosystème de Services | Burundi"
+      data-en="Ecosystem of Services | Burundi"></h1>
 
-    <a href="domaines.html" class="hero-btn" data-fr="Découvrir nos domaines" data-en="Explore Our Domains"></a>
-  </div>
+  <div class="gold-line"></div>
+
+  <h2 data-fr="Mobilité | Immobilier | Logistique | Technologie"
+      data-en="Mobility | Real Estate | Logistics | Technology"></h2>
+
+  <a href="domaines.html" class="hero-btn"
+     data-fr="Découvrir nos domaines"
+     data-en="Explore Our Domains"></a>
 </section>
 
 <!-- ===================== DOMAINES ===================== -->
@@ -333,23 +351,10 @@
   <h2 data-fr="Nos Domaines" data-en="Our Domains"></h2>
 
   <div class="domaines-grid">
-
-    <div class="domaine-card" onclick="location.href='domaines.html#immobilier'">
-      Immobilier
-    </div>
-
-    <div class="domaine-card" onclick="location.href='domaines.html#logistique'">
-      Logistique
-    </div>
-
-    <div class="domaine-card" onclick="location.href='domaines.html#mobilite'">
-      Mobilité
-    </div>
-
-    <div class="domaine-card" onclick="location.href='domaines.html#tech'">
-      Technologie
-    </div>
-
+    <div class="domaine-card" onclick="location.href='domaines.html#immobilier'">Immobilier</div>
+    <div class="domaine-card" onclick="location.href='domaines.html#logistique'">Logistique</div>
+    <div class="domaine-card" onclick="location.href='domaines.html#mobilite'">Mobilité</div>
+    <div class="domaine-card" onclick="location.href='domaines.html#tech'">Technologie</div>
   </div>
 </section>
 
@@ -375,7 +380,6 @@
     <h3 data-fr="Actualités — Canada" data-en="News — Canada"></h3>
     <iframe src="https://www.cbc.ca/news"></iframe>
   </div>
-
 </div>
 
 <!-- ===================== FOOTER ===================== -->
@@ -385,7 +389,8 @@
 
     <div>
       <h3 class="footer-title">CIZA GROUP</h3>
-      <p data-fr="Écosystème de Services — Burundi | Canada" data-en="Service Ecosystem — Burundi | Canada"></p>
+      <p data-fr="Écosystème de Services — Burundi | Canada"
+         data-en="Service Ecosystem — Burundi | Canada"></p>
       <p>🇧🇮 +257 79945007</p>
       <p>🇨🇦 +1 514 502 9503</p>
       <p>Email : infos@cizagroup.com</p>
@@ -393,7 +398,7 @@
       <div class="social-icons">
         <a href="https://www.instagram.com/cizagroup_official"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"></a>
         <a href="https://www.facebook.com"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"></a>
-        <a href="https://www.youtube.com/@Cizagroup"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"></a>
+        <a href="https://www.youtube.com/@Cizagroup"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"></img></a>
       </div>
     </div>
 
