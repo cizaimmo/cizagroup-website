@@ -1,241 +1,84 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<title>Diaspora Business — CIZA GROUP</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ===================== DIASPORA BUSINESS PREMIUM ===================== -->
 
 <style>
-body {
-  margin:0;
-  font-family: Inter, Arial, sans-serif;
-  background:#f5f7fc;
-  color:#1b2432;
-}
+  .diaspora-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+  }
 
-/* HEADER */
-header {
-  background:white;
-  padding:12px 22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border-bottom:1px solid #e5e7eb;
-  position:sticky;
-  top:0;
-  z-index:100;
-}
-header .brand { display:flex; align-items:center; gap:12px; }
-header img { width:48px; height:48px; object-fit:contain; }
-nav a {
-  margin-left:15px;
-  text-decoration:none;
-  font-weight:600;
-  color:#0A3D91;
-}
+  .diaspora-title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #004AAD;
+    margin-bottom: 15px;
+  }
 
-/* HERO */
-#hero-diaspora {
-  background:url('herodiaspora.png') center/cover;
-  padding:90px 20px;
-  text-align:center;
-  color:white;
-  position:relative;
-}
-#hero-diaspora::after {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.45);
-}
-#hero-diaspora .content {
-  position:relative;
-  z-index:3;
-}
-#hero-diaspora h1 {
-  font-size:34px;
-  font-weight:900;
-  margin-bottom:10px;
-}
-#hero-diaspora p {
-  font-size:17px;
-  max-width:650px;
-  margin:auto;
-}
+  .diaspora-subtitle {
+    font-size: 18px;
+    color: #333;
+    max-width: 780px;
+    margin: auto;
+    margin-bottom: 35px;
+  }
 
-/* CONTAINER */
-.container {
-  max-width:1150px;
-  margin:40px auto;
-  padding:0 20px;
-}
+  .diaspora-card {
+    background: white;
+    border-radius: 14px;
+    padding: 35px 25px;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 620px;
+    margin: auto;
+    border-top: 6px solid #F2B840;
+  }
 
-/* SECTION */
-.section-title {
-  font-size:26px;
-  font-weight:900;
-  color:#0A3D91;
-  margin-bottom:15px;
-  border-left:4px solid #F2B840;
-  padding-left:10px;
-}
+  .diaspora-btn {
+    margin-top: 25px;
+    display: inline-block;
+    background: #F2B840;
+    color: #1b1f24;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 18px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+  }
 
-/* GRID */
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(290px, 1fr));
-  gap:25px;
-}
-.card {
-  background:white;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 4px 14px rgba(0,0,0,0.07);
-  border:1px solid #e5e7eb;
-  transition:.25s;
-}
-.card:hover {
-  transform:translateY(-6px);
-  box-shadow:0 8px 28px rgba(0,0,0,0.08);
-}
-.card h3 {
-  font-size:20px;
-  font-weight:900;
-  color:#0A3D91;
-}
-.card p {
-  font-size:15px;
-  color:#4b5563;
-  margin-bottom:12px;
-}
-.btn {
-  display:inline-block;
-  padding:10px 22px;
-  border-radius:50px;
-  background:#F2B840;
-  color:#0A3D91;
-  font-weight:700;
-  text-decoration:none;
-  transition:.25s;
-}
-.btn:hover { background:#dca72f; }
-
-/* FOOTER */
-footer {
-  background:#071336;
-  color:white;
-  padding:40px 20px;
-  margin-top:50px;
-}
-footer a { color:#e5edff; text-decoration:none; }
-
+  .diaspora-btn:hover {
+    background: #ffd66c;
+    transform: translateY(-3px);
+  }
 </style>
 
-<script>
-function setLang(l){
-  document.querySelectorAll("[data-fr]").forEach(el=>{
-    el.innerHTML = el.dataset[l];
-  });
-  localStorage.setItem("lang_diaspora", l);
-}
-window.onload = () => {
-  const l = localStorage.getItem("lang_diaspora") || "fr";
-  setLang(l);
-}
-</script>
+<section class="diaspora-section">
 
-</head>
-<body>
+  <h2 class="diaspora-title" data-fr="Diaspora Business" data-en="Diaspora Business"></h2>
 
-<!-- HEADER -->
-<header>
-  <div class="brand">
-    <img src="logo.png" alt="">
-    <strong style="color:#0A3D91;">CIZA GROUP</strong>
-  </div>
+  <p class="diaspora-subtitle"
+     data-fr="Une passerelle premium entre la diaspora burundaise et le Burundi — pour investir, gérer ses projets et soutenir sa famille."
+     data-en="A premium bridge between the Burundian diaspora and Burundi— invest, manage your projects and support your family.">
+  </p>
 
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="services.html">Services</a>
-    <a href="a-propos.html">À propos</a>
-    <a href="business-diaspora.html">Diaspora</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <div class="diaspora-card">
 
-<!-- HERO -->
-<section id="hero-diaspora">
-  <div class="content">
-    <h1 data-fr="Diaspora Business"
-        data-en="Diaspora Business"></h1>
+    <p data-fr="
+      Découvrez des solutions sur-mesure pour la diaspora : immobilier, logistique, investissement,
+      assistance personnalisée et gestion complète au Burundi.
+    " data-en="
+      Discover tailor-made solutions for the diaspora: real estate, logistics, investment,
+      personalized assistance and full project management in Burundi.
+    ">
+    </p>
 
-    <p data-fr="Connecter la diaspora burundaise au pays avec des services fiables, vérifiés et sécurisés."
-       data-en="Connecting the Burundian diaspora to home with reliable, verified and secured services."></p>
+    <!-- 🔗 BOUTON AVEC BON LIEN -->
+    <a class="diaspora-btn"
+       href="diaspora-business.html"
+       data-fr="Découvrir nos solutions"
+       data-en="Discover our services"></a>
+
   </div>
 </section>
-
-<!-- CONTENT -->
-<div class="container">
-
-  <div class="section-title"
-       data-fr="Solutions pour la diaspora"
-       data-en="Solutions for the diaspora"></div>
-
-  <div class="grid">
-
-    <!-- 1 -->
-    <div class="card">
-      <h3>CizaImmo Diaspora</h3>
-      <p data-fr="Achat, location, vérification de terrain, construction, supervision."
-         data-en="Buying, renting, land checks, construction, supervision."></p>
-      <a href="contact.html" class="btn">Demander</a>
-    </div>
-
-    <!-- 2 -->
-    <div class="card">
-      <h3>CizaAssist Diaspora</h3>
-      <p data-fr="Démarches administratives, documents officiels, vérification sur place."
-         data-en="Admin tasks, official documents, on-site verification."></p>
-      <a href="contact.html" class="btn">Demander</a>
-    </div>
-
-    <!-- 3 -->
-    <div class="card">
-      <h3>CizaDelivery Diaspora</h3>
-      <p data-fr="Livraison Burundi ↔ Diaspora de colis, cadeaux et documents."
-         data-en="Delivery Burundi ↔ Diaspora for parcels, gifts and documents."></p>
-      <a href="contact.html" class="btn">Demander</a>
-    </div>
-
-    <!-- 4 -->
-    <div class="card">
-      <h3>CizaAcademy Diaspora</h3>
-      <p data-fr="Formations en ligne, coaching business, insertion professionnelle."
-         data-en="Online training, business coaching, professional development."></p>
-      <a href="contact.html" class="btn">Demander</a>
-    </div>
-
-    <!-- 5 -->
-    <div class="card">
-      <h3>CizaPay+ Diaspora</h3>
-      <p data-fr="Paiements sécurisés, soutien familial, paiements locaux à distance."
-         data-en="Secure payments, family support, remote local payments."></p>
-      <a href="contact.html" class="btn">Demander</a>
-    </div>
-
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div style="max-width:1200px;margin:auto;">
-    <div>© 2025 CIZA GROUP — Tous droits réservés</div>
-    <div style="margin-top:10px;">
-      <a href="legales.html">Mentions légales</a> •
-      <a href="cgu.html">CGU</a>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
