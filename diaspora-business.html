@@ -1,84 +1,454 @@
-<!-- ===================== DIASPORA BUSINESS PREMIUM ===================== -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Diaspora Business — CIZA GROUP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-  .diaspora-section {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: auto;
-    text-align: center;
-  }
+  <link rel="icon" type="image/png" href="favicone.png">
 
-  .diaspora-title {
-    font-size: 30px;
-    font-weight: 900;
-    color: #004AAD;
-    margin-bottom: 15px;
-  }
+  <style>
+    body {
+      margin:0;
+      font-family: Inter, Arial, sans-serif;
+      background:#f7f9fc;
+      color:#1a1f25;
+    }
 
-  .diaspora-subtitle {
-    font-size: 18px;
-    color: #333;
-    max-width: 780px;
-    margin: auto;
-    margin-bottom: 35px;
-  }
+    /* HEADER */
+    header {
+      background:#004AAD;
+      padding:12px 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:3000;
+    }
 
-  .diaspora-card {
-    background: white;
-    border-radius: 14px;
-    padding: 35px 25px;
-    box-shadow: 0 6px 22px rgba(0,0,0,0.08);
-    width: 100%;
-    max-width: 620px;
-    margin: auto;
-    border-top: 6px solid #F2B840;
-  }
+    .logo {
+      height:58px;
+    }
 
-  .diaspora-btn {
-    margin-top: 25px;
-    display: inline-block;
-    background: #F2B840;
-    color: #1b1f24;
-    padding: 14px 28px;
-    border-radius: 50px;
-    font-weight: 800;
-    font-size: 18px;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: 0.3s ease;
-  }
+    .lang-switch {
+      color:white;
+      cursor:pointer;
+      font-weight:600;
+    }
 
-  .diaspora-btn:hover {
-    background: #ffd66c;
-    transform: translateY(-3px);
-  }
-</style>
+    /* MENU */
+    .menu-btn {
+      width:32px;
+      cursor:pointer;
+    }
+    .menu-btn div {
+      width:100%;
+      height:4px;
+      background:#F2B840;
+      margin:5px 0;
+      border-radius:2px;
+    }
 
-<section class="diaspora-section">
+    nav {
+      position:fixed;
+      top:0;
+      right:-280px;
+      height:100%;
+      width:260px;
+      background:#004AAD;
+      padding-top:90px;
+      transition:0.35s;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      z-index:4000;
+    }
+    nav a {
+      color:white;
+      padding-left:20px;
+      font-size:20px;
+      text-decoration:none;
+    }
+    .nav-open { right:0!important; }
 
-  <h2 class="diaspora-title" data-fr="Diaspora Business" data-en="Diaspora Business"></h2>
+    /* HERO */
+    #hero {
+      position:relative;
+      height:55vh;
+      min-height:380px;
+      background-image:url('hero-premium.png');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+    }
 
-  <p class="diaspora-subtitle"
-     data-fr="Une passerelle premium entre la diaspora burundaise et le Burundi — pour investir, gérer ses projets et soutenir sa famille."
-     data-en="A premium bridge between the Burundian diaspora and Burundi— invest, manage your projects and support your family.">
-  </p>
+    #hero .overlay {
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.35);
+    }
 
-  <div class="diaspora-card">
+    #hero .content {
+      position:relative;
+      color:white;
+      z-index:2;
+    }
 
-    <p data-fr="
-      Découvrez des solutions sur-mesure pour la diaspora : immobilier, logistique, investissement,
-      assistance personnalisée et gestion complète au Burundi.
-    " data-en="
-      Discover tailor-made solutions for the diaspora: real estate, logistics, investment,
-      personalized assistance and full project management in Burundi.
-    ">
-    </p>
+    #hero h1 {
+      font-size:34px;
+      font-weight:900;
+      text-shadow:0 3px 9px rgba(0,0,0,0.4);
+    }
 
-    <!-- 🔗 BOUTON AVEC BON LIEN -->
-    <a class="diaspora-btn"
-       href="diaspora-business.html"
-       data-fr="Découvrir nos solutions"
-       data-en="Discover our services"></a>
+    #hero h2 {
+      margin-top:8px;
+      color:#F2B840;
+      font-size:20px;
+      font-weight:700;
+    }
 
+    #hero button {
+      margin-top:18px;
+      background:#F2B840;
+      padding:12px 22px;
+      border-radius:50px;
+      border:none;
+      font-size:17px;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    @media(max-width:700px){
+      #hero h1 { font-size:24px; }
+      #hero h2 { font-size:16px; }
+    }
+
+    /* TITRES DE SECTION */
+    .section-title {
+      text-align:center;
+      color:#004AAD;
+      font-size:28px;
+      font-weight:900;
+      margin:50px 0 25px;
+    }
+
+    /* SECTION CONTENU */
+    .container {
+      max-width:1100px;
+      margin:auto;
+      padding:20px;
+    }
+
+    .box {
+      background:white;
+      padding:22px;
+      margin-bottom:18px;
+      border-radius:12px;
+      box-shadow:0 5px 18px rgba(0,0,0,0.06);
+      border-left:6px solid #F2B840;
+    }
+
+    .box h3 {
+      font-size:20px;
+      color:#004AAD;
+      margin:0 0 8px;
+    }
+
+    /* GRILLE SERVICES */
+    .grid {
+      display:grid;
+      gap:22px;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    }
+
+    .card {
+      background:white;
+      padding:25px;
+      border-radius:14px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.07);
+      border-top:6px solid #F2B840;
+      text-align:center;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 10px 26px rgba(0,0,0,0.12);
+    }
+    .card h4 {
+      margin:0;
+      color:#004AAD;
+      font-size:19px;
+      font-weight:800;
+    }
+
+    /* AVIS */
+    .avis-grid {
+      display:grid;
+      gap:22px;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    }
+
+    .avis-card {
+      background:white;
+      border-radius:14px;
+      padding:20px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.08);
+      border-left:5px solid #004AAD;
+    }
+
+    .avis-card h4 {
+      margin:0 0 6px;
+      font-size:18px;
+      font-weight:900;
+      color:#004AAD;
+    }
+
+    .avis-card p {
+      margin:0;
+      color:#555;
+    }
+
+    /* FOOTER */
+    footer {
+      background:#0A0F1A;
+      color:white;
+      padding:50px 20px;
+      margin-top:60px;
+    }
+    .footer-grid {
+      max-width:1200px;
+      margin:auto;
+      display:grid;
+      gap:30px;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    }
+    .footer-title {
+      color:#F2B840;
+      font-size:20px;
+      font-weight:900;
+      margin-bottom:10px;
+    }
+    footer a {
+      color:#dfe6f5;
+      text-decoration:none;
+      margin:5px 0;
+      display:block;
+    }
+    .footer-bottom {
+      text-align:center;
+      margin-top:25px;
+      font-size:14px;
+      opacity:0.7;
+    }
+
+    /* WHATSAPP */
+    .whatsapp-btn {
+      position:fixed;
+      bottom:18px;
+      right:18px;
+      width:62px;
+      height:62px;
+      background:#25D366;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      box-shadow:0 4px 12px rgba(0,0,0,0.3);
+      z-index:5000;
+    }
+    .whatsapp-btn img { width:36px; }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav").classList.toggle("nav-open");
+    }
+    function setLang(l){
+      document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = el.dataset[l];
+      });
+      localStorage.setItem("lang",l);
+    }
+    window.onload = ()=> setLang(localStorage.getItem("lang") || "fr");
+  </script>
+</head>
+
+<body>
+
+<header>
+  <img src="logotransparent.png" class="logo">
+  <div>
+    <span class="lang-switch" onclick="setLang('fr')">FR</span> |
+    <span class="lang-switch" onclick="setLang('en')">EN</span>
+  </div>
+  <div class="menu-btn" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </div>
+</header>
+
+<nav id="nav">
+  <a href="index.html" data-fr="Accueil" data-en="Home"></a>
+  <a href="domaines.html" data-fr="Domaines" data-en="Domains"></a>
+  <a href="a-propos.html" data-fr="À propos" data-en="About"></a>
+  <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora"></a>
+  <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
+  <a href="legales.html" data-fr="Mentions légales" data-en="Legal"></a>
+  <a href="confidentialite.html" data-fr="Confidentialité" data-en="Privacy"></a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="overlay"></div>
+  <div class="content">
+    <h1 data-fr="Diaspora Business — Connecter le Burundi au Monde"
+        data-en="Diaspora Business — Connecting Burundi to the World"></h1>
+    <h2 data-fr="Confiance • Transparence • Excellence"
+        data-en="Trust • Transparency • Excellence"></h2>
+    <button onclick="location.href='#services'">Découvrir nos services</button>
   </div>
 </section>
+
+<!-- Vision -->
+<h2 class="section-title" data-fr="Vision 2040–2060" data-en="2040–2060 Vision"></h2>
+
+<div class="container">
+  <div class="box">
+    <h3 data-fr="Un Burundi moderne & attractif"
+        data-en="A modern & attractive Burundi"></h3>
+    <p data-fr="
+      Inspirée de la vision nationale 2040–2060, CIZA GROUP contribue à un avenir
+      moderne, prospère et digitalisé où la diaspora joue un rôle central dans le renforcement
+      économique et social du pays.
+    " data-en="
+      Inspired by the national vision 2040–2060, CIZA GROUP contributes to a modern,
+      prosperous and digital future where the diaspora plays a central role in the country's
+      social and economic development.
+    "></p>
+  </div>
+</div>
+
+<!-- Services Diaspora -->
+<h2 id="services" class="section-title" data-fr="Services pour la Diaspora"
+    data-en="Diaspora Services"></h2>
+
+<div class="container">
+  <div class="grid">
+
+    <div class="card"><h4 data-fr="Immobilier Diaspora" data-en="Real Estate Diaspora"></h4></div>
+    <div class="card"><h4 data-fr="Logistique & Envois" data-en="Logistics & Shipping"></h4></div>
+    <div class="card"><h4 data-fr="Achat & Livraison au Burundi" data-en="Shopping & Delivery"></h4></div>
+    <div class="card"><h4 data-fr="Investissement & Conseils" data-en="Investment & Advisory"></h4></div>
+    <div class="card"><h4 data-fr="Assistance Administrative" data-en="Administrative Support"></h4></div>
+
+  </div>
+</div>
+
+<!-- Services étrangers -->
+<h2 class="section-title" data-fr="Accompagnement des Étrangers"
+    data-en="Foreigners Support"></h2>
+
+<div class="container">
+  <div class="grid">
+
+    <div class="card"><h4 data-fr="Guide & Orientation"
+                         data-en="Guided Orientation"></h4></div>
+
+    <div class="card"><h4 data-fr="Logement Temporaire"
+                         data-en="Temporary Housing"></h4></div>
+
+    <div class="card"><h4 data-fr="Business Setup"
+                         data-en="Business Setup"></h4></div>
+
+    <div class="card"><h4 data-fr="Sécurité & Transport"
+                         data-en="Security & Transport"></h4></div>
+
+  </div>
+</div>
+
+<!-- AVIS -->
+<h2 class="section-title" data-fr="Avis de la Diaspora"
+    data-en="Diaspora Testimonials"></h2>
+
+<div class="container avis-grid">
+
+  <div class="avis-card">
+    <h4>🇨🇦 Canada</h4>
+    <p>“Service fiable et transparent, recommande à 100%.”</p>
+  </div>
+
+  <div class="avis-card">
+    <h4>🇧🇪 Belgique</h4>
+    <p>“Un accompagnement professionnel du début à la fin.”</p>
+  </div>
+
+  <div class="avis-card">
+    <h4>🇫🇷 France</h4>
+    <p>“Enfin une solution sérieuse pour la diaspora.”</p>
+  </div>
+
+  <div class="avis-card">
+    <h4>🇳🇴 Norvège</h4>
+    <p>“Rapide, clair, efficace.”</p>
+  </div>
+
+  <div class="avis-card">
+    <h4>🇷🇼 Rwanda</h4>
+    <p>“Très utile pour s’installer et comprendre le pays.”</p>
+  </div>
+
+  <div class="avis-card">
+    <h4>🇨🇮 Côte d’Ivoire</h4>
+    <p>“Un accompagnement premium et sérieux.”</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3 class="footer-title">CIZA GROUP</h3>
+      <p>Écosystème de Services — Burundi | Canada</p>
+      <p>🇧🇮 +257 79945007</p>
+      <p>🇨🇦 +1 514 502 9503</p>
+      <p>Email : infos@cizagroup.com</p>
+    </div>
+
+    <div>
+      <h3 class="footer-title">Navigation</h3>
+      <a href="index.html">Accueil</a>
+      <a href="domaines.html">Domaines</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div>
+      <h3 class="footer-title">Légal</h3>
+      <a href="legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Confidentialité</a>
+    </div>
+
+    <div>
+      <h3 class="footer-title">Diaspora</h3>
+      <a href="business-diaspora.html">Services Diaspora</a>
+      <a href="business-diaspora.html#services">Solutions</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 CIZA GROUP — Écosystème de Services | Burundi. Tous droits réservés.
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a class="whatsapp-btn" href="https://wa.me/15145029503" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</a>
+
+</body>
+</html>
