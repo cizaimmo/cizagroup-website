@@ -2,195 +2,151 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Domaines — CIZA GROUP</title>
+  <title>CIZA GROUP — Domaines</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- STYLES GLOBAUX -->
   <style>
     body {
       margin: 0;
       font-family: Inter, Arial, sans-serif;
-      background: #f6f8fc;
+      background: #f4f6fa;
       color: #1a1f25;
+      animation: fadePage 0.5s ease-out;
     }
 
-    /* HEADER PREMIUM */
+    @keyframes fadePage {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* HEADER */
     header {
       background: #004AAD;
-      padding: 12px 18px;
-      position: sticky;
-      top: 0;
-      z-index: 3000;
+      padding: 14px 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 3000;
     }
 
     .logo {
-      height: 58px;
+      height: 80px;
       width: auto;
     }
 
-    .lang-switch {
-      color: white;
-      font-weight: 600;
-      margin-right: 14px;
-      cursor: pointer;
-      font-size: 16px;
+    .back-btn {
+      background: #F2B840;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: 900;
+      color: #0a0a0a;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
-    /* MENU */
-    .menu-btn {
-      width: 32px;
-      cursor: pointer;
-      display: block;
+    /* HERO */
+    #hero-dom {
+      background: #004AAD;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
     }
-    .menu-btn div {
-      width: 100%;
+
+    #hero-dom h1 {
+      font-size: 36px;
+      font-weight: 900;
+      margin: 0;
+    }
+
+    .gold-line {
+      width: 140px;
       height: 4px;
       background: #F2B840;
-      margin: 5px 0;
-      border-radius: 2px;
+      margin: 18px auto;
+      border-radius: 3px;
+    }
+
+    #hero-dom p {
+      font-size: 18px;
+      opacity: 0.9;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    /* DOMAINES GRID */
+    .domaines-section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .domaines-grid {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 30px 26px;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.07);
+      transition: 0.3s ease;
+      text-align: center;
+      border-top: 6px solid #F2B840;
+      cursor: pointer;
+      animation: fadeUp 0.7s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
+
+    .card img {
+      width: 65px;
+      margin-bottom: 18px;
+      opacity: 0.9;
+    }
+
+    .card h3 {
+      font-size: 24px;
+      font-weight: 900;
+      color: #004AAD;
+    }
+
+    .card p {
+      margin-top: 10px;
+      line-height: 1.55;
+      font-size: 16px;
+      opacity: 0.85;
+    }
+
+    .card a {
+      margin-top: 18px;
+      display: inline-block;
+      background: #004AAD;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
       transition: 0.3s;
     }
 
-    nav {
-      position: fixed;
-      top: 0;
-      right: -280px;
-      height: 100%;
-      width: 260px;
-      background: #004AAD;
-      padding-top: 90px;
-      transition: 0.35s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      z-index: 3500;
+    .card a:hover {
+      background: #002e6e;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 20px;
-      padding-left: 20px;
-    }
-
-    .nav-open {
-      right: 0 !important;
-    }
-
-    /* SECTION TITRE */
-    .section-title {
-      text-align: center;
-      font-size: 32px;
-      font-weight: 900;
-      color: #004AAD;
-      margin: 40px 0 25px;
-    }
-
-    /* GRID PREMIUM */
-    .domaines-grid {
-      max-width: 1250px;
-      margin: auto;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
-    }
-
-    .domaine-card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      transition: 0.35s;
-      border-top: 6px solid #F2B840;
-    }
-
-    .domaine-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.13);
-    }
-
-    .domaine-img {
-      height: 170px;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .domaine-card h3 {
-      font-size: 22px;
-      font-weight: 800;
-      padding: 18px 16px 8px;
-      color: #004AAD;
-    }
-
-    .domaine-card p {
-      padding: 0 16px 18px;
-      color: #444;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #0A0F1A;
-      color: white;
-      padding: 50px 20px;
-      margin-top: 60px;
-    }
-
-    .footer-grid {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      gap: 35px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
-
-    .footer-title {
-      font-size: 20px;
-      font-weight: 900;
-      color: #F2B840;
-      margin-bottom: 12px;
-    }
-
-    footer a {
-      color: #dfe6f5;
-      text-decoration: none;
-      display: block;
-      margin: 6px 0;
-      font-size: 16px;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      padding-top: 25px;
-      font-size: 14px;
-      opacity: 0.75;
-    }
   </style>
-
-  <!-- MULTILINGUE -->
-  <script>
-    function setLang(l) {
-      document.querySelectorAll("[data-fr]").forEach(el => {
-        el.innerHTML = el.dataset[l];
-      });
-      localStorage.setItem("lang", l);
-    }
-
-    window.onload = () => {
-      const l = localStorage.getItem("lang") || "fr";
-      setLang(l);
-    };
-
-    function toggleMenu() {
-      document.getElementById("nav").classList.toggle("nav-open");
-    }
-  </script>
 </head>
 
 <body>
@@ -199,103 +155,67 @@
 <header>
   <img src="logotransparent.png" class="logo">
 
-  <div>
-    <span class="lang-switch" onclick="setLang('fr')">FR</span> |
-    <span class="lang-switch" onclick="setLang('en')">EN</span>
-  </div>
-
-  <div class="menu-btn" onclick="toggleMenu()">
-    <div></div><div></div><div></div>
-  </div>
+  <a href="index.html" class="back-btn">← Retour</a>
 </header>
 
-<nav id="nav">
-  <a href="index.html" data-fr="Accueil" data-en="Home"></a>
-  <a href="domaines.html" data-fr="Domaines" data-en="Domains"></a>
-  <a href="a-propos.html" data-fr="À propos" data-en="About"></a>
-  <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora"></a>
-  <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
-  <a href="legales.html" data-fr="Mentions légales" data-en="Legal Notice"></a>
-  <a href="confidentialite.html" data-fr="Confidentialité" data-en="Privacy"></a>
-</nav>
+<!-- HERO -->
+<section id="hero-dom">
+  <h1>Nos Domaines</h1>
+  <div class="gold-line"></div>
 
-<!-- TITRE -->
-<h1 class="section-title" data-fr="Nos Domaines" data-en="Our Domains"></h1>
+  <p>
+    Un écosystème complet pensé pour un Burundi moderne, connecté et orienté vers 2040–2060.  
+    Chaque domaine travaille en synergie pour offrir des solutions innovantes et accessibles.
+  </p>
+</section>
 
-<!-- GRID PREMIUM -->
-<div class="domaines-grid">
+<!-- DOMAINES GRID -->
+<section class="domaines-section">
 
-  <!-- MOBILITÉ -->
-  <div class="domaine-card" onclick="location.href='services.html#mobilite'">
-    <img class="domaine-img" src="https://images.pexels.com/photos/718952/pexels-photo-718952.jpeg">
-    <h3 data-fr="Mobilité" data-en="Mobility"></h3>
-    <p data-fr="Transport privé, solutions urbaines intelligentes et services premium pour une mobilité moderne."
-       data-en="Private transport, smart urban solutions and premium mobility services."></p>
-  </div>
+  <div class="domaines-grid">
 
-  <!-- IMMOBILIER -->
-  <div class="domaine-card" onclick="location.href='services.html#immobilier'">
-    <img class="domaine-img" src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg">
-    <h3 data-fr="Immobilier" data-en="Real Estate"></h3>
-    <p data-fr="Investissement, gestion locative, projets résidentiels et accompagnement de la diaspora."
-       data-en="Investment, rental management, residential projects and diaspora support."></p>
-  </div>
-
-  <!-- LOGISTIQUE -->
-  <div class="domaine-card" onclick="location.href='services.html#logistique'">
-    <img class="domaine-img" src="https://images.pexels.com/photos/3057960/pexels-photo-3057960.jpeg">
-    <h3 data-fr="Logistique" data-en="Logistics"></h3>
-    <p data-fr="Solutions de livraison, gestion des marchandises, mobilité des biens et services express."
-       data-en="Delivery solutions, cargo management, goods mobility and express services."></p>
-  </div>
-
-  <!-- TECHNOLOGIE -->
-  <div class="domaine-card" onclick="location.href='services.html#tech'">
-    <img class="domaine-img" src="https://images.pexels.com/photos/11813139/pexels-photo-11813139.jpeg">
-    <h3 data-fr="Technologie" data-en="Technology"></h3>
-    <p data-fr="Développement digital, plateformes intelligentes, solutions connectées et innovation."
-       data-en="Digital development, smart platforms, connected solutions and innovation."></p>
-  </div>
-
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-
-    <div>
-      <h3 class="footer-title">CIZA GROUP</h3>
-      <p>Écosystème de Services — Burundi | Canada</p>
-      <p>🇧🇮 +257 79945007</p>
-      <p>🇨🇦 +1 514 502 9503</p>
-      <p>Email : infos@cizagroup.com</p>
+    <!-- IMMOBILIER -->
+    <div class="card" onclick="location.href='#immobilier'">
+      <img src="https://cdn-icons-png.flaticon.com/512/3944/3944456.png">
+      <h3>Immobilier</h3>
+      <p>
+        Développement, gestion, rénovation et valorisation d’actifs pour bâtir un cadre moderne et durable.
+      </p>
+      <a href="#immobilier">Voir plus</a>
     </div>
 
-    <div>
-      <h3 class="footer-title">Navigation</h3>
-      <a href="index.html">Accueil</a>
-      <a href="domaines.html">Domaines</a>
-      <a href="services.html">Services</a>
-      <a href="a-propos.html">À propos</a>
+    <!-- LOGISTIQUE -->
+    <div class="card" onclick="location.href='#logistique'">
+      <img src="https://cdn-icons-png.flaticon.com/512/2554/2554759.png">
+      <h3>Logistique</h3>
+      <p>
+        Une chaîne logistique complète, flexible et digitale pour connecter les régions et fluidifier les échanges.
+      </p>
+      <a href="#logistique">Voir plus</a>
     </div>
 
-    <div>
-      <h3 class="footer-title">Légal</h3>
-      <a href="legales.html">Mentions légales</a>
-      <a href="confidentialite.html">Confidentialité</a>
+    <!-- MOBILITÉ -->
+    <div class="card" onclick="location.href='#mobilite'">
+      <img src="https://cdn-icons-png.flaticon.com/512/3202/3202926.png">
+      <h3>Mobilité</h3>
+      <p>
+        CizaRide+ : une solution pensée pour faciliter les déplacements, renforcer la sécurité et améliorer le quotidien.
+      </p>
+      <a href="#mobilite">Voir plus</a>
     </div>
 
-    <div>
-      <h3 class="footer-title">Diaspora</h3>
-      <a href="business-diaspora.html">Services diaspora</a>
+    <!-- TECHNOLOGIE -->
+    <div class="card" onclick="location.href='#tech'">
+      <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png">
+      <h3>Technologie</h3>
+      <p>
+        Solutions digitales, cloud, sécurité, data et innovation pour accélérer la transformation nationale.
+      </p>
+      <a href="#tech">Voir plus</a>
     </div>
 
   </div>
-
-  <div class="footer-bottom">
-    © 2026 CIZA GROUP — Écosystème de Services | Burundi. Tous droits réservés.
-  </div>
-</footer>
+</section>
 
 </body>
 </html>
