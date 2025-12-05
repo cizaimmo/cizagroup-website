@@ -2,8 +2,12 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Domaines — CIZA GROUP</title>
+  <title>CIZA GROUP — Nos Domaines</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO -->
+  <meta name="description" content="Découvrez les domaines de CIZA GROUP : Mobilité, Immobilier, Logistique, Technologie. Services Premium pour le Burundi et la diaspora." />
+  <meta name="keywords" content="CIZA GROUP, Burundi, Mobilité, Immobilier, Logistique, Technologie, Diaspora" />
 
   <link rel="icon" type="image/png" href="favicone.png" />
 
@@ -14,15 +18,14 @@
       background: #f4f6fa;
       color: #1a1f25;
       opacity: 0;
-      animation: fadePage 0.7s ease-out forwards;
+      animation: fadeInPage 0.6s ease-out forwards;
     }
-
-    @keyframes fadePage {
+    @keyframes fadeInPage {
       from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ================= HEADER ================= */
+    /* HEADER */
     header {
       background: #004AAD;
       padding: 14px 22px;
@@ -33,35 +36,32 @@
       top: 0;
       z-index: 3000;
     }
-
-    .logo { height: 80px; width: auto; }
-
-    @media(max-width:480px){
-      .logo { height: 68px; }
+    .logo {
+      height: 80px;
     }
-
     .lang-switch {
       color: white;
-      font-weight: 700;
+      font-weight: bold;
       cursor: pointer;
-      margin: 0 4px;
+      margin: 0 5px;
     }
-
     .header-gold-line {
+      width: 100%;
+      height: 3px;
+      background: #F2B840;
       position: absolute;
       bottom: 0;
       left: 0;
-      height: 3px;
-      width: 100%;
-      background: #F2B840;
     }
 
-    /* MENU MOBILE */
-    .menu-btn { width: 32px; cursor:pointer; }
+    /* MENU */
+    .menu-btn { width: 32px; cursor: pointer; }
     .menu-btn div {
-      height: 4px; background:#F2B840; margin: 5px 0; border-radius:3px;
+      height: 4px;
+      background: #F2B840;
+      margin: 5px 0;
+      border-radius: 3px;
     }
-
     nav {
       position: fixed;
       top: 0;
@@ -69,119 +69,107 @@
       width: 250px;
       height: 100%;
       background: #004AAD;
-      padding-top: 90px;
+      padding-top: 100px;
       transition: 0.35s;
       display: flex;
       flex-direction: column;
       gap: 20px;
       z-index: 3500;
     }
-
     nav.nav-open { right: 0 !important; }
-
     nav a {
       color: white;
       font-size: 20px;
       padding-left: 20px;
       text-decoration: none;
+      cursor: pointer;
     }
 
-    /* ================= TITRE DE PAGE ================= */
-    .page-title {
+    /* TITRES */
+    .section-title {
       text-align: center;
-      padding: 40px 20px;
       font-size: 34px;
       font-weight: 900;
       color: #004AAD;
+      margin-top: 45px;
+    }
+    .gold-line {
+      width: 160px;
+      height: 4px;
+      background: #F2B840;
+      margin: 14px auto 40px auto;
+      border-radius: 3px;
     }
 
-    /* ================= DOMAINES ================= */
-    .domaine-box {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .section {
+    /* CARDS */
+    .domain-block {
+      max-width: 1100px;
+      margin: 40px auto;
       background: white;
-      padding: 30px;
       border-radius: 16px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-      margin-bottom: 30px;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      padding: 35px;
+      box-shadow: 0 7px 22px rgba(0,0,0,0.08);
+      transition: 0.35s;
     }
-
-    .section:hover {
-      transform: scale(1.03);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    .domain-block:hover {
+      transform: scale(1.02);
+      box-shadow: 0 15px 32px rgba(0,0,0,0.15);
     }
-
-    .section h3 {
-      font-size: 24px;
+    .domain-block h3 {
+      font-size: 26px;
       font-weight: 900;
       color: #004AAD;
       margin-bottom: 12px;
     }
-
-    .section p {
+    .domain-block p {
       font-size: 17px;
-      line-height: 1.5;
-      margin: 0;
+      line-height: 1.6;
+      color: #303030;
     }
 
-    /* ================= BOUTON RETOUR ================= */
-    .btn-retour {
+    /* BUTTON RETOUR */
+    .back-btn {
+      margin: 40px auto;
       display: block;
-      margin: 30px auto;
       width: fit-content;
-      padding: 12px 30px;
       background: #F2B840;
       color: #0a0a0a;
-      font-size: 18px;
+      padding: 12px 26px;
+      border-radius: 40px;
       font-weight: 800;
-      border-radius: 50px;
+      font-size: 17px;
       text-decoration: none;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
     }
 
-    /* ================= FOOTER ================= */
     footer {
-      background:#0A0F1A; color:white;
-      padding: 60px 20px; margin-top: 40px;
+      background: #0A0F1A;
+      color: white;
+      padding: 50px 20px;
+      margin-top: 60px;
     }
-
-    .footer-grid {
-      max-width: 1200px; margin:auto;
-      display:grid; gap:30px;
-      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-    }
-
-    .footer-title {
-      color:#F2B840; font-size:20px; font-weight:900;
-    }
-    footer a { color:#dfe6f5; display:block; margin:6px 0; }
   </style>
 
   <script>
-    /* MENU AUTO-CLOSE */
+    /* MENU + AUTO CLOSE */
     function toggleMenu(){
       const nav = document.getElementById("nav");
       nav.classList.toggle("nav-open");
 
-      document.querySelectorAll("#nav a").forEach(a=>{
-        a.onclick = ()=> nav.classList.remove("nav-open");
+      document.querySelectorAll("#nav a").forEach(link => {
+        link.onclick = () => nav.classList.remove("nav-open");
       });
     }
 
     /* MULTILINGUE */
-    function setLang(l){
-      document.querySelectorAll("[data-fr]").forEach(el=>{
+    function setLang(l) {
+      document.querySelectorAll("[data-fr]").forEach(el => {
         el.innerHTML = el.dataset[l];
       });
       localStorage.setItem("lang", l);
     }
 
-    window.onload = ()=>{
+    window.onload = () => {
       setLang(localStorage.getItem("lang") || "fr");
     };
   </script>
@@ -189,9 +177,8 @@
 
 <body>
 
-<!-- HEADER -->
 <header>
-  <img src="logotransparent.png" class="logo">
+  <img src="logotransparent.png" class="logo" alt="CIZA GROUP">
 
   <div>
     <span class="lang-switch" onclick="setLang('fr')">FR</span> |
@@ -205,108 +192,55 @@
   <div class="header-gold-line"></div>
 </header>
 
-<!-- MENU MOBILE -->
 <nav id="nav">
   <a href="index.html" data-fr="Accueil" data-en="Home"></a>
   <a href="domaines.html" data-fr="Domaines" data-en="Domains"></a>
   <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora"></a>
   <a href="a-propos.html" data-fr="À propos" data-en="About"></a>
   <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
+  <a href="cgu.html" data-fr="Conditions d'utilisation" data-en="Terms of Use"></a>
+  <a href="politique-confidentialite.html" data-fr="Confidentialité" data-en="Privacy Policy"></a>
 </nav>
 
-<!-- TITRE -->
-<h1 class="page-title" data-fr="Nos Domaines" data-en="Our Domains"></h1>
+<h1 class="section-title" data-fr="Nos Domaines" data-en="Our Domains"></h1>
+<div class="gold-line"></div>
 
-<!-- DOMAINES -->
-<div class="domaine-box">
+<!-- IMMOBILIER -->
+<section class="domain-block" id="immobilier">
+  <h3 data-fr="Immobilier" data-en="Real Estate"></h3>
+  <p data-fr="Gestion immobilière, location, vente, accompagnement diaspora."
+     data-en="Property management, rentals, sales, diaspora support."></p>
+</section>
 
-  <!-- MOBILITÉ -->
-  <div class="section" id="mobilite">
-    <h3 data-fr="Mobilité" data-en="Mobility"></h3>
-    <p data-fr="
-      Solutions de transport moderne, services chauffeur, et application dédiée
-      pour faciliter les déplacements au Burundi.
-    " data-en="
-      Modern transportation solutions, driver services and integrated mobile
-      app to simplify mobility in Burundi.
-    "></p>
-  </div>
+<!-- LOGISTIQUE -->
+<section class="domain-block" id="logistique">
+  <h3 data-fr="Logistique" data-en="Logistics"></h3>
+  <p data-fr="Transport, acheminement sécurisé, optimisation des flux..."
+     data-en="Transport, secure shipment, flow optimization..."></p>
+</section>
 
-  <!-- IMMOBILIER -->
-  <div class="section" id="immobilier">
-    <h3 data-fr="Immobilier" data-en="Real Estate"></h3>
-    <p data-fr="
-      Gestion immobilière, location, vente et accompagnement complet pour vos
-      projets liés au territoire burundais.
-    " data-en="
-      Property management, rentals, sales and full support for real estate
-      needs in Burundi.
-    "></p>
-  </div>
+<!-- MOBILITÉ -->
+<section class="domain-block" id="mobilite">
+  <h3 data-fr="Mobilité" data-en="Mobility"></h3>
+  <p data-fr="Solution digitale de mobilité : CizaRide+."
+     data-en="Digital mobility solution: CizaRide+."></p>
+</section>
 
-  <!-- LOGISTIQUE -->
-  <div class="section" id="logistique">
-    <h3 data-fr="Logistique" data-en="Logistics"></h3>
-    <p data-fr="
-      Transport, livraison, gestion de colis et solutions de chaîne
-      logistique pour entreprises et particuliers.
-    " data-en="
-      Transport, delivery, parcel handling and logistics-chain solutions for
-      businesses and individuals.
-    "></p>
-  </div>
+<!-- TECHNOLOGIE -->
+<section class="domain-block" id="tech">
+  <h3 data-fr="Technologie" data-en="Technology"></h3>
+  <p data-fr="Développement digital, solutions connectées, écosystèmes numériques."
+     data-en="Digital development, connected solutions, digital ecosystems."></p>
+</section>
 
-  <!-- TECHNOLOGIE -->
-  <div class="section" id="tech">
-    <h3 data-fr="Technologie" data-en="Technology"></h3>
-    <p data-fr="
-      Développement digital, systèmes innovants, automatisation et services
-      technologiques pour un Burundi moderne.
-    " data-en="
-      Digital development, innovative systems, automation and technology
-      services for a modern Burundi.
-    "></p>
-  </div>
+<a href="index.html" class="back-btn"
+   data-fr="Retour à l'accueil"
+   data-en="Back to Home"></a>
 
-</div>
-
-<!-- RETOUR -->
-<a href="index.html" class="btn-retour" data-fr="Retour" data-en="Back"></a>
-
-<!-- FOOTER -->
 <footer>
-
-  <div class="footer-grid">
-
-    <div>
-      <h3 class="footer-title">CIZA GROUP</h3>
-      <p>Écosystème de Services — Burundi | Canada</p>
-      <p>🇧🇮 +257 79945007</p>
-      <p>🇨🇦 +1 514 502 9503</p>
-      <p>Email : infos@cizagroup.com</p>
-    </div>
-
-    <div>
-      <h3 class="footer-title">Navigation</h3>
-      <a href="index.html">Accueil</a>
-      <a href="domaines.html">Domaines</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="business-diaspora.html">Diaspora</a>
-      <a href="contact.html">Contact</a>
-    </div>
-
-    <div>
-      <h3 class="footer-title">Légal</h3>
-      <a href="legales.html">Mentions légales</a>
-      <a href="cgu.html">Conditions générales</a>
-      <a href="politique-confidentialite.html">Confidentialité</a>
-    </div>
-
+  <div style="text-align:center; opacity:0.7;">
+    © 2026 CIZA GROUP — Écosystème de Services | Burundi.
   </div>
-
-  <p style="text-align:center; margin-top:25px; opacity:0.7;">
-    © 2026 CIZA GROUP — Tous droits réservés.
-  </p>
 </footer>
 
 </body>
