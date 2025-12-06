@@ -2,601 +2,455 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>CIZA GROUP — Écosystème de Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>CIZA GROUP — Écosystème de Services | Burundi & Diaspora</title>
+  <meta name="description" content="CIZA GROUP est un écosystème multiservices au Burundi et pour la diaspora : mobilité, immobilier, logistique, technologie et solutions connectées. Services fiables, modernes et sécurisés pour un Burundi 2040–2060.">
+  <meta name="keywords" content="CIZA GROUP, Burundi, diaspora, mobilité, immobilier, logistique, technologie, services, multiservices, Afrique">
+
+  <link rel="canonical" href="https://cizaimmo.github.io/cizagroup-website/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CIZA GROUP — Écosystème de Services | Burundi & Diaspora">
+  <meta property="og:description" content="Mobilité, immobilier, logistique, technologie et services diaspora. Une plateforme moderne et sécurisée.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/logotransparent.png">
+  <meta property="og:url" content="https://cizaimmo.github.io/cizagroup-website/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CIZA GROUP — Écosystème de Services">
+  <meta name="twitter:description" content="Services pour le Burundi et la diaspora : mobilité, immobilier, logistique, technologie.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/logotransparent.png">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CIZA GROUP",
+    "url": "https://cizaimmo.github.io/cizagroup-website/",
+    "logo": "https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/logotransparent.png",
+    "description": "Écosystème multiservices au Burundi et pour la diaspora.",
+    "address": { "@type": "PostalAddress", "addressCountry": "Burundi" },
+    "contactPoint": [{ "@type": "ContactPoint", "telephone": "+25779945007", "contactType": "customer service" }]
+  }
+  </script>
 
   <link rel="icon" type="image/png" href="favicone.png" />
 
-  <!-- ==================== SEO PREMIER NIVEAU ==================== -->
-  <meta name="description" content="CIZA GROUP — Écosystème de Services au Burundi et Canada : Mobilité, Immobilier, Logistique, Technologie et services Diaspora." />
-  <meta name="keywords" content="Burundi, diaspora, mobilité, immobilier, logistique, technologie, CIZA GROUP, services, Afrique" />
-
   <style>
-    /* ==================== RESET & BASE ==================== */
     body {
       margin: 0;
       font-family: Inter, Arial, sans-serif;
       background: #f4f6fa;
-      color: #1a1f25;
-      opacity: 0;
-      animation: pageFadeIn 0.8s ease-out forwards;
+      color: #111;
     }
 
-    @keyframes pageFadeIn {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ==================== LOADER PREMIUM ==================== */
-    #loader {
-      position: fixed;
-      inset: 0;
-      background: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      animation: fadeOutLoader 0.6s ease-out forwards;
-      animation-delay: 0.6s;
-    }
-
-    #loader .circle {
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      border: 5px solid #004AAD;
-      border-top-color: #F2B840;
-      animation: spin 0.9s linear infinite;
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0); }
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes fadeOutLoader {
-      to { opacity: 0; visibility: hidden; }
-    }
-
-    /* ==================== HEADER ==================== */
+    /* MENU */
     header {
-      background: #004AAD;
-      padding: 14px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 3000;
+      background:#004AAD;
+      padding:14px 22px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:9999;
     }
 
-    .logo {
-      height: 88px;
-      width: auto;
-    }
+    .logo { height:85px; }
 
-    @media (max-width: 480px) {
-      .logo {
-        height: 70px;
-      }
-    }
-
-    /* LANG SWITCH */
-    .lang-switch {
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      margin: 0 5px;
-    }
-
-    /* LIGNE DORÉE HEADER */
-    .header-gold-line {
-      width: 100%;
-      height: 3px;
-      background: #F2B840;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-
-    /* ==================== MENU MOBILE ==================== */
     .menu-btn {
-      width: 32px;
-      cursor: pointer;
+      width:32px; cursor:pointer;
     }
-
     .menu-btn div {
-      height: 4px;
-      background: #F2B840;
-      margin: 5px 0;
-      border-radius: 3px;
+      height:4px; background:#F2B840; margin:5px 0; border-radius:3px;
     }
 
+    /* MENU SLIDE */
     nav {
-      position: fixed;
-      top: 0;
-      right: -270px;
-      width: 250px;
-      height: 100%;
-      background: #004AAD;
-      padding-top: 100px;
-      transition: 0.35s;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      z-index: 3500;
+      position:fixed;
+      top:0; right:-280px;
+      width:260px; height:100%;
+      background:#004AAD;
+      padding-top:120px;
+      transition:0.35s;
+      z-index:9999;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
     }
-
-    nav.nav-open { right: 0 !important; }
+    nav.nav-open { right:0; }
 
     nav a {
-      color: white;
-      font-size: 20px;
-      padding-left: 20px;
-      text-decoration: none;
+      color:white;
+      text-decoration:none;
+      font-size:21px;
+      padding-left:20px;
     }
 
-    /* AUTO-CLOSE MENU */
-    nav a {
-      cursor: pointer;
+    /* bouton X */
+    #closeMenu {
+      position:absolute;
+      top:20px;
+      right:20px;
+      font-size:35px;
+      color:white;
+      cursor:pointer;
+      font-weight:900;
     }
 
-    /* ==================== DOMAIN CARDS ZOOM PREMIUM ==================== */
-    .domaine-card {
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    /* HERO */
+    #hero {
+      height:75vh;
+      background:url('hero-burundi.png');
+      background-size:cover;
+      background-position:center;
+      position:relative;
+      text-align:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
     }
-    .domaine-card:hover {
-      transform: scale(1.07);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.20);
+    #hero .overlay {
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.45);
+    }
+    #hero h1 {
+      color:white;
+      font-size:38px;
+      z-index:2;
+      font-weight:900;
+    }
+
+    /* METEO PREMIUM */
+    .weather-card {
+      background:#004AAD;
+      border-radius:18px;
+      padding:25px;
+      color:white;
+      text-align:center;
+      box-shadow:0 8px 25px rgba(0,0,0,0.25);
+      border:3px solid #F2B840;
+    }
+
+    /* APPLICATION PREMIUM */
+    #app-section {
+      background: linear-gradient(135deg, #F7DFA4, #F2C96B);
+      padding:100px 20px;
+    }
+
+    /* POURQUOI NOUS CHOISIR */
+    #why div.box {
+      background:white;
+      padding:40px;
+      border-radius:26px;
+      border:4px solid #F2B840;
+      box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    /* FAQ */
+    .faq-item {
+      background:white;
+      margin-bottom:18px;
+      border-radius:12px;
+      border-left:4px solid #004AAD;
+      box-shadow:0 4px 14px rgba(0,0,0,0.1);
+    }
+
+    .faq-question {
+      width:100%;
+      background:none;
+      border:none;
+      padding:18px;
+      text-align:left;
+      font-size:18px;
+      font-weight:700;
+      cursor:pointer;
+      color:#004AAD;
+    }
+    .faq-answer {
+      max-height:0;
+      overflow:hidden;
+      transition:max-height 0.35s ease;
+      padding:0 18px;
+    }
+
+    /* WIDGET AVIS FLOTTANT */
+    #avisWidget {
+      position:fixed;
+      right:25px;
+      top:40%;
+      background:#004AAD;
+      color:white;
+      width:55px; height:55px;
+      border-radius:50%;
+      display:flex;
+      justify-content:center; align-items:center;
+      border:3px solid #F2B840;
+      cursor:pointer;
+      z-index:9999;
+      font-size:32px;
+      font-weight:900;
+    }
+
+    #avisPanel {
+      position:fixed;
+      top:0; right:-350px;
+      width:320px; height:100vh;
+      background:white;
+      border-left:4px solid #F2B840;
+      padding:25px;
+      transition:0.35s;
+      z-index:9998;
+    }
+    #avisPanel.open { right:0; }
+
+    /* BOUTON RETOUR EN HAUT */
+    #topBtn {
+      position:fixed;
+      bottom:30px; right:30px;
+      width:55px; height:55px;
+      background:#004AAD;
+      color:white;
+      border-radius:50%;
+      display:none;
+      justify-content:center;
+      align-items:center;
+      border:3px solid #F2B840;
+      font-size:28px;
+      cursor:pointer;
+      z-index:9999;
     }
   </style>
-
-  <script>
-    /* AUTO CLOSE MENU */
-    function toggleMenu() {
-      const nav = document.getElementById("nav");
-      nav.classList.toggle("nav-open");
-
-      // Ferme automatiquement après un clic sur un lien
-      document.querySelectorAll("#nav a").forEach(link => {
-        link.onclick = () => nav.classList.remove("nav-open");
-      });
-    }
-
-    /* MULTILINGUE — RESTORATION */
-    function setLang(l) {
-      document.querySelectorAll("[data-fr]").forEach(el => {
-        el.innerHTML = el.dataset[l];
-      });
-      localStorage.setItem("lang", l);
-    }
-
-    window.onload = () => {
-      setTimeout(() => {
-        document.getElementById("loader").style.display = "none";
-      }, 900);
-
-      const savedLang = localStorage.getItem("lang") || "fr";
-      setLang(savedLang);
-    };
-  </script>
 </head>
 
 <body>
-  <!-- LOADER PREMIUM -->
-  <div id="loader">
-    <div class="circle"></div>
-  </div><!-- ==================== HEADER ==================== -->
+
+<!-- MENU -->
 <header>
   <img src="logotransparent.png" class="logo" alt="CIZA GROUP Logo">
-
-  <div>
-    <span class="lang-switch" onclick="setLang('fr')">FR</span> |
-    <span class="lang-switch" onclick="setLang('en')">EN</span>
-  </div>
-
   <div class="menu-btn" onclick="toggleMenu()">
     <div></div><div></div><div></div>
   </div>
-
-  <div class="header-gold-line"></div>
 </header>
 
-<!-- ==================== MENU MOBILE ==================== -->
 <nav id="nav">
-  <a href="index.html" data-fr="Accueil" data-en="Home"></a>
-  <a href="domaines.html" data-fr="Domaines" data-en="Domains"></a>
-  <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora"></a>
-  <a href="a-propos.html" data-fr="À propos" data-en="About"></a>
-  <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
-  <a href="cgu.html" data-fr="Conditions d'utilisation" data-en="Terms of Use"></a>
-  <a href="politique-confidentialite.html" data-fr="Confidentialité" data-en="Privacy Policy"></a>
+  <div id="closeMenu" onclick="toggleMenu()">×</div>
+  <a href="index.html">Accueil</a>
+  <a href="domaines.html">Domaines</a>
+  <a href="business-diaspora.html">Diaspora</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
-<!-- ==================== HERO PREMIUM ==================== -->
-<section id="hero" style="
-  position: relative;
-  height: 75vh;
-  min-height: 470px;
-  background-image: url('hero-burundi.png');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 20px;
-  animation: heroFade 1s ease-out forwards;
-">
-  <div class="overlay" style="
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.35);
-  "></div>
+<!-- HERO -->
+<section id="hero">
+  <div class="overlay"></div>
+  <h1>Écosystème de Services | Burundi</h1>
 
-  <h1 data-fr="Écosystème de Services | Burundi"
-      data-en="Ecosystem of Services | Burundi"
-      style="
-        position: relative;
-        font-size: 38px;
-        font-weight: 900;
-        color: white;
-        z-index: 2;
-        text-shadow: 0 4px 12px rgba(0,0,0,0.55);
-      ">
-  </h1>
-
-  <!-- LIGNE DORÉE -->
-  <div class="gold-line" style="
-      width: 190px;
-      height: 4px;
-      background: #F2B840;
-      margin: 18px auto;
-      border-radius: 3px;
-      z-index: 2;
-      position: relative;">
-  </div>
-
-  <h2 data-fr="Mobilité | Immobilier | Logistique | Technologie"
-      data-en="Mobility | Real Estate | Logistics | Technology"
-      style="
-        position: relative;
-        font-size: 20px;
-        font-weight: 700;
-        color: white;
-        z-index: 2;
-        letter-spacing: 1px;
-      ">
-  </h2>
-
-  <!-- BOUTONS ACTIONS -->
-  <div style="margin-top: 25px; z-index: 2; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
-
-    <!-- BTN DOMAINES -->
-    <a href="domaines.html"
-       class="hero-btn"
-       data-fr="Découvrir nos domaines"
-       data-en="Explore Our Domains"
-       style="
-         background: #F2B840;
-         color: #0a0a0a;
-         padding: 14px 30px;
-         border-radius: 50px;
-         font-size: 18px;
-         font-weight: 800;
-         text-decoration: none;
-         box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-       ">
+  <div style="margin-top:25px; z-index:2;">
+    <a href="domaines.html" style="background:#F2B840; padding:14px 32px; border-radius:50px; font-weight:900; text-decoration:none; color:#000;">
+      Découvrir nos domaines
     </a>
-
-    <!-- BTN DIASPORA PREMIUM -->
-    <a href="business-diaspora.html"
-       data-fr="Espace Diaspora"
-       data-en="Diaspora Space"
-       style="
-         background: transparent;
-         border: 3px solid #F2B840;
-         color: #F2B840;
-         padding: 14px 30px;
-         border-radius: 50px;
-         font-size: 18px;
-         font-weight: 800;
-         text-decoration: none;
-         transition: 0.3s;
-       "
-       onmouseover="this.style.background='#F2B840'; this.style.color='#0a0a0a'"
-       onmouseout="this.style.background='transparent'; this.style.color='#F2B840'">
-    </a>
-
   </div>
 </section>
 
-<style>
-@keyframes heroFade {
-  from { opacity: 0; transform: translateY(25px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-</style><!-- ==================== DOMAINES ==================== -->
-<section class="domaines-section" style="padding:55px 20px; max-width:1200px; margin:auto;">
-  <h2 data-fr="Nos Domaines" data-en="Our Domains"
-      style="text-align:center; font-size:32px; font-weight:900; color:#004AAD; margin-bottom:35px;">
-  </h2>
-
-  <div class="domaines-grid" style="
-    display:grid;
-    gap:20px;
-    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-  ">
-    
-    <div class="domaine-card"
-         onclick="location.href='domaines.html#immobilier'"
-         style="
-            background:white;
-            border-radius:14px;
-            padding:30px 20px;
-            border-top:6px solid #F2B840;
-            text-align:center;
-            font-weight:800;
-            font-size:20px;
-            color:#004AAD;
-            cursor:pointer;
-            box-shadow:0 5px 20px rgba(0,0,0,0.06);
-            transition:0.35s;
-         "
-         onmouseover="this.style.transform='scale(1.04)'"
-         onmouseout="this.style.transform='scale(1)'">
-      Immobilier
-    </div>
-
-    <div class="domaine-card"
-         onclick="location.href='domaines.html#logistique'"
-         style="
-            background:white; border-radius:14px; padding:30px 20px;
-            border-top:6px solid #F2B840; text-align:center; font-weight:800;
-            font-size:20px; color:#004AAD; cursor:pointer;
-            box-shadow:0 5px 20px rgba(0,0,0,0.06); transition:0.35s;
-         "
-         onmouseover="this.style.transform='scale(1.04)'"
-         onmouseout="this.style.transform='scale(1)'">
-      Logistique
-    </div>
-
-    <div class="domaine-card"
-         onclick="location.href='domaines.html#mobilite'"
-         style="
-            background:white; border-radius:14px; padding:30px 20px;
-            border-top:6px solid #F2B840; text-align:center; font-weight:800;
-            font-size:20px; color:#004AAD; cursor:pointer;
-            box-shadow:0 5px 20px rgba(0,0,0,0.06); transition:0.35s;
-         "
-         onmouseover="this.style.transform='scale(1.04)'"
-         onmouseout="this.style.transform='scale(1)'">
-      Mobilité
-    </div>
-
-    <div class="domaine-card"
-         onclick="location.href='domaines.html#tech'"
-         style="
-            background:white; border-radius:14px; padding:30px 20px;
-            border-top:6px solid #F2B840; text-align:center; font-weight:800;
-            font-size:20px; color:#004AAD; cursor:pointer;
-            box-shadow:0 5px 20px rgba(0,0,0,0.06); transition:0.35s;
-         "
-         onmouseover="this.style.transform='scale(1.04)'"
-         onmouseout="this.style.transform='scale(1)'">
-      Technologie
-    </div>
-
-  </div>
-</section>
-
-<!-- ==================== MÉTÉO PREMIUM ==================== -->
-<div class="widgets" style="
-  max-width:1200px; margin:40px auto; padding:0 20px;
-  display:grid; gap:22px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-">
-  <div class="widget" style="
-      background:white; border-radius:14px; padding:20px;
-      text-align:center; box-shadow:0 5px 16px rgba(0,0,0,0.06);
-  ">
-    <h3 data-fr="Météo — Burundi" data-en="Weather — Burundi"
-        style="color:#004AAD; font-size:18px; font-weight:900; margin-bottom:8px;"></h3>
-    <div id="temp-burundi" class="temp"
-         style="font-size:32px; font-weight:900; color:#F2B840;">--°C</div>
+<!-- METEO PREMIUM -->
+<div style="max-width:1200px; margin:40px auto; padding:0 20px; display:grid; gap:25px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+  <div class="weather-card">
+    <h3>Météo — Burundi</h3>
+    <img id="icon-burundi" width="60">
+    <div id="temp-burundi" style="font-size:36px; font-weight:900;">--°C</div>
   </div>
 
-  <div class="widget"
-       style="background:white; border-radius:14px; padding:20px;
-              text-align:center; box-shadow:0 5px 16px rgba(0,0,0,0.06);">
-    <h3 data-fr="Météo — Montréal" data-en="Weather — Montreal"
-        style="color:#004AAD; font-size:18px; font-weight:900; margin-bottom:8px;"></h3>
-    <div id="temp-montreal" class="temp"
-         style="font-size:32px; font-weight:900; color:#F2B840;">--°C</div>
+  <div class="weather-card">
+    <h3>Météo — Montréal</h3>
+    <img id="icon-montreal" width="60">
+    <div id="temp-montreal" style="font-size:36px; font-weight:900;">--°C</div>
   </div>
 </div>
 
-<!-- ==================== SECTION APPLICATION PREMIUM ==================== -->
-<section id="app-section" style="
-  background: linear-gradient(135deg, #F9E7B5, #F7E2A0);
-  padding: 80px 20px;
-">
+<!-- APPLICATION PREMIUM -->
+<section id="app-section">
   <div style="
-    max-width:1200px; margin:auto; display:flex; align-items:center;
-    gap:50px; flex-wrap:wrap;
+    max-width:1200px;
+    margin:auto;
+    background:white;
+    padding:55px;
+    border-radius:32px;
+    border:4px solid #F2B840;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    align-items:center;
+    gap:50px;
   ">
-
-    <!-- TEXTE GAUCHE -->
-    <div style="flex:1; min-width:320px;">
-      <h2 data-fr="L’Écosystème CIZA GROUP, dans votre main"
-          data-en="The CIZA GROUP Ecosystem, in your hand"
-          style="font-size:34px; font-weight:900; color:#004AAD; margin-bottom:20px;">
-      </h2>
-
-      <p data-fr="
-          Une plateforme unique qui réunit Mobilité, Immobilier, Logistique et Technologie.
-          Pensée pour soutenir la vision Burundi 2040–2060, connecter la diaspora
-          et simplifier le quotidien.
-          Une innovation qui transforme chaque domaine pour un Burundi moderne,
-          digital et accessible à tous."
-         data-en="
-          A unique platform combining Mobility, Real Estate, Logistics and Technology.
-          Designed to support Burundi’s 2040–2060 vision, connect the diaspora
-          and simplify everyday life.
-          Innovation that transforms every service for a modern, digital and accessible Burundi."
-         style="font-size:18px; line-height:1.6; font-weight:500;">
+    <div>
+      <h2 style="color:#004AAD; font-size:36px; font-weight:900;">L’Écosystème CIZA GROUP</h2>
+      <p style="font-size:18px; line-height:1.7;">
+        Une application premium réunissant Mobilité, Immobilier, Logistique et Technologie.
+        Conçue pour accompagner la vision Burundi 2040–2060.
       </p>
     </div>
 
-    <!-- IMAGE À DROITE -->
-    <div style="flex:1; min-width:320px; display:flex; justify-content:center;">
-      <img src="0CD5D803-FB19-4139-B96D-CABF88F5964C.png" alt="App CIZA GROUP" style="
-        width:100%;
-        max-width:520px;
-        border-radius:18px;
-        box-shadow:0 8px 28px rgba(0,0,0,0.18);
-        object-fit:cover;
-      ">
+    <div style="display:flex; justify-content:center;">
+      <div style="background:white; padding:18px; border-radius:22px; border:2px solid #F2B84055;">
+        <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/ea5df852f813a91b3be6650d4be21b261be1c661/EF9338CE-E502-41CC-8EAB-0615A5063C8C.png"
+          style="width:100%; border-radius:18px;">
+      </div>
     </div>
-
   </div>
-</section><!-- ==================== FOOTER PREMIUM ==================== -->
-<footer style="background:#0A0F1A; color:white; padding:60px 20px; margin-top:60px;">
-  <div class="footer-grid" style="
-    max-width:1200px; margin:auto; display:grid; gap:30px;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  ">
+</section>
 
-    <!-- COL 1 -->
-    <div>
-      <h3 class="footer-title" style="color:#F2B840; font-size:20px; font-weight:900;">
-        CIZA GROUP
-      </h3>
-      <p data-fr="Écosystème de Services — Burundi | Canada"
-         data-en="Service Ecosystem — Burundi | Canada"></p>
-      <p>🇧🇮 +257 79945007</p>
-      <p>🇨🇦 +1 514 502 9503</p>
-      <p>Email : infos@cizagroup.com</p>
+<!-- POURQUOI NOUS CHOISIR -->
+<section id="why" style="padding:80px 20px;">
+  <div class="box" style="max-width:1200px; margin:auto;">
+    <h2 style="text-align:center; color:#004AAD; font-size:36px; font-weight:900;">Pourquoi nous choisir ?</h2>
 
-      <div class="social-icons" style="margin-top:10px;">
-        <a href="https://www.instagram.com/cizagroup_official">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" style="width:36px; margin-right:10px;">
-        </a>
-        <a href="https://www.facebook.com">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" style="width:36px; margin-right:10px;">
-        </a>
-        <a href="https://www.youtube.com/@Cizagroup">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" style="width:36px;">
-        </a>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; margin-top:40px;">
+
+      <div style="background:#004AAD; color:white; padding:25px; border-radius:20px; border:3px solid #F2B840;">
+        <div style="font-size:40px;">⭐</div>
+        <h3>Service Premium</h3>
+        <p>Qualité haut de gamme pour la diaspora et les résidents.</p>
+      </div>
+
+      <div style="background:#004AAD; color:white; padding:25px; border-radius:20px; border:3px solid #F2B840;">
+        <div style="font-size:40px;">🔒</div>
+        <h3>Sécurité & Transparence</h3>
+        <p>Rapports, confirmations et suivi clairs.</p>
+      </div>
+
+      <div style="background:#004AAD; color:white; padding:25px; border-radius:20px; border:3px solid #F2B840;">
+        <div style="font-size:40px;">⚡</div>
+        <h3>Rapidité</h3>
+        <p>Des services rapides, intégrés et efficaces.</p>
+      </div>
+
+      <div style="background:#004AAD; color:white; padding:25px; border-radius:20px; border:3px solid #F2B840;">
+        <div style="font-size:40px;">🌍</div>
+        <h3>Dédié à la Diaspora</h3>
+        <p>Conçu pour ceux vivant au Canada, Europe, etc.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:60px 20px; max-width:1200px; margin:auto;">
+  <h2 style="text-align:center; font-size:32px; color:#004AAD; font-weight:900;">
+    FAQ — Questions fréquentes
+  </h2>
+
+  <div style="margin-top:35px;">
+
+    <div class="faq-item">
+      <button class="faq-question">Comment fonctionne l’écosystème CIZA GROUP ?</button>
+      <div class="faq-answer">
+        <p>CIZA GROUP regroupe Mobilité, Immobilier, Logistique et Technologie.</p>
       </div>
     </div>
 
-    <!-- COL 2 -->
-    <div>
-      <h3 class="footer-title" style="color:#F2B840; font-size:20px; font-weight:900;">
-        Navigation
-      </h3>
-      <a href="index.html" style="color:#dfe6f5; display:block; margin:6px 0;">Accueil</a>
-      <a href="domaines.html" style="color:#dfe6f5; display:block; margin:6px 0;">Domaines</a>
-      <a href="a-propos.html" style="color:#dfe6f5; display:block; margin:6px 0;">À propos</a>
-      <a href="business-diaspora.html" style="color:#dfe6f5; display:block; margin:6px 0;">Diaspora</a>
-      <a href="contact.html" style="color:#dfe6f5; display:block; margin:6px 0;">Contact</a>
+    <div class="faq-item">
+      <button class="faq-question">Puis-je utiliser les services depuis la diaspora ?</button>
+      <div class="faq-answer">
+        <p>Oui, tous nos services fonctionnent même depuis l’étranger.</p>
+      </div>
     </div>
 
-    <!-- COL 3 -->
-    <div>
-      <h3 class="footer-title" style="color:#F2B840; font-size:20px; font-weight:900;">
-        Légal
-      </h3>
-      <a href="cgu.html" style="color:#dfe6f5; display:block; margin:6px 0;">Conditions générales</a>
-      <a href="legales.html" style="color:#dfe6f5; display:block; margin:6px 0;">Mentions légales</a>
-      <a href="politique-confidentialite.html" style="color:#dfe6f5; display:block; margin:6px 0;">
-        Politique de confidentialité
-      </a>
+    <div class="faq-item">
+      <button class="faq-question">Comment fonctionne le service immobilier ?</button>
+      <div class="faq-answer">
+        <p>Nous vous accompagnons de l’achat jusqu’à la gestion du bien.</p>
+      </div>
     </div>
 
   </div>
+</section>
 
-  <div class="footer-bottom" style="text-align:center; margin-top:25px; opacity:0.7; font-size:14px;">
-    © 2026 CIZA GROUP — Écosystème de Services | Burundi. Tous droits réservés.
+<!-- WIDGET AVIS -->
+<div id="avisWidget">+</div>
+
+<div id="avisPanel">
+  <h3 style="color:#004AAD; font-weight:900;">Laisser un avis</h3>
+
+  <input id="avis-name2" placeholder="Votre nom" style="width:100%; padding:10px; margin-bottom:10px;">
+  <input id="avis-pays2" placeholder="Pays (optionnel)" style="width:100%; padding:10px; margin-bottom:10px;">
+  <textarea id="avis-msg2" placeholder="Votre message" style="width:100%; height:100px; padding:10px;"></textarea>
+
+  <button onclick="addAvisFromPanel()" style="width:100%; background:#004AAD; color:white; padding:12px; border:none; border-radius:8px; margin-top:10px;">Envoyer</button>
+</div>
+
+<!-- RETOUR EN HAUT -->
+<div id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<!-- FOOTER -->
+<footer style="background:#0A0F1A; color:white; padding:60px 20px;">
+  <div style="max-width:1200px; margin:auto;">
+    <h3 style="color:#F2B840;">CIZA GROUP</h3>
+    <p>Écosystème multiservices — Burundi | Diaspora</p>
+    <p>🇧🇮 +257 79945007</p>
+    <p>🇨🇦 +1 514 502 9503</p>
+    <p>Email : infos@cizagroup.com</p>
   </div>
 </footer>
 
-<!-- ==================== COOKIE BANNER ==================== -->
-<div id="cookie-box" style="
-  position:fixed; bottom:0; left:0; width:100%;
-  background:#1a1f25; color:white; padding:18px;
-  text-align:center; display:none; z-index:9999;
-  font-size:16px;
-">
-  <span data-fr="Ce site utilise des cookies pour améliorer votre expérience."
-        data-en="This site uses cookies to enhance your experience."></span>
-
-  <button onclick="acceptCookies()" style="
-    margin-left:20px; padding:10px 20px; background:#F2B840;
-    border:none; border-radius:6px; font-weight:900; cursor:pointer;
-  ">OK</button>
-</div>
-
-<!-- ==================== SCRIPTS FINAUX ==================== -->
 <script>
-/* ================= MENU AUTO-CLOSE ================== */
-document.querySelectorAll("nav a").forEach(a=>{
-  a.addEventListener("click", ()=> {
-    document.getElementById("nav").classList.remove("nav-open");
-  });
-});
-
-/* ================= PAGE MOTION ================== */
-document.body.style.opacity = 0;
-window.addEventListener("load", ()=>{
-  document.body.style.transition = "opacity 0.6s ease-out";
-  document.body.style.opacity = 1;
-});
-
-/* ================= COOKIE ================== */
-function acceptCookies(){
-  localStorage.setItem("cookies_accepted","yes");
-  document.getElementById("cookie-box").style.display = "none";
+/* MENU */
+function toggleMenu() {
+  document.getElementById("nav").classList.toggle("nav-open");
 }
 
-window.onload = () => {
-  if(!localStorage.getItem("cookies_accepted")){
-    document.getElementById("cookie-box").style.display = "block";
-  }
-  loadWeather();
+/* FAQ */
+document.querySelectorAll(".faq-question").forEach(btn => {
+  btn.onclick = () => {
+    const ans = btn.nextElementSibling;
+    ans.style.maxHeight = ans.style.maxHeight ? null : ans.scrollHeight + "px";
+  };
+});
+
+/* WIDGET AVIS */
+document.getElementById("avisWidget").onclick = () => {
+  document.getElementById("avisPanel").classList.toggle("open");
 };
 
-/* ================= METEO LIVE ================== */
+function addAvisFromPanel(){
+  let nom = document.getElementById("avis-name2").value;
+  let pays = document.getElementById("avis-pays2").value || "🌍";
+  let msg = document.getElementById("avis-msg2").value;
+
+  if(!nom || !msg) return alert("Nom + message obligatoires");
+
+  alert("Avis envoyé ! (fonction interne prête)");
+  document.getElementById("avisPanel").classList.remove("open");
+}
+
+/* METEO */
 async function loadWeather() {
   const cities = {
-    burundi: {lat:-3.38, lon:29.36},
-    montreal: {lat:45.5017, lon:-73.5673}
+    burundi: {lat:-3.38, lon:29.36, icon:"icon-burundi", temp:"temp-burundi"},
+    montreal:{lat:45.50, lon:-73.56, icon:"icon-montreal", temp:"temp-montreal"}
   };
-
-  for(let key in cities){
-    const {lat, lon} = cities[key];
-
-    try{
-      const res = await fetch(
-        `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`
-      );
-      const data = await res.json();
-      const temp = Math.round(data.current_weather.temperature);
-      document.getElementById(`temp-${key}`).innerText = temp + "°C";
-    } catch (e){
-      document.getElementById(`temp-${key}`).innerText = "--°C";
-    }
+  for(const city in cities){
+    const c = cities[city];
+    const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${c.lat}&longitude=${c.lon}&current_weather=true`);
+    const data = await res.json();
+    document.getElementById(c.temp).innerText = Math.round(data.current_weather.temperature)+"°C";
+    document.getElementById(c.icon).src = "https://img.icons8.com/ios-filled/100/ffffff/sun.png";
   }
 }
+loadWeather();
 
-/* ================= MULTILINGUE ================== */
-function setLang(l) {
-  document.querySelectorAll("[data-fr]").forEach(el=>{
-    el.innerHTML = el.dataset[l];
-  });
-  localStorage.setItem("lang", l);
-}
-
-setLang(localStorage.getItem("lang") || "fr");
+/* RETOUR EN HAUT */
+window.onscroll = () => {
+  document.getElementById("topBtn").style.display =
+    window.scrollY > 500 ? "flex" : "none";
+};
 </script>
+
+</body>
+</html>
