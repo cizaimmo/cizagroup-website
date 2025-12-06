@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>CIZA GROUP — Domaines</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>CIZA GROUP — Nos Domaines</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="icon" type="image/png" href="favicone.png">
+  <link rel="icon" type="image/png" href="favicone.png" />
 
   <style>
     body {
       margin: 0;
       font-family: Inter, Arial, sans-serif;
-      background: #f4f6fa;
-      color: #1a1f25;
+      background: #0A0F1A;
+      color: white;
       opacity: 0;
-      animation: pageFadeIn 0.8s ease-out forwards;
+      animation: fadeInPage 0.6s ease-out forwards;
     }
 
-    @keyframes pageFadeIn {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes fadeInPage {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     /* HEADER */
@@ -33,18 +33,24 @@
       top: 0;
       z-index: 3000;
     }
-    .logo { height: 80px; width: auto; }
-    @media (max-width:480px){ .logo{height:65px;} }
+
+    .logo {
+      height: 80px;
+    }
+
+    .menu-btn div {
+      background: #F2B840;
+      height: 4px;
+      margin: 5px 0;
+      border-radius: 3px;
+    }
 
     .menu-btn { width: 32px; cursor: pointer; }
-    .menu-btn div {
-      height: 4px; background: #F2B840; margin: 5px 0; border-radius: 3px;
-    }
 
     nav {
       position: fixed;
       top: 0;
-      right: -270px;
+      right: -260px;
       width: 250px;
       height: 100%;
       background: #004AAD;
@@ -53,161 +59,180 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-      z-index: 3500;
-    }
-    nav.nav-open { right: 0; }
-    nav a {
-      color: white; font-size: 20px; padding-left: 20px; text-decoration: none;
+      z-index: 5000;
     }
 
-    /* HERO FULLSCREEN */
-    #hero {
-      height: 100vh;
-      background-image: url('2B6CF636-CD6D-4113-B889-CC3906153F53.png');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+    nav.nav-open { right: 0 !important; }
+
+    nav a {
+      color: white;
+      padding-left: 20px;
+      font-size: 20px;
+      text-decoration: none;
+      cursor: pointer;
     }
-    #hero::after {
-      content: "";
+
+    /* HERO SLIDER */
+    .hero {
+      width: 100%;
+      height: 55vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 55vh;
+      object-fit: cover;
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.35);
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
     }
-    #hero h1 {
-      position: relative;
-      font-size: 42px;
+
+    .hero img.active {
+      opacity: 1;
+    }
+
+    /* SECTION TITRE */
+    h1 {
+      text-align: center;
+      margin: 45px 0 20px;
+      font-size: 36px;
       font-weight: 900;
-      color: white;
-      z-index: 2;
-      text-shadow: 0 4px 12px rgba(0,0,0,0.55);
+      color: #F2B840;
     }
 
-    /* SECTION DOMAINES */
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
+    .gold-line {
+      width: 140px;
+      height: 4px;
+      background: #F2B840;
+      margin: 10px auto 40px;
+      border-radius: 2px;
     }
 
+    /* CARDS */
     .domain-card {
-      background: white;
-      border-radius: 14px;
+      background: #0F1724;
+      border: 3px solid #F2B840;
+      border-radius: 18px;
       padding: 30px 25px;
-      margin-bottom: 25px;
-      border-left: 6px solid #F2B840;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      transition: 0.3s;
+      max-width: 1050px;
+      margin: 25px auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      transition: 0.35s;
     }
+
     .domain-card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.55);
     }
+
     .domain-card h2 {
-      color: #004AAD;
-      font-size: 26px;
-      font-weight: 900;
+      font-size: 30px;
+      color: #F2B840;
+      font-weight: 800;
       margin-bottom: 12px;
     }
+
     .domain-card p {
-      font-size: 17px;
+      font-size: 18px;
       line-height: 1.6;
-      margin-bottom: 15px;
+      opacity: 0.95;
     }
 
-    .contact-btn {
-      background: #F2B840;
-      color: #0a0a0a;
-      padding: 12px 25px;
-      border-radius: 50px;
-      font-size: 16px;
-      font-weight: 800;
-      text-decoration: none;
+    /* BUTTON CONTACT */
+    .btn-contact {
+      margin-top: 25px;
       display: inline-block;
-      cursor: pointer;
-      border: none;
-      margin-top: 10px;
+      background: #F2B840;
+      color: black;
+      padding: 12px 26px;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 900;
+      text-decoration: none;
+      transition: 0.3s;
     }
 
-    /* FORM POPUP */
-    #contact-popup {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.65);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
+    .btn-contact:hover {
+      background: white;
+      color: black;
     }
-    .popup-content {
-      background: #F2B840;
-      border: 4px solid #004AAD;
-      border-radius: 14px;
-      padding: 30px;
-      width: 90%;
-      max-width: 450px;
-      animation: popupIn 0.4s ease-out;
+
+    /* FORMULAIRE PREMIUM */
+    #contact-form-section {
+      background: #0F1724;
+      padding: 50px 20px;
+      border-top: 4px solid #F2B840;
+      margin-top: 60px;
     }
-    @keyframes popupIn {
-      from {opacity:0; transform:scale(0.85);}
-      to   {opacity:1; transform:scale(1);}
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: #0A1220;
+      padding: 35px;
+      border-radius: 18px;
+      border: 3px solid #004AAD;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.45);
     }
-    .popup-content h3 {
-      margin: 0 0 15px 0;
-      font-size: 24px;
-      font-weight: 900;
-      color: #004AAD;
-      text-align: center;
-    }
-    .popup-content input,
-    .popup-content textarea {
+
+    input, textarea {
       width: 100%;
-      margin-bottom: 14px;
-      padding: 12px;
-      border-radius: 8px;
-      border: 2px solid #004AAD;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 18px;
+      background: #1B2334;
+      color: white;
       font-size: 16px;
     }
-    .popup-content button {
-      width: 100%;
-      padding: 12px;
-      background: #004AAD;
-      color: white;
+
+    button {
+      background: #F2B840;
       border: none;
-      border-radius: 8px;
+      width: 100%;
+      padding: 14px;
+      border-radius: 50px;
       font-size: 18px;
       font-weight: 900;
       cursor: pointer;
     }
 
-    /* FOOTER */
     footer {
       background: #0A0F1A;
+      padding: 40px 20px;
+      text-align: center;
       color: white;
-      padding: 60px 20px;
-      margin-top: 60px;
+      margin-top: 50px;
     }
-
   </style>
 
   <script>
     function toggleMenu() {
       const nav = document.getElementById("nav");
       nav.classList.toggle("nav-open");
-      document.querySelectorAll("#nav a").forEach(a=>{
-        a.onclick = ()=> nav.classList.remove("nav-open");
-      });
     }
 
-    function openForm() {
-      document.getElementById("contact-popup").style.display = "flex";
-    }
-    function closeForm() {
-      document.getElementById("contact-popup").style.display = "none";
+    window.onload = () => {
+      document.body.style.opacity = 1;
+      autoSlider();
+
+      document.querySelectorAll("#nav a").forEach(a => {
+        a.addEventListener("click", () => {
+          document.getElementById("nav").classList.remove("nav-open");
+        });
+      });
+    };
+
+    let slideIndex = 0;
+    function autoSlider() {
+      const slides = document.querySelectorAll(".hero img");
+      slides.forEach(s => s.classList.remove("active"));
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add("active");
+      setTimeout(autoSlider, 3500);
     }
   </script>
 </head>
@@ -230,58 +255,81 @@
   <a href="contact.html">Contact</a>
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <h1>Nos Domaines d’Activités</h1>
+<!-- HERO SLIDER -->
+<section class="hero">
+  <img src="B08ED666-562B-4166-A57C-65FC3BE9B4A2.png" class="active">
+  <img src="cizalogistic.png.jfif">
+  <img src="B0553D77-DACF-4386-BE12-11899B47E544.png">
+  <img src="F1586A0D-F354-4178-9196-9A83F5D74C3E.png">
 </section>
 
-<!-- DOMAINES -->
-<div class="container">
+<h1>Nos Domaines</h1>
+<div class="gold-line"></div>
 
-  <div class="domain-card">
-    <h2>Immobilier</h2>
-    <p>Gestion, location, achat, construction et valorisation de biens adaptés aux besoins modernes du Burundi et de la diaspora.</p>
-    <button class="contact-btn" onclick="openForm()">Contact</button>
-  </div>
-
-  <div class="domain-card">
-    <h2>Logistique</h2>
-    <p>Solutions d’expédition, transport, gestion des flux, stockage et services intelligents entre le Burundi, le Canada et le monde.</p>
-    <button class="contact-btn" onclick="openForm()">Contact</button>
-  </div>
-
-  <div class="domain-card">
-    <h2>Mobilité</h2>
-    <p>Services de déplacement modernes, sécurisés, adaptés aux citoyens, entreprises et voyageurs au Burundi.</p>
-    <button class="contact-btn" onclick="openForm()">Contact</button>
-  </div>
-
-  <div class="domain-card">
-    <h2>Technologie</h2>
-    <p>Développement d’applications, digitalisation, automatisation et solutions innovantes pour un Burundi intelligent.</p>
-    <button class="contact-btn" onclick="openForm()">Contact</button>
-  </div>
-
+<!-- MOBILITÉ -->
+<div class="domain-card">
+  <h2>Mobilité</h2>
+  <p>
+    CizaRide+ révolutionne le transport au Burundi avec une solution rapide,
+    sécurisée et totalement adaptée au quotidien. Notre service relie
+    passagers, chauffeurs, entreprises et institutions en un seul clic.
+  </p>
+  <a class="btn-contact" href="#contact-form-section">Contactez-nous</a>
 </div>
 
-<!-- POPUP CONTACT -->
-<div id="contact-popup" onclick="closeForm()">
-  <div class="popup-content" onclick="event.stopPropagation()">
-    <h3>Contactez-nous</h3>
-
-    <form action="mailto:infos@cizagroup.com" method="post" enctype="text/plain">
-      <input type="text" name="Nom" placeholder="Votre nom" required>
-      <input type="email" name="Email" placeholder="Votre email" required>
-      <textarea name="Message" rows="4" placeholder="Votre message" required></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
-
-    <button onclick="closeForm()" style="margin-top:10px;background:#F2B840;color:#000;">Fermer</button>
-  </div>
+<!-- IMMOBILIER -->
+<div class="domain-card">
+  <h2>Immobilier</h2>
+  <p>
+    Ciza Immo accompagne les familles, investisseurs et diaspora dans l’achat,
+    la vente et la gestion immobilière. Transparence, sécurité et confiance
+    sont au cœur de notre service.
+  </p>
+  <a class="btn-contact" href="#contact-form-section">Contactez-nous</a>
 </div>
+
+<!-- LOGISTIQUE -->
+<div class="domain-card">
+  <h2>Logistique</h2>
+  <p>
+    Ciza Logistique offre une chaîne complète pour le transport, l’acheminement,
+    l’import & export. Une solution fiable pour particuliers, professionnels
+    et diaspora.
+  </p>
+  <a class="btn-contact" href="#contact-form-section">Contactez-nous</a>
+</div>
+
+<!-- TECHNOLOGIE -->
+<div class="domain-card">
+  <h2>Technologie</h2>
+  <p>
+    CizaTech développe des solutions digitales modernes : applications,
+    plateformes web, API, cybersécurité et innovation technologique.
+    Un pilier pour le Burundi 2040–2060.
+  </p>
+  <a class="btn-contact" href="#contact-form-section">Contactez-nous</a>
+</div>
+
+<!-- FORMULAIRE CONTACT -->
+<section id="contact-form-section">
+  <form action="mailto:infos@cizagroup.com" method="POST">
+    <h2 style="color:#F2B840; text-align:center;">Contactez-nous</h2>
+
+    <input type="text" name="name" placeholder="Nom complet" required>
+    <input type="email" name="email" placeholder="Adresse email" required>
+    <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+
+    <button type="submit">Envoyer</button>
+
+    <p style="text-align:center; margin-top:18px;">
+      WhatsApp Burundi : <b>+257 79945007</b><br>
+      WhatsApp Canada : <b>+1 514 502 9503</b>
+    </p>
+  </form>
+</section>
 
 <footer>
-  <p style="text-align:center;opacity:0.8;">© 2026 CIZA GROUP — Tous droits réservés.</p>
+  © 2026 CIZA GROUP — Tous droits réservés
 </footer>
 
 </body>
