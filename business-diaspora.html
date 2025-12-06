@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CIZA GROUP — Écosystème Multiservices Diaspora & Étrangers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="favicone.png">
+
+<!-- SEO -->
+<meta name="description" content="CIZA GROUP — Services premium pour la Diaspora & les Étrangers : Immobilier, Logistique, Business Setup, Assistance 7j/7, Sécurité, Fiabilité. Burundi & Canada.">
+<link rel="canonical" href="https://cizaimmo.github.io/cizagroup-website/business-diaspora.html">
+<meta property="og:title" content="CIZA GROUP — Services Diaspora & Étrangers">
+<meta property="og:description" content="Solutions premium pour la Diaspora : Investissement, Immobilier, Logistique, Assistance 7j/7.">
+<meta property="og:image" content="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/herodiaspora.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- JSON-LD COMPANY -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "CIZA GROUP",
+ "url": "https://cizaimmo.github.io/cizagroup-website/",
+ "logo": "https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/logotransparent.png",
+ "contactPoint": [{
+   "@type": "ContactPoint",
+   "telephone": "+25779945007",
+   "contactType": "Customer Service",
+   "areaServed": "Worldwide",
+   "availableLanguage": ["French","English"]
+ }]
+}
+</script>
+
+<style>
+/* GENERAL */
+body {
+ margin:0;
+ font-family: Inter, Arial, sans-serif;
+ background:#0A0F1A;
+ color:white;
+ overflow-x:hidden;
+}
+
+/* BACKGROUND LIGHT FLOW ANIMATION */
+body::before {
+ content:"";
+ position:fixed;
+ top:0; left:0; right:0; bottom:0;
+ background:linear-gradient(120deg,rgba(255,215,0,0.05),rgba(0,74,173,0.08));
+ background-size:300% 300%;
+ animation:flow 12s infinite linear;
+ z-index:-2;
+}
+@keyframes flow {
+ 0%{background-position:0% 50%;}
+ 50%{background-position:100% 50%;}
+ 100%{background-position:0% 50%;}
+}
+
+/* HEADER */
+header {
+ background:#004AAD;
+ padding:12px 18px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ position:sticky;
+ top:0;
+ z-index:2000;
+}
+.logo {height:55px;}
+.lang-switch{color:white;font-weight:700;cursor:pointer;margin:0 3px;}
+.lang-switch.active{color:#F2B840;text-decoration:underline;}
+
+/* MENU */
+.menu-btn{width:32px;cursor:pointer;}
+.menu-btn div{height:4px;background:#F2B840;margin:6px;border-radius:2px;}
+
+#nav {
+ position:fixed;
+ top:0;right:-300px;
+ width:260px;height:100%;
+ background:#0A0F1A;
+ padding-top:80px;
+ transition:.3s;
+ display:flex;flex-direction:column;
+}
+#nav a{
+ color:white;
+ padding:12px 20px;
+ text-decoration:none;
+ font-size:18px;
+}
+#nav.nav-open{right:0;}
+.close-nav{
+ position:absolute;top:20px;right:20px;
+ font-size:28px;color:#F2B840;cursor:pointer;
+}
+
+/* HERO */
+#hero {
+ max-width:1200px;
+ margin:40px auto;
+ border-radius:28px;
+ overflow:hidden;
+ position:relative;
+ box-shadow:0 0 40px rgba(242,184,64,0.25);
+}
+#hero img{width:100%;display:block;}
+#hero::after{
+ content:"";
+ position:absolute;inset:0;
+ border-radius:28px;
+ box-shadow:0 0 35px rgba(242,184,64,0.45);
+ animation:halo 6s infinite alternate;
+}
+@keyframes halo {
+ 0%{box-shadow:0 0 25px rgba(242,184,64,0.25);}
+ 100%{box-shadow:0 0 50px rgba(242,184,64,0.55);}
+}
+.hero-text{
+ text-align:center;
+ margin-top:10px;
+ color:#F2B840;
+ font-size:20px;
+ font-weight:700;
+}
+
+/* SECTIONS */
+.section-title{
+ text-align:center;
+ font-size:30px;
+ color:#F2B840;
+ font-weight:900;
+ margin:50px 0 20px;
+}
+
+.container{
+ max-width:1100px;
+ margin:auto;
+ padding:20px;
+}
+
+/* VISION IMAGE */
+.vision-img{
+ width:100%;
+ border-radius:22px;
+ margin-bottom:25px;
+}
+
+/* CADRANS */
+.cadrans{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:20px;
+ margin-top:25px;
+}
+.cadran{
+ background:#111824;
+ padding:25px;
+ border-radius:18px;
+ text-align:center;
+ box-shadow:0 0 12px rgba(0,0,0,0.4);
+}
+.cadran h2{
+ color:#F2B840;
+ font-size:42px;
+ margin:0;
+}
+.cadran p{
+ margin:0;margin-top:6px;
+ font-size:16px;
+ opacity:0.8;
+}
+
+/* DOMAINES */
+.domain-text{font-size:18px;opacity:0.8;margin-bottom:22px;}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+ gap:20px;
+}
+.card{
+ background:#111824;
+ padding:25px;
+ border-radius:18px;
+ border-left:5px solid #F2B840;
+ transition:0.3s;
+ cursor:pointer;
+}
+.card:hover{
+ transform:translateY(-6px);
+ box-shadow:0 0 20px rgba(242,184,64,0.35);
+}
+.card h4{margin:0;color:#F2B840;font-size:20px;font-weight:800;}
+
+/* RENCONTREZ */
+.office-img{
+ width:100%;
+ border-radius:22px;
+ margin:20px 0;
+}
+
+/* CONTACT */
+.contact-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+ gap:25px;
+}
+.contact-box{
+ background:#111824;
+ padding:20px;
+ border-radius:16px;
+ border-top:3px solid #F2B840;
+ text-align:center;
+}
+.contact-box h3{color:#F2B840;margin:0 0 10px;}
+.contact-box p{margin:0;font-size:15px;opacity:0.8;}
+
+/* AVIS */
+.avis-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:20px;
+}
+.avis{
+ background:#111824;
+ padding:20px;
+ border-radius:14px;
+ border-left:4px solid #004AAD;
+}
+.avis h4{margin:0;color:#F2B840;}
+.avis p{margin:6px 0 0;opacity:0.75;}
+
+/* FOOTER */
+footer{
+ background:#00050D;
+ padding:40px 20px;
+ margin-top:40px;
+}
+.footer-grid{
+ max-width:1100px;margin:auto;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+ gap:20px;
+}
+.footer-title{color:#F2B840;font-weight:900;font-size:20px;}
+footer a{color:#ccc;text-decoration:none;display:block;margin:6px 0;}
+.footer-bottom{text-align:center;margin-top:20px;opacity:0.6;font-size:14px;}
+
+/* SCROLL TOP */
+#topBtn{
+ position:fixed;
+ bottom:22px;right:22px;
+ background:#004AAD;
+ color:white;
+ width:50px;height:50px;
+ display:flex;justify-content:center;align-items:center;
+ border-radius:50%;
+ cursor:pointer;
+ font-size:24px;
+ box-shadow:0 0 15px rgba(0,0,0,0.5);
+ display:none;
+}
+
+/* COOKIE BANNER */
+#cookie-banner{
+ position:fixed;bottom:0;left:0;right:0;
+ background:#00050D;
+ color:white;
+ padding:15px;
+ display:flex;justify-content:space-between;align-items:center;
+ z-index:3000;
+}
+#cookie-banner button{
+ background:#F2B840;border:none;padding:8px 15px;
+ border-radius:6px;font-weight:700;cursor:pointer;
+}
+
+</style>
+
+<script>
+// MENU
+function toggleMenu(){document.getElementById("nav").classList.toggle("nav-open");}
+
+// MULTILINGUE
+function setLang(l){
+ document.querySelectorAll("[data-fr]").forEach(el=>{
+   el.innerHTML = el.dataset[l];
+ });
+ localStorage.setItem("lang",l);
+ document.querySelectorAll(".lang-switch").forEach(e=>e.classList.remove("active"));
+ document.querySelector(".lang-switch."+l).classList.add("active");
+}
+window.onload=()=>{
+ const L=localStorage.getItem("lang")||"fr";
+ setLang(L);
+};
+
+// TOP BUTTON
+window.addEventListener("scroll",()=>{
+ if(window.scrollY>200) document.getElementById("topBtn").style.display="flex";
+ else document.getElementById("topBtn").style.display="none";
+});
+function scrollTopSmooth(){window.scrollTo({top:0,behavior:"smooth"});}
+
+// COOKIE
+function acceptCookies(){localStorage.setItem("cookie","yes");document.getElementById("cookie-banner").style.display="none";}
+function declineCookies(){localStorage.setItem("cookie","no");document.getElementById("cookie-banner").style.display="none";}
+setTimeout(()=>{if(!localStorage.getItem("cookie"))document.getElementById("cookie-banner").style.display="flex";},1000);
+</script>
+</head>
+
+<body>
+
+<header>
+ <img src="logotransparent.png" class="logo">
+ <div>
+  <span class="lang-switch fr" onclick="setLang('fr')">FR</span> |
+  <span class="lang-switch en" onclick="setLang('en')">EN</span>
+ </div>
+ <div class="menu-btn" onclick="toggleMenu()">
+  <div></div><div></div><div></div>
+ </div>
+</header>
+
+<!-- MENU -->
+<nav id="nav">
+ <span class="close-nav" onclick="toggleMenu()">✖</span>
+
+ <a data-fr="Retour Accueil" data-en="Back Home" href="index.html"></a>
+ <a data-fr="Accueil" data-en="Home" href="index.html"></a>
+ <a data-fr="Domaines" data-en="Domains" href="domaines.html"></a>
+ <a data-fr="À propos" data-en="About" href="a-propos.html"></a>
+ <a data-fr="Diaspora" data-en="Diaspora" href="business-diaspora.html"></a>
+ <a data-fr="Contact" data-en="Contact" href="contact.html"></a>
+ <a data-fr="Mentions légales" data-en="Legal" href="legales.html"></a>
+ <a data-fr="CGU" data-en="Terms" href="cgu.html"></a>
+ <a data-fr="Confidentialité" data-en="Privacy" href="confidentialite.html"></a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+ <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/herodiaspora.png" alt="">
+</section>
+
+<div class="hero-text" data-fr="Solutions premium pour la Diaspora & les Étrangers au Burundi" data-en="Premium solutions for the Diaspora & Foreign visitors in Burundi"></div>
+
+<!-- VISION -->
+<h2 class="section-title" data-fr="Vision 2040–2060" data-en="2040–2060 Vision"></h2>
+
+<div class="container">
+ <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/IMG_0041.jpeg" class="vision-img">
+
+ <div class="cadrans">
+  <div class="cadran">
+   <h2>100%</h2><p data-fr="Sécurité" data-en="Security"></p>
+  </div>
+  <div class="cadran">
+   <h2>&lt;24h</h2><p data-fr="Réponse" data-en="Response"></p>
+  </div>
+  <div class="cadran">
+   <h2>7j/7</h2><p data-fr="Accompagnement" data-en="Support"></p>
+  </div>
+  <div class="cadran">
+   <h2>99%</h2><p data-fr="Fiabilité" data-en="Reliability"></p>
+  </div>
+ </div>
+</div>
+
+<!-- DOMAINES -->
+<h2 class="section-title" data-fr="Nos Domaines" data-en="Our Domains"></h2>
+
+<div class="container">
+
+<div class="domain-text" data-fr="CIZA GROUP accompagne la Diaspora & les Étrangers dans quatre piliers majeurs." data-en="CIZA GROUP supports the Diaspora & Foreign visitors through four key pillars."></div>
+
+<div class="grid">
+
+ <div class="card"><h4 data-fr="Immobilier & Installation" data-en="Real Estate & Installation"></h4></div>
+
+ <div class="card"><h4 data-fr="Logistique & Achats" data-en="Logistics & Purchases"></h4></div>
+
+ <div class="card"><h4 data-fr="Business & Investissement" data-en="Business & Investment"></h4></div>
+
+ <div class="card"><h4 data-fr="Support & Sécurité" data-en="Support & Security"></h4></div>
+
+</div></div>
+
+<!-- RENCONTREZ -->
+<h2 class="section-title" data-fr="Rencontrez CIZA GROUP" data-en="Meet CIZA GROUP"></h2>
+
+<div class="container">
+ <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/cizagroupeofice.png" class="office-img">
+</div>
+
+<!-- CONTACT -->
+<h2 class="section-title" data-fr="Contact" data-en="Contact"></h2>
+
+<div class="container contact-grid">
+
+ <div class="contact-box">
+  <h3 data-fr="WhatsApp" data-en="WhatsApp"></h3>
+  <p>+1 514 502 9503</p>
+ </div>
+
+ <div class="contact-box">
+  <h3>Email</h3>
+  <p>infos@cizagroup.com</p>
+ </div>
+
+ <div class="contact-box">
+  <h3 data-fr="Téléphone" data-en="Phone"></h3>
+  <p>🇧🇮 +257 79945007<br>🇨🇦 +1 514 502 9503</p>
+ </div>
+
+</div>
+
+<!-- AVIS -->
+<h2 class="section-title" data-fr="Avis de la Diaspora" data-en="Diaspora Testimonials"></h2>
+
+<div class="container avis-grid">
+
+ <div class="avis"><h4>🇨🇦 Canada</h4><p data-fr="Service fiable et transparent." data-en="Reliable and transparent service."></p></div>
+
+ <div class="avis"><h4>🇧🇪 Belgique</h4><p data-fr="Accompagnement professionnel." data-en="Professional support."></p></div>
+
+ <div class="avis"><h4>🇫🇷 France</h4><p data-fr="Une solution sérieuse pour la diaspora." data-en="A serious solution for the diaspora."></p></div>
+
+ <div class="avis"><h4>🇳🇴 Norvège</h4><p data-fr="Rapide et efficace." data-en="Fast and efficient."></p></div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+
+<div class="footer-grid">
+ <div>
+  <h3 class="footer-title">CIZA GROUP</h3>
+  <p>Burundi | Canada</p>
+  <p>🇧🇮 +257 79945007</p>
+  <p>🇨🇦 +1 514 502 9503</p>
+  <p>Email : infos@cizagroup.com</p>
+ </div>
+
+ <div>
+  <h3 class="footer-title" data-fr="Navigation" data-en="Navigation"></h3>
+  <a href="index.html" data-fr="Accueil" data-en="Home"></a>
+  <a href="domaines.html" data-fr="Domaines" data-en="Domains"></a>
+  <a href="a-propos.html" data-fr="À propos" data-en="About"></a>
+  <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
+ </div>
+
+ <div>
+  <h3 class="footer-title" data-fr="Légal" data-en="Legal"></h3>
+  <a href="legales.html" data-fr="Mentions légales" data-en="Legal"></a>
+  <a href="cgu.html" data-fr="CGU" data-en="Terms"></a>
+  <a href="confidentialite.html" data-fr="Confidentialité" data-en="Privacy"></a>
+ </div>
+
+ <div>
+  <h3 class="footer-title">Diaspora</h3>
+  <a href="business-diaspora.html" data-fr="Services Diaspora" data-en="Diaspora Services"></a>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+ © 2026 CIZA GROUP — Tous droits réservés.
+</div>
+
+</footer>
+
+<!-- SCROLL TOP -->
+<div id="topBtn" onclick="scrollTopSmooth()">↑</div>
+
+<!-- COOKIE -->
+<div id="cookie-banner" style="display:none;">
+ <span data-fr="Ce site utilise des cookies pour améliorer votre expérience." data-en="This website uses cookies to improve your experience."></span>
+ <div>
+   <button onclick="acceptCookies()" data-fr="Accepter" data-en="Accept"></button>
+   <button onclick="declineCookies()" data-fr="Refuser" data-en="Decline"></button>
+ </div>
+</div>
+
+</body>
+</html>
