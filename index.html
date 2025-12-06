@@ -2,453 +2,712 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>CIZA GROUP — Écosystème de Services | Burundi & Diaspora</title>
-  <meta name="description" content="CIZA GROUP est un écosystème multiservices au Burundi et pour la diaspora : mobilité, immobilier, logistique, technologie et solutions connectées. Services fiables, modernes et sécurisés pour un Burundi 2040–2060.">
-  <meta name="keywords" content="CIZA GROUP, Burundi, diaspora, mobilité, immobilier, logistique, technologie, services, multiservices, Afrique">
+  <title>CIZA GROUP — Écosystème de Services au Burundi</title>
 
-  <link rel="canonical" href="https://cizaimmo.github.io/cizagroup-website/">
+  <!-- SEO -->
+  <meta name="description" content="CIZA GROUP propose un écosystème premium de services au Burundi : mobilité, immobilier, logistique, technologie. Nous accompagnons la vision Burundi 2040–2060.">
+  <meta name="keywords" content="CIZA GROUP, Burundi, diaspora, mobilité, immobilier, logistique, technologie, écosystème, services">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="CIZA GROUP">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="CIZA GROUP — Écosystème de Services | Burundi & Diaspora">
-  <meta property="og:description" content="Mobilité, immobilier, logistique, technologie et services diaspora. Une plateforme moderne et sécurisée.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/logotransparent.png">
-  <meta property="og:url" content="https://cizaimmo.github.io/cizagroup-website/">
+  <meta property="og:title" content="CIZA GROUP — Écosystème de Services au Burundi">
+  <meta property="og:description" content="Un écosystème moderne regroupant mobilité, immobilier, logistique et technologie pour accompagner la vision Burundi 2040–2060.">
+  <meta property="og:image" content="https://cizaimmo.github.io/cizagroup-website/logotransparent.png">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cizaimmo.github.io/cizagroup-website/">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CIZA GROUP — Écosystème de Services">
-  <meta name="twitter:description" content="Services pour le Burundi et la diaspora : mobilité, immobilier, logistique, technologie.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/logotransparent.png">
 
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "CIZA GROUP",
-    "url": "https://cizaimmo.github.io/cizagroup-website/",
-    "logo": "https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/logotransparent.png",
-    "description": "Écosystème multiservices au Burundi et pour la diaspora.",
-    "address": { "@type": "PostalAddress", "addressCountry": "Burundi" },
-    "contactPoint": [{ "@type": "ContactPoint", "telephone": "+25779945007", "contactType": "customer service" }]
-  }
-  </script>
-
-  <link rel="icon" type="image/png" href="favicone.png" />
+  <link rel="icon" type="image/png" href="favicone.png">
 
   <style>
+
     body {
-      margin: 0;
-      font-family: Inter, Arial, sans-serif;
-      background: #f4f6fa;
-      color: #111;
+      margin:0;
+      background:#0A0F1A;
+      color:white;
+      font-family: 'Inter', Arial, sans-serif;
+      overflow-x:hidden !important;
     }
 
-    /* MENU */
+    /* HEADER PREMIUM */
     header {
       background:#004AAD;
-      padding:14px 22px;
+      padding:14px 16px;
       display:flex;
       justify-content:space-between;
       align-items:center;
       position:sticky;
       top:0;
-      z-index:9999;
+      z-index:2000;
+      box-sizing:border-box;
     }
 
-    .logo { height:85px; }
+    .logo {
+      height:85px;
+    }
 
+    /* MENU BUTTON */
     .menu-btn {
-      width:32px; cursor:pointer;
-    }
-    .menu-btn div {
-      height:4px; background:#F2B840; margin:5px 0; border-radius:3px;
-    }
-
-    /* MENU SLIDE */
-    nav {
-      position:fixed;
-      top:0; right:-280px;
-      width:260px; height:100%;
-      background:#004AAD;
-      padding-top:120px;
-      transition:0.35s;
-      z-index:9999;
+      width:34px;
+      height:26px;
       display:flex;
       flex-direction:column;
-      gap:20px;
+      justify-content:space-between;
+      cursor:pointer;
+      z-index:4000;
     }
+    .menu-btn span {
+      width:100%;
+      height:4px;
+      background:#F2B840;
+      border-radius:4px;
+      transition:.35s ease;
+    }
+    .menu-btn.active span:nth-child(1) {
+      transform:rotate(45deg) translate(6px,6px);
+    }
+    .menu-btn.active span:nth-child(2) {
+      opacity:0;
+    }
+    .menu-btn.active span:nth-child(3) {
+      transform:rotate(-45deg) translate(6px,-6px);
+    }
+
+    /* MOBILE NAV */
+    nav {
+      position:fixed;
+      top:0;
+      right:-280px;
+      width:260px;
+      height:100%;
+      background:#002A66;
+      padding-top:110px;
+      transition:0.35s ease;
+      display:flex;
+      flex-direction:column;
+      gap:22px;
+      z-index:3500;
+    }
+
     nav.nav-open { right:0; }
 
     nav a {
       color:white;
+      font-size:20px;
       text-decoration:none;
-      font-size:21px;
       padding-left:20px;
     }
 
-    /* bouton X */
-    #closeMenu {
-      position:absolute;
-      top:20px;
-      right:20px;
-      font-size:35px;
-      color:white;
-      cursor:pointer;
-      font-weight:900;
-    }
-
-    /* HERO */
+    /* HERO PREMIUM */
     #hero {
-      height:75vh;
-      background:url('hero-burundi.png');
-      background-size:cover;
-      background-position:center;
-      position:relative;
-      text-align:center;
       display:flex;
-      justify-content:center;
       align-items:center;
-      flex-direction:column;
+      justify-content:space-between;
+      padding:80px 40px;
+      max-width:1300px;
+      margin:auto;
+      gap:40px;
     }
-    #hero .overlay {
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,0.45);
-    }
-    #hero h1 {
-      color:white;
-      font-size:38px;
-      z-index:2;
+
+    #hero-text h1 {
+      font-size:40px;
       font-weight:900;
+      color:#F2B840;
+      margin-bottom:15px;
     }
 
-    /* METEO PREMIUM */
-    .weather-card {
-      background:#004AAD;
-      border-radius:18px;
-      padding:25px;
-      color:white;
-      text-align:center;
-      box-shadow:0 8px 25px rgba(0,0,0,0.25);
-      border:3px solid #F2B840;
-    }
-
-    /* APPLICATION PREMIUM */
-    #app-section {
-      background: linear-gradient(135deg, #F7DFA4, #F2C96B);
-      padding:100px 20px;
-    }
-
-    /* POURQUOI NOUS CHOISIR */
-    #why div.box {
-      background:white;
-      padding:40px;
-      border-radius:26px;
-      border:4px solid #F2B840;
-      box-shadow:0 15px 40px rgba(0,0,0,0.15);
-    }
-
-    /* FAQ */
-    .faq-item {
-      background:white;
-      margin-bottom:18px;
-      border-radius:12px;
-      border-left:4px solid #004AAD;
-      box-shadow:0 4px 14px rgba(0,0,0,0.1);
-    }
-
-    .faq-question {
-      width:100%;
-      background:none;
-      border:none;
-      padding:18px;
-      text-align:left;
-      font-size:18px;
+    #hero-text h2 {
+      font-size:20px;
       font-weight:700;
-      cursor:pointer;
-      color:#004AAD;
-    }
-    .faq-answer {
-      max-height:0;
-      overflow:hidden;
-      transition:max-height 0.35s ease;
-      padding:0 18px;
+      margin-bottom:25px;
+      color:white;
     }
 
-    /* WIDGET AVIS FLOTTANT */
-    #avisWidget {
-      position:fixed;
-      right:25px;
-      top:40%;
-      background:#004AAD;
+    .gold-line {
+      width:190px;
+      height:4px;
+      background:#F2B840;
+      margin:15px 0;
+    }
+
+    .hero-btn {
+      display:inline-block;
+      padding:14px 30px;
+      margin-right:15px;
+      background:#F2B840;
+      color:#0A0F1A;
+      font-size:18px;
+      font-weight:800;
+      border-radius:50px;
+      text-decoration:none;
+      transition:.3s;
+      box-shadow:0 4px 14px rgba(0,0,0,0.25);
+    }
+
+    .hero-btn-2 {
+      padding:14px 30px;
+      border-radius:50px;
+      border:3px solid #F2B840;
+      color:#F2B840;
+      font-size:18px;
+      font-weight:800;
+      text-decoration:none;
+      transition:.3s;
+    }
+    .hero-btn-2:hover {
+      background:#F2B840;
+      color:#0A0F1A;
+    }
+
+    /* WHY CHOOSE US — PREMIUM BLUE & GOLD */
+    #why {
+      padding:70px 20px;
+      text-align:center;
+      max-width:1300px;
+      margin:auto;
+    }
+
+    #why h2 {
+      font-size:35px;
+      font-weight:900;
+      color:#F2B840;
+      margin-bottom:45px;
+    }
+
+    .why-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      gap:25px;
+    }
+
+    .why-card {
+      background:linear-gradient(145deg, #0D1529, #0A0F1A);
+      border:2px solid #F2B840;
+      border-radius:24px;
+      padding:30px 20px;
+      box-shadow:0 14px 35px rgba(0,0,0,0.35);
+      transition:.3s;
+    }
+
+    .why-card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 22px 45px rgba(0,0,0,0.55);
+    }
+
+    .why-card h3 {
+      font-size:22px;
+      font-weight:800;
       color:white;
-      width:55px; height:55px;
+      margin-top:10px;
+    }
+
+    .why-card p {
+      font-size:16px;
+      opacity:.85;
+      margin-top:12px;
+    }
+
+    /* CHATBOX PREMIUM */
+    #chat-btn {
+      position:fixed;
+      bottom:25px;
+      right:20px;
+      z-index:9999;
+      background:#004AAD;
+      border:3px solid #F2B840;
+      width:65px;
+      height:65px;
       border-radius:50%;
       display:flex;
-      justify-content:center; align-items:center;
-      border:3px solid #F2B840;
-      cursor:pointer;
-      z-index:9999;
-      font-size:32px;
-      font-weight:900;
-    }
-
-    #avisPanel {
-      position:fixed;
-      top:0; right:-350px;
-      width:320px; height:100vh;
-      background:white;
-      border-left:4px solid #F2B840;
-      padding:25px;
-      transition:0.35s;
-      z-index:9998;
-    }
-    #avisPanel.open { right:0; }
-
-    /* BOUTON RETOUR EN HAUT */
-    #topBtn {
-      position:fixed;
-      bottom:30px; right:30px;
-      width:55px; height:55px;
-      background:#004AAD;
-      color:white;
-      border-radius:50%;
-      display:none;
       justify-content:center;
       align-items:center;
-      border:3px solid #F2B840;
-      font-size:28px;
+      font-size:26px;
       cursor:pointer;
-      z-index:9999;
+      box-shadow:0 8px 22px rgba(0,0,0,0.5);
     }
+
+    #chat-box {
+      position:fixed;
+      bottom:110px;
+      right:20px;
+      background:white;
+      width:300px;
+      border-radius:14px;
+      padding:15px;
+      box-shadow:0 10px 38px rgba(0,0,0,0.45);
+      display:none;
+      z-index:9999;
+      color:black;
+    }
+
+    #chat-box textarea {
+      width:100%;
+      height:90px;
+      border:1px solid #ccc;
+      border-radius:8px;
+      padding:10px;
+      font-size:14px;
+      resize:none;
+    }
+
+    #send-chat {
+      margin-top:10px;
+      background:#004AAD;
+      color:white;
+      padding:10px;
+      border-radius:8px;
+      text-align:center;
+      cursor:pointer;
+      font-weight:700;
+    }
+
   </style>
+
 </head>
 
 <body>
 
-<!-- MENU -->
 <header>
-  <img src="logotransparent.png" class="logo" alt="CIZA GROUP Logo">
+  <img src="logotransparent.png" alt="Logo CIZA GROUP" class="logo">
+
   <div class="menu-btn" onclick="toggleMenu()">
-    <div></div><div></div><div></div>
+    <span></span><span></span><span></span>
   </div>
 </header>
 
 <nav id="nav">
-  <div id="closeMenu" onclick="toggleMenu()">×</div>
   <a href="index.html">Accueil</a>
   <a href="domaines.html">Domaines</a>
   <a href="business-diaspora.html">Diaspora</a>
   <a href="a-propos.html">À propos</a>
   <a href="contact.html">Contact</a>
-</nav>
-
-<!-- HERO -->
+  <a href="cgu.html">CGU</a>
+  <a href="politique-confidentialite.html">Confidentialité</a>
+</nav><!-- HERO SECTION -->
 <section id="hero">
-  <div class="overlay"></div>
-  <h1>Écosystème de Services | Burundi</h1>
+  <div id="hero-text">
+    <h1>Écosystème de Services | Burundi</h1>
+    <div class="gold-line"></div>
 
-  <div style="margin-top:25px; z-index:2;">
-    <a href="domaines.html" style="background:#F2B840; padding:14px 32px; border-radius:50px; font-weight:900; text-decoration:none; color:#000;">
-      Découvrir nos domaines
-    </a>
+    <h2>Mobilité | Immobilier | Logistique | Technologie</h2>
+
+    <a href="domaines.html" class="hero-btn">Découvrir nos domaines</a>
+    <a href="business-diaspora.html" class="hero-btn-2">Espace Diaspora</a>
+  </div>
+
+  <div id="hero-img">
+    <img src="hero-burundi.png" alt="CIZA GROUP Burundi" style="
+      width:100%;
+      max-width:480px;
+      border-radius:16px;
+      box-shadow:0 12px 35px rgba(0,0,0,0.45);
+    ">
   </div>
 </section>
 
-<!-- METEO PREMIUM -->
-<div style="max-width:1200px; margin:40px auto; padding:0 20px; display:grid; gap:25px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
-  <div class="weather-card">
-    <h3>Météo — Burundi</h3>
-    <img id="icon-burundi" width="60">
-    <div id="temp-burundi" style="font-size:36px; font-weight:900;">--°C</div>
-  </div>
+<!-- WHY CHOOSE US -->
+<section id="why">
+  <h2>Pourquoi nous choisir&nbsp;?</h2>
 
-  <div class="weather-card">
-    <h3>Météo — Montréal</h3>
-    <img id="icon-montreal" width="60">
-    <div id="temp-montreal" style="font-size:36px; font-weight:900;">--°C</div>
-  </div>
-</div>
+  <div class="why-grid">
 
-<!-- APPLICATION PREMIUM -->
-<section id="app-section">
+    <div class="why-card">
+      <h3>⭐ Service Premium</h3>
+      <p>Une qualité haut de gamme adaptée au Burundi et à la diaspora.</p>
+    </div>
+
+    <div class="why-card">
+      <h3>🔒 Sécurité & Transparence</h3>
+      <p>Suivi clair, confirmations, rapport et communication professionnelle.</p>
+    </div>
+
+    <div class="why-card">
+      <h3>⚡ Rapidité</h3>
+      <p>Des services rapides, intégrés et efficaces.</p>
+    </div>
+
+    <div class="why-card">
+      <h3>🌍 Dédié à la Diaspora</h3>
+      <p>Conçu pour ceux vivant au Canada, Europe, USA et partout dans le monde.</p>
+    </div>
+
+  </div>
+</section><!-- VISION 2040–2060 -->
+<section style="
+  padding:70px 20px;
+  max-width:1300px;
+  margin:auto;
+  text-align:center;
+">
+  <h2 style="color:#F2B840; font-size:32px; font-weight:900;">
+    Vision Burundi 2040–2060
+  </h2>
+
+  <p style="max-width:850px; margin:auto; font-size:18px; opacity:.85; line-height:1.7;">
+    CIZA GROUP s’inscrit dans la transformation économique et digitale du Burundi,
+    en proposant un écosystème moderne regroupant mobilité, immobilier, logistique
+    et technologie. Notre mission est de soutenir la croissance, simplifier
+    la vie quotidienne et connecter la diaspora au pays.
+  </p>
+</section>
+
+<!-- APPLICATION ECOSYSTEME -->
+<section style="
+  background:linear-gradient(135deg,#0D1529,#0A0F1A);
+  padding:80px 20px;
+">
   <div style="
-    max-width:1200px;
+    max-width:1300px;
     margin:auto;
-    background:white;
-    padding:55px;
-    border-radius:32px;
-    border:4px solid #F2B840;
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display:flex;
+    justify-content:space-between;
     align-items:center;
     gap:50px;
+    flex-wrap:wrap;
   ">
-    <div>
-      <h2 style="color:#004AAD; font-size:36px; font-weight:900;">L’Écosystème CIZA GROUP</h2>
-      <p style="font-size:18px; line-height:1.7;">
-        Une application premium réunissant Mobilité, Immobilier, Logistique et Technologie.
-        Conçue pour accompagner la vision Burundi 2040–2060.
+
+    <div style="flex:1; min-width:300px;">
+      <h2 style="color:#F2B840; font-size:32px; font-weight:900;">
+        L’Écosystème CIZA GROUP
+      </h2>
+      <p style="font-size:18px; opacity:.85; line-height:1.7;">
+        Une plateforme unique qui réunit mobilité, immobilier, logistique et
+        technologie. Pensée pour moderniser les services au Burundi et offrir
+        à la diaspora un accès rapide, fiable et transparent.
       </p>
     </div>
 
-    <div style="display:flex; justify-content:center;">
-      <div style="background:white; padding:18px; border-radius:22px; border:2px solid #F2B84055;">
-        <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/ea5df852f813a91b3be6650d4be21b261be1c661/EF9338CE-E502-41CC-8EAB-0615A5063C8C.png"
-          style="width:100%; border-radius:18px;">
-      </div>
+    <div style="flex:1; min-width:300px;">
+      <img src="EF9338CE-E502-41CC-8EAB-0615A5063C8C.png" alt="Application CIZA GROUP" style="
+        width:100%;
+        max-width:500px;
+        border-radius:18px;
+        box-shadow:0 12px 35px rgba(0,0,0,0.45);
+      ">
     </div>
+
   </div>
 </section>
 
-<!-- POURQUOI NOUS CHOISIR -->
-<section id="why" style="padding:80px 20px;">
-  <div class="box" style="max-width:1200px; margin:auto;">
-    <h2 style="text-align:center; color:#004AAD; font-size:36px; font-weight:900;">Pourquoi nous choisir ?</h2>
+<!-- CEO SECTION -->
+<section style="
+  padding:70px 20px;
+  max-width:1300px;
+  margin:auto;
+  text-align:center;
+">
+  <h2 style="color:#F2B840; font-size:32px; font-weight:900;">Direction & Leadership</h2>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; margin-top:40px;">
+  <img src="CEO.png" alt="CEO CIZA GROUP" style="
+    width:220px;
+    height:auto;
+    border-radius:50%;
+    margin-top:25px;
+    box-shadow:0 12px 35px rgba(0,0,0,0.45);
+  ">
 
-      <div style="background:#004AAD; color:white; padding:25px; border-radius:20px; border:3px solid #F2B840;">
-        <div style="font-size:40px;">⭐</div>
-        <h3>Service Premium</h3>
-        <p>Qualité haut de gamme pour la diaspora et les résidents.</p>
-      </div>
-
-      <div style="background:#004AAD; color:white; padding:25px; border-radius:20px; border:3px solid #F2B840;">
-        <div style="font-size:40px;">🔒</div>
-        <h3>Sécurité & Transparence</h3>
-        <p>Rapports, confirmations et suivi clairs.</p>
-      </div>
-
-      <div style="background:#004AAD; color:white; padding:25px; border-radius:20px; border:3px solid #F2B840;">
-        <div style="font-size:40px;">⚡</div>
-        <h3>Rapidité</h3>
-        <p>Des services rapides, intégrés et efficaces.</p>
-      </div>
-
-      <div style="background:#004AAD; color:white; padding:25px; border-radius:20px; border:3px solid #F2B840;">
-        <div style="font-size:40px;">🌍</div>
-        <h3>Dédié à la Diaspora</h3>
-        <p>Conçu pour ceux vivant au Canada, Europe, etc.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section style="padding:60px 20px; max-width:1200px; margin:auto;">
-  <h2 style="text-align:center; font-size:32px; color:#004AAD; font-weight:900;">
-    FAQ — Questions fréquentes
+  <p style="max-width:750px; margin:20px auto 0; font-size:18px; opacity:.85; line-height:1.7;">
+    Sous la direction d’un leadership passionné, CIZA GROUP s’engage à développer
+    des solutions modernes, solides et accessibles, alignées avec les besoins
+    du Burundi et de sa diaspora internationale.
+  </p>
+</section><!-- FAQ SECTION -->
+<section style="padding:70px 20px; max-width:1300px; margin:auto;">
+  <h2 style="text-align:center; color:#F2B840; font-size:32px; font-weight:900;">
+    Foire aux Questions (FAQ)
   </h2>
 
-  <div style="margin-top:35px;">
+  <div style="max-width:900px; margin:40px auto 0;">
+    
+    <details style="background:#0D1529; margin-bottom:18px; padding:18px; border-radius:12px; border:1px solid #F2B840;">
+      <summary style="font-size:18px; font-weight:700; cursor:pointer;">Quels services propose CIZA GROUP&nbsp;?</summary>
+      <p style="margin-top:10px; opacity:.85;">
+        Mobilité, Immobilier, Logistique, Technologie — réunis dans un écosystème unique au Burundi.
+      </p>
+    </details>
 
-    <div class="faq-item">
-      <button class="faq-question">Comment fonctionne l’écosystème CIZA GROUP ?</button>
-      <div class="faq-answer">
-        <p>CIZA GROUP regroupe Mobilité, Immobilier, Logistique et Technologie.</p>
-      </div>
+    <details style="background:#0D1529; margin-bottom:18px; padding:18px; border-radius:12px; border:1px solid #F2B840;">
+      <summary style="font-size:18px; font-weight:700; cursor:pointer;">Comment la diaspora peut-elle utiliser vos services&nbsp;?</summary>
+      <p style="margin-top:10px; opacity:.85;">
+        Grâce à nos plateformes digitales, la diaspora peut commander, gérer, payer et suivre les services en temps réel.
+      </p>
+    </details>
+
+    <details style="background:#0D1529; margin-bottom:18px; padding:18px; border-radius:12px; border:1px solid #F2B840;">
+      <summary style="font-size:18px; font-weight:700; cursor:pointer;">Offrez-vous un accompagnement personnalisé&nbsp;?</summary>
+      <p style="margin-top:10px; opacity:.85;">
+        Oui, nous proposons un service premium d’accompagnement, spécialement adapté aux besoins de la diaspora.
+      </p>
+    </details>
+
+    <details style="background:#0D1529; margin-bottom:18px; padding:18px; border-radius:12px; border:1px solid #F2B840;">
+      <summary style="font-size:18px; font-weight:700; cursor:pointer;">Travaillez-vous avec des partenaires au Burundi&nbsp;?</summary>
+      <p style="margin-top:10px; opacity:.85;">
+        Oui, nous collaborons avec des acteurs fiables dans chaque secteur pour garantir qualité et transparence.
+      </p>
+    </details>
+
+  </div>
+</section>
+
+
+<!-- MÉTÉO -->
+<section style="max-width:1300px; margin:40px auto; padding:0 20px;">
+  <h2 style="color:#F2B840; text-align:center; font-size:32px; font-weight:900;">Météo</h2>
+
+  <div style="
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:22px;
+    margin-top:30px;
+  ">
+
+    <div style="background:#0D1529; padding:25px; border-radius:14px; text-align:center;">
+      <h3 style="color:#F2B840; font-weight:900; font-size:20px;">Burundi</h3>
+      <div id="temp-burundi" style="font-size:38px; font-weight:900; margin-top:10px;">--°C</div>
     </div>
 
-    <div class="faq-item">
-      <button class="faq-question">Puis-je utiliser les services depuis la diaspora ?</button>
-      <div class="faq-answer">
-        <p>Oui, tous nos services fonctionnent même depuis l’étranger.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">Comment fonctionne le service immobilier ?</button>
-      <div class="faq-answer">
-        <p>Nous vous accompagnons de l’achat jusqu’à la gestion du bien.</p>
-      </div>
+    <div style="background:#0D1529; padding:25px; border-radius:14px; text-align:center;">
+      <h3 style="color:#F2B840; font-weight:900; font-size:20px;">Montréal</h3>
+      <div id="temp-montreal" style="font-size:38px; font-weight:900; margin-top:10px;">--°C</div>
     </div>
 
   </div>
 </section>
 
-<!-- WIDGET AVIS -->
-<div id="avisWidget">+</div>
 
-<div id="avisPanel">
-  <h3 style="color:#004AAD; font-weight:900;">Laisser un avis</h3>
+<!-- AVIS PANEL -->
+<div id="avis-btn" style="
+  position:fixed;
+  right:20px;
+  top:50%;
+  transform:translateY(-50%);
+  background:#004AAD;
+  border:2px solid #F2B840;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  font-size:35px;
+  cursor:pointer;
+  z-index:9999;
+">+</div>
 
-  <input id="avis-name2" placeholder="Votre nom" style="width:100%; padding:10px; margin-bottom:10px;">
-  <input id="avis-pays2" placeholder="Pays (optionnel)" style="width:100%; padding:10px; margin-bottom:10px;">
-  <textarea id="avis-msg2" placeholder="Votre message" style="width:100%; height:100px; padding:10px;"></textarea>
+<div id="avis-panel" style="
+  position:fixed;
+  top:50%;
+  right:-350px;
+  transform:translateY(-50%);
+  width:300px;
+  background:white;
+  color:black;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  padding:20px;
+  z-index:9999;
+  transition:.35s ease;
+">
+  <h3 style="font-size:20px; font-weight:900;">Vos avis</h3>
+  <textarea id="avis-text" placeholder="Écrivez votre avis..." style="
+    width:100%;
+    height:120px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    padding:10px;
+    resize:none;
+  "></textarea>
 
-  <button onclick="addAvisFromPanel()" style="width:100%; background:#004AAD; color:white; padding:12px; border:none; border-radius:8px; margin-top:10px;">Envoyer</button>
-</div>
+  <button onclick="sendAvis()" style="
+    margin-top:12px;
+    width:100%;
+    padding:12px;
+    background:#004AAD;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-weight:800;
+    cursor:pointer;
+  ">Envoyer</button>
+</div><!-- FOOTER PREMIUM -->
+<footer style="background:#0D1529; padding:60px 20px; margin-top:60px;">
+  <div style="
+    max-width:1300px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:30px;
+  ">
 
-<!-- RETOUR EN HAUT -->
-<div id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+    <div>
+      <h3 style="color:#F2B840; font-size:22px; font-weight:900;">CIZA GROUP</h3>
+      <p style="opacity:.85;">Écosystème de Services – Burundi | Canada</p>
+      <p>🇧🇮 +257 79945007</p>
+      <p>🇨🇦 +1 514 502 9503</p>
+      <p>Email : infos@cizagroup.com</p>
 
-<!-- FOOTER -->
-<footer style="background:#0A0F1A; color:white; padding:60px 20px;">
-  <div style="max-width:1200px; margin:auto;">
-    <h3 style="color:#F2B840;">CIZA GROUP</h3>
-    <p>Écosystème multiservices — Burundi | Diaspora</p>
-    <p>🇧🇮 +257 79945007</p>
-    <p>🇨🇦 +1 514 502 9503</p>
-    <p>Email : infos@cizagroup.com</p>
+      <div style="display:flex; gap:10px; margin-top:15px;">
+        <a href="https://www.instagram.com/cizagroup_official">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" style="width:35px;">
+        </a>
+        <a href="https://www.facebook.com">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" style="width:35px;">
+        </a>
+        <a href="https://www.youtube.com/@Cizagroup">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" style="width:90px;">
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="color:#F2B840; font-size:22px; font-weight:900;">Navigation</h3>
+      <a href="index.html" style="color:white; opacity:.85; display:block; margin:6px 0;">Accueil</a>
+      <a href="domaines.html" style="color:white; opacity:.85; display:block; margin:6px 0;">Domaines</a>
+      <a href="business-diaspora.html" style="color:white; opacity:.85; display:block; margin:6px 0;">Diaspora</a>
+      <a href="a-propos.html" style="color:white; opacity:.85; display:block; margin:6px 0;">À propos</a>
+      <a href="contact.html" style="color:white; opacity:.85; display:block; margin:6px 0;">Contact</a>
+    </div>
+
+    <div>
+      <h3 style="color:#F2B840; font-size:22px; font-weight:900;">Légal</h3>
+      <a href="cgu.html" style="color:white; opacity:.85; display:block; margin:6px 0;">Conditions générales</a>
+      <a href="legales.html" style="color:white; opacity:.85; display:block; margin:6px 0;">Mentions légales</a>
+      <a href="politique-confidentialite.html" style="color:white; opacity:.85; display:block; margin:6px 0;">Politique de confidentialité</a>
+    </div>
+
   </div>
+
+  <p style="text-align:center; margin-top:35px; opacity:.6;">
+    © 2026 CIZA GROUP – Tous droits réservés.
+  </p>
 </footer>
 
+
+<!-- COOKIES -->
+<div id="cookie-box" style="
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:#0A0F1A;
+  color:white;
+  padding:18px;
+  text-align:center;
+  display:none;
+  z-index:9999;
+">
+  Ce site utilise des cookies pour améliorer votre expérience.
+  <button onclick="acceptCookies()" style="
+    margin-left:15px;
+    padding:10px 20px;
+    background:#F2B840;
+    border:none;
+    color:black;
+    font-weight:900;
+    border-radius:8px;
+    cursor:pointer;
+  ">OK</button>
+</div>
+
+
+<!-- CHATBOX BUTTON -->
+<div id="chat-btn">💬</div>
+
+<!-- CHATBOX WINDOW -->
+<div id="chat-box">
+  <textarea id="chat-text" placeholder="Écrire un message..."></textarea>
+  <div id="send-chat">Envoyer</div>
+</div>
+
+
+<!-- BACK TO TOP -->
+<div id="top-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="
+  position:fixed;
+  bottom:25px;
+  left:20px;
+  background:#F2B840;
+  color:#0A0F1A;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:28px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 8px 22px rgba(0,0,0,0.5);
+  z-index:9999;
+">↑</div>
+
+
+<!-- SCRIPTS -->
 <script>
 /* MENU */
-function toggleMenu() {
-  document.getElementById("nav").classList.toggle("nav-open");
+function toggleMenu(){
+  const nav = document.getElementById("nav");
+  const btn = document.querySelector(".menu-btn");
+  nav.classList.toggle("nav-open");
+  btn.classList.toggle("active");
 }
 
-/* FAQ */
-document.querySelectorAll(".faq-question").forEach(btn => {
-  btn.onclick = () => {
-    const ans = btn.nextElementSibling;
-    ans.style.maxHeight = ans.style.maxHeight ? null : ans.scrollHeight + "px";
-  };
-});
-
-/* WIDGET AVIS */
-document.getElementById("avisWidget").onclick = () => {
-  document.getElementById("avisPanel").classList.toggle("open");
+/* COOKIE */
+function acceptCookies(){
+  localStorage.setItem("cookies_ok","yes");
+  document.getElementById("cookie-box").style.display="none";
+}
+window.onload = () => {
+  if(!localStorage.getItem("cookies_ok")){
+    document.getElementById("cookie-box").style.display="block";
+  }
+  loadWeather();
 };
 
-function addAvisFromPanel(){
-  let nom = document.getElementById("avis-name2").value;
-  let pays = document.getElementById("avis-pays2").value || "🌍";
-  let msg = document.getElementById("avis-msg2").value;
-
-  if(!nom || !msg) return alert("Nom + message obligatoires");
-
-  alert("Avis envoyé ! (fonction interne prête)");
-  document.getElementById("avisPanel").classList.remove("open");
-}
-
-/* METEO */
-async function loadWeather() {
+/* WEATHER */
+async function loadWeather(){
   const cities = {
-    burundi: {lat:-3.38, lon:29.36, icon:"icon-burundi", temp:"temp-burundi"},
-    montreal:{lat:45.50, lon:-73.56, icon:"icon-montreal", temp:"temp-montreal"}
+    burundi:{lat:-3.38, lon:29.36},
+    montreal:{lat:45.5017, lon:-73.5673}
   };
-  for(const city in cities){
-    const c = cities[city];
-    const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${c.lat}&longitude=${c.lon}&current_weather=true`);
-    const data = await res.json();
-    document.getElementById(c.temp).innerText = Math.round(data.current_weather.temperature)+"°C";
-    document.getElementById(c.icon).src = "https://img.icons8.com/ios-filled/100/ffffff/sun.png";
+  for(let c in cities){
+    const {lat,lon} = cities[c];
+    try {
+      const r = await fetch(\`https://api.open-meteo.com/v1/forecast?latitude=\${lat}&longitude=\${lon}&current_weather=true\`);
+      const data = await r.json();
+      document.getElementById("temp-"+c).innerText = Math.round(data.current_weather.temperature) + "°C";
+    } catch(e){
+      document.getElementById("temp-"+c).innerText = "--°C";
+    }
   }
 }
-loadWeather();
 
-/* RETOUR EN HAUT */
-window.onscroll = () => {
-  document.getElementById("topBtn").style.display =
-    window.scrollY > 500 ? "flex" : "none";
+/* AVIS PANEL */
+document.getElementById("avis-btn").onclick = () => {
+  let panel = document.getElementById("avis-panel");
+  panel.style.right = (panel.style.right === "20px") ? "-350px" : "20px";
+};
+
+function sendAvis(){
+  const msg = document.getElementById("avis-text").value.trim();
+  if(msg.length < 3){ alert("Message trop court"); return; }
+  window.open("https://wa.me/15145029503?text=" + encodeURIComponent(msg));
+}
+
+/* CHATBOX */
+document.getElementById("chat-btn").onclick = () => {
+  let chat = document.getElementById("chat-box");
+  chat.style.display = (chat.style.display === "block") ? "none" : "block";
+};
+
+document.getElementById("send-chat").onclick = () => {
+  const message = document.getElementById("chat-text").value.trim();
+  if(message.length < 2){ alert("Écrire un message"); return; }
+  window.open("https://wa.me/15145029503?text=" + encodeURIComponent(message));
 };
 </script>
 
