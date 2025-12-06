@@ -2,62 +2,27 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>CIZA GROUP — Écosystème de Services</title>
+  <title>CIZA GROUP — Nos Domaines</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- ============ SEO ============ -->
-  <meta name="description" content="CIZA GROUP — Mobilité, Immobilier, Logistique, Technologie et services Diaspora pour le Burundi moderne et connecté." />
-  <meta name="keywords" content="CIZA GROUP, Burundi, Diaspora, Mobilité, Immobilier, Logistique, Technologie, Afrique, Services" />
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicone.png" />
 
-  <!-- ============ STYLES GLOBAUX ============ -->
   <style>
     body {
       margin: 0;
       font-family: Inter, Arial, sans-serif;
-      background: #f4f6fa;
-      color: #1a1f25;
+      background: #0A0F1A;
+      color: white;
       opacity: 0;
-      animation: pageFadeIn 0.7s ease-out forwards;
+      animation: fadeInPage 0.6s ease-out forwards;
     }
 
-    @keyframes pageFadeIn {
+    @keyframes fadeInPage {
       from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ============ LOADER PREMIUM ============ */
-    #loader {
-      position: fixed;
-      inset: 0;
-      background: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      animation: fadeOutLoader 0.7s ease-out forwards;
-      animation-delay: 1s;
-    }
-
-    #loader .circle {
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      border: 5px solid #004AAD;
-      border-top-color: #F2B840;
-      animation: spin 0.9s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    @keyframes fadeOutLoader {
-      to { opacity: 0; visibility: hidden; }
-    }
-
-    /* ============ HEADER PREMIUM ============ */
+    /* HEADER */
     header {
       background: #004AAD;
       padding: 14px 22px;
@@ -70,44 +35,22 @@
     }
 
     .logo {
-      height: 85px;
-    }
-    @media(max-width:500px){
-      .logo { height: 70px; }
+      height: 80px;
     }
 
-    .lang-switch {
-      color: white;
-      font-weight: 700;
-      cursor: pointer;
-      padding: 0 5px;
-    }
-
-    .header-gold-line {
-      width: 100%;
-      height: 3px;
-      background: #F2B840;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-
-    /* ============ MENU MOBILE ============ */
-    .menu-btn {
-      width: 32px;
-      cursor: pointer;
-    }
     .menu-btn div {
-      height: 4px;
       background: #F2B840;
+      height: 4px;
       margin: 5px 0;
       border-radius: 3px;
     }
 
+    .menu-btn { width: 32px; cursor: pointer; }
+
     nav {
       position: fixed;
       top: 0;
-      right: -270px;
+      right: -260px;
       width: 250px;
       height: 100%;
       background: #004AAD;
@@ -116,607 +59,358 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-      z-index: 3500;
-    }
-    nav.nav-open { right: 0 !important; }
-    nav a {
-      color: white;
-      font-size: 20px;
-      padding-left: 20px;
-      text-decoration: none;
+      z-index: 5000;
     }
 
-    /* ============ HERO SLIDER PREMIUM ============ */
-    #hero-slider {
-      position: relative;
+    nav.nav-open { right: 0 !important; }
+
+    nav a {
+      color: white;
+      padding-left: 20px;
+      font-size: 20px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* HERO SLIDER */
+    .hero {
       width: 100%;
-      height: 75vh;
-      min-height: 440px;
+      height: 55vh;
+      position: relative;
       overflow: hidden;
     }
 
-    .slide {
+    .hero img {
+      width: 100%;
+      height: 55vh;
+      object-fit: cover;
       position: absolute;
       inset: 0;
-      background-size: cover;
-      background-position: center;
       opacity: 0;
-      transition: opacity 1.2s ease-in-out;
+      transition: opacity 1s ease-in-out;
     }
-    .slide.active {
+
+    .hero img.active {
       opacity: 1;
     }
 
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.35);
-      z-index: 2;
-    }
-
-    .hero-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 3;
+    /* SECTION TITRE */
+    h1 {
       text-align: center;
-      color: white;
-      width: 90%;
-    }
-
-    .hero-content h1 {
-      font-size: 38px;
+      margin: 45px 0 20px;
+      font-size: 36px;
       font-weight: 900;
-      text-shadow: 0 4px 12px rgba(0,0,0,0.55);
+      color: #F2B840;
     }
 
-    .hero-gold-line {
-      width: 190px;
+    .gold-line {
+      width: 140px;
       height: 4px;
       background: #F2B840;
-      margin: 16px auto;
-      border-radius: 3px;
+      margin: 10px auto 40px;
+      border-radius: 2px;
     }
 
-    .hero-content h2 {
-      font-size: 19px;
-      font-weight: 700;
-      letter-spacing: 1px;
+    /* CARDS */
+    .domain-card {
+      background: #0F1724;
+      border: 3px solid #F2B840;
+      border-radius: 18px;
+      padding: 30px 25px;
+      max-width: 1050px;
+      margin: 25px auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      transition: 0.35s;
     }
 
-    .hero-btn {
+    .domain-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.55);
+    }
+
+    .domain-card h2 {
+      font-size: 30px;
+      color: #F2B840;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .domain-card p {
+      font-size: 18px;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    /* BUTTON CONTACT */
+    .btn-contact {
+      margin-top: 25px;
+      display: inline-block;
       background: #F2B840;
-      color: #0a0a0a;
-      padding: 14px 30px;
+      color: black;
+      padding: 12px 26px;
       border-radius: 50px;
       font-size: 18px;
-      font-weight: 800;
+      font-weight: 900;
       text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .btn-contact:hover {
+      background: white;
+      color: black;
+    }
+
+    /* POPUP PREMIUM */
+    #contact-popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      backdrop-filter: blur(4px);
+    }
+
+    #contact-popup .popup-box {
+      background: white;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 420px;
+      padding: 30px;
+      text-align: center;
+      animation: zoomIn 0.35s ease-out;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    .popup-title {
+      font-size: 24px;
+      font-weight: 900;
+      color: #004AAD;
+      margin-bottom: 15px;
+    }
+
+    .popup-btn {
+      display: block;
+      padding: 14px;
+      margin: 12px 0;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 800;
+      transition: 0.3s;
+    }
+
+    .btn-wa-bdi { background:#25D366; color:white; }
+    .btn-wa-ca { background:#128C7E; color:white; }
+    .btn-email { background:#F2B840; color:black; }
+
+    .popup-btn:hover { opacity: 0.85; }
+
+    .close-popup {
+      margin-top: 18px;
+      font-size: 16px;
+      cursor: pointer;
+      color: #555;
+    }
+
+    /* FORMULAIRE */
+    #contact-form-section {
+      background: #0F1724;
+      padding: 50px 20px;
+      border-top: 4px solid #F2B840;
+      margin-top: 60px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: #0A1220;
+      padding: 35px;
+      border-radius: 18px;
+      border: 3px solid #004AAD;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.45);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 18px;
+      background: #1B2334;
+      color: white;
+      font-size: 16px;
+    }
+
+    button {
+      background: #F2B840;
+      border: none;
+      width: 100%;
+      padding: 14px;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #0A0F1A;
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+      margin-top: 50px;
     }
   </style>
 
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("nav");
+      nav.classList.toggle("nav-open");
+    }
+
+    window.onload = () => {
+      document.body.style.opacity = 1;
+      autoSlider();
+
+      document.querySelectorAll("#nav a").forEach(a => {
+        a.addEventListener("click", () => {
+          document.getElementById("nav").classList.remove("nav-open");
+        });
+      });
+    };
+
+    let slideIndex = 0;
+    function autoSlider() {
+      const slides = document.querySelectorAll(".hero img");
+      slides.forEach(s => s.classList.remove("active"));
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add("active");
+      setTimeout(autoSlider, 3500);
+    }
+
+    /* POPUP */
+    function openPopup() {
+      document.getElementById("contact-popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("contact-popup").style.display = "none";
+    }
+  </script>
 </head>
 
 <body>
 
-<!-- ============ LOADER ============ -->
-<div id="loader">
-  <div class="circle"></div>
-</div>
-
-<!-- ============ HEADER ============ -->
 <header>
-  <img src="logotransparent.png" class="logo" alt="CIZA GROUP">
-
-  <div>
-    <span class="lang-switch" onclick="setLang('fr')">FR</span> |
-    <span class="lang-switch" onclick="setLang('en')">EN</span>
-  </div>
+  <img src="logotransparent.png" class="logo">
 
   <div class="menu-btn" onclick="toggleMenu()">
     <div></div><div></div><div></div>
   </div>
-
-  <div class="header-gold-line"></div>
 </header>
 
-<!-- ============ MENU ============ -->
 <nav id="nav">
-  <a href="index.html" data-fr="Accueil" data-en="Home"></a>
-  <a href="domaines.html" data-fr="Domaines" data-en="Domains"></a>
-  <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora"></a>
-  <a href="a-propos.html" data-fr="À propos" data-en="About"></a>
-  <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
-  <a href="cgu.html" data-fr="Conditions générales" data-en="Terms of Use"></a>
-  <a href="politique-confidentialite.html" data-fr="Confidentialité" data-en="Privacy Policy"></a>
+  <a href="index.html">Accueil</a>
+  <a href="domaines.html">Domaines</a>
+  <a href="business-diaspora.html">Diaspora</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
-<!-- ============ HERO SLIDER PREMIUM ============ -->
-<section id="hero-slider">
-
-  <!-- SLIDE 1 -->
-  <div class="slide active" style="background-image:url('cizalogistic.png');"></div>
-
-  <!-- SLIDE 2 -->
-  <div class="slide" style="background-image:url('cizajobs.png');"></div>
-
-  <!-- SLIDE 3 -->
-  <div class="slide" style="background-image:url('B08ED666-562B-4166-A57C-65FC3BE9B4A2.png');"></div>
-
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-    <h1 data-fr="Écosystème de Services | Burundi"
-        data-en="Ecosystem of Services | Burundi"></h1>
-
-    <div class="hero-gold-line"></div>
-
-    <h2 data-fr="Mobilité | Immobilier | Logistique | Technologie"
-        data-en="Mobility | Real Estate | Logistics | Technology"></h2>
-
-    <a href="domaines.html" class="hero-btn"
-       data-fr="Découvrir nos domaines"
-       data-en="Explore our domains"></a>
-  </div>
-
-</section><!-- ========================================================= -->
-<!-- ==================== SECTION DOMAINES ==================== -->
-<!-- ========================================================= -->
-
-<section class="domaines-section" style="padding:70px 20px; max-width:1300px; margin:auto;">
-
-  <h2 data-fr="Nos Domaines"
-      data-en="Our Domains"
-      style="
-        text-align:center;
-        font-size:36px;
-        font-weight:900;
-        color:#004AAD;
-        margin-bottom:50px;
-      ">
-  </h2>
-
-  <div class="domaines-grid" style="
-    display:grid;
-    gap:30px;
-    grid-template-columns:repeat(auto-fit, minmax(290px,1fr));
-  ">
-
-    <!-- ======== IMMOBILIER ======== -->
-    <div class="domaine-card"
-         onclick="location.href='#immobilier'"
-         style="
-            background:white;
-            border-radius:18px;
-            padding:35px 25px;
-            border-top:6px solid #F2B840;
-            text-align:center;
-            font-weight:800;
-            font-size:22px;
-            color:#004AAD;
-            cursor:pointer;
-            box-shadow:0 6px 25px rgba(0,0,0,0.08);
-            transition:0.35s ease;
-         "
-         onmouseover="this.style.transform='scale(1.06)'; this.style.boxShadow='0 14px 32px rgba(0,0,0,0.18)'"
-         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 25px rgba(0,0,0,0.08)'">
-      Immobilier
-    </div>
-
-    <!-- ======== LOGISTIQUE ======== -->
-    <div class="domaine-card"
-         onclick="location.href='#logistique'"
-         style="
-            background:white;
-            border-radius:18px;
-            padding:35px 25px;
-            border-top:6px solid #F2B840;
-            text-align:center;
-            font-weight:800;
-            font-size:22px;
-            color:#004AAD;
-            cursor:pointer;
-            box-shadow:0 6px 25px rgba(0,0,0,0.08);
-            transition:0.35s ease;
-         "
-         onmouseover="this.style.transform='scale(1.06)'; this.style.boxShadow='0 14px 32px rgba(0,0,0,0.18)'"
-         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 25px rgba(0,0,0,0.08)'">
-      Logistique
-    </div>
-
-    <!-- ======== MOBILITÉ ======== -->
-    <div class="domaine-card"
-         onclick="location.href='#mobilite'"
-         style="
-            background:white;
-            border-radius:18px;
-            padding:35px 25px;
-            border-top:6px solid #F2B840;
-            text-align:center;
-            font-weight:800;
-            font-size:22px;
-            color:#004AAD;
-            cursor:pointer;
-            box-shadow:0 6px 25px rgba(0,0,0,0.08);
-            transition:0.35s ease;
-         "
-         onmouseover="this.style.transform='scale(1.06)'; this.style.boxShadow='0 14px 32px rgba(0,0,0,0.18)'"
-         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 25px rgba(0,0,0,0.08)'">
-      Mobilité
-    </div>
-
-    <!-- ======== TECHNOLOGIE ======== -->
-    <div class="domaine-card"
-         onclick="location.href='#tech'"
-         style="
-            background:white;
-            border-radius:18px;
-            padding:35px 25px;
-            border-top:6px solid #F2B840;
-            text-align:center;
-            font-weight:800;
-            font-size:22px;
-            color:#004AAD;
-            cursor:pointer;
-            box-shadow:0 6px 25px rgba(0,0,0,0.08);
-            transition:0.35s ease;
-         "
-         onmouseover="this.style.transform='scale(1.06)'; this.style.boxShadow='0 14px 32px rgba(0,0,0,0.18)'"
-         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 25px rgba(0,0,0,0.08)'">
-      Technologie
-    </div>
-
-  </div>
-</section><!-- ========================================================= -->
-<!-- ============ DOMAINES DÉTAILLÉS PREMIUM ================= -->
-<!-- ========================================================= -->
-
-<style>
-  .domain-block {
-    max-width: 1200px;
-    margin: 70px auto;
-    padding: 40px 25px;
-    background: white;
-    border-radius: 22px;
-    box-shadow: 0 8px 28px rgba(0,0,0,0.08);
-  }
-
-  .domain-title {
-    font-size: 32px;
-    font-weight: 900;
-    color: #004AAD;
-    margin-bottom: 15px;
-    position: relative;
-  }
-
-  .domain-title::after {
-    content: "";
-    width: 140px;
-    height: 4px;
-    background: #F2B840;
-    display: block;
-    margin-top: 10px;
-    border-radius: 2px;
-  }
-
-  .domain-img {
-    width: 100%;
-    border-radius: 16px;
-    max-height: 360px;
-    object-fit: cover;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.14);
-  }
-
-  .domain-text {
-    margin-top: 20px;
-    line-height: 1.6;
-    font-size: 18px;
-    color: #1a1f25;
-    font-weight: 500;
-  }
-
-  .contact-btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 14px 28px;
-    background: #F2B840;
-    color: #0a0a0a;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: 900;
-    text-decoration: none;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
-    transition: 0.3s;
-  }
-  .contact-btn:hover {
-    transform: scale(1.05);
-  }
-</style>
-
-
-<!-- ========================================================= -->
-<!-- ====================== IMMOBILIER ======================= -->
-<!-- ========================================================= -->
-
-<section id="immobilier" class="domain-block">
-
-  <h2 class="domain-title">Immobilier</h2>
-
-  <img src="B08ED666-562B-4166-A57C-65FC3BE9B4A2.png"
-       alt="Immobilier CIZA GROUP"
-       class="domain-img">
-
-  <p class="domain-text">
-    CIZA Immo accompagne les familles, investisseurs et la diaspora
-    dans l’achat, la vente, la location et la gestion immobilière.
-    Notre expertise repose sur la transparence, la sécurité et l’innovation,
-    pour un marché immobilier moderne, structuré et accessible au Burundi.
-    <br><br>
-    Nous proposons également un accompagnement complet : étude financière,
-    conseils d’investissement, projets de construction et assistance juridique.
-  </p>
-
-  <a href="#formulaire" class="contact-btn">Contacter CIZA Immo</a>
-
+<!-- HERO SLIDER -->
+<section class="hero">
+  <img src="B08ED666-562B-4166-A57C-65FC3BE9B4A2.png" class="active">
+  <img src="cizalogistic.png.jfif">
+  <img src="B0553D77-DACF-4386-BE12-11899B47E544.png">
+  <img src="F1586A0D-F354-4178-9196-9A83F5D74C3E.png">
 </section>
 
+<h1>Nos Domaines</h1>
+<div class="gold-line"></div>
 
-
-<!-- ========================================================= -->
-<!-- ====================== LOGISTIQUE ======================= -->
-<!-- ========================================================= -->
-
-<section id="logistique" class="domain-block">
-
-  <h2 class="domain-title">Logistique</h2>
-
-  <img src="cizalogistic.png"     
-       alt="Logistique CIZA GROUP"
-       class="domain-img">
-
-  <p class="domain-text">
-    CIZA Logistic assure un transport fiable de marchandises, du dernier kilomètre
-    jusqu’aux trajets inter-régions. Nous facilitons les échanges grâce à un réseau
-    de chauffeurs certifiés et un système de suivi moderne.
-    <br><br>
-    Notre objectif : optimiser les livraisons au Burundi et renforcer la fluidité commerciale
-    pour les entreprises et les particuliers.
+<!-- MOBILITÉ -->
+<div class="domain-card">
+  <h2>Mobilité</h2>
+  <p>
+    CizaRide+ révolutionne le transport au Burundi avec une solution rapide,
+    sécurisée et totalement adaptée au quotidien. Notre service relie
+    passagers, chauffeurs, entreprises et institutions en un clic.
   </p>
-
-  <a href="#formulaire" class="contact-btn">Contacter CIZA Logistic</a>
-
-</section>
-
-
-
-<!-- ========================================================= -->
-<!-- ======================= MOBILITÉ ======================== -->
-<!-- ========================================================= -->
-
-<section id="mobilite" class="domain-block">
-
-  <h2 class="domain-title">Mobilité</h2>
-
-  <img src="B0553D77-DACF-4386-BE12-11899B47E544.png"
-       alt="Mobilité CIZA GROUP"
-       class="domain-img">
-
-  <p class="domain-text">
-    CizaRide+ révolutionne le transport urbain au Burundi : courses instantanées,
-    chauffeurs vérifiés, transparence des prix et sécurité renforcée.
-    <br><br>
-    Une mobilité intelligente pensée pour un Burundi moderne, rapide et digital.
-  </p>
-
-  <a href="#formulaire" class="contact-btn">Contacter CizaRide+</a>
-
-</section>
-
-
-
-<!-- ========================================================= -->
-<!-- ====================== TECHNOLOGIE ======================= -->
-<!-- ========================================================= -->
-
-<section id="tech" class="domain-block">
-
-  <h2 class="domain-title">Technologie</h2>
-
-  <img src="F1586A0D-F354-4178-9196-9A83F5D74C3E.png"
-       alt="Technologie CIZA GROUP"
-       class="domain-img">
-
-  <p class="domain-text">
-    CIZA Tech développe des solutions digitales pour moderniser le quotidien :
-    applications mobiles, services en ligne, automatisation, systèmes de gestion
-    et outils pour la diaspora.
-    <br><br>
-    Notre vision : placer la technologie au service du progrès, de l’efficacité
-    et de l’inclusion numérique au Burundi.
-  </p>
-
-  <a href="#formulaire" class="contact-btn">Contacter CIZA Tech</a>
-
-</section>
-
-
-
-<!-- ========================================================= -->
-<!-- ============ FORMULAIRE DE CONTACT PREMIUM ============== -->
-<!-- ========================================================= -->
-
-<section id="formulaire" class="domain-block" style="border-top:8px solid #004AAD;">
-
-  <h2 class="domain-title">Formulaire de Contact</h2>
-
-  <form action="mailto:infos@cizagroup.com" method="POST" enctype="text/plain"
-        style="
-          background:#F2B840;
-          padding:30px;
-          border-radius:20px;
-          border:4px solid #004AAD;
-        ">
-
-    <label style="font-weight:700;">Nom complet</label>
-    <input type="text" name="Nom"
-           style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none;">
-
-    <label style="font-weight:700;">Email</label>
-    <input type="email" name="Email"
-           style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none;">
-
-    <label style="font-weight:700;">Téléphone</label>
-    <input type="text" name="Téléphone"
-           style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none;">
-
-    <label style="font-weight:700;">Votre message</label>
-    <textarea name="Message" rows="5"
-              style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none;"></textarea>
-
-    <button type="submit"
-            style="
-              width:100%;
-              margin-top:15px;
-              padding:15px;
-              background:#004AAD;
-              color:white;
-              border:none;
-              border-radius:50px;
-              font-size:18px;
-              font-weight:900;
-              cursor:pointer;
-            ">
-      Envoyer
-    </button>
-
-    <a href="index.html"
-       style="display:block; text-align:center; margin-top:20px; font-weight:700; color:#004AAD;">
-      ⬅ Retour
-    </a>
-
-  </form>
-
-</section><!-- ========================================================= -->
-<!-- ======================= FOOTER ========================== -->
-<!-- ========================================================= -->
-
-<footer style="background:#0A0F1A; color:white; padding:60px 20px; margin-top:60px;">
-  
-  <div style="
-    max-width:1200px; margin:auto;
-    display:grid; gap:30px;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  ">
-
-    <!-- COL 1 -->
-    <div>
-      <h3 style="color:#F2B840; font-size:22px; font-weight:900;">
-        CIZA GROUP
-      </h3>
-      <p>Écosystème de Services — Burundi | Canada</p>
-      <p>🇧🇮 +257 79945007</p>
-      <p>🇨🇦 +1 514 502 9503</p>
-      <p>Email : infos@cizagroup.com</p>
-
-      <div style="margin-top:12px;">
-        <a href="https://www.instagram.com/cizagroup_official">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-               style="width:36px; margin-right:10px;">
-        </a>
-        <a href="https://www.facebook.com">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
-               style="width:36px; margin-right:10px;">
-        </a>
-        <a href="https://www.youtube.com/@Cizagroup">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
-               style="width:36px;">
-        </a>
-      </div>
-    </div>
-
-    <!-- COL 2 -->
-    <div>
-      <h3 style="color:#F2B840; font-size:22px; font-weight:900;">Navigation</h3>
-      <a href="index.html" style="color:#dfe6f5; display:block; margin:6px 0;">Accueil</a>
-      <a href="domaines.html" style="color:#dfe6f5; display:block; margin:6px 0;">Domaines</a>
-      <a href="a-propos.html" style="color:#dfe6f5; display:block; margin:6px 0;">À propos</a>
-      <a href="business-diaspora.html" style="color:#dfe6f5; display:block; margin:6px 0;">Diaspora</a>
-      <a href="contact.html" style="color:#dfe6f5; display:block; margin:6px 0;">Contact</a>
-    </div>
-
-    <!-- COL 3 -->
-    <div>
-      <h3 style="color:#F2B840; font-size:22px; font-weight:900;">Légal</h3>
-      <a href="cgu.html" style="color:#dfe6f5; display:block; margin:6px 0;">Conditions d'utilisation</a>
-      <a href="legales.html" style="color:#dfe6f5; display:block; margin:6px 0;">Mentions légales</a>
-      <a href="politique-confidentialite.html" style="color:#dfe6f5; display:block; margin:6px 0;">
-        Politique de confidentialité
-      </a>
-    </div>
-
-  </div>
-
-  <p style="text-align:center; opacity:0.7; margin-top:25px;">
-    © 2026 CIZA GROUP — Écosystème de Services | Burundi. Tous droits réservés.
-  </p>
-
-</footer>
-
-
-<!-- ========================================================= -->
-<!-- ===================== COOKIE BANNER ===================== -->
-<!-- ========================================================= -->
-
-<div id="cookie-box" style="
-  position:fixed; bottom:0; left:0; width:100%;
-  background:#1a1f25; color:white; padding:18px;
-  text-align:center; display:none; z-index:9999;
-  font-size:16px;
-">
-  Ce site utilise des cookies pour améliorer votre expérience.
-  <button onclick="acceptCookies()" style="
-    margin-left:20px; padding:10px 20px; background:#F2B840;
-    border:none; border-radius:6px; font-weight:900; cursor:pointer;
-  ">OK</button>
+  <a class="btn-contact" onclick="openPopup()">Contactez-nous</a>
 </div>
 
+<!-- IMMOBILIER -->
+<div class="domain-card">
+  <h2>Immobilier</h2>
+  <p>
+    Ciza Immo accompagne les familles, investisseurs et diaspora dans l’achat,
+    la vente et la gestion immobilière. Transparence et sécurité sont au cœur
+    de nos services.
+  </p>
+  <a class="btn-contact" onclick="openPopup()">Contactez-nous</a>
+</div>
 
+<!-- LOGISTIQUE -->
+<div class="domain-card">
+  <h2>Logistique</h2>
+  <p>
+    Ciza Logistique offre une chaîne complète pour le transport, l’acheminement,
+    l’import & export. Une solution fiable pour particuliers et professionnels.
+  </p>
+  <a class="btn-contact" onclick="openPopup()">Contactez-nous</a>
+</div>
 
-<!-- ========================================================= -->
-<!-- ========================= SCRIPTS ======================== -->
-<!-- ========================================================= -->
+<!-- TECHNOLOGIE -->
+<div class="domain-card">
+  <h2>Technologie</h2>
+  <p>
+    CizaTech développe des solutions digitales modernes : applications,
+    plateformes web, API, cybersécurité et innovation.
+  </p>
+  <a class="btn-contact" onclick="openPopup()">Contactez-nous</a>
+</div>
 
-<script>
+<!-- POPUP PREMIUM -->
+<div id="contact-popup">
+  <div class="popup-box">
+    <div class="popup-title">Choisissez votre mode d’envoi</div>
 
-  /* ===== MENU AUTO-CLOSE ===== */
-  document.querySelectorAll("nav a").forEach(a=>{
-    a.addEventListener("click", ()=> {
-      document.getElementById("nav").classList.remove("nav-open");
-    });
-  });
+    <a class="popup-btn btn-wa-bdi" href="https://wa.me/25779945007">WhatsApp Burundi</a>
+    <a class="popup-btn btn-wa-ca" href="https://wa.me/15145029503">WhatsApp Canada</a>
+    <a class="popup-btn btn-email" href="mailto:infos@cizagroup.com">Envoyer par Email</a>
 
-  /* ===== PAGE MOTION ===== */
-  document.body.style.opacity = 0;
-  window.addEventListener("load", ()=>{
-    document.body.style.transition = "opacity 0.6s ease-out";
-    document.body.style.opacity = 1;
-  });
+    <div class="close-popup" onclick="closePopup()">Fermer</div>
+  </div>
+</div>
 
-  /* ===== COOKIES ===== */
-  function acceptCookies(){
-    localStorage.setItem("cookies_accepted","yes");
-    document.getElementById("cookie-box").style.display = "none";
-  }
+<!-- FORMULAIRE CONTACT -->
+<section id="contact-form-section">
+  <form action="mailto:infos@cizagroup.com" method="POST">
+    <h2 style="color:#F2B840; text-align:center;">Formulaire de Contact</h2>
 
-  /* Activation au chargement */
-  window.onload = () => {
-    if(!localStorage.getItem("cookies_accepted")){
-      document.getElementById("cookie-box").style.display = "block";
-    }
-  };
+    <input type="text" name="name" placeholder="Nom complet" required>
+    <input type="email" name="email" placeholder="Adresse email" required>
+    <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
 
-</script>
+    <button type="submit">Envoyer</button>
+
+    <p style="text-align:center; margin-top:18px;">
+      WhatsApp Burundi : <b>+257 79945007</b><br>
+      WhatsApp Canada : <b>+1 514 502 9503</b>
+    </p>
+  </form>
+</section>
+
+<footer>
+  © 2026 CIZA GROUP — Tous droits réservés
+</footer>
+
+</body>
+</html>
