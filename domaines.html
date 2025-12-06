@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>CIZA GROUP — Domaines</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" type="image/png" href="favicone.png" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: #0A0F1A;
+      color: white;
+      opacity: 0;
+      animation: fadeInPage 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeInPage {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* HEADER */
+    header {
+      background: #004AAD;
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 3000;
+    }
+
+    .logo {
+      height: 80px;
+    }
+
+    .menu-btn div {
+      background: #F2B840;
+      height: 4px;
+      margin: 5px 0;
+      border-radius: 3px;
+    }
+
+    .menu-btn { width: 32px; cursor: pointer; }
+
+    nav {
+      position: fixed;
+      top: 0;
+      right: -260px;
+      width: 250px;
+      height: 100%;
+      background: #004AAD;
+      padding-top: 100px;
+      transition: 0.35s;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 5000;
+    }
+
+    nav.nav-open { right: 0 !important; }
+
+    nav a {
+      color: white;
+      padding-left: 20px;
+      font-size: 20px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* HERO SLIDER */
+    .hero {
+      width: 100%;
+      height: 55vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 55vh;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .hero img.active {
+      opacity: 1;
+    }
+
+    /* TITRES */
+    h1 {
+      text-align: center;
+      margin: 45px 0 20px;
+      font-size: 36px;
+      font-weight: 900;
+      color: #F2B840;
+    }
+
+    .gold-line {
+      width: 140px;
+      height: 4px;
+      background: #F2B840;
+      margin: 10px auto 40px;
+      border-radius: 2px;
+    }
+
+    /* DOMAIN CARDS */
+    .domain-card {
+      background: #0F1724;
+      border: 3px solid #F2B840;
+      border-radius: 18px;
+      padding: 30px 25px;
+      max-width: 1050px;
+      margin: 25px auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      transition: 0.35s;
+    }
+
+    .domain-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.55);
+    }
+
+    .domain-card h2 {
+      font-size: 30px;
+      color: #F2B840;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .domain-card p {
+      font-size: 18px;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    /* BUTTONS */
+    .btn-contact, .btn-partner {
+      margin-top: 20px;
+      display: inline-block;
+      background: #F2B840;
+      color: black;
+      padding: 12px 26px;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 900;
+      text-decoration: none;
+      transition: 0.3s;
+      margin-right: 10px;
+    }
+
+    .btn-contact:hover, .btn-partner:hover {
+      background: white;
+      color: black;
+    }
+
+    /* POPUP OVERLAY */
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9000;
+    }
+
+    /* POPUP */
+    .popup {
+      background: #0F1724;
+      width: 90%;
+      max-width: 540px;
+      border-radius: 18px;
+      padding: 30px;
+      border: 3px solid #004AAD;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.55);
+      animation: popupAnim 0.4s ease-out;
+    }
+
+    @keyframes popupAnim {
+      from {opacity: 0; transform: translateY(20px);}
+      to   {opacity: 1; transform: translateY(0);}
+    }
+
+    .popup h3 {
+      text-align: center;
+      color: #F2B840;
+      font-size: 26px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .popup input, .popup textarea, .popup select {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 18px;
+      background: #1B2334;
+      color: white;
+      font-size: 16px;
+    }
+
+    .popup button {
+      width: 100%;
+      padding: 14px;
+      background: #F2B840;
+      border: none;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .close-btn {
+      text-align: center;
+      margin-top: 15px;
+      color: #aaa;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #0A0F1A;
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+      margin-top: 50px;
+    }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav").classList.toggle("nav-open");
+    }
+
+    window.onload = () => {
+      document.body.style.opacity = 1;
+      autoSlider();
+
+      document.querySelectorAll("#nav a").forEach(a => {
+        a.addEventListener("click", () =>
+          document.getElementById("nav").classList.remove("nav-open")
+        );
+      });
+    };
+
+    /* HERO SLIDER */
+    let slideIndex = 0;
+    function autoSlider() {
+      const slides = document.querySelectorAll(".hero img");
+      slides.forEach(s => s.classList.remove("active"));
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add("active");
+      setTimeout(autoSlider, 3500);
+    }
+
+    /* POPUP SYSTEM */
+    function openPopup(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+
+    function closePopup(id) {
+      document.getElementById(id).style.display = "none";
+    }
+  </script>
+</head>
+
+<body>
+
+<header>
+  <img src="logotransparent.png" class="logo">
+
+  <div class="menu-btn" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </div>
+</header>
+
+<nav id="nav">
+  <a href="index.html">Accueil</a>
+  <a href="domaines.html">Domaines</a>
+  <a href="business-diaspora.html">Diaspora</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- HERO SLIDER -->
+<section class="hero">
+  <img src="B08ED666-562B-4166-A57C-65FC3BE9B4A2.png" class="active">
+  <img src="cizalogistic.png.jfif">
+  <img src="B0553D77-DACF-4386-BE12-11899B47E544.png">
+  <img src="F1586A0D-F354-4178-9196-9A83F5D74C3E.png">
+</section>
+
+<h1>Nos Domaines</h1>
+<div class="gold-line"></div>
+
+<!-- MOBILITÉ -->
+<div class="domain-card">
+  <h2>Mobilité</h2>
+  <p>
+    CizaRide+ révolutionne le transport au Burundi avec une solution moderne,
+    rapide, sécurisée et parfaitement adaptée aux besoins du quotidien.
+  </p>
+  <a class="btn-contact" onclick="openPopup('popup-contact')">Contactez-nous</a>
+  <a class="btn-partner" onclick="openPopup('popup-partner')">Devenir partenaire</a>
+</div>
+
+<!-- IMMOBILIER -->
+<div class="domain-card">
+  <h2>Immobilier</h2>
+  <p>
+    Ciza Immo accompagne familles, investisseurs et diaspora dans l’achat,
+    la vente et la gestion immobilière avec transparence et fiabilité.
+  </p>
+  <a class="btn-contact" onclick="openPopup('popup-contact')">Contactez-nous</a>
+  <a class="btn-partner" onclick="openPopup('popup-partner')">Devenir partenaire</a>
+</div>
+
+<!-- LOGISTIQUE -->
+<div class="domain-card">
+  <h2>Logistique</h2>
+  <p>
+    Ciza Logistique assure transport, import/export, fret et solutions
+    professionnelles pour particuliers, entreprises et diaspora.
+  </p>
+  <a class="btn-contact" onclick="openPopup('popup-contact')">Contactez-nous</a>
+  <a class="btn-partner" onclick="openPopup('popup-partner')">Devenir partenaire</a>
+</div>
+
+<!-- TECHNOLOGIE -->
+<div class="domain-card">
+  <h2>Technologie</h2>
+  <p>
+    CizaTech développe applications, plateformes digitales, services API,
+    cybersécurité et innovations pour la vision Burundi 2040–2060.
+  </p>
+  <a class="btn-contact" onclick="openPopup('popup-contact')">Contactez-nous</a>
+  <a class="btn-partner" onclick="openPopup('popup-partner')">Devenir partenaire</a>
+</div>
+
+<!-- POPUP CONTACT -->
+<div class="popup-overlay" id="popup-contact">
+  <div class="popup">
+    <h3>Contactez-nous</h3>
+
+    <input type="text" placeholder="Nom complet">
+    <input type="email" placeholder="Email">
+    <textarea rows="4" placeholder="Votre message..."></textarea>
+
+    <button onclick="location.href='mailto:infos@cizagroup.com'">Envoyer par Email</button>
+    <button style="background:#25D366; margin-top:12px;"
+            onclick="location.href='https://wa.me/25779945007'">
+      WhatsApp Burundi
+    </button>
+    <button style="background:#25D366; margin-top:12px;"
+            onclick="location.href='https://wa.me/15145029503'">
+      WhatsApp Canada
+    </button>
+
+    <div class="close-btn" onclick="closePopup('popup-contact')">Fermer</div>
+  </div>
+</div>
+
+<!-- POPUP PARTENARIAT -->
+<div class="popup-overlay" id="popup-partner">
+  <div class="popup">
+    <h3>Devenir Partenaire</h3>
+
+    <input type="text" placeholder="Nom de l’entreprise">
+    <input type="text" placeholder="Nom complet du responsable">
+    <input type="email" placeholder="Email professionnel">
+    <input type="text" placeholder="Téléphone">
+    <input type="text" placeholder="Pays">
+    <input type="text" placeholder="Secteur d’activité">
+
+    <textarea rows="4" placeholder="Décrivez votre proposition de partenariat..."></textarea>
+
+    <button onclick="location.href='mailto:infos@cizagroup.com'">Envoyer par Email</button>
+
+    <div class="close-btn" onclick="closePopup('popup-partner')">Fermer</div>
+  </div>
+</div>
+
+<footer>
+  © 2026 CIZA GROUP — Tous droits réservés
+</footer>
+
+</body>
+</html>
