@@ -468,30 +468,55 @@
 <!-- ==================== FIN SECTION CIZAJOBS ==================== -->
 <footer>
   © 2026 CIZA GROUP — Tous droits réservés
-</footer>/* ========== COOKIE BANNER CSS ========== */
-#cookie-box {
+</footer>
+<!-- 🔥 COOKIE CONSENT BANNER -->
+<div id="cookie-banner" style="
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #1a1f25;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 90%;
+  width: 420px;
+  background: #0F1724;
   color: white;
-  padding: 18px;
-  text-align: center;
-  display: none;
+  padding: 20px 25px;
+  border-radius: 15px;
+  border: 2px solid #F2B840;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   z-index: 9999;
-  font-size: 16px;
-}
+  display: none;
+">
+  <p style="margin: 0; font-size: 15px; line-height: 1.5;">
+    Nous utilisons des cookies pour améliorer votre expérience sur le site.
+  </p>
 
-#cookie-box button {
-  margin-left: 15px;
-  padding: 10px 20px;
-  background: #F2B840;
-  border: none;
-  border-radius: 6px;
-  font-weight: 900;
-  cursor: pointer;
-}
+  <div style="margin-top: 15px; text-align:right;">
+    <button onclick="acceptCookies()" style="
+      background: #F2B840;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    ">
+      J’accepte
+    </button>
+  </div>
+</div>
 
+<script>
+  function acceptCookies(){
+    localStorage.setItem("cookieAccepted", "yes");
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+
+  window.onload = function(){
+    if(!localStorage.getItem("cookieAccepted")){
+      document.getElementById("cookie-banner").style.display = "block";
+    }
+  };
+</script>
 </body>
 </html>
