@@ -671,55 +671,7 @@ function scrollTopSmooth(){window.scrollTo({top:0,behavior:"smooth"});}
 function acceptCookies(){localStorage.setItem("cookie","yes");document.getElementById("cookie-banner").style.display="none";}
 function declineCookies(){localStorage.setItem("cookie","no");document.getElementById("cookie-banner").style.display="none";}
 setTimeout(()=>{if(!localStorage.getItem("cookie"))document.getElementById("cookie-banner").style.display="flex";},1000);
-<!-- ⭐⭐⭐ SCRIPT AVIS CLIENTS ⭐⭐⭐ -->
-<script>
-function addAvis(){
 
-    let name = document.getElementById("avis-name").value;
-    let pays = document.getElementById("avis-pays").value;
-    let msg  = document.getElementById("avis-msg").value;
-
-    // Vérification minimale
-    if(!name || !msg){
-        alert("Veuillez remplir au minimum Nom + Message");
-        return;
-    }
-
-    // Création du bloc avis
-    let box = document.createElement("div");
-    box.className = "avis";
-    box.style = `
-        background:#111824;
-        padding:18px;
-        border-radius:12px;
-        border-left:4px solid #004AAD;
-        animation:fadeIn .4s ease;
-    `;
-
-    box.innerHTML = `
-        <h4 style="color:#F2B840;margin:0;">
-            ${pays || "🌍"} — ${name}
-        </h4>
-        <p style="margin:6px 0 0;">${msg}</p>
-    `;
-
-    // Ajout en haut de la liste
-    document.getElementById("avis-list").prepend(box);
-
-    // Nettoyage des champs
-    document.getElementById("avis-name").value = "";
-    document.getElementById("avis-pays").value = "";
-    document.getElementById("avis-msg").value = "";
-}
-</script>
-
-<!-- ⭐⭐⭐ ANIMATION AVIS ⭐⭐⭐ -->
-<style>
-@keyframes fadeIn {
-    from { opacity:0; transform:translateY(10px); }
-    to   { opacity:1; transform:translateY(0); }
-}
-</style>
 // AVIS
 function addAvis(){
  let name=document.getElementById("avis-name").value;
