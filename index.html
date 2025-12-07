@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CIZA GROUP — Écosystème de Services | Burundi & Diaspora</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SEO META -->
+<meta name="description" content="CIZA GROUP — Écosystème multiservices premium pour les Burundais au pays et à l’étranger : Mobilité, Immobilier, Logistique, Technologie.">
+<meta name="keywords" content="CIZA GROUP, Burundi, Diaspora, Immobilier, Mobilité, Logistique, Technologie, Services, Rwanda, Afrique de l'est">
+<meta name="author" content="CIZA GROUP">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+
+<!-- SOCIAL -->
+<meta property="og:title" content="CIZA GROUP — Écosystème de Services">
+<meta property="og:description" content="Services modernes pour les Burundais au pays et à l’étranger. Mobilité, Immobilier, Logistique, Technologie.">
+<meta property="og:image" content="https://cizaimmo.github.io/cizagroup-website/logotransparent.png">
+<meta property="og:url" content="https://cizaimmo.github.io/cizagroup-website/">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+/* ---------------------------------------
+       CHARTE GLOBALE
+---------------------------------------- */
+body {
+    margin: 0;
+    background: #0A0F1A;
+    color: white;
+    font-family: Inter, sans-serif;
+}
+
+/* ---------------------------------------
+       MOTION LOGO FLOTTANT
+---------------------------------------- */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('logotransparent.png');
+    background-repeat: no-repeat;
+    background-size: 320px;
+    background-position: center;
+    opacity: 0.025;
+    z-index: -1;
+    animation: floatLogo 22s ease-in-out infinite alternate;
+}
+@keyframes floatLogo {
+    0% { transform: translate(-20px, -15px) scale(1); }
+    50% { transform: translate(25px, 20px) scale(1.04); }
+    100% { transform: translate(-10px, 30px) scale(1); }
+}
+
+/* ---------------------------------------
+       LOADER PREMIUM
+---------------------------------------- */
+#loader {
+    position: fixed;
+    inset: 0;
+    background:#0A0F1A;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+.loader-circle {
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    border:4px solid #F2B840;
+    border-top-color:transparent;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ---------------------------------------
+       HEADER PREMIUM
+---------------------------------------- */
+header {
+    background:#0A0F1A;
+    padding:12px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+.logo {
+    height:65px;
+}
+
+/* LANG SELECT */
+.lang-select {
+    display:flex;
+    gap:10px;
+}
+.lang-btn {
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:#10203C;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    border:2px solid #F2B840;
+}
+.lang-btn img {
+    width:22px;
+}
+
+/* ---------------------------------------
+       MENU MOBILE
+---------------------------------------- */
+.menu-btn {
+    width:32px;
+    cursor:pointer;
+}
+.menu-btn div {
+    height:4px;
+    background:#F2B840;
+    margin:5px 0;
+    border-radius:3px;
+}
+
+nav {
+    position:fixed;
+    top:0; right:-260px;
+    width:250px;
+    height:100%;
+    background:#0A0F1A;
+    padding-top:100px;
+    transition:.3s;
+    z-index:9999;
+}
+nav.nav-open { right:0; }
+
+nav a {
+    display:block;
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    margin:18px 25px;
+}
+
+#closeMenu {
+    position:absolute;
+    top:24px;
+    right:22px;
+    font-size:34px;
+    color:#F2B840;
+    cursor:pointer;
+}
+</style>
+
+<script>
+function toggleMenu(){
+    document.getElementById("nav").classList.toggle("nav-open");
+}
+function closeMenu(){
+    document.getElementById("nav").classList.remove("nav-open");
+}
+window.onload = function(){
+    document.getElementById("loader").style.display="none";
+};
+</script>
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+    <div class="loader-circle"></div>
+</div>
+
+<!-- HEADER -->
+<header>
+    <img src="logotransparent.png" class="logo">
+
+    <div class="lang-select">
+        <div class="lang-btn" onclick="setLang('fr')">
+            <img src="https://flagcdn.com/fr.svg">
+        </div>
+        <div class="lang-btn" onclick="setLang('en')">
+            <img src="https://flagcdn.com/gb.svg">
+        </div>
+    </div>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+    </div>
+</header>
+
+<!-- MENU MOBILE -->
+<nav id="nav">
+    <div id="closeMenu" onclick="closeMenu()">✕</div>
+    <a href="index.html">Accueil</a>
+    <a href="domaines.html">Domaines</a>
+    <a href="business-diaspora.html">Diaspora</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+</nav><!-- ==========================================
+                 HERO PREMIUM
+========================================== -->
+<section id="hero" style="
+    position: relative;
+    height: 78vh;
+    min-height: 520px;
+    background-image: url('hero-burundi.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 25px;
+    overflow:hidden;
+">
+    <!-- Overlay -->
+    <div style="
+        position:absolute;
+        inset:0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.65));
+    "></div>
+
+    <!-- SLOGAN -->
+    <h1 style="
+        position:relative;
+        color:#F2B840;
+        font-size:34px;
+        font-weight:900;
+        margin:0 0 12px 0;
+        z-index:2;
+        text-transform:uppercase;
+        letter-spacing:1px;
+        animation:fadeIn 1.2s ease-out forwards;
+    ">
+        ÉCOSYSTÈME DE SERVICES
+    </h1>
+
+    <!-- LIGNE DORÉE -->
+    <div style="
+        position:relative;
+        width:190px;
+        height:3px;
+        background:#F2B840;
+        margin:0 auto 12px auto;
+        border-radius:3px;
+        z-index:2;
+        animation:slideIn 1.4s ease-out forwards;
+    "></div>
+
+    <!-- DOMAINES -->
+    <p style="
+        position:relative;
+        color:white;
+        font-size:17px;
+        opacity:.95;
+        margin:0 0 30px 0;
+        z-index:2;
+        animation:fadeIn 1.6s ease-out forwards;
+    ">
+        Mobilité • Immobilier • Logistique • Technologie
+    </p>
+
+    <!-- BOUTONS -->
+    <div style="
+        position:relative;
+        z-index:2;
+        display:flex;
+        flex-direction:column;
+        gap:12px;
+        width:100%;
+        max-width:300px;
+        margin:0 auto;
+        animation:fadeIn 1.8s ease-out forwards;
+    ">
+        <a href="domaines.html" style="
+            background:#F2B840;
+            padding:14px;
+            border-radius:40px;
+            font-weight:800;
+            font-size:17px;
+            color:#0A0F1A;
+            text-decoration:none;
+            box-shadow:0 4px 14px rgba(0,0,0,0.35);
+        ">
+            Découvrir nos domaines
+        </a>
+
+        <a href="business-diaspora.html" style="
+            border:2px solid #F2B840;
+            padding:14px;
+            border-radius:40px;
+            font-weight:800;
+            font-size:17px;
+            color:#F2B840;
+            text-decoration:none;
+            box-shadow:0 4px 14px rgba(0,0,0,0.35);
+        ">
+            Espace Diaspora
+        </a>
+    </div>
+</section>
+
+<!-- ANIMATIONS HERO -->
+<style>
+@keyframes fadeIn {
+    from { opacity:0; transform:translateY(20px); }
+    to { opacity:1; transform:translateY(0); }
+}
+@keyframes slideIn {
+    from { width:0px; opacity:0; }
+    to { width:190px; opacity:1; }
+}
+
+/* MOBILE OPTIMISATION */
+@media(max-width:768px){
+    #hero { height: 70vh; min-height: 480px; }
+    #hero h1 { font-size:28px; }
+    #hero p { font-size:15px; }
+}
+</style><!-- ==========================================
+              BLOC CHIFFRES PREMIUM
+========================================== -->
+<section style="padding:60px 20px; max-width:1200px; margin:auto; text-align:center;">
+    
+    <h2 style="
+        color:#F2B840;
+        font-size:26px;
+        font-weight:900;
+        margin-bottom:35px;
+        text-transform:uppercase;
+    ">
+        Un Écosystème au Service de Tous
+    </h2>
+
+    <div style="
+        display:grid;
+        gap:25px;
+        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    ">
+        <!-- SERVICE COUNT -->
+        <div style="
+            background:#0D1526;
+            padding:25px;
+            border-radius:14px;
+            border:1px solid rgba(255,255,255,0.05);
+            box-shadow:0 0 20px rgba(0,0,0,0.25);
+        ">
+            <div style="font-size:40px; color:#F2B840; font-weight:900;">+12</div>
+            <div style="opacity:.9;">Services intégrés</div>
+        </div>
+
+        <!-- PRESENCE -->
+        <div style="
+            background:#0D1526;
+            padding:25px;
+            border-radius:14px;
+            border:1px solid rgba(255,255,255,0.05);
+            box-shadow:0 0 20px rgba(0,0,0,0.25);
+        ">
+            <div style="font-size:40px; color:#F2B840; font-weight:900;">2</div>
+            <div style="opacity:.9;">Pays : Burundi & Canada</div>
+        </div>
+
+        <!-- SUPPORT -->
+        <div style="
+            background:#0D1526;
+            padding:25px;
+            border-radius:14px;
+            border:1px solid rgba(255,255,255,0.05);
+            box-shadow:0 0 20px rgba(0,0,0,0.25);
+        ">
+            <div style="font-size:40px; color:#F2B840; font-weight:900;">24/7</div>
+            <div style="opacity:.9;">Assistance continue</div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+               TÉMOIGNAGES PREMIUM
+========================================== -->
+<section style="padding:50px 20px; text-align:center; background:#0F1829;">
+    <h2 style="
+        color:#F2B840;
+        font-size:24px;
+        font-weight:900;
+        margin-bottom:30px;
+    ">
+        Ils nous font confiance
+    </h2>
+
+    <div class="carousel" style="max-width:700px; margin:auto; overflow:hidden; position:relative;">
+        <div id="carousel-inner" style="
+            display:flex;
+            transition:transform .6s ease;
+        ">
+            <!-- Avis 1 Local -->
+            <div style="min-width:100%; padding:15px;">
+                <div style="
+                    background:#132035;
+                    padding:25px;
+                    border-radius:14px;
+                    border-left:4px solid #F2B840;
+                ">
+                    <p style="opacity:.9; font-size:16px;">
+                        “Service fiable et rapide. Une vraie modernisation des services au Burundi.”
+                    </p>
+                    <strong style="color:#F2B840;">— Jean, Bujumbura</strong>
+                </div>
+            </div>
+
+            <!-- Avis 2 Diaspora -->
+            <div style="min-width:100%; padding:15px;">
+                <div style="
+                    background:#132035;
+                    padding:25px; border-radius:14px;
+                    border-left:4px solid #F2B840;
+                ">
+                    <p style="opacity:.9; font-size:16px;">
+                        “Depuis le Canada, je peux gérer mes projets au Burundi facilement.”
+                    </p>
+                    <strong style="color:#F2B840;">— Laetitia, Montréal</strong>
+                </div>
+            </div>
+
+            <!-- Avis 3 Partenaire -->
+            <div style="min-width:100%; padding:15px;">
+                <div style="
+                    background:#132035;
+                    padding:25px; border-radius:14px;
+                    border-left:4px solid #F2B840;
+                ">
+                    <p style="opacity:.9; font-size:16px;">
+                        “Partenaire professionnel et sérieux. Un vrai gain pour nos opérations.”
+                    </p>
+                    <strong style="color:#F2B840;">— Armel, Entreprise locale</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+let idx = 0;
+setInterval(()=>{
+    idx = (idx + 1) % 3;
+    document.getElementById("carousel-inner")
+        .style.transform = `translateX(-${idx * 100}%)`;
+}, 3500);
+</script>
+
+
+<!-- ==========================================
+         SECTION ÉCOSYSTÈME CIZA GROUP
+========================================== -->
+<section style="padding:60px 20px; max-width:1200px; margin:auto;">
+
+    <div style="
+        display:flex;
+        flex-wrap:wrap;
+        gap:35px;
+        align-items:center;
+        justify-content:center;
+    ">
+
+        <!-- IMAGE CADRE LUXE -->
+        <div style="
+            flex:1;
+            min-width:290px;
+            max-width:420px;
+            background:#0D1526;
+            padding:18px;
+            border-radius:18px;
+            box-shadow:0 0 25px rgba(0,0,0,0.35);
+        ">
+            <img src="EF9338CE-E502-41CC-8EAB-0615A5063C8C.png" style="
+                width:100%;
+                border-radius:12px;
+                object-fit:cover;
+            ">
+        </div>
+
+        <!-- TEXTE -->
+        <div style="flex:1; min-width:280px;">
+
+            <h2 style="
+                color:#F2B840;
+                font-size:26px;
+                font-weight:900;
+                margin-bottom:15px;
+            ">
+                L’Écosystème CIZA GROUP
+            </h2>
+
+            <p style="opacity:.9; line-height:1.6; font-size:17px;">
+                CIZA GROUP accompagne les Burundais au quotidien — au pays comme à l’étranger — 
+                en proposant des solutions modernes : mobilité, immobilier, logistique 
+                et technologies digitales.  
+            </p>
+
+            <p style="opacity:.9; line-height:1.6; font-size:17px;">
+                Notre mission est de faciliter la vie de chacun, de connecter les communautés 
+                et d’apporter des services fiables, efficaces et accessibles pour un 
+                Burundi moderne et tourné vers l’avenir.
+            </p>
+
+        </div>
+
+    </div>
+
+</section><!-- ==========================================
+           POURQUOI NOUS CHOISIR (LUXE)
+========================================== -->
+<section style="padding:60px 20px; background:#0F1829;">
+    <h2 style="
+        color:#F2B840;
+        text-align:center;
+        font-size:26px;
+        font-weight:900;
+        margin-bottom:40px;
+        text-transform:uppercase;
+    ">
+        Pourquoi choisir CIZA GROUP ?
+    </h2>
+
+    <div style="
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        gap:25px;
+        max-width:1200px;
+        margin:auto;
+    ">
+
+        <!-- 1 -->
+        <div style="
+            background:#132035;
+            padding:25px;
+            border-radius:16px;
+            border:1px solid rgba(255,255,255,0.06);
+            text-align:center;
+        ">
+            <div style="font-size:40px; color:#F2B840;">⚡</div>
+            <h3 style="color:white; margin:10px 0;">Rapidité & Fiabilité</h3>
+            <p style="opacity:.9;">
+                Des services conçus pour répondre rapidement aux besoins 
+                des Burundais au pays comme à l’étranger.
+            </p>
+        </div>
+
+        <!-- 2 -->
+        <div style="
+            background:#132035;
+            padding:25px;
+            border-radius:16px;
+            border:1px solid rgba(255,255,255,0.06);
+            text-align:center;
+        ">
+            <div style="font-size:40px; color:#F2B840;">💼</div>
+            <h3 style="color:white; margin:10px 0;">Professionnalisme</h3>
+            <p style="opacity:.9;">
+                Un écosystème structuré avec des équipes engagées pour 
+                offrir une expérience de haute qualité.
+            </p>
+        </div>
+
+        <!-- 3 -->
+        <div style="
+            background:#132035;
+            padding:25px;
+            border-radius:16px;
+            border:1px solid rgba(255,255,255,0.06);
+            text-align:center;
+        ">
+            <div style="font-size:40px; color:#F2B840;">🌍</div>
+            <h3 style="color:white; margin:10px 0;">Local & Diaspora</h3>
+            <p style="opacity:.9;">
+                CIZA GROUP accompagne les Burundais au pays et partout dans le monde, 
+                grâce à des solutions modernes et accessibles.
+            </p>
+        </div>
+
+        <!-- 4 -->
+        <div style="
+            background:#132035;
+            padding:25px;
+            border-radius:16px;
+            border:1px solid rgba(255,255,255,0.06);
+            text-align:center;
+        ">
+            <div style="font-size:40px; color:#F2B840;">🔒</div>
+            <h3 style="color:white; margin:10px 0;">Sécurité & Confiance</h3>
+            <p style="opacity:.9;">
+                Données protégées, processus transparents et technologies fiables 
+                pour garantir des services sécurisés.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ==========================================
+                   FAQ PREMIUM
+========================================== -->
+<section style="padding:60px 20px; max-width:900px; margin:auto;">
+
+    <h2 style="
+        color:#F2B840;
+        text-align:center;
+        font-size:26px;
+        font-weight:900;
+        margin-bottom:30px;
+        text-transform:uppercase;
+    ">
+        FAQ — Questions fréquentes
+    </h2>
+
+    <div id="faq-container" style="display:flex; flex-direction:column; gap:15px;">
+
+        <!-- FAQ Template -->
+        <div class="faq-item" style="
+            background:#132035;
+            padding:18px;
+            border-radius:12px;
+            border:1px solid rgba(255,255,255,0.06);
+            cursor:pointer;
+        " onclick="toggleFAQ(this)">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-weight:700;">Vos services sont-ils disponibles pour les Burundais au pays ?</span>
+                <span style="color:#F2B840; font-size:22px;">+</span>
+            </div>
+            <div class="faq-content" style="display:none; margin-top:12px; opacity:.85;">
+                Oui, l’ensemble de nos services (mobilité, immobilier, logistique, tech)
+                est disponible pour les habitants du Burundi.
+            </div>
+        </div>
+
+        <!-- Diaspora -->
+        <div class="faq-item" style="
+            background:#132035; padding:18px; border-radius:12px;
+            border:1px solid rgba(255,255,255,0.06); cursor:pointer;
+        " onclick="toggleFAQ(this)">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-weight:700;">Je vis à l’étranger, puis-je utiliser vos services ?</span>
+                <span style="color:#F2B840; font-size:22px;">+</span>
+            </div>
+            <div class="faq-content" style="display:none; margin-top:12px; opacity:.85;">
+                Oui, la diaspora peut accéder à nos services, gérer des projets à distance 
+                et contacter un agent facilement depuis l’étranger.
+            </div>
+        </div>
+
+        <!-- Mobilité -->
+        <div class="faq-item" onclick="toggleFAQ(this)" style="
+            background:#132035; padding:18px; border-radius:12px;
+            border:1px solid rgba(255,255,255,0.06); cursor:pointer;
+        ">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-weight:700;">Comment fonctionne la mobilité CIZA GROUP ?</span>
+                <span style="color:#F2B840; font-size:22px;">+</span>
+            </div>
+            <div class="faq-content" style="display:none; margin-top:12px; opacity:.85;">
+                Des solutions de transport sûres et modernes via CizaRide+. 
+                Une application pratique pour vos déplacements.
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div class="faq-item" onclick="toggleFAQ(this)" style="
+            background:#132035; padding:18px; border-radius:12px;
+            border:1px solid rgba(255,255,255,0.06); cursor:pointer;
+        ">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-weight:700;">Proposez-vous un support client ?</span>
+                <span style="color:#F2B840; font-size:22px;">+</span>
+            </div>
+            <div class="faq-content" style="display:none; margin-top:12px; opacity:.85;">
+                Oui, nous offrons une assistance 24/7 pour accompagner tous nos utilisateurs.
+            </div>
+        </div>
+
+        <!-- Immobilier -->
+        <div class="faq-item" onclick="toggleFAQ(this)" style="
+            background:#132035; padding:18px; border-radius:12px;
+            border:1px solid rgba(255,255,255,0.06); cursor:pointer;
+        ">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-weight:700;">Puis-je investir à distance dans l’immobilier ?</span>
+                <span style="color:#F2B840; font-size:22px;">+</span>
+            </div>
+            <div class="faq-content" style="display:none; margin-top:12px; opacity:.85;">
+                Oui, grâce à nos solutions sécurisées, la diaspora peut investir à distance 
+                dans l’immobilier au Burundi.
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+function toggleFAQ(el){
+    const content = el.querySelector(".faq-content");
+    const sign = el.querySelector("span:last-child");
+
+    if(content.style.display === "block"){
+        content.style.display = "none";
+        sign.textContent = "+";
+    } else {
+        content.style.display = "block";
+        sign.textContent = "−";
+    }
+}
+</script>
+
+
+
+<!-- ==========================================
+            SECTION CEO & VISION
+========================================== -->
+<section style="padding:60px 20px; max-width:1100px; margin:auto;">
+
+    <h2 style="
+        color:#F2B840;
+        text-align:center;
+        font-size:26px;
+        font-weight:900;
+        margin-bottom:40px;
+        text-transform:uppercase;
+    ">
+        Leadership & Vision
+    </h2>
+
+    <div style="
+        display:flex;
+        flex-wrap:wrap;
+        gap:35px;
+        align-items:center;
+        justify-content:center;
+    ">
+
+        <!-- IMAGE CEO -->
+        <div style="
+            background:#0D1526;
+            padding:20px;
+            border-radius:18px;
+            max-width:350px;
+            box-shadow:0 0 25px rgba(0,0,0,0.35);
+        ">
+            <img src="CEO.png" style="
+                width:100%;
+                border-radius:14px;
+                object-fit:cover;
+            ">
+        </div>
+
+        <!-- TEXTE -->
+        <div style="flex:1; min-width:280px;">
+            <p style="opacity:.9; line-height:1.6; font-size:17px;">
+                “Notre mission est claire : moderniser les services au Burundi, soutenir 
+                l’innovation locale et connecter les Burundais du pays et de la diaspora 
+                à un écosystème fiable et accessible.”
+            </p>
+            <p style="opacity:.9; line-height:1.6; font-size:17px;">
+                CIZA GROUP s’engage pour un avenir où la technologie, la mobilité, 
+                le logement et les services logistiques améliorent le quotidien 
+                des Burundais et ouvrent de nouvelles opportunités.
+            </p>
+            <strong style="color:#F2B840; font-size:18px;">— CEO, CIZA GROUP</strong>
+        </div>
+
+    </div>
+
+</section><!-- ==========================================
+                METEO PREMIUM
+========================================== -->
+<section style="padding:60px 20px; max-width:900px; margin:auto;">
+    <h2 style="
+        text-align:center;
+        color:#F2B840;
+        font-size:26px;
+        font-weight:900;
+        margin-bottom:35px;
+    ">
+        Météo en direct
+    </h2>
+
+    <div style="
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        gap:25px;
+    ">
+        <div style="
+            background:#0D1526;
+            padding:25px;
+            border-radius:16px;
+            text-align:center;
+            border:1px solid rgba(255,255,255,0.05);
+        ">
+            <h3 style="color:#F2B840; margin-bottom:10px;">Burundi</h3>
+            <div id="temp-burundi" style="font-size:40px; font-weight:900;">--°C</div>
+        </div>
+
+        <div style="
+            background:#0D1526;
+            padding:25px;
+            border-radius:16px;
+            text-align:center;
+            border:1px solid rgba(255,255,255,0.05);
+        ">
+            <h3 style="color:#F2B840; margin-bottom:10px;">Montréal</h3>
+            <div id="temp-montreal" style="font-size:40px; font-weight:900;">--°C</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==========================================
+                 FOOTER PREMIUM
+========================================== -->
+<footer style="background:#0A0F1A; padding:60px 20px; margin-top:60px;">
+    
+    <div style="max-width:1200px; margin:auto; display:grid;
+                grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:35px;">
+
+        <!-- COL 1 -->
+        <div>
+            <h3 style="color:#F2B840; font-size:20px; font-weight:900;">
+                CIZA GROUP
+            </h3>
+            <p style="opacity:.9;">Écosystème de services — Burundi & Canada</p>
+            <p style="margin-top:8px;">🇧🇮 +257 79945007</p>
+            <p>🇨🇦 +1 514 502 9503</p>
+            <p>Email : infos@cizagroup.com</p>
+
+            <div style="margin-top:15px; display:flex; gap:12px;">
+                <a href="https://www.instagram.com/cizagroup_official">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" style="width:32px;">
+                </a>
+                <a href="https://www.facebook.com">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" style="width:32px;">
+                </a>
+                <a href="https://www.youtube.com/@Cizagroup">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" style="width:32px;">
+                </a>
+            </div>
+        </div>
+
+        <!-- COL 2 -->
+        <div>
+            <h3 style="color:#F2B840; font-size:20px; font-weight:900;">Navigation</h3>
+            <p><a href="index.html" style="color:white; text-decoration:none;">Accueil</a></p>
+            <p><a href="domaines.html" style="color:white; text-decoration:none;">Domaines</a></p>
+            <p><a href="business-diaspora.html" style="color:white; text-decoration:none;">Diaspora</a></p>
+            <p><a href="a-propos.html" style="color:white; text-decoration:none;">À propos</a></p>
+            <p><a href="contact.html" style="color:white; text-decoration:none;">Contact</a></p>
+        </div>
+
+        <!-- COL 3 -->
+        <div>
+            <h3 style="color:#F2B840; font-size:20px; font-weight:900;">Légal</h3>
+            <p><a href="cgu.html" style="color:white; text-decoration:none;">Conditions d’utilisation</a></p>
+            <p><a href="politique-confidentialite.html" style="color:white; text-decoration:none;">Politique de confidentialité</a></p>
+            <p><a href="legales.html" style="color:white; text-decoration:none;">Mentions légales</a></p>
+        </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:25px; opacity:.7;">
+        © 2026 — CIZA GROUP. Tous droits réservés.
+    </div>
+</footer>
+
+
+<!-- ==========================================
+              STICKY BAR (SMARTPHONE)
+========================================== -->
+<div style="
+    position:fixed;
+    bottom:0; left:0;
+    width:100%;
+    background:#0F1829;
+    display:flex;
+    justify-content:space-around;
+    padding:12px 0;
+    z-index:9999;
+">
+    <a href="tel:+25779945007" style="color:#F2B840; font-weight:800; text-decoration:none;">📞 Appeler</a>
+    <a href="https://wa.me/15145029503" style="color:#F2B840; font-weight:800; text-decoration:none;">💬 WhatsApp</a>
+    <a href="#hero" style="color:#F2B840; font-weight:800; text-decoration:none;">⬆️ Haut</a>
+</div>
+
+
+<!-- ==========================================
+              PANEL AVIS (PETIT)
+========================================== -->
+<div id="avis-panel" style="
+    position:fixed;
+    right:0; top:45%;
+    background:#132035;
+    padding:15px 12px;
+    border-radius:12px 0 0 12px;
+    box-shadow:-3px 3px 12px rgba(0,0,0,0.3);
+    cursor:pointer;
+    color:#F2B840;
+    z-index:9999;
+    font-weight:800;
+">
+    Avis ⭐
+</div>
+
+<script>
+document.getElementById("avis-panel").onclick = ()=>{
+    window.location.href="https://wa.me/15145029503?text=Je%20souhaite%20laisser%20un%20avis%20sur%20CIZA%20GROUP.";
+};
+</script>
+
+
+<!-- ==========================================
+              COOKIES BANNER
+========================================== -->
+<div id="cookie-box" style="
+    position:fixed; bottom:0; left:0; width:100%;
+    background:#0F1829; color:white;
+    padding:15px; text-align:center;
+    z-index:999999;
+    display:none;
+">
+    Ce site utilise des cookies pour améliorer votre expérience.
+    <button onclick="acceptCookies()" style="
+        margin-left:10px; background:#F2B840; border:none;
+        padding:8px 18px; border-radius:6px;
+        font-weight:800;
+    ">OK</button>
+</div>
+
+
+<!-- ==========================================
+              SCRIPTS FINAUX OPTIMISÉS
+========================================== -->
+<script>
+/* WEATHER */
+async function loadWeather() {
+    const cities = {
+        burundi: {lat:-3.38, lon:29.36},
+        montreal: {lat:45.5017, lon:-73.5673}
+    };
+
+    for(let key in cities){
+        const {lat, lon} = cities[key];
+        try{
+            const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
+            const data = await res.json();
+            const temp = Math.round(data.current_weather.temperature);
+            document.getElementById(`temp-${key}`).innerText = temp + "°C";
+        } catch {
+            document.getElementById(`temp-${key}`).innerText = "--°C";
+        }
+    }
+}
+loadWeather();
+
+/* COOKIES */
+function acceptCookies(){
+    localStorage.setItem("cookies_accepted","yes");
+    document.getElementById("cookie-box").style.display = "none";
+}
+if(!localStorage.getItem("cookies_accepted")){
+    document.getElementById("cookie-box").style.display = "block";
+}
+
+/* LANG */
+function setLang(l){
+    document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = el.dataset[l];
+    });
+    localStorage.setItem("lang", l);
+}
+setLang(localStorage.getItem("lang") || "fr");
+</script>
+
+</body>
+</html>
