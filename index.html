@@ -51,7 +51,52 @@ body::before {
     50% { transform: translate(25px, 20px) scale(1.04); }
     100% { transform: translate(-10px, 35px) scale(1); }
 }
+<style>
 
+/* Fix espacement noir en haut */
+header {
+    padding-bottom: 0 !important;
+}
+
+.hero {
+    margin-top: 0 !important;
+    padding-top: 20px !important;
+}
+
+.hero-content {
+    margin-top: -10px !important;
+}
+
+/* Compactage mobile */
+@media (max-width: 768px) {
+    .hero {
+        padding: 20px 15px !important;
+        background-size: cover !important;
+        height: auto !important;
+    }
+    .hero h1 {
+        font-size: 30px !important;
+        line-height: 36px !important;
+    }
+    .hero p {
+        font-size: 17px !important;
+    }
+}
+
+/* Correction menu flottant */
+.menu-btn {
+    margin-top: 0 !important;
+    top: 18px !important;
+    right: 18px !important;
+    z-index: 9999 !important;
+}
+
+/* Ajustement boutons flottants */
+.floating-buttons {
+    bottom: 20px !important;
+}
+
+</style>
 /* ========================
    HEADER + MENU MOBILE
 =========================== */
