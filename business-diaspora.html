@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CIZA GROUP — Services Premium Diaspora & Étrangers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="favicone.png">
+
+<!-- SEO 2026 ULTRA PREMIUM -->
+<meta name="description" content="CIZA GROUP — Services premium pour la diaspora et les étrangers au Burundi : immobilier, achats locaux, business, logistique, démarches administratives. Sécurité, fiabilité, transparence.">
+<link rel="canonical" href="https://cizaimmo.github.io/cizagroup-website/business-diaspora.html">
+<meta property="og:title" content="CIZA GROUP — Diaspora & Services Premium">
+<meta property="og:description" content="Votre partenaire officiel pour un Burundi moderne, fiable et sécurisé.">
+<meta property="og:image" content="herodiaspo2.png">
+<meta property="og:type" content="website">
+
+<!-- JSON-LD ULTRA PRO -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "CIZA GROUP",
+ "logo": "logotransparent.png",
+ "url": "https://cizaimmo.github.io/cizagroup-website/",
+ "sameAs": [
+   "https://www.instagram.com/cizagroup_official",
+   "https://www.youtube.com/@Cizagroup",
+   "https://www.facebook.com"
+ ]
+}
+</script>
+
+<!-- STYLES GLOBAL PREMIUM -->
+<style>
+body{
+ margin:0;
+ font-family:Inter,Arial,sans-serif;
+ background:#0A0F1A;
+ color:white;
+ overflow-x:hidden;
+}
+
+/* LOGO FLOTTANT PREMIUM */
+body::before{
+ content:"";
+ position:fixed;
+ inset:0;
+ background:url('logotransparent.png') center/320px no-repeat;
+ opacity:0.03;
+ animation:floatLogo 18s infinite ease-in-out alternate;
+ z-index:-1;
+}
+@keyframes floatLogo{
+ 0%{transform:translate(-40px,-20px);}
+ 50%{transform:translate(40px,25px);}
+ 100%{transform:translate(-20px,40px);}
+}
+
+/* HEADER */
+header{
+ background:#004AAD;
+ padding:12px 18px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ position:sticky;
+ top:0;
+ z-index:2000;
+ box-shadow:0 0 18px rgba(0,0,0,0.4);
+}
+.logo{height:50px}
+
+/* LANG FLAGS */
+.flag{
+ width:28px;
+ margin:0 4px;
+ cursor:pointer;
+ transition:.3s;
+}
+.flag:hover{transform:scale(1.1);}
+
+/* MENU BURGER */
+.menu-btn{width:32px;cursor:pointer;}
+.menu-btn div{
+ height:4px;background:#F2B840;
+ margin:5px;border-radius:2px;
+}
+
+/* MENU SLIDE */
+#nav{
+ position:fixed;
+ top:0;right:-280px;
+ width:260px;height:100%;
+ background:#0F1625;
+ padding-top:80px;
+ transition:.35s;
+ display:flex;flex-direction:column;
+ box-shadow:-6px 0 20px rgba(0,0,0,0.55);
+ z-index:3000;
+}
+#nav.nav-open{right:0;}
+#nav a{
+ color:white;
+ padding:15px 20px;
+ font-size:18px;
+ text-decoration:none;
+}
+#nav a:hover{color:#F2B840;}
+.close-nav{
+ position:absolute;
+ top:20px;right:20px;
+ font-size:28px;
+ color:#F2B840;
+ cursor:pointer;
+}
+
+/* TITRES PREMIUM */
+.section-title{
+ text-align:center;
+ font-size:28px;
+ font-weight:900;
+ letter-spacing:1px;
+ color:#F2B840;
+ margin:45px 0 20px;
+ text-transform:uppercase;
+ position:relative;
+}
+.section-title::after{
+ content:"";
+ width:70px;height:3px;
+ background:#F2B840;
+ position:absolute;
+ bottom:-8px;left:50%;transform:translateX(-50%);
+ border-radius:20px;
+}
+
+.container{max-width:1100px;margin:auto;padding:20px}
+
+/* VISION */
+.vision-box{
+ background:#111824;
+ padding:25px;
+ border-radius:18px;
+ border-left:4px solid #F2B840;
+ box-shadow:0 0 25px rgba(0,0,0,0.4);
+}
+
+/* DOMAINES */
+.domains-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+ gap:20px;
+}
+.domain-card{
+ background:#111824;
+ padding:25px;
+ border-radius:14px;
+ text-align:center;
+ box-shadow:0 0 20px rgba(0,0,0,0.45);
+ border:1px solid rgba(255,255,255,0.07);
+ transition:.3s;
+ cursor:pointer;
+}
+.domain-card:hover{
+ transform:translateY(-6px);
+ box-shadow:0 0 28px rgba(242,184,64,0.5);
+}
+.domain-desc{
+ display:none;
+ opacity:0.85;
+ margin-top:10px;
+}
+
+/* WHY */
+.why-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+ gap:20px;
+}
+.why-card{
+ background:#182032;
+ padding:25px;
+ border-radius:18px;
+ border-top:3px solid #F2B840;
+ box-shadow:0 0 25px rgba(0,0,0,0.5);
+}
+
+/* PROCESS */
+.process-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+ gap:20px;
+}
+.step{
+ background:#111824;
+ padding:25px;
+ border-radius:14px;
+ border-bottom:3px solid #F2B840;
+}
+
+/* FAQ */
+.faq-box{
+ background:#111824;
+ padding:18px;
+ border-radius:14px;
+ border-left:4px solid #004AAD;
+ margin-bottom:12px;
+ cursor:pointer;
+}
+.faq-answer{display:none;opacity:.85;margin-top:8px}
+
+/* CONTACT */
+.contact-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+ gap:20px;
+}
+.contact-card{
+ background:#111824;
+ padding:22px;
+ border-radius:14px;
+ border-top:3px solid #F2B840;
+ text-align:center;
+}
+
+/* FOOTER */
+footer{
+ background:#00050D;
+ padding:40px 20px;
+ border-top:3px solid #F2B840;
+ margin-top:40px;
+}
+.footer-grid{
+ max-width:1100px;margin:auto;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+ gap:20px;
+}
+.footer-title{
+ color:#F2B840;
+ font-size:20px;
+ font-weight:900;
+}
+
+/* BOUTON RETOUR */
+#back-btn{
+ position:fixed;
+ top:90px;left:20px;
+ width:42px;height:42px;
+ background:#004AAD;
+ display:flex;
+ justify-content:center;align-items:center;
+ border-radius:50%;
+ color:white;font-size:22px;
+ cursor:pointer;
+ box-shadow:0 0 14px rgba(0,0,0,0.5);
+ z-index:2500;
+}
+
+/* WHATSAPP LUXE */
+#whatsapp-btn{
+ position:fixed;
+ bottom:90px;right:20px;
+ width:60px;height:60px;
+ background:#25D366;
+ border-radius:50%;
+ display:flex;justify-content:center;align-items:center;
+ font-size:32px;
+ cursor:pointer;
+ z-index:2600;
+ box-shadow:0 0 20px rgba(0,0,0,0.6);
+}
+
+/* POPUP WHATSAPP */
+#whatsapp-popup{
+ position:fixed;
+ bottom:160px;right:20px;
+ width:90%;
+ max-width:300px;
+ background:#111824;
+ padding:15px;
+ border-radius:14px;
+ display:none;
+ z-index:2600;
+ border:2px solid #F2B840;
+ animation:fadeIn .3s;
+}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* CLOSE BOUTON PREMIUM (VERSION B) */
+#wp-close{
+ position:absolute;
+ top:10px;right:10px;
+ width:28px;height:28px;
+ background:black;
+ border:2px solid #F2B840;
+ color:white;
+ border-radius:50%;
+ display:flex;justify-content:center;align-items:center;
+ font-size:18px;
+ cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+ <img src="logotransparent.png" class="logo">
+
+ <div>
+   <img src="flag-fr.png" class="flag" onclick="setLang('fr')">
+   <img src="flag-en.png" class="flag" onclick="setLang('en')">
+ </div>
+
+ <div class="menu-btn" onclick="toggleMenu()">
+   <div></div><div></div><div></div>
+ </div>
+</header>
+
+<!-- MENU -->
+<nav id="nav">
+ <span class="close-nav" onclick="toggleMenu()">✖</span>
+ <a href="index.html" data-fr="Accueil" data-en="Home"></a>
+ <a href="domaines.html" data-fr="Domaines" data-en="Domains"></a>
+ <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora"></a>
+ <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
+ <a href="legales.html" data-fr="Mentions légales" data-en="Legal"></a>
+ <a href="cgu.html" data-fr="CGU" data-en="Terms"></a>
+ <a href="confidentialite.html" data-fr="Confidentialité" data-en="Privacy"></a>
+</nav>
+
+<!-- BOUTON RETOUR -->
+<div id="back-btn" onclick="history.back()">←</div>
+
+<!-- ========================== -->
+<!--   SECTION VISION PREMIUM   -->
+<!-- ========================== -->
+<h2 class="section-title" data-fr="VISION 2040–2060" data-en="VISION 2040–2060"></h2>
+
+<div class="container">
+ <div class="vision-box">
+   <p data-fr="CIZA GROUP construit un avenir moderne pour les Burundais et la diaspora : innovation, fiabilité, transparence et excellence dans chaque service."
+      data-en="CIZA GROUP builds a modern future for Burundians and the diaspora: innovation, reliability, transparency and excellence in every service."></p>
+ </div>
+</div>
+
+<!-- ========================== -->
+<!--     DOMAINES PREMIUM       -->
+<!-- ========================== -->
+<h2 class="section-title" data-fr="NOS DOMAINES" data-en="OUR DOMAINS"></h2>
+
+<div class="container domains-grid">
+
+ <div class="domain-card" onclick="toggleDesc(this)">
+  <h3>🏡 IMMOBILIER</h3>
+  <div class="domain-desc" 
+       data-fr="Achat sécurisé, terrains, maisons, accompagnement complet, vidéos HD, vérification cadastre."
+       data-en="Secure purchase, land, houses, full assistance, HD videos, land verification."></div>
+ </div>
+
+ <div class="domain-card" onclick="toggleDesc(this)">
+  <h3>🚚 LOGISTIQUE</h3>
+  <div class="domain-desc"
+       data-fr="Achats locaux, courses, livraisons sécurisées, contrôle qualité."
+       data-en="Local purchases, errands, secure deliveries, quality control."></div>
+ </div>
+
+ <div class="domain-card" onclick="toggleDesc(this)">
+  <h3>📈 BUSINESS</h3>
+  <div class="domain-desc"
+       data-fr="Création d’entreprise, représentation locale, études de marché, partenaires fiables."
+       data-en="Business setup, local representation, market studies, reliable partners."></div>
+ </div>
+
+ <div class="domain-card" onclick="toggleDesc(this)">
+  <h3>📄 ADMINISTRATIF</h3>
+  <div class="domain-desc"
+       data-fr="Documents officiels, certificats, démarches complètes."
+       data-en="Official documents, certificates, full procedures."></div>
+ </div>
+
+</div>
+
+<!-- ========================== -->
+<!--   POURQUOI CIZA GROUP      -->
+<!-- ========================== -->
+<h2 class="section-title" data-fr="POURQUOI CHOISIR CIZA GROUP ?" data-en="WHY CHOOSE CIZA GROUP?"></h2>
+
+<div class="container why-grid">
+
+ <div class="why-card">
+   <h4>⭐ PREMIUM</h4>
+   <p data-fr="Un service haut de gamme pensé pour diaspora et investisseurs."
+      data-en="A high-end service designed for diaspora and investors."></p>
+ </div>
+
+ <div class="why-card">
+   <h4>🔒 SÉCURISÉ</h4>
+   <p data-fr="Toutes les procédures sont vérifiées et transparentes."
+      data-en="All procedures are verified and transparent."></p>
+ </div>
+
+ <div class="why-card">
+   <h4>⚡ RAPIDE</h4>
+   <p data-fr="Réponse garantie en moins de 24h."
+      data-en="Guaranteed response within 24h."></p>
+ </div>
+
+ <div class="why-card">
+   <h4>📸 PREUVES VISUELLES</h4>
+   <p data-fr="Photos, vidéos et rapports continus."
+      data-en="Photos, videos and continuous reports."></p>
+ </div>
+
+</div>
+
+<!-- ========================== -->
+<!--     PROCESSUS PREMIUM      -->
+<!-- ========================== -->
+<h2 class="section-title" data-fr="PROCESSUS EN 4 ÉTAPES" data-en="4 STEP PROCESS"></h2>
+
+<div class="container process-grid">
+
+ <div class="step"><h3 data-fr="1. CONTACT"></h3><p data-fr="Vous partagez vos besoins."></p></div>
+ <div class="step"><h3 data-fr="2. VÉRIFICATION"></h3><p data-fr="Analyse + validation complète."></p></div>
+ <div class="step"><h3 data-fr="3. EXÉCUTION"></h3><p data-fr="Travail terrain + preuves visuelles."></p></div>
+ <div class="step"><h3 data-fr="4. SUIVI"></h3><p data-fr="Mises à jour continues."></p></div>
+
+</div>
+
+<!-- ========================== -->
+<!--           FAQ              -->
+<!-- ========================== -->
+<h2 class="section-title" data-fr="FAQ"></h2>
+
+<div class="container">
+
+ <div class="faq-box">
+  <div class="faq-question" data-fr="Puis-je acheter une maison depuis l’étranger ?"></div>
+  <div class="faq-answer" data-fr="Oui. Nous gérons tout : documents, vérifications, visites vidéo et preuves visuelles."></div>
+ </div>
+
+ <div class="faq-box">
+  <div class="faq-question" data-fr="Comment suivre mon dossier ?"></div>
+  <div class="faq-answer" data-fr="Vous recevez photos, vidéos et rapports en temps réel, WhatsApp + email."></div>
+ </div>
+
+</div>
+
+<!-- ========================== -->
+<!--        CONTACT             -->
+<!-- ========================== -->
+<h2 class="section-title" data-fr="CONTACT"></h2>
+
+<div class="container contact-grid">
+
+ <div class="contact-card"><h3>WhatsApp</h3><p>+1 514 502 9503</p></div>
+ <div class="contact-card"><h3>Téléphone</h3><p>🇧🇮 +257 79945007<br>🇨🇦 +1 514 502 9503</p></div>
+ <div class="contact-card"><h3>Email</h3><p>infos@cizagroup.com</p></div>
+
+</div>
+
+<!-- ========================== -->
+<!--      WHATSAPP POPUP        -->
+<!-- ========================== -->
+
+<div id="whatsapp-btn" onclick="toggleWhatsapp()">💬</div>
+
+<div id="whatsapp-popup">
+ <div id="wp-close" onclick="toggleWhatsapp()">✖</div>
+ <h4 style="color:#F2B840;margin:0 0 10px 0">WhatsApp Premium</h4>
+ <textarea id="wMsg" placeholder="Votre message..." style="width:100%;height:90px;border:none;border-radius:8px;padding:10px;background:#0A0F1A;color:white;"></textarea>
+ <button onclick="sendWhatsapp()" style="background:#25D366;width:100%;margin-top:10px;padding:10px;border:none;font-weight:800;border-radius:8px;color:white;cursor:pointer;">Envoyer</button>
+</div>
+
+<!-- ========================== -->
+<!--          FOOTER            -->
+<!-- ========================== -->
+<footer>
+ <div class="footer-grid">
+  <div>
+   <h3 class="footer-title">CIZA GROUP</h3>
+   <p>Burundi | Canada</p>
+   <p>🇧🇮 +257 79945007</p>
+   <p>🇨🇦 +1 514 502 9503</p>
+   <p>Email : infos@cizagroup.com</p>
+  </div>
+
+  <div>
+   <h3 class="footer-title">Navigation</h3>
+   <a href="index.html">Accueil</a><br>
+   <a href="domaines.html">Domaines</a><br>
+   <a href="business-diaspora.html">Diaspora</a><br>
+   <a href="contact.html">Contact</a>
+  </div>
+
+  <div>
+   <h3 class="footer-title">Légal</h3>
+   <a href="legales.html">Mentions légales</a><br>
+   <a href="cgu.html">CGU</a><br>
+   <a href="confidentialite.html">Confidentialité</a>
+  </div>
+
+ </div>
+
+ <div style="text-align:center;margin-top:20px;opacity:.7;">
+  © 2026 CIZA GROUP — Tous droits réservés.
+ </div>
+</footer>
+
+<!-- ========================== -->
+<!--         SCRIPTS            -->
+<!-- ========================== -->
+
+<script>
+function toggleMenu(){document.getElementById("nav").classList.toggle("nav-open")}
+
+function setLang(l){
+ document.querySelectorAll("[data-fr]").forEach(el=>{el.innerHTML=el.dataset[l]})
+ localStorage.setItem("lang",l)
+}
+window.onload=()=>{setLang(localStorage.getItem("lang")||"fr")}
+
+function toggleDesc(card){
+ let d=card.querySelector(".domain-desc");
+ d.style.display=d.style.display==="block"?"none":"block";
+}
+
+document.querySelectorAll(".faq-box").forEach(f=>{
+ f.onclick=()=>{let a=f.querySelector(".faq-answer");a.style.display=a.style.display==="block"?"none":"block";}
+});
+
+function toggleWhatsapp(){
+ let box=document.getElementById("whatsapp-popup");
+ box.style.display = box.style.display==="block" ? "none" : "block";
+}
+
+function sendWhatsapp(){
+ let msg=document.getElementById("wMsg").value;
+ if(!msg){alert("Écrivez un message.");return;}
+ let url="https://wa.me/15145029503?text="+encodeURIComponent(msg);
+ window.open(url,"_blank");
+}
+</script>
+
+</body>
+</html>
