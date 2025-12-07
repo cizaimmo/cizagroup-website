@@ -8,11 +8,11 @@
 <link rel="icon" type="image/png" href="favicone.png">
 
 <!-- SEO -->
-<meta name="description" content="CIZA GROUP — Services premium pour la Diaspora & les Étrangers : Immobilier, Courses Locales, Business, Assistance Administrative. Solutions fiables et sécurisées au Burundi.">
+<meta name="description" content="CIZA GROUP — Services premium pour la Diaspora & les Étrangers : Immobilier, Logistique, Achats, Business, Assistance Administrative. Solutions fiables et sécurisées au Burundi.">
 <link rel="canonical" href="https://cizaimmo.github.io/cizagroup-website/business-diaspora.html">
 <meta property="og:title" content="CIZA GROUP — Services Diaspora & Étrangers">
-<meta property="og:description" content="Solutions premium pour la diaspora et les étrangers. Rapidité, sécurité, fiabilité.">
-<meta property="og:image" content="herodiaspora.png">
+<meta property="og:description" content="Solutions premium pour la diaspora et les étrangers : Sécurité, rapidité, fiabilité, preuves visuelles.">
+<meta property="og:image" content="herodiaspo2.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -38,7 +38,7 @@
 body {
  margin:0;
  font-family: Inter, Arial, sans-serif;
- background:#0A0F1A;
+ background:#0A0F1A;  /* même couleur que l’index */
  color:white;
  overflow-x:hidden;
 }
@@ -48,15 +48,18 @@ body::before{
  content:"";
  position:fixed;
  inset:0;
- background:linear-gradient(120deg,rgba(255,215,0,0.08),rgba(0,74,173,0.16),rgba(242,184,64,0.10));
- background-size:400% 400%;
- animation:flow 12s infinite linear;
- z-index:-2;
+ background-image:url('logotransparent.png');
+ background-repeat:no-repeat;
+ background-position:center;
+ background-size:280px;
+ opacity:0.025;
+ animation:floatLogo 25s ease-in-out infinite alternate;
+ z-index:-1;
 }
-@keyframes flow{
- 0%{background-position:0% 50%;}
- 50%{background-position:100% 50%;}
- 100%{background-position:0% 50%;}
+@keyframes floatLogo{
+ 0%{transform:translate(-15px,-10px);}
+ 50%{transform:translate(25px,20px);}
+ 100%{transform:translate(-10px,15px);}
 }
 
 /* HEADER */
@@ -69,17 +72,26 @@ header{
  position:sticky;
  top:0;
  z-index:2000;
- box-shadow:0 0 15px rgba(0,0,0,0.4);
+ box-shadow:0 0 15px rgba(0,0,0,0.45);
 }
 .logo{height:55px;}
 
-.lang-switch{
- color:white;
- font-weight:700;
- cursor:pointer;
- margin:0 3px;
+/* LANG SWITCH EXACT INDEX */
+.lang-box{
+ display:flex;
+ gap:8px;
+ align-items:center;
 }
-.lang-switch.active{color:#F2B840;text-decoration:underline;}
+.lang-flag{
+ width:26px;
+ height:18px;
+ cursor:pointer;
+ border:2px solid transparent;
+ border-radius:4px;
+}
+.lang-flag.active{
+ border-color:#F2B840;
+}
 
 /* MENU */
 .menu-btn{width:32px;cursor:pointer;}
@@ -95,6 +107,7 @@ header{
  transition:.3s;
  display:flex;flex-direction:column;
  box-shadow:-6px 0 15px rgba(0,0,0,0.5);
+ z-index:3000;
 }
 #nav a{
  color:white;
@@ -110,102 +123,82 @@ header{
  font-size:28px;color:#F2B840;cursor:pointer;
 }
 
-/* HERO PETIT */
+/* HERO PREMIUM IDENTIQUE INDEX */
 #hero{
  max-width:1200px;
- height:250px;
- margin:40px auto 20px;
+ height:230px;
+ margin:30px auto 15px;
  border-radius:20px;
  overflow:hidden;
  position:relative;
- box-shadow:0 0 45px rgba(242,184,64,0.40);
- animation:heroFade 1.6s ease-out;
+ box-shadow:0 0 40px rgba(242,184,64,0.35);
+ animation:heroFade 1.4s ease-out;
 }
 @keyframes heroFade{
- 0%{opacity:0;transform:scale(1.05);}
+ 0%{opacity:0;transform:scale(1.04);}
  100%{opacity:1;transform:scale(1);}
 }
 #hero img{
  width:100%;height:100%;
  object-fit:cover;
- filter:brightness(0.88);
+ filter:brightness(0.92);
 }
 #hero::after{
  content:"";
  position:absolute;inset:0;
  border-radius:20px;
- box-shadow:0 0 38px rgba(242,184,64,0.55);
+ box-shadow:0 0 38px rgba(242,184,64,0.45);
  animation:halo 5s infinite alternate;
 }
 @keyframes halo{
- 0%{box-shadow:0 0 22px rgba(242,184,64,0.25);}
- 100%{box-shadow:0 0 55px rgba(242,184,64,0.75);}
+ 0%{box-shadow:0 0 20px rgba(242,184,64,0.20);}
+ 100%{box-shadow:0 0 55px rgba(242,184,64,0.70);}
 }
 
-.hero-text{
- text-align:center;
- margin-top:10px;
- color:#F2B840;
- font-size:20px;
- font-weight:800;
- animation:fadeUp 1s ease-out;
-}
-
-@keyframes fadeUp{
- 0%{opacity:0;transform:translateY(20px);}
- 100%{opacity:1;transform:translateY(0);}
-}
-
-/* TITLES */
+/* SECTION TITLES */
 .section-title{
  text-align:center;
  font-size:30px;
  color:#F2B840;
  font-weight:900;
- margin:50px 0 20px;
- animation:fadeUp 0.8s ease-out;
+ margin:45px 0 20px;
 }
-.container{max-width:1100px;margin:auto;padding:20px;}
-
-/* IMAGE VISION */
-.vision-img{
- width:100%;
- border-radius:22px;
+.container{max-width:1100px;margin:auto;padding:20px;}/* ===== VISION - TEXTE SANS IMAGE ===== */
+.vision-text{
+ opacity:0.9;
+ line-height:1.6;
+ font-size:18px;
+ text-align:center;
  margin-bottom:25px;
- filter:drop-shadow(0 0 12px rgba(242,184,64,0.3));
- animation:fadeUp 1s ease-out;
 }
 
-/* CADRANS */
+/* ===== CADRANS ===== */
 .cadrans{
  display:grid;
- grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:20px;
+ grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+ gap:18px;
+ margin-bottom:40px;
 }
 .cadran{
  background:#111824;
- padding:25px;
- border-radius:18px;
+ padding:22px;
+ border-radius:16px;
  text-align:center;
- box-shadow:0 0 20px rgba(242,184,64,0.15);
- transform:translateY(20px);
- opacity:0;
- animation:fadeUp 1s forwards;
+ border:1px solid rgba(255,255,255,0.08);
+ box-shadow:0 0 20px rgba(0,0,0,0.35);
 }
-.cadran:nth-child(1){animation-delay:.2s;}
-.cadran:nth-child(2){animation-delay:.35s;}
-.cadran:nth-child(3){animation-delay:.5s;}
-.cadran:nth-child(4){animation-delay:.65s;}
-.cadran h2{color:#F2B840;font-size:42px;margin:0;}
-.cadran p{opacity:0.85;margin:8px 0 0;}
+.cadran h2{
+ color:#F2B840;font-size:38px;margin:0;
+}
+.cadran p{opacity:0.85;margin-top:6px;}
 
-/* ACCORDION DOMAINES */
+/* ACCORDIONS (DOMAINES) */
 .accordion{
  background:#111824;
  border-left:4px solid #F2B840;
  margin-bottom:15px;
  border-radius:14px;
- box-shadow:0 0 14px rgba(0,0,0,0.3);
+ box-shadow:0 0 14px rgba(0,0,0,0.35);
  overflow:hidden;
 }
 .accordion-header{
@@ -219,12 +212,12 @@ header{
  cursor:pointer;
  transition:.3s;
 }
-.accordion-header:hover{background:#0F1625;}
-.accordion-header span.icon{
+.accordion-header:hover{background:#101722;}
+.accordion-header .icon{
  font-size:28px;
  transition:0.4s;
- transform:rotate(0deg);
 }
+.accordion.open .icon{transform:rotate(180deg);}
 .accordion-content{
  display:none;
  padding:18px 22px 25px;
@@ -232,657 +225,114 @@ header{
  font-size:16px;
  line-height:1.6;
  border-top:1px solid rgba(255,255,255,0.1);
- animation:fadeSlide .5s ease-out;
-}
-@keyframes fadeSlide{
- 0%{opacity:0;transform:translateY(12px);}
- 100%{opacity:1;transform:translateY(0);}
-}
-.accordion.open .accordion-content{display:block;}
-.accordion.open .icon{transform:rotate(180deg);}
-
-/* WHY */
-.why-grid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
- gap:20px;
-}
-.why-box{
- background:#111824;
- padding:22px;
- border-radius:16px;
- border-top:3px solid #F2B840;
- box-shadow:0 0 14px rgba(0,0,0,0.3);
- animation:fadeUp 1s ease-out;
-}
-.why-box h4{color:#F2B840;font-size:19px;margin:0;font-weight:900;}
-.why-box p{opacity:0.85;margin:8px 0 0;}
-
-/* INSPIRED CARD */
-.inspired-card{
- background:#111824;
- border-left:4px solid #F2B840;
- border-radius:18px;
- padding:20px;
- display:flex;
- gap:20px;
- align-items:center;
- box-shadow:0 0 18px rgba(0,0,0,0.4);
- animation:fadeUp 1s ease-out;
-}
-.inspired-card img{
- width:180px;
- border-radius:14px;
- object-fit:cover;
- box-shadow:0 0 15px rgba(242,184,64,0.4);
-}
-.inspired-card-text h3{color:#F2B840;font-size:22px;margin:0 0 6px;}
-.inspired-card-text p{opacity:0.85;margin:0;}
-
-/* PROCESS */
-.process-grid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
- gap:20px;
-}
-.process-box{
- background:#111824;
- padding:20px;
- border-radius:16px;
- border-bottom:3px solid #F2B840;
- box-shadow:0 0 14px rgba(0,0,0,0.3);
- animation:fadeUp 1s ease-out;
-}
-.process-box h4{color:#F2B840;font-size:19px;margin:0;font-weight:900;}
-.process-box p{opacity:0.85;margin-top:8px;}
-
-/* GARANTIES */
-.why-box{animation:fadeUp 1s ease-out;}
-
-/* FAQ */
-.faq-box{
- background:#111824;
- padding:18px;
- border-radius:16px;
- margin-bottom:15px;
- border-left:4px solid #004AAD;
- cursor:pointer;
-}
-.faq-box:hover{background:#162030;}
-.faq-question{font-weight:800;color:#F2B840;font-size:18px;}
-.faq-answer{display:none;margin-top:10px;opacity:0.85;}
-
-/* AVIS */
-.avis-grid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:20px;
-}
-.avis{
- background:#111824;
- padding:20px;
- border-radius:14px;
- border-left:4px solid #F2B840;
 }
 
-/* CONTACT */
-.contact-grid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
- gap:20px;
-}
-.contact-box{
- background:#111824;
- padding:20px;
- border-radius:14px;
- border-top:3px solid #F2B840;
- text-align:center;
-}
-
-/* FOOTER */
-footer{
- background:#00050D;
- padding:40px 20px;
- margin-top:40px;
- border-top:3px solid #F2B840;
- box-shadow:0 0 20px rgba(0,0,0,0.5);
-}
-.footer-grid{
- max-width:1100px;margin:auto;
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
- gap:20px;
-}
-.footer-title{color:#F2B840;font-weight:900;font-size:20px;}
-footer a{color:#ccc;text-decoration:none;margin:6px 0;display:block;}
-.footer-bottom{text-align:center;margin-top:20px;font-size:14px;opacity:0.7;}
-
-/* SCROLL TOP */
-#topBtn{
- position:fixed;
- bottom:22px;right:22px;
- background:#004AAD;
- width:50px;height:50px;
- display:none;
- justify-content:center;align-items:center;
- border-radius:50%;
- cursor:pointer;
- font-size:24px;color:white;
- box-shadow:0 0 15px rgba(242,184,64,0.6);
-}
-
-/* COOKIE */
-#cookie-banner{
- display:none;
- position:fixed;bottom:0;left:0;right:0;
- background:#00050D;
- padding:15px;
- display:flex;
- justify-content:space-between;
- align-items:center;
- z-index:3000;
- box-shadow:0 -4px 12px rgba(0,0,0,0.4);
-}
-#cookie-banner button{
- padding:8px 15px;border-radius:6px;
- font-weight:700;cursor:pointer;border:none;
-}
+/* ====== FIN CSS BLOC 2 ====== */
 </style>
 </head>
 
 <body>
 
-<header>
- <img src="logotransparent.png" class="logo">
- <div>
-  <span class="lang-switch fr" onclick="setLang('fr')">FR</span> |
-  <span class="lang-switch en" onclick="setLang('en')">EN</span>
- </div>
- <div class="menu-btn" onclick="toggleMenu()">
-  <div></div><div></div><div></div>
- </div>
-</header>
+<!-- ===== HEADER déjà donné dans le Bloc 1 ===== -->
 
-<nav id="nav">
- <span class="close-nav" onclick="toggleMenu()">✖</span>
- <a href="index.html" data-fr="Accueil" data-en="Home"></a>
- <a href="domaines.html" data-fr="Domaines" data-en="Domains"></a>
- <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora"></a>
- <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
- <a href="legales.html" data-fr="Mentions légales" data-en="Legal"></a>
- <a href="cgu.html" data-fr="CGU" data-en="Terms"></a>
- <a href="confidentialite.html" data-fr="Confidentialité" data-en="Privacy"></a>
-</nav>
 
+<!-- ===========================
+        HERO PREMIUM
+=========================== -->
 <section id="hero">
- <img src="herodiaspora.png">
+ <img src="herodiaspo2.png">
 </section>
 
-<div class="hero-text" data-fr="Solutions premium pour la Diaspora & les Étrangers"
-                      data-en="Premium solutions for the Diaspora & Foreigners"></div>
 
+<!-- ===========================
+         VISION
+=========================== -->
 <h2 class="section-title" data-fr="Vision 2040–2060" data-en="2040–2060 Vision"></h2>
 
 <div class="container">
- <img src="IMG_0041.jpeg" class="vision-img">
+ <p class="vision-text" 
+    data-fr="CIZA GROUP construit un avenir moderne et connecté pour les Burundais au pays et à l’étranger. Notre vision 2040–2060 repose sur la transparence, la technologie et la fiabilité."
+    data-en="CIZA GROUP builds a modern and connected future for Burundians locally and abroad. Our 2040–2060 vision is based on transparency, technology and reliability."></p>
 
+ <!-- ====== CADRANS ====== -->
  <div class="cadrans">
-  <div class="cadran"><h2>100%</h2><p data-fr="Sécurité" data-en="Security"></p></div>
-  <div class="cadran"><h2>&lt;24h</h2><p data-fr="Réponse" data-en="Response"></p></div>
-  <div class="cadran"><h2>7j/7</h2><p data-fr="Support" data-en="Support"></p></div>
-  <div class="cadran"><h2>99%</h2><p data-fr="Fiabilité" data-en="Reliability"></p></div>
+  <div class="cadran">
+    <h2>100%</h2>
+    <p data-fr="Sécurité" data-en="Security"></p>
+  </div>
+
+  <div class="cadran">
+    <h2>&lt;24h</h2>
+    <p data-fr="Réponse" data-en="Response"></p>
+  </div>
+
+  <div class="cadran">
+    <h2>7j/7</h2>
+    <p data-fr="Support" data-en="Support"></p>
+  </div>
+
+  <div class="cadran">
+    <h2>99%</h2>
+    <p data-fr="Fiabilité" data-en="Reliability"></p>
+  </div>
  </div>
 </div>
 
+
+<!-- ===========================
+        DOMAINES (4)
+=========================== -->
 <h2 class="section-title" data-fr="Nos Domaines" data-en="Our Domains"></h2>
 
 <div class="container">
 
+ <!-- DOMAINE 1 -->
  <div class="accordion">
   <div class="accordion-header">
    <span data-fr="Immobilier & Installation" data-en="Real Estate & Installation"></span>
    <span class="icon">⌄</span>
   </div>
-  <div class="accordion-content" data-fr="
-   • Représentation immobilière complète<br>
-   • Achat / terrain / maison en toute sécurité<br>
-   • Vérification terrain, documents, cadastre<br>
-   • Visites vidéos + photos HD<br>
-   • Installation, ameublement, courses maison
-  " data-en="
-   • Full real estate representation<br>
-   • Secure property purchase<br>
-   • Land & document verification<br>
-   • HD photo/video updates<br>
-   • Installation & furnishing
-  "></div>
+  <div class="accordion-content"
+       data-fr="• Achat / terrain / maison sécurisés<br>• Vérification documents & cadastre<br>• Photos/vidéos HD en temps réel<br>• Installation & ameublement"
+       data-en="• Secure land/house purchase<br>• Document & land verification<br>• Real-time HD updates<br>• Installation & furnishing"></div>
  </div>
 
+ <!-- DOMAINE 2 -->
  <div class="accordion">
   <div class="accordion-header">
    <span data-fr="Logistique & Achats Locaux" data-en="Logistics & Local Purchases"></span>
    <span class="icon">⌄</span>
   </div>
-  <div class="accordion-content" data-fr="
-   • Achats locaux pour diaspora<br>
-   • Courses, livraisons, produits spécifiques<br>
-   • Transport sécurisé<br>
-   • Vérification qualité + preuves photo/vidéo
-  " data-en="
-   • Local purchasing for diaspora<br>
-   • Shopping, delivery, specific products<br>
-   • Secure transport<br>
-   • Quality check + photo/video proof
-  "></div>
+  <div class="accordion-content"
+       data-fr="• Courses & achats locaux<br>• Livraisons sécurisées<br>• Transport professionnel<br>• Vérification qualité + preuves"
+       data-en="• Local shopping<br>• Secure delivery<br>• Professional transport<br>• Quality check + proof"></div>
  </div>
 
+ <!-- DOMAINE 3 -->
  <div class="accordion">
   <div class="accordion-header">
    <span data-fr="Business & Investissement" data-en="Business & Investment"></span>
    <span class="icon">⌄</span>
   </div>
-  <div class="accordion-content" data-fr="
-   • Création d’entreprise<br>
-   • Études de marché<br>
-   • Représentation locale<br>
-   • Mise en relation & partenaires fiables
-  " data-en="
-   • Business setup<br>
-   • Market studies<br>
-   • Local representation<br>
-   • Safe partner connection
-  "></div>
+  <div class="accordion-content"
+       data-fr="• Création d’entreprise<br>• Représentation locale<br>• Étude de marché<br>• Partenaires fiables"
+       data-en="• Business setup<br>• Local representation<br>• Market research<br>• Trusted partners"></div>
  </div>
 
+ <!-- DOMAINE 4 -->
  <div class="accordion">
   <div class="accordion-header">
    <span data-fr="Assistance Administrative" data-en="Administrative Assistance"></span>
    <span class="icon">⌄</span>
   </div>
-  <div class="accordion-content" data-fr="
-   • Démarches officielles au Burundi<br>
-   • Documents, certificats, résidences<br>
-   • Suivi en temps réel<br>
-   • Sans déplacement
-  " data-en="
-   • Official procedures<br>
-   • Documents, certificates, residency<br>
-   • Real-time tracking<br>
-   • No travel needed
-  "></div>
- </div>
-
-</div>
-
-<h2 class="section-title" data-fr="Pourquoi choisir CIZA GROUP ?" data-en="Why Choose CIZA GROUP?"></h2>
-
-<div class="container why-grid">
- <div class="why-box"><h4>✔ Premium</h4><p data-fr="Service de haut niveau." data-en="High-level service."></p></div>
- <div class="why-box"><h4>✔ Fiable</h4><p data-fr="100% confiance & preuves." data-en="100% trust & proof."></p></div>
- <div class="why-box"><h4>✔ Rapide</h4><p data-fr="Réponse en moins de 24h." data-en="Under 24h response."></p></div>
- <div class="why-box"><h4>✔ Sécurisé</h4><p data-fr="Processus vérifié & transparent." data-en="Verified & transparent process."></p></div>
-</div>
-
-<h2 class="section-title" data-fr="Une équipe qui inspire confiance" data-en="A Team You Can Trust"></h2>
-
-<div class="container">
- <div class="inspired-card">
-  <img src="cizagroupeofice.png">
-  <div class="inspired-card-text">
-   <h3 data-fr="Votre partenaire au Burundi" data-en="Your partner in Burundi"></h3>
-   <p data-fr="Notre équipe vous accompagne avec professionnalisme, transparence et disponibilité."
-      data-en="Our team assists you with professionalism, transparency and availability."></p>
-  </div>
- </div>
-</div>
-
-<h2 class="section-title" data-fr="Processus en 4 étapes" data-en="4-Step Process"></h2>
-
-<div class="container process-grid">
- <div class="process-box"><h4 data-fr="1. Contact" data-en="1. Contact"></h4><p data-fr="Expliquez vos besoins." data-en="Tell us your needs."></p></div>
- <div class="process-box"><h4 data-fr="2. Vérification" data-en="2. Verification"></h4><p data-fr="Analyse et confirmation." data-en="Analysis & confirmation."></p></div>
- <div class="process-box"><h4 data-fr="3. Exécution" data-en="3. Execution"></h4><p data-fr="Travail sur terrain." data-en="Field execution."></p></div>
- <div class="process-box"><h4 data-fr="4. Suivi" data-en="4. Follow-up"></h4><p data-fr="Photos, vidéos, rapports." data-en="Photos, videos, reports."></p></div>
-</div>
-
-<h2 class="section-title" data-fr="Nos Garanties" data-en="Our Guarantees"></h2>
-
-<div class="container why-grid">
- <div class="why-box"><h4>✔ Contrats clairs</h4><p>CIZA garantit transparence et documents officiels.</p></div>
- <div class="why-box"><h4>✔ Preuves visuelles</h4><p>Vous recevez toujours photos et vidéos.</p></div>
- <div class="why-box"><h4>✔ Support 7j/7</h4><p>Une équipe disponible en tout temps.</p></div>
- <div class="why-box"><h4>✔ Paiements sécurisés</h4><p>Solutions fiables pour diaspora.</p></div>
-</div>
-
-<h2 class="section-title" data-fr="FAQ" data-en="FAQ"></h2>
-
-<div class="container">
- <div class="faq-box">
-  <div class="faq-question" data-fr="Puis-je acheter une maison depuis l'étranger ?" data-en="Can I buy property from abroad?"></div>
-  <div class="faq-answer" data-fr="Oui, nous gérons tout le processus pour vous." data-en="Yes, we manage the entire process for you."></div>
- </div>
-
- <div class="faq-box">
-  <div class="faq-question" data-fr="Comment suivre mon dossier ?" data-en="How do I track my file?"></div>
-  <div class="faq-answer" data-fr="Vous recevez photos/vidéos en temps réel." data-en="You receive real-time photo/video updates."></div>
- </div>
-</div>
-
-<h2 class="section-title">Avis Clients</h2>
-
-<div class="container avis-grid" id="avis-list"></div>
-
-<div class="container">
- <div class="why-box">
-  <h4>Laisser un avis</h4>
-  <input id="avis-name" placeholder="Nom / Name" style="width:100%;padding:10px;border-radius:8px;border:none;margin-top:8px;">
-  <input id="avis-pays" placeholder="Pays / Country" style="width:100%;padding:10px;border-radius:8px;border:none;margin-top:8px;">
-  <textarea id="avis-msg" placeholder="Message" style="width:100%;padding:10px;border-radius:8px;height:90px;margin-top:8px;"></textarea>
-  <button onclick="addAvis()" style="background:#F2B840;border:none;padding:10px 16px;border-radius:8px;font-weight:800;margin-top:10px;cursor:pointer;">Envoyer</button>
- </div>
-</div>
-
-<h2 class="section-title" data-fr="Contact" data-en="Contact"></h2>
-
-<div class="container contact-grid">
- <div class="contact-box"><h3>WhatsApp</h3><p>+1 514 502 9503</p></div>
- <div class="contact-box"><h3>Téléphone</h3><p>🇧🇮 +257 79945007<br>🇨🇦 +1 514 502 9503</p></div>
- <div class="contact-box"><h3>Email</h3><p>infos@cizagroup.com</p></div>
-</div>
-
-<footer>
- <div class="footer-grid">
-  <div>
-   <h3 class="footer-title">CIZA GROUP</h3>
-   <p>Burundi | Canada</p>
-   <p>🇧🇮 +257 79945007</p>
-   <p>🇨🇦 +1 514 502 9503</p>
-   <p>Email : infos@cizagroup.com</p>
-  </div>
-
-  <div>
-   <h3 class="footer-title">Navigation</h3>
-   <a href="index.html">Accueil</a>
-   <a href="domaines.html">Domaines</a>
-   <a href="business-diaspora.html">Diaspora</a>
-   <a href="contact.html">Contact</a>
-  </div>
-
-  <div>
-   <h3 class="footer-title">Légal</h3>
-   <a href="legales.html">Mentions légales</a>
-   <a href="cgu.html">CGU</a>
-   <a href="confidentialite.html">Confidentialité</a>
-  </div>
-
-  <div>
-   <h3 class="footer-title">Diaspora</h3>
-   <a href="#">Services Diaspora</a>
-  </div>
- </div>
-
- <div class="footer-bottom">© 2027 CIZA GROUP — Tous droits réservés.</div>
-</footer>
-
-<div id="topBtn" onclick="scrollTopSmooth()">↑</div>
-
-<div id="cookie-banner">
- <span data-fr="Ce site utilise des cookies." data-en="This site uses cookies."></span>
- <div>
-  <button onclick="acceptCookies()" style="background:#F2B840;">OK</button>
-  <button onclick="declineCookies()" style="background:#444;color:white;">Non</button>
- </div>
-</div>
-
-<script>
-// MENU
-function toggleMenu(){document.getElementById("nav").classList.toggle("nav-open");}
-
-// LANG
-function setLang(l){
- document.querySelectorAll("[data-fr]").forEach(el=>{el.innerHTML=el.dataset[l];});
- localStorage.setItem("lang",l);
- document.querySelectorAll(".lang-switch").forEach(e=>e.classList.remove("active"));
- document.querySelector(".lang-switch."+l)?.classList.add("active");
-}
-window.onload=()=>{setLang(localStorage.getItem("lang")||"fr");};
-
-// FAQ
-document.querySelectorAll(".faq-box").forEach(q=>{
- q.addEventListener("click",()=>{
-  let a=q.querySelector(".faq-answer");
-  a.style.display=a.style.display==="block"?"none":"block";
- });
-});
-
-// ACCORDION
-document.querySelectorAll(".accordion-header").forEach(h=>{
- h.addEventListener("click",()=>h.parentElement.classList.toggle("open"));
-});
-
-// SCROLL TOP
-window.addEventListener("scroll",()=>{
- document.getElementById("topBtn").style.display=
-  window.scrollY>200?"flex":"none";
-});
-function scrollTopSmooth(){window.scrollTo({top:0,behavior:"smooth"});}
-
-// COOKIES
-function acceptCookies(){localStorage.setItem("cookie","yes");document.getElementById("cookie-banner").style.display="none";}
-function declineCookies(){localStorage.setItem("cookie","no");document.getElementById("cookie-banner").style.display="none";}
-setTimeout(()=>{if(!localStorage.getItem("cookie"))document.getElementById("cookie-banner").style.display="flex";},1000);
-
-// AVIS
-function addAvis(){
- let name=document.getElementById("avis-name").value;
- let pays=document.getElementById("avis-pays").value;
- let msg=document.getElementById("avis-msg").value;
- if(!name||!msg){alert("Veuillez remplir nom + message");return;}
- let box=document.createElement("div");
- box.className="avis";
- box.innerHTML=`<h4>${pays||"🌍"}</h4><p>${msg}</p>`;
- document.getElementById("avis-list").prepend(box);
- document.getElementById("avis-name").value="";
- document.getElementById("avis-pays").value="";
- document.getElementById("avis-msg").value="";
-}
-</script>
-
-</body>
-</html><div class="container">
-
- <!-- IMAGE SUPPRIMÉE (comme demandé) + Vision plus compacte -->
- <p style="opacity:0.9; line-height:1.6; font-size:18px; text-align:center; margin-bottom:25px;">
-   CIZA GROUP construit un avenir moderne et connecté pour tous les Burundais, 
-   au pays comme à l’étranger. La vision 2040–2060 repose sur l’innovation, 
-   la fiabilité et la croissance durable.
- </p>
-
- <!-- CADRANS -->
- <div class="cadrans" style="
-     display:grid;
-     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-     gap:20px;
-     margin-bottom:40px;
- ">
-  <div class="cadran" style="
-      background:#111824;
-      padding:25px;
-      border-radius:18px;
-      text-align:center;
-      border:1px solid rgba(255,255,255,0.08);
-      box-shadow:0 0 22px rgba(0,0,0,0.35);
-  ">
-   <h2 style="color:#F2B840;font-size:42px;margin:0;">100%</h2>
-   <p style="opacity:0.85;margin-top:8px;" data-fr="Sécurité" data-en="Security"></p>
-  </div>
-
-  <div class="cadran" style="
-      background:#111824;
-      padding:25px;
-      border-radius:18px;
-      text-align:center;
-      border:1px solid rgba(255,255,255,0.08);
-      box-shadow:0 0 22px rgba(0,0,0,0.35);
-  ">
-   <h2 style="color:#F2B840;font-size:42px;margin:0;">&lt;24h</h2>
-   <p style="opacity:0.85;margin-top:8px;" data-fr="Réponse" data-en="Response"></p>
-  </div>
-
-  <div class="cadran" style="
-      background:#111824;
-      padding:25px;
-      border-radius:18px;
-      text-align:center;
-      border:1px solid rgba(255,255,255,0.08);
-      box-shadow:0 0 22px rgba(0,0,0,0.35);
-  ">
-   <h2 style="color:#F2B840;font-size:42px;margin:0;">7j/7</h2>
-   <p style="opacity:0.85;margin-top:8px;" data-fr="Support" data-en="Support"></p>
-  </div>
-
-  <div class="cadran" style="
-      background:#111824;
-      padding:25px;
-      border-radius:18px;
-      text-align:center;
-      border:1px solid rgba(255,255,255,0.08);
-      box-shadow:0 0 22px rgba(0,0,0,0.35);
-  ">
-   <h2 style="color:#F2B840;font-size:42px;margin:0;">99%</h2>
-   <p style="opacity:0.85;margin-top:8px;" data-fr="Fiabilité" data-en="Reliability"></p>
-  </div>
- </div>
-</div>
-
-
-<!-- =======================
-     DOMAINES (Accordion premium)
-======================= -->
-<h2 class="section-title"
- data-fr="Nos Domaines"
- data-en="Our Domains"></h2>
-
-<div class="container">
-
- <!-- 1 — Immobilier -->
- <div class="accordion">
-  <div class="accordion-header" style="
-      padding:18px;
-      background:#111824;
-      border-left:4px solid #F2B840;
-      border-radius:14px;
-      margin-bottom:12px;
-      cursor:pointer;
-  ">
-   <span data-fr="Immobilier & Installation" data-en="Real Estate & Installation"></span>
-   <span class="icon">⌄</span>
-  </div>
   <div class="accordion-content"
-       data-fr="
-       • Achat / terrain / maison sécurisés<br>
-       • Vérification documents & cadastre<br>
-       • Photos/vidéos HD en temps réel<br>
-       • Installation complète & ameublement
-       "
-       data-en="
-       • Secure land/house purchase<br>
-       • Document & land verification<br>
-       • HD updates in real-time<br>
-       • Installation & furnishing
-       ">
-  </div>
+       data-fr="• Démarches officielles<br>• Documents & certificats<br>• Suivi complet<br>• Sans déplacement"
+       data-en="• Official procedures<br>• Documents & certificates<br>• Full tracking<br>• No travel needed"></div>
  </div>
 
- <!-- 2 — Logistique -->
- <div class="accordion">
-  <div class="accordion-header" style="
-      padding:18px;
-      background:#111824;
-      border-left:4px solid #F2B840;
-      border-radius:14px;
-      margin-bottom:12px;
-      cursor:pointer;
-  ">
-   <span data-fr="Logistique & Achats Locaux" data-en="Logistics & Local Purchases"></span>
-   <span class="icon">⌄</span>
-  </div>
-  <div class="accordion-content"
-       data-fr="
-       • Courses & achats locaux<br>
-       • Livraisons sécurisées<br>
-       • Transport professionnel<br>
-       • Vérification qualité + preuves
-       "
-       data-en="
-       • Local shopping<br>
-       • Secure delivery<br>
-       • Professional transport<br>
-       • Quality check + proof
-       ">
-  </div>
- </div>
-
- <!-- 3 — Business -->
- <div class="accordion">
-  <div class="accordion-header" style="
-      padding:18px;
-      background:#111824;
-      border-left:4px solid #F2B840;
-      border-radius:14px;
-      margin-bottom:12px;
-      cursor:pointer;
-  ">
-   <span data-fr="Business & Investissement" data-en="Business & Investment"></span>
-   <span class="icon">⌄</span>
-  </div>
-  <div class="accordion-content"
-       data-fr="
-       • Création d’entreprise<br>
-       • Représentation locale<br>
-       • Étude de marché<br>
-       • Mise en relation partenaires
-       "
-       data-en="
-       • Business setup<br>
-       • Local representation<br>
-       • Market research<br>
-       • Partner connection
-       ">
-  </div>
- </div>
-
- <!-- 4 — Administratif -->
- <div class="accordion">
-  <div class="accordion-header" style="
-      padding:18px;
-      background:#111824;
-      border-left:4px solid #F2B840;
-      border-radius:14px;
-      margin-bottom:12px;
-      cursor:pointer;
-  ">
-   <span data-fr="Assistance Administrative" data-en="Administrative Assistance"></span>
-   <span class="icon">⌄</span>
-  </div>
-  <div class="accordion-content"
-       data-fr="
-       • Démarches officielles<br>
-       • Documents & certificats<br>
-       • Suivi complet<br>
-       • Sans déplacement
-       "
-       data-en="
-       • Official procedures<br>
-       • Documents & certificates<br>
-       • Full tracking<br>
-       • No travel needed
-       ">
-  </div>
- </div>
-</div><!-- ========================================
-        POURQUOI CHOISIR CIZA GROUP ?
-======================================== -->
+</div><!-- ===========================
+   POURQUOI CHOISIR CIZA GROUP ?
+=========================== -->
 <h2 class="section-title"
     data-fr="Pourquoi choisir CIZA GROUP ?"
     data-en="Why Choose CIZA GROUP?"></h2>
@@ -917,9 +367,12 @@ function addAvis(){
  </div>
 </div>
 
-<!-- ========================================
-        ÉQUIPE QUI INSPIRE CONFIANCE
-======================================== -->
+
+
+
+<!-- ===========================
+      UNE ÉQUIPE DE CONFIANCE
+=========================== -->
 <h2 class="section-title"
  data-fr="Une équipe qui inspire confiance"
  data-en="A Team You Can Trust"></h2>
@@ -950,9 +403,12 @@ function addAvis(){
  </div>
 </div>
 
-<!-- ========================================
-             PROCESSUS EN 4 ÉTAPES
-======================================== -->
+
+
+
+<!-- ===========================
+        PROCESSUS EN 4 ÉTAPES
+=========================== -->
 <h2 class="section-title"
     data-fr="Processus en 4 étapes"
     data-en="4-Step Process"></h2>
@@ -985,11 +441,9 @@ function addAvis(){
    <p data-fr="Photos, vidéos, rapports."
       data-en="Photos, videos, reports."></p>
  </div>
-</div>
-
-<!-- ========================================
-                  GARANTIES
-======================================== -->
+</div><!-- ===========================
+            GARANTIES
+=========================== -->
 <h2 class="section-title"
  data-fr="Nos Garanties"
  data-en="Our Guarantees"></h2>
@@ -1024,69 +478,106 @@ function addAvis(){
  </div>
 </div>
 
-<!-- ========================================
-                     FAQ
-======================================== -->
-<h2 class="section-title"
- data-fr="FAQ"
- data-en="FAQ"></h2>
+
+
+
+
+
+<!-- ===========================
+                FAQ
+=========================== -->
+<h2 class="section-title" data-fr="FAQ" data-en="FAQ"></h2>
 
 <div class="container">
 
- <div class="faq-box" style="
-     background:#111824;
-     padding:18px;
-     border-radius:16px;
-     margin-bottom:15px;
-     border-left:4px solid #004AAD;
-     cursor:pointer;
- ">
+ <!-- FAQ 1 -->
+ <div class="faq-box"
+      style="background:#111824;padding:18px;border-radius:16px;
+             margin-bottom:15px;border-left:4px solid #004AAD;cursor:pointer;">
   <div class="faq-question"
        data-fr="Puis-je acheter une maison depuis l'étranger ?"
-       data-en="Can I buy property from abroad?">
-  </div>
+       data-en="Can I buy property from abroad?"></div>
+
   <div class="faq-answer"
-       data-fr="Oui, nous gérons tout le processus pour vous."
-       data-en="Yes, we manage the entire process for you."></div>
+       data-fr="Oui, nous gérons tout le processus : vérification, documents, preuves visuelles, paiement sécurisé."
+       data-en="Yes, we manage the entire process: verification, documents, visual proofs, secure payments."></div>
  </div>
 
- <div class="faq-box" style="
-     background:#111824;
-     padding:18px;
-     border-radius:16px;
-     margin-bottom:15px;
-     border-left:4px solid #004AAD;
-     cursor:pointer;
- ">
+ <!-- FAQ 2 -->
+ <div class="faq-box"
+      style="background:#111824;padding:18px;border-radius:16px;
+             margin-bottom:15px;border-left:4px solid #004AAD;cursor:pointer;">
   <div class="faq-question"
        data-fr="Comment suivre mon dossier ?"
-       data-en="How do I track my file?">
-  </div>
+       data-en="How do I track my file?"></div>
+
   <div class="faq-answer"
-       data-fr="Vous recevez photos/vidéos en temps réel."
-       data-en="You receive real-time photo/video updates."></div>
+       data-fr="Vous recevez photos / vidéos en temps réel et rapports détaillés."
+       data-en="You receive real-time photos / videos and detailed reports."></div>
  </div>
 
- <div class="faq-box" style="
-     background:#111824;
-     padding:18px;
-     border-radius:16px;
-     margin-bottom:15px;
-     border-left:4px solid #004AAD;
-     cursor:pointer;
- ">
+ <!-- FAQ 3 -->
+ <div class="faq-box"
+      style="background:#111824;padding:18px;border-radius:16px;
+             margin-bottom:15px;border-left:4px solid #004AAD;cursor:pointer;">
   <div class="faq-question"
        data-fr="Quels services proposez-vous pour la diaspora ?"
-       data-en="What services do you offer for diaspora?">
-  </div>
+       data-en="What services do you offer for diaspora?"></div>
+
   <div class="faq-answer"
-       data-fr="Immobilier, logistique, achats locaux, business et démarches administratives."
-       data-en="Real estate, logistics, local purchases, business and administrative procedures."></div>
+       data-fr="Immobilier, logistique, achats locaux, business et démarches administratives complètes."
+       data-en="Real estate, logistics, local purchases, business and full administrative procedures."></div>
  </div>
 
-</div><!-- ========================================
-                  AVIS CLIENTS
-======================================== -->
+ <!-- FAQ 4 -->
+ <div class="faq-box"
+      style="background:#111824;padding:18px;border-radius:16px;
+             margin-bottom:15px;border-left:4px solid #004AAD;cursor:pointer;">
+  <div class="faq-question"
+       data-fr="Est-ce sécurisé d'envoyer de l'argent ?"
+       data-en="Is it safe to send money?"></div>
+
+  <div class="faq-answer"
+       data-fr="Oui, les paiements sont vérifiés et accompagnés de preuves visuelles."
+       data-en="Yes, payments are verified and always supported with visual proof."></div>
+ </div>
+
+ <!-- FAQ 5 -->
+ <div class="faq-box"
+      style="background:#111824;padding:18px;border-radius:16px;
+             margin-bottom:15px;border-left:4px solid #004AAD;cursor:pointer;">
+  <div class="faq-question"
+       data-fr="Faites-vous les achats locaux ?"
+       data-en="Do you handle local purchases?"></div>
+
+  <div class="faq-answer"
+       data-fr="Oui, nous faisons courses, achats, livraisons et contrôle de qualité."
+       data-en="Yes, we do shopping, purchases, delivery and quality control."></div>
+ </div>
+
+ <!-- FAQ 6 -->
+ <div class="faq-box"
+      style="background:#111824;padding:18px;border-radius:16px;
+             margin-bottom:15px;border-left:4px solid #004AAD;cursor:pointer;">
+  <div class="faq-question"
+       data-fr="Est-ce que vous aider les locaux aussi ?"
+       data-en="Do you also help locals?"></div>
+
+  <div class="faq-answer"
+       data-fr="Oui, nous accompagnons aussi les clients basés au Burundi. Pas seulement la diaspora."
+       data-en="Yes, we also support clients based in Burundi. Not only the diaspora."></div>
+ </div>
+
+</div>
+
+
+
+
+
+
+<!-- ===========================
+           AVIS CLIENTS
+=========================== -->
 <h2 class="section-title">Avis Clients</h2>
 
 <div class="container avis-grid" id="avis-list" style="
@@ -1094,25 +585,36 @@ function addAvis(){
  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
  gap:20px;
 ">
- <!-- Les avis ajoutés par l’utilisateur s’affichent ici -->
+ <!-- Avis ajoutés automatiquement -->
 </div>
 
 <div class="container">
- <div class="why-box" style="
-     margin-top:20px;
-     border-left:4px solid #F2B840;
- ">
+ <div class="why-box"
+      style="margin-top:20px;border-left:4px solid #F2B840;">
   <h4>Laisser un avis</h4>
-  <input id="avis-name" placeholder="Nom / Name" style="width:100%;padding:10px;border-radius:8px;border:none;margin-top:8px;">
-  <input id="avis-pays" placeholder="Pays / Country" style="width:100%;padding:10px;border-radius:8px;border:none;margin-top:8px;">
-  <textarea id="avis-msg" placeholder="Message" style="width:100%;padding:10px;border-radius:8px;height:90px;margin-top:8px;"></textarea>
-  <button onclick="addAvis()" style="background:#F2B840;border:none;padding:10px 16px;border-radius:8px;font-weight:800;margin-top:10px;cursor:pointer;">Envoyer</button>
+
+  <input id="avis-name" placeholder="Nom / Name"
+         style="width:100%;padding:10px;border-radius:8px;border:none;margin-top:8px;">
+
+  <input id="avis-pays" placeholder="Pays / Country"
+         style="width:100%;padding:10px;border-radius:8px;border:none;margin-top:8px;">
+
+  <textarea id="avis-msg" placeholder="Message"
+            style="width:100%;padding:10px;border-radius:8px;height:90px;margin-top:8px;"></textarea>
+
+  <button onclick="addAvis()"
+          style="background:#F2B840;border:none;padding:10px 16px;border-radius:8px;font-weight:800;margin-top:10px;cursor:pointer;">Envoyer</button>
  </div>
 </div>
 
-<!-- ========================================
-                  CONTACT
-======================================== -->
+
+
+
+
+
+<!-- ===========================
+             CONTACT
+=========================== -->
 <h2 class="section-title"
  data-fr="Contact"
  data-en="Contact"></h2>
@@ -1136,9 +638,7 @@ function addAvis(){
    <h3>Email</h3>
    <p>infos@cizagroup.com</p>
  </div>
-</div>
-
-<!-- ========================================
+</div><!-- ========================================
                   FOOTER PREMIUM
 ======================================== -->
 <footer style="
@@ -1147,6 +647,8 @@ function addAvis(){
  margin-top:40px;
  border-top:3px solid #F2B840;
  box-shadow:0 0 20px rgba(0,0,0,0.45);
+ z-index:10;
+ position:relative;
 ">
 
  <div class="footer-grid" style="
@@ -1167,13 +669,16 @@ function addAvis(){
    <!-- RÉSEAUX SOCIAUX -->
    <div style="display:flex;gap:14px;margin-top:15px;">
     <a href="https://www.instagram.com/cizagroup_official" target="_blank">
-     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" style="width:32px;">
+     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+          style="width:32px;">
     </a>
-    <a href="https://www.facebook.com" target="_blank">
-     <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" style="width:32px;">
+    <a href="https://www.facebook.com/cizagroup" target="_blank">
+     <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
+          style="width:32px;">
     </a>
     <a href="https://www.youtube.com/@Cizagroup" target="_blank">
-     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" style="width:32px;">
+     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
+          style="width:38px;">
     </a>
    </div>
   </div>
@@ -1193,18 +698,24 @@ function addAvis(){
    <a href="legales.html">Mentions légales</a>
    <a href="cgu.html">CGU</a>
    <a href="confidentialite.html">Confidentialité</a>
+   <p style="opacity:0.6;font-size:14px;margin-top:10px">Legal 2026</p>
   </div>
 
   <!-- COL 4 -->
   <div>
-   <h3 class="footer-title">Diaspora</h3>
-   <a href="#">Services Diaspora</a>
+   <h3 class="footer-title">Services Diaspora</h3>
+   <a href="business-diaspora.html">Services</a>
   </div>
 
  </div>
 
  <div class="footer-bottom">© 2027 CIZA GROUP — Tous droits réservés.</div>
 </footer>
+
+
+
+
+
 
 <!-- ========================================
              LOGO FLOTTANT PREMIUM
@@ -1217,20 +728,26 @@ body::before{
  background-image:url('logotransparent.png');
  background-repeat:no-repeat;
  background-position:center;
- background-size:300px;
+ background-size:260px;
  opacity:0.03;
- animation:floatLogo 20s ease-in-out infinite alternate;
+ animation:floatLogo 22s ease-in-out infinite alternate;
  z-index:-1;
+ pointer-events:none;
 }
 @keyframes floatLogo{
- 0%{transform:translate(-20px,-10px) scale(1);}
- 50%{transform:translate(25px,15px) scale(1.05);}
- 100%{transform:translate(-10px,20px) scale(1);}
+ 0%{transform:translate(-15px,-10px) scale(1);}
+ 50%{transform:translate(20px,20px) scale(1.06);}
+ 100%{transform:translate(-10px,10px) scale(1);}
 }
 </style>
 
+
+
+
+
+
 <!-- ========================================
-                BOUTON HAUT DE PAGE
+       BOUTON RETOUR HAUT DE PAGE
 ======================================== -->
 <div id="topBtn" onclick="scrollTopSmooth()" style="
  position:fixed;
@@ -1246,29 +763,44 @@ body::before{
  z-index:2000;
 ">↑</div>
 
+
+
+
+
+
 <!-- ========================================
-                COOKIE BANNER
+               COOKIE BANNER FIX
 ======================================== -->
 <div id="cookie-banner" style="
- display:none;
- position:fixed;bottom:0;left:0;right:0;
+ position:fixed;
+ bottom:0;left:0;right:0;
  background:#00050D;
  padding:15px;
- display:flex;
+ display:none;
  justify-content:space-between;
  align-items:center;
- z-index:3000;
+ z-index:5000;
  box-shadow:0 -4px 12px rgba(0,0,0,0.45);
 ">
- <span data-fr="Ce site utilise des cookies." data-en="This site uses cookies."></span>
+ <span data-fr="Ce site utilise des cookies."
+       data-en="This site uses cookies."></span>
  <div>
-  <button onclick="acceptCookies()" style="background:#F2B840;padding:8px 15px;border:none;border-radius:6px;font-weight:800;">OK</button>
-  <button onclick="declineCookies()" style="background:#444;padding:8px 15px;border:none;border-radius:6px;color:white;font-weight:800;">Non</button>
+  <button onclick="acceptCookies()" style="background:#F2B840;padding:8px 15px;border:none;border-radius:6px;font-weight:800;cursor:pointer;">
+   OK
+  </button>
+  <button onclick="declineCookies()" style="background:#444;padding:8px 15px;border:none;border-radius:6px;color:white;font-weight:800;cursor:pointer;">
+   Non
+  </button>
  </div>
 </div>
 
+
+
+
+
+
 <!-- ========================================
-                   SCRIPTS
+                 SCRIPTS GLOBAUX
 ======================================== -->
 <script>
 // MENU
@@ -1276,24 +808,25 @@ function toggleMenu(){
  document.getElementById("nav").classList.toggle("nav-open");
 }
 
-// LANG SWITCH
+// LANG
 function setLang(l){
  document.querySelectorAll("[data-fr]").forEach(el=>{
-  el.innerHTML=el.dataset[l];
+  el.innerHTML = el.dataset[l];
  });
  localStorage.setItem("lang",l);
+
  document.querySelectorAll(".lang-switch").forEach(e=>e.classList.remove("active"));
  document.querySelector(".lang-switch."+l)?.classList.add("active");
 }
-window.onload=()=>{
- setLang(localStorage.getItem("lang")||"fr");
+window.onload = ()=>{
+ setLang(localStorage.getItem("lang") || "fr");
 };
 
 // FAQ
 document.querySelectorAll(".faq-box").forEach(q=>{
  q.addEventListener("click",()=>{
-  let a=q.querySelector(".faq-answer");
-  a.style.display=a.style.display==="block"?"none":"block";
+  let a = q.querySelector(".faq-answer");
+  a.style.display = (a.style.display==="block") ? "none" : "block";
  });
 });
 
@@ -1304,8 +837,8 @@ document.querySelectorAll(".accordion-header").forEach(h=>{
 
 // SCROLL TOP
 window.addEventListener("scroll",()=>{
- document.getElementById("topBtn").style.display=
-  window.scrollY>200?"flex":"none";
+ document.getElementById("topBtn").style.display =
+   window.scrollY > 200 ? "flex" : "none";
 });
 function scrollTopSmooth(){
  window.scrollTo({top:0,behavior:"smooth"});
@@ -1322,24 +855,28 @@ function declineCookies(){
 }
 setTimeout(()=>{
  if(!localStorage.getItem("cookie"))
-    document.getElementById("cookie-banner").style.display="flex";
+   document.getElementById("cookie-banner").style.display="flex";
 },800);
 
 // AVIS
 function addAvis(){
- let name=document.getElementById("avis-name").value;
- let pays=document.getElementById("avis-pays").value;
- let msg=document.getElementById("avis-msg").value;
- if(!name||!msg){alert("Veuillez remplir nom + message");return;}
- let box=document.createElement("div");
+ let name = document.getElementById("avis-name").value;
+ let pays = document.getElementById("avis-pays").value;
+ let msg  = document.getElementById("avis-msg").value;
+
+ if(!name || !msg){
+   alert("Veuillez remplir nom + message");
+   return;
+ }
+
+ let box = document.createElement("div");
  box.className="avis";
- box.innerHTML=`<h4>${pays||"🌍"}</h4><p>${msg}</p>`;
+ box.innerHTML = `<h4>${pays || "🌍"}</h4><p>${msg}</p>`;
+
  document.getElementById("avis-list").prepend(box);
+
  document.getElementById("avis-name").value="";
  document.getElementById("avis-pays").value="";
  document.getElementById("avis-msg").value="";
 }
 </script>
-
-</body>
-</html>
