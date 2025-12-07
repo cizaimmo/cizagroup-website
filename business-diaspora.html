@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CIZA GROUP — Services Premium Diaspora & Étrangers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" type="image/png" href="favicone.png">
+
+<!-- SEO HAUT NIVEAU -->
+<meta name="description" content="CIZA GROUP — Services premium pour la diaspora, les locaux et les étrangers : immobilier, achats locaux, business, vérifications, démarches administratives. Fiabilité, modernité et transparence au Burundi.">
+<link rel="canonical" href="https://cizaimmo.github.io/cizagroup-website/business-diaspora.html">
+
+<meta property="og:title" content="CIZA GROUP — Services Premium">
+<meta property="og:description" content="Votre partenaire fiable au Burundi : sécurité, transparence, résultats.">
+<meta property="og:type" content="website">
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "CIZA GROUP",
+ "url": "https://cizaimmo.github.io/cizagroup-website/",
+ "logo": "logotransparent.png",
+ "sameAs": [
+   "https://www.instagram.com/cizagroup_official",
+   "https://www.youtube.com/@Cizagroup",
+   "https://www.facebook.com"
+ ]
+}
+</script>
+
+<style>
+body{
+ margin:0;
+ font-family:Inter,Arial,sans-serif;
+ background:#0A0F1A;
+ color:white;
+ overflow-x:hidden;
+}
+
+/* LOGO FLOTTANT ULTRALUXE */
+body::before{
+ content:"";
+ position:fixed;
+ inset:0;
+ background:url('logotransparent.png') center/330px no-repeat;
+ opacity:0.03;
+ animation:floatLogo 20s infinite alternate ease-in-out;
+ z-index:-1;
+}
+@keyframes floatLogo{
+ 0%{transform:translate(-40px,-10px);}
+ 50%{transform:translate(60px,30px);}
+ 100%{transform:translate(-20px,40px);}
+}
+
+/* HEADER PREMIUM GOLD */
+header{
+ background:#004AAD;
+ padding:16px 22px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ position:sticky;
+ top:0;z-index:3000;
+ box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+.logo{height:85px;}
+
+/* LANG SELECTOR */
+.flag{
+ width:34px;
+ cursor:pointer;
+ margin:0 4px;
+ transition:.2s;
+}
+.flag:hover{transform:scale(1.12);}
+
+/* MENU BURGER */
+.menu-btn{width:38px;cursor:pointer;}
+.menu-btn div{
+ height:4px;background:#F2B840;margin:6px;border-radius:2px;
+}
+
+/* MENU SLIDE */
+#nav{
+ position:fixed;
+ top:0;right:-300px;
+ width:280px;height:100%;
+ background:#0F1625;
+ padding-top:80px;
+ transition:.35s;
+ display:flex;flex-direction:column;
+ box-shadow:-6px 0 22px rgba(0,0,0,0.6);
+ z-index:4000;
+}
+#nav.nav-open{right:0;}
+#nav a{
+ padding:16px 22px;
+ color:white;text-decoration:none;font-size:19px;
+}
+#nav a:hover{color:#F2B840;}
+.close-nav{
+ position:absolute;top:22px;right:22px;
+ font-size:30px;color:#F2B840;cursor:pointer;
+}
+
+/* BOUTON RETOUR */
+#back-btn{
+ position:fixed;
+ top:100px;left:20px;
+ width:45px;height:45px;
+ background:#004AAD;
+ border-radius:50%;
+ display:flex;justify-content:center;align-items:center;
+ font-size:20px;
+ color:white;
+ box-shadow:0 0 15px rgba(0,0,0,0.4);
+ cursor:pointer;
+ z-index:2500;
+ transition:.2s;
+}
+#back-btn:hover{transform:scale(1.08);}
+
+/* TITRES */
+.section-title{
+ text-align:center;
+ font-size:27px;
+ font-weight:900;
+ color:#F2B840;
+ margin:45px 0 15px;
+ text-transform:uppercase;
+ position:relative;
+}
+.section-title::after{
+ content:"";
+ width:70px;height:3px;
+ background:#F2B840;
+ position:absolute;bottom:-8px;left:50%;
+ transform:translateX(-50%);border-radius:30px;
+}
+
+/* LIGNE OR */
+.separator-line{
+ width:100%;max-width:1100px;
+ height:2px;
+ background:linear-gradient(to right, transparent, rgba(242,184,64,0.6), transparent);
+ margin:45px auto;
+ border-radius:20px;
+}
+
+.container{max-width:1100px;margin:auto;padding:20px;}
+
+/* DOMAINES */
+.domains-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+ gap:20px;
+}
+.domain-card{
+ background:#111824;
+ padding:26px;
+ border-radius:18px;
+ box-shadow:0 0 22px rgba(0,0,0,0.5);
+ text-align:center;
+ cursor:pointer;
+ transition:.3s;
+}
+.domain-card:hover{
+ transform:translateY(-6px);
+ box-shadow:0 0 30px rgba(242,184,64,0.55);
+}
+.domain-card h3{
+ color:#F2B840;font-size:22px;margin-bottom:10px;
+}
+.domain-desc{
+ display:none;
+ opacity:.85;
+ margin-top:10px;
+ font-size:15px;
+ line-height:1.5;
+}
+
+/* PROCESS */
+.process-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+ gap:20px;
+}
+.step{
+ background:#111824;
+ padding:26px;
+ border-radius:16px;
+ border-bottom:3px solid #F2B840;
+}
+
+/* FAQ */
+.faq-box{
+ background:#111824;
+ padding:18px;
+ border-radius:14px;
+ border-left:4px solid #004AAD;
+ cursor:pointer;
+ margin-bottom:14px;
+}
+.faq-question{
+ color:#F2B840;
+ font-weight:900;
+}
+.faq-answer{
+ display:none;
+ opacity:.85;
+ margin-top:10px;
+}
+
+/* CONTACT */
+.contact-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+ gap:20px;
+}
+.contact-card{
+ background:#111824;
+ padding:22px;
+ border-radius:14px;
+ border-top:3px solid #F2B840;
+ text-align:center;
+}
+
+/* WHATSAPP ASSISTANT */
+#whatsapp-btn{
+ position:fixed;
+ bottom:85px;right:22px;
+ width:60px;height:60px;
+ background:#25D366;
+ border-radius:50%;
+ display:flex;justify-content:center;align-items:center;
+ font-size:32px;
+ cursor:pointer;
+ color:white;
+ box-shadow:0 0 20px rgba(0,0,0,0.6);
+ z-index:2600;
+}
+#whatsapp-popup{
+ position:fixed;
+ bottom:165px;right:22px;
+ width:250px;
+ background:#111824;
+ padding:15px;
+ border-radius:14px;
+ border-left:4px solid #25D366;
+ box-shadow:0 0 20px rgba(0,0,0,0.65);
+ display:none;
+ z-index:2700;
+}
+#closeW{
+ position:absolute;top:8px;right:10px;
+ cursor:pointer;color:#F2B840;font-size:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <img src="logotransparent.png" class="logo">
+ <div>
+  <img src="flag-fr.png" class="flag" onclick="setLang('fr')">
+  <img src="flag-en.png" class="flag" onclick="setLang('en')">
+ </div>
+ <div class="menu-btn" onclick="toggleMenu()">
+  <div></div><div></div><div></div>
+ </div>
+</header>
+
+<nav id="nav">
+ <span class="close-nav" onclick="toggleMenu()">✖</span>
+ <a href="index.html" data-fr="Accueil" data-en="Home"></a>
+ <a href="domaines.html" data-fr="Domaines" data-en="Domains"></a>
+ <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora"></a>
+ <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
+</nav>
+
+<div id="back-btn" onclick="history.back()">←</div>
