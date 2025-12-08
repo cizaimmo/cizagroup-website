@@ -316,4 +316,49 @@ nav a:hover{color:#F2B840;}
 <footer style="background:#07101f;padding:30px 20px;text-align:center;border-top:2px solid #F2B840;position:relative;overflow:hidden;">
 
     <!-- Watermark -->
-    <
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
+                font-size:140px;font-weight:800;opacity:0.04;color:white;pointer-events:none;">
+        CIZA GROUP
+    </div>
+
+    <img src="logotransparent.png" alt="logo" style="height:80px;margin-bottom:15px;position:relative;z-index:2;">
+
+    <p style="position:relative;z-index:2;margin:5px 0;">infos@cizagroup.com</p>
+    <p style="position:relative;z-index:2;margin:5px 0;">Burundi : +257 79 94 50 07</p>
+    <p style="position:relative;z-index:2;margin:5px 0;">Canada : +1 514 502 9503</p>
+
+    <div style="margin-top:15px;position:relative;z-index:2;">
+        <a href="https://instagram.com/cizagroup_official" target="_blank" style="color:white;margin:0 10px;">Instagram</a>
+        <a href="https://youtube.com/@cizagroup" target="_blank" style="color:white;margin:0 10px;">YouTube</a>
+        <a href="#" style="color:white;margin:0 10px;">Facebook</a>
+    </div>
+
+    <p style="opacity:.6;margin-top:15px;">© 2026 CIZA GROUP — Tous droits réservés</p>
+</footer>
+
+
+<!-- SCRIPTS -->
+<script>
+/* MENU MOBILE */
+function openMenu(){document.getElementById('mobileMenu').style.display='flex';}
+function closeMenu(){document.getElementById('mobileMenu').style.display='none';}
+
+/* MULTILINGUE */
+let currentLang = "fr";
+
+function toggleLang(){
+    currentLang = (currentLang === "fr") ? "en" : "fr";
+    updateLang();
+}
+
+function updateLang(){
+    document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = el.getAttribute(`data-${currentLang}`);
+    });
+}
+
+updateLang();
+</script>
+
+</body>
+</html>
