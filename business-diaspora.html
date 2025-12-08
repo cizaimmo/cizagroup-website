@@ -3,198 +3,163 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CIZA GROUP — Diaspora & Investors</title>
+<title>CIZA GROUP — Diaspora & Investisseurs</title>
+
+<!-- TYPOGRAPHIE -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+<!-- STYLES PREMIUM NOIR & OR -->
 <style>
-body{margin:0;font-family:'Inter',sans-serif;background:#0B1A33;color:white;overflow-x:hidden;}
-#progressBar{position:fixed;top:0;left:0;height:4px;background:#F2B840;width:0%;z-index:9999;transition:width .2s;}
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:#000000;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* BARRE PROGRESSION */
+#progressBar{
+    position:fixed;
+    top:0;left:0;
+    height:4px;
+    background:#F2B840;
+    width:0%;
+    z-index:9999;
+    transition:width .2s;
+}
 
 /* HEADER */
 header{
-    background:#07101f;padding:15px 20px;
-    display:flex;justify-content:space-between;align-items:center;
-    border-bottom:2px solid #F2B840;position:sticky;top:0;z-index:1000;
+    background:#0A0A0A;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid #F2B840;
+    position:sticky;
+    top:0;
+    z-index:90;
 }
-header img{height:65px;filter:drop-shadow(0 0 6px rgba(0,0,0,.4));}
+header img{
+    height:58px;
+}
 header nav a{
-    color:white;margin:0 12px;text-decoration:none;font-weight:500;
+    color:white;
+    margin:0 12px;
+    text-decoration:none;
+    font-weight:500;
 }
-header nav a:hover{color:#F2B840;}
-
-.hamburger{
-    display:none;position:absolute;right:20px;top:22px;
-    font-size:30px;color:#F2B840;cursor:pointer;z-index:1001;
+header nav a:hover{
+    color:#F2B840;
 }
-
-/* MENU MOBILE */
-.mobile-menu{
-    position:fixed;top:0;right:-260px;width:260px;height:100%;
-    background:#0F233F;display:flex;flex-direction:column;
-    padding:20px;gap:15px;border-left:3px solid #F2B840;
-    transition:.4s;z-index:1000;
-}
-.mobile-menu a{
-    color:white;font-size:18px;text-decoration:none;
-    padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1);
-}
-@media(max-width:900px){
-    header nav{display:none;}
-    .hamburger{display:block;}
-}
-
-/* TITRES + TEXTE */
-h1{font-size:40px;font-weight:700;}
-h2.section-title{font-size:30px;font-weight:600;}
-h3{font-size:20px;font-weight:600;}
-p{font-size:16px;line-height:1.6;}
 
 /* HERO */
 .hero{
-    text-align:center;padding:80px 20px;
-    background:linear-gradient(#0B1A33,#081325);
+    padding:90px 20px;
+    text-align:center;
+    background:linear-gradient(#000000,#0B0B0B,#111111);
 }
-.hero h1{color:#F2B840;}
-
-/* BANDEAU */
+.hero h1{
+    font-size:32px;
+    font-weight:700;
+    color:#F2B840;
+}
+.hero p{
+    font-size:18px;
+    opacity:.9;
+    margin-top:8px;
+}/* BANDEAU DE CONFIANCE */
 .bandeau{
-    display:flex;justify-content:center;gap:25px;padding:25px;
-    background:#0F233F;border-top:2px solid #F2B840;border-bottom:2px solid #F2B840;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:25px 10px;
+    background:#0A0A0A;
+    border-top:2px solid #F2B840;
+    border-bottom:2px solid #F2B840;
 }
 .badge{
-    background:#132a4a;padding:12px 18px;border-radius:8px;border:1px solid #F2B840;
+    color:white;
+    font-size:14px;
+    background:#111111;
+    padding:12px 18px;
+    border-radius:10px;
+    border:1px solid #F2B840;
 }
 
-/* TITRE */
-.section-title{text-align:center;color:#F2B840;margin-top:60px;}
+/* TITRES SECTIONS */
+.section-title{
+    text-align:center;
+    font-size:26px;
+    font-weight:600;
+    color:#F2B840;
+    margin-top:60px;
+}
 .separator{
-    width:120px;height:4px;background:#F2B840;margin:10px auto 40px;border-radius:50px;
+    width:120px;
+    height:4px;
+    background:#F2B840;
+    margin:10px auto 40px;
+    border-radius:50px;
 }
 
-/* GRILLE */
+/* GRIDS */
 .grid{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;
-    width:92%;margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+    width:92%;
+    margin:auto;
 }
 
-/* CARTES */
-.card,.domain-card,.pack{
-    background:#102237;border-radius:10px;padding:25px;border:2px solid #F2B840;transition:.25s;
+/* CARTES PREMIUM */
+.card,.domain-card,.pack,.faq-card{
+    background:#0F0F0F;
+    border-radius:12px;
+    padding:25px;
+    border:2px solid #F2B840;
+    transition:.25s;
 }
-.card:hover,.domain-card:hover{transform:translateY(-4px);background:#162f54;}
-
-/* PACKS OR */
-.pack{
-    background:#F2B840;color:#0B1A33;font-weight:bold;
-    box-shadow:0 4px 12px rgba(242,184,64,.4);
-}
-.pack:hover{background:#e6ac2c;transform:scale(1.05);}
-
-/* POPUP */
-.popup-overlay{
-    position:fixed;top:0;left:0;width:100%;height:100%;
-    background:rgba(0,0,0,.75);display:none;
-    justify-content:center;align-items:center;z-index:2000;
-}
-.popup-box{
-    background:white;color:#0B1A33;padding:25px;width:90%;max-width:420px;
-    border-radius:12px;border:4px solid #F2B840;
-}
-.close-btn{
-    margin-top:15px;padding:10px;background:#F2B840;border:none;
-    width:100%;border-radius:8px;font-weight:bold;cursor:pointer;
+.card:hover,.domain-card:hover,.pack:hover,.faq-card:hover{
+    transform:translateY(-4px);
+    background:#1A1A1A;
 }
 
-/* FAQ */
-details{
-    background:white;color:#000;padding:15px;border-radius:10px;
-    width:90%;margin:10px auto;
+/* DOMAINES ICONES */
+.domain-card h3{
+    font-size:20px;
+    margin-bottom:10px;
 }
-details summary{cursor:pointer;font-weight:bold;}
-
-/* CONTACT */
-.contact{text-align:center;padding:40px;}
-.contact a{
-    background:#F2B840;padding:14px 25px;border-radius:10px;
-    color:black;text-decoration:none;font-weight:bold;
+.domain-card p{
+    font-size:15px;
+    opacity:.85;
 }
-
-/* FOOTER */
-footer{
-    text-align:center;padding:20px;background:#07101f;
-    border-top:2px solid #F2B840;margin-top:30px;
-}
-
-/* WHATSAPP */
-.whatsapp-float{
-    position:fixed;bottom:80px;left:20px;background:#25D366;
-    padding:14px;border-radius:50%;color:white;font-size:26px;
-    text-decoration:none;z-index:2000;
-}
-
-/* CTA MOBILE */
-#cta-mobile{
-    display:none;position:fixed;bottom:0;width:100%;
-    background:#0B1A33;padding:12px;justify-content:space-around;
-    border-top:3px solid #F2B840;z-index:2000;
-}
-#cta-mobile a{
-    background:#F2B840;color:#0B1A33;padding:12px 20px;border-radius:8px;text-decoration:none;
-    font-weight:bold;
-}
-@media(max-width:800px){
-    #cta-mobile{display:flex;}
-}
-
-/* SCROLL TOP */
-#scrollTop{
-    position:fixed;bottom:20px;right:20px;background:#F2B840;
-    padding:12px;border-radius:50%;cursor:pointer;display:none;z-index:2000;
-}
-
-/* COOKIES */
-#cookie-banner{
-    position:fixed;bottom:0;width:100%;background:#0B1A33;padding:15px;
-    text-align:center;border-top:3px solid #F2B840;display:none;
-}
-#cookie-banner button{
-    padding:10px 20px;border:none;border-radius:8px;margin:5px;font-weight:bold;
-}
-.accept-btn{background:#F2B840;}
-.refuse-btn{background:white;}
-
 </style>
 </head>
 <body>
 
 <div id="progressBar"></div>
 
+<!-- HEADER -->
 <header>
-    <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/d9ea509e70ba92632a6a6fb0e27a4b3453ce7656/logotransparent.png">
+    <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/d9ea509e70ba92632a6a6fb0e27a4b3453ce7656/logotransparent.png" alt="logo">
     <nav>
         <a href="index.html">Accueil</a>
         <a href="business-diaspora.html">Diaspora</a>
         <a href="investisseurs.html">Investisseurs</a>
+        <a href="a-propos.html">À propos</a>
         <a href="contact.html">Contact</a>
     </nav>
 </header>
 
-<div id="hamburger" class="hamburger">☰</div>
-
-<div id="mobileMenu" class="mobile-menu">
-    <a href="index.html">Accueil</a>
-    <a href="business-diaspora.html">Diaspora</a>
-    <a href="investisseurs.html">Investisseurs</a>
-    <a href="contact.html">Contact</a>
-    <a href="a-propos.html">À propos</a>
-    <a href="https://wa.me/15145029503">WhatsApp Direct</a>
-</div>
-
+<!-- HERO -->
 <section class="hero">
     <h1>Espace Diaspora & Investisseurs</h1>
     <p>Services premium • Confiance • Transparence • Résultats</p>
 </section>
 
+<!-- BANDEAU -->
 <div class="bandeau">
     <div class="badge">✔ 300+ clients diaspora</div>
     <div class="badge">✔ 12 pays couverts</div>
@@ -202,135 +167,176 @@ footer{
     <div class="badge">✔ Premium Service</div>
 </div>
 
+<!-- POURQUOI NOUS -->
 <h2 class="section-title">Pourquoi choisir CIZA GROUP ?</h2>
 <div class="separator"></div>
 
 <div class="grid">
-    <div class="card"><h3>Premium</h3><p>Services haut de gamme pour la diaspora.</p></div>
-    <div class="card"><h3>Sécurisé</h3><p>Processus vérifié, rapports visuels continus.</p></div>
-    <div class="card"><h3>Rapide</h3><p>Réponse en moins de 24h.</p></div>
-    <div class="card"><h3>Confiance</h3><p>100% transparence et suivi réel.</p></div>
+    <div class="card"><h3>Premium</h3><p>Services haut de gamme pour diaspora & investisseurs.</p></div>
+    <div class="card"><h3>Sécurisé</h3><p>Processus vérifiés + preuves visuelles continues.</p></div>
+    <div class="card"><h3>Rapide</h3><p>Réponse garantie en 24h.</p></div>
+    <div class="card"><h3>Confiance</h3><p>Transparence totale sur chaque dossier.</p></div>
 </div>
 
+<!-- DOMAINES -->
 <h2 class="section-title">Nos Domaines</h2>
 <div class="separator"></div>
 
 <div class="grid">
-    <div class="domain-card"><h3>🏢 Immobilier</h3><p>Achat, inspection, vidéos HD.</p></div>
-    <div class="domain-card"><h3>🚚 Logistique</h3><p>Achat local, transport, contrôles.</p></div>
-    <div class="domain-card"><h3>💻 Technologie</h3><p>Solutions digitales et paiements.</p></div>
-    <div class="domain-card"><h3>📑 Administration</h3><p>Documents, démarches officielles.</p></div>
-</div>
-
+    <div class="domain-card"><h3>🏢 Immobilier</h3><p>Achat sécurisé, inspection, vidéos HD, cadastre.</p></div>
+    <div class="domain-card"><h3>🚚 Logistique</h3><p>Achat local, transport, livraison + contrôle.</p></div>
+    <div class="domain-card"><h3>💻 Technologie</h3><p>Solutions digitales, paiements & intégrations.</p></div>
+    <div class="domain-card"><h3>📑 Administration</h3><p>Documents officiels, certifications, démarches.</p></div>
+</div><!-- PACKS PREMIUM -->
 <h2 class="section-title">Packs Premium Diaspora</h2>
 <div class="separator"></div>
 
 <div class="grid">
     <div class="pack" onclick="openPopup('p1')">Pack Investissement</div>
     <div class="pack" onclick="openPopup('p2')">Pack Immobilier</div>
-    <div class="pack" onclick="openPopup('p3')">Pack Business & Admin</div>
+    <div class="pack" onclick="openPopup('p3')">Pack Business & Administration</div>
 </div>
 
 <!-- POPUPS -->
 <div id="p1" class="popup-overlay">
     <div class="popup-box">
-        <h3>Pack Investissement</h3>
-        <p>Études, rentabilité, sécurité, vérifications, rapports.</p>
+        <h3 style="color:#0B1A33;">Pack Investissement</h3>
+        <p>Étude du projet • Analyse du marché • Vérifications • Représentation sur place • Rapports vidéo • Suivi complet.</p>
         <button class="close-btn" onclick="closePopup('p1')">Fermer</button>
     </div>
 </div>
 
 <div id="p2" class="popup-overlay">
     <div class="popup-box">
-        <h3>Pack Immobilier</h3>
-        <p>Achat, inspection complète, cadastre, vidéos HD, suivi.</p>
+        <h3 style="color:#0B1A33;">Pack Immobilier</h3>
+        <p>Inspection complète • Vidéos HD • Vérification cadastre • Accompagnement achat • Sécurisation du dossier.</p>
         <button class="close-btn" onclick="closePopup('p2')">Fermer</button>
     </div>
 </div>
 
 <div id="p3" class="popup-overlay">
     <div class="popup-box">
-        <h3>Pack Business & Administration</h3>
-        <p>Documents officiels, création société, autorisations, démarches.</p>
+        <h3 style="color:#0B1A33;">Pack Business & Administration</h3>
+        <p>Création société • Documents officiels • Certifications • Demarches administratives • Accompagnement complet.</p>
         <button class="close-btn" onclick="closePopup('p3')">Fermer</button>
     </div>
 </div>
 
+<!-- FAQ -->
 <h2 class="section-title">FAQ</h2>
 <div class="separator"></div>
 
 <details>
     <summary>Puis-je acheter depuis la diaspora ?</summary>
-    <p>Oui, tout est sécurisé et documenté.</p>
+    <p>Oui, tout est sécurisé et vous recevez des preuves visuelles.</p>
 </details>
 
 <details>
     <summary>Comment suivre mon dossier ?</summary>
-    <p>WhatsApp + photos + vidéos + rapports.</p>
+    <p>WhatsApp + photos + vidéos + rapports continus.</p>
 </details>
 
+<details>
+    <summary>En combien de temps répondez-vous ?</summary>
+    <p>Maximum 24h.</p>
+</details>
+
+<!-- CONTACT -->
 <section class="contact">
     <h2 class="section-title">Besoin d’assistance ?</h2>
     <div class="separator"></div>
     <a href="contact.html">Contactez-nous</a>
 </section>
 
+<!-- FOOTER -->
 <footer>
     © 2026 CIZA GROUP — Burundi | Canada
 </footer>
 
+<!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/15145029503" class="whatsapp-float">💬</a>
 
+<!-- CTA MOBILE -->
 <div id="cta-mobile">
     <a href="https://wa.me/15145029503">WhatsApp</a>
     <a href="contact.html">Devis</a>
 </div>
 
+<!-- SCROLL TOP -->
 <div id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
 
+<!-- COOKIES -->
 <div id="cookie-banner">
     <p>Nous utilisons des cookies pour améliorer votre expérience.</p>
     <button class="accept-btn" onclick="acceptCookies()">Accepter</button>
     <button class="refuse-btn" onclick="refuseCookies()">Refuser</button>
-</div>
+</div><!-- JAVASCRIPT FINAL -->
 
 <script>
 // MENU MOBILE
-const ham=document.getElementById('hamburger');
-const menu=document.getElementById('mobileMenu');
-ham.onclick=()=>{menu.style.right="0";}
-menu.onclick=()=>{menu.style.right="-260px";}
-document.body.addEventListener('click',e=>{
-    if(e.target!==ham && !menu.contains(e.target)) menu.style.right='-260px';
+const ham = document.createElement("div");
+ham.id = "hamburger";
+ham.className = "hamburger";
+ham.innerHTML = "☰";
+document.body.appendChild(ham);
+
+const menuHtml = `
+<div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Accueil</a>
+    <a href="business-diaspora.html">Diaspora</a>
+    <a href="investisseurs.html">Investisseurs</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://wa.me/15145029503">WhatsApp Direct</a>
+</div>
+`;
+document.body.insertAdjacentHTML("beforeend", menuHtml);
+
+const menu = document.getElementById("mobileMenu");
+
+ham.onclick = () => {
+    menu.style.right = "0";
+};
+menu.onclick = () => {
+    menu.style.right = "-260px";
+};
+document.body.addEventListener("click", e => {
+    if (e.target !== ham && !menu.contains(e.target)) {
+        menu.style.right = "-260px";
+    }
 });
 
 // POPUPS
-function openPopup(id){document.getElementById(id).style.display="flex";}
-function closePopup(id){document.getElementById(id).style.display="none";}
+function openPopup(id){
+    document.getElementById(id).style.display = "flex";
+}
+function closePopup(id){
+    document.getElementById(id).style.display = "none";
+}
 
 // PROGRESS BAR
-window.addEventListener('scroll',()=>{
-    const scroll=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
-    document.getElementById('progressBar').style.width=scroll+"%";
+window.addEventListener("scroll", () => {
+    const scroll = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    document.getElementById("progressBar").style.width = scroll + "%";
 });
 
-// SCROLL TOP
-window.addEventListener('scroll',()=>{
-    document.getElementById('scrollTop').style.display=
-        (window.scrollY>200?"block":"none");
+// SCROLL TOP BUTTON
+window.addEventListener("scroll", () => {
+    document.getElementById("scrollTop").style.display =
+        (window.scrollY > 200 ? "block" : "none");
 });
 
 // COOKIES
-if(!localStorage.getItem('cookieConsent')){
-    document.getElementById('cookie-banner').style.display='block';
+if (!localStorage.getItem("cookieConsent")) {
+    document.getElementById("cookie-banner").style.display = "block";
 }
 function acceptCookies(){
-    localStorage.setItem('cookieConsent','accepted');
-    document.getElementById('cookie-banner').style.display='none';
+    localStorage.setItem("cookieConsent", "accepted");
+    document.getElementById("cookie-banner").style.display = "none";
 }
 function refuseCookies(){
-    localStorage.setItem('cookieConsent','refused');
-    document.getElementById('cookie-banner').style.display='none';
+    localStorage.setItem("cookieConsent", "refused");
+    document.getElementById("cookie-banner").style.display = "none";
 }
 </script>
 
