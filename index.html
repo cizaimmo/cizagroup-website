@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>CIZA GROUP — Écosystème de Services</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ================= BASE ================= */
+body{
+    margin:0;
+    font-family:'Inter', sans-serif;
+    background:#0B1A33;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ================= HEADER PREMIUM ================= */
+header{
+    background:#0B1A33;
+    padding:22px 28px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:3px solid #F2B840;
+    position:sticky;
+    top:0;
+    z-index:2000;
+}
+
+header img{
+    height:120px;
+    filter:drop-shadow(0 0 6px rgba(0,0,0,0.4));
+}
+
+@media(max-width:850px){
+    header img{
+        height:90px;
+    }
+}
+
+/* ================= NAV DESKTOP ================= */
+nav{
+    display:flex;
+    gap:22px;
+    align-items:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    font-size:16px;
+    transition:.25s;
+}
+
+nav a:hover{
+    color:#F2B840;
+}
+
+/* ================= GLOBE LANGUE ================= */
+#lang-btn{
+    font-size:28px;
+    cursor:pointer;
+    margin-left:10px;
+    transition:.3s;
+}
+#lang-btn:hover{
+    transform:rotate(12deg);
+}
+
+#lang-menu{
+    position:absolute;
+    right:25px;
+    top:95px;
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:12px;
+    padding:12px 16px;
+    display:none;
+    animation:fade .2s ease-out;
+    box-shadow:0 4px 14px rgba(0,0,0,.3);
+}
+
+#lang-menu div{
+    padding:8px 5px;
+    cursor:pointer;
+    font-size:16px;
+    color:white;
+}
+
+#lang-menu div:hover{
+    color:#F2B840;
+}
+
+.active-lang{
+    color:#F2B840 !important;
+    font-weight:700;
+}
+
+@keyframes fade{
+    from{opacity:0;transform:translateY(-6px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+/* ================= MENU MOBILE ================= */
+#menu-btn{
+    display:none;
+    font-size:36px;
+    cursor:pointer;
+    color:white;
+}
+
+@media(max-width:900px){
+    nav{display:none;}
+    #menu-btn{display:block;}
+}
+
+/* CONTAINER MENU */
+#mobile-menu{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:75%;
+    max-width:330px;
+    height:100vh;
+    background:#0B1A33;
+    border-left:3px solid #F2B840;
+    padding:35px 30px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    transition:.4s ease;
+    z-index:5000;
+}
+
+/* BOUTON X */
+.close-mobile{
+    font-size:34px;
+    color:white;
+    text-align:right;
+    cursor:pointer;
+    margin-bottom:15px;
+}
+
+#mobile-menu a{
+    color:white !important;
+    font-size:20px;
+    font-weight:600;
+    text-decoration:none;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    padding-bottom:13px;
+}
+
+#mobile-menu a:hover{
+    color:#F2B840 !important;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <img src="logotransparent.png" alt="CIZA GROUP">
+
+    <nav>
+        <a href="index.html" data-fr="Accueil" data-en="Home"></a>
+        <a href="services-burundi.html" data-fr="Services Burundi" data-en="Burundi Services"></a>
+        <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora"></a>
+        <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses"></a>
+        <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors"></a>
+        <a href="a-propos.html" data-fr="À propos" data-en="About us"></a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
+
+        <!-- Globe -->
+        <span id="lang-btn">🌐</span>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <div id="menu-btn" onclick="openMenu()">☰</div>
+</header>
+
+<!-- MENU MOBILE SLIDE-IN -->
+<div id="mobile-menu">
+    <div class="close-mobile" onclick="closeMenu()">✕</div>
+
+    <a href="index.html" data-fr="Accueil" data-en="Home"></a>
+    <a href="services-burundi.html" data-fr="Services Burundi" data-en="Burundi Services"></a>
+    <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora"></a>
+    <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses"></a>
+    <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors"></a>
+    <a href="a-propos.html" data-fr="À propos" data-en="About us"></a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact"></a>
+</div>
+
+<!-- MENU DES LANGUES -->
+<div id="lang-menu">
+    <div onclick="setLang('fr')" id="lang-fr">FR</div>
+    <div onclick="setLang('en')" id="lang-en">EN</div>
+</div><!-- ================= HERO PREMIUM ================= -->
+<style>
+.hero {
+    padding:110px 25px;
+    text-align:center;
+    background:linear-gradient(180deg, #0B1A33 0%, #061223 100%);
+}
+.hero h1 {
+    font-size:42px;
+    font-weight:800;
+    color:#F2B840;
+    margin-bottom:12px;
+    letter-spacing:1px;
+}
+@media(max-width:800px){
+    .hero h1 {
+        font-size:30px;
+    }
+}
+.hero p {
+    font-size:20px;
+    opacity:.88;
+    margin-bottom:35px;
+}
+
+/* CTA */
+.cta-container {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:22px;
+}
+.cta {
+    background:#F2B840;
+    color:#0B1A33;
+    padding:14px 30px;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:700;
+    text-decoration:none;
+    transition:.3s;
+}
+.cta:hover {
+    background:#d9a531;
+    transform:translateY(-3px);
+}
+.cta-secondary {
+    background:transparent;
+    border:2px solid #F2B840;
+    color:#F2B840;
+    padding:14px 30px;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:700;
+    transition:.3s;
+}
+.cta-secondary:hover {
+    background:#F2B840;
+    color:#0B1A33;
+    transform:translateY(-3px);
+}
+</style>
+
+<section class="hero">
+    <h1 data-fr="CIZA GROUP — Écosystème de Services"
+        data-en="CIZA GROUP — Service Ecosystem"></h1>
+
+    <p data-fr="Des solutions fiables pour citoyens, diaspora, entreprises et investisseurs."
+       data-en="Reliable solutions for citizens, diaspora, businesses and investors."></p>
+
+    <div class="cta-container">
+        <a class="cta"
+           href="services-burundi.html"
+           data-fr="Découvrir nos services"
+           data-en="Explore our services"></a>
+
+        <a class="cta-secondary"
+           href="contact.html"
+           data-fr="Contactez-nous"
+           data-en="Contact us"></a>
+
+        <a class="cta"
+           style="background:#25D366;color:white;"
+           href="https://wa.me/25779945007"
+           data-fr="WhatsApp Direct"
+           data-en="WhatsApp Direct"></a>
+    </div>
+</section>
+
+
+<!-- ================= SECTION “ÉCOSYSTÈME” ================= -->
+<style>
+.section-title {
+    text-align:center;
+    font-size:32px;
+    font-weight:800;
+    color:#F2B840;
+    margin-top:70px;
+}
+.separator {
+    width:120px;
+    height:4px;
+    background:#F2B840;
+    margin:12px auto 40px;
+    border-radius:50px;
+}
+
+.services-grid {
+    width:92%;
+    margin:auto;
+    display:grid;
+    gap:25px;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+}
+.service-card {
+    background:#0F203D;
+    border:2px solid #F2B840;
+    border-radius:12px;
+    padding:28px 25px;
+    transition:.3s;
+    cursor:pointer;
+}
+.service-card:hover {
+    background:#152a4f;
+    transform:translateY(-5px);
+}
+
+.service-icon {
+    font-size:45px;
+    margin-bottom:18px;
+    display:block;
+}
+.service-card h3 {
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:6px;
+}
+.service-card p {
+    opacity:.85;
+    font-size:15px;
+    line-height:1.5;
+}
+</style>
+
+<section>
+    <h2 class="section-title"
+        data-fr="Écosystème de Services"
+        data-en="Service Ecosystem"></h2>
+
+    <div class="separator"></div>
+
+    <div class="services-grid">
+
+        <a href="services-burundi.html" class="service-card">
+            <span class="service-icon">🇧🇮</span>
+            <h3 data-fr="Services au Burundi"
+                data-en="Burundi Services"></h3>
+            <p data-fr="Mobilité, logistique, assistance quotidienne pour particuliers et professionnels."
+               data-en="Mobility, logistics and daily assistance for individuals and businesses."></p>
+        </a>
+
+        <a href="business-diaspora.html" class="service-card">
+            <span class="service-icon">🌍</span>
+            <h3 data-fr="Diaspora"
+                data-en="Diaspora"></h3>
+            <p data-fr="Services premium sécurisés pour Burundais vivant à l’étranger."
+               data-en="Premium and secure services for Burundians abroad."></p>
+        </a>
+
+        <a href="entreprises.html" class="service-card">
+            <span class="service-icon">🏢</span>
+            <h3 data-fr="Entreprises"
+                data-en="Businesses"></h3>
+            <p data-fr="Solutions corporate, mobilité, tech, externalisation et supply chain."
+               data-en="Corporate mobility, tech, outsourcing and supply chain solutions."></p>
+        </a>
+
+        <a href="investisseurs.html" class="service-card">
+            <span class="service-icon">💼</span>
+            <h3 data-fr="Investisseurs"
+                data-en="Investors"></h3>
+            <p data-fr="Accompagnement complet, inspection, analyse et opportunités d’investissement."
+               data-en="Full support, inspections, analysis and investment opportunities."></p>
+        </a>
+
+    </div>
+</section><!-- ================= FOOTER PREMIUM ================= -->
+<style>
+footer {
+    background:#07101f;
+    padding:45px 20px;
+    margin-top:80px;
+    border-top:3px solid #F2B840;
+    text-align:center;
+}
+
+.footer-logo {
+    height:95px;
+    margin-bottom:18px;
+}
+
+footer h3 {
+    color:#F2B840;
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+footer p {
+    font-size:15px;
+    opacity:.85;
+    margin:5px 0;
+}
+
+.footer-socials {
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:18px;
+}
+
+.footer-socials a {
+    font-size:30px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-socials a:hover {
+    opacity:.7;
+}
+
+footer small {
+    display:block;
+    margin-top:30px;
+    font-size:13px;
+    opacity:.65;
+}
+
+/* WATERMARK DISCRET */
+#watermark {
+    position:fixed;
+    bottom:30px;
+    left:20px;
+    opacity:0.07;
+    font-size:70px;
+    font-weight:900;
+    color:white;
+    pointer-events:none;
+    letter-spacing:5px;
+    z-index:-1;
+}
+
+@media(max-width:800px){
+    #watermark {
+        font-size:42px;
+        bottom:20px;
+        left:15px;
+    }
+}
+
+/* WHATSAPP FLOAT */
+#whatsapp-btn {
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#25D366;
+    padding:14px 16px;
+    border-radius:50%;
+    color:white;
+    font-size:32px;
+    text-decoration:none;
+    box-shadow:0 6px 14px rgba(0,0,0,.4);
+    z-index:1600;
+    transition:.3s;
+}
+#whatsapp-btn:hover {
+    transform:scale(1.08);
+}
+</style>
+
+
+<footer>
+    <img src="logotransparent.png" class="footer-logo">
+
+    <h3 data-fr="CIZA GROUP — Écosystème de Services"
+        data-en="CIZA GROUP — Service Ecosystem"></h3>
+
+    <p data-fr="Siège : Bujumbura, Burundi"
+       data-en="Headquarters: Bujumbura, Burundi"></p>
+
+    <p><b>Canada :</b> +1 514 502 9503</p>
+    <p><b>Burundi :</b> +257 79 94 50 07</p>
+    <p><b>Email :</b> infos@cizagroup.com</p>
+
+    <div class="footer-socials">
+        <a href="https://youtube.com/@cizagroup" style="color:red;">▶️</a>
+        <a href="https://instagram.com/cizagroup_official" style="color:#E4405F;">📸</a>
+        <a href="https://facebook.com" style="color:#1877F2;">📘</a>
+    </div>
+
+    <small>© 2026 CIZA GROUP — All rights reserved</small>
+</footer>
+
+<!-- WATERMARK -->
+<div id="watermark">CIZA</div>
+
+<!-- WHATSAPP DIRECT -->
+<a id="whatsapp-btn" href="https://wa.me/25779945007">💬</a>
+
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+/* ================= MENU MOBILE ================= */
+function openMenu(){
+    document.getElementById("mobile-menu").style.right = "0";
+}
+function closeMenu(){
+    document.getElementById("mobile-menu").style.right = "-100%";
+}
+
+/* ================= LANGUE FR / EN ================= */
+function setLang(lang){
+    document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = (lang==="fr") ? el.getAttribute("data-fr") : el.getAttribute("data-en");
+    });
+
+    document.getElementById("lang-fr").classList.remove("active-lang");
+    document.getElementById("lang-en").classList.remove("active-lang");
+
+    if(lang==="fr"){
+        document.getElementById("lang-fr").classList.add("active-lang");
+    } else {
+        document.getElementById("lang-en").classList.add("active-lang");
+    }
+
+    localStorage.setItem("lang", lang);
+}
+
+document.getElementById("lang-btn").addEventListener("click", ()=>{
+    const menu = document.getElementById("lang-menu");
+    menu.style.display = (menu.style.display==="block") ? "none" : "block";
+});
+
+window.addEventListener("click", (e)=>{
+    if(!e.target.closest("#lang-btn") && !e.target.closest("#lang-menu")){
+        document.getElementById("lang-menu").style.display = "none";
+    }
+});
+
+window.addEventListener("load", ()=>{
+    const saved = localStorage.getItem("lang") || "fr";
+    setLang(saved);
+});
+
+
+/* ================= SCROLL TOP ================= */
+const scrollBtn=document.createElement("div");
+scrollBtn.id="scrollTop";
+scrollBtn.innerHTML="↑";
+scrollBtn.style.position="fixed";
+scrollBtn.style.bottom="80px";
+scrollBtn.style.right="25px";
+scrollBtn.style.background="#F2B840";
+scrollBtn.style.color="#0B1A33";
+scrollBtn.style.padding="12px 18px";
+scrollBtn.style.borderRadius="50%";
+scrollBtn.style.fontWeight="900";
+scrollBtn.style.cursor="pointer";
+scrollBtn.style.display="none";
+scrollBtn.style.boxShadow="0 6px 14px rgba(0,0,0,.4)";
+scrollBtn.style.zIndex="9999";
+document.body.appendChild(scrollBtn);
+
+scrollBtn.addEventListener("click", ()=>{
+    window.scrollTo({top:0, behavior:"smooth"});
+});
+
+window.addEventListener("scroll", ()=>{
+    scrollBtn.style.display = (window.scrollY>300) ? "block" : "none";
+});
+
+
+/* ================= ANIMATIONS ================= */
+const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting) entry.target.classList.add("fade-in");
+    });
+});
+
+document.querySelectorAll(".service-card, .cta, .cta-secondary")
+.forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
