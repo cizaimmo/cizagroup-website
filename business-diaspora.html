@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CIZA GROUP — Services Diaspora</title>
+
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- STYLE GLOBAL -->
+<style>
+body{
+    margin:0;background:#0B1A33;color:white;font-family:'Inter',sans-serif;overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+    background:#07101f;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid #F2B840;
+    position:sticky;
+    top:0;z-index:1000;
+}
+
+header img{
+    height:70px;
+    filter:drop-shadow(0 0 6px rgba(0,0,0,0.4));
+}
+
+nav a{
+    color:white;
+    margin:0 12px;
+    text-decoration:none;
+    font-weight:500;
+}
+nav a:hover{color:#F2B840;}
+
+/* MENU MOBILE */
+.menu-btn{display:none;font-size:28px;color:white;cursor:pointer;}
+#mobileMenu{
+    display:none;
+    position:fixed;
+    top:0;left:0;width:100%;height:100%;
+    background:#07101f;
+    padding:80px 20px;
+    flex-direction:column;
+    text-align:center;
+    z-index:2000;
+}
+#mobileMenu a{color:white;font-size:22px;margin:15px 0;text-decoration:none;font-weight:600;}
+#closeMenu{font-size:32px;position:absolute;top:20px;right:20px;color:#F2B840;cursor:pointer;}
+
+/* GLOBE LANGUE */
+.lang-switch{
+    cursor:pointer;
+    font-size:20px;
+    margin-left:10px;
+    color:#F2B840;
+    font-weight:bold;
+}
+
+/* HERO */
+.hero{
+    padding:100px 20px;
+    text-align:center;
+    background:linear-gradient(#0B1A33,#081325);
+}
+.hero h1{
+    font-size:32px;
+    color:#F2B840;
+    margin-bottom:10px;
+}
+.hero p{
+    font-size:18px;
+    opacity:.9;
+    max-width:650px;
+    margin:auto;
+}
+
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.hero-buttons a{
+    background:#F2B840;
+    color:#0B1A33;
+    padding:14px 25px;
+    border-radius:10px;
+    font-weight:bold;
+    text-decoration:none;
+}
+.hero-buttons a:hover{
+    background:#d9a02f;
+}
+
+@media(max-width:800px){
+    nav{display:none;}
+    .menu-btn{display:block;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <a href="index.html">
+        <img src="logotransparent.png" alt="CIZA GROUP">
+    </a>
+
+    <nav>
+        <a href="index.html" data-fr="Accueil" data-en="Home"></a>
+        <a href="diaspora.html" style="color:#F2B840;" data-fr="Diaspora" data-en="Diaspora"></a>
+        <a href="entreprises.html" data-fr="Entreprises" data-en="Business"></a>
+        <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors"></a>
+        <span class="lang-switch" onclick="toggleLang()">🌐</span>
+    </nav>
+
+    <span class="menu-btn" onclick="openMenu()">☰</span>
+</header>
+
+<!-- MENU MOBILE -->
+<div id="mobileMenu">
+    <span id="closeMenu" onclick="closeMenu()">✕</span>
+    <a href="index.html" data-fr="Accueil" data-en="Home"></a>
+    <a href="diaspora.html" data-fr="Diaspora" data-en="Diaspora" style="color:#F2B840;"></a>
+    <a href="entreprises.html" data-fr="Entreprises" data-en="Business"></a>
+    <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors"></a>
+    <span class="lang-switch" onclick="toggleLang()">🌐</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <h1 data-fr="Services Diaspora" data-en="Diaspora Services"></h1>
+    <p data-fr="Votre tranquillité depuis l’étranger. Nous gérons vos projets au Burundi comme si vous y étiez."
+       data-en="Your peace of mind from abroad. We manage your projects in Burundi as if you were here."></p>
+
+    <div class="hero-buttons">
+        <a href="#services" data-fr="Découvrir les Services" data-en="Discover Services"></a>
+        <a href="https://wa.me/25779945007" target="_blank" data-fr="WhatsApp Direct" data-en="Direct WhatsApp"></a>
+    </div>
+</section><!-- SERVICES SECTION -->
+<section id="services" style="padding:60px 20px;text-align:center;">
+    <h2 data-fr="Nos Services pour la Diaspora" 
+        data-en="Our Services for the Diaspora"
+        style="font-size:30px;color:#F2B840;margin-bottom:10px;">
+    </h2>
+
+    <div style="width:120px;height:4px;background:#F2B840;margin:10px auto 40px;border-radius:50px;"></div>
+
+    <!-- GRID SERVICES -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;width:92%;margin:auto;">
+
+        <!-- CARD 1 -->
+        <div class="card" style="background:#102237;border-radius:12px;padding:25px;border:2px solid #F2B840;">
+            <h3 data-fr="🏡 Immobilier Diaspora" data-en="🏡 Diaspora Real Estate" style="color:#F2B840;"></h3>
+            <p data-fr="Recherche, inspection, vidéo, négociation et gestion complète." 
+               data-en="Search, inspection, video reports, negotiation and full management."></p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card" style="background:#102237;border-radius:12px;padding:25px;border:2px solid #F2B840;">
+            <h3 data-fr="🛒 Achats & Mandats" data-en="🛒 Purchases & Mandates" style="color:#F2B840;"></h3>
+            <p data-fr="Achat à votre place au Burundi, vérification qualité, livraison famille."
+               data-en="Purchasing on your behalf, quality checks, and delivery to family."></p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card" style="background:#102237;border-radius:12px;padding:25px;border:2px solid #F2B840;">
+            <h3 data-fr="🤝 Assistance Famille & Parents" data-en="🤝 Family & Parent Assistance" style="color:#F2B840;"></h3>
+            <p data-fr="Visites, urgences, école, hôpital, suivi WhatsApp en temps réel."
+               data-en="Visits, emergencies, school, hospital, real-time WhatsApp updates."></p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card" style="background:#102237;border-radius:12px;padding:25px;border:2px solid #F2B840;">
+            <h3 data-fr="📑 Projets & Administration" data-en="📑 Projects & Administration" style="color:#F2B840;"></h3>
+            <p data-fr="Création entreprise, documents officiels, représentation locale."
+               data-en="Company creation, official documents, local representation."></p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PREMIUM SECTION -->
+<section style="padding:60px 20px;text-align:center;background:#0F1F39;">
+    <h2 data-fr="Programme Premium Diaspora"
+        data-en="Diaspora Premium Program"
+        style="font-size:30px;color:#F2B840;margin-bottom:10px;"></h2>
+
+    <div style="width:120px;height:4px;background:#F2B840;margin:10px auto 30px;border-radius:50px;"></div>
+
+    <p style="font-size:18px;opacity:.9;max-width:750px;margin:auto;"
+       data-fr="Un accompagnement prioritaire et complet pour vos projets importants au Burundi : suivi dédié, preuves vidéo, sécurisation des transactions."
+       data-en="Priority and complete support for your major projects in Burundi: dedicated follow-up, video proof, secured transactions.">
+    </p>
+
+    <a href="investisseurs-premium.html" 
+       style="display:inline-block;margin-top:25px;background:#F2B840;color:#0B1A33;padding:14px 25px;border-radius:10px;font-weight:bold;text-decoration:none;">
+        <span data-fr="Découvrir le Premium" data-en="Discover Premium"></span>
+    </a>
+</section>
+
+
+<!-- PROCESSUS SECTION -->
+<section style="padding:60px 20px;text-align:center;">
+    <h2 data-fr="Comment Ça Marche ?" data-en="How It Works?" 
+        style="font-size:30px;color:#F2B840;margin-bottom:10px;">
+    </h2>
+
+    <div style="width:120px;height:4px;background:#F2B840;margin:10px auto 40px;border-radius:50px;"></div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;width:92%;margin:auto;">
+
+        <!-- Step 1 -->
+        <div class="card" style="background:#102237;border-radius:12px;padding:25px;border:2px solid #F2B840;">
+            <h3 style="color:#F2B840;" data-fr="1️⃣ Vous décrivez votre projet" data-en="1️⃣ You describe your project"></h3>
+            <p data-fr="Expliquez votre besoin via WhatsApp ou formulaire."
+               data-en="Explain your need via WhatsApp or form."></p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="card" style="background:#102237;border-radius:12px;padding:25px;border:2px solid #F2B840;">
+            <h3 style="color:#F2B840;" data-fr="2️⃣ Nous exécutons au Burundi" data-en="2️⃣ We take action in Burundi"></h3>
+            <p data-fr="Contrôles, vidéos, rapports, vérification complète."
+               data-en="Checks, videos, reports, full verification."></p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="card" style="background:#102237;border-radius:12px;padding:25px;border:2px solid #F2B840;">
+            <h3 style="color:#F2B840;" data-fr="3️⃣ Vous recevez les preuves" data-en="3️⃣ You receive the proof"></h3>
+            <p data-fr="Photos, vidéos, rapport final + livraison si nécessaire."
+               data-en="Photos, videos, final report + delivery if needed."></p>
+        </div>
+
+    </div>
+</section><!-- GARANTIE SECTION -->
+<section style="padding:60px 20px;text-align:center;background:#0F1F39;">
+    <h2 data-fr="Garantie & Sécurité"
+        data-en="Guarantee & Security"
+        style="font-size:30px;color:#F2B840;margin-bottom:10px;">
+    </h2>
+
+    <div style="width:120px;height:4px;background:#F2B840;margin:10px auto 40px;border-radius:50px;"></div>
+
+    <p style="max-width:750px;margin:auto;font-size:18px;opacity:.9;"
+       data-fr="Nous travaillons en totale transparence : preuves en vidéo, contrôle qualité, paiements sécurisés, rapports détaillés et interlocuteur dédié."
+       data-en="We work with total transparency: video proof, quality checks, secured payments, detailed reports and a dedicated contact person.">
+    </p>
+</section>
+
+
+<!-- AVIS CLIENTS -->
+<section style="padding:60px 20px;text-align:center;">
+    <h2 data-fr="Avis Diaspora"
+        data-en="Diaspora Testimonials"
+        style="font-size:30px;color:#F2B840;margin-bottom:10px;">
+    </h2>
+
+    <div style="width:120px;height:4px;background:#F2B840;margin:10px auto 30px;border-radius:50px;"></div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;width:92%;margin:auto;">
+
+        <div class="card" style="background:#102237;padding:25px;border:2px solid #F2B840;border-radius:12px;">
+            <p data-fr="“Service impeccable, j’ai reçu des vidéos et photos à chaque étape. Je recommande !” — France"
+               data-en="“Excellent service, I received videos and pictures at every stage. Highly recommended!” — France">
+            </p>
+        </div>
+
+        <div class="card" style="background:#102237;padding:25px;border:2px solid #F2B840;border-radius:12px;">
+            <p data-fr="“Professionnels et rapides. J'ai pu acheter un terrain sans stress.” — Canada"
+               data-en="“Professional and fast. I managed to buy land without stress.” — Canada">
+            </p>
+        </div>
+
+        <div class="card" style="background:#102237;padding:25px;border:2px solid #F2B840;border-radius:12px;">
+            <p data-fr="“Je vis en Belgique, ils ont aidé mes parents au Burundi. Confiance totale.” — Belgique"
+               data-en="“I live in Belgium, they helped my parents in Burundi. Full trust.” — Belgium">
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CTA FINAL -->
+<section style="padding:60px 20px;text-align:center;background:#081325;">
+    <h2 data-fr="Discutez de votre projet avec nous"
+        data-en="Discuss your project with us"
+        style="font-size:30px;color:#F2B840;margin-bottom:10px;">
+    </h2>
+
+    <p style="font-size:18px;opacity:.9;margin-bottom:20px;"
+       data-fr="Réponse en moins de 24h."
+       data-en="Response within 24 hours.">
+    </p>
+
+    <a href="https://wa.me/25779945007" target="_blank"
+       style="background:#F2B840;color:#0B1A33;padding:14px 25px;border-radius:10px;font-weight:bold;text-decoration:none;">
+       <span data-fr="WhatsApp Direct" data-en="Direct WhatsApp"></span>
+    </a>
+</section>
+
+
+<!-- FOOTER -->
+<footer style="background:#07101f;padding:30px 20px;text-align:center;border-top:2px solid #F2B840;position:relative;overflow:hidden;">
+
+    <!-- Watermark -->
+    <
