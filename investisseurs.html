@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>CIZA GROUP – Investir au Burundi | Accompagnement Premium & Corporate</title>
+
+<meta name="description" content="Investissez au Burundi avec un accompagnement structuré, analyses professionnelles, due diligence, inspections terrain, rapports vidéo et gestion complète.">
+<meta name="keywords" content="Investissement Burundi, Due diligence, Inspection terrain, Analyse de marché, CIZA GROUP, Investisseurs étrangers, Diaspora, Afrique de l’Est">
+<meta name="author" content="CIZA GROUP">
+<meta name="robots" content="index, follow">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* GLOBAL */
+body{
+    margin:0;
+    background:#071427;
+    color:white;
+    font-family:'Inter', sans-serif;
+    overflow-x:hidden;
+}
+
+/* WATERMARK LOGO */
+.watermark{
+    position:fixed;
+    bottom:5%;
+    right:5%;
+    width:140px;
+    opacity:0.06;
+    animation:floatLogo 6s ease-in-out infinite;
+    pointer-events:none;
+}
+@keyframes floatLogo{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+    100%{transform:translateY(0);}
+}
+
+/* LOADER */
+#loader{
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:#071427;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+.loader-circle{
+    width:60px; height:60px;
+    border:6px solid rgba(255,255,255,0.2);
+    border-top-color:#F2B840;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    background:#08192E;
+    border-bottom:2px solid #F2B840;
+    position:sticky; top:0; z-index:999;
+}
+header img{
+    height:70px;
+}
+nav a{
+    color:white;
+    margin:0 12px;
+    text-decoration:none;
+    font-weight:500;
+}
+nav a:hover{
+    color:#F2B840;
+}
+
+/* TITRES */
+.section-title{
+    text-align:center;
+    font-size:32px;
+    color:#F2B840;
+    margin-top:60px;
+    font-weight:700;
+    text-decoration:underline;
+    text-underline-offset:8px;
+}
+
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
+.hero h1{
+    font-size:40px;
+    color:#F2B840;
+    font-weight:800;
+}
+.hero p{
+    font-size:19px;
+    opacity:.9;
+    max-width:600px;
+    margin:auto;
+}/* BOUTON RETOUR */
+.back-btn{
+    display:inline-block;
+    margin:20px;
+    padding:10px 22px;
+    border:2px solid #F2B840;
+    color:#F2B840;
+    border-radius:10px;
+    font-weight:600;
+    text-decoration:none;
+    font-size:17px;
+}
+.back-btn:hover{
+    background:#F2B840;
+    color:#071427;
+}
+
+/* GRID + CARTES */
+.grid{
+    width:92%;
+    margin:auto;
+    display:grid;
+    gap:20px;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+}
+.card{
+    background:rgba(255,255,255,0.05);
+    padding:22px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.12);
+    transition:.3s;
+}
+.card:hover{
+    transform:translateY(-6px);
+    background:rgba(255,255,255,0.10);
+}
+
+/* BOUTON CTA */
+.cta-main{
+    background:#F2B840;
+    color:#071427;
+    padding:15px 28px;
+    border-radius:12px;
+    border:none;
+    font-size:18px;
+    font-weight:700;
+    margin-top:30px;
+    cursor:pointer;
+}
+.cta-main:hover{
+    background:#d9a332;
+}
+
+/* MENU MOBILE */
+.menu-icon{
+    font-size:32px;
+    margin-right:10px;
+    cursor:pointer;
+    display:none;
+}
+#mobileMenu{
+    position:fixed;
+    top:0; right:-100%;
+    width:75%;
+    height:100%;
+    background:#08192E;
+    padding:30px 20px;
+    transition:.4s;
+    z-index:9999;
+}
+#mobileMenu a{
+    display:block;
+    padding:12px 0;
+    font-size:20px;
+    text-decoration:none;
+    color:white;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+/* LANGUES */
+.lang-switch{
+    font-size:22px;
+    margin-right:15px;
+    cursor:pointer;
+}
+.lang-switch:hover{
+    color:#F2B840;
+}
+
+/* SCROLL TOP */
+#scrollTop{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#F2B840;
+    color:#071427;
+    padding:12px 15px;
+    border-radius:50%;
+    font-weight:bold;
+    font-size:20px;
+    display:none;
+    cursor:pointer;
+}
+
+/* RESPONSIVE MOBILE */
+@media(max-width:900px){
+    header nav{display:none;}
+    .menu-icon{display:block;}
+    header img{height:55px;}
+    .hero h1{font-size:32px;}
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader"><div class="loader-circle"></div></div>
+
+<!-- WATERMARK -->
+<img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/logotransparent.png" class="watermark">
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu">
+    <a href="index.html">Accueil</a>
+    <a href="diaspora.html">Diaspora</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<!-- HEADER -->
+<header>
+    <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/logotransparent.png" alt="logo">
+
+    <div>
+        <span class="lang-switch">🌐</span>
+        <span class="menu-icon" onclick="openMenu()">☰</span>
+    </div>
+</header>
+
+<!-- BOUTON RETOUR -->
+<a class="back-btn" href="index.html">← Retour</a><!-- SECTION HERO -->
+<section class="hero">
+    <h1>Espace Investisseurs</h1>
+    <p>
+        Expertise, transparence et accompagnement complet pour tous vos projets au Burundi : 
+        immobilier, analyse de marché, due diligence, agriculture, énergie et innovation.
+    </p>
+
+    <button class="cta-main" onclick="window.location.href='contact.html'">
+        Planifier un appel stratégique
+    </button>
+</section>
+
+<!-- SÉPARATEUR -->
+<div class="separator"></div>
+
+<!-- SECTION AVANTAGES -->
+<h2 class="section-title">Excellence & Fiabilité</h2>
+
+<div class="grid fade-in">
+    <div class="card">
+        <h3>Processus Structuré</h3>
+        <p>Méthodologie claire et professionnelle inspirée des standards internationaux.</p>
+    </div>
+
+    <div class="card">
+        <h3>Accompagnement Sur Mesure</h3>
+        <p>Chaque projet est analysé en profondeur avec un soutien personnalisé.</p>
+    </div>
+
+    <div class="card">
+        <h3>Vérifications & Due Diligence</h3>
+        <p>Contrôles documentaires, inspections terrain et analyses pour sécuriser vos décisions.</p>
+    </div>
+
+    <div class="card">
+        <h3>Transparence Totale</h3>
+        <p>Rapports réguliers, vidéos, documents et communication instantanée.</p>
+    </div>
+</div>
+
+<div class="separator"></div><!-- DOMAINES D’INVESTISSEMENT -->
+<h2 class="section-title">Domaines d’Investissement</h2>
+
+<div class="grid fade-in">
+
+    <div class="card">
+        <h3>Immobilier</h3>
+        <p>
+            Résidentiel, commercial, foncier : analyse, inspection vidéo HD, conformité,
+            accompagnement complet pour sécuriser vos décisions.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Agro-Industrie</h3>
+        <p>
+            Études de faisabilité, projets agroalimentaires, chaîne de valeur,
+            transformation locale, optimisation de production.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Énergie & Infrastructures</h3>
+        <p>
+            Projets solaires, hydrauliques, construction, ingénierie, appels d’offres,
+            études techniques et gestion de projet.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Technologie & Innovation</h3>
+        <p>
+            Plateformes digitales, fintech, solutions automatisées, cybersécurité,
+            et développement sur mesure.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Logistique & Supply Chain</h3>
+        <p>
+            Transport, approvisionnement, inspection des marchandises,
+            optimisation des coûts et contrôle qualité opérationnel.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Administration & Conformité</h3>
+        <p>
+            Vérifications légales, documents officiels, conformité aux normes,
+            support institutionnel pour sécuriser vos opérations.
+        </p>
+    </div>
+
+</div>
+
+<div class="separator"></div><!-- PACKS PREMIUM INVESTISSEURS -->
+<h2 class="section-title">Packs Premium Investisseurs</h2>
+
+<div class="grid fade-in">
+
+    <!-- PACK 1 -->
+    <div class="card pack" onclick="openPopup('pack1')"
+         style="background:#F2B840; color:#071427; font-weight:700; cursor:pointer;">
+        Analyse & Études
+    </div>
+
+    <!-- PACK 2 -->
+    <div class="card pack" onclick="openPopup('pack2')"
+         style="background:#F2B840; color:#071427; font-weight:700; cursor:pointer;">
+        Immobilier & Foncier
+    </div>
+
+    <!-- PACK 3 -->
+    <div class="card pack" onclick="openPopup('pack3')"
+         style="background:#F2B840; color:#071427; font-weight:700; cursor:pointer;">
+        Agro-Industrie
+    </div>
+
+    <!-- PACK 4 -->
+    <div class="card pack" onclick="openPopup('pack4')"
+         style="background:#F2B840; color:#071427; font-weight:700; cursor:pointer;">
+        Due Diligence
+    </div>
+
+</div>
+
+<!-- ===== POPUPS ===== -->
+
+<style>
+.popup-overlay{
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.75);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.popup-box{
+    background:white;
+    color:#071427;
+    width:90%; max-width:420px;
+    padding:25px;
+    border-radius:12px;
+    border:4px solid #F2B840;
+    text-align:left;
+}
+
+.popup-box h3{
+    margin-top:0;
+    font-size:22px;
+    color:#F2B840;
+}
+
+.popup-box p{
+    font-size:15px;
+    line-height:1.6;
+}
+
+.close-btn{
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    background:#F2B840;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+}
+</style>
+
+<!-- POPUP 1 -->
+<div id="pack1" class="popup-overlay">
+    <div class="popup-box">
+        <h3>Pack Analyse & Études</h3>
+        <p>
+            • Étude de marché complète<br>
+            • Analyse financière + projections<br>
+            • Identification opportunités / risques<br>
+            • Rapport professionnel détaillé<br>
+            • Recommandations stratégiques
+        </p>
+        <button class="close-btn" onclick="closePopup('pack1')">Fermer</button>
+    </div>
+</div>
+
+<!-- POPUP 2 -->
+<div id="pack2" class="popup-overlay">
+    <div class="popup-box">
+        <h3>Pack Immobilier & Foncier</h3>
+        <p>
+            • Inspection terrain (photo/video HD)<br>
+            • Vérification documents légaux<br>
+            • Estimation valeur du bien<br>
+            • Rapport complet + avis expert<br>
+            • Suivi avec vendeur / notaire
+        </p>
+        <button class="close-btn" onclick="closePopup('pack2')">Fermer</button>
+    </div>
+</div>
+
+<!-- POPUP 3 -->
+<div id="pack3" class="popup-overlay">
+    <div class="popup-box">
+        <h3>Pack Agro-Industrie</h3>
+        <p>
+            • Études agro-économiques<br>
+            • Visite terrain & faisabilité<br>
+            • Analyse production & intrants<br>
+            • Modèle économique complet<br>
+            • Suivi de projet agricole
+        </p>
+        <button class="close-btn" onclick="closePopup('pack3')">Fermer</button>
+    </div>
+</div>
+
+<!-- POPUP 4 -->
+<div id="pack4" class="popup-overlay">
+    <div class="popup-box">
+        <h3>Pack Due Diligence</h3>
+        <p>
+            • Vérification partenaire / entreprise<br>
+            • Analyse documents légaux<br>
+            • Contrôle risques & conformité<br>
+            • Rapport confidentiel<br>
+            • Validation ou alerte
+        </p>
+        <button class="close-btn" onclick="closePopup('pack4')">Fermer</button>
+    </div>
+</div>
+
+<script>
+function openPopup(id){
+    document.getElementById(id).style.display = "flex";
+}
+function closePopup(id){
+    document.getElementById(id).style.display = "none";
+}
+</script>
+
+<div class="separator"></div><!-- ===== TÉMOIGNAGES ===== -->
+<h2 class="section-title">Témoignages Internationaux</h2>
+
+<style>
+.testi-grid{
+    width:92%;
+    margin:40px auto 60px;
+    display:grid;
+    gap:20px;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+}
+.testi{
+    background:rgba(255,255,255,0.06);
+    padding:22px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.13);
+    line-height:1.6;
+    font-size:15px;
+}
+.testi strong{
+    display:block;
+    margin-bottom:8px;
+    color:#F2B840;
+    font-size:16px;
+}
+</style>
+
+<div class="testi-grid fade-in">
+
+    <div class="testi">
+        <strong>🇨🇦 Canada — Pierre</strong>
+        Inspection vidéo parfaite, transparence totale et conseils
+        professionnels. J’ai pu investir sans stress.
+    </div>
+
+    <div class="testi">
+        <strong>🇫🇷 France — Amina</strong>
+        Service haut de gamme. Leur analyse du marché m’a aidée à prendre
+        la bonne décision pour un projet immobilier.
+    </div>
+
+    <div class="testi">
+        <strong>🇺🇸 USA — David</strong>
+        Due diligence complète et rapport structuré. Très professionnel,
+        très fiable pour un investissement sur le continent africain.
+    </div>
+
+</div>
+
+<div class="separator"></div>
+
+<!-- ===== CTA CONTACT ===== -->
+<h2 class="section-title">Besoin d’un accompagnement ?</h2>
+
+<style>
+.cta-section{
+    text-align:center;
+    margin:40px auto 60px;
+}
+.cta-btn{
+    background:#F2B840;
+    color:#071427;
+    padding:16px 32px;
+    border-radius:12px;
+    border:none;
+    font-size:20px;
+    font-weight:800;
+    cursor:pointer;
+}
+.cta-btn:hover{
+    background:#ddb032;
+}
+</style>
+
+<div class="cta-section fade-in">
+    <button class="cta-btn" onclick="window.location.href='contact.html'">
+        Demander un appel stratégique
+    </button>
+</div>
+
+<div class="separator"></div><!-- ===== SCROLL TOP BUTTON ===== -->
+<div id="scrollTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</div>
+
+<script>
+window.addEventListener("scroll", () => {
+    const btn = document.getElementById("scrollTop");
+    btn.style.display = window.scrollY > 350 ? "block" : "none";
+});
+</script>
+
+<!-- ===== FOOTER ===== -->
+<footer style="background:#08192E; padding:50px 20px; margin-top:60px; position:relative; overflow:hidden;">
+
+    <!-- WATERMARK -->
+    <div style="
+        position:absolute;
+        top:50%; left:50%;
+        transform:translate(-50%, -50%);
+        opacity:0.06;
+        font-size:160px;
+        color:white;
+        font-weight:800;
+        pointer-events:none;
+    ">CIZA</div>
+
+    <div style="
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+        gap:30px;
+        z-index:2;
+        position:relative;
+    ">
+
+        <!-- COLONNE 1 -->
+        <div>
+            <h3 style="color:#F2B840; font-size:20px; margin-bottom:12px;">CIZA GROUP</h3>
+            <p style="opacity:0.85; line-height:1.6;">
+                Cabinet premium d’accompagnement aux investisseurs 
+                et support complet pour projets stratégiques au Burundi et dans la région.
+            </p>
+        </div>
+
+        <!-- COLONNE 2 -->
+        <div>
+            <h3 style="color:#F2B840; font-size:20px; margin-bottom:12px;">Navigation</h3>
+            <p><a href="index.html" style="color:white; text-decoration:none;">Accueil</a></p>
+            <p><a href="diaspora.html" style="color:white; text-decoration:none;">Diaspora</a></p>
+            <p><a href="a-propos.html" style="color:white; text-decoration:none;">À propos</a></p>
+            <p><a href="contact.html" style="color:white; text-decoration:none;">Contact</a></p>
+        </div>
+
+        <!-- COLONNE 3 -->
+        <div>
+            <h3 style="color:#F2B840; font-size:20px; margin-bottom:12px;">Contact</h3>
+            <p style="color:white;">Email : <a href="mailto:infos@cizagroup.com" style="color:#F2B840;">infos@cizagroup.com</a></p>
+            <p style="color:white;">WhatsApp : 
+                <a href="https://wa.me/25779945007" style="color:#F2B840;">+257 79 94 50 07</a>
+            </p>
+        </div>
+
+        <!-- COLONNE 4 -->
+        <div>
+            <h3 style="color:#F2B840; font-size:20px; margin-bottom:12px;">Légal</h3>
+            <p><a href="mentions-legales.html" style="color:white; text-decoration:none;">Mentions légales</a></p>
+            <p><a href="confidentialite.html" style="color:white; text-decoration:none;">Confidentialité</a></p>
+            <p><a href="cookies.html" style="color:white; text-decoration:none;">Cookies</a></p>
+        </div>
+
+    </div>
+
+    <div style="text-align:center; color:white; margin-top:35px; opacity:.6;">
+        © 2026 CIZA GROUP — Tous droits réservés
+    </div>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+/* MOBILE MENU */
+function openMenu(){
+    document.getElementById("mobileMenu").style.right = "0";
+}
+function closeMenu(){
+    document.getElementById("mobileMenu").style.right = "-100%";
+}
+
+/* LOADER */
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        document.getElementById("loader").style.opacity = "0";
+        setTimeout(() => {
+            document.getElementById("loader").style.display = "none";
+        }, 500);
+    }, 600);
+});
+</script>
+
+</body>
+</html>
