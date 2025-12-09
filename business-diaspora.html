@@ -2,9 +2,9 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content-width="device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Diaspora — CIZA GROUP</title>
+<title>CIZA GROUP — Services Diaspora</title>
 <link rel="icon" href="logotransparent.png">
 
 <style>
@@ -12,73 +12,161 @@ body{
     margin:0;
     background:#06142e;
     color:white;
-    font-family: Arial, sans-serif;
+    font-family:Arial, sans-serif;
 }
 
 /* HEADER */
 header{
-    position:fixed;top:0;left:0;width:100%;
-    background:#06142eDD;
+    position:fixed;
+    top:0;left:0;width:100%;
+    background:#06142eF2;
     backdrop-filter:blur(6px);
-    padding:12px 18px;
+    padding:12px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     border-bottom:1px solid #0e2a50;
-    display:flex;align-items:center;justify-content:space-between;
     z-index:999;
 }
-header img{height:55px;}
-.nav-links a{
-    color:white;text-decoration:none;
-    margin:0 10px;font-size:15px;opacity:.85;
-}
-.nav-links a:hover{opacity:1;color:#F2B840;}
 
-.lang-switch span{
-    margin-left:10px;cursor:pointer;opacity:.6;font-weight:bold;
+header img{
+    height:58px;
 }
-.lang-switch .active{color:#F2B840;opacity:1;}
+
+.nav-links{
+    display:flex;
+    gap:20px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    opacity:.85;
+}
+
+.nav-links a:hover{
+    opacity:1;
+    color:#F2B840;
+}
+
+/* Lang Switch */
+.lang-switch span{
+    margin-left:10px;
+    cursor:pointer;
+    opacity:.6;
+}
+
+.lang-switch span.active{
+    color:#F2B840;
+    opacity:1;
+}
 
 /* HERO */
 .hero{
-    margin-top:95px;padding:60px 20px;text-align:center;
+    padding:140px 25px 90px;
+    text-align:center;
+    background:linear-gradient(145deg,#06142e,#0a1c40,#06142e);
 }
+
 .hero h1{
-    color:#F2B840;font-size:32px;margin-bottom:10px;
+    font-size:32px;
+    margin:0;
+    color:#F2B840;
 }
+
 .hero p{
-    max-width:650px;margin:auto;
-    opacity:.88;font-size:17px;line-height:1.5;
+    font-size:17px;
+    opacity:.85;
+    max-width:650px;
+    margin:18px auto 25px;
 }
-.btn{
-    display:inline-block;margin-top:22px;
-    padding:13px 28px;border-radius:10px;
-    background:#F2B840;color:#06142e;
-    font-weight:bold;text-decoration:none;
+
+.btn-whatsapp{
+    background:#25D366;
+    color:white;
+    padding:12px 22px;
+    font-size:16px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.btn-whatsapp:hover{
+    background:#1eb656;
+}
+
+/* SECTIONS GLOBAL */
+section{
+    padding:60px 20px;
+    max-width:900px;
+    margin:auto;
+}
+
+.section-title{
+    font-size:26px;
+    text-align:center;
+    color:#F2B840;
+    margin-bottom:12px;
+    text-transform:uppercase;
+}
+
+.section-line{
+    width:80px;
+    height:3px;
+    background:#F2B840;
+    margin:8px auto 25px;
+    border-radius:2px;
+}
+
+/* TEXT BLOCK */
+.text-block{
+    font-size:16px;
+    line-height:1.65;
+    opacity:.92;
+}
+
+/* CARDS DIASPORA */
+.diaspora-services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    background:#0b1c34;
+    border:1px solid #12345a;
+    padding:18px;
+    border-radius:14px;
+    box-shadow:0 0 10px #0003;
     transition:.3s;
 }
-.btn:hover{background:#c99933;}
 
-.container{
-    padding:40px 22px;max-width:1050px;margin:auto;
+.card:hover{
+    transform:translateY(-6px);
+    border-color:#F2B840;
 }
-.section-title{
-    color:#F2B840;font-size:26px;
-    margin-bottom:8px;border-left:4px solid #F2B840;
-    padding-left:10px;
-}
-.section-text{
-    opacity:.88;line-height:1.7;margin-bottom:30px;
+
+.card h3{
+    margin:0 0 10px;
+    color:#F2B840;
+    font-size:18px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-    <img src="logotransparent.png">
-
+    <img src="logotransparent.png" alt="CIZA GROUP">
+    
     <div class="nav-links">
         <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+        <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
         <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+        <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe"></a>
         <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
         <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
     </div>
@@ -92,205 +180,286 @@ header img{height:55px;}
 
 <!-- HERO -->
 <div class="hero">
-    <h1 data-fr="Service Diaspora"
-        data-en="Diaspora Services"
-        data-ki="Serivisi z'Abadiaspora"></h1>
+<h1 data-fr="Service Diaspora" data-en="Diaspora Service" data-ki="Serivisi z'Abadiaspora"></h1>
 
-    <p data-fr="La distance ne doit plus être un obstacle. Nous devenons vos yeux, vos bras et votre confiance au Burundi, avec une équipe locale entièrement dédiée à la diaspora."
-       data-en="Distance should no longer be a barrier. We become your eyes, your hands, and your trust in Burundi, with a dedicated local team for the diaspora."
-       data-ki="Ugutana ntikubuze gukora. Tuba amaso yawe, amaboko yawe n’icizere cawe mu Burundi, hamwe n’itsinda ryihariye ry’Abadiaspora."></p>
+<p data-fr="Votre présence au Burundi, même à distance. CIZA GROUP devient vos yeux, vos mains et votre accompagnement fiable sur le terrain."
+   data-en="Your presence in Burundi, even from afar. CIZA GROUP becomes your eyes, your hands, and your trusted support on the ground."
+   data-ki="Ububa mu Burundi naho mutari hafi. CIZA GROUP ni amasoanyu, amaboko yanyu n’ukubafasha kwizewe."></p>
 
-    <a href="https://wa.me/15145029503" class="btn">WhatsApp Diaspora</a>
+<a href="https://wa.me/15145029503" class="btn-whatsapp"
+   data-fr="WhatsApp Diaspora"
+   data-en="WhatsApp Diaspora"
+   data-ki="WhatsApp Diaspora"></a>
 </div>
 
-<div class="container">
-
 <!-- SECTION 1 -->
-<h2 class="section-title"
-    data-fr="Pourquoi la diaspora fait appel à nous"
-    data-en="Why the diaspora trusts us"
-    data-ki="Igituma Abadiaspora badutora"></h2>
+<section>
+    <h2 class="section-title"
+        data-fr="Pourquoi la diaspora fait appel à nous ?"
+        data-en="Why the diaspora relies on us?"
+        data-ki="Kubera iki Abadiaspora batugana?"></h2>
+    <div class="section-line"></div>
 
-<p class="section-text" data-fr="
-Vivre à l’étranger rend difficile la gestion des besoins au Burundi : démarches, achats, urgences, suivi familial, documents…  
-CIZA GROUP offre une solution complète : transparence, preuves visuelles, sécurité et une équipe sur terrain qui exécute chaque demande à votre place."
-   data-en="
-Living abroad makes it difficult to manage needs in Burundi: errands, documents, emergencies, family support...  
-CIZA GROUP provides full assistance with transparency, visual proof, security, and a local team handling everything for you."
-   data-ki="
-Kubaho mu mahanga bituma ibikorwa vyo mu gihugu bigorana: kugura ibintu, inyandiko, imboneshakure, gufasha umuryango...  
-CIZA GROUP irabifata mu minwe n'ukwizera, ivyemezo bifatika n’itsinda rikorera ku gihugu."></p>
+    <p class="text-block"
+       data-fr="La distance rend difficile la gestion des besoins quotidiens au Burundi : soutien familial, démarches administratives, achats locaux, vérifications, urgences, organisation et fiabilité. CIZA GROUP apporte une solution haut de gamme fondée sur la transparence, la communication en temps réel, les preuves visuelles et une équipe locale dédiée exclusivement à la diaspora. Nous assurons chaque étape avec sérieux, rigueur et accompagnement humain, pour que votre famille, vos biens et vos projets soient entre de bonnes mains."
+       data-en="Distance makes it difficult to manage daily needs in Burundi: family support, administrative tasks, local purchases, verification, emergencies, organization, and trust. CIZA GROUP offers a premium solution built on transparency, real-time communication, visual proof, and a team dedicated exclusively to the diaspora. We handle each step with professionalism and care to ensure your family, properties, and projects are in good hands."
+       data-ki="Ugutandukana n’igihugu bituma bigora gukurikirana ivy’umuryango, ivy’ikarata, ivy’ugugura ibintu, kuvugana n’abantu, canke ibihutirwa. CIZA GROUP itanga ubufasha bwizewe bushingiye ku gukorana neza, gutanga ivyemeza, n’itsinda ribishinzwe hano mu Burundi. Dukurikirana igikorwa cose neza kugira ngo umuryango wanyu n’ivyanyu bibe mu mutekano."></p>
+</section>
 
-<!-- SECTION 2 -->
-<h2 class="section-title"
-    data-fr="Services exclusifs pour la diaspora"
-    data-en="Exclusive diaspora services"
-    data-ki="Serivisi zihariye z'Abadiaspora"></h2>
+<!-- SECTION 2 — Services Exclusifs -->
+<section>
+    <h2 class="section-title"
+        data-fr="Services exclusifs pour la diaspora"
+        data-en="Exclusive services for the diaspora"
+        data-ki="Serivisi zidasanzwe ku Badiaspora"></h2>
+    <div class="section-line"></div>
 
-<p class="section-text" data-fr="
-• Assistance familiale (achats, soutien, visites)<br>
-• Vérification maison / terrain / chantier avec preuves<br>
-• Achats locaux pour les proches<br>
-• Gestion d’urgences (santé, besoins rapides)<br>
-• Support administratif (actes, documents, suivis)<br>
-• Représentation au pays<br>
-• Paiements locaux + confirmations<br>
-• Preuves photo et vidéo à chaque étape"
-   data-en="
-• Family assistance (purchases, support, visits)<br>
-• House / land / project verification with proof<br>
-• Local purchases for loved ones<br>
-• Emergency handling (health, urgent needs)<br>
-• Administrative support (documents, appointments)<br>
-• Local representation<br>
-• Local payments + confirmation<br>
-• Photo & video proof at every step"
-   data-ki="
-• Gufasha imiryango (ibikenewe, kugura ibintu)<br>
-• Kugenzura amazu / amasambu / imishinga<br>
-• Kugurira abaryango ibintu<br>
-• Ivyihutirwa (ubuzima, ibikenewe vy’ako kanya)<br>
-• Inyandiko n’ivy’amategeko<br>
-• Uwuserukira ku gihugu<br>
-• Kwishura imbere mu gihugu<br>
-• Amafoto n’amavidewo y’ivyemezo vyose"></p><!-- SECTION 3 — PACKS -->
-<h2 class="section-title"
-    data-fr="Nos Packs Diaspora"
-    data-en="Our Diaspora Packages"
-    data-ki="Pake z'Abadiaspora"></h2>
+    <div class="diaspora-services">
 
-<p class="section-text" data-fr="
-<b>Pack Essentiel :</b> Vérifications simples + preuves<br><br>
-<b>Pack Famille :</b> Achats + urgences + soutien familial<br><br>
-<b>Pack Premium :</b> Assistance totale + projets + priorité diaspora"
-   data-en="
-<b>Essential Pack:</b> Basic checks + proof<br><br>
-<b>Family Pack:</b> Purchases + emergencies + family care<br><br>
-<b>Premium Pack:</b> Full assistance + projects + diaspora priority"
-   data-ki="
-<b>Pake Essentiel:</b> Ivyemezo vyoroshe<br><br>
-<b>Pake Famille:</b> Ibikenewe vyo mu muryango<br><br>
-<b>Pake Premium:</b> Ubufasha bwuzuye + imishinga"></p>
+        <div class="card">
+            <h3>💛 Assistance & Famille</h3>
+            <p data-fr="Soutien familial, achats locaux, visites, gestion de besoins urgents avec preuves visuelles."
+               data-en="Family support, local purchases, visits, urgent needs management with visual proof."
+               data-ki="Gufasha imiryango, kugura ibintu, gusura, n’ugukemura ibikenewe vyihuta."></p>
+        </div>
 
-<!-- SECTION 4 — PROCESSUS -->
-<h2 class="section-title"
-    data-fr="Processus simple et fiable"
-    data-en="Simple & reliable process"
-    data-ki="Uburyo bworoshe kandi bwizewe"></h2>
+        <div class="card">
+            <h3>📸 Vérifications & preuves</h3>
+            <p data-fr="Inspection maison, terrain, chantier, vidéos HD, photos détaillées, rapports complets."
+               data-en="House, land, and construction inspection, HD videos, detailed photos, complete reports."
+               data-ki="Kugenzura inzu, ubutaka, imirimo, amasanamu n’inyandiko vyerekana uko ibintu vyifashe."></p>
+        </div>
 
-<p class="section-text" data-fr="
-1. Vous envoyez votre demande<br>
-2. Nous exécutons au Burundi via notre équipe locale<br>
-3. Vous recevez photos + vidéos comme preuves<br>
-4. Livraison / service effectué avec rapport complet"
-   data-en="
-1. You send your request<br>
-2. We handle it locally in Burundi<br>
-3. You receive photo + video evidence<br>
-4. Final delivery with full report"
-   data-ki="
-1. Mutanga igisabwa<br>
-2. Turagikorera mu Burundi<br>
-3. Mwakira amafoto + amavidewo y’ivyemezo<br>
-4. Igikorwa kirarangizwa n’irondora"></p>
+        <div class="card">
+            <h3>🛒 Achats & Services locaux</h3>
+            <p data-fr="Achats locaux, courses pour les proches, livraisons et preuves vidéo."
+               data-en="Local purchases, errands for relatives, deliveries and video proof."
+               data-ki="Kugura ibintu hano mu gihugu, kurungika ibintu n’ugutanga ivyemezo vy’amasanamu."></p>
+        </div>
 
-<!-- SECTION 5 — CAS RÉELS -->
-<h2 class="section-title"
-    data-fr="Cas réels de la diaspora"
-    data-en="Real diaspora cases"
-    data-ki="Ingero z'Abadiaspora"></h2>
+        <div class="card">
+            <h3>🚨 Gestion d’urgences</h3>
+            <p data-fr="Accompagnement en cas d’urgence : santé, hôpital, situations critiques, gestion immédiate."
+               data-en="Support in emergencies: health, hospital, critical situations, immediate action."
+               data-ki="Gufasha mu bihe bidasanzwe: amagara, ibitaro, ibintu vyihuta."></p>
+        </div>
 
-<p class="section-text" data-fr="
-• Vérifier une maison louée<br>
-• Acheter des médicaments urgents<br>
-• Contrôler un chantier en cours<br>
-• Récupérer un document officiel<br>
-• Assister un membre de famille malade<br>
-• Faire un paiement local + preuve"
-   data-en="
-• Check a rented house<br>
-• Buy urgent medicine<br>
-• Monitor construction<br>
-• Retrieve an official document<br>
-• Assist a sick family member<br>
-• Make a local payment + confirmation"
-   data-ki="
-• Kugenzura inzu<br>
-• Kugura imiti<br>
-• Kurikirana ubwubatsi<br>
-• Kurondera inyandiko<br>
-• Gufasha abarwaye<br>
-• Kwishura imbere mu gihugu"></p>
+        <div class="card">
+            <h3>🏛️ Administratif & Représentation</h3>
+            <p data-fr="Documents, signatures, RDV officiels, représentation locale et accompagnement professionnel."
+               data-en="Documents, signatures, official appointments, local representation and professional support."
+               data-ki="Gushikira amadosiye, gusinya, ingendo ku biro, no kubahagararira mu Burundi."></p>
+        </div>
 
-<!-- SECTION 6 — GARANTIES -->
-<h2 class="section-title"
-    data-fr="Nos Garanties"
-    data-en="Our Guarantees"
-    data-ki="Ivyizigiro vyacu"></h2>
+    </div>
+</section><!-- SECTION 3 — Pourquoi choisir CIZA GROUP -->
+<section>
+    <h2 class="section-title"
+        data-fr="Pourquoi choisir CIZA GROUP ?"
+        data-en="Why choose CIZA GROUP?"
+        data-ki="Inyungu zo guhitamwo CIZA GROUP?"></h2>
+    <div class="section-line"></div>
 
-<p class="section-text" data-fr="
-• Confidentialité totale<br>
-• Transparence absolue<br>
-• Preuves photo + vidéo<br>
-• Priorité diaspora<br>
-• Paiements sécurisés"
-   data-en="
-• Full confidentiality<br>
-• Total transparency<br>
-• Photo + video evidence<br>
-• Diaspora priority<br>
-• Secure payments"
-   data-ki="
-• Ubumfasoni<br>
-• Ukuri kwose<br>
-• Ivyemezo bifatika<br>
-• Abadiaspora batanguzwa<br>
-• Kwishura kwizewe"></p><!-- SECTION CTA -->
-<h2 class="section-title"
-    data-fr="Contact Diaspora"
-    data-en="Diaspora Contact"
-    data-ki="Duhamagare"></h2>
+    <div class="diaspora-services">
 
-<p class="section-text" data-fr="Votre famille, vos projets, votre pays : nous nous occupons de tout."
-   data-en="Your family, your projects, your country — we handle everything."
-   data-ki="Umuryango wawe, imishinga yawe, igihugu cawe — turitaho vyose."></p>
+        <div class="card">
+            <h3>🔒 Transparence Totale</h3>
+            <p data-fr="Preuves visuelles pour chaque demande : photos, vidéos, messages en temps réel. Rien n’est caché."
+               data-en="Visual proof for every request: photos, videos, real-time updates. Nothing is hidden."
+               data-ki="Dutanga amafoto n’amavidewo ku gikorwa cose, amakuru yose akaboneka neza."></p>
+        </div>
 
-<a href="https://wa.me/15145029503" class="btn">WhatsApp Canada</a><br><br>
-<a href="https://wa.me/25779945007" class="btn">WhatsApp Burundi</a><br><br>
-<a href="contact.html" class="btn">Formulaire Diaspora</a>
+        <div class="card">
+            <h3>🤝 Accompagnement Humain</h3>
+            <p data-fr="Une équipe locale formée, dédiée à la diaspora, qui vous accompagne avec professionnalisme."
+               data-en="A trained local team dedicated to the diaspora, offering professional support."
+               data-ki="Itsinda ryizewe ribashigikira mu bikorwa vyose mu Burundi."></p>
+        </div>
+
+        <div class="card">
+            <h3>⚡ Rapidité & Fiabilité</h3>
+            <p data-fr="Chaque demande est traitée avec rigueur, organisation et respect des délais annoncés."
+               data-en="Each request is handled with rigor, organization and respect for announced timelines."
+               data-ki="Ivyasabwe biratunganywa neza, mu mwanya wavuzwe, ata guteba."></p>
+        </div>
+
+        <div class="card">
+            <h3>📍 Présence sur le terrain</h3>
+            <p data-fr="Nous nous déplaçons physiquement pour vérifier, filmer, suivre ou intervenir."
+               data-en="We physically go on-site to verify, film, follow-up or intervene."
+               data-ki="Twebwe nyene turaja aho igikorwa kiri kugira dutange ivyemezo."></p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SECTION 4 — Processus Diaspora -->
+<section>
+    <h2 class="section-title"
+        data-fr="Comment fonctionne notre service diaspora ?"
+        data-en="How does our diaspora service work?"
+        data-ki="Ingene serivisi y’Abadiaspora ikora"></h2>
+    <div class="section-line"></div>
+
+    <div class="diaspora-services">
+
+        <div class="card">
+            <h3>1️⃣ Prise de contact</h3>
+            <p data-fr="WhatsApp, e-mail ou formulaire. Vous décrivez vos besoins en détail."
+               data-en="WhatsApp, email, or form. You describe your needs in detail."
+               data-ki="Mwaduha ibisabwa biciye kuri WhatsApp canke email."></p>
+        </div>
+
+        <div class="card">
+            <h3>2️⃣ Analyse & confirmation</h3>
+            <p data-fr="Nous étudions la demande et vous donnons une réponse claire et réalisable."
+               data-en="We analyze your request and provide a clear, achievable confirmation."
+               data-ki="Turasuzuma ico mwipfuza tugahereza inyishu."></p>
+        </div>
+
+        <div class="card">
+            <h3>3️⃣ Exécution sur terrain</h3>
+            <p data-fr="Preuves vidéo/HD, photos, déplacements, suivi complet selon votre demande."
+               data-en="HD videos/photos, on-site visits, full follow-up according to your request."
+               data-ki="Dutanga ibimenyetso vy’amashusho, amasanamu n’ugukurikirana."></p>
+        </div>
+
+        <div class="card">
+            <h3>4️⃣ Rapport Final</h3>
+            <p data-fr="Vous recevez un rapport clair, professionnel, accompagné de preuves visuelles."
+               data-en="You receive a clear, professional report with visual proof."
+               data-ki="Muraronka integuro irimwo ivyemezo vyose."></p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SECTION 5 — Support Diaspora -->
+<section>
+    <h2 class="section-title"
+        data-fr="Support & Contact Diaspora"
+        data-en="Diaspora Support & Contact"
+        data-ki="Ubufasha n’ukuvugana n’Abadiaspora"></h2>
+    <div class="section-line"></div>
+
+    <p class="text-block"
+       data-fr="Un support dédié pour toutes vos demandes, disponible depuis le Canada et le Burundi."
+       data-en="A dedicated support team available for all your requests, from Canada and Burundi."
+       data-ki="Ubufasha bwihariye buboneka kuva mu Burundi no mu Canada."></p>
+
+    <div class="diaspora-services">
+
+        <div class="card">
+            <h3>🇨🇦 WhatsApp Canada</h3>
+            <p><a href="https://wa.me/15145029503" style="color:#25D366;font-weight:bold;">+1 514 502 9503</a></p>
+        </div>
+
+        <div class="card">
+            <h3>🇧🇮 WhatsApp Burundi</h3>
+            <p><a href="https://wa.me/25779945007" style="color:#25D366;font-weight:bold;">+257 79 94 5007</a></p>
+        </div>
+
+        <div class="card">
+            <h3>📧 Email</h3>
+            <p><a href="mailto:infos@cizagroup.com" style="color:#F2B840;font-weight:bold;">infos@cizagroup.com</a></p>
+        </div>
+
+        <div class="card">
+            <h3>📝 Formulaire</h3>
+            <p><a href="contact.html" style="color:#F2B840;font-weight:bold;">Contact complet →</a></p>
+        </div>
+
+    </div>
+</section><!-- FOOTER -->
+<footer style="
+    background:#020a16;
+    padding:35px 20px;
+    text-align:center;
+    margin-top:60px;
+    color:white;
+    font-size:14px;
+">
+    <p style="opacity:.85;">© 2026 CIZA GROUP — Burundi & Canada — Tous droits réservés.</p>
+
+    <div style="margin:10px 0;">
+        <a href="https://instagram.com/cizagroup_official" target="_blank" style="color:#F2B840;margin:0 8px;text-decoration:none;">Instagram</a>
+        <a href="https://facebook.com" target="_blank" style="color:#F2B840;margin:0 8px;text-decoration:none;">Facebook</a>
+        <a href="https://youtube.com" target="_blank" style="color:#F2B840;margin:0 8px;text-decoration:none;">YouTube</a>
+    </div>
+
+    <div style="margin-top:10px;font-size:13px;opacity:.75;">
+        <a href="mentions.html" style="color:#F2B840;margin:0 8px;text-decoration:none;">Mentions légales</a> |
+        <a href="confidentialite.html" style="color:#F2B840;margin:0 8px;text-decoration:none;">Confidentialité</a> |
+        <a href="cgu.html" style="color:#F2B840;margin:0 8px;text-decoration:none;">CGU</a>
+    </div>
+
+    <p style="margin-top:15px;opacity:.6;">Bujumbura, Burundi</p>
+</footer>
+
 
 <!-- LOGO FLOTTANT -->
-<img src="logotransparent.png" 
-     style="position:fixed;bottom:18px;right:18px;
-            width:58px;opacity:.25;animation:float 6s infinite;">
-            
+<img src="logotransparent.png" alt="CIZA GROUP" style="
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:70px;
+    opacity:.12;
+    animation:float 6s ease-in-out infinite;
+    pointer-events:none;
+    z-index:900;
+">
+
 <style>
 @keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-8px);}
-    100%{transform:translateY(0);}
+    0% { transform:translate(0,0); }
+    50% { transform:translate(8px,-8px); }
+    100% { transform:translate(0,0); }
 }
 </style>
 
-<!-- FOOTER -->
-<footer style="margin-top:45px;padding:26px;text-align:center;
-                background:#020a16;opacity:.85;font-size:13px;">
 
-    © 2026 CIZA GROUP — Burundi & Canada — Tous droits réservés.
-    <br><br>
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#0b1c34;
+    color:white;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-top:2px solid #F2B840;
+    font-size:14px;
+    z-index:9999;
+">
+    <span style="max-width:80%;">
+        Ce site utilise des cookies pour améliorer l’expérience utilisateur.
+    </span>
+    <button onclick="acceptCookies()" style="
+        background:#F2B840;
+        color:#06142e;
+        border:none;
+        padding:8px 15px;
+        border-radius:6px;
+        font-weight:bold;
+        cursor:pointer;
+    ">OK</button>
+</div>
 
-    <a href="mentions-legales.html" style="color:#F2B840">Mentions légales</a> |
-    <a href="confidentialite.html" style="color:#F2B840">Confidentialité</a> |
-    <a href="cgu.html" style="color:#F2B840">CGU</a>
-    <br><br>
-
-    <a href="https://instagram.com/cizagroup_official" style="color:#F2B840">Instagram</a> |
-    <a href="#" style="color:#F2B840">Facebook</a> |
-    <a href="#" style="color:#F2B840">YouTube</a>
-</footer>
-
-<!-- LANG SCRIPT -->
 <script>
+function acceptCookies(){
+    document.getElementById("cookie-banner").style.display="none";
+    localStorage.setItem("cookiesAccepted","true");
+}
+
+if(localStorage.getItem("cookiesAccepted")==="true"){
+    document.getElementById("cookie-banner").style.display="none";
+}
+
+
+/* LANGUAGE SWITCHER */
 function setLang(l){
     document.querySelectorAll("[data-fr]").forEach(el=>{
         el.innerHTML = el.dataset[l];
@@ -299,9 +468,15 @@ function setLang(l){
     document.getElementById("lg-fr").classList.remove("active");
     document.getElementById("lg-en").classList.remove("active");
     document.getElementById("lg-ki").classList.remove("active");
+
     document.getElementById("lg-"+l).classList.add("active");
+
+    localStorage.setItem("lang",l);
 }
-setLang("fr");
+
+// Défaut FR
+let savedLang = localStorage.getItem("lang");
+setLang(savedLang ? savedLang : "fr");
 </script>
 
 </body>
