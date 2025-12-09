@@ -4,405 +4,292 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>CIZA GROUP — Services Diaspora</title>
-
-<!-- SEO -->
-<meta name="description" content="Services premium pour la diaspora : immobilier, achats, assistance famille, projets et administration au Burundi. 100% transparence.">
-<meta name="keywords" content="diaspora Burundi, services diaspora, achat Burundi, assistance famille, CIZA GROUP, diaspora service, premium Burundi">
-<meta property="og:title" content="CIZA GROUP — Services Diaspora">
-<meta property="og:description" content="Nous gérons vos projets au Burundi comme si vous y étiez. 100% transparence, preuves vidéo, services premium diaspora.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="logotransparent.png">
-
-<link rel="canonical" href="https://cizaimmo.github.io/cizagroup-website/diaspora.html">
-
-<!-- FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Diaspora — CIZA GROUP</title>
+<link rel="icon" href="logotransparent.png">
 
 <style>
 body{
     margin:0;
-    background:#0B1A33;
+    background:#06142e;
     color:white;
-    font-family:'Inter',sans-serif;
-    overflow-x:hidden;
-    position:relative;
-}
-
-/* LOGO FLOTTANT GLOBAL */
-.floating-logo{
-    position:fixed;
-    width:180px;
-    opacity:0.04;
-    bottom:35%;
-    right:10%;
-    animation:float 12s ease-in-out infinite;
-    z-index:1;
-}
-@keyframes float{
-    0%{transform:translate(0,0);}
-    25%{transform:translate(-25px,15px);}
-    50%{transform:translate(20px,-20px);}
-    75%{transform:translate(-15px,-10px);}
-    100%{transform:translate(0,0);}
+    font-family: Arial, sans-serif;
+    background-image:url("logotransparent.png");
+    background-size:220px;
+    background-repeat:repeat;
+    background-attachment:fixed;
+    opacity:.97;
 }
 
 /* HEADER */
 header{
-    background:#07101f;
-    padding:18px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:2px solid #F2B840;
-    position:sticky;
-    top:0;
-    z-index:2000;
-}
-header img{
-    height:95px;
-    filter:drop-shadow(0 0 6px rgba(0,0,0,0.4));
-}
-nav a{
-    color:white;
-    margin:0 12px;
-    text-decoration:none;
-    font-weight:500;
-}
-nav a:hover{
-    color:#F2B840;
-}
-
-/* MENU MOBILE */
-.menu-btn{
-    display:none;
-    font-size:32px;
-    color:white;
-    cursor:pointer;
-}
-#mobileMenu{
     position:fixed;
-    top:0;
-    right:-100%;
-    width:80%;
-    height:100%;
-    background:#07101f;
-    padding:80px 20px;
-    display:flex;
-    flex-direction:column;
-    text-align:center;
-    transition:.4s ease;
-    z-index:3000;
+    top:0;left:0;width:100%;
+    padding:12px 18px;
+    background:#06142eDD;
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid #0e2a50;
+    z-index:999;
+    display:flex;align-items:center;justify-content:space-between;
 }
-#mobileMenu a{
-    color:white;
-    font-size:22px;
-    margin:18px 0;
-    font-weight:600;
+header img{height:55px;}
+.nav-links a{
+    color:white;text-decoration:none;font-size:15px;
+    margin:0 10px;opacity:.8;
 }
-#closeMenu{
-    position:absolute;
-    top:20px;
-    right:20px;
-    font-size:38px;
-    color:#F2B840;
-    cursor:pointer;
+.nav-links a:hover{opacity:1;color:#F2B840;}
+
+.lang-switch span{
+    margin-left:8px;cursor:pointer;opacity:.6;font-weight:bold;
 }
+.lang-switch .active{opacity:1;color:#F2B840;}
 
 /* HERO */
 .hero{
-    padding:110px 20px;
-    text-align:center;
-    background:url('hero-burundi.png') center/cover no-repeat;
-    position:relative;
+    margin-top:95px;
+    width:100%;
+    height:280px;
+    background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+               url("hero-diaspora.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;flex-direction:column;
+    justify-content:center;align-items:center;
+    text-align:center;padding:20px;
 }
 .hero h1{
-    font-size:38px;
-    color:#F2B840;
-    margin-bottom:12px;
+    font-size:32px;color:#F2B840;margin-bottom:10px;
 }
 .hero p{
-    font-size:18px;
-    opacity:.9;
-    max-width:680px;
-    margin:auto;
-}
-.hero-buttons{
-    margin-top:30px;
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-}
-.hero-buttons a{
-    background:#F2B840;
-    color:#0B1A33;
-    padding:14px 25px;
-    border-radius:10px;
-    font-weight:700;
-    text-decoration:none;
+    max-width:600px;
+    font-size:16px;opacity:.9;
 }
 
-@media(max-width:800px){
-    nav{display:none;}
-    .menu-btn{display:block;}
-    header img{height:70px;}
-    .floating-logo{width:120px;opacity:0.06;}
+/* BUTTONS */
+.btn{
+    background:#F2B840;
+    color:#06142e;
+    padding:12px 22px;
+    border-radius:8px;
+    margin-top:18px;
+    font-weight:bold;
+    text-decoration:none;
+    transition:.3s;
+}
+.btn:hover{
+    background:#c99933;
+}
+
+/* CONTAINER */
+.container{
+    padding:40px 20px;
+    max-width:1050px;
+    margin:auto;
+}
+.section-title{
+    font-size:25px;
+    color:#F2B840;
+    margin-bottom:8px;
+}
+.section-text{
+    opacity:.85;
+    line-height:1.6;
+    margin-bottom:25px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOGO FLOTTANT -->
-<img src="logotransparent.png" class="floating-logo">
-
-<!-- HEADER -->
 <header>
-    <a href="index.html">
-        <img src="logotransparent.png" alt="CIZA GROUP">
-    </a>
+    <img src="logotransparent.png">
 
-    <nav>
-        <a href="index.html" data-fr="Accueil" data-en="Home"></a>
-        <a href="diaspora.html" style="color:#F2B840;" data-fr="Diaspora" data-en="Diaspora"></a>
-        <a href="entreprises.html" data-fr="Entreprises" data-en="Business"></a>
-        <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors"></a>
-        <span onclick="toggleLang()" style="cursor:pointer;color:#F2B840;font-size:20px;">🌐</span>
-    </nav>
+    <div class="nav-links">
+        <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+        <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+        <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
+    </div>
 
-    <span class="menu-btn" onclick="openMenu()">☰</span>
+    <div class="lang-switch">
+        <span onclick="setLang('fr')" id="lg-fr">FR</span>
+        <span onclick="setLang('en')" id="lg-en">EN</span>
+        <span onclick="setLang('ki')" id="lg-ki">KI</span>
+    </div>
 </header>
 
-<!-- MENU MOBILE -->
-<div id="mobileMenu">
-    <span id="closeMenu" onclick="closeMenu()">✕</span>
-    <a href="index.html" data-fr="Accueil" data-en="Home"></a>
-    <a href="diaspora.html" style="color:#F2B840;" data-fr="Diaspora" data-en="Diaspora"></a>
-    <a href="entreprises.html" data-fr="Entreprises" data-en="Business"></a>
-    <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors"></a>
-    <span onclick="toggleLang()" style="font-size:30px;margin-top:20px;">🌐</span>
-</div><!-- BOUTONS RETOUR / CONTACT -->
-<div class="top-buttons" style="display:flex;justify-content:space-between;padding:15px 20px;">
-    <a href="index.html" style="color:#F2B840;text-decoration:none;font-weight:600;">← <span data-fr="Retour" data-en="Back"></span></a>
-    <a href="contact.html" style="color:#F2B840;text-decoration:none;font-weight:600;">📨 <span data-fr="Contact" data-en="Contact"></span></a>
+<!-- HERO -->
+<div class="hero">
+    <h1 data-fr="Service Diaspora"
+        data-en="Diaspora Services"
+        data-ki="Serivisi z'Abadiaspora"></h1>
+
+    <p data-fr="La distance ne doit plus être un obstacle. CIZA GROUP devient vos yeux, vos bras et votre confiance au Burundi."
+       data-en="Distance should no longer be a barrier. CIZA GROUP becomes your eyes, your hands, and your trust in Burundi."
+       data-ki="Ugutana ntikubuze gukora. CIZA GROUP iba amaso yawe, amaboko yawe n’icizere cawe mu Burundi."></p>
+
+    <a href="https://wa.me/15145029503" class="btn">WhatsApp Diaspora</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-    <h1 data-fr="Services Diaspora" data-en="Diaspora Services"></h1>
-    <p data-fr="Votre tranquillité depuis l’étranger — nous gérons vos projets au Burundi comme si vous y étiez."
-       data-en="Your peace of mind from abroad — we manage your projects in Burundi as if you were here."></p>
+<div class="container">
 
-    <div class="hero-buttons">
-        <a href="#services" data-fr="Découvrir" data-en="Discover"></a>
-        <a href="https://wa.me/25779945007" target="_blank" data-fr="WhatsApp Direct" data-en="Direct WhatsApp"></a>
-    </div>
-</section>
+<!-- SECTION 1 -->
+<h2 class="section-title"
+    data-fr="Pourquoi faire appel à nous ?"
+    data-en="Why work with us?"
+    data-ki="Igituma mudukeneye?"></h2>
 
-<!-- SERVICES -->
-<section id="services" style="padding:60px 20px;text-align:center;position:relative;z-index:5;">
-    <h2 style="font-size:30px;color:#F2B840;" data-fr="Nos Services" data-en="Our Services"></h2>
-    <div style="width:120px;height:4px;background:#F2B840;margin:20px auto 40px;"></div>
+<p class="section-text" data-fr="Vivre loin du Burundi rend les démarches complexes. CIZA GROUP accompagne la diaspora avec transparence, preuves visuelles, sécurité et une équipe locale qui exécute chaque demande comme si vous étiez présent."
+   data-en="Living far from Burundi makes local tasks complicated. CIZA GROUP assists the diaspora with transparency, visual evidence, security, and a local team that handles your requests as if you were here."
+   data-ki="Kubaho kure y’igihugu bituma ibintu bigorana. CIZA GROUP irafasha Abadiaspora n’ukwizera, ivyemezo bifatika, umutekano n’itsinda rikorera ku gihugu nk’uko mwoba muhari."></p>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;width:92%;margin:auto;">
-        
-        <div style="background:#102237;padding:25px;border-radius:12px;border:2px solid #F2B840;">
-            <h3 style="color:#F2B840;" data-fr="🏡 Immobilier Diaspora" data-en="🏡 Diaspora Real Estate"></h3>
-            <p data-fr="Inspection, vidéo, négociation, achat, gestion complète de vos projets immobiliers."
-               data-en="Inspection, video, negotiation, purchase and full management of your real estate projects."></p>
-        </div>
+<!-- SECTION 2 -->
+<h2 class="section-title"
+    data-fr="Services exclusifs pour la diaspora"
+    data-en="Exclusive Diaspora Services"
+    data-ki="Serivisi zihariye z'Abadiaspora"></h2>
 
-        <div style="background:#102237;padding:25px;border-radius:12px;border:2px solid #F2B840;">
-            <h3 style="color:#F2B840;" data-fr="🛒 Achats & Mandats" data-en="🛒 Purchases & Mandates"></h3>
-            <p data-fr="Achats à votre place, contrôle qualité, vérification, envoi ou livraison famille."
-               data-en="Purchases on your behalf, quality control, verification, shipping or family delivery."></p>
-        </div>
+<p class="section-text" data-fr="
+• Assistance familiale  
+• Vérification maison / terrain / chantier  
+• Achats locaux pour les familles  
+• Contrôle factures & documents  
+• Support administratif (actes, RDV, traductions)  
+• Gestion d’urgences  
+• Représentation locale  
+• Preuves photo + vidéo"
+   data-en="
+• Family assistance  
+• House / land / project verification  
+• Local purchases for families  
+• Verification of bills & documents  
+• Administrative support  
+• Emergency handling  
+• Local representation  
+• Photo & video evidence"
+   data-ki="
+• Gufasha imiryango  
+• Kugenzura amazu / amasambu / imishinga  
+• Kugurira abaryango ibintu  
+• Kwemeza ivyemezo & faktura  
+• Gufasha mu vy’amategeko  
+• Ibikorwa vy’imbonekarimwe  
+• Uwaserukira ku gihugu  
+• Amafoto & amavidewo y'ivyemezo"></p><!-- SECTION 3 — PACKS -->
+<h2 class="section-title"
+    data-fr="Nos Packs Diaspora"
+    data-en="Our Diaspora Packages"
+    data-ki="Pake z'Abadiaspora"></h2>
 
-        <div style="background:#102237;padding:25px;border-radius:12px;border:2px solid #F2B840;">
-            <h3 style="color:#F2B840;" data-fr="🤝 Assistance Famille" data-en="🤝 Family Assistance"></h3>
-            <p data-fr="Visites parents, urgences, école, hôpital, présence locale + compte-rendu WhatsApp."
-               data-en="Parents visits, emergencies, school, hospital, local presence + WhatsApp updates."></p>
-        </div>
+<p class="section-text" data-fr="
+<b>Pack Essentiel :</b> Vérifications simples, preuves visuelles, assistance rapide.<br><br>
+<b>Pack Famille :</b> Courses, achats, urgences, suivi régulier des besoins familiaux.<br><br>
+<b>Pack Premium :</b> Assistance totale, gestion de projets, représentation complète, suivi prioritaire."
+   data-en="
+<b>Essential Pack:</b> Basic verifications, visual evidence, fast assistance.<br><br>
+<b>Family Pack:</b> Purchases, errands, emergencies, ongoing family support.<br><br>
+<b>Premium Pack:</b> Full assistance, project management, complete representation, priority handling."
+   data-ki="
+<b>Pake Essentiel:</b> Ivyemezo vyoroshe, amafoto, ubufasha bwihuta.<br><br>
+<b>Pake Famille:</b> Kugura ibintu, ibikenewe vyihutirwa, gufasha umuryango.<br><br>
+<b>Pake Premium:</b> Ubufasha bwuzuye, kurongora imishinga, uwuserukira, uburenganzira budasanzwe."></p>
 
-        <div style="background:#102237;padding:25px;border-radius:12px;border:2px solid #F2B840;">
-            <h3 style="color:#F2B840;" data-fr="📑 Administration & Projets" data-en="📑 Administration & Projects"></h3>
-            <p data-fr="Création entreprise, documents officiels, représentation locale, formulaires."
-               data-en="Company creation, official documents, local representation, paperwork."></p>
-        </div>
 
-    </div>
-</section>
+<!-- SECTION 4 — CAS RÉELS -->
+<h2 class="section-title"
+    data-fr="Cas réels de la diaspora"
+    data-en="Real Diaspora Cases"
+    data-ki="Ingero z'Abadiaspora"></h2>
 
-<!-- PROGRAMME PREMIUM -->
-<section style="padding:60px 20px;text-align:center;background:#0F1F39;position:relative;z-index:5;">
-    <h2 style="font-size:30px;color:#F2B840;" data-fr="Programme Premium" data-en="Premium Program"></h2>
-    <div style="width:120px;height:4px;background:#F2B840;margin:20px auto 30px;"></div>
+<p class="section-text" data-fr="
+• Vérifier si une maison louée est réellement occupée<br>
+• Acheter des médicaments urgents pour un parent<br>
+• Suivre un chantier en construction et fournir des preuves<br>
+• Récupérer un document administratif important<br>
+• Assister un membre de famille malade<br>
+• Procéder à un paiement local et envoyer la confirmation"
+   data-en="
+• Check if a rented house is really occupied<br>
+• Buy urgent medicine for a parent<br>
+• Monitor a construction project and send evidence<br>
+• Retrieve an important administrative document<br>
+• Assist a sick family member<br>
+• Make a local payment and provide confirmation"
+   data-ki="
+• Kugenzura ko inzu ikuye irimwo abantu koko<br>
+• Kugura imiti yihutirwa ku muryango<br>
+• Kurikirana umushinga w'ubwubatsi<br>
+• Kurondera inyandiko y’amategeko<br>
+• Gufasha umuryango urwaye<br>
+• Kwishura amafaranga y’imbere mu gihugu n’ivyemezo vyayo"></p>
 
-    <p style="max-width:700px;margin:auto;opacity:.9;"
-       data-fr="Un programme exclusif pour les projets sensibles et importants : suivi dédié, preuves vidéo, accompagnement prioritaire et sécurisation totale."
-       data-en="An exclusive program for sensitive and important projects: dedicated follow-up, video proof, priority support and full security."></p>
 
-    <a href="investisseurs-premium.html"
-       style="display:inline-block;margin-top:25px;background:#F2B840;color:#0B1A33;
-       padding:14px 25px;border-radius:10px;font-weight:700;text-decoration:none;"
-       data-fr="Découvrir le Premium" data-en="Explore Premium"></a>
-</section>
+<!-- SECTION 5 — GARANTIES -->
+<h2 class="section-title"
+    data-fr="Nos Garanties Diaspora"
+    data-en="Our Diaspora Guarantees"
+    data-ki="Ivyizigiro vy'Abadiaspora"></h2>
 
-<!-- PROCESSUS -->
-<section style="padding:60px 20px;text-align:center;position:relative;z-index:5;">
-    <h2 style="font-size:30px;color:#F2B840;" data-fr="Comment Ça Marche ?" data-en="How It Works?"></h2>
-    <div style="width:120px;height:4px;background:#F2B840;margin:20px auto 40px;"></div>
+<p class="section-text" data-fr="
+• Confidentialité totale<br>
+• Transparence absolue<br>
+• Preuves photo + vidéo<br>
+• Traitement prioritaire diaspora<br>
+• Paiements sécurisés"
+   data-en="
+• Total confidentiality<br>
+• Full transparency<br>
+• Photo + video evidence<br>
+• Priority diaspora handling<br>
+• Secure payments"
+   data-ki="
+• Ubumfasoni<br>
+• Ukuri kwose<br>
+• Amafoto + videwo vy'ivyemezo<br>
+• Abadiaspora batanguzwa<br>
+• Kwishura kwizewe"></p>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;width:92%;margin:auto;">
-        
-        <div style="background:#102237;padding:25px;border:2px solid #F2B840;border-radius:12px;">
-            <h3 style="color:#F2B840;" data-fr="1️⃣ Décrivez votre projet" data-en="1️⃣ Describe your project"></h3>
-            <p data-fr="Expliquez votre besoin via WhatsApp ou formulaire."
-               data-en="Explain your need via WhatsApp or the form."></p>
-        </div>
+<!-- SECTION 6 — PHRASE KIRUNDI -->
+<h2 class="section-title" data-fr="Notre Engagement"
+    data-en="Our Commitment"
+    data-ki="Igihango cacu"></h2>
 
-        <div style="background:#102237;padding:25px;border:2px solid #F2B840;border-radius:12px;">
-            <h3 style="color:#F2B840;" data-fr="2️⃣ Nous exécutons" data-en="2️⃣ We execute"></h3>
-            <p data-fr="Contrôles, déplacements, vidéos, rapport détaillé."
-               data-en="Checks, on-site visits, videos, detailed reports."></p>
-        </div>
+<p class="section-text" data-fr="<i>“Turi kumwe n’abenegihugu baba mu mahanga.”</i>"
+   data-en="<i>“We stand with Burundians living abroad.”</i>"
+   data-ki="<i>“Turi kumwe n’abenegihugu baba mu mahanga.”</i>"></p><!-- SECTION CTA -->
+<h2 class="section-title"
+    data-fr="Contact Diaspora"
+    data-en="Diaspora Contact"
+    data-ki="Duhamagare"></h2>
 
-        <div style="background:#102237;padding:25px;border:2px solid #F2B840;border-radius:12px;">
-            <h3 style="color:#F2B840;" data-fr="3️⃣ Vous recevez les preuves" data-en="3️⃣ You receive the proof"></h3>
-            <p data-fr="Photos, vidéos, comptes-rendus et livraisons si nécessaire."
-               data-en="Photos, videos, reports and deliveries if needed."></p>
-        </div>
+<p class="section-text" data-fr="Votre famille, vos projets, votre pays : nous nous occupons de tout."
+   data-en="Your family, your projects, your country: we take care of everything."
+   data-ki="Umuryango wawe, imishinga yawe, igihugu cawe: turitaho vyose."></p>
 
-    </div>
-</section>
+<a href="https://wa.me/15145029503" class="btn">WhatsApp Canada</a><br><br>
+<a href="https://wa.me/25779945007" class="btn">WhatsApp Burundi</a><br><br>
+<a href="contact.html" class="btn">Formulaire Diaspora</a>
 
-<!-- AVIS CLIENTS -->
-<section style="padding:60px 20px;text-align:center;">
-    <h2 style="font-size:30px;color:#F2B840;" data-fr="Avis de la Diaspora" data-en="Diaspora Testimonials"></h2>
-    <div style="width:120px;height:4px;background:#F2B840;margin:20px auto 30px;"></div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;width:92%;margin:auto;">
-        
-        <div style="background:#102237;padding:25px;border-radius:12px;border:2px solid #F2B840;">
-            <p data-fr="“Service impeccable. Vidéos à chaque étape. Confiance totale.” — France"
-               data-en="“Impeccable service. Videos at every step. Total trust.” — France"></p>
-        </div>
-
-        <div style="background:#102237;padding:25px;border-radius:12px;border:2px solid #F2B840;">
-            <p data-fr="“Professionnels et rapides. Achat terrain sans stress.” — Canada"
-               data-en="“Professional and fast. Bought land without stress.” — Canada"></p>
-        </div>
-
-        <div style="background:#102237;padding:25px;border-radius:12px;border:2px solid #F2B840;">
-            <p data-fr="“Ils ont aidé mes parents. Service humain et très sérieux.” — Belgique"
-               data-en="“They helped my parents. Human and very serious service.” — Belgium"></p>
-        </div>
-
-    </div>
-</section>
-
-<!-- CTA FINAL -->
-<section style="padding:60px 20px;text-align:center;background:#081325;">
-    <h2 style="font-size:30px;color:#F2B840;" data-fr="Discutons de votre projet" data-en="Let's discuss your project"></h2>
-    <p style="opacity:.9;margin-bottom:20px;" 
-       data-fr="Réponse garantie en moins de 24h."
-       data-en="Response guaranteed within 24h."></p>
-
-    <a href="https://wa.me/25779945007" target="_blank"
-       style="background:#F2B840;color:#0B1A33;padding:14px 25px;border-radius:10px;font-weight:700;text-decoration:none;"
-       data-fr="WhatsApp Direct" data-en="WhatsApp Direct"></a>
-</section><!-- FOOTER -->
-<footer style="background:#07101f;padding:40px 20px;text-align:center;border-top:2px solid #F2B840;position:relative;overflow:hidden;">
-
-    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-                font-size:130px;font-weight:900;opacity:0.04;color:white;">
-        CIZA GROUP
-    </div>
-
-    <img src="logotransparent.png" style="height:90px;position:relative;z-index:2;margin-bottom:15px;">
-
-    <p style="position:relative;z-index:2;">infos@cizagroup.com</p>
-    <p style="position:relative;z-index:2;">Burundi : +257 79 94 50 07</p>
-    <p style="position:relative;z-index:2;">Canada : +1 514 502 9503</p>
-
-    <div style="margin-top:15px;position:relative;z-index:2;">
-        <a href="https://instagram.com/cizagroup_official" target="_blank" style="color:white;margin:0 10px;">Instagram</a>
-        <a href="https://youtube.com/@cizagroup" target="_blank" style="color:white;margin:0 10px;">YouTube</a>
-        <a href="#" style="color:white;margin:0 10px;">Facebook</a>
-    </div>
-
-    <div style="margin-top:20px;position:relative;z-index:2;">
-        <a href="#" style="color:#F2B840;margin:0 10px;">Mentions Légales</a>
-        <a href="#" style="color:#F2B840;margin:0 10px;">Confidentialité</a>
-        <a href="#" style="color:#F2B840;margin:0 10px;">CGU</a>
-    </div>
-
-    <p style="opacity:.6;margin-top:20px;position:relative;z-index:2;">
-        © 2026 CIZA GROUP — Tous droits réservés
-    </p>
+<!-- FOOTER -->
+<footer style="margin-top:50px;padding:25px;text-align:center;background:#020a16;opacity:.8;">
+    © 2025 CIZA GROUP — Bujumbura, Burundi  
+    <br><br>
+    <a href="https://instagram.com/cizagroup_official" style="color:#F2B840">Instagram</a> |
+    <a href="#" style="color:#F2B840">Facebook</a> |
+    <a href="#" style="color:#F2B840">YouTube</a>
 </footer>
 
-<!-- COOKIES -->
-<div id="cookieBanner" style="
-    display:none;
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    background:#0B1A33;
-    padding:20px;
-    text-align:center;
-    border-top:3px solid #F2B840;
-    z-index:4000;">
-    <p style="margin:0 0 10px;">Nous utilisons des cookies pour améliorer votre expérience.</p>
-
-    <button onclick="acceptCookies()" style="padding:10px 20px;background:#F2B840;
-       border:none;border-radius:8px;font-weight:bold;cursor:pointer;">Accepter</button>
-
-    <button onclick="declineCookies()" style="padding:10px 20px;background:white;
-       color:#0B1A33;border:none;border-radius:8px;font-weight:bold;cursor:pointer;margin-left:10px;">
-       Refuser</button>
-</div>
-
-<!-- BOUTON HAUT -->
-<button onclick="window.scrollTo({top:0,behavior:'smooth'})"
-style="position:fixed;bottom:25px;right:25px;background:#F2B840;color:#0B1A33;
-border:none;border-radius:50%;width:50px;height:50px;font-size:22px;cursor:pointer;
-z-index:9999;">↑</button>
-
-<!-- SCRIPTS -->
 <script>
-function openMenu(){document.getElementById("mobileMenu").style.right="0";}
-function closeMenu(){document.getElementById("mobileMenu").style.right="-100%";}
-
-/* MULTILINGUE */
-let currentLang="fr";
-function toggleLang(){
-    currentLang=(currentLang==="fr")?"en":"fr";
-    updateLang();
-}
-function updateLang(){
+function setLang(l){
     document.querySelectorAll("[data-fr]").forEach(el=>{
-        el.innerHTML = el.getAttribute(`data-${currentLang}`);
+        el.innerHTML = el.dataset[l];
     });
+    document.getElementById("lg-fr").classList.remove("active");
+    document.getElementById("lg-en").classList.remove("active");
+    document.getElementById("lg-ki").classList.remove("active");
+    document.getElementById("lg-"+l).classList.add("active");
 }
-updateLang();
-
-/* COOKIES */
-function acceptCookies(){
-    localStorage.setItem("cookies_ciza","yes");
-    document.getElementById("cookieBanner").style.display="none";
-}
-function declineCookies(){
-    localStorage.setItem("cookies_ciza","no");
-    document.getElementById("cookieBanner").style.display="none";
-}
-window.onload=()=>{
-    if(!localStorage.getItem("cookies_ciza")){
-        document.getElementById("cookieBanner").style.display="block";
-    }
-};
+setLang("fr");
 </script>
 
 </body>
