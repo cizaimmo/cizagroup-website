@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>CIZA GROUP — Services</title>
+
+<link rel="icon" href="logotransparent.png">
+
+<!-- STYLE GLOBAL -->
+<style>
+body{
+    margin:0;background:#06142e;color:white;
+    font-family: Arial, sans-serif;
+}
+
+/* LOGO FLOTTANT */
+.floating-logo{
+    position:fixed;
+    top:20px;right:20px;
+    width:70px;opacity:0.15;
+    animation:floatXY 6s ease-in-out infinite;
+    z-index:50;
+}
+@keyframes floatXY{
+    0%{transform:translate(0,0);}
+    25%{transform:translate(8px,-6px);}
+    50%{transform:translate(-6px,6px);}
+    75%{transform:translate(4px,-4px);}
+    100%{transform:translate(0,0);}
+}
+
+/* HEADER */
+header{
+    position:fixed;top:0;left:0;width:100%;
+    background:#06142eDD;backdrop-filter:blur(6px);
+    padding:10px 15px;z-index:999;display:flex;
+    align-items:center;justify-content:space-between;
+    border-bottom:1px solid #0e2a50;
+}
+header img{height:55px;}
+.nav-links{display:flex;gap:18px;font-size:15px;}
+.nav-links a{color:white;text-decoration:none;opacity:.85;}
+.nav-links a:hover{opacity:1;color:#F2B840;}
+.lang-switch span{
+    margin-left:10px;cursor:pointer;opacity:.6;
+}
+.lang-switch span.active{color:#F2B840;opacity:1;font-weight:bold;}
+.back-btn{
+    cursor:pointer;font-size:26px;color:#F2B840;
+    margin-right:10px;
+}
+.back-btn:hover{opacity:.8;}
+
+/* HERO */
+.hero{
+    margin-top:90px;
+    text-align:center;
+    padding:110px 20px;
+    background: radial-gradient(circle at center,
+                rgba(242,184,64,0.18) 0%,
+                rgba(6,20,46,1) 70%);
+}
+.hero h1{
+    font-size:32px;color:#F2B840;margin-bottom:10px;
+}
+.hero p{
+    font-size:17px;opacity:.85;max-width:580px;margin:auto;
+}
+
+/* SEPARATOR */
+.separator {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #F2B84088, transparent);
+    margin: 50px 0;
+}
+
+/* SECTION SERVICES */
+.container{padding:20px 20px 40px;}
+h2{
+    text-align:center;font-size:26px;
+    margin-bottom:25px;color:#F2B840;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:18px;
+}
+
+/* CARDS */
+.card{
+    background:#0b1c34cc;
+    padding:18px;border-radius:14px;
+    border:1px solid #0f2d55;
+    text-align:center;cursor:pointer;
+    transition:transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+}
+.card:hover{
+    transform:scale(1.03);
+    border-color:#F2B840;
+    box-shadow:0 6px 18px rgba(242,184,64,0.22);
+}
+.card-title{font-weight:bold;color:#F2B840;margin:8px 0;}
+.card p{font-size:13px;opacity:.75;}
+</style>
+</head>
+
+<body>
+
+<!-- LOGO FLOTTANT -->
+<img src="logotransparent.png" class="floating-logo">
+
+<!-- HEADER -->
+<header>
+    <span class="back-btn" onclick="goBack()">←</span>
+
+    <img src="logotransparent.png">
+
+    <div class="nav-links">
+        <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+        <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
+        <a href="business-diaspora.html" data-fr="Business Diaspora" data-en="Diaspora Business" data-ki="Ubucuruzi bw'Abadiaspora"></a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
+    </div>
+
+    <div class="lang-switch">
+        <span onclick="setLang('fr')" id="lg-fr">FR</span>
+        <span onclick="setLang('en')" id="lg-en">EN</span>
+        <span onclick="setLang('ki')" id="lg-ki">KI</span>
+    </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <h1 data-fr="Nos Services" data-en="Our Services" data-ki="Serivisi Zacu"></h1>
+    <p data-fr="Découvrez l'ensemble de nos solutions modernes, fiables et adaptées aux besoins du Burundi et de la diaspora."
+       data-en="Explore all our modern, reliable, and tailored solutions for Burundi and the diaspora."
+       data-ki="Raba neza serivisi zacu zigezweho kandi zizewe ku Burundi n'abadiaspora."></p>
+</div>
+
+<div class="separator"></div>
+
+<!-- SECTION CARTES -->
+<div class="container">
+<h2 data-fr="Découvrez nos solutions" data-en="Discover our solutions" data-ki="Menya serivisi zacu"></h2>
+
+<div class="grid">
+
+    <div class="card" onclick="openPopup('cizaride')">
+        <div class="card-title">CizaRide+</div>
+        <p data-fr="Mobilité moderne"
+           data-en="Modern mobility"
+           data-ki="Ugutwara kwa none"></p>
+    </div>
+
+    <div class="card" onclick="openPopup('cizadelivery')">
+        <div class="card-title">CizaDelivery</div>
+        <p data-fr="Livraison rapide"
+           data-en="Fast delivery"
+           data-ki="Gukwirikiza vyihuta"></p>
+    </div>
+
+    <div class="card" onclick="openPopup('cizapay')">
+        <div class="card-title">CizaPay+</div>
+        <p data-fr="Paiements sécurisés"
+           data-en="Secure payments"
+           data-ki="Kuriha kwizewe"></p>
+    </div>
+
+    <div class="card" onclick="openPopup('cizaimmo')">
+        <div class="card-title">CizaImmo</div>
+        <p data-fr="Immobilier & gestion"
+           data-en="Real estate & management"
+           data-ki="Ubutunzi bw'imitongo"></p>
+    </div>
+
+    <div class="card" onclick="openPopup('cizamarket')">
+        <div class="card-title">CizaMarket</div>
+        <p data-fr="Produits & achats"
+           data-en="Shopping & products"
+           data-ki="Kugura ibintu"></p>
+    </div>
+
+    <div class="card" onclick="openPopup('cizalog')">
+        <div class="card-title">CizaLogistics</div>
+        <p data-fr="Transport & colis"
+           data-en="Transport & parcels"
+           data-ki="Gutanga ibicuruzwa"></p>
+    </div>
+
+    <div class="card" onclick="openPopup('cizatech')">
+        <div class="card-title">CizaTech</div>
+        <p data-fr="Solutions digitales"
+           data-en="Digital solutions"
+           data-ki="Ubuhinga ngurukanabumenyi"></p>
+    </div>
+
+    <div class="card" onclick="openPopup('cizajobs')">
+        <div class="card-title">CizaJobs</div>
+        <p data-fr="Emploi & CV"
+           data-en="Jobs & CV"
+           data-ki="Akazi & Ubuzima"></p>
+    </div>
+
+    <div class="card" onclick="openPopup('cizaacademy')">
+        <div class="card-title">CizaAcademy</div>
+        <p data-fr="Formations"
+           data-en="Training"
+           data-ki="Amahugurwa"></p>
+    </div>
+
+    <div class="card" onclick="openPopup('cizagestion')">
+        <div class="card-title">CizaGestion</div>
+        <p data-fr="Gestion & assistance"
+           data-en="Management & assistance"
+           data-ki="Ibagurirwa & ubuyobozi"></p>
+    </div>
+
+    <div class="card" onclick="openPopup('cizaassist')">
+        <div class="card-title">CizaAssist</div>
+        <p data-fr="Conciergerie"
+           data-en="Concierge"
+           data-ki="Ibagurirwa bwihuse"></p>
+    </div>
+
+    <div class="card" onclick="openPopup('cizacarwash')">
+        <div class="card-title">CizaCarWash</div>
+        <p data-fr="Lavage & entretien"
+           data-en="Car wash & care"
+           data-ki="Gukara imodoka"></p>
+    </div>
+
+</div>
+</div>
+
+<div class="separator"></div><!-- POPUP NIVEAU 1 -->
+<div class="popup-bg" id="popup-bg" style="
+    position:fixed;top:0;left:0;width:100%;height:100%;
+    background:#000000aa;backdrop-filter:blur(3px);
+    display:none;align-items:center;
+    justify-content:center;z-index:2000;">
+    <div class="popup" style="
+        width:90%;max-width:420px;background:#06142e;
+        padding:20px;border-radius:16px;
+        border:1px solid #F2B840;
+        animation:fadeIn .4s;">
+        <h3 id="pop-title" style="color:#F2B840;margin-top:0;"></h3>
+        <p id="pop-line1"></p>
+        <p id="pop-line2"></p>
+        <p id="pop-line3"></p>
+        <p id="pop-line4"></p>
+        <p id="pop-line5"></p>
+        <button class="popup-btn" onclick="openFull()" style="
+            width:100%;background:#F2B840;color:#06142e;
+            padding:12px;border:none;border-radius:10px;
+            font-weight:bold;margin-top:15px;cursor:pointer;
+            font-size:15px;">Plus de détails</button>
+    </div>
+</div>
+
+<!-- POPUP FULL SCREEN -->
+<div class="fullscreen" id="full-screen" style="
+    position:fixed;top:0;left:0;width:100%;height:100%;
+    background: radial-gradient(circle at center,
+                rgba(242,184,64,0.12) 0%,
+                rgba(6,20,46,1) 70%);
+    z-index:3000;display:none;overflow-y:auto;
+    animation:slideUp .45s ease;
+    padding:80px 20px 40px;">
+
+    <span class="back-full" onclick="closeFull()" style="
+        position:fixed;top:18px;left:18px;
+        font-size:28px;color:#F2B840;cursor:pointer;">←</span>
+
+    <span class="close-full" onclick="closeFull()" style="
+        position:fixed;top:18px;right:18px;
+        font-size:30px;color:#F2B840;cursor:pointer;">✕</span>
+
+    <h2 id="fs-title" style="color:#F2B840;margin-top:0;"></h2>
+    <p id="fs-text" style="line-height:1.6;font-size:14px;opacity:.92;text-align:left;"></p>
+
+    <div class="contact-box" style="
+        margin-top:25px;padding:18px;
+        background:#0b1c34;border-radius:12px;
+        border-left:4px solid #F2B840;">
+        <h3 style="margin:0 0 10px;color:#F2B840;">Contact</h3>
+
+        <a href="https://wa.me/25779945007"
+           style="display:block;margin:8px 0;color:#F2B840;
+           text-decoration:none;font-size:17px;">
+            WhatsApp Burundi
+        </a>
+
+        <a href="https://wa.me/15145029503"
+           style="display:block;margin:8px 0;color:#F2B840;
+           text-decoration:none;font-size:17px;">
+            WhatsApp Canada
+        </a>
+
+        <a href="mailto:infos@cizagroup.com"
+           style="display:block;margin:8px 0;color:#F2B840;
+           text-decoration:none;font-size:17px;">
+            infos@cizagroup.com
+        </a>
+
+        <a href="contact.html"
+           style="display:block;margin:8px 0;color:#F2B840;
+           text-decoration:none;font-size:17px;">
+            Formulaire complet →
+        </a>
+    </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- SECTION POURQUOI CIZA GROUP -->
+<section style="padding:40px 20px;text-align:center;">
+    <h2 data-fr="Pourquoi choisir CIZA GROUP ?"
+        data-en="Why choose CIZA GROUP?"
+        data-ki="Igitumwa CIZA GROUP itandukanye?"></h2>
+
+    <div style="
+        display:grid;gap:25px;
+        grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+        margin-top:30px;">
+
+        <!-- RAISON 1 -->
+        <div style="background:#0b1c34;padding:18px;
+            border-radius:12px;border-left:3px solid #F2B840;">
+            <h3 style="color:#F2B840;margin:0 0 10px;">Tupo Garantie</h3>
+            <p style="opacity:.85;font-size:14px;">
+                Nous garantissons un service fiable, professionnel et transparent.
+            </p>
+        </div>
+
+        <!-- RAISON 2 -->
+        <div style="background:#0b1c34;padding:18px;
+            border-radius:12px;border-left:3px solid #F2B840;">
+            <h3 style="color:#F2B840;margin:0 0 10px;">Diaspora & Local</h3>
+            <p style="opacity:.85;font-size:14px;">
+                Accompagnement premium pour les citoyens, entreprises et diaspora.
+            </p>
+        </div>
+
+        <!-- RAISON 3 -->
+        <div style="background:#0b1c34;padding:18px;
+            border-radius:12px;border-left:3px solid #F2B840;">
+            <h3 style="color:#F2B840;margin:0 0 10px;">Sécurité totale</h3>
+            <p style="opacity:.85;font-size:14px;">
+                Données, paiements et processus protégés et vérifiés.
+            </p>
+        </div>
+
+        <!-- RAISON 4 -->
+        <div style="background:#0b1c34;padding:18px;
+            border-radius:12px;border-left:3px solid #F2B840;">
+            <h3 style="color:#F2B840;margin:0 0 10px;">Rapidité & efficacité</h3>
+            <p style="opacity:.85;font-size:14px;">
+                Réponse rapide et traitement efficace de chaque demande.
+            </p>
+        </div>
+
+        <!-- RAISON 5 -->
+        <div style="background:#0b1c34;padding:18px;
+            border-radius:12px;border-left:3px solid #F2B840;">
+            <h3 style="color:#F2B840;margin:0 0 10px;">Transparence totale</h3>
+            <p style="opacity:.85;font-size:14px;">
+                Pas de frais cachés – tout est clair et bien expliqué.
+            </p>
+        </div>
+
+        <!-- RAISON 6 -->
+        <div style="background:#0b1c34;padding:18px;
+            border-radius:12px;border-left:3px solid #F2B840;">
+            <h3 style="color:#F2B840;margin:0 0 10px;">Écosystème complet</h3>
+            <p style="opacity:.85;font-size:14px;">
+                Tous vos besoins réunis dans un seul groupe : mobilité, livraison, tech, immobilier...
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<div class="separator"></div>
+
+<!-- FOOTER -->
+<footer style="margin-top:40px;background:#020a16;
+    padding:25px;text-align:center;font-size:13px;opacity:.75;">
+    © 2025 CIZA GROUP — Tous droits réservés.
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+function goBack(){
+    if (history.length > 1){ window.history.back(); }
+    else { window.location.href="index.html"; }
+}
+
+/* ZOOM MOBILE */
+document.querySelectorAll(".card").forEach(card=>{
+    card.addEventListener("touchstart", ()=>{
+        card.style.transform="scale(1.03)";
+        card.style.boxShadow="0 6px 18px rgba(242,184,64,0.22)";
+        setTimeout(()=>{
+            card.style.transform="";
+            card.style.boxShadow="";
+        }, 160);
+    });
+});
+
+/* LANG SWITCH */
+function setLang(l){
+    document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = el.dataset[l];
+    });
+    document.getElementById("lg-fr").classList.remove("active");
+    document.getElementById("lg-en").classList.remove("active");
+    document.getElementById("lg-ki").classList.remove("active");
+    document.getElementById("lg-"+l).classList.add("active");
+}
+setLang("fr");
+
+/* POPUP SYSTEME */
+let currentService="";
+
+const data={
+    cizaride:{
+        title:"CizaRide+",
+        lines:["Mobilité moderne","Chauffeurs formés","Paiement sécurisé","Disponible partout","Service premium"],
+        full:"CizaRide+ offre un service moderne, fiable..."
+    },
+    cizadelivery:{
+        title:"CizaDelivery",
+        lines:["Livraison rapide","Courses pour vous","Suivi en temps réel","Paiement sécurisé","Service économique"],
+        full:"CizaDelivery vous accompagne pour vos livraisons..."
+    },
+    cizapay:{
+        title:"CizaPay+",
+        lines:["Paiements sécurisés","Transactions rapides","Support 24/7","Multidevises","Protection avancée"],
+        full:"CizaPay+ permet des paiements rapides et protégés..."
+    },
+    cizaimmo:{
+        title:"CizaImmo",
+        lines:["Achat & location","Gestion immobilière","Accompagnement diaspora","Transparence totale","Vérification complète"],
+        full:"CizaImmo accompagne les investisseurs et la diaspora..."
+    },
+    cizamarket:{
+        title:"CizaMarket",
+        lines:["Produits variés","Achats locaux","Commandes rapides","Livraison possible","Prix accessibles"],
+        full:"CizaMarket facilite vos achats avec un accès rapide..."
+    },
+    cizalog:{
+        title:"CizaLogistics",
+        lines:["Transport marchandises","Sécurisé","Suivi colis","Solutions entreprises","Livraison nationale"],
+        full:"CizaLogistics gère vos marchandises..."
+    },
+    cizatech:{
+        title:"CizaTech",
+        lines:["Solutions digitales","Développement","Maintenance","Sécurité","Innovation"],
+        full:"CizaTech fournit des solutions technologiques..."
+    },
+    cizajobs:{
+        title:"CizaJobs",
+        lines:["Emploi","CV pro","Orientation","Coaching","Plateforme stable"],
+        full:"CizaJobs connecte les demandeurs d’emploi..."
+    },
+    cizaacademy:{
+        title:"CizaAcademy",
+        lines:["Formations","Coaching"," Certifications","Apprentissage","Développement personnel"],
+        full:"CizaAcademy offre des formations professionnelles..."
+    },
+    cizagestion:{
+        title:"CizaGestion",
+        lines:["Gestion pro","Assistance","Support entreprises","Organisation","Fiabilité"],
+        full:"CizaGestion accompagne entreprises et particuliers..."
+    },
+    cizaassist:{
+        title:"CizaAssist",
+        lines:["Conciergerie","Services rapides","Accompagnement","Simplicité","Disponibilité"],
+        full:"CizaAssist prend en charge vos besoins quotidiens..."
+    },
+    cizacarwash:{
+        title:"CizaCarWash",
+        lines:["Nettoyage","Entretien","Rapide","Professionnel","Accessible"],
+        full:"CizaCarWash garantit un entretien professionnel..."
+    }
+};
+
+function openPopup(id){
+    currentService=id;
+
+    document.getElementById("pop-title").innerHTML=data[id].title;
+    document.getElementById("pop-line1").innerHTML=data[id].lines[0];
+    document.getElementById("pop-line2").innerHTML=data[id].lines[1];
+    document.getElementById("pop-line3").innerHTML=data[id].lines[2];
+    document.getElementById("pop-line4").innerHTML=data[id].lines[3];
+    document.getElementById("pop-line5").innerHTML=data[id].lines[4];
+    document.getElementById("fs-title").innerHTML=data[id].title;
+    document.getElementById("fs-text").innerHTML=data[id].full;
+
+    document.getElementById("popup-bg").style.display="flex";
+}
+
+function openFull(){
+    document.getElementById("popup-bg").style.display="none";
+    document.getElementById("full-screen").style.display="block";
+}
+
+function closeFull(){
+    document.getElementById("full-screen").style.display="none";
+}
+</script>
+
+</body>
+</html>
