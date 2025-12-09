@@ -4,203 +4,166 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>CIZA GROUP — Services</title>
+<title>CIZA GROUP — Services Burundi</title>
+
 <link rel="icon" href="logotransparent.png">
 
+<!-- STYLE GLOBAL -->
 <style>
-/* --- GLOBAL --- */
-body{
-    margin:0;
-    background:#06142e;
-    color:white;
-    font-family:Arial, sans-serif;
-}
+    body{
+        margin:0;
+        font-family: Arial, sans-serif;
+        color:white;
+        background: linear-gradient(180deg,#07142d,#020813,#000);
+        background-attachment: fixed;
+    }
 
-/* --- LOGO FLOTTANT DISCRET --- */
-body::before{
-    content:"";
-    position:fixed;
-    top:10%;
-    left:5%;
-    width:350px;
-    height:350px;
-    background:url('logotransparent.png') no-repeat center/contain;
-    opacity:0.04;
-    z-index:-1;
-    animation:floatLogo 18s infinite alternate ease-in-out;
-}
-@keyframes floatLogo{
-    from{transform:translate(0,0);}
-    to{transform:translate(40px,40px);}
-}
+    /* LOGO FLOTTANT */
+    .floating-logo{
+        position:fixed;
+        bottom:40px;right:40px;
+        width:80px;opacity:.08;
+        animation: float 6s ease-in-out infinite;
+        z-index:5;
+    }
+    @keyframes float{
+        0%{transform:translate(0,0);}
+        50%{transform:translate(15px,-15px);}
+        100%{transform:translate(0,0);}
+    }
 
-/* --- HEADER STICKY PREMIUM --- */
-header{
-    position:fixed;
-    top:0; left:0;
-    width:100%;
-    background:#06142ee6;
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid #0e2955;
-    padding:12px 25px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    z-index:999;
-}
-header .logo{
-    height:60px;
-}
-.back-btn{
-    font-size:28px;
-    color:#F2B840;
-    margin-right:15px;
-    cursor:pointer;
-}
-.nav-links{
-    display:flex;
-    gap:22px;
-}
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    font-size:15px;
-    opacity:.85;
-}
-.nav-links a:hover{
-    opacity:1;
-    color:#F2B840;
-}
-.lang-switch span{
-    margin-left:10px;
-    cursor:pointer;
-    opacity:.6;
-}
-.lang-switch .active{
-    color:#F2B840;
-    opacity:1;
-    font-weight:bold;
-}
+    /* HEADER */
+    header{
+        position:fixed;top:0;left:0;width:100%;
+        background:#06142eeb;
+        backdrop-filter:blur(6px);
+        padding:12px 18px;
+        display:flex;align-items:center;justify-content:space-between;
+        border-bottom:1px solid #0e2a50;
+        z-index:1000;
+    }
+    header img{
+        height:58px;
+    }
+    nav a{
+        margin-left:18px;
+        text-decoration:none;
+        color:white;
+        opacity:.85;
+        font-size:15px;
+    }
+    nav a:hover{
+        opacity:1;color:#F2B840;
+    }
 
-/* --- HERO PREMIUM --- */
-.hero{
-    padding:130px 20px 60px;
-    text-align:center;
-    background:linear-gradient(to bottom,#06142e,#071d3d);
-}
-.hero h1{
-    font-size:34px;
-    color:#F2B840;
-    margin-bottom:10px;
-}
-.hero p{
-    font-size:17px;
-    opacity:0.85;
-}
+    /* LANG SWITCH */
+    .lang-switch span{
+        margin-left:12px;
+        cursor:pointer;
+        opacity:.6;
+        font-weight:bold;
+    }
+    .lang-switch .active{
+        color:#F2B840;opacity:1;
+    }
 
-/* --- GRID SERVICES --- */
-.services{
-    padding:40px 25px;
-}
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:20px;
-}
-.card{
-    background:#0b1c34cc;
-    border:1px solid #10305c;
-    border-radius:14px;
-    padding:20px;
-    text-align:center;
-    cursor:pointer;
-    transition:.3s;
-}
-.card:hover{
-    transform:translateY(-5px) scale(1.03);
-    border-color:#F2B840;
-}
-.card-title{
-    font-size:18px;
-    font-weight:bold;
-    color:#F2B840;
-}
-.card p{
-    font-size:14px;
-    opacity:.75;
-    margin-top:8px;
-}
+    /* CONTAINER */
+    .container{
+        padding:130px 20px 30px;
+        max-width:1200px;margin:auto;
+    }
 
-/* --- POPUP NIVEAU 1 (PETIT DÉTAILS) --- */
-.popup-bg{
-    position:fixed;
-    top:0;left:0;
-    width:100%;height:100%;
-    background:#000000aa;
-    backdrop-filter:blur(4px);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:2000;
-}
-.popup{
-    width:90%;
-    max-width:420px;
-    background:#06142e;
-    padding:25px;
-    border-radius:18px;
-    border:1px solid #F2B840;
-    animation:fadeIn .4s;
-}
-.popup h3{
-    color:#F2B840;
-    margin-top:0;
-}
-.popup ul{
-    margin:0; padding-left:18px;
-}
-.popup ul li{
-    margin-bottom:6px;
-    font-size:14px;
-}
-.popup-btn{
-    margin-top:18px;
-    width:100%;
-    padding:12px;
-    font-size:16px;
-    background:#F2B840;
-    color:#06142e;
-    border:none;
-    border-radius:10px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
-}
-.popup-btn:hover{
-    background:#c99733;
-}
+    /* TITRES */
+    h2.section-title{
+        text-align:center;
+        font-size:28px;
+        color:#F2B840;
+        margin-bottom:8px;
+        font-weight:900;
+    }
+    .section-sub{
+        text-align:center;
+        font-size:15px;
+        opacity:.8;
+        margin-bottom:30px;
+    }
 
-@keyframes fadeIn{
-    from{opacity:0; transform:scale(.95);}
-    to{opacity:1; transform:scale(1);}
-}
+    /* LIGNE SOULIGNÉE */
+    .gold-line{
+        width:90px;height:3px;background:#F2B840;
+        border-radius:2px;margin:8px auto 25px;
+    }
+
+    /* GRID */
+    .grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+        gap:22px;
+    }
+
+    /* CARTES SERVICE */
+    .card{
+        background:#0b1c348a;
+        border:1px solid #13305c;
+        border-radius:14px;
+        padding:20px;
+        cursor:pointer;
+        transition:.3s;
+        position:relative;
+        overflow:hidden;
+    }
+    .card:hover{
+        transform:translateY(-6px);
+        border-color:#F2B840;
+    }
+
+    /* Watermark doré */
+    .card::before{
+        content:"";
+        position:absolute;
+        width:140px;height:140px;
+        bottom:-40px;right:-40px;
+        background:url('logotransparent.png');
+        background-size:contain;
+        opacity:.06;
+        transform:rotate(-20deg);
+    }
+
+    .emoji{
+        font-size:28px;margin-bottom:6px;
+    }
+    .card-title{
+        font-size:17px;
+        font-weight:bold;
+        color:#F2B840;
+        margin-bottom:6px;
+        text-decoration: underline 1px solid #F2B840;
+        text-underline-offset:4px;
+    }
+    .card p{
+        font-size:13px;
+        opacity:.75;
+    }
+
 </style>
 </head>
 
+
 <body>
+
+<!-- LOGO FLOTTANT -->
+<img src="logotransparent.png" class="floating-logo">
 
 <!-- HEADER -->
 <header>
-    <span class="back-btn" onclick="history.back()">←</span>
+    <img src="logotransparent.png">
 
-    <img src="logotransparent.png" class="logo">
-
-    <nav class="nav-links">
-        <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza">Accueil</a>
-        <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo">À propos</a>
-        <a href="business-diaspora.html" data-fr="Business Diaspora" data-en="Diaspora Business" data-ki="Ubucuruzi bw'Abadiaspora">Business Diaspora</a>
-        <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari">Investisseurs</a>
-        <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe">Contact</a>
+    <nav>
+        <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+        <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+        <a href="investisseurs.html" data-fr="Entreprises" data-en="Enterprises" data-ki="Ibigo"></a>
+        <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abarimyi"></a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
     </nav>
 
     <div class="lang-switch">
@@ -210,226 +173,354 @@ header .logo{
     </div>
 </header>
 
-<!-- HERO -->
-<div class="hero">
-    <h1 data-fr="Nos Services" data-en="Our Services" data-ki="Serivisi zacu">Nos Services</h1>
-    <p data-fr="Écosystème multiservices moderne & premium" 
-       data-en="Modern & premium multiservice ecosystem" 
-       data-ki="Serivisi zigezweho kandi ziryohereye">
-       Écosystème multiservices moderne & premium
-    </p>
-</div>
 
-<!-- SERVICES -->
-<section class="services">
-<div class="grid">
+<!-- SECTION INTRO -->
+<div class="container">
 
-    <div class="card" onclick="openPopup('cizaride')">
-        <div class="card-title">CizaRide+</div>
-        <p data-fr="Mobilité moderne" data-en="Modern mobility" data-ki="Ugutwara kwa none"></p>
-    </div>
+    <h2 class="section-title"
+        data-fr="Nos Services"
+        data-en="Our Services"
+        data-ki="Serivisi zacu"></h2>
 
-    <div class="card" onclick="openPopup('cizadelivery')">
-        <div class="card-title">CizaDelivery</div>
-        <p data-fr="Livraison rapide" data-en="Fast delivery" data-ki="Kuzana ibintu vyihuta"></p>
-    </div>
+    <div class="gold-line"></div>
 
-    <div class="card" onclick="openPopup('cizapay')">
-        <div class="card-title">CizaPay+</div>
-        <p data-fr="Paiement sécurisé" data-en="Secure payments" data-ki="Kuriha kwizewe"></p>
-    </div>
+    <p class="section-sub"
+        data-fr="Écosystème multiservices moderne & premium au Burundi"
+        data-en="Modern & premium multiservice ecosystem in Burundi"
+        data-ki="Serivisi zitandukanye zigezweho kandi z'ubwiza bwo hejuru mu Burundi"></p>    <!-- GRID DES SERVICES -->
+    <div class="grid">
 
-    <div class="card" onclick="openPopup('cizaimmo')">
-        <div class="card-title">CizaImmo</div>
-        <p data-fr="Immobilier & gestion" data-en="Real estate & management" data-ki="Ubutunzi bw'imitongo"></p>
-    </div>
+        <!-- 1. CizaRide+ -->
+        <div class="card" onclick="openPopup('cizaride')">
+            <div class="emoji">🚗</div>
+            <div class="card-title">CizaRide+</div>
+            <p data-fr="Transport moderne et sécurisé"
+               data-en="Modern and secure transport"
+               data-ki="Ugutwara kwizewe kandi kwa none"></p>
+        </div>
 
-    <div class="card" onclick="openPopup('cizamarket')">
-        <div class="card-title">CizaMarket</div>
-        <p data-fr="Produits & achats" data-en="Shopping & products" data-ki="Kugura ibintu"></p>
-    </div>
+        <!-- 2. CizaDelivery -->
+        <div class="card" onclick="openPopup('cizadelivery')">
+            <div class="emoji">📦</div>
+            <div class="card-title">CizaDelivery</div>
+            <p data-fr="Livraison rapide & fiable"
+               data-en="Fast & reliable delivery"
+               data-ki="Gutanga vyihuta kandi vyizewe"></p>
+        </div>
 
-    <div class="card" onclick="openPopup('cizalog')">
-        <div class="card-title">CizaLogistics</div>
-        <p data-fr="Transport & colis" data-en="Transport & parcels" data-ki="gutwara ibintu neza"></p>
-    </div>
+        <!-- 3. CizaPay+ -->
+        <div class="card" onclick="openPopup('cizapay')">
+            <div class="emoji">💳</div>
+            <div class="card-title">CizaPay+</div>
+            <p data-fr="Paiements sécurisés"
+               data-en="Secure payments"
+               data-ki="Kuriha kwizewe"></p>
+        </div>
 
-    <div class="card" onclick="openPopup('cizatech')">
-        <div class="card-title">CizaTech</div>
-        <p data-fr="Solutions digitales" data-en="Digital solutions" data-ki="Ubuhinga ngurukanabumenyi"></p>
-    </div>
+        <!-- 4. CizaImmo -->
+        <div class="card" onclick="openPopup('cizaimmo')">
+            <div class="emoji">🏠</div>
+            <div class="card-title">CizaImmo</div>
+            <p data-fr="Immobilier & gestion"
+               data-en="Real estate & management"
+               data-ki="Ubutunzi bw’imitongo"></p>
+        </div>
 
-    <div class="card" onclick="openPopup('cizajobs')">
-        <div class="card-title">CizaJobs</div>
-        <p data-fr="Emploi & CV" data-en="Jobs & CV" data-ki="Akazi & Ubuzima"></p>
-    </div>
+        <!-- 5. CizaMarket -->
+        <div class="card" onclick="openPopup('cizamarket')">
+            <div class="emoji">🛒</div>
+            <div class="card-title">CizaMarket</div>
+            <p data-fr="Produits & achats"
+               data-en="Shopping & products"
+               data-ki="Gugura ibintu bitandukanye"></p>
+        </div>
 
-    <div class="card" onclick="openPopup('cizaacademy')">
-        <div class="card-title">CizaAcademy</div>
-        <p data-fr="Formations" data-en="Training" data-ki="Amahugurwa"></p>
-    </div>
+        <!-- 6. CizaLogistics -->
+        <div class="card" onclick="openPopup('cizalogistics')">
+            <div class="emoji">🚚</div>
+            <div class="card-title">CizaLogistics</div>
+            <p data-fr="Transport & colis"
+               data-en="Transport & parcels"
+               data-ki="Gutanga ibintu n’ibidandazwa"></p>
+        </div>
 
-    <div class="card" onclick="openPopup('cizagestion')">
-        <div class="card-title">CizaGestion</div>
-        <p data-fr="Gestion & assistance" data-en="Management & assistance" data-ki="ubuyobozi bwihuse"></p>
-    </div>
+        <!-- 7. CizaTech -->
+        <div class="card" onclick="openPopup('cizatech')">
+            <div class="emoji">💻</div>
+            <div class="card-title">CizaTech</div>
+            <p data-fr="Solutions digitales"
+               data-en="Digital solutions"
+               data-ki="Ubuhinga ngurukanabumenyi"></p>
+        </div>
 
-    <div class="card" onclick="openPopup('cizaassist')">
-        <div class="card-title">CizaAssist</div>
-        <p data-fr="Conciergerie" data-en="Concierge" data-ki="Ibagurirwa bwihuse"></p>
-    </div>
+        <!-- 8. CizaJobs -->
+        <div class="card" onclick="openPopup('cizajobs')">
+            <div class="emoji">👔</div>
+            <div class="card-title">CizaJobs</div>
+            <p data-fr="Emploi & CV"
+               data-en="Jobs & CV"
+               data-ki="Akazi & Umwuga"></p>
+        </div>
 
-    <div class="card" onclick="openPopup('cizacarwash')">
-        <div class="card-title">CizaCarWash</div>
-        <p data-fr="Lavage & entretien" data-en="Car wash & care" data-ki="Gukara imodoka"></p>
-    </div>
+        <!-- 9. CizaAcademy -->
+        <div class="card" onclick="openPopup('cizaacademy')">
+            <div class="emoji">🎓</div>
+            <div class="card-title">CizaAcademy</div>
+            <p data-fr="Formations professionnelles"
+               data-en="Professional training"
+               data-ki="Amahugurwa y’umwuga"></p>
+        </div>
 
-</div>
-</section>
+        <!-- 10. CizaAssist -->
+        <div class="card" onclick="openPopup('cizaassist')">
+            <div class="emoji">🤝</div>
+            <div class="card-title">CizaAssist</div>
+            <p data-fr="Conciergerie & assistance"
+               data-en="Concierge & support"
+               data-ki="Ibagurirwa n’ugufashwa"></p>
+        </div>
 
-<!-- POPUP NIVEAU 1 (PETITS DÉTAILS) -->
+        <!-- 11. CizaCarWash -->
+        <div class="card" onclick="openPopup('cizacarwash')">
+            <div class="emoji">🚘</div>
+            <div class="card-title">CizaCarWash & AutoCare</div>
+            <p data-fr="Lavage • Entretien • Réparation"
+               data-en="Wash • Care • Auto repair"
+               data-ki="Kwoza • Kuraba neza • Gukora imodoka"></p>
+        </div>
+
+    </div> <!-- fin grid -->
+
+</div> <!-- fin container -->
+
+
+
+<!-- POPUP COURT (NIVEAU 1) -->
+<style>
+.popup-bg{
+    position:fixed;top:0;left:0;width:100%;height:100%;
+    background:#000000a9;backdrop-filter:blur(3px);
+    display:none;align-items:center;justify-content:center;
+    z-index:2000;
+}
+.popup{
+    background:#06142e;
+    width:90%;max-width:420px;
+    padding:25px;border-radius:16px;
+    border:1px solid #F2B840;
+    animation:fadeIn .4s;
+}
+.popup h3{
+    margin-top:0;color:#F2B840;font-size:22px;
+}
+.popup ul{
+    padding-left:18px;
+}
+.popup li{
+    margin-bottom:6px;font-size:14px;
+    opacity:.85;
+}
+.popup-btn{
+    width:100%;background:#F2B840;
+    color:#06142e;font-weight:bold;
+    padding:12px;border:none;border-radius:10px;
+    margin-top:20px;cursor:pointer;
+}
+.popup-btn:hover{background:#c99a33;}
+</style>
+
 <div class="popup-bg" id="popup-bg">
     <div class="popup">
         <h3 id="pop-title"></h3>
         <ul id="pop-list"></ul>
         <button class="popup-btn" onclick="openFull()">Plus de détails</button>
     </div>
-</div><!-- POPUP FULLSCREEN (LONG DETAILS) -->
-<div id="full-screen" class="full-screen" style="
-    display:none;
-    position:fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background:#06142eff;
-    padding:80px 25px;
-    overflow-y:auto;
-    z-index:3000;
-">
-    <span onclick="closeFull()" style="
-        position:fixed;
-        top:20px; right:20px;
-        font-size:32px;
-        color:#F2B840;
-        cursor:pointer;
-    ">✕</span>
+</div>
 
-    <h2 id="fs-title" style="color:#F2B840; margin-top:0;"></h2>
-    <p id="fs-text" style="line-height:1.6; opacity:.9;"></p>
 
-    <div class="contact-box" style="
-        background:#0b1c34;
-        padding:20px;
-        margin-top:30px;
-        border-left:4px solid #F2B840;
-        border-radius:12px;
-    ">
-        <h3 style="color:#F2B840; margin-top:0;">Contact</h3>
-        <a href="https://wa.me/25779945007" style="color:#F2B840; text-decoration:none; display:block; margin-top:8px;">WhatsApp Burundi</a>
-        <a href="https://wa.me/15145029503" style="color:#F2B840; text-decoration:none; display:block; margin-top:8px;">WhatsApp Canada</a>
-        <a href="mailto:infos@cizagroup.com" style="color:#F2B840; text-decoration:none; display:block; margin-top:8px;">infos@cizagroup.com</a>
-        <a href="contact.html" style="color:#F2B840; text-decoration:none; display:block; margin-top:8px;">Formulaire complet →</a>
+
+<!-- POPUP LONG (NIVEAU 2) -->
+<style>
+.fullscreen{
+    position:fixed;top:0;left:0;width:100%;height:100%;
+    background:#020814;overflow-y:auto;
+    padding:90px 25px 40px;
+    display:none;z-index:3000;
+}
+.fullscreen h2{
+    color:#F2B840;margin-top:0;
+    font-size:26px;font-weight:900;
+}
+.fullscreen p{
+    line-height:1.6;font-size:15px;opacity:.9;
+}
+
+.back-full, .close-full{
+    position:fixed;top:20px;
+    font-size:30px;color:#F2B840;
+    cursor:pointer;font-weight:bold;
+}
+.back-full{left:20px;}
+.close-full{right:20px;}
+
+.contact-box{
+    margin-top:25px;
+    background:#0b1c34;
+    padding:18px;border-radius:12px;
+    border-left:4px solid #F2B840;
+}
+.contact-box a{
+    text-decoration:none;color:#F2B840;
+    display:block;margin:6px 0;font-size:16px;
+}
+</style>
+
+<div class="fullscreen" id="full-screen">
+
+    <span class="back-full" onclick="closeFull()">←</span>
+    <span class="close-full" onclick="closeFull()">✕</span>
+
+    <h2 id="fs-title"></h2>
+    <p id="fs-text"></p>
+
+    <div class="contact-box">
+        <a href="https://wa.me/25779945007">WhatsApp Burundi</a>
+        <a href="https://wa.me/15145029503">WhatsApp Canada</a>
+        <a href="mailto:infos@cizagroup.com">infos@cizagroup.com</a>
+        <a href="contact.html">Formulaire complet →</a>
+    </div>
+
+</div><!-- SECTION : POURQUOI CIZA GROUP -->
+<div class="container" style="margin-top:40px;">
+
+    <h2 class="section-title"
+        data-fr="Pourquoi choisir CIZA GROUP ?"
+        data-en="Why choose CIZA GROUP?"
+        data-ki="Inyungu yo guhitamwo CIZA GROUP"></h2>
+
+    <div class="gold-line"></div>
+
+    <div class="grid">
+
+        <div class="card" style="cursor:default;">
+            <div class="emoji">⭐</div>
+            <div class="card-title"
+                 data-fr="Tupo Garantie"
+                 data-en="Tupo Guarantee"
+                 data-ki="Tupo Garantie"></div>
+            <p data-fr="Un engagement total envers la qualité et la satisfaction."
+               data-en="A total commitment to quality and satisfaction."
+               data-ki="Isezerano ku bwiza n’ukunezera abakiriya."></p>
+        </div>
+
+        <div class="card" style="cursor:default;">
+            <div class="emoji">🔒</div>
+            <div class="card-title"
+                 data-fr="Sécurité Totale"
+                 data-en="Total Security"
+                 data-ki="Umutekano usesuye"></div>
+            <p data-fr="Des services contrôlés, fiables et certifiés."
+               data-en="Controlled, reliable and certified services."
+               data-ki="Serivisi zicunguwe kandi zizewe."></p>
+        </div>
+
+        <div class="card" style="cursor:default;">
+            <div class="emoji">⚡</div>
+            <div class="card-title"
+                 data-fr="Rapidité & Efficacité"
+                 data-en="Speed & Efficiency"
+                 data-ki="Ubwangu n’ubushobozi"></div>
+            <p data-fr="Des solutions adaptées pour gagner du temps."
+               data-en="Solutions designed to save time."
+               data-ki="Inzira z’ubwangu kugira ngo wunguke umwanya."></p>
+        </div>
+
+        <div class="card" style="cursor:default;">
+            <div class="emoji">🌍</div>
+            <div class="card-title"
+                 data-fr="Diaspora & Local"
+                 data-en="Diaspora & Local"
+                 data-ki="Abadiaspora n’abanyagihugu"></div>
+            <p data-fr="Un pont entre les Burundais du pays et de l'étranger."
+               data-en="A bridge between Burundians at home and abroad."
+               data-ki="Ukoreshwa kw’abantu bo mu gihugu no hanze."></p>
+        </div>
+
+        <div class="card" style="cursor:default;">
+            <div class="emoji">📑</div>
+            <div class="card-title"
+                 data-fr="Transparence Totale"
+                 data-en="Total Transparency"
+                 data-ki="Ukuri guhambaye"></div>
+            <p data-fr="Chaque service est détaillé, clair et vérifiable."
+               data-en="Every service is detailed, clear and verifiable."
+               data-ki="Serivisi zose zisobanutse neza kandi zibarizwa."></p>
+        </div>
+
     </div>
 </div>
 
-<!-- SECTION POURQUOI NOUS -->
-<section style="padding:50px 25px; background:#071b34;">
-    <h2 style="text-align:center; color:#F2B840; margin-bottom:35px;">Pourquoi choisir CIZA GROUP ?</h2>
 
-    <div style="
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-        gap:20px;
-    ">
-        <div style="background:#0b1c34; border:1px solid #10305c; border-radius:14px; padding:20px;">
-            <h4 style="color:#F2B840;">Tupo Garantie</h4>
-            <p style="opacity:.75;">Exécution transparente, respect du client, suivi complet, engagement total.</p>
-        </div>
-        <div style="background:#0b1c34; border:1px solid #10305c; border-radius:14px; padding:20px;">
-            <h4 style="color:#F2B840;">Sécurité totale</h4>
-            <p style="opacity:.75;">Procédures sécurisées, confirmations, paiements protégés, contrôle qualité permanent.</p>
-        </div>
-        <div style="background:#0b1c34; border:1px solid #10305c; border-radius:14px; padding:20px;">
-            <h4 style="color:#F2B840;">Diaspora & Local</h4>
-            <p style="opacity:.75;">Une plateforme pensée pour ceux au pays et ceux à l’étranger.</p>
-        </div>
-        <div style="background:#0b1c34; border:1px solid #10305c; border-radius:14px; padding:20px;">
-            <h4 style="color:#F2B840;">Écosystème complet</h4>
-            <p style="opacity:.75;">Mobilité, immobilier, livraison, achats, tech, gestion, emploi… tout en un.</p>
-        </div>
-        <div style="background:#0b1c34; border:1px solid #10305c; border-radius:14px; padding:20px;">
-            <h4 style="color:#F2B840;">Rapidité & efficacité</h4>
-            <p style="opacity:.75;">Nos équipes répondent rapidement avec des solutions fiables.</p>
-        </div>
+
+<!-- FOOTER PREMIUM -->
+<footer style="margin-top:60px;background:#01050c;padding:30px;text-align:center;font-size:13px;opacity:.85;">
+
+    <img src="logotransparent.png" style="width:70px;opacity:.10;margin-bottom:10px;">
+
+    <div style="margin-bottom:8px;opacity:.8;">
+        📍 Bujumbura, Burundi
     </div>
-</section>
 
-<!-- FOOTER -->
-<footer style="
-    background:#020a16; 
-    padding:30px;
-    text-align:center;
-    margin-top:30px;
-    color:white;
-    opacity:.85;
-    border-top:1px solid #0e2955;
-">
-    <img src="logotransparent.png" style="height:45px; opacity:.4;"><br><br>
-    © 2026 CIZA GROUP — Tous droits réservés.<br>
-    <a href="mentions-legales.html" style="color:#F2B840; text-decoration:none; margin-right:10px;">Mentions légales</a>
-    <a href="confidentialite.html" style="color:#F2B840; text-decoration:none; margin-right:10px;">Confidentialité</a>
-    <a href="cgu.html" style="color:#F2B840; text-decoration:none;">CGU</a>
+    <div style="margin-bottom:10px;">
+        <a href="https://instagram.com/cizagroup_official" style="color:#F2B840;margin:0 6px;text-decoration:none;">📸 Instagram</a>
+        <a href="https://facebook.com/cizagroup_official" style="color:#F2B840;margin:0 6px;text-decoration:none;">👍 Facebook</a>
+        <a href="https://youtube.com/@cizagroup_official" style="color:#F2B840;margin:0 6px;text-decoration:none;">▶️ YouTube</a>
+    </div>
+
+    <div style="margin-bottom:10px;opacity:.7;">
+        <a href="#" style="color:#F2B840;margin:0 8px;text-decoration:none;">Mentions légales</a>
+        <a href="#" style="color:#F2B840;margin:0 8px;text-decoration:none;">Confidentialité</a>
+        <a href="#" style="color:#F2B840;margin:0 8px;text-decoration:none;">CGU</a>
+    </div>
+
+    <div style="opacity:.55;">
+        © 2026 CIZA GROUP — Tous droits réservés.  
+        <br>Dernière mise à jour : 2026
+    </div>
 </footer>
 
+
+
 <!-- COOKIES BANNER -->
-<div id="cookie-banner" style="
-    position:fixed;
-    bottom:20px; left:20px; right:20px;
-    background:#0b1c34;
-    border:1px solid #10305c;
-    padding:20px;
-    border-radius:14px;
+<style>
+#cookie-banner{
+    position:fixed;bottom:0;left:0;width:100%;
+    background:#07142dcc;
+    padding:15px;text-align:center;
+    font-size:14px;color:white;
+    backdrop-filter:blur(6px);
     display:none;
-    z-index:9999;
-">
-    <p style="margin:0 0 10px 0; opacity:.85;">
-        Ce site utilise des cookies pour améliorer votre expérience.
-    </p>
-    <button onclick="acceptCookies()" style="
-        background:#F2B840;
-        color:#06142e;
-        padding:10px 16px;
-        border:none;
-        border-radius:8px;
-        cursor:pointer;
-        font-weight:bold;
-        margin-right:10px;
-    ">Accepter</button>
-    <button onclick="refuseCookies()" style="
-        background:#10305c;
-        color:white;
-        padding:10px 16px;
-        border:none;
-        border-radius:8px;
-        cursor:pointer;
-    ">Refuser</button>
+    z-index:5000;
+}
+#cookie-banner button{
+    background:#F2B840;color:#06142e;
+    border:none;padding:8px 14px;
+    border-radius:6px;margin-left:10px;
+    cursor:pointer;font-weight:bold;
+}
+</style>
+
+<div id="cookie-banner">
+    Ce site utilise des cookies pour améliorer votre expérience.
+    <button onclick="acceptCookies()">Accepter</button>
+    <button onclick="declineCookies()">Refuser</button>
 </div>
 
-<!-- SCRIPT -->
-<script>
-/* --- COOKIES --- */
-if(!localStorage.getItem("cookiesChoice")){
-    document.getElementById("cookie-banner").style.display = "block";
-}
-function acceptCookies(){
-    localStorage.setItem("cookiesChoice","accepted");
-    document.getElementById("cookie-banner").style.display="none";
-}
-function refuseCookies(){
-    localStorage.setItem("cookiesChoice","refused");
-    document.getElementById("cookie-banner").style.display="none";
-}
 
-/* --- LANG SWITCH --- */
+
+<!-- SCRIPT JS -->
+<script>
+/* LANG SWITCH */
 function setLang(l){
     document.querySelectorAll("[data-fr]").forEach(el=>{
         el.innerHTML = el.dataset[l];
@@ -438,81 +529,212 @@ function setLang(l){
     document.getElementById("lg-en").classList.remove("active");
     document.getElementById("lg-ki").classList.remove("active");
     document.getElementById("lg-"+l).classList.add("active");
-
-    updateFullText();
 }
 setLang("fr");
 
-/* --- POPUP DATA (PETITS DÉTAILS + FULL LONG TEXT) --- */
-let currentService="";
 
-const serviceData={
+
+/* POPUP DATA */
+const servicesData = {
+
     cizaride:{
-        title:"CizaRide+",
+        title:"🚗 CizaRide+",
         short:[
-            "Mobilité moderne",
-            "Chauffeurs formés",
-            "Service rapide",
-            "Paiement sécurisé",
-            "Disponible partout"
+            "Chauffeurs formés et certifiés",
+            "Sécurité maximale",
+            "Disponibilité 24/7",
+            "Paiement local & diaspora",
+            "Service rapide et premium"
         ],
-        long:{
-            fr:`CizaRide+ est une solution moderne de transport au Burundi, pensée pour offrir un déplacement simple, rapide et sécurisé...`,
-            en:`CizaRide+ is a modern mobility solution in Burundi designed for fast, simple and secure transportation...`,
-            ki:`CizaRide+ ni uburyo bwo gutwara abantu bw’iki gihe, bwihuta kandi bwizigirwa...`
-        }
+        long:`CizaRide+ est une solution moderne de transport sécurisé, conçue pour offrir une
+        expérience fluide aux Burundais et à la diaspora. Nos chauffeurs sont vérifiés, formés et
+        engagés à garantir ponctualité, sécurité et confort. Grâce à une plateforme avancée, vous
+        pouvez commander un trajet rapidement, suivre votre chauffeur et payer selon vos
+        préférences (mobile money, cash ou diaspora).`
     },
 
     cizadelivery:{
-        title:"CizaDelivery",
+        title:"📦 CizaDelivery",
         short:[
             "Livraison rapide",
             "Courses pour vous",
-            "Suivi en temps réel",
-            "Fiabilité",
-            "Paiement sécurisé"
+            "Sécurisé & fiable",
+            "Disponible partout",
+            "Prix accessibles"
         ],
-        long:{
-            fr:`CizaDelivery assure vos livraisons, vos courses et vos envois avec rapidité, transparence et suivi constant...`,
-            en:`CizaDelivery handles deliveries, errands and package transport with speed, transparency and real-time tracking...`,
-            ki:`CizaDelivery irakurikirana ivyo utumye n’ivyo wategesheje vyose mu kwirikiza vyihuta kandi vyizigirwa...`
-        }
+        long:`CizaDelivery prend en charge vos colis, vos courses, vos achats et vos besoins
+        logistiques du quotidien. Nos livreurs sont formés pour assurer une livraison rapide et
+        soignée, avec possibilité de suivi et confirmation de réception. Idéal pour particuliers,
+        commerces et diaspora qui souhaitent envoyer ou recevoir des biens au Burundi.`
     },
 
-    /* ajoute ici les 10 autres services selon ton besoin */
+    cizapay:{
+        title:"💳 CizaPay+",
+        short:[
+            "Paiements rapides",
+            "Sécurisé & contrôlé",
+            "Support 24/7",
+            "Diaspora ⇒ Burundi",
+            "Transactions simplifiées"
+        ],
+        long:`CizaPay+ facilite vos paiements nationaux et internationaux. Une solution fiable,
+        sécurisée et simple pour la population locale, les entreprises et la diaspora. Notre
+        technologie garantit une protection avancée des transactions et un support continu.`
+    },
+
+    cizaimmo:{
+        title:"🏠 CizaImmo",
+        short:[
+            "Achat & Location",
+            "Gestion immobilière",
+            "Accompagnement diaspora",
+            "Transparence totale",
+            "Vérification complète"
+        ],
+        long:`CizaImmo accompagne les investisseurs, la diaspora et les familles burundaises dans
+        leurs projets immobiliers : achats, locations, suivi de construction, gestion locative et
+        vérification. Nous garantissons une transparence totale et un suivi professionnel.` 
+    },
+
+    cizamarket:{
+        title:"🛒 CizaMarket",
+        short:[
+            "Produits variés",
+            "Achats locaux",
+            "Commandes rapides",
+            "Livraison disponible",
+            "Prix abordables"
+        ],
+        long:`CizaMarket vous permet d'acheter facilement des produits locaux, des articles
+        essentiels et des biens du quotidien. Service idéal pour la population locale et la diaspora
+        souhaitant commander pour leurs familles au Burundi.`
+    },
+
+    cizalogistics:{
+        title:"🚚 CizaLogistics",
+        short:[
+            "Transport marchandises",
+            "Sécurisé",
+            "Solutions entreprises",
+            "Suivi colis",
+            "Couverture nationale"
+        ],
+        long:`CizaLogistics offre des solutions complètes pour particuliers, commerces et
+        entreprises. Transport de colis, marchandises, matériels et solutions logistiques
+        professionnelles. Sécurité, rapidité et suivi garanti.`
+    },
+
+    cizatech:{
+        title:"💻 CizaTech",
+        short:[
+            "Solutions digitales",
+            "Développement web",
+            "Sécurité informatique",
+            "Maintenance",
+            "Innovation continue"
+        ],
+        long:`CizaTech développe des solutions digitales modernes : sites web, systèmes
+        d’entreprise, applications, cybersécurité et maintenance. Destiné aux petites entreprises,
+        institutions, projets personnels et innovateurs.`
+    },
+
+    cizajobs:{
+        title:"👔 CizaJobs",
+        short:[
+            "Offres d’emploi",
+            "Création de CV pro",
+            "Coaching entretien",
+            "Orientation carrière",
+            "Plateforme stable"
+        ],
+        long:`CizaJobs met en relation les talents burundais avec les meilleures opportunités
+        d’emploi. Nous aidons également à créer des CV professionnels, préparer les entretiens et
+        orienter les candidats vers les bonnes carrières.`
+    },
+
+    cizaacademy:{
+        title:"🎓 CizaAcademy",
+        short:[
+            "Formations pro",
+            "Certifications",
+            "Coaching individuel",
+            "Apprentissage rapide",
+            "Développement personnel"
+        ],
+        long:`CizaAcademy propose des formations modernes destinées à la jeunesse, aux
+        entreprises et aux professionnels. Développement personnel, informatique, business,
+        entrepreneuriat et certifications diverses.`
+    },
+
+    cizaassist:{
+        title:"🤝 CizaAssist",
+        short:[
+            "Conciergerie premium",
+            "Aide administrative",
+            "Accompagnement",
+            "Disponibilité 24/7",
+            "Simplicité totale"
+        ],
+        long:`CizaAssist aide les familles, entreprises, particuliers et diaspora dans les tâches
+        quotidiennes et administratives. Assistance complète, accompagnement et rapidité
+        garantie.`
+    },
+
+    cizacarwash:{
+        title:"🚘 CizaCarWash & AutoCare",
+        short:[
+            "Lavage complet",
+            "Entretien intérieur",
+            "Polissage",
+            "Réparation mécanique",
+            "Service rapide"
+        ],
+        long:`CizaCarWash & AutoCare offre un service automobile complet : lavage premium
+        intérieur/extérieur, entretien, polissage et réparation mécanique. Un service fiable pour
+        particuliers, chauffeurs, entreprises et flotte de véhicules.`
+    }
+
 };
 
-/* --- OPEN POPUP 1 --- */
-function openPopup(id){
-    currentService=id;
-    document.getElementById("pop-title").innerHTML = serviceData[id].title;
 
-    let listHTML="";
-    serviceData[id].short.forEach(i=>{
-        listHTML += `<li>${i}</li>`;
-    });
-    document.getElementById("pop-list").innerHTML=listHTML;
+/* OPEN POPUP COURT */
+function openPopup(id){
+    document.getElementById("pop-title").innerText = servicesData[id].title;
+    document.getElementById("pop-list").innerHTML =
+        servicesData[id].short.map(li=>`<li>${li}</li>`).join("");
 
     document.getElementById("popup-bg").style.display="flex";
+
+    window.currentService = id;
 }
 
-/* --- OPEN POPUP FULLSCREEN --- */
+/* OPEN POPUP LONG */
 function openFull(){
     document.getElementById("popup-bg").style.display="none";
-    updateFullText();
+
+    const id = window.currentService;
+    document.getElementById("fs-title").innerText = servicesData[id].title;
+    document.getElementById("fs-text").innerText = servicesData[id].long;
+
     document.getElementById("full-screen").style.display="block";
 }
-
-/* --- UPDATE LONG TEXT ACCORDING TO LANGUAGE --- */
-function updateFullText(){
-    let lang=document.querySelector(".lang-switch .active").id.replace("lg-","");
-    document.getElementById("fs-title").innerHTML = serviceData[currentService].title;
-    document.getElementById("fs-text").innerHTML = serviceData[currentService].long[lang];
-}
-
-/* --- CLOSE FULL --- */
 function closeFull(){
     document.getElementById("full-screen").style.display="none";
+}
+
+
+
+/* COOKIES */
+function acceptCookies(){
+    localStorage.setItem("cizaCookies","accepted");
+    document.getElementById("cookie-banner").style.display="none";
+}
+function declineCookies(){
+    localStorage.setItem("cizaCookies","declined");
+    document.getElementById("cookie-banner").style.display="none";
+}
+if(!localStorage.getItem("cizaCookies")){
+    document.getElementById("cookie-banner").style.display="block";
 }
 </script>
 
