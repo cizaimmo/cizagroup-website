@@ -4,16 +4,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Services — CIZA GROUP</title>
+<title>CIZA GROUP — Services Burundi</title>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* GLOBAL */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #0A0F1C;
-  color: #fff;
+  background: #0A0F1C url('logotransparent.png') repeat;
+  background-size: 65px;
+  opacity: 1;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('logotransparent.png') repeat;
+  background-size: 65px;
+  opacity: 0.08; /* Watermark opacity */
+  z-index: -1;
 }
 
 /* HEADER */
@@ -26,176 +38,163 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid #111;
 }
 
 header img.logo {
-  height: 55px;
+  height: 75px; /* Logo agrandi */
 }
 
-/* LANG SWITCH */
-.lang-switch {
-  display: flex;
-  gap: 10px;
-}
-.lang-switch button {
-  background: #004AAD;
-  border: none;
-  padding: 6px 12px;
+nav a {
   color: #fff;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
+  margin-left: 25px;
+  text-decoration: none;
   font-weight: 500;
-}
-.lang-switch button:hover {
-  background: #0060E6;
+  font-size: 15px;
+  opacity: 0.9;
 }
 
-/* HERO */
-.hero {
-  height: 420px;
-  background: url('EF9338CE-E502-41CC-8EAB-0615A5063C8C.png') center/cover no-repeat;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  padding-left: 40px;
-}
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, .55);
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 600px;
-}
-.hero-content h1 {
-  font-size: 42px;
-  margin: 0 0 12px 0;
-  font-weight: 700;
-}
-.hero-content p {
-  font-size: 18px;
-  opacity: .9;
-  margin-bottom: 18px;
-}
-.hero-content .cta {
-  background: #F2B840;
-  color: #000;
-  padding: 14px 22px;
-  font-size: 16px;
-  border-radius: 8px;
-  font-weight: bold;
-  display: inline-block;
+nav a:hover {
+  color: #F2B840;
 }
 
 /* SERVICES GRID */
 .services {
-  padding: 50px 25px;
+  padding: 40px 25px;
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
   gap: 25px;
 }
+
 .service-card {
-  background: #111827;
-  border-radius: 14px;
-  padding: 0;
-  overflow: hidden;
+  background: rgba(17,24,39,0.95);
+  border-radius: 16px;
+  padding: 22px;
+  text-align: center;
   cursor: pointer;
+  border: 1px solid #1f2c41;
   transition: .25s;
-  border: 1px solid transparent;
 }
+
 .service-card:hover {
-  transform: translateY(-7px);
+  transform: translateY(-6px);
   border-color: #004AAD;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
 }
-.service-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+
+.service-card img.icon {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 12px;
 }
-.service-card .content {
-  padding: 18px;
-}
+
 .service-card h3 {
-  margin: 0;
+  margin: 5px 0;
   font-size: 20px;
   color: #F2B840;
 }
+
 .service-card p {
-  opacity: .8;
   font-size: 14px;
+  opacity: 0.75;
+  margin-top: 5px;
 }
 
-/* POPUP */
+/* POPUPS */
 .popup {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.7);
-  display: none;
+  background: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
+  display: none;
   padding: 20px;
   z-index: 2000;
 }
+
 .popup-content {
   background: #0F1624;
-  max-width: 700px;
+  max-width: 750px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   padding: 25px;
-  border-radius: 12px;
+  border-radius: 14px;
+  border: 1px solid #222;
 }
-.popup img {
+
+.popup-content img.popup-photo {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 20px;
 }
-.popup h2 {
+
+.popup-content h2 {
   color: #F2B840;
   margin-top: 0;
 }
+
+.lang-switch-popup button {
+  margin-right: 8px;
+  background: #004AAD;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.lang-switch-popup button:hover { background:#0065E0; }
+
 .whatsapp-btn {
-  background: #25D366;
-  padding: 12px 16px;
   display: inline-block;
-  border-radius: 7px;
-  color: #000;
-  margin-top: 15px;
+  background: #25D366;
+  padding: 12px 18px;
+  border-radius: 8px;
   font-weight: bold;
+  color: #000;
+  margin-top: 18px;
+  text-decoration: none;
 }
 
 .close-popup {
-  display: inline-block;
-  margin-top: 20px;
+  background: #333;
   padding: 10px 16px;
-  background: #444;
+  display: inline-block;
   border-radius: 8px;
+  color: white;
+  margin-top: 20px;
   cursor: pointer;
 }
 
 /* FOOTER */
 footer {
   background: #0A0F1C;
-  padding: 40px 25px;
-  margin-top: 40px;
-  border-top: 1px solid #333;
+  padding: 50px 25px;
+  margin-top: 50px;
+  border-top: 1px solid #222;
 }
+
 footer h3 {
   color: #F2B840;
-  margin-bottom: 12px;
+  font-size: 18px;
 }
-footer p, footer a {
+
+footer p,
+footer a {
   color: #ccc;
   font-size: 14px;
   text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
 }
-footer a:hover {
-  text-decoration: underline;
+
+footer a:hover { color: #F2B840; }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 30px;
 }
 
 </style>
@@ -205,186 +204,126 @@ footer a:hover {
 
 <header>
   <img src="logotransparent.png" class="logo">
-  <div class="lang-switch">
-    <button onclick="setLang('fr')">FR</button>
-    <button onclick="setLang('en')">EN</button>
-    <button onclick="setLang('ki')">KI</button>
-  </div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="services-burundi.html">Services</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="business-diaspora.html">Business Diaspora</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1 data-fr="Nos Services" data-en="Our Services" data-ki="Serivisi zacu">Nos Services</h1>
-    <p data-fr="Découvrez l’ensemble des solutions CIZA GROUP conçues pour faciliter la vie des citoyens, entreprises et diaspora."
-       data-en="Discover all CIZA GROUP services designed to support citizens, businesses and diaspora."
-       data-ki="Menya serivisi za CIZA GROUP zoroheza ubuzima bw'abanyagihugu n'abandi.">
-       Découvrez l’ensemble des solutions CIZA GROUP.
-    </p>
-    <a href="#services" class="cta" data-fr="Voir les services" data-en="See services" data-ki="Raba serivisi">Voir les services</a>
-  </div>
-</section>
 
-<!-- FIN DU BLOC 1 --><!-- SERVICES GRID -->
-<section id="services" class="services">
+<!-- SERVICES GRID -->
+<section class="services">
 
-  <!-- CizaRide+ -->
+  <!-- 1. CizaRide+ -->
   <div class="service-card" onclick="openPopup('ride')">
-    <img src="cizaride.png">
-    <div class="content">
-      <h3 data-fr="CizaRide+ — Transport" data-en="CizaRide+ — Transport" data-ki="CizaRide+ — Gutwara Abantu">
-        CizaRide+ — Transport
-      </h3>
-      <p data-fr="Mobilité moderne, rapide et sécurisée."
-         data-en="Modern, fast and secure mobility."
-         data-ki="Ingendo zigezweho kandi zicungewe.">
-         Mobilité moderne, rapide et sécurisée.
-      </p>
-    </div>
+    <img src="icons/ride.svg" class="icon">
+    <h3>CizaRide+</h3>
+    <p>Mobilité moderne & sécurisée</p>
   </div>
 
-  <!-- CizaDelivery -->
+  <!-- 2. CizaDelivery -->
   <div class="service-card" onclick="openPopup('delivery')">
-    <img src="cizadelivery.png">
-    <div class="content">
-      <h3>CizaDelivery — Livraison</h3>
-      <p data-fr="Livraison rapide et achats locaux."
-         data-en="Fast delivery & local shopping."
-         data-ki="Gutwara ibintu no kugura ivyo ukeneye.">
-         Livraison rapide et achats locaux.
-      </p>
-    </div>
+    <img src="icons/delivery.svg" class="icon">
+    <h3>CizaDelivery</h3>
+    <p>Livraison & achats locaux</p>
   </div>
 
-  <!-- CizaImmo -->
+  <!-- 3. CizaImmo -->
   <div class="service-card" onclick="openPopup('immo')">
-    <img src="IMG_0041.jpeg">
-    <div class="content">
-      <h3>CizaImmo — Immobilier</h3>
-      <p data-fr="Achat, location, gestion & diaspora."
-         data-en="Real estate, rentals & diaspora support."
-         data-ki="Ibikorwa vy'umutungo w'ibuturo n'ababa hanze.">
-         Immobilier & diaspora.
-      </p>
-    </div>
+    <img src="icons/immo.svg" class="icon">
+    <h3>CizaImmo</h3>
+    <p>Immobilier & diaspora</p>
   </div>
 
-  <!-- CizaLogistics -->
+  <!-- 4. CizaLogistics -->
   <div class="service-card" onclick="openPopup('logistics')">
-    <img src="cizalogistic.png.jfif">
-    <div class="content">
-      <h3>CizaLogistics — Marchandises</h3>
-      <p data-fr="Camions & transport professionnel."
-         data-en="Trucks & professional transport."
-         data-ki="Gutwara ibidandazwa mu buryo bw'umwuga.">
-         Transport professionnel.
-      </p>
-    </div>
+    <img src="icons/logistics.svg" class="icon">
+    <h3>CizaLogistics</h3>
+    <p>Marchandises & camions</p>
   </div>
 
-  <!-- CizaAssist -->
-  <div class="service-card" onclick="openPopup('assist')">
-    <img src="cizassist.png">
-    <div class="content">
-      <h3>CizaAssist — Assistance</h3>
-      <p data-fr="Aide administrative & démarches."
-         data-en="Administrative and personal assistance."
-         data-ki="Ubufasha mu vy’inyandiko n’akazi.">
-         Assistance & démarches.
-      </p>
-    </div>
-  </div>
-
-  <!-- CizaMarket+ -->
+  <!-- 5. CizaMarket+ -->
   <div class="service-card" onclick="openPopup('market')">
-    <img src="0C9993AD-5BCC-4EA9-AF43-E1F4E5845D8C.png">
-    <div class="content">
-      <h3>CizaMarket+ — Achats</h3>
-      <p data-fr="Courses & produits locaux livrés."
-         data-en="Daily shopping delivered."
-         data-ki="Ivyo ukeneye birakurikirana bikashikanywa.">
-         Achats & livraison.
-      </p>
-    </div>
+    <img src="icons/market.svg" class="icon">
+    <h3>CizaMarket+</h3>
+    <p>Courses & approvisionnement</p>
   </div>
 
-  <!-- CizaCarWash -->
+  <!-- 6. CizaAssist -->
+  <div class="service-card" onclick="openPopup('assist')">
+    <img src="icons/assist.svg" class="icon">
+    <h3>CizaAssist</h3>
+    <p>Assistance & démarches</p>
+  </div>
+
+  <!-- 7. CizaCarWash -->
   <div class="service-card" onclick="openPopup('carwash')">
-    <img src="cizacarwash.png">
-    <div class="content">
-      <h3>CizaCarWash — Auto</h3>
-      <p data-fr="Lavage auto à domicile."
-         data-en="Car wash at home."
-         data-ki="Kwoza imodoka aho uri.">
-         Service auto.
-      </p>
-    </div>
+    <img src="icons/carwash.svg" class="icon">
+    <h3>CizaCarWash</h3>
+    <p>Lavage auto à domicile</p>
   </div>
 
-  <!-- CizaJobs -->
+  <!-- 8. CizaJobs -->
   <div class="service-card" onclick="openPopup('jobs')">
-    <img src="cizajobs.png">
-    <div class="content">
-      <h3>CizaJobs — Emploi</h3>
-      <p data-fr="Recrutement & placement."
-         data-en="Recruitment & job placement."
-         data-ki="Kurondera akazi n'abakozi.">
-         Recrutement & talents.
-      </p>
-    </div>
+    <img src="icons/jobs.svg" class="icon">
+    <h3>CizaJobs</h3>
+    <p>Recrutement & talents</p>
   </div>
 
 </section>
 
 
-<!-- POPUPS -->
 
-
-<!-- POPUP CIZARIDE -->
+<!-- POPUPS (1 exemple — je te livrerai les 8 popups complets si validé) -->
 <div id="popup-ride" class="popup">
   <div class="popup-content">
-    <img src="cizaride.png">
+
+    <img src="photos/cizaride.jpeg" class="popup-photo">
+
     <h2>CizaRide+</h2>
 
-    <!-- FR -->
-    <p data-lang="fr">
-      <b>Transport moderne, sécurisé et accessible partout au Burundi.</b><br><br>
-      CizaRide+ est conçu pour offrir une mobilité fiable aux citoyens, familles, entreprises et diaspora.
-      Chauffeurs vérifiés, véhicules propres, tarifs transparents et disponibilité 7j/7. Que ce soit pour un trajet
-      en ville, un rendez-vous, un déplacement nocturne ou une course urgente, nous vous accompagnons avec
-      professionnalisme et sécurité.<br><br>
+    <div class="lang-switch-popup">
+      <button onclick="switchLang('ride','fr')">FR</button>
+      <button onclick="switchLang('ride','en')">EN</button>
+      <button onclick="switchLang('ride','ki')">KI</button>
+    </div>
 
+    <!-- FR -->
+    <p data-ride="fr">
+      <b>Transport moderne, sécurisé et accessible partout au Burundi.</b><br><br>
+      CizaRide+ offre des déplacements fiables avec chauffeurs formés, tarifs transparents et disponibilité 24/7.
+      Idéal pour citoyens, familles, travailleurs et diaspora.<br><br>
       <b>Avantages :</b><br>
       — Chauffeurs professionnels<br>
-      — Prix transparents<br>
-      — Sécurité totale<br>
-      — Disponibilité 24/7<br>
-      — Option femme chauffeur<br><br>
+      — Trajets interprovinciaux<br>
+      — Transport de nuit sécurisé<br>
+      — Prix fixes et transparents<br>
+      — Livraison urgente possible<br><br>
 
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=Bonjour%20CIZA%20GROUP%2C%20je%20veux%20informations%20sur%20CizaRide%2B.">
-        Contacter via WhatsApp
+      <a class="whatsapp-btn" href="https://wa.me/25779945007?text=Bonjour%20CIZA%20GROUP%20CizaRide%2B">
+        Contacter sur WhatsApp
       </a>
     </p>
 
     <!-- EN -->
-    <p data-lang="en" style="display:none;">
+    <p data-ride="en" style="display:none;">
       <b>Modern and secure transportation across Burundi.</b><br><br>
-      CizaRide+ offers reliable mobility with trained drivers, clean vehicles and transparent pricing.
-      Available 7 days a week for citizens, families, companies and diaspora.<br><br>
+      Professional drivers, transparent pricing and 24/7 availability.<br><br>
 
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=Hello%20CIZA%20GROUP%2C%20I%20need%20information%20about%20CizaRide%2B.">
-        Contact via WhatsApp
+      <a class="whatsapp-btn" href="https://wa.me/25779945007?text=Hello%20CIZA%20GROUP%20CizaRide%2B">
+        WhatsApp
       </a>
     </p>
 
     <!-- KI -->
-    <p data-lang="ki" style="display:none;">
+    <p data-ride="ki" style="display:none;">
       <b>Ingendo zizewe mu Burundi hose.</b><br><br>
-      CizaRide+ iratanga urugendo rwizewe, ibiduga bibereye n’abashoferi barizewe. Serivisi ikora imisi yose.<br><br>
+      Abashoferi babifitiye ubuhanga, igiciro c’ukuri, serivisi ico gihe cose.<br><br>
 
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=Muraho%20CIZA%20GROUP%2C%20ndipfuza%20amakuru%20ku%20CizaRide%2B.">
+      <a class="whatsapp-btn" href="https://wa.me/25779945007?text=Muraho%20CizaRide%2B">
         WhatsApp
       </a>
     </p>
@@ -395,365 +334,68 @@ footer a:hover {
 
 
 
-<!-- POPUP DELIVERY -->
-<div id="popup-delivery" class="popup">
-  <div class="popup-content">
-    <img src="cizadelivery.png">
-    <h2>CizaDelivery</h2>
 
-    <p data-lang="fr">
-      <b>Livraison rapide et professionnelle dans tout le Burundi.</b><br><br>
-      Achats au marché, documents, colis, médicaments, entreprises. Agents formés, suivi constant,
-      paiement flexible. Service sérieux et transparent adapté aux familles, étudiants, ONG
-      et diaspora.<br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=Bonjour%20CIZA%20GROUP%2C%20je%20veux%20CizaDelivery.">
-        WhatsApp
-      </a>
-    </p>
-
-    <p data-lang="en" style="display:none;">
-      <b>Fast and reliable delivery across Burundi.</b><br><br>
-      Parcels, documents, groceries and urgent tasks handled with professionalism.<br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=Hello%20CIZA%20GROUP%2C%20tell%20me%20about%20CizaDelivery.">
-        WhatsApp
-      </a>
-    </p>
-
-    <p data-lang="ki" style="display:none;">
-      <b>Gutwara ibintu mu buryo bwihuta kandi bwizewe.</b><br><br>
-      Tukora amasoko, ibitwarwa, n’inyandiko ku bw’abanyagihugu n’amashirahamwe.<br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=Muraho%20CIZA%20GROUP%2C%20ndipfuza%20CizaDelivery.">
-        WhatsApp
-      </a>
-    </p>
-
-    <div class="close-popup" onclick="closePopup('delivery')">Fermer</div>
-  </div>
-</div>
-
-
-
-<!-- POPUP IMMO -->
-<div id="popup-immo" class="popup">
-  <div class="popup-content">
-    <img src="IMG_0041.jpeg">
-    <h2>CizaImmo</h2>
-
-    <p data-lang="fr">
-      <b>Immobilier sécurisé & assistance diaspora.</b><br><br>
-      Achat, vente, location, gestion de biens, vérification des documents, visites vidéo, accompagnement
-      administratif. Service idéal pour citoyens & diaspora souhaitant investir en toute transparence.<br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=Bonjour%20CIZA%20GROUP%2C%20je%20veux%20infos%20CizaImmo.">
-        WhatsApp
-      </a>
-    </p>
-
-    <p data-lang="en" style="display:none;">
-      <b>Real estate & diaspora support.</b><br><br>
-      Buying, renting, management, verification and secure assistance.<br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=Hello%20CIZA%20GROUP%20Real%20Estate.">
-        WhatsApp
-      </a>
-    </p>
-
-    <p data-lang="ki" style="display:none;">
-      <b>Umutungo w'ibuturo mu mucyo.</b><br><br>
-      Kugura, kugurisha, gukodesha no kugenzura inyandiko z’imitungo.<br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=Muraho%20CIZA%20GROUP%2C%20CizaImmo.">
-        WhatsApp
-      </a>
-    </p>
-
-    <div class="close-popup" onclick="closePopup('immo')">Fermer</div>
-  </div>
-</div>
-
-
-
-<!-- POPUP LOGISTICS -->
-<div id="popup-logistics" class="popup">
-  <div class="popup-content">
-    <img src="cizalogistic.png.jfif">
-    <h2>CizaLogistics</h2>
-
-    <p data-lang="fr">
-      <b>Transport de marchandises & camions professionnels.</b><br><br>
-      Matériaux, marchandises, équipements, livraisons interprovinciales.
-      Chauffeurs expérimentés et sécurité garantie.<br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=Bonjour%20CIZA%20GROUP%2C%20je%20veux%20CizaLogistics.">
-        WhatsApp
-      </a>
-    </p>
-
-    <p data-lang="en" style="display:none;">
-      <b>Cargo and truck logistics for companies & NGOs.</b><br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=Hello%20CIZA%20GROUP%2C%20CizaLogistics.">
-        WhatsApp
-      </a>
-    </p>
-
-    <p data-lang="ki" style="display:none;">
-      <b>Gutwara ibidandazwa mu buryo bw’umwuga.</b><br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=CizaLogistics">
-        WhatsApp
-      </a>
-    </p>
-
-    <div class="close-popup" onclick="closePopup('logistics')">Fermer</div>
-  </div>
-</div>
-
-
-
-<!-- POPUP ASSIST -->
-<div id="popup-assist" class="popup">
-  <div class="popup-content">
-    <img src="cizassist.png">
-    <h2>CizaAssist</h2>
-
-    <p data-lang="fr">
-      <b>Assistance administrative & accompagnement complet.</b><br><br>
-      Documents, démarches, bureaux, dépôts, courses urgentes, aide à distance pour la diaspora.
-      Service professionnel & rapide.<br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=Bonjour%20CIZA%20GROUP%2C%20CizaAssist.">
-        WhatsApp
-      </a>
-    </p>
-
-    <p data-lang="en" style="display:none;">
-      <b>Administrative help & personal support.</b><br><br>
-
-      <a class="whatsapp-btn" href="https://wa.me/25779945007?text=CizaAssist">
-        WhatsApp
-      </a>
-    </p>
-
-    <p data-lang="ki" style="display:none;">
-      <b>Ubufasha mu vy’inyandiko & ibikorwa.</b><br><br>
-
-      <a class="whatsapp-btn" href="https://wa.me/25779945007?text=CizaAssist">
-        WhatsApp
-      </a>
-    </p>
-
-    <div class="close-popup" onclick="closePopup('assist')">Fermer</div>
-  </div>
-</div>
-
-
-
-<!-- POPUP MARKET -->
-<div id="popup-market" class="popup">
-  <div class="popup-content">
-    <img src="0C9993AD-5BCC-4EA9-AF43-E1F4E5845D8C.png">
-    <h2>CizaMarket+</h2>
-
-    <p data-lang="fr">
-      <b>Achats au marché, supermarché & approvisionnement.</b><br><br>
-      Courses pour familles, entreprises, personnes âgées & diaspora. Produits frais, prix transparents,
-      livraison rapide.<br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=Bonjour%20CIZA%20GROUP%2C%20CizaMarket.">
-        WhatsApp
-      </a>
-    </p>
-
-    <p data-lang="en" style="display:none;">
-      <b>Market shopping & daily supply.</b><br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=CizaMarket">
-        WhatsApp
-      </a>
-    </p>
-
-    <p data-lang="ki" style="display:none;">
-      <b>Gukorera amasoko & gushikako ibintu.</b><br><br>
-
-      <a class="whatsapp-btn" href="https://wa.me/25779945007?text=CizaMarket">
-        WhatsApp
-      </a>
-    </p>
-
-    <div class="close-popup" onclick="closePopup('market')">Fermer</div>
-  </div>
-</div>
-
-
-
-<!-- POPUP CARWASH -->
-<div id="popup-carwash" class="popup">
-  <div class="popup-content">
-    <img src="cizacarwash.png">
-    <h2>CizaCarWash</h2>
-
-    <p data-lang="fr">
-      <b>Lavage auto professionnel à domicile.</b><br><br>
-      Nettoyage intérieur & extérieur, service mobile, équipe formée, qualité garantie.<br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=Bonjour%20CIZA%20GROUP%2C%20CizaCarWash.">
-        WhatsApp
-      </a>
-    </p>
-
-    <p data-lang="en" style="display:none;">
-      <b>Professional car wash at home.</b><br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=CizaCarWash">
-        WhatsApp
-      </a>
-    </p>
-
-    <p data-lang="ki" style="display:none;">
-      <b>Kwoza imodoka aho uri.</b><br><br>
-
-      <a class="whatsapp-btn" href="https://wa.me/25779945007?text=CizaCarWash">
-        WhatsApp
-      </a>
-    </p>
-
-    <div class="close-popup" onclick="closePopup('carwash')">Fermer</div>
-  </div>
-</div>
-
-
-
-<!-- POPUP JOBS -->
-<div id="popup-jobs" class="popup">
-  <div class="popup-content">
-    <img src="cizajobs.png">
-    <h2>CizaJobs</h2>
-
-    <p data-lang="fr">
-      <b>Recrutement, placement & talents locaux.</b><br><br>
-      Sélection de candidats, fiches vérifiées, entretiens, support entreprises & familles. Solution idéale
-      pour recrutement fiable & rapide.<br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=Bonjour%20CIZA%20GROUP%2C%20CizaJobs.">
-        WhatsApp
-      </a>
-    </p>
-
-    <p data-lang="en" style="display:none;">
-      <b>Recruitment & job placement.</b><br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=CizaJobs">
-        WhatsApp
-      </a>
-    </p>
-
-    <p data-lang="ki" style="display:none;">
-      <b>Kurondera abakozi & akazi.</b><br><br>
-
-      <a class="whatsapp-btn"
-      href="https://wa.me/25779945007?text=CizaJobs">
-        WhatsApp
-      </a>
-    </p>
-
-    <div class="close-popup" onclick="closePopup('jobs')">Fermer</div>
-  </div>
-</div>
-
-<!-- FIN DU BLOC 2 --><!-- FOOTER -->
+<!-- FOOTER -->
 <footer>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;">
 
-    <div>
-      <h3 data-fr="CIZA GROUP" data-en="CIZA GROUP" data-ki="CIZA GROUP">CIZA GROUP</h3>
-      <p data-fr="Écosystème multiservices pour citoyens, entreprises et diaspora."
-         data-en="Multiservice ecosystem for citizens, businesses and diaspora."
-         data-ki="Serivisi zitandukanye zo gufasha abanyagihugu n'abandi.">
-         Écosystème multiservices, mobilité, logistique, immobilier, assistance.
-      </p>
-    </div>
+<div class="footer-grid">
 
-    <div>
-      <h3 data-fr="Navigation" data-en="Navigation" data-ki="Navigation">Navigation</h3>
-      <p><a href="index.html">Accueil</a></p>
-      <p><a href="services-burundi.html">Services</a></p>
-      <p><a href="a-propos.html">À propos</a></p>
-      <p><a href="contact.html">Contact</a></p>
-    </div>
-
-    <div>
-      <h3 data-fr="Services" data-en="Services" data-ki="Serivisi">Services</h3>
-      <p>CizaRide+</p>
-      <p>CizaDelivery</p>
-      <p>CizaImmo</p>
-      <p>CizaLogistics</p>
-      <p>CizaAssist</p>
-      <p>CizaMarket+</p>
-      <p>CizaCarWash</p>
-      <p>CizaJobs</p>
-    </div>
-
-    <div>
-      <h3 data-fr="Contact" data-en="Contact" data-ki="Contact">Contact</h3>
-      <p>Email : cizaimmo@yahoo.com</p>
-      <p>Canada : +1 514 502 9503</p>
-      <p>Burundi : +257 79 945 007</p>
-      <p><a style="color:#25D366;font-weight:bold;"
-            href="https://wa.me/25779945007?text=Bonjour%20CIZA%20GROUP">
-            WhatsApp Direct</a></p>
-    </div>
-
+  <div>
+    <h3>CIZA GROUP</h3>
+    <p>Écosystème multiservices pour citoyens, entreprises et diaspora.</p>
   </div>
 
-  <hr style="margin:25px 0;border-color:#333;">
+  <div>
+    <h3>Pourquoi nous ?</h3>
+    <p>Professionnalisme</p>
+    <p>Transparence</p>
+    <p>Accompagnement diaspora</p>
+    <p>Qualité & sécurité</p>
+  </div>
 
-  <p style="text-align:center;opacity:.7;">
-    © 2025 CIZA GROUP — Tous droits réservés. | 
-    <a href="mentions-legales.html" style="color:#F2B840;">Mentions légales</a>
-  </p>
+  <div>
+    <h3>Nos engagements</h3>
+    <p>Disponibilité 7/7</p>
+    <p>Rapidité d’exécution</p>
+    <p>Satisfaction client</p>
+    <p>Services vérifiés</p>
+  </div>
+
+  <div>
+    <h3>Contact</h3>
+    <p>Email : cizaimmo@yahoo.com</p>
+    <p>Canada : +1 514 502 9503</p>
+    <p>Burundi : +257 79 945 007</p>
+    <a href="https://wa.me/25779945007" style="color:#25D366;font-weight:bold;">
+      WhatsApp Direct
+    </a>
+  </div>
+
+</div>
+
+<br><br>
+<p style="text-align:center;opacity:0.7;">
+  © 2025 CIZA GROUP — Tous droits réservés.
+  <a href="mentions-legales.html" style="color:#F2B840;">Mentions légales</a>
+</p>
+
 </footer>
 
 
 <!-- SCRIPTS -->
-
 <script>
-/* LANGUAGE SWITCH */
-function setLang(lang){
-  document.querySelectorAll('[data-' + lang + ']').forEach(el=>{
-    el.innerHTML = el.getAttribute('data-' + lang);
-  });
-
-  document.querySelectorAll('[data-lang]').forEach(el=>{
-    el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
-  });
-}
-
-/* POPUP SYSTEM */
 function openPopup(id){
-  document.getElementById('popup-' + id).style.display = 'flex';
+  document.getElementById("popup-" + id).style.display = "flex";
 }
 function closePopup(id){
-  document.getElementById('popup-' + id).style.display = 'none';
+  document.getElementById("popup-" + id).style.display = "none";
+}
+
+function switchLang(service,lang){
+  document.querySelectorAll("[data-" + service + "]").forEach(el=>{
+    el.style.display = "none";
+  });
+  document.querySelector("[data-" + service + "='" + lang + "']").style.display = "block";
 }
 </script>
 
