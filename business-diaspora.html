@@ -7,18 +7,20 @@
 <title>CIZA GROUP — Services Diaspora</title>
 
 <!-- SEO -->
-<meta name="description" content="Services premium pour la diaspora : immobilier, achats, assistance famille, projets et administration au Burundi. 100% transparence.">
-<meta name="keywords" content="diaspora Burundi, services diaspora, achat Burundi, assistance famille, CIZA GROUP, diaspora service, premium Burundi">
+<meta name="description" content="Services premium pour la diaspora : immobilier, achats, assistance famille, projets et administration au Burundi. Transparence totale et accompagnement complet.">
+<meta name="keywords" content="diaspora Burundi, services diaspora, immobilier Burundi, assistance famille Burundi, CIZA GROUP, diaspora services">
 <meta property="og:title" content="CIZA GROUP — Services Diaspora">
 <meta property="og:description" content="Nous gérons vos projets au Burundi comme si vous y étiez. 100% transparence, preuves vidéo, services premium diaspora.">
-<meta property="og:type" content="website">
 <meta property="og:image" content="logotransparent.png">
+<meta property="og:type" content="website">
+
 <link rel="canonical" href="https://cizaimmo.github.io/cizagroup-website/diaspora.html">
 
 <!-- FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+/* GLOBAL */
 body{
     margin:0;
     background:#0B1A33;
@@ -41,8 +43,8 @@ body{
 @keyframes float{
     0%{transform:translate(0,0);}
     25%{transform:translate(-25px,15px);}
-    50%{transform:translate(20px,-20px);}
-    75%{transform:translate(-15px,-10px);}
+    50%{transform:translate(20px,-25px);}
+    75%{transform:translate(-20px,-5px);}
     100%{transform:translate(0,0);}
 }
 
@@ -55,8 +57,7 @@ header{
     align-items:center;
     border-bottom:2px solid #F2B840;
     position:sticky;
-    top:0;
-    z-index:2000;
+    top:0;z-index:2000;
 }
 
 header img{
@@ -64,6 +65,7 @@ header img{
     filter:drop-shadow(0 0 6px rgba(0,0,0,0.4));
 }
 
+/* NAV DESKTOP */
 nav a{
     color:white;
     margin:0 12px;
@@ -72,6 +74,7 @@ nav a{
 }
 nav a:hover{color:#F2B840;}
 
+/* MENU MOBILE */
 .menu-btn{
     display:none;
     font-size:32px;
@@ -79,7 +82,6 @@ nav a:hover{color:#F2B840;}
     cursor:pointer;
 }
 
-/* MENU MOBILE */
 #mobileMenu{
     position:fixed;
     top:0;
@@ -91,17 +93,15 @@ nav a:hover{color:#F2B840;}
     display:flex;
     flex-direction:column;
     text-align:center;
-    transition:.4s ease;
+    transition:.4s;
     z-index:3000;
 }
-
 #mobileMenu a{
     color:white;
     font-size:22px;
     margin:18px 0;
     font-weight:600;
 }
-
 #closeMenu{
     position:absolute;
     top:20px;
@@ -111,7 +111,7 @@ nav a:hover{color:#F2B840;}
     cursor:pointer;
 }
 
-/* BOUTONS HAUT */
+/* Boutons retour + contact */
 .top-buttons{
     display:flex;
     justify-content:space-between;
@@ -125,22 +125,20 @@ nav a:hover{color:#F2B840;}
 
 /* HERO */
 .hero{
-    padding:100px 20px;
+    padding:110px 20px;
     text-align:center;
     background:linear-gradient(#0B1A33,#081325);
-    position:relative;
     z-index:5;
 }
 .hero h1{
-    font-size:36px;
+    font-size:38px;
     color:#F2B840;
-    margin-bottom:12px;
 }
 .hero p{
-    font-size:18px;
-    opacity:.9;
     max-width:650px;
     margin:auto;
+    font-size:18px;
+    opacity:.9;
 }
 .hero-buttons{
     margin-top:30px;
@@ -157,11 +155,49 @@ nav a:hover{color:#F2B840;}
     text-decoration:none;
 }
 
+/* CARDS */
+.card{
+    background:#102237;
+    padding:25px;
+    border-radius:12px;
+    border:2px solid #F2B840;
+}
+
+/* TITRES SECTIONS */
+.section-title{
+    font-size:30px;
+    color:#F2B840;
+    margin-bottom:10px;
+}
+
+/* FOOTER */
+footer{
+    background:#07101f;
+    padding:40px 20px;
+    text-align:center;
+    border-top:2px solid #F2B840;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Watermark footer */
+footer .watermark{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:130px;
+    font-weight:900;
+    opacity:0.04;
+    color:white;
+}
+
+/* Mobile responsive */
 @media(max-width:800px){
     nav{display:none;}
     .menu-btn{display:block;}
     header img{height:70px;}
-    .floating-logo{width:130px;opacity:0.05;}
+    .floating-logo{width:130px;}
 }
 </style>
 </head>
@@ -173,7 +209,8 @@ nav a:hover{color:#F2B840;}
 
 <!-- HEADER -->
 <header>
-    <a href="index.html"><img src="logotransparent.png" alt=""></a>
+    <a href="index.html"><img src="logotransparent.png"></a>
+
     <nav>
         <a href="index.html">Accueil</a>
         <a href="diaspora.html" style="color:#F2B840;">Diaspora</a>
@@ -181,6 +218,7 @@ nav a:hover{color:#F2B840;}
         <a href="investisseurs.html">Investisseurs</a>
         <span onclick="toggleLang()" style="cursor:pointer;color:#F2B840;">🌐</span>
     </nav>
+
     <span class="menu-btn" onclick="openMenu()">☰</span>
 </header>
 
@@ -191,10 +229,9 @@ nav a:hover{color:#F2B840;}
     <a href="diaspora.html" style="color:#F2B840;">Diaspora</a>
     <a href="entreprises.html">Entreprises</a>
     <a href="investisseurs.html">Investisseurs</a>
-    <span onclick="toggleLang()" style="font-size:30px;">🌐</span>
 </div>
 
-<!-- BOUTONS RETOUR / CONTACT -->
+<!-- Bouton retour + contact -->
 <div class="top-buttons">
     <a href="index.html">← Retour</a>
     <a href="contact.html">📨 Contact</a>
@@ -212,28 +249,28 @@ nav a:hover{color:#F2B840;}
 </section>
 
 <!-- SERVICES -->
-<section id="services" style="padding:60px 20px;text-align:center;position:relative;z-index:5;">
-    <h2 style="font-size:30px;color:#F2B840;">Nos Services</h2>
+<section id="services" style="padding:60px 20px;text-align:center;">
+    <h2 class="section-title">Nos Services</h2>
     <div style="width:120px;height:4px;background:#F2B840;margin:20px auto 40px;"></div>
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;width:92%;margin:auto;">
         
-        <div style="background:#102237;padding:25px;border-radius:12px;border:2px solid #F2B840;">
+        <div class="card">
             <h3 style="color:#F2B840;">🏡 Immobilier Diaspora</h3>
             <p>Inspection, vidéo, négociation et gestion complète.</p>
         </div>
 
-        <div style="background:#102237;padding:25px;border-radius:12px;border:2px solid #F2B840;">
+        <div class="card">
             <h3 style="color:#F2B840;">🛒 Achats & Mandats</h3>
             <p>Achats au Burundi, contrôle qualité, livraison famille.</p>
         </div>
 
-        <div style="background:#102237;padding:25px;border-radius:12px;border:2px solid #F2B840;">
+        <div class="card">
             <h3 style="color:#F2B840;">🤝 Assistance Famille</h3>
             <p>Visites, urgences, école, hôpital, suivi WhatsApp.</p>
         </div>
 
-        <div style="background:#102237;padding:25px;border-radius:12px;border:2px solid #F2B840;">
+        <div class="card">
             <h3 style="color:#F2B840;">📑 Administration</h3>
             <p>Documents, projets, représentation locale.</p>
         </div>
@@ -241,13 +278,15 @@ nav a:hover{color:#F2B840;}
     </div>
 </section>
 
-<!-- PREMIUM -->
-<section style="padding:60px 20px;text-align:center;background:#0F1F39;position:relative;z-index:5;">
-    <h2 style="font-size:30px;color:#F2B840;">Programme Premium</h2>
+<!-- PREMIUIM -->
+<section style="padding:60px 20px;text-align:center;background:#0F1F39;">
+    <h2 class="section-title">Programme Premium</h2>
     <div style="width:120px;height:4px;background:#F2B840;margin:20px auto 30px;"></div>
+
     <p style="max-width:700px;margin:auto;opacity:.9;">
         Suivi dédié, preuves vidéo, sécurisation totale de vos projets et assistance exclusive.
     </p>
+
     <a href="investisseurs-premium.html"
        style="display:inline-block;margin-top:25px;background:#F2B840;color:#0B1A33;
        padding:14px 25px;border-radius:10px;font-weight:700;text-decoration:none;">
@@ -256,23 +295,23 @@ nav a:hover{color:#F2B840;}
 </section>
 
 <!-- PROCESSUS -->
-<section style="padding:60px 20px;text-align:center;position:relative;z-index:5;">
-    <h2 style="font-size:30px;color:#F2B840;">Comment Ça Marche ?</h2>
+<section style="padding:60px 20px;text-align:center;">
+    <h2 class="section-title">Comment Ça Marche ?</h2>
     <div style="width:120px;height:4px;background:#F2B840;margin:20px auto 40px;"></div>
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;width:92%;margin:auto;">
         
-        <div style="background:#102237;padding:25px;border:2px solid #F2B840;border-radius:12px;">
+        <div class="card">
             <h3 style="color:#F2B840;">1️⃣ Décrivez votre projet</h3>
             <p>Via WhatsApp ou formulaire.</p>
         </div>
 
-        <div style="background:#102237;padding:25px;border:2px solid #F2B840;border-radius:12px;">
+        <div class="card">
             <h3 style="color:#F2B840;">2️⃣ Nous exécutons</h3>
             <p>Contrôles, vidéos, rapports complets.</p>
         </div>
 
-        <div style="background:#102237;padding:25px;border:2px solid #F2B840;border-radius:12px;">
+        <div class="card">
             <h3 style="color:#F2B840;">3️⃣ Vous recevez les preuves</h3>
             <p>Photos, vidéos, rapport final.</p>
         </div>
@@ -280,13 +319,59 @@ nav a:hover{color:#F2B840;}
     </div>
 </section>
 
-<!-- FOOTER -->
-<footer style="background:#07101f;padding:40px 20px;text-align:center;border-top:2px solid #F2B840;position:relative;overflow:hidden;">
-    
-    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-                font-size:120px;font-weight:900;opacity:0.04;color:white;">CIZA GROUP</div>
+<!-- GARANTIE -->
+<section style="padding:60px 20px;text-align:center;background:#0F1F39;">
+    <h2 class="section-title">Garantie & Sécurité</h2>
+    <div style="width:120px;height:4px;background:#F2B840;margin:20px auto 40px;"></div>
 
-    <img src="logotransparent.png" style="height:90px;position:relative;z-index:2;margin-bottom:15px;">
+    <p style="max-width:700px;margin:auto;font-size:18px;opacity:.9;">
+        Transparence totale : contrôles qualité, preuves vidéo, paiements sécurisés,
+        rapports détaillés et interlocuteur dédié.
+    </p>
+</section>
+
+<!-- AVIS CLIENTS -->
+<section style="padding:60px 20px;text-align:center;">
+    <h2 class="section-title">Avis Diaspora</h2>
+    <div style="width:120px;height:4px;background:#F2B840;margin:20px auto 30px;"></div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;width:92%;margin:auto;">
+        
+        <div class="card">
+            <p>“Service impeccable, vidéos à chaque étape. Je recommande !” — France</p>
+        </div>
+
+        <div class="card">
+            <p>“Professionnels et rapides, achat terrain sans stress.” — Canada</p>
+        </div>
+
+        <div class="card">
+            <p>“Ils ont aidé mes parents au Burundi. Confiance totale.” — Belgique</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA FINAL -->
+<section style="padding:60px 20px;text-align:center;background:#081325;">
+    <h2 class="section-title">Discutez de votre projet</h2>
+
+    <p style="font-size:18px;opacity:.9;margin-bottom:20px;">
+        Réponse en moins de 24h.
+    </p>
+
+    <a href="https://wa.me/25779945007" 
+       style="background:#F2B840;color:#0B1A33;padding:14px 25px;border-radius:10px;font-weight:bold;text-decoration:none;">
+       WhatsApp Direct
+    </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    
+    <div class="watermark">CIZA GROUP</div>
+
+    <img src="logotransparent.png" style="height:90px;z-index:2;position:relative;margin-bottom:15px;">
 
     <p style="z-index:2;position:relative;">infos@cizagroup.com</p>
     <p style="z-index:2;position:relative;">Burundi : +257 79 94 50 07</p>
@@ -301,20 +386,51 @@ nav a:hover{color:#F2B840;}
     <p style="opacity:.6;margin-top:20px;z-index:2;position:relative;">
         © 2026 CIZA GROUP — Tous droits réservés
     </p>
-
 </footer>
 
 <!-- BOUTON HAUT -->
 <button onclick="window.scrollTo({top:0,behavior:'smooth'})"
 style="position:fixed;bottom:25px;right:25px;background:#F2B840;color:#0B1A33;
-border:none;border-radius:50%;width:50px;height:50px;font-size:22px;cursor:pointer;
-z-index:9999;">↑</button>
+border:none;border-radius:50%;width:50px;height:50px;font-size:22px;cursor:pointer;z-index:9999;">↑</button>
+
+<!-- COOKIES -->
+<div id="cookieBanner" style="
+    display:none;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#0B1A33;
+    padding:20px;
+    text-align:center;
+    border-top:3px solid #F2B840;
+    z-index:3000;
+">
+    <p>Nous utilisons des cookies pour améliorer votre expérience.</p>
+    <button onclick="acceptCookies()" style="padding:10px 20px;background:#F2B840;border:none;border-radius:8px;font-weight:bold;">Accepter</button>
+    <button onclick="declineCookies()" style="padding:10px 20px;background:white;color:#0B1A33;border:none;border-radius:8px;font-weight:bold;margin-left:8px;">Refuser</button>
+</div>
 
 <script>
 function openMenu(){document.getElementById("mobileMenu").style.right="0";}
 function closeMenu(){document.getElementById("mobileMenu").style.right="-100%";}
 
 function toggleLang(){}
+
+/* COOKIES */
+function acceptCookies(){
+    localStorage.setItem("cookies_ciza","accepted");
+    document.getElementById("cookieBanner").style.display="none";
+}
+function declineCookies(){
+    localStorage.setItem("cookies_ciza","declined");
+    document.getElementById("cookieBanner").style.display="none";
+}
+window.onload = ()=>{
+    if(!localStorage.getItem("cookies_ciza")){
+        document.getElementById("cookieBanner").style.display="block";
+    }
+};
 </script>
 
 </body>
