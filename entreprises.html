@@ -1,161 +1,137 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CIZA GROUP — Solutions pour Entreprises</title>
 
-<!-- SEO -->
-<meta name="description" content="Solutions professionnelles pour entreprises locales, internationales, ONG et institutions. Services premium, gestion, conciergerie, procurement, logistique et accompagnement spécialisé.">
-<meta name="keywords" content="CIZA GROUP, Entreprises, Services professionnels, ONG, Institutions, Corporate, Burundi, International">
-
 <link rel="icon" href="logotransparent.png">
 
 <style>
-
-/* ---------------------- GLOBAL ---------------------- */
 body{
     margin:0;
     background:#06142e;
     color:white;
-    font-family: Arial, sans-serif;
-    background-image:url('logotransparent.png');
-    background-size:260px;
-    background-attachment:fixed;
-    background-repeat:no-repeat;
-    background-position:center;
+    font-family:Arial, sans-serif;
 }
 
-/* effet overlay sombre pour plus de luxe */
-body::before{
-    content:"";
-    position:fixed;top:0;left:0;width:100%;height:100%;
-    background:rgba(0,0,0,0.72);
-    z-index:-1;
-}
-
-/* ---------------------- HEADER ---------------------- */
+/* HEADER */
 header{
     position:fixed;top:0;left:0;width:100%;
-    background:#06142ee6;
-    backdrop-filter:blur(8px);
-    padding:12px 18px;
-    z-index:1000;
+    background:#06142eDD;
+    backdrop-filter:blur(6px);
+    padding:14px 18px;
+    z-index:999;
     display:flex;
     align-items:center;
     justify-content:space-between;
     border-bottom:1px solid #0e2a50;
 }
-
-.logo-header img{
-    height:60px;
-}
-
-.nav-links{
-    display:flex;
-    gap:22px;
-}
-
+header img{height:55px;}
+.nav-links{display:flex;gap:22px;font-size:15px;}
 .nav-links a{
-    color:white;
-    text-decoration:none;
-    font-size:15px;
-    opacity:.85;
-    transition:.3s;
+    color:white;text-decoration:none;
+    opacity:.85;transition:.2s;
 }
-.nav-links a:hover{
-    opacity:1;
-    color:#F2B840;
-}
-
-.btn-partner{
-    padding:8px 16px;
-    border:1px solid #F2B840;
-    border-radius:10px;
-    color:#F2B840;
-    font-size:14px;
-    text-decoration:none;
-    transition:.3s;
-}
-.btn-partner:hover{
-    background:#F2B840;
-    color:#06142e;
-}
-
-/* LANG SWITCH */
+.nav-links a:hover{opacity:1;color:#F2B840;}
 .lang-switch span{
-    cursor:pointer;
-    margin-left:10px;
-    opacity:.6;
+    margin-left:12px;cursor:pointer;
+    opacity:.6;transition:.2s;
 }
-.lang-switch .active{
+.lang-switch span.active{color:#F2B840;opacity:1;font-weight:bold;}
+
+/* SECTIONS */
+.section{
+    padding:120px 20px 70px;
+    max-width:960px;margin:auto;
+}
+.section h2{
+    font-size:30px;
     color:#F2B840;
-    opacity:1;
+    margin-bottom:20px;
+    border-bottom:1px solid #F2B84033;
+    padding-bottom:8px;
+}
+.section p{
+    font-size:17px;line-height:1.65;
+    opacity:.92;
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:22px;margin-top:25px;
+}
+.card{
+    padding:22px;
+    background:#0b1c34;
+    border-radius:16px;
+    border:1px solid #12305a;
+    transition:.3s;
+}
+.card:hover{
+    transform:translateY(-4px);
+    border-color:#F2B840;
+}
+.card-title{
+    font-size:20px;
     font-weight:bold;
-}
-
-/* ---------------------- HERO ---------------------- */
-.hero{
-    padding:150px 25px 80px;
-    text-align:center;
-}
-
-.hero h1{
-    font-size:32px;
     color:#F2B840;
     margin-bottom:10px;
 }
-.hero p{
-    font-size:18px;
-    opacity:.85;
-    max-width:700px;
-    margin:auto;
-}
+.card p{opacity:.85;line-height:1.55;}
 
-/* ---------------------- SECTION INTRO ---------------------- */
-.section{
-    padding:40px 20px;
-    max-width:900px;
-    margin:auto;
-    text-align:center;
-}
-
-.section h2{
+.view-more{
+    margin-top:12px;
     color:#F2B840;
-    font-size:26px;
-    margin-bottom:18px;
+    font-weight:bold;
+    cursor:pointer;
+    display:inline-block;
 }
 
-.section p{
-    line-height:1.6;
-    font-size:16px;
-    opacity:.9;
-    margin-top:0;
+/* POPUP */
+.popup-bg{
+    position:fixed;top:0;left:0;width:100%;height:100%;
+    background:#000000aa;backdrop-filter:blur(4px);
+    display:none;align-items:center;justify-content:center;
+    z-index:2000;
+}
+.popup{
+    width:92%;max-width:500px;
+    background:#06142e;
+    border:1px solid #F2B840;
+    border-radius:18px;
+    padding:25px;
+    animation:fadeIn .35s;
+}
+.popup h3{color:#F2B840;margin-top:0;}
+.popup p{opacity:.9;line-height:1.6;font-size:16px;}
+.close-popup{
+    float:right;font-size:26px;margin-top:-10px;
+    cursor:pointer;color:#F2B840;
 }
 
+/* ANIMATIONS */
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 </style>
 </head>
 
+
+
 <body>
 
-<!-- ---------------------- HEADER ---------------------- -->
+<!-- HEADER -->
 <header>
-    <div class="logo-header">
-        <a href="index.html"><img src="logotransparent.png"></a>
-    </div>
+    <img src="logotransparent.png">
 
-    <nav class="nav-links">
+    <div class="nav-links">
         <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
-        <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
-        <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
-        <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe" class="active"></a>
+        <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
+        <a href="business-diaspora.html" data-fr="Business Diaspora" data-en="Diaspora Business" data-ki="Ubucuruzi diaspora"></a>
         <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
-    </nav>
-
-    <a href="partenariat.html" class="btn-partner"
-       data-fr="Devenir partenaire"
-       data-en="Become a Partner"
-       data-ki="Guhinduka Umufasha"></a>
+    </div>
 
     <div class="lang-switch">
         <span onclick="setLang('fr')" id="lg-fr">FR</span>
@@ -166,526 +142,796 @@ header{
 
 
 
-<!-- ---------------------- HERO ---------------------- -->
-<div class="hero">
-    <h1 data-fr="Solutions pour Entreprises"
-        data-en="Business Solutions"
-        data-ki="Ibisubizo vy’Amashirahamwe"></h1>
+<!-- HERO -->
+<section class="section" style="padding-top:160px;">
+    <h2 data-fr="Solutions professionnelles pour entreprises"
+        data-en="Professional Solutions for Businesses"
+        data-ki="Serivisi z’umwuga ku mashirahamwe"></h2>
 
-    <p data-fr="Nous accompagnons les entreprises locales, internationales, ONG et institutions avec des services professionnels, un support prioritaire et un suivi rigoureux."
-       data-en="We support local companies, international businesses, NGOs and institutions with professional services, priority assistance and rigorous follow-up."
-       data-ki="Dufasha amashirahamwe yo mu gihugu, mpuzamakungu, ONG n’ibigo vya reta hamwe n’ugutanga ubufasha bwihuta n’ukwigengesera."></p>
+    <p data-fr="Nous accompagnons les entreprises, institutions, ONG et organisations internationales avec des solutions structurées, fiables et conformes aux standards professionnels les plus élevés."
+       data-en="We support businesses, institutions, NGOs and international organizations with structured, reliable and high-standard professional solutions."
+       data-ki="Dushetse amashirahamwe, instutisiyo, ONG n’abandi dukoresheje serivisi z’umwuga zisukuye kandi zizewe."></p>
+</section>
+
+
+
+<!-- VISION & ENGAGEMENT -->
+<section class="section">
+<h2 data-fr="Notre Vision & Notre Engagement"
+    data-en="Our Vision & Our Commitment"
+    data-ki="Inyungu n’ugushiramwo umwete vyacu"></h2>
+
+<p data-fr="
+Notre mission est de créer un environnement professionnel où les entreprises, qu’elles soient locales ou internationales, disposent d’un partenaire fiable, structuré et irréprochable dans la gestion de leurs besoins opérationnels. 
+Nous appliquons une approche inspirée des cabinets internationaux : rigueur, transparence, confidentialité et excellence opérationnelle. 
+Chaque mission est traitée avec une méthodologie claire, un respect strict de la confidentialité et un souci constant de performance."
+   data-en="
+Our mission is to provide companies — local or international — with a reliable and structured partner for the management of their operational needs. 
+We apply an approach inspired by international firms: rigor, transparency, confidentiality and operational excellence. 
+Every engagement follows a clear methodology, strict confidentiality protocols and a constant focus on performance."
+   data-ki="
+Intumbero yacu ni ugufasha amashirahamwe yose haba hano iwacu canke mpuzamakungu, tubaha ubufasha bw’umwuga, ubugenewe kandi bwizewe. 
+Dukora twisunze uburyo bw’inzu z’ubuhinga mpuzamakungu: ubuhinga, ukuri, ibanga n’ugukora neza. 
+Igikorwa cose gikurikiza uburyo bwanditse, gukingira ibanga n’ugushira imbere umwimbu mwiza."></p>
+</section>
+
+
+
+<!-- POURQUOI CHOISIR CIZA -->
+<section class="section">
+<h2 data-fr="Pourquoi choisir CIZA GROUP ?"
+    data-en="Why Choose CIZA GROUP?"
+    data-ki="Imvo yo guhitamwo CIZA GROUP"></h2>
+
+<div class="cards">
+
+    <!-- EXPERTISE -->
+    <div class="card">
+        <div class="card-title" data-fr="Expertise locale & internationale"
+             data-en="Local & International Expertise"
+             data-ki="Ubuhinga bwo mu gihugu no hanze"></div>
+
+        <p data-fr="Une compréhension profonde du marché burundais et des standards internationaux."
+           data-en="A deep understanding of the Burundian market and international standards."
+           data-ki="Twumva neza isoko ry’Uburundi n’ibihe mpuzamakungu."></p>
+
+        <span class="view-more" onclick="openPopup('expertise')">→ Voir plus</span>
+    </div>
+
+    <!-- CONFIDENTIALITE -->
+    <div class="card">
+        <div class="card-title" data-fr="Confidentialité garantie"
+             data-en="Guaranteed Confidentiality"
+             data-ki="Ibanga rirakingiwe"></div>
+
+        <p data-fr="Protection stricte de toutes vos données et documents."
+           data-en="Strict protection of all your data and documents."
+           data-ki="Ibanga n’umutekano w’inyandiko birakingiwe neza."></p>
+
+        <span class="view-more" onclick="openPopup('confident')">→ Voir plus</span>
+    </div>
+
+    <!-- TRANSPARENCE -->
+    <div class="card">
+        <div class="card-title" data-fr="Transparence & rapports"
+             data-en="Transparency & Reporting"
+             data-ki="Ukuri n’ivyegeranyo"></div>
+
+        <p data-fr="Suivi rigoureux, tableaux de bord et rapports professionnels."
+           data-en="Rigorous monitoring, dashboards and professional reporting."
+           data-ki="Ukurikirana, ivyegeranyo n’imbonerahamwe z’umwuga."></p>
+
+        <span class="view-more" onclick="openPopup('transp')">→ Voir plus</span>
+    </div>
+
 </div>
+</section>
 
 
 
-<!-- ---------------------- INTRO SECTION ---------------------- -->
-<div class="section">
-    <h2 data-fr="Notre engagement professionnel"
-        data-en="Our Professional Commitment"
-        data-ki="Ukugabira kwacu kwa kinyamwuga"></h2>
+<!-- AVANTAGES STRATEGIQUES -->
+<section class="section">
+<h2 data-fr="Avantages stratégiques pour votre entreprise"
+    data-en="Strategic Advantages for Your Business"
+    data-ki="Ivyungura ku mashirahamwe"></h2>
 
-    <p data-fr="CIZA GROUP propose un accompagnement structuré, clair et hautement professionnel. Nos solutions répondent aux besoins des entreprises modernes tout en s’adaptant au contexte local et international."
-       data-en="CIZA GROUP offers structured, clear and highly professional support. Our solutions address the needs of modern businesses while adapting to the local and international context."
-       data-ki="CIZA GROUP itanga ubufasha butunganije, bunoze kandi bwa kinyamwuga. Ibisubizo vyacu vyubahiriza ivyifuza vy’amashirahamwe agezweho, haba mu gihugu no mu makungu."></p>
-</div><!-- ---------------------- SERVICES PROFESSIONNELS ---------------------- -->
-<div class="section" id="services-pro">
-    <h2 data-fr="Services Professionnels"
-        data-en="Professional Services"
-        data-ki="Serivisi za Kinyamwuga"></h2>
+<p data-fr="
+Collaborer avec CIZA GROUP vous garantit une réduction des risques, une optimisation de vos processus internes, un gain de temps considérable et une transparence totale sur l’avancement de vos opérations. 
+Nous offrons des solutions sur mesure, adaptées à la taille, au secteur et aux besoins réels de votre organisation."
+   data-en="
+Working with CIZA GROUP guarantees reduced risks, optimized internal processes, considerable time savings and full transparency over your operations. 
+We deliver tailored solutions adapted to your organization’s size, sector and operational realities."
+   data-ki="
+Gukorana na CIZA GROUP biragabanya ingorane, bigatunganya neza uburyo bw’imbere mu kigo hanyuma ugatakaza umwanya muke. 
+Dutanga ivyungura bijanye n’ukuntu ishirahamwe ryawe riteye n’ivyo rikeneye koko."></p>
+</section><!-- SERVICES PROFESSIONNELS -->
+<section class="section">
+<h2 data-fr="Services professionnels"
+    data-en="Professional Services"
+    data-ki="Serivisi z’umwuga"></h2>
 
-    <p data-fr="Nous offrons un ensemble complet de solutions destinées aux entreprises, ONG, institutions et organisations internationales."
-       data-en="We provide a complete set of solutions dedicated to companies, NGOs, institutions and international organizations."
-       data-ki="Dutanga ibisubizo vyuzuye bigenewe amashirahamwe, ONG, ibigo vya reta n’amashirahamwe mpuzamakungu."></p>
+<div class="cards">
 
-    <div class="pro-grid">
+    <!-- ADMINISTRATION -->
+    <div class="card">
+        <div class="card-title" data-fr="Assistance administrative"
+             data-en="Administrative Assistance"
+             data-ki="Ubufasha mu biro"></div>
 
-        <div class="pro-card">
-            <div class="icon">📄</div>
-            <h3 data-fr="Gestion Administrative"
-                data-en="Administrative Management"
-                data-ki="Ubuyobozi bw’ivyandikiro"></h3>
-            <p data-fr="Suivi, documents, courriers, accompagnement et conformité."
-               data-en="Follow-up, documentation, mail handling and compliance."
-               data-ki="Igenzura, ivyandikiro, ibisohoka n’ukugenzura ko vyubahirizwa."></p>
-        </div>
+        <p data-fr="Gestion de documents, conformité, organisation interne, préparation et vérification de dossiers."
+           data-en="Document management, compliance, internal organization, preparation and verification of files."
+           data-ki="Gutunganya inyandiko, gukurikiza amategeko, no gutegura amadosiye."></p>
 
-        <div class="pro-card">
-            <div class="icon">📦</div>
-            <h3 data-fr="Procurement & Achats"
-                data-en="Procurement & Purchasing"
-                data-ki="Ivy’agura n’ukugura ibikoresho"></h3>
-            <p data-fr="Achats locaux, vérification qualité, recherche fournisseurs."
-               data-en="Local purchasing, quality verification, supplier sourcing."
-               data-ki="Kugura ibikoresho, kuraba umwitwarariko n’ukurondera abatanga ibintu."></p>
-        </div>
-
-        <div class="pro-card">
-            <div class="icon">🚚</div>
-            <h3 data-fr="Logistique & Livraisons"
-                data-en="Logistics & Delivery"
-                data-ki="Ivy’iyungurura n’ugutwara ibicuruzwa"></h3>
-            <p data-fr="Livraisons professionnelles, gestion colis et transport sécurisé."
-               data-en="Professional deliveries, parcel handling and secure transport."
-               data-ki="Gutangura ibintu ku buryo bwa kinyamwuga n’ugutwara neza ibicuruzwa."></p>
-        </div>
-
-        <div class="pro-card">
-            <div class="icon">🛠️</div>
-            <h3 data-fr="Réparation Véhicules"
-                data-en="Vehicle Repair"
-                data-ki="Gusanura Imiduga"></h3>
-            <p data-fr="Réparation, entretien et intervention rapide."
-               data-en="Repair, maintenance and rapid intervention."
-               data-ki="Gusanura, gukoresha neza no gutanga ubufasha bwihuta."></p>
-        </div>
-
-        <div class="pro-card">
-            <div class="icon">🏢</div>
-            <h3 data-fr="Immobilier Entreprise"
-                data-en="Corporate Real Estate"
-                data-ki="Ubutunzi bw’imitungo y’amashirahamwe"></h3>
-            <p data-fr="Bureaux, terrains, gestion locative et accompagnement complet."
-               data-en="Offices, land, rental management and full support."
-               data-ki="Ibiro, amasambu, ubuyobozi bw’ubukodeshanyo n’ubufasha bwuzuye."></p>
-        </div>
-
-        <div class="pro-card">
-            <div class="icon">🤝</div>
-            <h3 data-fr="Conciergerie Professionnelle"
-                data-en="Professional Concierge"
-                data-ki="Ibagurirwa rya Kinyamwuga"></h3>
-            <p data-fr="Accompagnement entreprises, missions confiées, solutions rapides."
-               data-en="Business assistance, delegated tasks, rapid solutions."
-               data-ki="Ubufasha ku mashirahamwe, imirimo yegeranijwe, ibisubizo vyihuse."></p>
-        </div>
+        <span class="view-more" onclick="openPopup('admin')">→ Voir plus</span>
     </div>
+
+    <!-- DIGITALISATION -->
+    <div class="card">
+        <div class="card-title" data-fr="Digitalisation & optimisation"
+             data-en="Digitalization & Optimization"
+             data-ki="Ukugira ibintu bikorwe mu buryo bwa digitali"></div>
+
+        <p data-fr="Mise en place d’outils numériques, automatisation, réduction des erreurs, efficacité accrue."
+           data-en="Implementation of digital tools, automation, error reduction, increased efficiency."
+           data-ki="Gukoresha ubuhinga bwa digitali, kugabanya amakosa no gutanga umwimbu mwiza."></p>
+
+        <span class="view-more" onclick="openPopup('digital')">→ Voir plus</span>
+    </div>
+
+    <!-- LOGISTIQUE -->
+    <div class="card">
+        <div class="card-title" data-fr="Logistique & coordination"
+             data-en="Logistics & Coordination"
+             data-ki="Ibikenerwa n’ugukoodinata"></div>
+
+        <p data-fr="Organisation des livraisons, coordination fournisseurs, gestion terrain et déplacements."
+           data-en="Delivery organization, supplier coordination, field management and movements."
+           data-ki="Gukwirikirana ivyo mukeneye, gutunganya ingendo n’ibikorwa vyose."></p>
+
+        <span class="view-more" onclick="openPopup('log')">→ Voir plus</span>
+    </div>
+
+    <!-- CONTROLE QUALITE -->
+    <div class="card">
+        <div class="card-title" data-fr="Contrôle qualité"
+             data-en="Quality Control"
+             data-ki="Igenzura ry’ubwiza"></div>
+
+        <p data-fr="Inspection, vérifications, standards professionnels, preuves visuelles pour vos opérations."
+           data-en="Inspection, checks, professional standards, visual evidence for your operations."
+           data-ki="Ugenzura, ivyemezo, ibimenyamenya n’ugukora neza."></p>
+
+        <span class="view-more" onclick="openPopup('qualite')">→ Voir plus</span>
+    </div>
+
+    <!-- SECURITE OPERATIONS -->
+    <div class="card">
+        <div class="card-title" data-fr="Sécurité des opérations"
+             data-en="Operational Security"
+             data-ki="Umutekano w’ibikorwa"></div>
+
+        <p data-fr="Procédures internes renforcées, gestion confidentielle et supervision fiable."
+           data-en="Enhanced internal procedures, confidential management and reliable supervision."
+           data-ki="Amabwirizwa yo gukingira ibintu, ubwirinzi n’ugukurikiranwa."></p>
+
+        <span class="view-more" onclick="openPopup('secure')">→ Voir plus</span>
+    </div>
+
+    <!-- REPRESENTATION LOCALE -->
+    <div class="card">
+        <div class="card-title" data-fr="Représentation locale"
+             data-en="Local Representation"
+             data-ki="Uhagarariye mu gihugu"></div>
+
+        <p data-fr="Nous agissons comme votre relais sur place : inspections, visites, coordination et rapports."
+           data-en="We act as your local relay: inspections, visits, coordination and reporting."
+           data-ki="Tube abaserukira: kugenzura, gukora ingendo no gutanga ivyegeranyo."></p>
+
+        <span class="view-more" onclick="openPopup('local')">→ Voir plus</span>
+    </div>
+
+    <!-- SUPPORT STRATEGIQUE -->
+    <div class="card">
+        <div class="card-title" data-fr="Support stratégique"
+             data-en="Strategic Support"
+             data-ki="Ubufasha bw’imbere mu strategy"></div>
+
+        <p data-fr="Analyse, recommandations, planification, amélioration interne et gestion prioritaire."
+           data-en="Analysis, recommendations, planning, internal improvements and priority management."
+           data-ki="Isesengura, ivyiyumviro n’ugutanga impanuro."></p>
+
+        <span class="view-more" onclick="openPopup('strategie')">→ Voir plus</span>
+    </div>
+
+    <!-- VERIFICATIONS -->
+    <div class="card">
+        <div class="card-title" data-fr="Vérifications & preuves visuelles"
+             data-en="Checks & Visual Evidence"
+             data-ki="Ivyemezo n’ugukosora"></div>
+
+        <p data-fr="Suivi terrain, preuves photo/vidéo, contrôle qualité indépendant."
+           data-en="Field monitoring, photo/video evidence, independent quality checks."
+           data-ki="Ukurikirana ibikorwa, gufata amashusho n’ugukosora ibintu."></p>
+
+        <span class="view-more" onclick="openPopup('verif')">→ Voir plus</span>
+    </div>
+
 </div>
-
-
-<style>
-.pro-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:20px;
-    margin-top:25px;
-}
-.pro-card{
-    background:#0b1c34cc;
-    padding:20px;
-    border-radius:14px;
-    border:1px solid #103564;
-    transition:.3s;
-    text-align:center;
-}
-.pro-card:hover{
-    border-color:#F2B840;
-    transform:translateY(-6px);
-}
-.pro-card .icon{
-    font-size:36px;
-    margin-bottom:10px;
-}
-.pro-card h3{
-    color:#F2B840;
-    margin-bottom:10px;
-}
-.pro-card p{
-    opacity:.85;
-}
-</style>
+</section>
 
 
 
-<!-- ---------------------- PACKS PRO ---------------------- -->
-<div class="section" id="packs">
-    <h2 data-fr="Packs Professionnels"
-        data-en="Professional Packs"
-        data-ki="Pake za Kinyamwuga"></h2>
+<!-- PACKS PROFESSIONNELS -->
+<section class="section">
+<h2 data-fr="Packs professionnels"
+    data-en="Professional Packs"
+    data-ki="Pake ya serivisi z’umwuga"></h2>
 
-    <div class="packs-grid">
+<div class="cards">
 
-        <div class="pack">
-            <h3>Basic</h3>
-            <p data-fr="Support essentiel pour petites entreprises"
-               data-en="Essential support for small businesses"
-               data-ki="Ubufasha bw'ibanze ku mashirahamwe mato"></p>
-            <div class="price">59,000 BIF</div>
-            <ul>
-                <li>📌 2 missions / mois</li>
-                <li>📌 Support WhatsApp </li>
-                <li>📌 Délai standard</li>
-            </ul>
-            <a href="partenariat.html" class="btn-part">Devenir partenaire</a>
-        </div>
+    <!-- ESSENTIEL -->
+    <div class="card">
+        <div class="card-title" data-fr="Pack Essentiel"
+             data-en="Essential Pack"
+             data-ki="Pake y’ingenzi"></div>
 
-        <div class="pack best">
-            <h3>Standard</h3>
-            <p data-fr="Le pack le plus utilisé par nos partenaires"
-               data-en="Our most used business pack"
-               data-ki="Pake ikoreshwa cane n’amashirahamwe"></p>
-            <div class="price">139,000 BIF</div>
-            <ul>
-                <li>🚀 6 missions / mois</li>
-                <li>🚀 Support prioritaire</li>
-                <li>🚀 Reporting mensuel</li>
-            </ul>
-            <a href="partenariat.html" class="btn-part">Devenir partenaire</a>
-        </div>
+        <p data-fr="Support administratif, suivi de base, assistance sur demandes prioritaires."
+           data-en="Administrative support, basic monitoring, assistance on priority requests."
+           data-ki="Ubufasha mu nyandiko, gukurikiranwa n’ugufashwa mu bikorwa vy’ingenzi."></p>
 
-        <div class="pack">
-            <h3>Premium</h3>
-            <p data-fr="Solutions avancées pour grandes entreprises"
-               data-en="Advanced solutions for large businesses"
-               data-ki="Ibisubizo bihanitse ku mashirahamwe manini"></p>
-            <div class="price">299,000 BIF</div>
-            <ul>
-                <li>🌟 Missions illimitées</li>
-                <li>🌟 Support VIP</li>
-                <li>🌟 Assistants dédiés</li>
-            </ul>
-            <a href="partenariat.html" class="btn-part">Devenir partenaire</a>
-        </div>
-
+        <span class="view-more" onclick="openPopup('ess')">→ Voir plus</span>
     </div>
+
+    <!-- BUSINESS -->
+    <div class="card">
+        <div class="card-title" data-fr="Pack Business"
+             data-en="Business Pack"
+             data-ki="Pake y’amashirahamwe"></div>
+
+        <p data-fr="Support renforcé, optimisation, suivi régulier, coordination terrain."
+           data-en="Enhanced support, optimization, regular monitoring, field coordination."
+           data-ki="Ubufasha bwagutse, gukosora ibintu no gukurikirana ibikorwa."></p>
+
+        <span class="view-more" onclick="openPopup('biz')">→ Voir plus</span>
+    </div>
+
+    <!-- ELITE -->
+    <div class="card">
+        <div class="card-title" data-fr="Pack Élite"
+             data-en="Elite Pack"
+             data-ki="Pake irimwo vyinshi cane"></div>
+
+        <p data-fr="Accompagnement premium : chef de projet, conformité, rapport professionnel, support continu."
+           data-en="Premium support: project lead, compliance, professional reporting, continuous assistance."
+           data-ki="Ubufasha buhambaye: umuyobozi w’iminshi, ivyegeranyo n’ugufashwa buri gihe."></p>
+
+        <span class="view-more" onclick="openPopup('elite')">→ Voir plus</span>
+    </div>
+
 </div>
-
-<style>
-.packs-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
-    margin-top:30px;
-}
-
-.pack{
-    background:#0a1930;
-    padding:22px;
-    border-radius:14px;
-    border:1px solid #103564;
-    text-align:center;
-    transition:.3s;
-}
-.pack:hover{
-    transform:translateY(-6px);
-    border-color:#F2B840;
-}
-
-.pack.best{
-    border-color:#F2B840;
-}
-
-.pack h3{
-    color:#F2B840;
-    font-size:20px;
-}
-.pack .price{
-    margin:12px 0;
-    font-size:22px;
-    font-weight:bold;
-}
-.pack ul{
-    padding:0;
-    margin:0;
-    list-style:none;
-    font-size:14px;
-    opacity:.9;
-}
-.pack ul li{ margin:6px 0; }
-
-.btn-part{
-    margin-top:12px;
-    display:inline-block;
-    padding:10px 16px;
-    color:#F2B840;
-    border:1px solid #F2B840;
-    border-radius:10px;
-    text-decoration:none;
-}
-.btn-part:hover{
-    background:#F2B840;
-    color:#06142e;
-}
-</style>
+</section>
 
 
 
-<!-- ---------------------- PROCESSUS ---------------------- -->
-<div class="section" id="processus">
-    <h2 data-fr="Notre Processus"
-        data-en="Our Process"
-        data-ki="Ingene dukora"></h2>
+<!-- TIMELINE PROFESSIONNELLE -->
+<section class="section">
+<h2 data-fr="Notre processus professionnel"
+    data-en="Our Professional Process"
+    data-ki="Uko dukora ibintu"></h2>
 
-    <div class="pro-steps">
-        <div class="step">
-            <div class="num">1</div>
-            <p data-fr="Compréhension de vos besoins"
-               data-en="Understanding your needs"
-               data-ki="Kumenya ivyifuzo vyanyu"></p>
-        </div>
-        <div class="step">
-            <div class="num">2</div>
-            <p data-fr="Analyse et proposition sur mesure"
-               data-en="Analysis & tailored proposal"
-               data-ki="Isuzuma n’ugutunganya ivyumvikanye"></p>
-        </div>
-        <div class="step">
-            <div class="num">3</div>
-            <p data-fr="Exécution professionnelle des missions"
-               data-en="Professional execution"
-               data-ki="Gukora ibikorwa ku buryo bwa kinyamwuga"></p>
-        </div>
-        <div class="step">
-            <div class="num">4</div>
-            <p data-fr="Reporting & suivi transparent"
-               data-en="Reporting & transparent follow-up"
-               data-ki="Raporo n’ukwirikiranira hafi bikorwa"></p>
-        </div>
+<div class="cards">
+
+    <div class="card">
+        <div class="card-title" data-fr="Analyse & diagnostic"
+             data-en="Analysis & Diagnosis"
+             data-ki="Isesengura"></div>
+        <p data-fr="Évaluation des besoins, compréhension des défis, analyse des structures existantes."
+           data-en="Needs assessment, challenge identification, analysis of existing structures."
+           data-ki="Kuraba ivyangombwa n’ingorane zihari."></p>
     </div>
+
+    <div class="card">
+        <div class="card-title" data-fr="Plan d’action structuré"
+             data-en="Structured Action Plan"
+             data-ki="Inyandiko y’ingene bikorwa"></div>
+        <p data-fr="Définition des responsabilités, outils à utiliser, étapes et livrables."
+           data-en="Definition of responsibilities, tools, steps and deliverables."
+           data-ki="Gutanga ivyokorwa be n’intambwe zikurikizwa."></p>
+    </div>
+
+    <div class="card">
+        <div class="card-title" data-fr="Mise en œuvre"
+             data-en="Implementation"
+             data-ki="Gushira mu ngiro"></div>
+        <p data-fr="Réalisation concrète des opérations avec supervision professionnelle."
+           data-en="Practical execution of operations with professional supervision."
+           data-ki="Gukora ibikorwa n’uburongozi bwabigenewe."></p>
+    </div>
+
+    <div class="card">
+        <div class="card-title" data-fr="Contrôle & qualité"
+             data-en="Control & Quality"
+             data-ki="Igenzura"></div>
+        <p data-fr="Vérifications, preuves visuelles, ajustements et suivi direct."
+           data-en="Verification, visual evidence, adjustments and direct monitoring."
+           data-ki="Kugenzura n’ugukosora indien vyenewe."></p>
+    </div>
+
+    <div class="card">
+        <div class="card-title" data-fr="Rapport & optimisation"
+             data-en="Reporting & Optimization"
+             data-ki="Ivyegeranyo"></div>
+        <p data-fr="Rapports détaillés, indicateurs, recommandations futures et amélioration continue."
+           data-en="Detailed reports, indicators, future recommendations and continuous improvement."
+           data-ki="Gutanga ivyegeranyo n’impanuro zo kuzokora neza."></p>
+    </div>
+
 </div>
-
-<style>
-.pro-steps{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-    margin-top:20px;
-}
-.step{
-    background:#0b1c34cc;
-    padding:20px;
-    border-radius:14px;
-    text-align:center;
-    border:1px solid #103564;
-    transition:.3s;
-}
-.step:hover{
-    transform:translateY(-6px);
-    border-color:#F2B840;
-}
-.step .num{
-    font-size:26px;
-    font-weight:bold;
-    color:#F2B840;
-    margin-bottom:10px;
-}
-</style>
+</section>
 
 
 
-<!-- ---------------------- ENTREPRISES BURUNDAISES ---------------------- -->
-<div class="section">
-    <h2 data-fr="Solutions pour Entreprises Burundaises"
-        data-en="Solutions for Burundian Businesses"
-        data-ki="Ibisubizo vy’Amashirahamwe yo mu Burundi"></h2>
+<!-- DOCUMENTS TRAITÉS -->
+<section class="section">
+<h2 data-fr="Documents que nous traitons"
+    data-en="Documents We Handle"
+    data-ki="Inyandiko dukora"></h2>
 
-    <p data-fr="Nous proposons des services adaptés aux réalités du marché burundais : réactivité, disponibilité locale, coûts maîtrisés et accompagnement personnalisé."
-       data-en="We offer services tailored to the realities of the Burundian market: responsiveness, local availability, controlled costs and personalized support."
-       data-ki="Dutanga ibisubizo bihuye n’ukuntu isoko ry’Uburundi riteye: ukworohereza, kuboneka, ibiciro vyoroheje n’ugutanga ubufasha bwihariye."></p>
+<p data-fr="
+Nous traitons un large éventail de documents professionnels pour les entreprises locales et internationales :
+procès-verbaux, rapports officiels, dossiers RH, documents légaux, factures, attestations, preuves visuelles, contrats et autres documents sensibles. 
+Tous les documents sont traités selon des protocoles stricts de confidentialité, d’exactitude et de sécurité."
+   data-en="
+We handle a wide range of professional documents for local and international companies:
+minutes, official reports, HR files, legal documents, invoices, attestations, visual evidence, contracts and sensitive documents. 
+All documents follow strict confidentiality and accuracy procedures."
+   data-ki="
+Dukora ku nyandiko zitandukanye z’umwuga:
+ivyegeranyo, amadosiye y’abakozi, inyandiko za leta, fagitura, amasezerano, vyose dukoresheje ibanga n’ubuhinga bwisunze amategeko."></p>
+</section><!-- SECTEURS QUE NOUS ACCOMPAGNONS -->
+<section class="section">
+<h2 data-fr="Secteurs que nous accompagnons"
+    data-en="Sectors We Support"
+    data-ki="Ingingo dukoreramwo"></h2>
+
+<div class="cards">
+
+    <div class="card">
+        <div class="card-title" data-fr="PME & Grandes entreprises"
+             data-en="SMEs & Large Corporations"
+             data-ki="Amashirahamwe maninimanini"></div>
+        <p data-fr="Support opérationnel, conformité, gestion interne, optimisation des processus."
+           data-en="Operational support, compliance, internal management, process optimization."
+           data-ki="Ubufasha mu bikorwa, igenzura no gukosora ibintu."></p>
+    </div>
+
+    <div class="card">
+        <div class="card-title" data-fr="Startups"
+             data-en="Startups"
+             data-ki="Amashirahamwe mashasha"></div>
+        <p data-fr="Accompagnement administratif et organisationnel, structure et croissance."
+           data-en="Administrative and organizational support, structure and growth."
+           data-ki="Ubufasha mu gutunganya ibintu no gutanguza neza."></p>
+    </div>
+
+    <div class="card">
+        <div class="card-title" data-fr="Industries & production"
+             data-en="Industry & Manufacturing"
+             data-ki="Inganda n’ibikorwa vyo gukora ibintu"></div>
+        <p data-fr="Suivi terrain, contrôle qualité, coordination logistique, rapports visuels."
+           data-en="Field monitoring, quality control, logistics coordination, visual reporting."
+           data-ki="Ukurikirana ibikorwa, igenzura ry’ubwiza n’ivyegeranyo."></p>
+    </div>
+
+    <div class="card">
+        <div class="card-title" data-fr="Immobilier"
+             data-en="Real Estate"
+             data-ki="Ubutunzi bw'imitongo"></div>
+        <p data-fr="Gestion, inspection, suivi de projets de construction, vérifications et conformité."
+           data-en="Management, inspection, project monitoring, checks and compliance."
+           data-ki="Gukurikiranwa kw’imvubura, igenzura n’ibikorwa."></p>
+    </div>
+
+    <div class="card">
+        <div class="card-title" data-fr="Commerce & distribution"
+             data-en="Retail & Distribution"
+             data-ki="Ubudandaji"></div>
+        <p data-fr="Support logistique, vérifications, gestion des fournisseurs et coordination commerciale."
+           data-en="Logistics support, checks, supplier management and coordination."
+           data-ki="Ubufasha mu gutanga ibintu no gukurikirana ibikorwa."></p>
+    </div>
+
+    <div class="card">
+        <div class="card-title" data-fr="Services"
+             data-en="Services"
+             data-ki="Serivisi"></div>
+        <p data-fr="Organisation, optimisation interne, protocoles opérationnels et assistance continue."
+           data-en="Organization, internal optimization, operational protocols and continuous support."
+           data-ki="Gutunganya ibikorwa no kubikora neza."></p>
+    </div>
+
+    <div class="card">
+        <div class="card-title" data-fr="Artisans & indépendants"
+             data-en="Craftsmen & Independents"
+             data-ki="Abikorera ku giti cabo"></div>
+        <p data-fr="Gestion administrative, suivi commercial, support sur demande."
+           data-en="Administrative management, commercial monitoring, support on request."
+           data-ki="Ubufasha ku bikorwa vyabo n’inyandiko."></p>
+    </div>
+
 </div>
+</section>
 
 
 
-<!-- ---------------------- POURQUOI DEVENIR PARTENAIRE ---------------------- -->
-<div class="section">
-    <h2 data-fr="Pourquoi Devenir Partenaire ?"
-        data-en="Why Become a Partner?"
-        data-ki="Ni kubera iki mwoba Umufasha?"></h2>
+<!-- CAS D’USAGE PROFESSIONNELS -->
+<section class="section">
+<h2 data-fr="Cas d’usage professionnels"
+    data-en="Professional Use Cases"
+    data-ki="Uko serivisi zikoreshwa mu bikorwa"></h2>
 
-    <div class="pro-grid">
-        <div class="pro-card">
-            <div class="icon">⭐</div>
-            <p data-fr="Support prioritaire et dédié"
-               data-en="Dedicated priority support"
-               data-ki="Ubufasha bwihuta kandi bwihariye"></p>
-        </div>
+<div class="cards">
 
-        <div class="pro-card">
-            <div class="icon">📊</div>
-            <p data-fr="Reporting professionnel"
-               data-en="Professional reporting"
-               data-ki="Raporo ya kinyamwuga"></p>
-        </div>
-
-        <div class="pro-card">
-            <div class="icon">🔒</div>
-            <p data-fr="Confidentialité garantie"
-               data-en="Guaranteed confidentiality"
-               data-ki="Ubwihisho bwizewe"></p>
-        </div>
-
-        <div class="pro-card">
-            <div class="icon">🚀</div>
-            <p data-fr="Accès à des solutions avancées"
-               data-en="Access to advanced solutions"
-               data-ki="Kwemererwa ibisubizo vy’iterambere"></p>
-        </div>
+    <div class="card">
+        <div class="card-title" data-fr="Vous n’êtes pas sur place"
+             data-en="You Are Not On Site"
+             data-ki="Ntimuba mu gihugu"></div>
+        <p data-fr="Nous devenons vos yeux et vos mains au Burundi : contrôle, vérifications, preuves visuelles."
+           data-en="We become your eyes and hands: control, checks and visual evidence."
+           data-ki="Tuba ijisho n’amaboko yanyu mu Burundi."></p>
     </div>
 
-    <br>
-    <a href="partenariat.html" class="btn-part">Devenir partenaire</a>
-</div><!-- ---------------------- CTA FINAL ---------------------- -->
-<div class="section" id="cta-final" style="text-align:center; padding-bottom:60px;">
-
-    <h2 data-fr="Entrons en Collaboration"
-        data-en="Let's Work Together"
-        data-ki="Tukorane Hamwe"></h2>
-
-    <p data-fr="Nos équipes sont prêtes à accompagner votre entreprise avec des solutions sur mesure, un suivi professionnel et un support prioritaire."
-       data-en="Our teams are ready to assist your business with tailored solutions, professional follow-up and priority support."
-       data-ki="Abenegihugu bacu biteguye gufasha amashirahamwe yanyu ku bisubizo vyihariye, gukurikirana neza n'ubufasha bwihuta."></p>
-
-    <div class="cta-grid">
-        <a href="https://wa.me/25779945007" class="cta-btn">WhatsApp Burundi</a>
-        <a href="https://wa.me/15145029503" class="cta-btn">WhatsApp Canada</a>
-        <a href="mailto:infos@cizagroup.com" class="cta-btn">Email Professionnel</a>
-        <a href="contact.html" class="cta-btn">Formulaire de Contact</a>
-        <a href="partenariat.html" class="cta-btn-gold">Devenir Partenaire</a>
+    <div class="card">
+        <div class="card-title" data-fr="Manque de personnel"
+             data-en="Lack of Staff"
+             data-ki="Abakozi bahagije"></div>
+        <p data-fr="Nous comblons les besoins opérationnels : gestion, organisation, présence terrain."
+           data-en="We fill operational gaps: management, organization and field presence."
+           data-ki="Dufasha iyo atakozi bahagije."></p>
     </div>
+
+    <div class="card">
+        <div class="card-title" data-fr="Processus non structurés"
+             data-en="Unstructured Processes"
+             data-ki="Ibikorwa bitaratomoye"></div>
+        <p data-fr="Mise en place de protocoles, supervision, procédures internes et optimisation."
+           data-en="Protocols, supervision, internal procedures and optimization."
+           data-ki="Dushiraho uburyo bwo gukora neza."></p>
+    </div>
+
+    <div class="card">
+        <div class="card-title" data-fr="Besoin de preuves visuelles"
+             data-en="Need for Visual Evidence"
+             data-ki="Ivyemezo vy’amasanamu"></div>
+        <p data-fr="Photos, vidéos, rapports professionnels, suivi indépendant."
+           data-en="Photos, videos, professional reports, independent monitoring."
+           data-ki="Ifoto n’amashusho vy’igenzura rwose."></p>
+    </div>
+
+    <div class="card">
+        <div class="card-title" data-fr="Surcharge de travail"
+             data-en="Work Overload"
+             data-ki="Akazi kenshi cane"></div>
+        <p data-fr="Nous absorbons vos tâches : organisation, vérifications, gestion opérationnelle."
+           data-en="We absorb tasks: organization, checks, operational management."
+           data-ki="Dufasha mu mirimo myinshi."></p>
+    </div>
+
+    <div class="card">
+        <div class="card-title" data-fr="Lancement d’activité"
+             data-en="Business Launch"
+             data-ki="Gutanguza ibikorwa"></div>
+        <p data-fr="Assistance complète pour structurer, planifier et sécuriser vos débuts."
+           data-en="Complete assistance to structure, plan and secure your launch."
+           data-ki="Ubufasha mu gutanguza ibintu neza."></p>
+    </div>
+
 </div>
-
-<style>
-.cta-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:18px;
-    margin-top:25px;
-}
-
-.cta-btn{
-    text-decoration:none;
-    padding:12px 16px;
-    background:#0b1c34cc;
-    color:white;
-    border-radius:10px;
-    border:1px solid #103564;
-    transition:.3s;
-    text-align:center;
-}
-.cta-btn:hover{
-    border-color:#F2B840;
-    transform:translateY(-5px);
-}
-
-.cta-btn-gold{
-    text-decoration:none;
-    padding:12px 16px;
-    background:#F2B840;
-    color:#06142e;
-    font-weight:bold;
-    border-radius:10px;
-    text-align:center;
-    transition:.3s;
-}
-.cta-btn-gold:hover{
-    background:#c99933;
-}
-</style>
+</section>
 
 
-<!-- ---------------------- FOOTER ---------------------- -->
-<footer style="background:#020a16; padding:30px; text-align:center; font-size:14px; opacity:.85;">
 
-    <div style="margin-bottom:12px; opacity:.7;">
-        © 2026 CIZA GROUP — All Rights Reserved.
+<!-- SOLUTIONS POUR ENTREPRISES BURUNDAISES -->
+<section class="section">
+<h2 data-fr="Solutions pour entreprises burundaises"
+    data-en="Solutions for Burundian Companies"
+    data-ki="Serivisi ku mashirahamwe yo mu Burundi"></h2>
+
+<p data-fr="
+CIZA GROUP accompagne également les entreprises locales dans leur croissance et leur professionnalisation. 
+Nous aidons les structures burundaises à adopter des méthodes modernes, à améliorer leur gestion interne, 
+à renforcer leur image professionnelle et à optimiser leurs opérations quotidiennes. 
+Grâce à une expertise solide, des outils internationaux et un accompagnement structuré, 
+nous offrons aux entreprises du Burundi un soutien durable, adapté à leurs réalités et à leurs ambitions."
+   data-en="
+CIZA GROUP supports local companies in their growth and professionalization.
+We help Burundian structures adopt modern methods, improve internal management,
+strengthen their professional image and optimize daily operations.
+With solid expertise, international tools and structured support,
+we offer sustainable assistance adapted to local realities."
+   data-ki="
+CIZA GROUP irafasha amashirahamwe yo mu Burundi gukura no gukora mu buryo bw’umwuga,
+kubungabunga ibikorwa vyabo, gukoresha ubuhinga bwa none no kwagura ibikorwa vyabo."></p>
+</section>
+
+
+
+<!-- GARANTIES CIZA GROUP -->
+<section class="section">
+<h2 data-fr="Nos garanties"
+    data-en="Our Guarantees"
+    data-ki="Ivyizigiro vyacu"></h2>
+
+<div class="cards">
+
+    <div class="card">
+        <div class="card-title" data-fr="Confidentialité absolue"
+             data-en="Absolute Confidentiality"
+             data-ki="Ibanga ryuzuye"></div>
+        <p data-fr="Tous les documents, échanges et dossiers sont protégés par des protocoles stricts."
+           data-en="All documents and communications are protected by strict protocols."
+           data-ki="Ivyo duhabwa vyose birakingirwa ku rugero rwo hejuru."></p>
     </div>
 
-    <div style="margin-bottom:12px; opacity:.7;">
-        <span data-fr="Bujumbura, Burundi"
-              data-en="Bujumbura, Burundi"
-              data-ki="Bujumbura, Uburundi"></span>
+    <div class="card">
+        <div class="card-title" data-fr="Exigence et rigueur"
+             data-en="Excellence & Rigor"
+             data-ki="Ubuhinga buhambaye"></div>
+        <p data-fr="Chaque mission suit un cadre professionnel inspiré des standards internationaux."
+           data-en="Each mission follows a professional framework inspired by global standards."
+           data-ki="Dukora dukurikije amahiganwa yo ku rwego rwo hejuru."></p>
     </div>
 
-    <div class="socials" style="margin-top:15px;">
-        <a href="https://instagram.com/cizagroup_official" target="_blank" class="social">Instagram</a>
-        <a href="#" target="_blank" class="social">Facebook</a>
-        <a href="#" target="_blank" class="social">YouTube</a>
+    <div class="card">
+        <div class="card-title" data-fr="Transparence totale"
+             data-en="Total Transparency"
+             data-ki="Ukuri kwose"></div>
+        <p data-fr="Suivi, rapports et preuves visuelles disponibles pour chaque intervention."
+           data-en="Monitoring, reporting and visual proof available for every action."
+           data-ki="Dutanga ivyegeranyo n’ibimenyamenya ku bikorwa vyose."></p>
     </div>
 
-    <style>
-    .social{
-        margin:0 10px;
-        color:#F2B840;
-        text-decoration:none;
-    }
-    .social:hover{
-        text-decoration:underline;
-    }
-    </style>
+</div>
+</section><!-- TÉMOIGNAGES PROFESSIONNELS -->
+<section class="section">
+<h2 data-fr="Témoignages professionnels"
+    data-en="Professional Testimonials"
+    data-ki="Ivyabona vy’umwuga"></h2>
 
-    <div style="opacity:0.25; margin-top:20px; font-size:12px;">
-        CIZA GROUP
+<div class="testimonials">
+
+    <div class="testimonial">
+        <p data-fr="« Une équipe fiable, réactive et rigoureuse. Nous leur faisons confiance pour nos opérations au Burundi. »"
+           data-en="“A reliable, responsive and rigorous team. We trust them with our operations in Burundi.”"
+           data-ki="“Itsinda ry’ivyo kwizerwa, rikorana umwete n’ubuhinga. Turaryizeye mu bikorwa vyacu mu Burundi.”"></p>
+        <span>— Client International</span>
     </div>
+
+    <div class="testimonial">
+        <p data-fr="« Un accompagnement professionnel qui nous a permis d'améliorer notre organisation interne. »"
+           data-en="“Professional support that helped us improve our internal organization.”"
+           data-ki="“Ubufasha bw’umwuga bwadufashije gutunganya neza ibikorwa vyacu.”"></p>
+        <span>— Entreprise Locale</span>
+    </div>
+
+    <div class="testimonial">
+        <p data-fr="« Leur suivi et leurs preuves visuelles sont d'une grande valeur pour notre structure. »"
+           data-en="“Their monitoring and visual evidence are extremely valuable to us.”"
+           data-ki="“Ukurikirana kwabo n’ivyemezo vy’amasanamu biradufasha cane.”"></p>
+        <span>— Partenaire Professionnel</span>
+    </div>
+
+</div>
+</section>
+
+
+
+<!-- CTA FINAL -->
+<section class="section cta-final">
+<h2 data-fr="Prêt à collaborer ?"
+    data-en="Ready to Collaborate?"
+    data-ki="Muriteguriye gukorana natwe ?"></h2>
+
+<p data-fr="Nous accompagnons les entreprises avec sérieux, confidentialité et rigueur. Démarrez votre collaboration avec CIZA GROUP."
+   data-en="We support companies with seriousness, confidentiality and rigor. Start your collaboration with CIZA GROUP."
+   data-ki="Turi kumwe n’amashirahamwe mu buryo bw’umwuga. Tanguza gukorana na CIZA GROUP."></p>
+
+<a href="contact.html" class="partner-btn"
+   data-fr="Devenir partenaire"
+   data-en="Become a Partner"
+   data-ki="Mutubere abakorana natwe">
+   Devenir partenaire
+</a>
+</section>
+
+
+
+<!-- FOOTER 2026 -->
+<footer class="footer">
+    <p class="footer-logo">© 2026 CIZA GROUP — <span data-fr="Tous droits réservés"
+        data-en="All rights reserved"
+        data-ki="Uburenganzira bwose burakingiwe"></span></p>
+
+    <div class="footer-links">
+        <a href="mentions-legales.html" data-fr="Mentions légales" data-en="Legal Notice" data-ki="Amategeko">Mentions légales</a>
+        <a href="https://instagram.com/cizagroup_official" target="_blank">Instagram</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://youtube.com" target="_blank">YouTube</a>
+    </div>
+
+    <p class="footer-address" data-fr="Bujumbura, Burundi"
+       data-en="Bujumbura, Burundi"
+       data-ki="Bujumbura, Uburundi"></p>
 </footer>
 
 
-<!-- ---------------------- LOGO FLOTTANT DISCRET ---------------------- -->
-<div class="floating-logo">
-    <img src="logotransparent.png">
-</div>
 
-<style>
-.floating-logo{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    opacity:0.12;
-    animation:float 6s ease-in-out infinite;
-}
-.floating-logo img{
-    height:70px;
-}
-
-@keyframes float{
-    0%{ transform:translateY(0px); }
-    50%{ transform:translateY(-8px); }
-    100%{ transform:translateY(0px); }
-}
-</style>
+<!-- LOGO FLOTTANT DISCRET -->
+<img src="logotransparent.png" class="floating-logo" alt="CIZA GROUP Logo">
 
 
-<!-- ---------------------- BOUTON FLOTTANT MOBILE ---------------------- -->
-<a href="partenariat.html" class="mobile-partner-btn">
-    🤝
-</a>
 
-<style>
-.mobile-partner-btn{
-    display:none;
-    position:fixed;
-    right:18px;
-    bottom:90px;
-    background:#F2B840;
-    color:#06142e;
-    font-size:26px;
-    padding:12px 16px;
-    border-radius:50%;
-    text-decoration:none;
-    z-index:10000;
-    box-shadow:0 0 12px #F2B84088;
-}
-
-@media(max-width:700px){
-    .mobile-partner-btn{ display:block; }
-}
-</style>
-
-
-<!-- ---------------------- SCRIPT TRILINGUE ---------------------- -->
+<!-- SCRIPTS LOGIQUES (LANG + POPUP + ANIMATIONS) -->
 <script>
+/* TRILINGUE */
 function setLang(l){
-    document.querySelectorAll("[data-fr]").forEach(el=>{
-        el.innerHTML = el.dataset[l];
-    });
-    document.getElementById("lg-fr").classList.remove("active");
-    document.getElementById("lg-en").classList.remove("active");
-    document.getElementById("lg-ki").classList.remove("active");
-    document.getElementById("lg-"+l).classList.add("active");
+    document.querySelectorAll("[data-fr]").forEach(el=>{ el.innerHTML = el.dataset[l]; });
+
+    document.getElementById("lg-fr")?.classList.remove("active");
+    document.getElementById("lg-en")?.classList.remove("active");
+    document.getElementById("lg-ki")?.classList.remove("active");
+
+    const elem = document.getElementById("lg-"+l);
+    if(elem){ elem.classList.add("active"); }
+}
+setLang("fr");
+
+
+
+/* POPUP (pup1 + pup2 long) */
+let currentPopup = "";
+
+const popupData = {
+    admin: {
+        shortTitle: "Assistance administrative",
+        longText_fr: `
+        Nous accompagnons les entreprises dans la préparation, la gestion et la vérification de leurs documents 
+        administratifs. Cela inclut l’organisation interne, la conformité, la coordination de dossiers et la 
+        structuration administrative complète.`,
+        longText_en: `
+        We assist companies in preparing, managing and reviewing their administrative documents, internal 
+        organization, compliance and full administrative structuring.`,
+        longText_ki: `
+        Dufasha amashirahamwe mu gutunganya inyandiko, igenzura n’ibikorwa vyose vy’imbere mu gihugu.`
+    },
+
+    digital: {
+        shortTitle: "Digitalisation & optimisation",
+        longText_fr: `
+        Mise en place d’outils modernes, automatisation des tâches, réduction des erreurs, suivi digital et 
+        optimisation interne. Nous aidons les entreprises à intégrer des solutions numériques fiables.`,
+        longText_en: `
+        Implementation of modern tools, automation, error reduction, digital monitoring and internal optimization.`,
+        longText_ki: `
+        Gukoresha ubuhinga bwa digitali mu bikorwa vy’amashirahamwe no kubikosora neza.`
+    },
+
+    log: {
+        shortTitle: "Logistique & coordination",
+        longText_fr: `
+        Organisation des livraisons, suivi terrain, coordination des fournisseurs, gestion opérationnelle et 
+        supervision complète. Idéal pour les entreprises ayant des opérations réparties sur plusieurs zones.`,
+        longText_en: `
+        Delivery organization, field monitoring, supplier coordination and operational management.`,
+        longText_ki: `
+        Gutunganya ibikorwa, gukwirikirana ibikorwa vy’ahantu hatandukanye no gutanga ivyegeranyo.`
+    },
+
+    qualite: {
+        shortTitle: "Contrôle qualité",
+        longText_fr: `
+        Vérifications, inspection, conformité, standards professionnels, preuves visuelles et suivi indépendant.`,
+        longText_en: `
+        Verifications, inspection, compliance, professional standards and independent monitoring.`,
+        longText_ki: `
+        Igenzura ry’ibikorwa, kumenya neza ibintu n’ivyemezo vy’amasanamu.`
+    },
+
+    secure: {
+        shortTitle: "Sécurité des opérations",
+        longText_fr: `
+        Mise en place de protocoles internes, gestion confidentielle, vérifications, suivi et assurance qualité.`,
+        longText_en: `
+        Operational security, internal protocols, confidential handling and monitoring.`,
+        longText_ki: `
+        Umutekano, gukingira ibikorwa n’ugukurikiranwa kwinshi.`
+    },
+
+    local: {
+        shortTitle: "Représentation locale",
+        longText_fr: `
+        Nous agissons comme votre relais sur place : inspections, visites, vérifications, suivi, rapports 
+        professionnels et coordination terrain.`,
+        longText_en: `
+        We act as your local representative: inspections, visits, checks and reporting.`,
+        longText_ki: `
+        Tube abaserukira: kugendagenda, igenzura n’ivyegeranyo.`
+    },
+
+    strategie: {
+        shortTitle: "Support stratégique",
+        longText_fr: `
+        Analyse, recommandations, planification, structuration interne, optimisation et organisation complète.`,
+        longText_en: `
+        Analysis, recommendations, planning, internal structuring and optimization.`,
+        longText_ki: `
+        Impanuro zishingiye ku bushakashatsi hamwe n’ugukosora ibintu.`
+    },
+
+    verif: {
+        shortTitle: "Vérifications & preuves visuelles",
+        longText_fr: `
+        Preuves photo/vidéo, inspections terrain, vérifications indépendantes, rapports professionnels.`,
+        longText_en: `
+        Photo/video evidence, inspections, independent verification and structured reports.`,
+        longText_ki: `
+        Ifoto, amashusho n’inyishu z’ukuri ku bikorwa vyakozwe.`
+    }
+};
+
+
+
+/* POPUP 1 → PETIT DÉTAIL */
+function openPopup(type){
+    currentPopup = type;
+
+    document.getElementById("popup-title").innerHTML = popupData[type].shortTitle;
+    document.getElementById("popup").style.display = "flex";
 }
 
-setLang("fr");
+/* POPUP 2 → GRAND DÉTAIL LONG */
+function openFullPopup(){
+    const t = currentPopup;
+
+    document.getElementById("full-title").innerHTML = popupData[t].shortTitle;
+    document.getElementById("full-text-fr").innerHTML = popupData[t].longText_fr;
+    document.getElementById("full-text-en").innerHTML = popupData[t].longText_en;
+    document.getElementById("full-text-ki").innerHTML = popupData[t].longText_ki;
+
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("fullpopup").style.display = "block";
+}
+
+/* FERMER */
+function closePopup(){ document.getElementById("popup").style.display = "none"; }
+function closeFull(){ document.getElementById("fullpopup").style.display = "none"; }
 </script>
 
 
-</body>
+
+<!-- POPUP STRUCTURES -->
+<div id="popup" class="popup-bg">
+    <div class="popup-box">
+        <h3 id="popup-title"></h3>
+        <button onclick="openFullPopup()" class="popup-btn">→ En savoir plus</button>
+        <button onclick="closePopup()" class="popup-close">✕</button>
+    </div>
+</div>
+
+<div id="fullpopup" class="popup-bg">
+    <div class="popup-full">
+        <h2 id="full-title"></h2>
+
+        <p id="full-text-fr"></p>
+        <p id="full-text-en"></p>
+        <p id="full-text-ki"></p>
+
+        <h3>Contact</h3>
+        <a href="https://wa.me/25779945007">WhatsApp Burundi</a>
+        <a href="https://wa.me/15145029503">WhatsApp Canada</a>
+        <a href="contact.html">Formulaire →</a>
+
+        <button onclick="closeFull()" class="popup-close-full">Fermer</button>
+    </div>
+</div></body>
 </html>
