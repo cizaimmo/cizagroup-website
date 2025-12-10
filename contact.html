@@ -26,13 +26,37 @@ header{
     border-bottom:1px solid #0e2a50;
 }
 header img{height:55px;}
-.nav-links{display:flex;gap:22px;font-size:15px;}
-.nav-links a{color:white;opacity:.8;}
-.nav-links a:hover{opacity:1;color:#F2B840;}
-.lang-switch span{
-    margin-left:10px;cursor:pointer;opacity:.6;font-weight:bold;
+
+.nav-links{
+    display:flex;gap:22px;font-size:15px;
 }
-.lang-switch .active{opacity:1;color:#F2B840;}
+.nav-links a{
+    color:white;opacity:.85;
+}
+.nav-links a:hover{
+    opacity:1;color:#F2B840;
+}
+
+/* LANG SWITCH */
+.lang-switch{
+    display:flex;
+    gap:8px;
+    font-weight:bold;
+}
+.lang-switch span{
+    cursor:pointer;
+    opacity:.6;
+}
+.lang-switch .active{
+    opacity:1;color:#F2B840;
+}
+
+/* MOBILE FIX : rendre visible le bouton KI */
+@media(max-width:600px){
+    .lang-switch span{
+        font-size:13px;
+    }
+}
 
 /* HERO */
 .hero{
@@ -44,7 +68,10 @@ header img{height:55px;}
     color:#F2B840;
     margin-bottom:10px;
 }
-.hero p{opacity:.8;font-size:16px;}
+.hero p{
+    opacity:.8;
+    font-size:16px;
+}
 
 /* WRAPPER */
 .wrapper{
@@ -61,17 +88,20 @@ header img{height:55px;}
     border:1px solid #12335c;
     margin-bottom:40px;
 }
-.form-box h2{color:#F2B840;margin-top:0;text-align:center;}
-
+.form-box h2{
+    color:#F2B840;margin-top:0;text-align:center;
+}
 input, select, textarea{
     width:100%;padding:14px;border-radius:10px;
-    border:none;margin:8px 0;background:#112544;color:white;
+    border:none;margin:8px 0;
+    background:#112544;color:white;
 }
 textarea{height:140px;resize:none;}
+
 button{
     width:100%;padding:14px;border:none;border-radius:10px;
-    background:#F2B840;color:#06142e;font-size:16px;
-    font-weight:bold;cursor:pointer;margin-top:14px;
+    background:#F2B840;color:#06142e;
+    font-size:16px;font-weight:bold;cursor:pointer;margin-top:14px;
 }
 button:hover{background:#c99933;}
 
@@ -84,17 +114,10 @@ button:hover{background:#c99933;}
     margin-bottom:40px;
 }
 .partner-section h2{
-    text-align:center;
-    color:#F2B840;
-    margin-top:0;
-    margin-bottom:10px;
-    font-size:26px;
+    text-align:center;color:#F2B840;margin-top:0;margin-bottom:10px;
 }
-.partner-section p{
-    text-align:center;
-    opacity:.85;
-    margin-bottom:25px;
-}
+.partner-section p{text-align:center;opacity:.85;margin-bottom:25px;}
+
 .partner-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -102,8 +125,7 @@ button:hover{background:#c99933;}
 }
 .partner-card{
     background:#0f223d;
-    padding:18px;
-    border-radius:14px;
+    padding:18px;border-radius:14px;
     border:1px solid #1d3b63;
     transition:.3s;
 }
@@ -112,29 +134,33 @@ button:hover{background:#c99933;}
     border-color:#F2B840;
 }
 .partner-card h3{
-    color:#F2B840;
-    margin-top:0;
-    margin-bottom:10px;
+    color:#F2B840;margin-top:0;margin-bottom:10px;
 }
-.partner-card p{
-    opacity:.85;
-    font-size:14px;
-}
+.partner-card p{opacity:.85;font-size:14px;}
 
-/* INFO BOX */
+/* CONTACT DIRECT */
 .info-box{
     background:#0b1c34cc;
     padding:25px;border-radius:16px;
     border:1px solid #12335c;
 }
-.info-box h3{color:#F2B840;margin-top:0;}
+.info-box h3{
+    color:#F2B840;margin-top:0;
+}
 .info-box p{opacity:.85;}
-.info-box a{display:block;margin-top:6px;font-size:16px;}
+.info-box a{
+    display:block;margin-top:6px;font-size:16px;
+}
 
 /* FOOTER */
 footer{
     margin-top:40px;padding:25px;text-align:center;
     background:#020a16;font-size:13px;opacity:.75;
+}
+footer a{
+    color:#F2B840;
+    display:block;
+    margin:4px 0;
 }
 </style>
 </head>
@@ -150,6 +176,7 @@ footer{
         <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
         <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
         <a href="services-burundi.html" data-fr="Services" data-en="Services" data-ki="Serivisi"></a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
     </div>
 
     <div class="lang-switch">
@@ -162,30 +189,34 @@ footer{
 <!-- HERO -->
 <section class="hero">
     <h1 data-fr="Contactez-nous" data-en="Contact Us" data-ki="Tuvugishe"></h1>
-    <p data-fr="Nos équipes vous répondent rapidement"
-       data-en="Our teams respond quickly"
-       data-ki="Turishura vuba cane"></p>
+    <p data-fr="Nos équipes vous répondent en moins de 24h"
+       data-en="Our teams respond within 24 hours"
+       data-ki="Turagusubiza mu masaha 24"></p>
 </section>
 
 <div class="wrapper">
 
-    <!-- FORMULAIRE PREMIUM -->
+    <!-- FORM BOX -->
     <div class="form-box">
         <h2 data-fr="Formulaire de contact"
             data-en="Contact Form"
             data-ki="Ifishi yo kutwandikira"></h2>
 
         <p style="opacity:.8;font-size:15px;margin-bottom:20px;"
-           data-fr="Sélectionnez votre service pour nous aider à mieux orienter votre demande."
-           data-en="Select your service so we can better direct your request."
-           data-ki="Hitamwo serivisi kugira dutahure ico ukeneye."></p>
+           data-fr="Sélectionnez un service pour mieux traiter votre demande."
+           data-en="Select a service so we can process your request better."
+           data-ki="Hitamwo serivisi kugira dukore ico usaba neza."></p>
 
-        <!-- FORMULAIRE ENVOYÉ EXCLUSIVEMENT À infos@cizagroup.com -->
         <form action="https://formsubmit.co/infos@cizagroup.com" method="POST">
 
-            <input type="text" name="name" placeholder="Nom complet / Full Name" required>
+            <!-- Confirmation automatique -->
+            <input type="hidden" name="_subject" value="Nouvelle demande depuis CIZA GROUP">
+            <input type="hidden" name="_autoresponse" value="Merci pour votre message. Notre équipe vous contactera dans moins de 24h. — CIZA GROUP">
+            <input type="hidden" name="_template" value="table">
+
+            <input type="text" name="name" placeholder="Nom complet" required>
             <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="phone" placeholder="Téléphone / Phone Number">
+            <input type="text" name="phone" placeholder="Téléphone">
 
             <select name="service" required>
                 <option value="">Choisissez un service</option>
@@ -219,70 +250,65 @@ footer{
         </form>
     </div>
 
-    <!-- SECTION PARTENAIRES -->
+    <!-- PARTENAIRES -->
     <div class="partner-section">
         <h2 data-fr="Partenaires & Entreprises"
             data-en="Partners & Businesses"
-            data-ki="Abarwizatunga & Amashirahamwe"></h2>
+            data-ki="Abashirahamwe & Abarwizatunga"></h2>
 
-        <p data-fr="CIZA GROUP collabore avec des entreprises, institutions et investisseurs."
-           data-en="CIZA GROUP collaborates with companies, institutions and investors."
+        <p data-fr="CIZA GROUP accompagne entreprises, institutions et investisseurs."
+           data-en="CIZA GROUP supports companies, institutions and investors."
            data-ki="CIZA GROUP ikorana n’amashirahamwe n’abashoramari."></p>
 
         <div class="partner-grid">
 
             <div class="partner-card">
                 <h3>Mobilité & Logistique</h3>
-                <p>CizaRide+, CizaDelivery, CizaLogistics : flottes, hôtels, commerces, etc.</p>
+                <p>CizaRide+, CizaDelivery, CizaLogistics : flottes, hôtels, commerces…</p>
             </div>
 
             <div class="partner-card">
                 <h3>Digital & Paiements</h3>
-                <p>CizaPay+ & CizaTech : solutions digitales, sécurité, systèmes.</p>
+                <p>CizaPay+ et CizaTech : paiements, sécurité, développement…</p>
             </div>
 
             <div class="partner-card">
                 <h3>Immobilier & Services</h3>
-                <p>CizaImmo, CizaAssist, CizaCarWash : propriétaires, entreprises, PME.</p>
+                <p>CizaImmo, CizaAssist, CizaCarWash : propriétaires, PME…</p>
             </div>
 
         </div>
 
         <br><br>
 
-        <button onclick="window.location.href='services-burundi.html'"
-            style="width:100%;padding:14px;border:none;border-radius:10px;background:#F2B840;color:#06142e;font-size:16px;font-weight:bold;cursor:pointer;">
+        <button onclick="window.location.href='services-burundi.html'">
             Explorer nos services
         </button>
     </div>
 
-    <!-- CONTACT DIRECT --
+    <!-- CONTACT DIRECT -->
     <div class="info-box">
-    <h3 data-fr="Informations & Contact direct"
-        data-en="Information & Direct Contact"
-        data-ki="Amakuru & Uburyo bwo kutuvugisha"></h3>
+        <h3 data-fr="Contacts directs"
+            data-en="Direct Contacts"
+            data-ki="Uburyo bwo kutuvugisha"></h3>
 
-    <p data-fr="Vous pouvez aussi nous joindre directement :"
-       data-en="You can also reach us directly:"
-       data-ki="Murashobora kuduhamagara canke kuduha ubutumwa:"></p>
+        <a href="mailto:infos@cizagroup.com">📧 infos@cizagroup.com — Service général</a>
+        <a href="mailto:business@cizagroup.com">💼 business@cizagroup.com — Partenariats</a>
+        <a href="mailto:rh@cizagroup.com">🧑‍💼 rh@cizagroup.com — Ressources Humaines</a>
 
-    <a href="mailto:infos@cizagroup.com">📧 infos@cizagroup.com — Service général</a>
-    <a href="mailto:business@cizagroup.com">📧 business@cizagroup.com — Partenariats & Entreprises</a>
-    <a href="mailto:rh@cizagroup.com">📧 rh@cizagroup.com — Ressources Humaines</a>
+        <br><br>
+        <p>📍 Bujumbura, Burundi</p>
+    </div>
 
-    <br><br>
-    <a href="rh.html">
-        <button style="width:100%;padding:14px;border:none;border-radius:10px;background:#F2B840;color:#06142e;font-size:16px;font-weight:bold;cursor:pointer;">
-            Ressources Humaines
-        </button>
-    </a>
-
-    <br><br>
-    <p>📍 Bujumbura, Burundi</p>
 </div>
 
+<!-- FOOTER -->
 <footer>
     © 2026 CIZA GROUP — Tous droits réservés.
+    <br><br>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+    <a href="cookies.html">Cookies</a>
 </footer>
 
 <script>
