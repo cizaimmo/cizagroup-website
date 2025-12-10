@@ -4,88 +4,159 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>CIZA GROUP — Contact</title>
-
+<title>Contact — CIZA GROUP</title>
 <link rel="icon" href="logotransparent.png">
 
 <style>
+/* GLOBAL */
 body{
-    margin:0;background:#06142e;color:white;
-    font-family:Arial, sans-serif;
-    background-image:url("logotransparent.png");
-    background-size:240px;
-    background-repeat:repeat;
-    background-attachment:fixed;
-    opacity:.97;
+    margin:0;
+    background:#06142e;
+    color:white;
+    font-family: Arial, sans-serif;
 }
+a{text-decoration:none;color:#F2B840;}
 
 /* HEADER */
 header{
     position:fixed;top:0;left:0;width:100%;
     background:#06142eDD;backdrop-filter:blur(6px);
-    padding:10px 15px;z-index:999;
-    display:flex;align-items:center;
-    justify-content:space-between;
+    padding:15px 22px;z-index:999;
+    display:flex;align-items:center;justify-content:space-between;
     border-bottom:1px solid #0e2a50;
 }
 header img{height:55px;}
-.back-btn{
-    font-size:26px;color:#F2B840;cursor:pointer;
-    margin-right:10px;
-}
-.back-btn:hover{opacity:.8;}
-
+.nav-links{display:flex;gap:22px;font-size:15px;}
+.nav-links a{color:white;opacity:.8;}
+.nav-links a:hover{opacity:1;color:#F2B840;}
 .lang-switch span{
-    margin-left:10px;cursor:pointer;opacity:.6;
+    margin-left:10px;cursor:pointer;opacity:.6;font-weight:bold;
 }
-.lang-switch span.active{color:#F2B840;opacity:1;font-weight:bold;}
+.lang-switch .active{opacity:1;color:#F2B840;}
 
-.container{padding:120px 20px 60px;}
-h2{text-align:center;color:#F2B840;margin-bottom:25px;font-size:26px;}
-label{display:block;margin-top:15px;margin-bottom:6px;font-size:15px;}
-select,input,textarea{
-    width:100%;padding:12px;border-radius:8px;
-    border:1px solid #12325d;background:#0b1c34;
-    color:white;
+/* HERO */
+.hero{
+    padding:150px 20px 70px;
+    text-align:center;
 }
-textarea{height:130px;}
+.hero h1{
+    font-size:32px;
+    color:#F2B840;
+    margin-bottom:10px;
+}
+.hero p{opacity:.8;font-size:16px;}
 
+/* WRAPPER */
+.wrapper{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+/* FORMULAIRE CORPORATE */
+.form-box{
+    background:#0b1c34cc;
+    padding:25px;
+    border-radius:16px;
+    border:1px solid #12335c;
+    margin-bottom:40px;
+}
+.form-box h2{color:#F2B840;margin-top:0;text-align:center;}
+
+input, select, textarea{
+    width:100%;padding:14px;border-radius:10px;
+    border:none;margin:8px 0;background:#112544;color:white;
+}
+textarea{height:140px;resize:none;}
 button{
-    width:100%;padding:14px;border:none;
-    background:#F2B840;color:#06142e;
-    border-radius:10px;font-weight:bold;
-    margin-top:20px;cursor:pointer;font-size:16px;
+    width:100%;padding:14px;border:none;border-radius:10px;
+    background:#F2B840;color:#06142e;font-size:16px;
+    font-weight:bold;cursor:pointer;margin-top:14px;
 }
 button:hover{background:#c99933;}
 
-.contact-box{
-    margin-top:25px;padding:18px;
-    background:#0b1c34;border-radius:12px;
-    border-left:4px solid #F2B840;
+/* PARTENAIRES */
+.partner-section{
+    background:#0b1c34dd;
+    padding:30px;
+    border-radius:18px;
+    border:1px solid #1c3a65;
+    margin-bottom:40px;
 }
-.contact-box a{
-    display:block;margin:8px 0;color:#F2B840;
-    text-decoration:none;font-size:17px;
+.partner-section h2{
+    text-align:center;
+    color:#F2B840;
+    margin-top:0;
+    margin-bottom:10px;
+    font-size:26px;
+}
+.partner-section p{
+    text-align:center;
+    opacity:.85;
+    margin-bottom:25px;
+}
+.partner-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+.partner-card{
+    background:#0f223d;
+    padding:18px;
+    border-radius:14px;
+    border:1px solid #1d3b63;
+    transition:.3s;
+}
+.partner-card:hover{
+    transform:translateY(-4px);
+    border-color:#F2B840;
+}
+.partner-card h3{
+    color:#F2B840;
+    margin-top:0;
+    margin-bottom:10px;
+}
+.partner-card p{
+    opacity:.85;
+    font-size:14px;
 }
 
+/* INFO BOX */
+.info-box{
+    background:#0b1c34cc;
+    padding:25px;border-radius:16px;
+    border:1px solid #12335c;
+}
+.info-box h3{color:#F2B840;margin-top:0;}
+.info-box p{opacity:.85;}
+.info-box a{display:block;margin-top:6px;font-size:16px;}
+
+/* FOOTER */
 footer{
-    margin-top:40px;background:#020a16;
-    padding:25px;text-align:center;
-    font-size:13px;opacity:.75;
+    margin-top:40px;padding:25px;text-align:center;
+    background:#020a16;font-size:13px;opacity:.75;
 }
 
+/* MOBILE */
 @media(max-width:600px){
     header img{height:45px;}
+    .hero h1{font-size:26px;}
 }
 </style>
-
 </head>
+
 <body>
 
 <!-- HEADER -->
 <header>
-    <span class="back-btn" onclick="goBack()">←</span>
     <img src="logotransparent.png">
+
+    <div class="nav-links">
+        <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+        <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
+        <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+        <a href="services-burundi.html" data-fr="Services" data-en="Services" data-ki="Serivisi"></a>
+    </div>
 
     <div class="lang-switch">
         <span onclick="setLang('fr')" id="lg-fr">FR</span>
@@ -94,154 +165,142 @@ footer{
     </div>
 </header>
 
-<div class="container">
-<h2 data-fr="Contactez-nous"
-    data-en="Contact us"
-    data-ki="Tuvugishe"></h2>
+<!-- HERO -->
+<section class="hero">
+    <h1 data-fr="Contactez-nous" data-en="Contact Us" data-ki="Tuvugishe"></h1>
+    <p data-fr="Nos équipes vous répondent rapidement"
+       data-en="Our teams respond quickly"
+       data-ki="Turishura vuba cane"></p>
+</section>
 
-<form>
+<div class="wrapper">
 
-<!-- CATÉGORIE CLIENT -->
-<label data-fr="Vous êtes :"
-       data-en="You are :"
-       data-ki="Uri :"></label>
-<select id="client-type">
-    <option value="">-- Choisir --</option>
-    <option value="particulier">Particuliers</option>
-    <option value="diaspora">Diaspora</option>
-    <option value="entreprise">Entreprises</option>
-    <option value="investisseur">Investisseurs</option>
-    <option value="premium">Premium Investisseurs</option>
-    <option value="autres">Autres</option>
-</select>
+    <!-- FORMULAIRE PREMIUM -->
+    <div class="form-box">
+        <h2 data-fr="Formulaire de contact"
+            data-en="Contact Form"
+            data-ki="Ifishi yo kutwandikira"></h2>
 
-<!-- SERVICE -->
-<label data-fr="Quel service ?"
-       data-en="Which service?"
-       data-ki="Serivisi ?"></label>
+        <p style="opacity:.8;font-size:15px;margin-bottom:20px;"
+           data-fr="Sélectionnez votre service pour que l’équipe concernée vous réponde rapidement."
+           data-en="Select your service so the right team can assist you quickly."
+           data-ki="Hitamwo serivisi kugira ko umugwi ubishinzwe ubishurire vuba."></p>
 
-<select id="service" onchange="updateExpertises()">
-<option value="">-- Choisir --</option>
-<option value="cizaride">CizaRide+</option>
-<option value="cizadelivery">CizaDelivery</option>
-<option value="cizapay">CizaPay+</option>
-<option value="cizaimmo">CizaImmo</option>
-<option value="cizamarket">CizaMarket</option>
-<option value="cizalog">CizaLogistics</option>
-<option value="cizatech">CizaTech</option>
-<option value="cizajobs">CizaJobs</option>
-<option value="cizaacademy">CizaAcademy</option>
-<option value="cizagestion">CizaGestion</option>
-<option value="cizaassist">CizaAssist</option>
-<option value="cizacarwash">CizaCarWash</option>
-</select>
+        <form action="https://formsubmit.co/infos@cizagroup.com" method="POST">
 
-<!-- EXPERTISE DYNAMIQUE -->
-<label data-fr="Sous-expertise (optionnel)"
-       data-en="Sub-expertise (optional)"
-       data-ki="Ubuhinga bw'inyongera (si ngombwa)"></label>
+            <input type="text" name="name" placeholder="Nom complet / Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="phone" placeholder="Téléphone / Phone Number">
 
-<select id="expertise">
-<option value="">-- Choisir --</option>
-</select>
+            <select name="service" required>
+                <option value="">Choisissez un service</option>
+                <option>CizaRide+ — Mobilité</option>
+                <option>CizaDelivery — Livraison</option>
+                <option>CizaPay+ — Paiements</option>
+                <option>CizaImmo — Immobilier</option>
+                <option>CizaTech — Technologies</option>
+                <option>CizaLogistics — Logistique</option>
+                <option>CizaMarket — Marché & achats</option>
+                <option>CizaAssist — Conciergerie</option>
+                <option>CizaCarWash — Automobile</option>
+                <option>CizaJobs — Emploi & Recrutement</option>
+                <option>CizaAcademy — Formations</option>
+            </select>
 
-<!-- INFOS UTILISATEUR -->
-<label data-fr="Nom complet"
-       data-en="Full name"
-       data-ki="Izina ryuzuye"></label>
-<input type="text">
+            <select name="type" required>
+                <option value="">Type de demande</option>
+                <option>Devenir partenaire</option>
+                <option>Demande d’information</option>
+                <option>Collaboration commerciale</option>
+                <option>Investissement</option>
+            </select>
 
-<label data-fr="Adresse e-mail"
-       data-en="Email address"
-       data-ki="E-mail"></label>
-<input type="email">
+            <textarea name="message" placeholder="Votre message..." required></textarea>
 
-<label data-fr="Téléphone"
-       data-en="Phone"
-       data-ki="Telefone"></label>
-<input type="text">
+            <button type="submit"
+                    data-fr="Envoyer la demande"
+                    data-en="Send Request"
+                    data-ki="Rungika"></button>
+        </form>
+    </div>
 
-<label data-fr="Pays"
-       data-en="Country"
-       data-ki="Igihugu"></label>
-<input type="text">
+    <!-- SECTION PARTENAIRES PREMIUM -->
+    <div class="partner-section">
+        <h2 data-fr="Partenaires & Entreprises"
+            data-en="Partners & Businesses"
+            data-ki="Abarwizatunga & Amashirahamwe"></h2>
 
-<label data-fr="Message"
-       data-en="Message"
-       data-ki="Ubutumwa"></label>
-<textarea></textarea>
+        <p data-fr="CIZA GROUP collabore avec les entreprises, investisseurs, PME, institutions publiques et partenaires techniques."
+           data-en="CIZA GROUP works with companies, investors, SMEs, public institutions and technical partners."
+           data-ki="CIZA GROUP ikorana n’amashirahamwe, abadandaza, abashoramari hamwe n’inzego za leta."></p>
 
-<button type="submit"
-        data-fr="Envoyer"
-        data-en="Send"
-        data-ki="Rungika"></button>
+        <div class="partner-grid">
 
-</form>
+            <div class="partner-card">
+                <h3>Mobilité & Logistique</h3>
+                <p data-fr="Partenariats pour CizaRide+, CizaDelivery et CizaLogistics : flottes, hôtels, commerces, entreprises de transport."
+                   data-en="Partnerships for CizaRide+, CizaDelivery and CizaLogistics: fleets, hotels, shops, transport companies."
+                   data-ki="Ubufatanye bwa CizaRide+, CizaDelivery na CizaLogistics: amahoteri, ubudandaji, n’ingendo."></p>
+            </div>
 
-<!-- CONTACT DIRECT -->
-<div class="contact-box">
-    <h3>WhatsApp</h3>
-    <a href="https://wa.me/25779945007">+257 799 45007 (Burundi)</a>
-    <a href="https://wa.me/15145029503">+1 514 502 9503 (Canada)</a>
+            <div class="partner-card">
+                <h3>Digital & Paiements</h3>
+                <p data-fr="Solutions CizaPay+ et CizaTech pour entreprises souhaitant digitaliser paiements, sites, systèmes ou sécurité."
+                   data-en="CizaPay+ and CizaTech solutions for companies seeking digital payments, websites, systems or security."
+                   data-ki="Ibisubizo CizaPay+ na CizaTech ku mashirahamwe yipfuza iterambere mu ikoranabuhinga."></p>
+            </div>
 
-    <h3>E-mail</h3>
-    <a href="mailto:infos@cizagroup.com">infos@cizagroup.com</a>
+            <div class="partner-card">
+                <h3>Immobilier & Services</h3>
+                <p data-fr="Partenariats immobiliers et services : CizaImmo, CizaAssist, CizaCarWash pour propriétaires et entreprises."
+                   data-en="Real estate and service partnerships: CizaImmo, CizaAssist, CizaCarWash for companies and property owners."
+                   data-ki="Ubufatanye mu butunzi, serivisi n’ugutunganya imodoka."></p>
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+            style="width:100%;padding:14px;border:none;border-radius:10px;background:#F2B840;color:#06142e;font-size:16px;font-weight:bold;cursor:pointer;">
+            Devenir partenaire officiel
+        </button>
+    </div>
+
+    <!-- CONTACT DIRECT -->
+    <div class="info-box">
+        <h3 data-fr="Informations & Contact direct"
+            data-en="Information & Direct Contact"
+            data-ki="Amakuru & Uburyo bwo kutuvugisha"></h3>
+
+        <p data-fr="Vous pouvez aussi nous joindre directement:"
+           data-en="You can also reach us directly:"
+           data-ki="Murashobora kuduhamagara canke kuduha ubutumwa:"></p>
+
+        <a href="mailto:infos@cizagroup.com">📧 infos@cizagroup.com</a>
+        <a href="https://wa.me/25779945007">🇧🇮 WhatsApp Burundi</a>
+        <a href="https://wa.me/15145029503">🇨🇦 WhatsApp Canada</a>
+        <br>
+        <p>📍 Bujumbura, Burundi</p>
+    </div>
+
 </div>
 
-</div>
-
-<footer>© 2025 CIZA GROUP — Tous droits réservés.</footer>
-
+<!-- FOOTER -->
+<footer>
+    © 2026 CIZA GROUP — Tous droits réservés.
+</footer>
 
 <script>
-
-// --- RETOUR ---
-function goBack(){
-    if(history.length>1){ history.back(); }
-    else{ window.location.href="services.html"; }
-}
-
-/* --- LANG SWITCH --- */
+// MULTILINGUE
 function setLang(l){
     document.querySelectorAll("[data-fr]").forEach(el=>{
         el.innerHTML = el.dataset[l];
     });
-    document.getElementById("lg-fr").classList.remove("active");
-    document.getElementById("lg-en").classList.remove("active");
-    document.getElementById("lg-ki").classList.remove("active");
+    document.querySelectorAll(".lang-switch span").forEach(el=>el.classList.remove("active"));
     document.getElementById("lg-"+l).classList.add("active");
 }
 setLang("fr");
-
-
-/* --- EXPERTISES DYNAMIQUES --- */
-function updateExpertises(){
-    let s=document.getElementById("service").value;
-    let ex=document.getElementById("expertise");
-
-    const data={
-        cizaride:["Chauffeur privé","Courses professionnelles","Longue distance","Transport rapide","Entreprise"],
-        cizadelivery:["Livraison locale","Courses","Achat pour vous","Urgence","Entreprise"],
-        cizapay:["Paiement mobile","Sécurité","Conseils","Multidevise","Support"],
-        cizaimmo:["Achat","Location","Investissement","Gestion immobilière","Due Diligence"],
-        cizamarket:["Achats","Produits locaux","Commandes","Fournisseurs","Livraison"],
-        cizalog:["Transport","Colis","Entreprise","Suivi","Marchandises"],
-        cizatech:["Développement","Maintenance","Sécurité","Cloud","Applications"],
-        cizajobs:["CV","Orientation","Recherche emploi","Coaching","Recrutement"],
-        cizaacademy:["Formations","Coaching","Certifications","Compétences","Apprentissage"],
-        cizagestion:["Gestion","Organisation","Support entreprises","Administration","Conseils"],
-        cizaassist:["Conciergerie","Services rapides","Aide personnelle","Accompagnement","Simplification"],
-        cizacarwash:["Nettoyage","Entretien","Désinfection","Rapide","Professionnel"]
-    };
-
-    ex.innerHTML="<option value=''>-- Choisir --</option>";
-    if(data[s]){
-        data[s].forEach(item=>{
-            ex.innerHTML+=`<option>${item}</option>`;
-        });
-    }
-}
-
 </script>
 
 </body>
