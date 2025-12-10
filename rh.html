@@ -26,13 +26,25 @@ header{
     border-bottom:1px solid #0e2a50;
 }
 header img{height:55px;}
-.nav-links{display:flex;gap:22px;font-size:15px;}
+
+.nav-links{
+    display:flex;
+    gap:22px;
+    font-size:15px;
+}
 .nav-links a{color:white;opacity:.8;}
 .nav-links a:hover{opacity:1;color:#F2B840;}
+
 .lang-switch span{
-    margin-left:10px;cursor:pointer;opacity:.6;font-weight:bold;
+    margin-left:10px;
+    cursor:pointer;
+    opacity:.6;
+    font-weight:bold;
 }
-.lang-switch .active{opacity:1;color:#F2B840;}
+.lang-switch .active{
+    opacity:1;
+    color:#F2B840;
+}
 
 /* HERO */
 .hero{
@@ -40,86 +52,96 @@ header img{height:55px;}
     text-align:center;
 }
 .hero h1{
-    font-size:32px;
+    font-size:34px;
     color:#F2B840;
     margin-bottom:10px;
 }
-.hero p{opacity:.8;font-size:16px;}
+.hero p{
+    opacity:.8;
+    font-size:16px;
+}
 
-/* WRAPPER */
+/* CONTENT WRAPPER */
 .wrapper{
-    max-width:950px;
+    max-width:900px;
     margin:auto;
     padding:20px;
 }
 
-/* SECTION BOX */
-.section{
-    background:#0b1c34dd;
-    padding:30px;
-    border-radius:16px;
-    border:1px solid #12335c;
-    margin-bottom:40px;
-}
-.section h2{
-    color:#F2B840;
-    margin-top:0;
-    text-align:center;
-    font-size:26px;
-}
-.section p{opacity:.85;}
-
-/* CARDS */
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:20px;
-}
-.card{
-    background:#0f223d;
-    padding:18px;
-    border-radius:14px;
-    border:1px solid #1d3b63;
-    transition:.3s;
-}
-.card:hover{
-    transform:translateY(-4px);
-    border-color:#F2B840;
-}
-.card h3{color:#F2B840;margin:0 0 10px;}
-.card p{opacity:.85;font-size:14px;}
-
-/* FORMULAIRE */
+/* FORMULAIRE RH */
 .form-box{
     background:#0b1c34cc;
     padding:25px;
     border-radius:16px;
     border:1px solid #12335c;
+    margin-bottom:40px;
 }
-.form-box h2{color:#F2B840;margin-top:0;text-align:center;}
+.form-box h2{
+    text-align:center;
+    margin-top:0;
+    color:#F2B840;
+}
 
 input, select, textarea{
-    width:100%;padding:14px;border-radius:10px;
-    border:none;margin:8px 0;background:#112544;color:white;
+    width:100%;
+    padding:14px;
+    border-radius:10px;
+    border:none;
+    margin:8px 0;
+    background:#112544;
+    color:white;
 }
-textarea{height:140px;resize:none;}
+textarea{
+    height:130px;
+    resize:none;
+}
+input[type="file"]{
+    background:none;
+    padding:5px;
+}
+
 button{
-    width:100%;padding:14px;border:none;border-radius:10px;
-    background:#F2B840;color:#06142e;font-size:16px;
-    font-weight:bold;cursor:pointer;margin-top:14px;
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#F2B840;
+    color:#06142e;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:14px;
 }
 button:hover{background:#c99933;}
 
+/* BLOCKS */
+.block{
+    background:#0b1c34cc;
+    padding:25px;
+    border-radius:16px;
+    border:1px solid #12335c;
+    margin-bottom:35px;
+}
+.block h2{
+    margin-top:0;
+    color:#F2B840;
+}
+.block p{opacity:.85;line-height:1.6;}
+
 /* FOOTER */
 footer{
-    margin-top:40px;padding:25px;text-align:center;
-    background:#020a16;font-size:13px;opacity:.75;
+    margin-top:40px;
+    padding:25px;
+    text-align:center;
+    background:#020a16;
+    opacity:.75;
+    font-size:13px;
 }
 
 /* MOBILE */
 @media(max-width:600px){
-    header img{height:45px;}
-    .hero h1{font-size:26px;}
+    header img{height:46px;}
+    .hero h1{font-size:28px;}
 }
 </style>
 </head>
@@ -149,137 +171,106 @@ footer{
 <section class="hero">
     <h1 data-fr="Ressources Humaines"
         data-en="Human Resources"
-        data-ki="Abakozi & Abarongoye"></h1>
+        data-ki="Abakozi & Ibikenewe"></h1>
 
-    <p data-fr="Recrutement, carrières, partenariats RH."
-       data-en="Recruitment, careers, HR partnerships."
-       data-ki="Gutorwa, imirimo, ubufatanye mu bijanye n’abakozi."></p>
+    <p data-fr="Rejoignez une entreprise moderne, ambitieuse et tournée vers l’avenir."
+       data-en="Join a modern, ambitious and forward-looking company."
+       data-ki="Injira ishirahamwe rigezweho kandi riteye imbere."></p>
 </section>
 
 <div class="wrapper">
 
-    <!-- SECTION: POURQUOI NOUS REJOINDRE -->
-    <div class="section">
-        <h2 data-fr="Pourquoi rejoindre CIZA GROUP ?"
-            data-en="Why join CIZA GROUP?"
-            data-ki="Kubera iki wosanga CIZA GROUP?"></h2>
-
-        <p data-fr="Nous construisons une équipe solide, innovante et engagée pour transformer les services au Burundi et à l’international."
-           data-en="We are building a strong, innovative and committed team to transform services in Burundi and internationally."
-           data-ki="Dukora umugwi ukomeye, ushoboye kandi w’ubunyabwenge kugira duhindure serivisi mu Burundi no hanze."></p>
-
-        <ul style="opacity:.9;line-height:1.8;">
-            <li data-fr="Vision à long terme & croissance interne"
-                data-en="Long-term vision & internal growth"
-                data-ki="Indyane ndende n’iterambere ry’imbere mu kigo"></li>
-
-            <li data-fr="Environnement professionnel & structuré"
-                data-en="Professional & structured environment"
-                data-ki="Ahaboneye hakorana kinyamwuga"></li>
-
-            <li data-fr="Développement de compétences & formations"
-                data-en="Skills development & training"
-                data-ki="Amahugurwa n’iterambere ry’ubumenyi"></li>
-
-            <li data-fr="Impact réel dans le pays & diaspora"
-                data-en="Real impact in the country & diaspora"
-                data-ki="Ingorane nziza ku gihugu n’abadiaspora"></li>
-        </ul>
-    </div>
-
-    <!-- SECTION: OFFRES -->
-    <div class="section">
-        <h2 data-fr="Offres & Opportunités"
-            data-en="Opportunities & Careers"
-            data-ki="Ibiranga akazi n’amahirwe"></h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3 data-fr="Candidature spontanée"
-                    data-en="Open Application"
-                    data-ki="Gusaba akazi ukoresheje ubwishatse"></h3>
-                <p data-fr="Postulez à tout moment, même sans offre disponible."
-                   data-en="Apply anytime, even without an open position."
-                   data-ki="Urashobora gusaba akazi igihe cose naho ata kibanza kiri kumurongo."></p>
-            </div>
-
-            <div class="card">
-                <h3 data-fr="Postes — Burundi"
-                    data-en="Positions — Burundi"
-                    data-ki="Akamirimo — Burundi"></h3>
-                <p data-fr="Offres locales pour nos filiales & services."
-                   data-en="Local positions for our branches & services."
-                   data-ki="Ibiraka vy’imbere mu gihugu."></p>
-            </div>
-
-            <div class="card">
-                <h3 data-fr="Postes — International"
-                    data-en="International Positions"
-                    data-ki="Akamirimo — Mpuzamakungu"></h3>
-                <p data-fr="Opportunités à l’étranger selon les besoins."
-                   data-en="International opportunities depending on needs."
-                   data-ki="Amahigwe yo gukora hanze y’igihugu."></p>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- FORMULAIRE RH -->
+    <!-- FORMULAIRE CANDIDATURE -->
     <div class="form-box">
-        <h2 data-fr="Formulaire RH"
-            data-en="HR Form"
-            data-ki="Ifishi y’abakozi"></h2>
+        <h2 data-fr="Postuler maintenant"
+            data-en="Apply Now"
+            data-ki="Saba akazi"></h2>
 
-        <form action="https://formsubmit.co/rh@cizagroup.com" method="POST">
+        <form action="https://formsubmit.co/rh@cizagroup.com" method="POST" enctype="multipart/form-data">
+
+            <!-- copie vers infos@ -->
+            <input type="hidden" name="_cc" value="infos@cizagroup.com">
 
             <input type="text" name="name" placeholder="Nom complet / Full Name" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="text" name="phone" placeholder="Téléphone / Phone Number">
 
-            <input type="text" name="country" placeholder="Pays / Country">
-
-            <select name="type" required>
-                <option value="">Type de demande</option>
-                <option>Candidature spontanée</option>
-                <option>Stage</option>
-                <option>Recrutement entreprise</option>
-                <option>Collaboration RH</option>
+            <select name="poste" required>
+                <option value="">Sélectionnez un poste</option>
+                <option>Chauffeur — CizaRide+</option>
+                <option>Livreur — CizaDelivery</option>
+                <option>Développeur / IT — CizaTech</option>
+                <option>Assistant administratif — CizaAssist</option>
+                <option>Agent logistique — CizaLogistics</option>
+                <option>Commercial / Vente</option>
+                <option>Marketing & Communication</option>
+                <option>Immobilier — CizaImmo</option>
             </select>
 
-            <textarea name="message" placeholder="Votre message..." required></textarea>
+            <label style="opacity:.8;">CV (PDF ou DOCX) :</label>
+            <input type="file" name="cv" accept=".pdf,.doc,.docx" required>
+
+            <textarea name="message" placeholder="Votre message ou motivation..." required></textarea>
 
             <button type="submit"
-                    data-fr="Envoyer la demande"
-                    data-en="Send Request"
-                    data-ki="Rungika"></button>
+                data-fr="Envoyer ma candidature"
+                data-en="Send Application"
+                data-ki="Rungika ivyasabwe"></button>
         </form>
-
-        <p style="margin-top:15px;opacity:.7;font-size:13px;">
-            📎 Pour envoyer votre CV, veuillez l’envoyer à :  
-            <a href="mailto:rh@cizagroup.com">rh@cizagroup.com</a>
-        </p>
     </div>
 
-    <!-- CONTACT DIRECT RH -->
-    <div class="section">
-        <h2 data-fr="Contacts RH"
-            data-en="HR Contacts"
-            data-ki="Uburyo bwo kuvugana n’abakozi"></h2>
+    <!-- BLOCK 1 : POURQUOI NOUS REJOINDRE -->
+    <div class="block">
+        <h2 data-fr="Pourquoi rejoindre CIZA GROUP"
+            data-en="Why Join CIZA GROUP"
+            data-ki="Impamvu wotugira"></h2>
 
-        <p data-fr="Contact direct pour les dossiers urgents ou les recrutements."
-           data-en="Direct contact for urgent cases or recruitments."
-           data-ki="Uburyo bwo gutanga ibisabwa vyihuta."></p>
+        <p data-fr="CIZA GROUP construit l’un des plus grands écosystèmes multiservices du Burundi : mobilité, technologie, immobilier, conciergerie, logistique. Nous cherchons des talents fiables, motivés et ambitieux."
+           data-en="CIZA GROUP is building one of Burundi’s largest multiservice ecosystems: mobility, technology, real estate, concierge, logistics. We seek reliable and ambitious talents."
+           data-ki="CIZA GROUP yubaka uburyo bunini bwa serivisi zitandukanye mu Burundi. Dukeneye abantu b'inyangamugayo kandi b’abitanga."></p>
+    </div>
 
-        <p>📧 rh@cizagroup.com</p>
-        <p>📧 infos@cizagroup.com</p>
-        <p>📍 Bujumbura, Burundi</p>
+    <!-- BLOCK 2 : PROCESSUS -->
+    <div class="block">
+        <h2 data-fr="Processus de recrutement"
+            data-en="Recruitment Process"
+            data-ki="Uburyo bwo guhitamwo abakozi"></h2>
+
+        <p data-fr="1) Envoi de candidature <br>2) Analyse du dossier <br>3) Entretien (physique ou en ligne) <br>4) Test pratique selon le poste <br>5) Validation finale & intégration."
+           data-en="1) Send application <br>2) File review <br>3) Interview (online or in person) <br>4) Job-related test <br>5) Final approval & onboarding."
+           data-ki="1) Kurungika ibisabwa <br>2) Isuzuma <br>3) Ikiganiro <br>4) Ikizamini c'umwuga <br>5) Kwemezwa."></p>
+    </div>
+
+    <!-- BLOCK 3 : DOCUMENTS -->
+    <div class="block">
+        <h2 data-fr="Documents requis"
+            data-en="Required Documents"
+            data-ki="Ibipapuro bikenewe"></h2>
+
+        <p data-fr="• CV à jour <br>• Copie pièce d’identité <br>• Lettre de motivation (optionnel) <br>• Permis de conduire (pour CizaRide+)"
+           data-en="• Updated CV <br>• ID copy <br>• Motivation letter (optional) <br>• Driving license (for CizaRide+)"
+           data-ki="• CV <br>• Ikarata y’indangamuntu <br>• Ibaruwa isaba akazi (ku bushake)"></p>
+    </div>
+
+    <!-- BLOCK 4 : CONTACT DIRECT -->
+    <div class="block">
+        <h2 data-fr="Contact direct"
+            data-en="Direct Contact"
+            data-ki="Tuvugishe"></h2>
+
+        <p>
+            📧 rh@cizagroup.com — Ressources Humaines<br>
+            📧 infos@cizagroup.com — Général<br><br>
+            📍 Bujumbura, Burundi
+        </p>
     </div>
 
 </div>
 
 <footer>
-    © 2026 CIZA GROUP — Tous droits réservés.
+    © 2026 CIZA GROUP — Tous droits réservés. | 
+    <a href="confidentialite.html">Politique de confidentialité</a> — 
+    <a href="conditions.html">Conditions d’utilisation</a>
 </footer>
 
 <script>
@@ -287,7 +278,9 @@ function setLang(l){
     document.querySelectorAll("[data-fr]").forEach(el=>{
         el.innerHTML = el.dataset[l];
     });
-    document.querySelectorAll(".lang-switch span").forEach(el=>el.classList.remove("active"));
+    document.querySelectorAll(".lang-switch span").forEach(el=>{
+        el.classList.remove("active");
+    });
     document.getElementById("lg-"+l).classList.add("active");
 }
 setLang("fr");
