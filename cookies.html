@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Cookies — CIZA GROUP</title>
+<link rel="icon" href="logotransparent.png">
+
+<style>
+body{
+    margin:0;
+    background:#06142e;
+    color:white;
+    font-family:Arial, sans-serif;
+    line-height:1.7;
+}
+.wrapper{
+    max-width:900px;margin:auto;padding:140px 20px 60px;
+}
+h1,h2{color:#F2B840;}
+.section{
+    background:#0b1c34cc;padding:25px;border-radius:16px;
+    border:1px solid #12335c;margin-bottom:25px;
+}
+a{color:#F2B840;text-decoration:none;}
+.lang-switch span{
+    margin-left:12px;cursor:pointer;font-weight:bold;opacity:.6;
+}
+.lang-active{opacity:1;color:#F2B840;}
+footer{
+    text-align:center;padding:20px;background:#020a16;
+    color:white;font-size:13px;margin-top:40px;opacity:.8;
+}
+/* Bannière cookies */
+#cookie-banner{
+    position:fixed;bottom:0;left:0;width:100%;
+    background:#0b1c34ee;padding:20px;color:white;
+    display:none;z-index:9999;border-top:1px solid #15345e;
+}
+#cookie-banner button{
+    padding:10px 16px;margin-left:10px;
+    background:#F2B840;color:#06142e;border:none;
+    border-radius:8px;font-weight:bold;cursor:pointer;
+}
+#cookie-banner button:hover{background:#c99a33;}
+</style>
+</head>
+
+<body>
+
+<header style="position:fixed;top:0;left:0;width:100%;
+background:#06142edd;backdrop-filter:blur(6px);
+padding:15px 22px;z-index:999;border-bottom:1px solid #0e2a50;
+display:flex;justify-content:space-between;align-items:center;">
+    <img src="logotransparent.png" style="height:55px;">
+    <div class="lang-switch">
+        <span onclick="setLang('fr')" id="lg-fr">FR</span>
+        <span onclick="setLang('en')" id="lg-en">EN</span>
+        <span onclick="setLang('ki')" id="lg-ki">KI</span>
+    </div>
+</header>
+
+<div class="wrapper">
+
+<h1 data-fr="Politique de Cookies"
+    data-en="Cookie Policy"
+    data-ki="Amategeko y'Utumanyi (Cookies)"></h1>
+
+<div class="section">
+<h2 data-fr="1. Utilisation des cookies"
+    data-en="1. Use of cookies"
+    data-ki="1. Ivyo dukoresha utumanyi"></h2>
+
+<p data-fr="Ce site utilise des cookies nécessaires pour améliorer l’expérience utilisateur, mesurer l’audience et assurer le bon fonctionnement technique des pages."
+   data-en="This website uses essential cookies to improve user experience, measure traffic and ensure proper technical functioning."
+   data-ki="Uru rubuga rukoresha utumanyi dukenewe kugira ibikorwa bikore neza no kwiga uko ruboneka."></p>
+</div>
+
+<div class="section">
+<h2 data-fr="2. Types de cookies utilisés"
+    data-en="2. Types of cookies used"
+    data-ki="2. Ubwoko bw'utumanyi"></h2>
+
+<p data-fr="<b>Cookies techniques :</b> nécessaires au fonctionnement du site.<br><b>Cookies analytiques :</b> pour mesurer l’audience et améliorer nos services.<br><b>Cookies de préférence :</b> pour enregistrer votre langue et vos choix."
+   data-en="<b>Technical cookies:</b> essential for the website operation.<br><b>Analytics cookies:</b> used to measure performance and improve services.<br><b>Preference cookies:</b> store your language and settings."
+   data-ki="<b>Udukenerwa:</b> dukora urubuga.<br><b>Utwo gusesengura:</b> dutanga uko urubuga rukoreshwa.<br><b>Utwo amahitamo:</b> dukubika ururimi n'ivyo wahisemwo."></p>
+</div>
+
+<div class="section">
+<h2 data-fr="3. Gérer vos préférences"
+    data-en="3. Manage your preferences"
+    data-ki="3. Guhitamwo ingene wipfuza"></h2>
+
+<p data-fr="Vous pouvez accepter ou refuser les cookies via la bannière présente lors de votre première visite."
+   data-en="You can accept or refuse cookies via the banner displayed during your first visit."
+   data-ki="Murashobora kwemera canke kwanka utumanyi biciye kuri banner igihe musuye ubwa mbere."></p>
+</div>
+
+</div>
+
+<footer>
+    © 2026 CIZA GROUP — Cookies
+</footer>
+
+<!-- Bannière cookies -->
+<div id="cookie-banner">
+    <span data-fr="Nous utilisons des cookies pour améliorer votre expérience."
+          data-en="We use cookies to improve your experience."
+          data-ki="Dukoresha utumanyi kugira uburambe bwawe bube bwiza."></span>
+
+    <button onclick="acceptCookies()"
+            data-fr="Accepter"
+            data-en="Accept"
+            data-ki="Kwemera"></button>
+
+    <button onclick="denyCookies()"
+            data-fr="Refuser"
+            data-en="Reject"
+            data-ki="Kwanka"></button>
+</div>
+
+<script>
+/* TRILINGUE */
+function setLang(l){
+    document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = el.dataset[l];
+    });
+    document.querySelectorAll(".lang-switch span")
+        .forEach(s=>s.classList.remove("lang-active"));
+    document.getElementById("lg-"+l).classList.add("lang-active");
+}
+setLang("fr");
+
+/* Cookies Banner Logic */
+function acceptCookies(){
+    localStorage.setItem("ciza_cookies","accepted");
+    document.getElementById("cookie-banner").style.display="none";
+}
+function denyCookies(){
+    localStorage.setItem("ciza_cookies","denied");
+    document.getElementById("cookie-banner").style.display="none";
+}
+window.onload = ()=>{
+    if(!localStorage.getItem("ciza_cookies")){
+        document.getElementById("cookie-banner").style.display="block";
+    }
+};
+</script>
+
+</body>
+</html>
