@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>CIZA GROUP — Investisseurs Premium</title>
+
+<link rel="icon" href="logotransparent.png">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#06142e;
+    color:white;
+    line-height:1.6;
+}
+.bg-logo{
+    position:fixed;
+    top:65%;left:50%;
+    transform:translate(-50%,-50%);
+    width:420px;
+    opacity:0.03;
+    pointer-events:none;
+    z-index:1;
+}
+
+/* HEADER */
+header{
+    position:fixed;top:0;left:0;width:100%;
+    background:#06142ed9;
+    border-bottom:1px solid #0e2a50;
+    backdrop-filter:blur(6px);
+    padding:12px 20px;
+    display:flex;justify-content:space-between;
+    align-items:center;
+    z-index:9999;
+}
+header img{height:55px;}
+.nav-links{display:flex;gap:20px;}
+.nav-links a{
+    color:white;text-decoration:none;
+    opacity:.85;font-size:15px;
+}
+.nav-links a:hover{opacity:1;color:#F2B840;}
+.lang-switch span{
+    margin-left:10px;cursor:pointer;opacity:.5;
+}
+.lang-switch span.active{color:#F2B840;opacity:1;font-weight:bold;}
+
+.hero{
+    margin-top:110px;
+    padding:90px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#072455,#041024);
+    border-bottom:1px solid #0e2a50;
+}
+.hero h1{
+    font-size:38px;color:#F2B840;margin-bottom:15px;
+}
+.hero p{
+    max-width:800px;margin:auto;opacity:.92;font-size:17px;
+}
+
+/* SECTIONS */
+section{
+    padding:70px 20px;
+    max-width:1100px;
+    margin:auto;
+    position:relative;z-index:2;
+}
+section h2{
+    text-align:center;color:#F2B840;
+    font-size:28px;margin-bottom:12px;
+}
+.section-desc{
+    text-align:center;max-width:760px;
+    margin:12px auto 35px;opacity:.85;
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+.card{
+    background:#0b1c34;padding:20px;
+    border-radius:14px;
+    border:1px solid #12345c;
+    transition:.3s;
+}
+.card:hover{transform:translateY(-6px);border-color:#F2B840;}
+.card h3{color:#F2B840;margin-bottom:8px;}
+.icon{font-size:32px;margin-bottom:10px;}
+
+.process-step{
+    background:#0b1c34;
+    border-left:4px solid #F2B840;
+    padding:20px;border-radius:12px;
+    margin-bottom:16px;
+}
+
+.pack{
+    background:#0b1c34;
+    border-radius:15px;
+    border:1px solid #12345c;
+    padding:22px;
+    margin-bottom:25px;
+}
+.pack h3{color:#F2B840;margin-bottom:10px;}
+.premium{border:2px solid #F2B840;}
+
+.cta{
+    background:#071a33;
+    padding:65px 20px;text-align:center;
+    border-top:1px solid #0e2a50;
+}
+.cta a{
+    display:block;max-width:350px;margin:12px auto;
+    padding:14px;border-radius:10px;
+    text-decoration:none;
+    background:#F2B840;color:#06142e;
+    font-weight:bold;
+}
+.cta a:hover{background:#c99933;}
+
+footer{
+    background:#020a16;
+    padding:45px 20px;margin-top:50px;
+    text-align:center;font-size:14px;opacity:.75;
+}
+
+@media(max-width:640px){
+    header img{height:45px;}
+    .hero h1{font-size:30px;}
+}
+</style>
+</head>
+
+<body>
+<img src="logotransparent.png" class="bg-logo">
+
+<header>
+    <img src="logotransparent.png">
+    <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="business-diaspora.html">Diaspora Business</a>
+        <a href="services-burundi.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="lang-switch">
+        <span onclick="setLang('fr')" id="lg-fr">FR</span>
+        <span onclick="setLang('en')" id="lg-en">EN</span>
+        <span onclick="setLang('ki')" id="lg-ki">KI</span>
+    </div>
+</header>
+
+<section class="hero">
+    <h1 data-fr="Programme Investisseurs Premium"
+        data-en="Premium Investor Program"
+        data-ki="Porogaramu y'Abashoramari Premium"></h1>
+
+    <p data-fr="Un service conçu pour les investisseurs exigeants recherchant une sécurité totale, une transparence absolue et un accompagnement professionnel complet aligné aux standards internationaux."
+       data-en="A service designed for demanding investors seeking total security, full transparency, and complete professional support aligned with international standards."
+       data-ki="Serivisi igenewe abashoramari bakeneye umutekano usesuye, ukuri, n'ugushigikirwa ku rwego mpuzamakungu."></p>
+</section>
+
+<section>
+    <h2 data-fr="Différence : Standard vs Premium"
+        data-en="Difference: Standard vs Premium"
+        data-ki="Itandukaniro: Standard vs Premium"></h2>
+
+    <p class="section-desc"
+       data-fr="Comprenez clairement ce que vous gagnez avec notre accompagnement Premium."
+       data-en="Clearly understand what you gain with our Premium support."
+       data-ki="Menya ivy’inyungu uhabwa na Premium."></p>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Standard</h3>
+            <p>Conseils simples · Support WhatsApp · Informations générales · Pas d’analyse technique.</p>
+        </div>
+        <div class="card">
+            <h3>Premium</h3>
+            <p>Due diligence complète · Vérifications légales · Gestionnaire dédié · Rapports professionnels · Représentation officielle · Sécurité maximale.</p>
+        </div>
+    </div>
+</section><section>
+    <h2 data-fr="Risques sans service Premium"
+        data-en="Risks without Premium service"
+        data-ki="Ibitera ingorane udafise Premium"></h2>
+
+    <div class="cards">
+        <div class="card"><p>❌ Faux documents</p></div>
+        <div class="card"><p>❌ Terrain non vérifié</p></div>
+        <div class="card"><p>❌ Prestataires non fiables</p></div>
+        <div class="card"><p>❌ Risques juridiques majeurs</p></div>
+        <div class="card"><p>❌ Perte totale des fonds</p></div>
+        <div class="card"><p>❌ Aucune preuve visuelle</p></div>
+    </div>
+
+    <p style="text-align:center;margin-top:20px;opacity:.8;">
+        ✔ Le Premium élimine 95% de ces risques.
+    </p>
+</section>
+
+<section>
+    <h2 data-fr="Valeur ajoutée Premium"
+        data-en="Premium added value"
+        data-ki="Agaciro ka Premium"></h2>
+
+    <div class="cards">
+        <div class="card"><p>✔ Gain de temps</p></div>
+        <div class="card"><p>✔ Gain d’argent</p></div>
+        <div class="card"><p>✔ Zéro stress</p></div>
+        <div class="card"><p>✔ Sécurité juridique totale</p></div>
+        <div class="card"><p>✔ Rentabilité optimisée</p></div>
+        <div class="card"><p>✔ Représentation locale</p></div>
+    </div>
+</section>
+
+<section>
+    <h2 data-fr="Domaines Premium"
+        data-en="Premium Sectors"
+        data-ki="Indero za Premium"></h2>
+
+    <div class="cards">
+        <div class="card">
+            <div class="icon">🏢</div>
+            <h3>Immobilier Premium</h3>
+            <p>Vérification foncière, inspection pro, études de rentabilité, supervision complète.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🚚</div>
+            <h3>Logistique Premium</h3>
+            <p>Contrôles qualité, achat local sécurisé, supervision fournisseurs.</p>
+        </div>
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Technologie Premium</h3>
+            <p>Audit digital, solutions modernes, cybersécurité, automatisation.</p>
+        </div>
+        <div class="card">
+            <div class="icon">📄</div>
+            <h3>Administration & Légal</h3>
+            <p>Documents officiels, conformité, représentation notariale.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Études de cas Premium</h2>
+
+    <div class="process-step">
+        <strong>Cas 1:</strong> Arnaque foncière évitée (28M BIF).
+    </div>
+    <div class="process-step">
+        <strong>Cas 2:</strong> Supervision de chantier diaspora (Canada).
+    </div>
+    <div class="process-step">
+        <strong>Cas 3:</strong> Projet logistique étranger sécurisé.
+    </div>
+</section>
+
+<section>
+    <h2>Engagement Premium</h2>
+    <p class="section-desc">
+        Zéro approximation · Zéro retard · Zéro document non vérifié · Standards internationaux.
+    </p>
+</section>
+
+<section>
+    <h2>Avantages Exclusifs</h2>
+
+    <div class="cards">
+        <div class="card"><p>Gestionnaire Premium dédié</p></div>
+        <div class="card"><p>Rapports PDF professionnels</p></div>
+        <div class="card"><p>Supervision illimitée</p></div>
+        <div class="card"><p>Priorité absolue</p></div>
+        <div class="card"><p>Support 7j/7</p></div>
+        <div class="card"><p>Représentation officielle</p></div>
+    </div>
+</section>
+
+<section>
+    <h2>Processus Professionnel</h2>
+
+    <div class="process-step"><strong>1.</strong> Consultation stratégique</div>
+    <div class="process-step"><strong>2.</strong> Études complètes & due diligence</div>
+    <div class="process-step"><strong>3.</strong> Validation du client</div>
+    <div class="process-step"><strong>4.</strong> Négociation & sécurisation</div>
+    <div class="process-step"><strong>5.</strong> Suivi professionnel</div>
+    <div class="process-step"><strong>6.</strong> Finalisation & preuves</div>
+</section>
+
+<div class="cta">
+    <h2 style="color:#F2B840;">Contact Premium</h2>
+
+    <a href="https://wa.me/25779945007">WhatsApp Burundi</a>
+    <a href="https://wa.me/15145029503">WhatsApp Canada</a>
+    <a href="mailto:infos@cizagroup.com">Email Premium</a>
+    <a href="contact.html">Formulaire Premium →</a>
+</div>
+
+<footer>
+    © 2026 CIZA GROUP — Tous droits réservés.
+</footer>
+
+<script>
+function setLang(l){
+    document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = el.dataset[l];
+    });
+    document.querySelectorAll(".lang-switch span").forEach(e=>e.classList.remove("active"));
+    document.getElementById("lg-"+l).classList.add("active");
+}
+setLang("fr");
+</script>
+
+</body>
+</html>
