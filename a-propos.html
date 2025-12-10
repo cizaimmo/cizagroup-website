@@ -1,304 +1,347 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>À propos — CIZA GROUP</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    body {
-      margin:0;
-      padding:0;
-      font-family: Inter, Arial, sans-serif;
-      background:#f7f9fc;
-      color:#1b2432;
-      line-height:1.6;
-    }
+<title>À propos — CIZA GROUP</title>
+<link rel="icon" href="logotransparent.png">
 
-    /* HEADER */
-    header {
-      background:#0A3D91;
-      padding:14px 20px;
-      display:flex;
-      justify-content:flex-start;
-      align-items:center;
-    }
-    header img {
-      height:55px;
-    }
+<style>
+/* GLOBAL */
+body{
+    margin:0;
+    background:#06142e;
+    color:white;
+    font-family: Arial, sans-serif;
+}
+a{text-decoration:none;color:#F2B840;}
 
-    /* HERO CEO */
-    #hero-ceo {
-      background:#0A3D91;
-      padding:65px 20px 80px;
-      text-align:center;
-      color:white;
-    }
+/* HEADER */
+header{
+    position:fixed;top:0;left:0;width:100%;
+    background:#06142eDD;backdrop-filter:blur(6px);
+    padding:15px 22px;z-index:999;
+    display:flex;align-items:center;justify-content:space-between;
+    border-bottom:1px solid #0e2a50;
+}
+header img{height:55px;}
+.nav-links{display:flex;gap:22px;font-size:15px;}
+.nav-links a{color:white;opacity:.8;}
+.nav-links a:hover{opacity:1;color:#F2B840;}
+.lang-switch span{
+    margin-left:10px;cursor:pointer;opacity:.6;font-weight:bold;
+}
+.lang-switch .active{opacity:1;color:#F2B840;}
 
-    /* PORTRAIT ZOOM + FLOU */
-    .portrait-box {
-      width:180px;
-      height:180px;
-      border-radius:50%;
-      border:5px solid #F2B840;
-      margin:0 auto 20px;
-      overflow:hidden;
-      position:relative;
-    }
+/* HERO */
+.hero{
+    padding:150px 20px 70px;
+    text-align:center;
+}
+.hero h1{
+    font-size:32px;
+    color:#F2B840;
+    margin-bottom:10px;
+}
+.hero p{opacity:.8;font-size:16px;}
 
-    .portrait-box img {
-      width:160%;
-      height:160%;
-      object-fit:cover;
-      object-position:center 20%;
-      filter:brightness(1.08) contrast(1.1);
-    }
+/* WRAPPER */
+.wrapper{
+    max-width:1050px;
+    margin:auto;
+    padding:20px;
+}
 
-    #hero-ceo h1 {
-      font-size:32px;
-      font-weight:900;
-      margin-bottom:6px;
-    }
+/* TITRES */
+.section-title{
+    font-size:26px;color:#F2B840;margin-bottom:15px;
+}
 
-    #hero-ceo h2 {
-      font-size:18px;
-      color:#F2B840;
-      font-weight:700;
-      margin-top:0;
-    }
+/* SECTIONS */
+.section-box{
+    background:#0b1c34cc;
+    padding:25px;
+    border-radius:16px;
+    border:1px solid #12335c;
+    margin-bottom:35px;
+}
+.section-box p{opacity:.85;line-height:1.6;}
 
-    /* CONTAINER */
-    .container {
-      max-width:1100px;
-      margin:30px auto;
-      background:white;
-      padding:30px;
-      border-radius:14px;
-      box-shadow:0 4px 18px rgba(0,0,0,0.08);
-    }
+/* CARDS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+.card{
+    background:#0f223d;
+    padding:18px;border-radius:14px;
+    border:1px solid #1d3b63;
+    transition:.3s;
+}
+.card:hover{
+    transform:translateY(-4px);
+    border-color:#F2B840;
+}
+.card h3{
+    margin-top:0;color:#F2B840;
+}
+.card p{font-size:14px;opacity:.85;}
 
-    h3 {
-      color:#0A3D91;
-      font-weight:900;
-      border-left:4px solid #F2B840;
-      padding-left:10px;
-      margin-top:30px;
-      font-size:22px;
-    }
+/* CEO */
+.ceo-box{
+    background:#112544cc;
+    padding:25px;border-radius:16px;
+    border:1px solid #1a3c66;
+    margin-bottom:40px;
+}
+.ceo-box h2{color:#F2B840;margin-top:0;}
+.ceo-quote{
+    margin-top:15px;
+    font-style:italic;
+    opacity:.9;
+    border-left:3px solid #F2B840;
+    padding-left:12px;
+}
 
-    /* TIMELINE */
-    .timeline {
-      border-left:3px solid #0A3D91;
-      padding-left:20px;
-      margin-top:15px;
-    }
-    .timeline div {
-      margin-bottom:12px;
-    }
-    .timeline .year {
-      font-weight:900;
-      color:#0A3D91;
-    }
+/* CTA */
+.cta-btn{
+    display:block;
+    width:100%;padding:14px;
+    background:#F2B840;color:#06142e;
+    text-align:center;font-weight:bold;
+    border-radius:12px;
+    margin-top:12px;
+}
+.cta-btn:hover{background:#c99933;}
 
-    /* TEAM SECTION */
-    .team {
-      margin-top:40px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:25px;
-    }
-    .team-card {
-      background:white;
-      border-radius:14px;
-      padding:20px;
-      text-align:center;
-      box-shadow:0 4px 12px rgba(0,0,0,0.08);
-    }
-    .team-card img {
-      width:160%;
-      height:160%;
-      object-fit:cover;
-      object-position:center 15%;
-      filter:brightness(1.08) contrast(1.1);
-      border-radius:50%;
-      border:4px solid #F2B840;
-    }
+/* FOOTER */
+footer{
+    margin-top:40px;padding:25px;text-align:center;
+    background:#020a16;font-size:13px;opacity:.75;
+}
 
-    .team-card h4 {
-      font-size:20px;
-      color:#0A3D91;
-      font-weight:900;
-      margin-bottom:6px;
-    }
-
-    .team-card p {
-      color:#555;
-      font-size:15px;
-      font-weight:600;
-    }
-
-    /* MULTILINGUE SWITCH */
-    .lang-switch {
-      text-align:right;
-      margin-bottom:10px;
-    }
-    .lang-switch button {
-      padding:6px 12px;
-      border:1px solid #ddd;
-      border-radius:6px;
-      background:white;
-      cursor:pointer;
-    }
-
-    /* FOOTER */
-    footer {
-      background:#1b1f24;
-      color:white;
-      padding:40px 20px;
-      text-align:center;
-      margin-top:40px;
-    }
-    footer p { margin:6px 0; }
-
-    /* BOUTON RETOUR */
-    .back-btn {
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      background:#F2B840;
-      padding:12px 18px;
-      border-radius:50px;
-      color:#1b1f24;
-      font-weight:700;
-      border:none;
-      cursor:pointer;
-      box-shadow:0 4px 10px rgba(0,0,0,0.3);
-    }
-  </style>
-
-  <!-- Multilingue -->
-  <script>
-    function setLang(l) {
-      document.querySelectorAll("[data-fr]").forEach(el => {
-        el.innerHTML = el.dataset[l];
-      });
-      localStorage.setItem("lang_about", l);
-    }
-    window.onload = () => {
-      const l = localStorage.getItem("lang_about") || "fr";
-      setLang(l);
-    };
-  </script>
-
+/* MOBILE */
+@media(max-width:600px){
+    header img{height:45px;}
+    .hero h1{font-size:26px;}
+}
+</style>
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header>
-  <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/4b361dbc2e9c2a36191386183c6b4c71b173b7cd/logotransparent.png">
+    <img src="logotransparent.png">
+
+    <div class="nav-links">
+        <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+        <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
+        <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+        <a href="services-burundi.html" data-fr="Services" data-en="Services" data-ki="Serivisi"></a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
+    </div>
+
+    <div class="lang-switch">
+        <span onclick="setLang('fr')" id="lg-fr">FR</span>
+        <span onclick="setLang('en')" id="lg-en">EN</span>
+        <span onclick="setLang('ki')" id="lg-ki">KI</span>
+    </div>
 </header>
 
-<!-- HERO CEO -->
-<section id="hero-ceo">
+<!-- HERO -->
+<section class="hero">
+    <h1 data-fr="CIZA GROUP — Excellence, Innovation, Confiance"
+        data-en="CIZA GROUP — Excellence, Innovation, Trust"
+        data-ki="CIZA GROUP — Ubuhinga, Ukwizera, Ubuhinga bwa none"></h1>
 
-  <div class="portrait-box">
-    <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/de6cc4921bc9028c6a71f5dd18a8c336662de67e/CEO.png" alt="CEO CIZA GROUP">
-  </div>
-
-  <h1 data-fr="Ciza M — CEO" data-en="Ciza M — CEO"></h1>
-  <h2 data-fr="Construire le plus grand écosystème de services au Burundi"
-      data-en="Building the largest service ecosystem in Burundi"></h2>
+    <p data-fr="Nous construisons les services modernes dont le Burundi et la diaspora ont besoin."
+       data-en="We build the modern services needed by Burundi and the diaspora."
+       data-ki="Dukora serivisi zijanye n'igihe zikenwe mu Burundi no mu mahanga."></p>
 </section>
 
-<div class="container">
+<div class="wrapper">
 
-  <div class="lang-switch">
-    <button onclick="setLang('fr')">FR</button>
-    <button onclick="setLang('en')">EN</button>
-  </div>
+<!-- IDENTITÉ / VISION / MISSION -->
+<div class="section-box">
+    <h2 class="section-title" data-fr="Notre identité"
+        data-en="Our Identity" data-ki="Akarangamutima kacu"></h2>
 
-  <h3 data-fr="Notre vision" data-en="Our Vision"></h3>
-  <p data-fr="
-    CIZA GROUP est une entreprise innovante créée avec une ambition claire : offrir au Burundi
-    et à sa diaspora un écosystème complet de services modernes, fiables et accessibles.
-  " data-en="
-    CIZA GROUP is an innovative company created with a clear ambition: to offer Burundi
-    and its diaspora a complete ecosystem of modern, reliable and accessible services.
-  "></p>
+    <p data-fr="CIZA GROUP est un écosystème multiservices moderne conçu pour connecter les Burundais, la diaspora, les entreprises et les investisseurs à des solutions fiables, transparentes et professionnelles."
+       data-en="CIZA GROUP is a modern multiservice ecosystem designed to connect Burundians, the diaspora, companies and investors to reliable, transparent and professional solutions."
+       data-ki="CIZA GROUP n’igisata c’amaserivisi menshi gihuza Abarundi, abadiaspora n’amashirahamwe mu buryo bwizewe kandi bunoze."></p>
 
+    <h2 class="section-title" data-fr="Notre vision 2040–2060"
+        data-en="Our Vision 2040–2060"
+        data-ki="Inyishamba yacu 2040–2060"></h2>
 
-  <h3 data-fr="Nos accomplissements" data-en="Our Achievements"></h3>
-  <p data-fr="
-    Depuis notre lancement, CIZA GROUP a connu une croissance remarquable :
-    <br>• Déploiement de plateformes digitales unifiées pour la mobilité et la logistique.
-    <br>• Création d’un pont direct entre la diaspora et le Burundi.
-    <br>• Développement de services intégrés accessibles depuis une seule interface.
-    <br>• Construction d’un réseau solide de chauffeurs, livreurs, techniciens et partenaires.
-    <br>• accompagnement d’entreprises dans leur transformation numérique.
-    <br>• Mise en place d’un écosystème multiservice pour soutenir la vie quotidienne.
-  " data-en="
-    Since our creation, CIZA GROUP has achieved significant milestones:
-    <br>• Deployment of unified digital platforms for mobility and logistics.
-    <br>• Creation of a direct bridge between the diaspora and Burundi.
-    <br>• Development of integrated services accessible from a single interface.
-    <br>• Building a strong network of drivers, delivery agents, technicians, and partners.
-    <br>• Supporting businesses in their digital transformation.
-    <br>• Building the foundations of a multi-service ecosystem.
-  "></p>
+    <p data-fr="Créer un Burundi moderne, digital et connecté, reconnu pour sa qualité de service et son professionnalisme."
+       data-en="Create a modern, digital and connected Burundi recognized for service quality and professionalism."
+       data-ki="Gushinga Uburundi bugezweho, bubangutse kandi bufise serivisi zinoze cane."></p>
 
+    <h2 class="section-title" data-fr="Notre mission"
+        data-en="Our Mission" data-ki="Intumbero yacu"></h2>
 
-  <h3 data-fr="Historique & Croissance" data-en="History & Growth"></h3>
+    <p data-fr="Offrir des services essentiels fiables et hautement professionnels, moderniser les solutions locales et accompagner la diaspora dans tous ses projets."
+       data-en="Provide essential, highly professional services, modernize local solutions, and support the diaspora in all their projects."
+       data-ki="Gutanga serivisi z’ingenzi zinoze, guhezagiza ivyo mu gihugu no gushigikira abadiaspora mu migambi yabo."></p>
+</div>
 
-  <div class="timeline">
-    <div><span class="year">2022 :</span>
-      <span data-fr="Début du projet" data-en="Project launch"></span></div>
+<!-- NOS FORCES -->
+<div class="section-box">
+    <h2 class="section-title" data-fr="Pourquoi CIZA GROUP ?"
+        data-en="Why CIZA GROUP?" data-ki="Kubera iki CIZA GROUP?"></h2>
 
-    <div><span class="year">2023 :</span>
-      <span data-fr="Lancement des premières plateformes" data-en="Launch of first platforms"></span></div>
+    <div class="grid">
+        <div class="card">
+            <h3>Fiabilité</h3>
+            <p data-fr="Chaque service est vérifié, contrôlé et conforme."
+               data-en="Every service is verified, controlled and compliant."
+               data-ki="Serivisi zacu zose zirageragezwa kandi zizewe."></p>
+        </div>
 
-    <div><span class="year">2024 :</span>
-      <span data-fr="Expansion vers la mobilité et l'immobilier" data-en="Expansion into mobility and real estate"></span></div>
+        <div class="card">
+            <h3>Standards internationaux</h3>
+            <p data-fr="Nos méthodes internes suivent les normes professionnelles mondiales."
+               data-en="Our internal methods follow global professional standards."
+               data-ki="Uburyo dukoresha burakurikiza amategeko mpuzamakungu."></p>
+        </div>
 
-    <div><span class="year">2025 :</span>
-      <span data-fr="Structuration de l'écosystème complet" data-en="Structuring the full ecosystem"></span></div>
+        <div class="card">
+            <h3>Innovation</h3>
+            <p data-fr="Nous adaptons chaque service aux besoins du marché moderne."
+               data-en="We adapt every service to modern market needs."
+               data-ki="Duhindura serivisi dukurikije ibihe vy’ubu."></p>
+        </div>
 
-    <div><span class="year">2026 :</span>
-      <span data-fr="Lancement officiel de l'écosystème CIZA GROUP"
-            data-en="Official launch of the CIZA GROUP ecosystem"></span></div>
-  </div>
-
-
-  <h3 data-fr="Notre équipe dirigeante" data-en="Our Leadership Team"></h3>
-
-  <div class="team">
-
-    <!-- CEO -->
-    <div class="team-card">
-      <div class="portrait-box">
-        <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/de6cc4921bc9028c6a71f5dd18a8c336662de67e/CEO.png">
-      </div>
-      <h4 data-fr="Ciza M" data-en="Ciza M"></h4>
-      <p data-fr="CEO — Fondateur" data-en="CEO — Founder"></p>
+        <div class="card">
+            <h3>Accompagnement</h3>
+            <p data-fr="Un suivi personnalisé pour chaque projet."
+               data-en="Personalized support for every project."
+               data-ki="Amaserivisi yihariye ku mushinga uwariwo wose."></p>
+        </div>
     </div>
+</div>
 
-    <!-- Augustin -->
-    <div class="team-card">
-      <div class="portrait-box">
-        <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/ac7c9b449ccd1dd59aa791379696f0be721ea474/959AE4B4-DFCB-4381-8005-614A6BB22231.png">
-      </div>
-      <h4 data-fr="Augustin K" data-en="Augustin K"></h4>
-      <p data-fr="Président Stratégie & Marketing"
-         data-en="President Strategy & Marketing"></p>
+<!-- DOMAINES -->
+<div class="section-box">
+    <h2 class="section-title" data-fr="Nos domaines"
+        data-en="Our Domains" data-ki="Ibikorwa dukora"></h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Mobilité</h3>
+            <p>CizaRide+ — Transport sécurisé et moderne.</p>
+        </div>
+
+        <div class="card">
+            <h3>Livreurs & courses</h3>
+            <p>CizaDelivery — Livraison express fiable.</p>
+        </div>
+
+        <div class="card">
+            <h3>Paiements & Digital</h3>
+            <p>CizaPay+, CizaTech — Solutions digitales.</p>
+        </div>
+
+        <div class="card">
+            <h3>Immobilier</h3>
+            <p>CizaImmo — Achat, location, gestion.</p>
+        </div>
+
+        <div class="card">
+            <h3>Logistique</h3>
+            <p>CizaLogistics — Transport & colis.</p>
+        </div>
+
+        <div class="card">
+            <h3>Services</h3>
+            <p>CizaAssist — Conciergerie & assistance.</p>
+        </div>
     </div>
+</div>
 
-  </div>
+<!-- PROCESSUS -->
+<div class="section-box">
+    <h2 class="section-title" data-fr="Notre processus"
+        data-en="Our Process" data-ki="Uko dukora"></h2>
+
+    <div class="grid">
+        <div class="card"><h3>1. Analyse</h3><p>Compréhension du besoin.</p></div>
+        <div class="card"><h3>2. Étude</h3><p>Solutions adaptées.</p></div>
+        <div class="card"><h3>3. Planification</h3><p>Organisation claire.</p></div>
+        <div class="card"><h3>4. Exécution</h3><p>Mise en œuvre professionnelle.</p></div>
+        <div class="card"><h3>5. Suivi</h3><p>Contrôle qualité.</p></div>
+        <div class="card"><h3>6. Reporting</h3><p>Retour transparent.</p></div>
+    </div>
+</div>
+
+<!-- CEO -->
+<div class="ceo-box">
+    <h2 data-fr="Message du Fondateur & CEO"
+        data-en="Message from the Founder & CEO"
+        data-ki="Ubutumwa bwa CEO"></h2>
+
+    <p data-fr="CIZA GROUP est né d’une conviction forte : offrir au Burundi et à sa diaspora un écosystème de services modernes, transparents et alignés aux standards internationaux."
+       data-en="CIZA GROUP was born from a strong conviction: to provide Burundi and its diaspora with a modern, transparent and internationally aligned ecosystem of services."
+       data-ki="CIZA GROUP yashinzwe ku kwiyemeza gukomeye: guha Uburundi n’abadiaspora serivisi zigezweho kandi zizewe."></p>
+
+    <p data-fr="Nous plaçons l’excellence, la transparence et l’innovation au cœur de chaque service pour faciliter les projets, sécuriser les démarches et accompagner chaque client vers la réussite."
+       data-en="We place excellence, transparency and innovation at the heart of every service to support our clients toward success."
+       data-ki="Ubutungane, ukuri n'ubuhinga tubishira imbere mu maserivisi yose."></p>
+
+    <p class="ceo-quote" data-fr="« L’excellence n’est pas un objectif, c’est une discipline quotidienne. » — Fondateur & CEO, CIZA GROUP"
+       data-en="“Excellence is not a goal, it is a daily discipline.” — Founder & CEO, CIZA GROUP"
+       data-ki="« Ubuhinga si intumbero gusa, ahubwo ni ingeso yo ku munsi ku munsi. » — CEO, CIZA GROUP"></p>
+</div>
+
+<!-- VALEURS -->
+<div class="section-box">
+    <h2 class="section-title" data-fr="Nos valeurs"
+        data-en="Our Values" data-ki="Ingene dukora"></h2>
+
+    <div class="grid">
+        <div class="card"><h3>Intégrité</h3><p>Éthique & honnêteté.</p></div>
+        <div class="card"><h3>Transparence</h3><p>Aucune surprise.</p></div>
+        <div class="card"><h3>Excellence</h3><p>Niveau international.</p></div>
+        <div class="card"><h3>Proximité</h3><p>Accompagnement humain.</p></div>
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="section-box">
+    <a href="contact.html" class="cta-btn"
+       data-fr="Nous contacter"
+       data-en="Contact Us"
+       data-ki="Tuvugishe"></a>
+
+    <a href="services-burundi.html" class="cta-btn"
+       data-fr="Découvrir nos services"
+       data-en="Discover our services"
+       data-ki="Raba serivisi zacu"></a>
+</div>
 
 </div>
 
+<!-- FOOTER -->
 <footer>
-  <p>2026 CIZA GROUP — Écosystème de Services | Burundi. Tous droits réservés.</p>
+    © 2026 CIZA GROUP — Tous droits réservés.
 </footer>
 
-<button class="back-btn" onclick="history.back()">← Retour</button>
+<script>
+// MULTILINGUE
+function setLang(l){
+    document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = el.dataset[l];
+    });
+    document.querySelectorAll(".lang-switch span").forEach(el=>el.classList.remove("active"));
+    document.getElementById("lg-"+l).classList.add("active");
+}
+setLang("fr");
+</script>
 
 </body>
 </html>
