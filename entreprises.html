@@ -4,21 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>CIZA GROUP — Solutions Professionnelles au Burundi</title>
+<title>CIZA GROUP — Solutions Professionnelles pour les Entreprises</title>
+
+<!-- META SEO INTERNATIONAL -->
+<meta name="description" content="CIZA GROUP — Solutions professionnelles, stratégie, accompagnement corporate, optimisation opérationnelle, et services dédiés aux entreprises locales et internationales.">
+<meta name="keywords" content="Entreprise, Corporate, Consulting, Stratégie, Opérations, Gestion, Business, CIZA GROUP">
+
 <link rel="icon" href="logotransparent.png">
 
-<!-- STYLES ULTRA PREMIUM -->
+<!-- STYLE PREMIUM CORPORATE -->
 <style>
+:root{
+    --blue1:#041025;
+    --blue2:#071F3D;
+    --blue3:#0A2F5A;
+    --gold:#F2B840;
+}
+
 body{
     margin:0;
-    background:#06142e;
+    font-family: 'Arial', sans-serif;
+    background:linear-gradient(135deg,var(--blue1),var(--blue2),var(--blue3));
     color:white;
-    font-family: Arial, sans-serif;
-    background-image:url("logotransparent.png");
-    background-repeat:no-repeat;
-    background-position:bottom right;
-    background-size:180px;
-    opacity:0.99;
 }
 
 /* LOGO FLOTTANT DISCRET */
@@ -26,157 +33,117 @@ body{
     position:fixed;
     bottom:20px;
     right:20px;
-    opacity:0.12;
-    width:120px;
-    animation:float 6s infinite ease-in-out;
-    z-index:50;
+    width:90px;
+    opacity:0.08;
+    animation:float 8s ease-in-out infinite;
+    z-index:1;
 }
 @keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-    100%{transform:translateY(0);}
+    0%{transform:translate(0,0);}
+    50%{transform:translate(12px,-10px);}
+    100%{transform:translate(0,0);}
 }
 
-/* HEADER PREMIUM */
+/* HEADER */
 header{
     position:fixed;
-    top:0; left:0; width:100%;
-    background:#020a16cc;
-    backdrop-filter:blur(8px);
-    padding:12px 25px;
+    top:0;left:0;width:100%;
+    background:#041025DD;
+    backdrop-filter:blur(6px);
+    padding:12px 20px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
     z-index:999;
-    border-bottom:1px solid #0e2a50;
 }
-header img{
-    height:60px;
-    filter:drop-shadow(0 0 4px #001A4D);
-}
+header img{height:60px;}
 
+.nav-links{
+    display:flex;gap:24px;
+}
 .nav-links a{
-    margin:0 14px;
-    color:white;
-    text-decoration:none;
-    font-size:15px;
-    opacity:.85;
+    color:white;text-decoration:none;font-size:15px;
+    opacity:.8;font-weight:500;
 }
-.nav-links a:hover{
-    opacity:1;
-    color:#F2B840;
-}
+.nav-links a:hover{opacity:1;color:var(--gold);}
 
 .lang-switch span{
-    margin-left:10px;
-    cursor:pointer;
-    opacity:.6;
-}
-.lang-switch .active{
-    color:#F2B840;
-    opacity:1;
+    margin-left:12px;cursor:pointer;opacity:.55;
     font-weight:bold;
 }
+.lang-switch span.active{opacity:1;color:var(--gold);}
 
-/* HERO ULTRA PREMIUM */
-.hero{
-    padding:180px 20px 120px;
+/* INTRO */
+.intro-section{
+    padding:140px 20px 60px;
     text-align:center;
-    background:linear-gradient(180deg,#020a16,#06142e,#0b1c34);
-    border-bottom:1px solid #0e2a50;
 }
-.hero h1{
-    font-size:34px;
-    color:#F2B840;
+.intro-title{
+    font-size:32px;font-weight:800;
+    color:var(--gold);
+    margin-bottom:14px;
 }
-.hero p{
-    max-width:700px;
-    margin:auto;
-    font-size:17px;
-    opacity:.88;
-    margin-top:10px;
-    line-height:1.6;
+.intro-text{
+    font-size:17px;opacity:.88;max-width:800px;margin:auto;
+}
+.separator{
+    width:70px;height:3px;background:var(--gold);
+    border-radius:5px;margin:18px auto;
 }
 
-.hero-buttons{
-    margin-top:25px;
-}
-.btn{
-    padding:12px 22px;
-    margin:6px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:bold;
-    font-size:15px;
-}
-.btn-primary{
-    background:#F2B840;
-    color:#06142e;
-}
-.btn-primary:hover{
-    background:#c99933;
-}
-.btn-wa{
-    background:#128C7E;
-    color:white;
-}
-.btn-wa:hover{
-    opacity:.8;
-}
-
-/* SECTION TITLES */
+/* GLOBAL TITLE */
 .section-title{
     text-align:center;
-    color:#F2B840;
-    margin-top:80px;
-    font-size:26px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-}
-.section-sub{
-    text-align:center;
-    max-width:700px;
-    margin:auto;
-    opacity:.85;
-    font-size:15px;
-    margin-bottom:40px;
+    font-size:25px;
+    color:var(--gold);
+    margin-top:60px;
+    margin-bottom:12px;
+    font-weight:700;
+    border-bottom:1px solid var(--gold);
+    width:max-content;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 /* CARDS PREMIUM */
-.cards{
+.card-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
-    padding:0 20px;
+    padding:30px 20px;
 }
 .card{
-    background:#0b1c34cc;
-    padding:20px;
-    border-radius:14px;
-    border:1px solid #113866;
-    transition:.3s;
+    background:#06142ecc;
+    border:1px solid #0d2d55;
+    padding:22px;border-radius:16px;
+    transition:.35s;
+    position:relative;cursor:pointer;
 }
 .card:hover{
-    transform:translateY(-8px);
-    border-color:#F2B840;
+    transform:translateY(-6px);
+    border-color:var(--gold);
+    box-shadow:0 0 18px #f2b84055;
+}
+.card-icon{
+    font-size:40px;margin-bottom:12px;
+    color:var(--gold);
 }
 .card-title{
-    font-weight:bold;
-    font-size:18px;
-    margin-bottom:10px;
-    color:#F2B840;
+    font-size:18px;font-weight:bold;color:var(--gold);
+    margin-bottom:6px;
+}
+.card-desc{
+    font-size:14px;opacity:.85;
 }
 
-/* VOIR PLUS */
-.more{
-    color:#F2B840;
-    cursor:pointer;
-    font-size:14px;
-    margin-top:10px;
-    display:inline-block;
+/* LONG SECTIONS */
+.long-section{
+    padding:20px 22px;margin-top:25px;
+    background:#06142eaa;
+    border-left:4px solid var(--gold);
+    border-radius:12px;
 }
-.more:hover{opacity:.8;}
+.long-section p{opacity:.9;line-height:1.6;margin-top:10px;}
 </style>
 </head>
 
@@ -191,9 +158,8 @@ header img{
 
     <div class="nav-links">
         <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
-        <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+        <a href="diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
         <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
-        <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
         <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
     </div>
 
@@ -204,561 +170,359 @@ header img{
     </div>
 </header>
 
-<!-- HERO -->
-<div class="hero">
-    <h1 data-fr="Solutions Professionnelles pour les Entreprises au Burundi"
-        data-en="Professional Solutions for Businesses in Burundi"
-        data-ki="Ibisubizo vy'ubuhinga ku mashirahamwe yo mu Burundi"></h1>
+<!-- INTRO -->
+<section class="intro-section">
+    <h1 class="intro-title"
+        data-fr="Solutions Professionnelles pour les Entreprises"
+        data-en="Professional Solutions for Businesses"
+        data-ki="Ibisubizo vy’akazi ku masosiyete"></h1>
 
-    <p data-fr="CIZA GROUP accompagne les entreprises, ONG, banques, industries et organisations professionnelles grâce à des solutions modernes, sécurisées et adaptées à leurs besoins stratégiques."
-       data-en="CIZA GROUP supports businesses, NGOs, banks, industries and professional organizations with modern, secure and strategic solutions."
-       data-ki="CIZA GROUP irafasha amashirahamwe, ONG, amabanki, inganda n’imiryango mu bisubizo bijanye n'igihe kandi vyizewe."></p>
+    <div class="separator"></div>
 
-    <div class="hero-buttons">
-        <button class="btn btn-primary" onclick="scrollToServices()"
-                data-fr="Découvrir nos services"
-                data-en="Explore our services"
-                data-ki="Raba serivisi zacu"></button>
-
-        <a href="https://wa.me/25779945007">
-            <button class="btn btn-wa">WhatsApp Pro</button>
-        </a>
-    </div>
-</div><!-- SECTION : POURQUOI NOUS -->
+    <p class="intro-text"
+        data-fr="Nous accompagnons les entreprises locales, internationales et institutionnelles avec une approche structurée, une expertise opérationnelle de haut niveau et une vision orientée performance."
+        data-en="We support local, international, and institutional companies with a structured approach, high-level operational expertise, and a performance-driven vision."
+        data-ki="Turafasha amasosiyete yo mu gihugu n’ay’amakungu dukoresheje ubuhinga buhambaye n’intumbero yo kuzamura ibikorwa."></p>
+</section><!-- SECTION : SUITE DE SERVICES PREMIUM -->
 <h2 class="section-title"
-    data-fr="Pourquoi choisir CIZA GROUP ?"
-    data-en="Why choose CIZA GROUP?"
-    data-ki="Kubera iki CIZA GROUP?"></h2>
+    data-fr="Suite de Services Professionnels"
+    data-en="Professional Service Suite"
+    data-ki="Serivisi z’akazi z’shika ku rwego rwo hejuru"></h2>
 
-<p class="section-sub"
-   data-fr="Nos solutions professionnelles sont conçues pour offrir fiabilité, optimisation et résultats mesurables pour les organisations de toutes tailles."
-   data-en="Our professional solutions are designed to deliver reliability, optimization and measurable results for organizations of all sizes."
-   data-ki="Ibisubizo vyacu bitanga umutekano, gukorera ku gihe n'inyungu zifatika."></p>
+<div class="card-grid">
 
-<div class="cards">
-
-    <!-- Expertise -->
-    <div class="card">
-        <div class="card-title"
-             data-fr="Expertise locale & internationale"
-             data-en="Local & International Expertise"
-             data-ki="Ubuhinga bwo mu gihugu no hanze"></div>
-
-        <p data-fr="Des experts formés pour accompagner les entreprises modernes."
-           data-en="Experts trained to support modern businesses."
-           data-ki="Abahinga bacu barafasha amashirahamwe agezweho."></p>
-
-        <span class="more" onclick="toggleMore('exp1')"
-              data-fr="Voir plus" data-en="Read more" data-ki="Raba vyinshi"></span>
-
-        <p id="exp1" style="display:none;opacity:.85;font-size:14px;line-height:1.5;">
-            Nous comprenons le marché burundais, ses défis, ses opportunités et ses particularités.
-            Nos équipes suivent des méthodes adaptées aux standards internationaux pour garantir
-            des résultats fiables et mesurables. Nous vous aidons à aligner stratégie, exécution,
-            performance et contrôle qualité.
-        </p>
+    <!-- 1. Conseil & Stratégie -->
+    <div class="card" onclick="openPopup('strategie')">
+        <div class="card-icon">📊</div>
+        <div class="card-title">Conseil & Stratégie</div>
+        <p class="card-desc"
+           data-fr="Orientation stratégique pour entreprises ambitieuses."
+           data-en="Strategic guidance for ambitious companies."
+           data-ki="Inyigisho z’ukurongora ibikorwa."></p>
     </div>
 
-    <!-- Confiance -->
-    <div class="card">
-        <div class="card-title"
-             data-fr="Confidentialité garantie"
-             data-en="Guaranteed Confidentiality"
-             data-ki="Amahushwa arubahirizwa"></div>
-
-        <p data-fr="Protection stricte de vos données et documents."
-           data-en="Strict protection of your documents and data."
-           data-ki="Umutekano w'inyandiko n'amakuru."></p>
-
-        <span class="more" onclick="toggleMore('exp2')">Voir plus</span>
-        <p id="exp2" style="display:none;opacity:.85;font-size:14px;">
-            Chaque collaboration est soumise à un engagement de confidentialité
-            pour assurer une sécurité totale. Nous appliquons des procédures internes,
-            des audits réguliers et un contrôle strict de l’accès aux données sensibles.
-        </p>
+    <!-- 2. Excellence Opérationnelle -->
+    <div class="card" onclick="openPopup('operations')">
+        <div class="card-icon">⚙️</div>
+        <div class="card-title">Excellence Opérationnelle</div>
+        <p class="card-desc"
+           data-fr="Optimisation des processus et performance durable."
+           data-en="Process optimization and sustainable performance."
+           data-ki="Gutunganya ibikorwa n’ukwongereza umwimbu."></p>
     </div>
 
-    <!-- Transparence -->
-    <div class="card">
-        <div class="card-title"
-             data-fr="Transparence & rapports"
-             data-en="Transparency & Reporting"
-             data-ki="Ukugendesha ibintu mu mucyo"></div>
-
-        <p data-fr="Suivi régulier, tableaux de bord et mise à jour continue."
-           data-en="Regular tracking, dashboards and continuous updates."
-           data-ki="Raporo zihoraho n'ibipimo vy'umurimo."></p>
-
-        <span class="more" onclick="toggleMore('exp3')">Voir plus</span>
-        <p id="exp3" style="display:none;opacity:.85;font-size:14px;">
-            Vous recevez des rapports mensuels, des indicateurs de performance,
-            et des analyses détaillées pour prendre les meilleures décisions.
-        </p>
-    </div>
-</div>
-
-
-
-
-<!-- SECTION SERVICES PROFESSIONNELS -->
-<h2 class="section-title"
-    id="services-section"
-    data-fr="Nos Services Professionnels"
-    data-en="Our Professional Services"
-    data-ki="Serivisi zacu za mbere ku mashirahamwe"></h2>
-
-<p class="section-sub"
-   data-fr="Des solutions complètes pour accompagner entreprises, ONG, institutions, banques et organisations professionnelles."
-   data-en="Complete solutions to support businesses, NGOs, banks and professional organizations."
-   data-ki="Ibisubizo bihambaye ku mashirahamwe yose."></p>
-
-<div class="cards">
-
-    <!-- 1 Transport Pro -->
-    <div class="card" onclick="openService('transport')">
-        <div class="card-title">🚚 CizaBusiness Transport Pro</div>
-        <p data-fr="Transport professionnel pour entreprises"
-           data-en="Professional transport for businesses"
-           data-ki="Ugutwara kw'amashirahamwe"></p>
+    <!-- 3. Support & Gestion Administrative -->
+    <div class="card" onclick="openPopup('gestion')">
+        <div class="card-icon">🗂️</div>
+        <div class="card-title">Support & Gestion</div>
+        <p class="card-desc"
+           data-fr="Appui opérationnel et gestion structurée."
+           data-en="Operational support and structured management."
+           data-ki="Gufasha mu micungararo y’akazi."></p>
     </div>
 
-    <!-- 2 Tech Pro -->
-    <div class="card" onclick="openService('tech')">
-        <div class="card-title">💻 CizaTech Pro</div>
-        <p data-fr="Solutions digitales & IT professionnelles"
-           data-en="Professional digital & IT solutions"
-           data-ki="Ibisubizo vya mudasobwa"></p>
+    <!-- 4. Solutions Numériques (CizaTech) -->
+    <div class="card" onclick="openPopup('tech')">
+        <div class="card-icon">💻</div>
+        <div class="card-title">Solutions Digitales</div>
+        <p class="card-desc"
+           data-fr="Outils numériques pour moderniser vos opérations."
+           data-en="Digital tools to modernize your operations."
+           data-ki="Ubuhinga ngurukanabumenyi bwo guteza imbere ibikorwa."></p>
     </div>
 
-    <!-- 3 Procurement -->
-    <div class="card" onclick="openService('procurement')">
-        <div class="card-title">📦 CizaProcurement Pro</div>
-        <p data-fr="Achat & Approvisionnement entreprises"
-           data-en="Business purchasing & procurement"
-           data-ki="Kurangura ibintu vy'amashirahamwe"></p>
+    <!-- 5. Logistique & Mobilité -->
+    <div class="card" onclick="openPopup('mobilite')">
+        <div class="card-icon">🚚</div>
+        <div class="card-title">Mobilité & Logistique</div>
+        <p class="card-desc"
+           data-fr="Déploiement sécurisé de vos ressources et personnels."
+           data-en="Secure deployment of your resources and teams."
+           data-ki="Gutorokesha ibintu n’abantu mu mutekano."></p>
     </div>
 
-    <!-- 4 Outsource -->
-    <div class="card" onclick="openService('outsource')">
-        <div class="card-title">👥 CizaOutsource</div>
-        <p data-fr="Externalisation & support"
-           data-en="Outsourcing & support"
-           data-ki="Gutanga abakozi basanzwe"></p>
+    <!-- 6. Ressources Humaines -->
+    <div class="card" onclick="openPopup('rh')">
+        <div class="card-icon">👥</div>
+        <div class="card-title">Ressources Humaines</div>
+        <p class="card-desc"
+           data-fr="Recrutement, management et conformité RH."
+           data-en="Recruitment, HR management and compliance."
+           data-ki="Gutorera abakozi no kubayobora."></p>
     </div>
 
-    <!-- 5 Audit -->
-    <div class="card" onclick="openService('audit')">
-        <div class="card-title">📊 CizaAudit Process</div>
-        <p data-fr="Audit interne & optimisation"
-           data-en="Internal audit & optimization"
-           data-ki="Gusuzuma ibikorwa n’ihindurwa"></p>
+    <!-- 7. Audit & Conformité -->
+    <div class="card" onclick="openPopup('audit')">
+        <div class="card-icon">🔍</div>
+        <div class="card-title">Audit & Conformité</div>
+        <p class="card-desc"
+           data-fr="Contrôle opérationnel et respect des normes."
+           data-en="Operational control and standards compliance."
+           data-ki="Kuraba neza ko ibikorwa bigendera ku mategeko."></p>
     </div>
 
-    <!-- 6 Carwash Pro -->
-    <div class="card" onclick="openService('carwash')">
-        <div class="card-title">🧼 CizaCarWash Pro</div>
-        <p data-fr="Entretien & réparation simple"
-           data-en="Maintenance & light repairs"
-           data-ki="Gukarisha no gukaraba imodoka"></p>
-    </div>
-
-    <!-- 7 Compliance -->
-    <div class="card" onclick="openService('compliance')">
-        <div class="card-title">📜 CizaCompliance Pro</div>
-        <p data-fr="Conformité & vérifications"
-           data-en="Compliance & verification"
-           data-ki="Ukugenzura amategeko"></p>
-    </div>
-
-    <!-- 8 Security IT -->
-    <div class="card" onclick="openService('security')">
-        <div class="card-title">🛡 CizaSecurity IT</div>
-        <p data-fr="Sécurité des données professionnelles"
-           data-en="Professional data security"
-           data-ki="Umutekano w’ibikorwa vy’ikoranabuhinga"></p>
-    </div>
-
-    <!-- 9 HR Pro -->
-    <div class="card" onclick="openService('hr')">
-        <div class="card-title">📁 CizaHR Pro</div>
-        <p data-fr="Gestion du personnel & recrutement"
-           data-en="HR management & recruitment"
-           data-ki="Gucunga abakozi"></p>
-    </div>
-
-    <!-- 10 Inventory -->
-    <div class="card" onclick="openService('inventory')">
-        <div class="card-title">📇 CizaInventory Pro</div>
-        <p data-fr="Gestion stock & inventaires"
-           data-en="Stock & inventory management"
-           data-ki="Gucunga ibikoresho"></p>
+    <!-- 8. Services Internationaux -->
+    <div class="card" onclick="openPopup('international')">
+        <div class="card-icon">🌍</div>
+        <div class="card-title">Accompagnement International</div>
+        <p class="card-desc"
+           data-fr="Support global pour entreprises en expansion."
+           data-en="Global support for expanding companies."
+           data-ki="Ugufasha amasosiyete ashaka kwagura ibikorwa."></p>
     </div>
 
 </div>
 
 
-
-
-<!-- SECTION SECTEURS -->
+<!-- SECTION : EXCELLENCE OPÉRATIONNELLE -->
 <h2 class="section-title"
-    data-fr="Secteurs que nous accompagnons"
-    data-en="Sectors we support"
-    data-ki="Inzego dufasha"></h2>
+    data-fr="Excellence Opérationnelle"
+    data-en="Operational Excellence"
+    data-ki="Ubuhinga bwo gukora neza"></h2>
 
-<div class="cards">
-    <div class="card"><div class="card-title">🏥 Santé</div></div>
-    <div class="card"><div class="card-title">🏫 Éducation</div></div>
-    <div class="card"><div class="card-title">🏢 Entreprises</div></div>
-    <div class="card"><div class="card-title">🏦 Banque & Assurance</div></div>
-    <div class="card"><div class="card-title">🏭 Industrie</div></div>
-    <div class="card"><div class="card-title">🛒 Commerce</div></div>
-    <div class="card"><div class="card-title">🏨 Hôtellerie</div></div>
-    <div class="card"><div class="card-title">🚛 Logistique</div></div>
-    <div class="card"><div class="card-title">🧱 Construction</div></div>
-    <div class="card"><div class="card-title">🌍 ONG</div></div>
+<div class="long-section"
+     data-fr="<b>Nous aidons les entreprises à atteindre des niveaux supérieurs de performance.</b>  
+     CIZA GROUP structure, optimise et pilote les opérations afin de garantir une organisation efficace, une réduction des risques et une croissance durable.  
+     Nos équipes interviennent sur la qualité des processus, l’efficacité interne, la logistique, la gestion administrative et la mise en place de stratégies mesurables."
+     
+     data-en="<b>We help companies reach higher levels of performance.</b>  
+     CIZA GROUP structures, optimizes and supervises operations to ensure efficiency, risk reduction and sustainable growth.  
+     Our teams intervene in process quality, internal efficiency, logistics, administrative management and the implementation of measurable strategies."
+     
+     data-ki="<b>Dufasha amasosiyete gushika ku rwego rwo hejuru rw’umwimbu.</b>  
+     CIZA GROUP itunganya ibikorwa, igapanga neza ibikorwa kandi igafasha mu kunagura ibisabwa kugira ngo ibikorwa bigende neza.  
+     Turakora ku mihingo y’imigenderanire, umutekano w’akazi, itunganywa ry’ibikorwa n’imigambi ifatika yo guteza imbere ibikorwa.">
 </div>
 
 
-
-
-<!-- SECTION GARANTIES -->
+<!-- SECTION : POURQUOI CIZA GROUP -->
 <h2 class="section-title"
-    data-fr="Nos Garanties Professionnelles"
-    data-en="Our Professional Guarantees"
-    data-ki="Inyemezabikorwa zacu"></h2>
+    data-fr="Pourquoi Choisir CIZA GROUP ?"
+    data-en="Why Choose CIZA GROUP?"
+    data-ki="Ikibazo: Kubera iki muhitamwo CIZA GROUP?"></h2>
 
-<div class="cards">
-    <div class="card"><div class="card-title">🔒 Confidentialité (NDA)</div></div>
-    <div class="card"><div class="card-title">📈 Qualité garantie</div></div>
-    <div class="card"><div class="card-title">🛡 Sécurité renforcée</div></div>
-    <div class="card"><div class="card-title">📉 Réduction des risques</div></div>
-    <div class="card"><div class="card-title">📝 Contrats professionnels</div></div>
-    <div class="card"><div class="card-title">🕒 Respect des délais</div></div>
-</div>
+<div class="long-section"
+     data-fr="<ul>
+        <li><b>Expertise Corporate Internationale</b> – Standards utilisés par les grands groupes.</li>
+        <li><b>Approche Structurée</b> – Méthodologie inspirée des cabinets de consulting.</li>
+        <li><b>Exécution Fiable</b> – Processus mesurables et organisation maîtrisée.</li>
+        <li><b>Confidentialité et Sécurité</b> – Protection totale des données opérationnelles.</li>
+        <li><b>Accompagnement Continu</b> – Assistance stratégique et opérationnelle.</li>
+     </ul>"
+     
+     data-en="<ul>
+        <li><b>International Corporate Expertise</b> – Standards used by global companies.</li>
+        <li><b>Structured Approach</b> – Methodology inspired by consulting firms.</li>
+        <li><b>Reliable Execution</b> – Measurable processes and controlled organization.</li>
+        <li><b>Confidentiality & Security</b> – Full protection of operational data.</li>
+        <li><b>Continuous Support</b> – Strategic and operational assistance.</li>
+     </ul>"
+     
+     data-ki="<ul>
+        <li><b>Ubuhinga mpuzamakungu</b> – Inyifato yo ku rwego rw’amakompanyi manini.</li>
+        <li><b>Uburyo buhambaye bwo gukora</b> – Ubuhinga bwo gutunganya ibikorwa ukoresheje ingendo z’ukuhanuza.</li>
+        <li><b>Ukwizera mu bikorwa</b> – Ingendo zifatika n’itunganywa ry’ibikorwa.</li>
+        <li><b>Ubumenyi n’umutekano</b> – Kubungabunga amakuru y’akazi yose.</li>
+        <li><b>Ugufasha ku rugero rwo hejuru</b> – Inyunganizi mu bikorwa no mu migambi."></div>
 
 
-
-
-<!-- PROCESSUS (TIMELINE) -->
+<!-- SECTION : EXPERTISE BURUNDI (STYLE MULTINATIONALE, PAS LOCAL) -->
 <h2 class="section-title"
-    data-fr="Notre Processus"
-    data-en="Our Process"
-    data-ki="Uko dukora"></h2>
+    data-fr="Expertise Opérationnelle - Burundi"
+    data-en="Operational Expertise - Burundi"
+    data-ki="Ubuhinga bwihariye - Burundi"></h2>
 
-<div style="max-width:900px;margin:auto;padding:20px;line-height:1.7;">
-    <ol>
-        <li><b>Analyse des besoins</b> — Entretien avec votre responsable.</li>
-        <li><b>Proposition sur mesure</b> — Solutions adaptées à votre activité.</li>
-        <li><b>Signature contrat & NDA</b> — Confidentialité garantie.</li>
-        <li><b>Lancement opérationnel</b> — Mise en place des équipes.</li>
-        <li><b>Suivi & ajustements</b> — Adaptation continue.</li>
-        <li><b>Reporting mensuel</b> — Résultats mesurés.</li>
-    </ol>
-</div><!-- PACKS PROFESSIONNELS -->
-<h2 class="section-title"
-    data-fr="Packs Professionnels"
-    data-en="Professional Packages"
-    data-ki="Amapaki y'ubuhinga"></h2>
-
-<div class="cards">
-
-    <div class="card">
-        <div class="card-title">Pack Essentiel</div>
-        <p>Support administratif, planification, assistance opérationnelle, suivi de base.</p>
-    </div>
-
-    <div class="card">
-        <div class="card-title">Pack Business</div>
-        <p>Digitalisation, logistique interne, support prioritaire, optimisation des processus.</p>
-    </div>
-
-    <div class="card">
-        <div class="card-title">Pack Élite</div>
-        <p>Chef de projet dédié, audit complet, conformité, sécurité avancée, solutions sur mesure.</p>
-    </div>
-
-</div>
-
-
-
-
-<!-- FAQ -->
-<h2 class="section-title"
-    data-fr="Questions Fréquentes"
-    data-en="Frequently Asked Questions"
-    data-ki="Ibibazo bikunze kubazwa"></h2>
-
-<div style="max-width:900px;margin:auto;padding:20px;">
-
-    <div class="card">
-        <div class="card-title">Comment commencer un partenariat ?</div>
-        <p>Contactez-nous via WhatsApp Pro ou le formulaire. Un conseiller dédié vous répond.</p>
-    </div>
-
-    <div class="card">
-        <div class="card-title">Proposez-vous un NDA ?</div>
-        <p>Oui, un accord de confidentialité est signé avant tout échange professionnel.</p>
-    </div>
-
-    <div class="card">
-        <div class="card-title">Peut-on externaliser plusieurs services ?</div>
-        <p>Oui. Transport, RH, IT, audit et plus encore selon vos besoins.</p>
-    </div>
-
-    <div class="card">
-        <div class="card-title">Travaillez-vous avec les ONG ?</div>
-        <p>Oui, nous collaborons avec ONG internationales, ambassades, banques, écoles, hôtels…</p>
-    </div>
-
-    <div class="card">
-        <div class="card-title">Peut-on demander un devis ?</div>
-        <p>Oui, un devis professionnel peut être obtenu en 24h selon les services choisis.</p>
-    </div>
-
-</div>
-
-
-
-
-<!-- CTA FINAL -->
-<h2 class="section-title"
-    data-fr="Parlez à un conseiller entreprise"
-    data-en="Speak to a business advisor"
-    data-ki="Vugana n’umuhinga w’amashirahamwe"></h2>
-
-<p class="section-sub"
-   data-fr="Réponse rapide — Service professionnel — Support dédié"
-   data-en="Fast response — Professional service — Dedicated support"
-   data-ki="Inyishu yihuta — Serivisi nziza — Umukozi wihariye"></p>
-
-<div style="text-align:center;margin-bottom:60px;">
-    <a href="https://wa.me/25779945007">
-        <button class="btn btn-wa">WhatsApp Business</button>
-    </a>
-    <a href="contact.html">
-        <button class="btn btn-primary"
-                data-fr="Formulaire complet"
-                data-en="Full form"
-                data-ki="Ifishi yuzuye"></button>
-    </a>
-</div>
-
-
-
-
-<!-- FOOTER PREMIUM -->
-<footer style="background:#020a16;padding:35px;text-align:center;margin-top:40px;opacity:.85;font-size:13px;">
-
-    <p><b>CIZA GROUP</b> — Bujumbura, Burundi</p>
-
-    <p>
-        <a href="https://instagram.com/cizagroup_official" target="_blank" style="color:#F2B840;text-decoration:none;">Instagram</a> •
-        <a href="#" style="color:#F2B840;text-decoration:none;">Facebook</a> •
-        <a href="#" style="color:#F2B840;text-decoration:none;">YouTube</a>
-    </p>
-
-    <p>
-        <a href="mentions-legales.html" style="color:#F2B840;text-decoration:none;">Mentions légales</a> •
-        <a href="politique-confidentialite.html" style="color:#F2B840;text-decoration:none;">Confidentialité</a> •
-        <a href="cgu.html" style="color:#F2B840;text-decoration:none;">CGU</a>
-    </p>
-
-    <p>© 2025 — CIZA GROUP. Tous droits réservés.</p>
-</footer>
-
-
-
-
-<!-- COOKIES -->
-<div id="cookieBox" style="
-    position:fixed;bottom:20px;left:20px;background:#0b1c34;
-    padding:15px;border-radius:10px;border:1px solid #F2B840;
-    display:none;max-width:260px;z-index:999;">
-    <p style="font-size:13px;opacity:.85;">
-        Ce site utilise des cookies pour améliorer votre expérience.
-    </p>
-    <button onclick="acceptCookies()" style="
-        padding:8px 14px;background:#F2B840;color:#06142e;border:none;
-        border-radius:6px;font-weight:bold;cursor:pointer;">OK</button>
-</div>
-
-
-
-
-<!-- POPUP NIVEAU 1 -->
-<div id="popup1"
-     style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;
-     background:#0009;backdrop-filter:blur(4px);justify-content:center;
-     align-items:center;z-index:2000;">
-
-    <div style="background:#06142e;padding:25px;border-radius:14px;
-        border:1px solid #F2B840;width:90%;max-width:420px;">
-
-        <h3 id="p1-title" style="color:#F2B840;"></h3>
-        <ul id="p1-lines" style="line-height:1.6;opacity:.85;"></ul>
-
-        <button onclick="openPopup2()" class="btn btn-primary" style="width:100%;margin-top:15px;">
+<div class="long-section"
+     data-fr="Nous accompagnons également les entreprises opérant au Burundi en offrant un cadre professionnel, structuré et aligné sur les standards internationaux.  
+     Notre approche permet d’intégrer les réalités du marché tout en garantissant une mise en œuvre fiable et progressive."
+     
+     data-en="We also support companies operating in Burundi by providing a professional, structured framework aligned with international standards.  
+     Our approach integrates market realities while ensuring reliable execution."
+     
+     data-ki="Turafasha kandi amasosiyete akorera mu Burundi tubaha uburyo bw’akazi butunganijwe kandi buhuye n’amategeko mpuzamakungu, hamwe n’ukwemeza ko ibikorwa bigenda neza.">
+</div><!-- POPUP NIVEAU 1 (Détails courts) -->
+<div id="popup-bg" style="
+    position:fixed;top:0;left:0;width:100%;height:100%;
+    background:#00000099;backdrop-filter:blur(3px);
+    display:none;align-items:center;justify-content:center;
+    z-index:3000;">
+    
+    <div style="
+        width:90%;max-width:420px;background:#041025;
+        padding:22px;border-radius:16px;
+        border:1px solid var(--gold);animation:fadeIn .4s;">
+        
+        <h3 id="pop-title" style="color:var(--gold);margin-top:0;"></h3>
+        <p id="pop-line1"></p>
+        <p id="pop-line2"></p>
+        <p id="pop-line3"></p>
+        <p id="pop-line4"></p>
+        
+        <button onclick="openFull()"
+            style="width:100%;padding:12px;background:var(--gold);
+            color:#041025;border:none;border-radius:10px;
+            font-size:15px;font-weight:bold;margin-top:12px;">
             Plus de détails
         </button>
     </div>
 </div>
 
 
+<!-- POPUP FULLSCREEN (Grand contenu premium) -->
+<div id="full-screen" style="
+    position:fixed;top:0;left:0;width:100%;height:100%;
+    background:#041025;display:none;overflow-y:auto;
+    padding:90px 22px 40px;z-index:4000;">
 
+    <span onclick="closeFull()" style="
+        position:fixed;top:20px;right:20px;
+        font-size:30px;color:var(--gold);cursor:pointer;">✕</span>
 
-<!-- POPUP NIVEAU 2 -->
-<div id="popup2"
-     style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;
-     background:#06142e;overflow-y:auto;padding:30px;z-index:3000;">
+    <h2 id="fs-title" style="
+        color:var(--gold);font-size:26px;margin-bottom:15px;"></h2>
 
-    <span onclick="closePopup2()"
-          style="font-size:32px;color:#F2B840;position:fixed;top:20px;right:25px;cursor:pointer;">✕</span>
+    <p id="fs-text" style="
+        opacity:.92;line-height:1.65;font-size:15px;"></p>
 
-    <h2 id="p2-title" style="color:#F2B840;margin-top:40px;"></h2>
-    <p id="p2-text" style="line-height:1.7;opacity:.88;font-size:15px;"></p>
+    <div style="
+        margin-top:25px;padding:18px;
+        background:#06142e;border-radius:12px;
+        border-left:4px solid var(--gold);">
 
-    <div style="margin-top:20px;padding:18px;
-        background:#0b1c34;border-left:4px solid #F2B840;border-radius:10px;">
-        <h3>Contact</h3>
-        <a href="https://wa.me/25779945007" style="color:#F2B840;display:block;margin-bottom:8px;">WhatsApp Pro</a>
-        <a href="mailto:business@cizagroup.com" style="color:#F2B840;display:block;margin-bottom:8px;">business@cizagroup.com</a>
-        <a href="contact.html" style="color:#F2B840;">Formulaire →</a>
+        <h3 style="color:var(--gold);margin-top:0;">Contact</h3>
+
+        <a href="https://wa.me/25779945007"
+           style="color:var(--gold);text-decoration:none;display:block;margin:6px 0;">
+           WhatsApp Burundi
+        </a>
+
+        <a href="https://wa.me/15145029503"
+           style="color:var(--gold);text-decoration:none;display:block;margin:6px 0;">
+           WhatsApp Canada
+        </a>
+
+        <a href="mailto:infos@cizagroup.com"
+           style="color:var(--gold);text-decoration:none;display:block;margin:6px 0;">
+           infos@cizagroup.com
+        </a>
+
+        <a href="contact.html"
+           style="color:var(--gold);text-decoration:none;display:block;margin-top:6px;">
+           Formulaire complet →
+        </a>
     </div>
 
 </div>
 
 
 
+<!-- FOOTER PREMIUM -->
+<footer style="
+    margin-top:60px;background:#020a16;
+    padding:25px;text-align:center;
+    opacity:.75;font-size:13px;">
 
-<!-- SCRIPTS -->
+    <div style="margin-bottom:10px;">
+        <a href="https://instagram.com/cizagroup_official"
+           style="color:var(--gold);margin:0 10px;text-decoration:none;">Instagram</a>
+
+        <a href="https://facebook.com"
+           style="color:var(--gold);margin:0 10px;text-decoration:none;">Facebook</a>
+
+        <a href="https://youtube.com"
+           style="color:var(--gold);margin:0 10px;text-decoration:none;">YouTube</a>
+    </div>
+
+    <div>Bujumbura, Burundi</div>
+
+    <div style="margin-top:8px;">
+        © 2026 CIZA GROUP — Tous droits réservés.
+    </div>
+</footer>
+
+
+
+<!-- SCRIPT LANGUES + POPUPS -->
 <script>
 /* LANG SWITCH */
 function setLang(l){
-    document.querySelectorAll("[data-fr]").forEach(el=>{ el.innerHTML = el.dataset[l]; });
-    document.querySelectorAll("[data-en]").forEach(el=>{ el.innerHTML = el.dataset[l]; });
-    document.querySelectorAll("[data-ki]").forEach(el=>{ el.innerHTML = el.dataset[l]; });
-
+    document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = el.dataset[l];
+    });
     document.getElementById("lg-fr").classList.remove("active");
     document.getElementById("lg-en").classList.remove("active");
     document.getElementById("lg-ki").classList.remove("active");
-
     document.getElementById("lg-"+l).classList.add("active");
 }
 setLang("fr");
 
 
 
-/* VOIR PLUS */
-function toggleMore(id){
-    let el = document.getElementById(id);
-    el.style.display = (el.style.display=="none") ? "block" : "none";
-}
-
-
-
-/* SCROLL TO SERVICES */
-function scrollToServices(){
-    document.getElementById("services-section").scrollIntoView({behavior:"smooth"});
-}
-
-
-
-/* COOKIES */
-if(!localStorage.getItem("cookiesAccepted")){
-    document.getElementById("cookieBox").style.display="block";
-}
-function acceptCookies(){
-    localStorage.setItem("cookiesAccepted", "yes");
-    document.getElementById("cookieBox").style.display="none";
-}
-
-
-
-/* POPUPS SERVICES */
-let currentService="";
-
-const serviceData={
-    transport:{
-        title:"CizaBusiness Transport Pro",
-        lines:["Transport entreprise","Chauffeurs pro","Suivi GPS","Sécurité","Fiabilité"],
-        full:"Nous offrons un service de transport professionnel pour entreprises, ONG, banques, hôtels..."
+/* POPUP LOGIC */
+let serviceData = {
+    strategie:{
+        title:"Conseil & Stratégie",
+        short:["Analyse stratégique","Optimisation","Planification","Accompagnement exécutif"],
+        full:"Nous apportons un accompagnement stratégique complet : analyse, organisation, transformation et mise en œuvre selon les standards internationaux."
+    },
+    operations:{
+        title:"Excellence Opérationnelle",
+        short:["Processus optimisés","Performance","Efficacité","Croissance durable"],
+        full:"Nous améliorons vos opérations grâce à une méthodologie structurée : optimisation des processus, réduction des risques et amélioration continue."
+    },
+    gestion:{
+        title:"Support & Gestion",
+        short:["Organisation","Administration","Support centralisé","Fiabilité"],
+        full:"Nous renforçons vos capacités internes : gestion administrative, organisation, documentation, coordination et reporting avancé."
     },
     tech:{
-        title:"CizaTech Pro",
-        lines:["Sécurité IT","Solutions cloud","Maintenance","Digitalisation","Support pro"],
-        full:"CizaTech Pro accompagne la transformation digitale des entreprises..."
+        title:"Solutions Digitales",
+        short:["Modernisation","Automatisation","Sécurité","Outils digitaux"],
+        full:"Nous développons des solutions numériques pour moderniser vos opérations et améliorer la productivité."
     },
-    procurement:{
-        title:"CizaProcurement Pro",
-        lines:["Achat pro","Sourcing","Qualité","Livraison","Sécurité"],
-        full:"Nous gérons l’approvisionnement pour les entreprises avec un contrôle strict..."
+    mobilite:{
+        title:"Mobilité & Logistique",
+        short:["Transport pro","Coordination","Sécurité","Déploiement"],
+        full:"Nous accompagnons vos besoins de transport, logistique, mobilité interne et déploiement opérationnel."
     },
-    outsource:{
-        title:"CizaOutsource",
-        lines:["Personnel","Télé-assistance","Support","Administration","Fiabilité"],
-        full:"Notre équipe fournit du personnel dédié aux opérations internes..."
+    rh:{
+        title:"Ressources Humaines",
+        short:["Recrutement","Conformité","Management","Organisation"],
+        full:"Nous assurons le recrutement, la gestion du personnel, la conformité RH et l’accompagnement managérial."
     },
     audit:{
-        title:"CizaAudit Process",
-        lines:["Audit interne","Analyse","Optimisation","Rapport","Processus"],
-        full:"Nous analysons les opérations internes de votre entreprise afin d’améliorer..."
+        title:"Audit & Conformité",
+        short:["Contrôle","Procédures","Normes","Sécurité"],
+        full:"Nous analysons vos activités, renforçons votre conformité et assurons un respect complet des normes opérationnelles."
     },
-    carwash:{
-        title:"CizaCarWash Pro",
-        lines:["Flotte","Entretien","Réparation légère","Rapide","Abonnement"],
-        full:"Un service complet pour l’entretien de votre flotte professionnelle..."
-    },
-    compliance:{
-        title:"CizaCompliance Pro",
-        lines:["Conformité","Vérification","KYC","Documents","Sécurité"],
-        full:"Nous assurons un contrôle légal strict des opérations, documents et partenaires..."
-    },
-    security:{
-        title:"CizaSecurity IT",
-        lines:["Protection données","Anti-fraude","Sécurité réseau","Politiques IT","Surveillance"],
-        full:"Nous protégeons vos systèmes, données et communications professionnelles..."
-    },
-    hr:{
-        title:"CizaHR Pro",
-        lines:["Recrutement","Gestion","Contrats","Formation","Suivi"],
-        full:"Nous aidons les entreprises à recruter, gérer et suivre leur personnel..."
-    },
-    inventory:{
-        title:"CizaInventory Pro",
-        lines:["Stock","Inventaire","Contrôle","Organisation","Optimisation"],
-        full:"Un service complet de gestion et de contrôle inventaire pour entreprises..."
+    international:{
+        title:"Accompagnement International",
+        short:["Support global","Déploiement","Pilotage","Structuration"],
+        full:"Nous accompagnons les entreprises dans leur développement international grâce à une approche structurée et fiable."
     }
 };
 
+function openPopup(id){
+    let d = serviceData[id];
+    document.getElementById("pop-title").innerHTML=d.title;
+    document.getElementById("pop-line1").innerHTML=d.short[0];
+    document.getElementById("pop-line2").innerHTML=d.short[1];
+    document.getElementById("pop-line3").innerHTML=d.short[2];
+    document.getElementById("pop-line4").innerHTML=d.short[3];
+    document.getElementById("fs-title").innerHTML=d.title;
+    document.getElementById("fs-text").innerHTML=d.full;
 
-
-function openService(id){
-    currentService=id;
-
-    document.getElementById("p1-title").innerHTML = serviceData[id].title;
-
-    let ul=document.getElementById("p1-lines");
-    ul.innerHTML="";
-    serviceData[id].lines.forEach(l=>{
-        ul.innerHTML += `<li>${l}</li>`;
-    });
-
-    document.getElementById("popup1").style.display="flex";
+    document.getElementById("popup-bg").style.display="flex";
 }
 
-function openPopup2(){
-    document.getElementById("popup1").style.display="none";
-
-    document.getElementById("p2-title").innerHTML = serviceData[currentService].title;
-    document.getElementById("p2-text").innerHTML = serviceData[currentService].full;
-
-    document.getElementById("popup2").style.display="block";
+function openFull(){
+    document.getElementById("popup-bg").style.display="none";
+    document.getElementById("full-screen").style.display="block";
 }
 
-function closePopup2(){
-    document.getElementById("popup2").style.display="none";
+function closeFull(){
+    document.getElementById("full-screen").style.display="none";
 }
-
 </script>
 
 </body>
