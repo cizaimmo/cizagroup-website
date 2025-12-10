@@ -53,7 +53,7 @@ header img{height:55px;}
     padding:20px;
 }
 
-/* FORMULAIRE CORPORATE */
+/* FORMULAIRE */
 .form-box{
     background:#0b1c34cc;
     padding:25px;
@@ -136,12 +136,6 @@ footer{
     margin-top:40px;padding:25px;text-align:center;
     background:#020a16;font-size:13px;opacity:.75;
 }
-
-/* MOBILE */
-@media(max-width:600px){
-    header img{height:45px;}
-    .hero h1{font-size:26px;}
-}
 </style>
 </head>
 
@@ -182,10 +176,11 @@ footer{
             data-ki="Ifishi yo kutwandikira"></h2>
 
         <p style="opacity:.8;font-size:15px;margin-bottom:20px;"
-           data-fr="Sélectionnez votre service pour que l’équipe concernée vous réponde rapidement."
-           data-en="Select your service so the right team can assist you quickly."
-           data-ki="Hitamwo serivisi kugira ko umugwi ubishinzwe ubishurire vuba."></p>
+           data-fr="Sélectionnez votre service pour nous aider à mieux orienter votre demande."
+           data-en="Select your service so we can better direct your request."
+           data-ki="Hitamwo serivisi kugira dutahure ico ukeneye."></p>
 
+        <!-- FORMULAIRE ENVOYÉ EXCLUSIVEMENT À infos@cizagroup.com -->
         <form action="https://formsubmit.co/infos@cizagroup.com" method="POST">
 
             <input type="text" name="name" placeholder="Nom complet / Full Name" required>
@@ -224,75 +219,75 @@ footer{
         </form>
     </div>
 
-    <!-- SECTION PARTENAIRES PREMIUM -->
+    <!-- SECTION PARTENAIRES -->
     <div class="partner-section">
         <h2 data-fr="Partenaires & Entreprises"
             data-en="Partners & Businesses"
             data-ki="Abarwizatunga & Amashirahamwe"></h2>
 
-        <p data-fr="CIZA GROUP collabore avec les entreprises, investisseurs, PME, institutions publiques et partenaires techniques."
-           data-en="CIZA GROUP works with companies, investors, SMEs, public institutions and technical partners."
-           data-ki="CIZA GROUP ikorana n’amashirahamwe, abadandaza, abashoramari hamwe n’inzego za leta."></p>
+        <p data-fr="CIZA GROUP collabore avec des entreprises, institutions et investisseurs."
+           data-en="CIZA GROUP collaborates with companies, institutions and investors."
+           data-ki="CIZA GROUP ikorana n’amashirahamwe n’abashoramari."></p>
 
         <div class="partner-grid">
 
             <div class="partner-card">
                 <h3>Mobilité & Logistique</h3>
-                <p data-fr="Partenariats pour CizaRide+, CizaDelivery et CizaLogistics : flottes, hôtels, commerces, entreprises de transport."
-                   data-en="Partnerships for CizaRide+, CizaDelivery and CizaLogistics: fleets, hotels, shops, transport companies."
-                   data-ki="Ubufatanye bwa CizaRide+, CizaDelivery na CizaLogistics: amahoteri, ubudandaji, n’ingendo."></p>
+                <p>CizaRide+, CizaDelivery, CizaLogistics : flottes, hôtels, commerces, etc.</p>
             </div>
 
             <div class="partner-card">
                 <h3>Digital & Paiements</h3>
-                <p data-fr="Solutions CizaPay+ et CizaTech pour entreprises souhaitant digitaliser paiements, sites, systèmes ou sécurité."
-                   data-en="CizaPay+ and CizaTech solutions for companies seeking digital payments, websites, systems or security."
-                   data-ki="Ibisubizo CizaPay+ na CizaTech ku mashirahamwe yipfuza iterambere mu ikoranabuhinga."></p>
+                <p>CizaPay+ & CizaTech : solutions digitales, sécurité, systèmes.</p>
             </div>
 
             <div class="partner-card">
                 <h3>Immobilier & Services</h3>
-                <p data-fr="Partenariats immobiliers et services : CizaImmo, CizaAssist, CizaCarWash pour propriétaires et entreprises."
-                   data-en="Real estate and service partnerships: CizaImmo, CizaAssist, CizaCarWash for companies and property owners."
-                   data-ki="Ubufatanye mu butunzi, serivisi n’ugutunganya imodoka."></p>
+                <p>CizaImmo, CizaAssist, CizaCarWash : propriétaires, entreprises, PME.</p>
             </div>
 
         </div>
 
         <br><br>
 
-        <button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+        <button onclick="window.location.href='services-burundi.html'"
             style="width:100%;padding:14px;border:none;border-radius:10px;background:#F2B840;color:#06142e;font-size:16px;font-weight:bold;cursor:pointer;">
-            Devenir partenaire officiel
+            Explorer nos services
         </button>
     </div>
 
     <!-- CONTACT DIRECT -->
     <div class="info-box">
-        <h3 data-fr="Informations & Contact direct"
-            data-en="Information & Direct Contact"
-            data-ki="Amakuru & Uburyo bwo kutuvugisha"></h3>
+        <h3 data-fr="Contacts directs"
+            data-en="Direct Contacts"
+            data-ki="Uburyo bwo kutuvugisha"></h3>
 
-        <p data-fr="Vous pouvez aussi nous joindre directement:"
+        <p data-fr="Vous pouvez également nous joindre directement :"
            data-en="You can also reach us directly:"
            data-ki="Murashobora kuduhamagara canke kuduha ubutumwa:"></p>
 
-        <a href="mailto:infos@cizagroup.com">📧 infos@cizagroup.com</a>
-        <a href="https://wa.me/25779945007">🇧🇮 WhatsApp Burundi</a>
-        <a href="https://wa.me/15145029503">🇨🇦 WhatsApp Canada</a>
-        <br>
+        <a href="mailto:infos@cizagroup.com">📧 infos@cizagroup.com — Service général</a>
+        <a href="mailto:business@cizagroup.com">💼 business@cizagroup.com — Partenariats & Entreprises</a>
+        <a href="mailto:rh@cizagroup.com">🧑‍💼 rh@cizagroup.com — Ressources Humaines</a>
+
+        <br><br>
+
+        <button onclick="window.location.href='rh.html'"
+            style="width:100%;padding:14px;border:none;border-radius:10px;background:#F2B840;color:#06142e;font-size:16px;font-weight:bold;cursor:pointer;">
+            Ressources Humaines
+        </button>
+
+        <br><br>
         <p>📍 Bujumbura, Burundi</p>
     </div>
 
 </div>
 
-<!-- FOOTER -->
 <footer>
     © 2026 CIZA GROUP — Tous droits réservés.
 </footer>
 
 <script>
-// MULTILINGUE
 function setLang(l){
     document.querySelectorAll("[data-fr]").forEach(el=>{
         el.innerHTML = el.dataset[l];
