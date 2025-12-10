@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>CIZA GROUP — Investisseurs Premium</title>
+
+<link rel="icon" href="logotransparent.png">
+
+<style>
+/* -------------------- GLOBAL -------------------- */
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#06142e;
+    color:white;
+    line-height:1.6;
+}
+
+/* LOGO FLOTTANT DISCRET */
+.bg-logo{
+    position:fixed;
+    top:65%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:420px;
+    opacity:0.03;
+    z-index:1;
+    pointer-events:none;
+}
+
+/* -------------------- HEADER -------------------- */
+header{
+    position:fixed;
+    top:0;left:0;width:100%;
+    background:#06142ed9;
+    border-bottom:1px solid #0e2a50;
+    backdrop-filter:blur(6px);
+    padding:12px 20px;
+    display:flex;justify-content:space-between;
+    align-items:center;
+    z-index:9999;
+}
+header img{height:55px;}
+
+.nav-links{
+    display:flex;
+    gap:20px;
+}
+.nav-links a{
+    color:white;text-decoration:none;
+    opacity:.85;font-size:15px;
+}
+.nav-links a:hover{
+    opacity:1;color:#F2B840;
+}
+
+.lang-switch span{
+    margin-left:10px;
+    cursor:pointer;
+    opacity:.5;
+}
+.lang-switch span.active{
+    color:#F2B840;
+    opacity:1;
+    font-weight:bold;
+}
+
+/* -------------------- HERO -------------------- */
+.hero{
+    margin-top:110px;
+    padding:90px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#072455,#041024);
+    border-bottom:1px solid #0e2a50;
+}
+.hero h1{
+    font-size:38px;
+    color:#F2B840;
+    margin-bottom:15px;
+}
+.hero p{
+    max-width:820px;margin:auto;
+    opacity:.92;font-size:17px;
+}
+
+/* -------------------- TITRES -------------------- */
+section{
+    padding:70px 20px;
+    max-width:1100px;margin:auto;
+    position:relative;z-index:2;
+}
+section h2{
+    text-align:center;
+    color:#F2B840;font-size:28px;
+    margin-bottom:12px;
+}
+.section-desc{
+    text-align:center;
+    max-width:760px;margin:12px auto 35px;
+    opacity:.85;
+}
+
+/* -------------------- CARDS -------------------- */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+.card{
+    background:#0b1c34;
+    padding:20px;
+    border-radius:14px;
+    border:1px solid #12345c;
+    transition:.3s;
+}
+.card:hover{
+    transform:translateY(-6px);
+    border-color:#F2B840;
+}
+.card h3{
+    color:#F2B840;
+    margin-bottom:10px;
+}
+
+.icon{
+    font-size:32px;margin-bottom:10px;
+}
+
+/* -------------------- POPUP -------------------- */
+.popup-bg{
+    position:fixed;top:0;left:0;
+    width:100%;height:100%;
+    background:#000000bb;backdrop-filter:blur(4px);
+    display:none;align-items:center;justify-content:center;
+    z-index:99999;
+}
+.popup{
+    width:90%;max-width:500px;
+    background:#06142e;
+    border:2px solid #F2B840;
+    border-radius:16px;
+    padding:25px;
+}
+.popup h3{
+    margin-top:0;color:#F2B840;
+}
+.popup-btn{
+    width:100%;margin-top:18px;
+    padding:12px;font-weight:bold;
+    border:none;border-radius:10px;
+    background:#F2B840;color:#06142e;
+    cursor:pointer;
+    font-size:15px;
+}
+.popup-btn:hover{background:#c99933;}
+
+/* -------------------- PACKS -------------------- */
+.pack{
+    background:#0b1c34;
+    border-radius:15px;
+    border:1px solid #12345c;
+    padding:22px;
+    margin-bottom:25px;
+}
+.pack h3{
+    color:#F2B840;
+    margin-bottom:10px;
+}
+.pack ul{padding-left:20px;}
+
+.premium{
+    border:2px solid #F2B840;
+}
+
+/* -------------------- PROCESS -------------------- */
+.process-step{
+    background:#0b1c34;
+    border-left:4px solid #F2B840;
+    padding:20px;border-radius:12px;
+    margin-bottom:16px;
+}
+
+/* -------------------- CTA -------------------- */
+.cta{
+    background:#071a33;
+    padding:65px 20px;
+    text-align:center;
+    border-top:1px solid #0e2a50;
+}
+.cta a{
+    display:block;
+    max-width:350px;margin:12px auto;
+    padding:14px;border-radius:10px;
+    text-decoration:none;
+    background:#F2B840;color:#06142e;
+    font-weight:bold;
+}
+.cta a:hover{background:#c99933;}
+
+/* -------------------- FOOTER -------------------- */
+footer{
+    background:#020a16;
+    padding:45px 20px;
+    margin-top:50px;
+    text-align:center;
+    font-size:14px;
+    opacity:.75;
+}
+
+@media(max-width:640px){
+    header img{height:45px;}
+    .hero h1{font-size:30px;}
+}
+
+</style>
+</head>
+
+
+<body>
+
+<img src="logotransparent.png" class="bg-logo">
+
+<header>
+    <img src="logotransparent.png">
+
+    <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="business-diaspora.html">Diaspora Business</a>
+        <a href="services-burundi.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="lang-switch">
+        <span onclick="setLang('fr')" id="lg-fr">FR</span>
+        <span onclick="setLang('en')" id="lg-en">EN</span>
+        <span onclick="setLang('ki')" id="lg-ki">KI</span>
+    </div>
+</header>
+
+
+
+<!-- ====================== HERO ====================== -->
+<section class="hero">
+    <h1 data-fr="Programme Investisseurs Premium"
+        data-en="Premium Investors Program"
+        data-ki="Porogaramu y'Abashoramari Premium"></h1>
+
+    <p data-fr="Un service exclusif conçu pour les investisseurs exigeants souhaitant une sécurité maximale, un accompagnement complet et un suivi professionnel de très haut niveau."
+       data-en="An exclusive service designed for demanding investors seeking maximum security, full support, and high-level professional supervision."
+       data-ki="Serivisi idasanzwe igenewe abashoramari bakeneye umutekano mwinshi n’ugushigikirwa kwuzuye ku rwego rwo hejuru.">
+    </p>
+</section>
+
+
+
+<!-- ====================== SECTION 1 ====================== -->
+<section>
+    <h2 data-fr="Pourquoi choisir notre service Premium ?"
+        data-en="Why choose our Premium service?"
+        data-ki="Igihugu co guhitamwo serivisi ya Premium?"></h2>
+
+    <p class="section-desc"
+       data-fr="Notre approche Premium repose sur l'excellence, la transparence et des méthodes professionnelles adaptées aux exigences internationales."
+       data-en="Our Premium approach is based on excellence, transparency, and professional methods matching international standards."
+       data-ki="Uburyo bwa Premium bushingiye ku bwiza, ukuri, n'ubuhinga ku rwego mpuzamakungu."></p>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🔒</div>
+            <h3 data-fr="Sécurité Renforcée" data-en="Enhanced Security" data-ki="Umutekano wiyongereye"></h3>
+            <p data-fr="Due diligence complète, vérifications légales et protection totale contre les risques."
+               data-en="Full due diligence, legal verification, and total protection against risks."
+               data-ki="Isuzumwa ryimbitse n’irondoka ry’amategeko kugira ngo mwije neza."></p>
+        </div>
+
+        <div class="card">
+            <div class="icon">👤</div>
+            <h3 data-fr="Gestionnaire Dédié"
+                data-en="Dedicated Manager"
+                data-ki="Umugenzuzi wihariye"></h3>
+            <p data-fr="Un expert premium vous accompagne personnellement à chaque étape."
+               data-en="A premium expert personally guides you at every step."
+               data-ki="Inzobere yihariye irakurikirana intambwe zose."></p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📊</div>
+            <h3 data-fr="Analyses Professionnelles"
+                data-en="Professional Analysis"
+                data-ki="Isesengura ry'umwuga"></h3>
+            <p data-fr="Études, rapports, inspections et recommandations basées sur des méthodes professionnelles."
+               data-en="Studies, reports, inspections, and recommendations based on professional methods."
+               data-ki="Izesengura n’inama zishingiye ku buhinga bw’umwuga."></p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- ====================== SECTION 2 : DOMAINES ====================== -->
+<section>
+    <h2 data-fr="Domaines Premium"
+        data-en="Premium Sectors"
+        data-ki="Indero za Premium"></h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🏢</div>
+            <h3>Immobilier Premium</h3>
+            <p>Inspection, vérification foncière, études de rentabilité et gestion professionnelle.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🚚</div>
+            <h3>Logistique & Approvisionnement</h3>
+            <p>Contrôles qualité, vérifications fournisseurs et supervision complète.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Technologie & Digitalisation</h3>
+            <p>Audit, automatisation, développement numérique, solutions modernes.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📄</div>
+            <h3>Administration & Légal</h3>
+            <p>Documents officiels, représentations, conformité légale et sécurité.</p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- ====================== SECTION 3 : PACKS ====================== -->
+<section>
+    <h2 data-fr="Nos Packs Premium"
+        data-en="Our Premium Packs"
+        data-ki="Pake za Premium"></h2>
+
+    <div class="pack">
+        <h3>Pack Silver — Essentiel Premium</h3>
+        <ul>
+            <li>Inspection photo/vidéo</li>
+            <li>Rapport synthétique</li>
+            <li>Vérification légale simple</li>
+            <li>Support WhatsApp premium</li>
+        </ul>
+    </div>
+
+    <div class="pack">
+        <h3>Pack Gold — Premium Avancé</h3>
+        <ul>
+            <li>Due diligence complète</li>
+            <li>Vérification de titres</li>
+            <li>Analyse de risques</li>
+            <li>Rapport détaillé + vidéos HD</li>
+        </ul>
+    </div>
+
+    <div class="pack premium">
+        <h3>Pack Platinum — Executive Premium</h3>
+        <ul>
+            <li>Gestion complète du projet</li>
+            <li>Chargé d’investissement dédié</li>
+            <li>Contrôles + audits professionnels</li>
+            <li>Communication sécurisée prioritaire</li>
+            <li>Représentation locale complète</li>
+        </ul>
+    </div>
+</section>
+
+
+
+<!-- ====================== SECTION 4 : PROCESS ====================== -->
+<section>
+    <h2 data-fr="Processus d’Accompagnement"
+        data-en="Support Process"
+        data-ki="Uburyo bwo gufasha"></h2>
+
+    <div class="process-step">
+        <strong>1. Analyse initiale</strong><br>
+        Diagnostic professionnel selon votre objectif.
+    </div>
+
+    <div class="process-step">
+        <strong>2. Étude de faisabilité</strong><br>
+        Analyse du marché, risques, rentabilité.
+    </div>
+
+    <div class="process-step">
+        <strong>3. Vérifications légales & Due diligence</strong><br>
+        Conformité, documents, antécédents.
+    </div>
+
+    <div class="process-step">
+        <strong>4. Inspection & preuves</strong><br>
+        Photos, vidéos HD, mesures, checklists.
+    </div>
+
+    <div class="process-step">
+        <strong>5. Recommandations premium</strong><br>
+        Options claires, conseils experts.
+    </div>
+
+    <div class="process-step">
+        <strong>6. Gestion & suivi exclusif</strong><br>
+        Représentation, documents, supervision.
+    </div>
+</section>
+
+
+
+<!-- ====================== SECTION 5 : CTA ====================== -->
+<div class="cta">
+    <h2 style="color:#F2B840;">Contact Premium</h2>
+
+    <a href="https://wa.me/25779945007">WhatsApp Burundi</a>
+    <a href="https://wa.me/15145029503">WhatsApp Canada</a>
+    <a href="mailto:infos@cizagroup.com">Email Premium</a>
+    <a href="contact.html">Formulaire Premium →</a>
+</div>
+
+
+
+<footer>
+    © 2026 CIZA GROUP — Tous droits réservés.
+</footer>
+
+
+
+
+<!-- ====================== MULTILINGUE JS ====================== -->
+<script>
+function setLang(l){
+    document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = el.dataset[l];
+    });
+    document.getElementById("lg-fr").classList.remove("active");
+    document.getElementById("lg-en").classList.remove("active");
+    document.getElementById("lg-ki").classList.remove("active");
+    document.getElementById("lg-"+l).classList.add("active");
+}
+setLang("fr");
+</script>
+
+</body>
+</html>
