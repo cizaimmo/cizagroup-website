@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Merci — CIZA GROUP</title>
+<link rel="icon" href="logotransparent.png">
+
+<style>
+body{
+    margin:0;
+    background:#06142e;
+    color:white;
+    font-family:Arial, sans-serif;
+    text-align:center;
+}
+
+/* HEADER */
+header{
+    padding:18px;
+}
+header img{
+    height:70px;
+}
+
+/* CONTENT */
+.container{
+    max-width:750px;
+    margin:auto;
+    margin-top:40px;
+    padding:25px;
+    background:#0b1c34cc;
+    border-radius:16px;
+    border:1px solid #12335c;
+}
+
+h1{
+    color:#F2B840;
+    font-size:32px;
+    margin-bottom:10px;
+}
+p{
+    opacity:.85;
+    line-height:1.7;
+    font-size:17px;
+}
+
+button{
+    margin-top:25px;
+    padding:14px 25px;
+    font-size:16px;
+    background:#F2B840;
+    color:#06142e;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+button:hover{
+    background:#c99933;
+}
+
+/* LANG SWITCH */
+.lang-switch{
+    margin-top:20px;
+}
+.lang-switch span{
+    margin:0 8px;
+    cursor:pointer;
+    opacity:.6;
+    font-weight:bold;
+}
+.lang-switch .active{
+    opacity:1;
+    color:#F2B840;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="logotransparent.png">
+</header>
+
+<div class="container">
+
+    <h1 data-fr="Merci !" data-en="Thank You!" data-ki="Urakoze cane!"></h1>
+
+    <p data-fr="Votre demande a été envoyée avec succès. Notre équipe vous répondra dans un délai maximum de 24 heures."
+       data-en="Your request has been successfully sent. Our team will contact you within 24 hours."
+       data-ki="Ubutumwa bwawe burashitse. Umugwi wacu uzokwishura mu masaha 24."></p>
+
+    <p data-fr="Vous recevrez également un accusé de réception par email."
+       data-en="You will also receive an email confirmation."
+       data-ki="Uzaronka kandi ubutumwa bwo kwemeza ko twaburonse."></p>
+
+    <button onclick="window.location.href='index.html'"
+        data-fr="Retour à l’accueil"
+        data-en="Back to Home"
+        data-ki="Subira ahabanza"></button>
+
+    <div class="lang-switch">
+        <span onclick="setLang('fr')" id="lg-fr">FR</span>
+        <span onclick="setLang('en')" id="lg-en">EN</span>
+        <span onclick="setLang('ki')" id="lg-ki">KI</span>
+    </div>
+
+</div>
+
+<script>
+function setLang(l){
+    document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = el.dataset[l];
+    });
+    document.querySelectorAll(".lang-switch span").forEach(el=>{
+        el.classList.remove("active");
+    });
+    document.getElementById("lg-"+l).classList.add("active");
+}
+setLang("fr");
+</script>
+
+</body>
+</html>
