@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CizaDelivery+ — Livraison Officielle</title>
+<link rel="icon" href="logotransparent.png">
+
+<style>
+:root{
+  --bg:#06142E;
+  --gold:#F2B840;
+  --glass:rgba(255,255,255,.08);
+  --border:rgba(255,255,255,.15);
+  --txt:#fff;
+}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:var(--bg);
+  color:var(--txt);
+}
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 18px;
+  background:var(--glass);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--gold);
+}
+header img{width:48px}
+header button{
+  background:none;
+  border:none;
+  color:var(--gold);
+  font-size:18px;
+  cursor:pointer;
+}
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:25px;
+}
+h1,h2,h3{color:var(--gold)}
+.card{
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+  margin-bottom:20px;
+}
+.price{
+  font-size:20px;
+  font-weight:bold;
+  margin-top:10px;
+}
+.btn{
+  margin-top:15px;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:var(--gold);
+  color:#06142E;
+  font-weight:bold;
+  cursor:pointer;
+}
+.form-box{display:none;margin-top:30px}
+input,select,textarea{
+  width:100%;
+  margin-top:12px;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+}
+#success{
+  display:none;
+  background:#0b1c34;
+  border:1px solid var(--gold);
+  border-radius:18px;
+  padding:25px;
+  margin-top:30px;
+  text-align:center;
+}
+footer{
+  margin-top:50px;
+  padding:25px;
+  text-align:center;
+  font-size:14px;
+  opacity:.85;
+}
+footer a{color:var(--gold);text-decoration:none;display:block;margin-top:6px}
+#toTop{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  background:var(--gold);
+  color:#06142E;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+  font-size:22px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <button onclick="history.back()">← Retour</button>
+  <img src="logotransparent.png">
+  <button onclick="location.reload()">⟳</button>
+</header>
+
+<div class="container">
+
+<h1>CizaDelivery+ 📦</h1>
+<p>Livraison sécurisée avec numéro de suivi automatique.</p>
+
+<div class="card">
+  <h3>🚚 Livraison Standard</h3>
+  <ul>
+    <li>Collecte rapide</li>
+    <li>Livraison intra-ville</li>
+    <li>Suivi par numéro unique</li>
+  </ul>
+  <div class="price">À partir de 8 000 BIF</div>
+  <button class="btn" onclick="openForm()">Commander</button>
+</div>
+
+<div class="card form-box" id="formBox">
+<h2>📋 Informations client</h2>
+
+<form 
+  action="https://formsubmit.co/infos@cizagroup.com"
+  method="POST"
+  onsubmit="prepareSubmit()"
+>
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="Nouvelle commande CizaDelivery+">
+<input type="hidden" name="Numéro de suivi" id="trackingField">
+
+<!-- EMAIL CLIENT (OBLIGATOIRE) -->
+<input type="email" name="email" required placeholder="Email du client">
+
+<input type="hidden" name="_autoresponse" id="autoMsg">
+
+<input type="text" name="Nom complet" required placeholder="Nom et prénom">
+<input type="tel" name="Téléphone" required placeholder="Téléphone">
+
+<input type="text" name="Adresse de départ" required placeholder="Adresse de départ">
+<input type="text" name="Adresse de destination" required placeholder="Adresse de destination">
+
+<select name="Type de colis" required>
+  <option value="">Type de colis</option>
+  <option>Document</option>
+  <option>Petit colis</option>
+  <option>Colis moyen</option>
+</select>
+
+<select name="Mode de paiement" required>
+  <option>Mobile Money</option>
+  <option>Espèces</option>
+</select>
+
+<textarea name="Instructions" placeholder="Instructions supplémentaires"></textarea>
+
+<button class="btn" type="submit">Confirmer la livraison</button>
+</form>
+</div>
+
+<div id="success">
+  <h3>Merci pour votre commande ✅</h3>
+  <p>
+    Votre demande a été envoyée.<br>
+    Un email de confirmation avec votre numéro de suivi vous a été transmis.
+  </p>
+  <p>
+    📧 infos@cizagroup.com<br>
+    📱 WhatsApp : +1 514 502 9503
+  </p>
+</div>
+
+</div>
+
+<footer>
+© 2026 CIZA GROUP  
+<span>Design signed by CIZA GROUP</span>
+<a href="mailto:infos@cizagroup.com">infos@cizagroup.com</a>
+</footer>
+
+<div id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+function generateTracking(){
+  const d = new Date();
+  return "CDZ-" + d.getFullYear() + "-" +
+         Math.floor(100000 + Math.random()*900000);
+}
+
+function openForm(){
+  document.getElementById("formBox").style.display="block";
+  document.getElementById("formBox").scrollIntoView({behavior:"smooth"});
+}
+
+function prepareSubmit(){
+  const tracking = generateTracking();
+  document.getElementById("trackingField").value = tracking;
+  document.getElementById("autoMsg").value =
+`Bonjour,
+
+Merci pour votre commande CizaDelivery+.
+
+Numéro de suivi : ${tracking}
+
+Notre équipe vous contactera rapidement.
+
+— CIZA GROUP`;
+
+  setTimeout(()=>{
+    document.getElementById("formBox").style.display="none";
+    document.getElementById("success").style.display="block";
+    alert("Numéro de suivi : " + tracking);
+  },300);
+}
+
+window.addEventListener("scroll",()=>{
+  document.getElementById("toTop").style.display =
+    window.scrollY>300 ? "flex" : "none";
+});
+</script>
+
+</body>
+</html>
