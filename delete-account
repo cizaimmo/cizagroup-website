@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Delete Account – CIZA GROUP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f5f7fa;
+  color: #0a1a2f;
+  margin: 0;
+  padding: 24px;
+}
+.container {
+  max-width: 520px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+h1 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+.warning {
+  background: #fff3f3;
+  border-left: 4px solid #e53935;
+  padding: 12px;
+  margin: 16px 0;
+  font-size: 14px;
+}
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  background: #e53935;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover {
+  background: #c62828;
+}
+.small {
+  font-size: 13px;
+  color: #555;
+  margin-top: 16px;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <h1>Delete Your CIZA GROUP Account</h1>
+
+  <p>
+    You are about to permanently delete your CIZA GROUP account.
+    This action cannot be undone.
+  </p>
+
+  <div class="warning">
+    Deleting your account will permanently remove your authentication
+    credentials and all associated user data from our systems.
+  </div>
+
+  <button onclick="deleteAccount()">Delete My Account</button>
+
+  <p class="small">
+    If you are not logged in, please return to the app and try again.
+  </p>
+</div>
+
+<script>
+function deleteAccount() {
+  if (!confirm("Are you sure you want to permanently delete your account?")) {
+    return;
+  }
+
+  // 🔴 CALL YOUR BACKEND / FIREBASE ADMIN HERE
+  // Example:
+  // fetch("https://api.cizagroup.com/delete-account", { method: "POST", credentials: "include" })
+
+  alert("Your account deletion request has been submitted.");
+}
+</script>
+</body>
+</html>
