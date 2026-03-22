@@ -245,10 +245,42 @@ nav a:hover{
     margin-bottom:10px;
     color:rgba(255,255,255,0.95);
 }
+
 .services-card p{
     color:rgba(255,255,255,0.78);
     line-height:1.6;
 }
+
+/* === LINKEDIN BADGE PREMIUM === */
+.linkedin-box{
+    margin-top:30px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+}
+
+.linkedin-title{
+    font-size:14px;
+    opacity:0.75;
+    letter-spacing:1px;
+}
+
+.linkedin-badge-wrapper{
+    padding:14px;
+    border-radius:14px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(242,184,64,0.35);
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 18px rgba(242,184,64,0.15);
+    transition:.4s ease;
+}
+
+.linkedin-badge-wrapper:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 28px rgba(242,184,64,0.35);
+}
+    
 </style>
 
 <section>
@@ -383,7 +415,33 @@ footer small{
         <a href="https://instagram.com/cizagroup_official" style="color:#E4405F;">📸</a>
         <a href="https://www.facebook.com/profile.php?id=61585836037804">📘</a>
     </div>
+<!-- LinkedIn ULTRA PREMIUM -->
+<div class="linkedin-box">
 
+    <p class="linkedin-title">
+        Fondateur — CIZA GROUP
+    </p>
+
+    <div class="linkedin-badge-wrapper">
+
+        <div class="badge-base LI-profile-badge"
+             data-locale="fr_FR"
+             data-size="medium"
+             data-theme="dark"
+             data-type="VERTICAL"
+             data-vanity="ciza-misigaro-b6a2013b9"
+             data-version="v1">
+             
+            <a class="badge-base__link LI-simple-link"
+               href="https://www.linkedin.com/in/ciza-misigaro-b6a2013b9/">
+               Ciza Misigaro
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
     <small>© 2026 CIZA GROUP — All Rights Reserved</small>
 </footer><!-- ===================== WHATSAPP FLOAT ===================== -->
 <a id="whatsapp-btn" href="https://wa.me/25779945007"
@@ -481,7 +539,10 @@ document.querySelectorAll(".services-card, .cta, .cta-secondary")
     el.style.transition = "0.7s ease-out";
     observer.observe(el);
 });
+
 </script>
 
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+   
 </body>
 </html>
