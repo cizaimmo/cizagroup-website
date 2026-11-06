@@ -193,6 +193,7 @@ header img{
         <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
         <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
         <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
+        <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
         <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
         <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
     </div>
@@ -316,9 +317,9 @@ header img{
 
     <!-- 1 Transport Pro -->
     <div class="card" onclick="openService('transport')">
-        <div class="card-title">🚚 CizaBusiness Transport Pro</div>
-        <p data-fr="Transport professionnel pour entreprises"
-           data-en="Professional transport for businesses"
+        <div class="card-title">🚚 CizaLogistics</div>
+        <p data-fr="Transport & logistique pour entreprises"
+           data-en="Transport & logistics for businesses"
            data-ki="Ugutwara kw'amashirahamwe"></p>
     </div>
 
@@ -332,10 +333,10 @@ header img{
 
     <!-- 3 Procurement -->
     <div class="card" onclick="openService('procurement')">
-        <div class="card-title">📦 CizaProcurement Pro</div>
-        <p data-fr="Achat & Approvisionnement entreprises"
-           data-en="Business purchasing & procurement"
-           data-ki="Kurangura ibintu vy'amashirahamwe"></p>
+        <div class="card-title">📦 CIZA SUPPLY</div>
+        <p data-fr="Sourcing direct usine Chine → Burundi"
+           data-en="Direct factory sourcing China → Burundi"
+           data-ki="Gushaka ibicuruzwa mu Bushinwa → Uburundi"></p>
     </div>
 
     <!-- 4 Outsource -->
@@ -356,10 +357,10 @@ header img{
 
     <!-- 6 Carwash Pro -->
     <div class="card" onclick="openService('carwash')">
-        <div class="card-title">🧼 CizaCarWash Pro</div>
-        <p data-fr="Entretien & réparation simple"
-           data-en="Maintenance & light repairs"
-           data-ki="Gukarisha no gukaraba imodoka"></p>
+        <div class="card-title">🧼 CizaCarWash Pro — Bientôt</div>
+        <p data-fr="Entretien & réparation simple — Bientôt"
+           data-en="Maintenance & light repairs — Coming soon"
+           data-ki="Gukarisha no gukaraba imodoka — Vuba"></p>
     </div>
 
     <!-- 7 Compliance -->
@@ -549,12 +550,15 @@ header img{
 <!-- FOOTER PREMIUM -->
 <footer style="background:#020a16;padding:35px;text-align:center;margin-top:40px;opacity:.85;font-size:13px;">
 
-    <p><b>CIZA GROUP</b> — Bujumbura, Burundi</p>
+    <p><b>CIZA GROUP</b> — 6ème Avenue N° 47, Quartier Buhomba, Zone Mutimbuzi, Commune Ntahangwa, Maramvya, Bujumbura, Burundi — Bureau : ouverture prochaine</p>
+    <p>Canada +1 514 502 9503 • Burundi +257 79 94 50 07 • Chine +86 187 2139 6720 • infos@cizagroup.com</p>
 
     <p>
         <a href="https://instagram.com/cizagroup_official" target="_blank" style="color:#F2B840;text-decoration:none;">Instagram</a> •
-        <a href="#" style="color:#F2B840;text-decoration:none;">Facebook</a> •
-        <a href="#" style="color:#F2B840;text-decoration:none;">YouTube</a>
+        <a href="https://instagram.com/cizasupply" target="_blank" style="color:#F2B840;text-decoration:none;">CIZA SUPPLY</a> •
+        <a href="https://instagram.com/cizashop_official" target="_blank" style="color:#F2B840;text-decoration:none;">CizaShop</a> •
+        <a href="https://www.facebook.com/909554205579421" target="_blank" style="color:#F2B840;text-decoration:none;">Facebook</a> •
+        <a href="https://youtube.com/@cizagroup" target="_blank" style="color:#F2B840;text-decoration:none;">YouTube</a>
     </p>
 
     <p>
@@ -563,7 +567,8 @@ header img{
         <a href="cgu.html" style="color:#F2B840;text-decoration:none;">CGU</a>
     </p>
 
-    <p>© 2025 — CIZA GROUP. Tous droits réservés.</p>
+    <p>Ciza Group SURL — RC 0082870/26 — NIF 4003446905</p>
+    <p>© 2026 — CIZA GROUP. Tous droits réservés.</p>
 </footer>
 
 
@@ -679,9 +684,9 @@ let currentService="";
 
 const serviceData={
     transport:{
-        title:"CizaBusiness Transport Pro",
+        title:"CizaLogistics",
         lines:["Transport entreprise","Chauffeurs pro","Suivi GPS","Sécurité","Fiabilité"],
-        full:"Nous offrons un service de transport professionnel pour entreprises, ONG, banques, hôtels..."
+        full:"CizaLogistics offre un service de transport et de logistique professionnel pour entreprises, ONG, banques, hôtels..."
     },
     tech:{
         title:"CizaTech Pro",
@@ -689,9 +694,9 @@ const serviceData={
         full:"CizaTech Pro accompagne la transformation digitale des entreprises..."
     },
     procurement:{
-        title:"CizaProcurement Pro",
-        lines:["Achat pro","Sourcing","Qualité","Livraison","Sécurité"],
-        full:"Nous gérons l’approvisionnement pour les entreprises avec un contrôle strict..."
+        title:"CIZA SUPPLY",
+        lines:["Sourcing direct usine","Chine → Burundi","Qualité vérifiée","Devis sur demande","cizasupply.com"],
+        full:"CIZA SUPPLY gère l'approvisionnement direct usine en Chine pour les entreprises, avec un contrôle strict de la qualité. Devis sur demande — cizasupply.com."
     },
     outsource:{
         title:"CizaOutsource",
@@ -704,9 +709,9 @@ const serviceData={
         full:"Nous analysons les opérations internes de votre entreprise afin d’améliorer..."
     },
     carwash:{
-        title:"CizaCarWash Pro",
+        title:"CizaCarWash Pro — Bientôt",
         lines:["Flotte","Entretien","Réparation légère","Rapide","Abonnement"],
-        full:"Un service complet pour l’entretien de votre flotte professionnelle..."
+        full:"Bientôt disponible. Un service complet pour l’entretien de votre flotte professionnelle..."
     },
     compliance:{
         title:"CizaCompliance Pro",

@@ -9,6 +9,22 @@
 <!-- SEO -->
 <meta name="description" content="CIZA GROUP — Écosystème de services pour la diaspora, les citoyens, les entreprises et les investisseurs. Mobilité, logistique, tech, immobilier, assistance premium.">
 <meta name="keywords" content="Ciza Group, Burundi, Diaspora, Investisseurs, Services, Mobilité, Logistique, Immobilier, Entreprises, Assistance, Premium">
+<link rel="canonical" href="https://cizagroup.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CIZA GROUP">
+<meta property="og:title" content="CIZA GROUP — Écosystème de Services">
+<meta property="og:description" content="CIZA GROUP — Écosystème de services pour la diaspora, les citoyens, les entreprises et les investisseurs. Mobilité, logistique, tech, immobilier, assistance premium.">
+<meta property="og:url" content="https://cizagroup.com/">
+<meta property="og:image" content="https://cizagroup.com/assets/hero-burundi.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CIZA GROUP — Écosystème de Services">
+<meta name="twitter:description" content="CIZA GROUP — Écosystème de services pour la diaspora, les citoyens, les entreprises et les investisseurs.">
+<meta name="twitter:image" content="https://cizagroup.com/assets/hero-burundi.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"CIZA GROUP","url":"https://cizagroup.com/","email":"infos@cizagroup.com","sameAs":["https://www.instagram.com/cizasupply","https://www.instagram.com/cizagroup_official","https://www.instagram.com/cizashop_official","https://www.facebook.com/909554205579421","https://www.tiktok.com/@cizagroup","https://cizagroup.com"]}
+</script>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
@@ -49,11 +65,16 @@ nav a:hover{
     color:#F2B840;
 }
 
-/* LANG BUTTON */
-#lang-btn{
-    font-size:24px;
+/* LANG SWITCH */
+.lang-switch span{
+    margin-left:12px;
     cursor:pointer;
-    margin-left:15px;
+    opacity:.6;
+    font-weight:700;
+}
+.lang-switch span.active{
+    color:#F2B840;
+    opacity:1;
 }
 
 /* MENU MOBILE */
@@ -101,7 +122,7 @@ nav a:hover{
 .hero{
     padding:110px 25px 90px;
     text-align:center;
-    background:linear-gradient(180deg,#0B1A33 0%,#061223 100%);
+    background:linear-gradient(180deg,rgba(11,26,51,.84) 0%,rgba(6,18,35,.90) 100%),url('assets/hero-burundi.jpg') center/cover no-repeat;
 }
 
 .hero h1{
@@ -118,6 +139,9 @@ nav a:hover{
     margin:auto;
     margin-bottom:35px;
 }
+.hero-photo{margin:2.5rem auto 0;max-width:560px;text-align:center}
+.hero-photo img{width:100%;height:auto;border-radius:16px;border:3px solid #d4af37;box-shadow:0 12px 32px rgba(0,0,0,.35);display:block}
+.hero-photo figcaption{margin-top:.75rem;color:#d4af37;font-weight:600;font-size:1rem}
 
 /* CTA */
 .cta-box{
@@ -163,11 +187,12 @@ nav a:hover{
     <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/logotransparent.png" alt="CIZA GROUP">
 
     <nav>
-        <a href="index.html" data-fr="Accueil" data-en="Home"></a>
-        <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora"></a>
-        <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses"></a>
-        <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors"></a>
-        <span id="lang-btn">🌐</span>
+        <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+        <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+        <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe"></a>
+        <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
+        <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
+        <span class="lang-switch"><span onclick="setLang('fr')" id="lg-fr">FR</span><span onclick="setLang('en')" id="lg-en">EN</span><span onclick="setLang('ki')" id="lg-ki">KI</span></span>
     </nav>
 
     <span id="mobile-open">☰</span>
@@ -177,26 +202,87 @@ nav a:hover{
 <div id="mobile-menu">
     <div id="mobile-close">✕</div>
 
-    <a href="index.html" data-fr="Accueil" data-en="Home"></a>
-    <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora"></a>
-    <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses"></a>
-    <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors"></a>
+    <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+    <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+    <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe"></a>
+    <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
+    <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
 </div>
 
 <!-- ===================== HERO ===================== -->
 <section class="hero">
     <h1 data-fr="Votre partenaire stratégique au Burundi et dans le monde."
-        data-en="Your strategic partner in Burundi and worldwide."></h1>
+        data-en="Your strategic partner in Burundi and worldwide."
+        data-ki="Umufatanyabikorwa wawe w'ingenzi mu Burundi no kw'isi yose."></h1>
 
     <p data-fr="Expertise locale et internationale pour accompagner citoyens, diaspora, entreprises et investisseurs."
-       data-en="Local and international expertise supporting citizens, diaspora, businesses and investors."></p>
+       data-en="Local and international expertise supporting citizens, diaspora, businesses and investors."
+       data-ki="Ubuhinga bwo mu gihugu no mu mahanga bwo gufasha abanyagihugu, abadiaspora, amashirahamwe n'abashoramari."></p>
 
     <div class="cta-box">
-        <a class="cta" href="services-burundi.html" data-fr="Découvrir nos services" data-en="Explore our services"></a>
-        <a class="cta-secondary" href="contact.html" data-fr="Contactez-nous" data-en="Contact us"></a>
-        <a class="cta" style="background:#25D366;color:white;" href="https://wa.me/25779945007" data-fr="WhatsApp Direct" data-en="WhatsApp Direct"></a>
+        <a class="cta" href="services-burundi.html" data-fr="Découvrir nos services" data-en="Explore our services" data-ki="Raba serivisi zacu"></a>
+        <a class="cta-secondary" href="contact.html" data-fr="Contactez-nous" data-en="Contact us" data-ki="Tuvugishe"></a>
+        <a class="cta" style="background:#25D366;color:white;" href="https://wa.me/25779945007" data-fr="WhatsApp Direct" data-en="WhatsApp Direct" data-ki="WhatsApp Direct"></a>
     </div>
-</section><!-- ===================== SECTION SERVICES ===================== -->
+
+    <figure class="hero-photo">
+        <img src="assets/fondateur-bureau.jpg" alt="Ciza Misigaro, Fondateur &amp; CEO de CIZA GROUP, dans son bureau" width="1125" height="883" loading="eager">
+        <figcaption data-fr="Ciza Misigaro — Fondateur &amp; CEO, CIZA GROUP" data-en="Ciza Misigaro — Founder &amp; CEO, CIZA GROUP" data-ki="Ciza Misigaro — Umushinga &amp; Umuyobozi Mukuru, CIZA GROUP">Ciza Misigaro — Fondateur &amp; CEO, CIZA GROUP</figcaption>
+    </figure>
+</section>
+
+<!-- ===================== BANNIÈRE VIDÉO : DÉCOUVREZ CIZA GROUP ===================== -->
+<section id="film-cizagroup" style="padding:70px 20px 10px;text-align:center;">
+    <h2 class="section-title" data-fr="Découvrez Ciza Group" data-en="Discover Ciza Group" data-ki="Menya CIZA GROUP"></h2>
+    <div class="separator"></div>
+    <p style="max-width:700px;margin:0 auto 30px;opacity:.9;font-size:17px;line-height:1.6;"
+       data-fr="Le film de l'écosystème : CizaShop, CIZA SUPPLY, CizaLogistics, CizaImmo et Diaspora — une seule vision."
+       data-en="The ecosystem film: CizaShop, CIZA SUPPLY, CizaLogistics, CizaImmo and Diaspora — one vision."
+       data-ki="Filime y'ibikorwa vyacu: CizaShop, CIZA SUPPLY, CizaLogistics, CizaImmo n'Abadiaspora — intumbero imwe."></p>
+    <div id="film-wrap" style="max-width:900px;margin:0 auto;position:relative;border-radius:16px;overflow:hidden;border:2px solid #F2B840;box-shadow:0 10px 40px rgba(0,0,0,.45);background:#000;">
+        <video id="film-video" poster="assets/film-cizagroup-poster.jpg" controls playsinline preload="none" style="display:block;width:100%;aspect-ratio:16/9;background:#000;"></video>
+        <div id="film-loading" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55);color:#F2B840;font-weight:700;pointer-events:none;">
+            <span data-fr="Chargement de la vidéo…" data-en="Loading the video…" data-ki="Gutegura videwo…">Chargement de la vidéo…</span>
+        </div>
+        <button id="film-fullscreen" type="button" style="position:absolute;top:12px;right:12px;z-index:5;background:rgba(7,16,31,.75);color:#F2B840;border:1px solid #F2B840;border-radius:8px;padding:8px 12px;font-weight:700;cursor:pointer;">⛶ <span data-fr="Plein écran" data-en="Fullscreen" data-ki="Mugaragaza">Plein écran</span></button>
+    </div>
+</section>
+<script>
+/* === FILM CIZA GROUP : téléchargement complet avant lecture (lecture fluide) === */
+(function(){
+    var video = document.getElementById("film-video");
+    var loading = document.getElementById("film-loading");
+    var loaded = false;
+    function hideLoading(){ if(loading) loading.style.display = "none"; }
+    function loadFilm(){
+        if(loaded) return; loaded = true;
+        fetch("assets/film-cizagroup.mp4").then(function(r){
+            if(!r.ok) throw new Error("HTTP " + r.status);
+            return r.blob();
+        }).then(function(blob){
+            video.src = URL.createObjectURL(blob);
+            video.addEventListener("loadeddata", hideLoading, {once:true});
+            setTimeout(hideLoading, 8000);
+        }).catch(function(){
+            video.src = "assets/film-cizagroup.mp4";
+            video.addEventListener("loadeddata", hideLoading, {once:true});
+            setTimeout(hideLoading, 8000);
+        });
+    }
+    if("IntersectionObserver" in window){
+        var obs = new IntersectionObserver(function(entries){
+            entries.forEach(function(e){ if(e.isIntersecting){ loadFilm(); obs.disconnect(); } });
+        }, {rootMargin:"800px"});
+        obs.observe(document.getElementById("film-wrap"));
+    } else { loadFilm(); }
+    document.getElementById("film-fullscreen").addEventListener("click", function(){
+        if(video.requestFullscreen){ video.requestFullscreen(); }
+        else if(video.webkitRequestFullscreen){ video.webkitRequestFullscreen(); }
+    });
+})();
+</script>
+
+<!-- ===================== SECTION SERVICES ===================== -->
 
 <style>
 .section-title{
@@ -284,37 +370,99 @@ nav a:hover{
 </style>
 
 <section>
-    <h2 class="section-title" data-fr="Écosystème de Services" data-en="Service Ecosystem"></h2>
+    <h2 class="section-title" data-fr="Écosystème de Services" data-en="Service Ecosystem" data-ki="Ikoraniro ry'amaserivisi"></h2>
     <div class="separator"></div>
 
     <div class="services-grid">
 
         <a href="services-burundi.html" class="services-card">
             <div class="icon">🇧🇮</div>
-            <h3 data-fr="Services au Burundi" data-en="Burundi Services"></h3>
+            <h3 data-fr="Services au Burundi" data-en="Burundi Services" data-ki="Serivisi mu Burundi"></h3>
             <p data-fr="Solutions pratiques pour citoyens et entreprises : mobilité, achats, assistance, logistique."
-               data-en="Practical solutions for citizens and businesses: mobility, purchases, assistance, logistics."></p>
+               data-en="Practical solutions for citizens and businesses: mobility, purchases, assistance, logistics."
+               data-ki="Ibisubizo vyiza ku banyagihugu n'amashirahamwe: ugutwara, kugura, gufasha, gutwara ibidandazwa."></p>
         </a>
 
         <a href="business-diaspora.html" class="services-card">
             <div class="icon">🌍</div>
-            <h3 data-fr="Diaspora" data-en="Diaspora"></h3>
+            <h3 data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></h3>
             <p data-fr="Accompagnement premium pour Burundais vivant à l’étranger."
-               data-en="Premium support for Burundians abroad."></p>
+               data-en="Premium support for Burundians abroad."
+               data-ki="Ubufasha bwiza ku Barundi baba hanze."></p>
         </a>
 
         <a href="entreprises.html" class="services-card">
             <div class="icon">🏢</div>
-            <h3 data-fr="Entreprises" data-en="Businesses"></h3>
+            <h3 data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe"></h3>
             <p data-fr="Solutions professionnelles : mobilité, tech, logistique, outsourcing."
-               data-en="Professional solutions: mobility, tech, logistics, outsourcing."></p>
+               data-en="Professional solutions: mobility, tech, logistics, outsourcing."
+               data-ki="Ibisubizo vy'ubuhinga: ugutwara, ikoranabuhinga, gutwara ibidandazwa."></p>
         </a>
 
         <a href="investisseurs.html" class="services-card">
             <div class="icon">💼</div>
-            <h3 data-fr="Investisseurs" data-en="Investors"></h3>
+            <h3 data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></h3>
             <p data-fr="Accompagnement complet, inspection, analyse et opportunités."
-               data-en="Complete support, inspections, analysis and opportunities."></p>
+               data-en="Complete support, inspections, analysis and opportunities."
+               data-ki="Gufasha byuzuye, kugenzura, gusesengura n'amahirwe."></p>
+        </a>
+
+    </div>
+</section>
+
+<!-- ===================== SECTION DIVISIONS ===================== -->
+<section id="divisions">
+    <h2 class="section-title" data-fr="Nos divisions" data-en="Our divisions" data-ki="Amashami yacu"></h2>
+    <div class="separator"></div>
+
+    <div class="services-grid">
+
+        <a href="https://cizasupply.com" target="_blank" rel="noopener" class="services-card">
+            <div class="icon">🌍</div>
+            <h3>CIZA SUPPLY</h3>
+            <p data-fr="Sourcing direct usine Chine → Burundi. Devis sur demande."
+               data-en="Direct factory sourcing China → Burundi. Quote on request."
+               data-ki="Gutora ibicuruzwa ku ruganda muri Chine ujya mu Burundi. Igiciro ku busabe."></p>
+        </a>
+
+        <a href="https://cizashop.com" target="_blank" rel="noopener" class="services-card">
+            <div class="icon">🛍️</div>
+            <h3>CizaShop</h3>
+            <p data-fr="Marketplace premium. Pré-lancement."
+               data-en="Premium marketplace. Pre-launch."
+               data-ki="Isoko ryo ku murongo. Itangura vuba."></p>
+        </a>
+
+        <a href="services-burundi.html" class="services-card">
+            <div class="icon">🏠</div>
+            <h3>CizaImmo</h3>
+            <p data-fr="Achat, location, gestion. Service opérationnel — la plateforme SaaS est en pause."
+               data-en="Purchase, rental, management. Operational service — the SaaS platform is paused."
+               data-ki="Kugura, gukodesha, gucunga. Serivisi ikora — urubuga rwa SaaS rwarahagaze."></p>
+        </a>
+
+        <a href="services-burundi.html" class="services-card">
+            <div class="icon">🚚</div>
+            <h3>CizaLogistics</h3>
+            <p data-fr="Livraison, stockage, aide à la vente."
+               data-en="Delivery, storage, sales support."
+               data-ki="Gutanga ibintu, kubika, gufasha kugurisha."></p>
+        </a>
+
+        <a href="apropos.html" class="services-card">
+            <div class="icon">✅</div>
+            <h3>CizaVerify</h3>
+            <p data-fr="Passeport professionnel vérifié. À venir."
+               data-en="Verified professional passport. Coming soon."
+               data-ki="Urupapuro rw'umwuga rwemejwe. Bizaza vuba."></p>
+        </a>
+
+        <a href="business-diaspora.html" class="services-card">
+            <div class="icon">✈️</div>
+            <h3 data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></h3>
+            <p data-fr="Investissement et assistance immédiate pour vos proches au Burundi."
+               data-en="Investment and immediate assistance for your loved ones in Burundi."
+               data-ki="Ishoramari n'ubufasha bwihuta ku muryango mu Burundi."></p>
         </a>
 
     </div>
@@ -402,18 +550,25 @@ footer small{
     <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/main/logotransparent.png" class="footer-logo" alt="CIZA GROUP">
 
     <h3 data-fr="CIZA GROUP — Écosystème de Services"
-        data-en="CIZA GROUP — Service Ecosystem"></h3>
+        data-en="CIZA GROUP — Service Ecosystem"
+        data-ki="CIZA GROUP — Ikoraniro ry'amaserivisi"></h3>
 
-    <p data-fr="Siège : Bujumbura, Burundi" data-en="Headquarters: Bujumbura, Burundi"></p>
+    <p data-fr="Siège : 6ème Avenue N° 47, Quartier Buhomba, Zone Mutimbuzi, Commune Ntahangwa, Maramvya, Bujumbura, Burundi (Bureau — ouverture prochaine)"
+       data-en="Headquarters: 6ème Avenue N° 47, Quartier Buhomba, Zone Mutimbuzi, Commune Ntahangwa, Maramvya, Bujumbura, Burundi (Office — opening soon)"
+       data-ki="Icicaro : 6ème Avenue N° 47, Quartier Buhomba, Zone Mutimbuzi, Commune Ntahangwa, Maramvya, Bujumbura, Burundi (Biro — izofungurwa vuba)"></p>
 
     <p><b>Canada :</b> +1 514 502 9503</p>
     <p><b>Burundi :</b> +257 79 94 50 07</p>
+    <p><b>Chine :</b> +86 187 2139 6720</p>
     <p><b>Email :</b> infos@cizagroup.com</p>
+    <p style="opacity:.7;">Ciza Group SURL — RC 0082870/26 — NIF 4003446905</p>
 
     <div class="footer-socials">
         <a href="https://youtube.com/@cizagroup?si=BkbiwUkk6OVL5fSS" style="color:red;">▶️</a>
         <a href="https://instagram.com/cizagroup_official" style="color:#E4405F;">📸</a>
-        <a href="https://www.facebook.com/profile.php?id=61585836037804">📘</a>
+        <a href="https://instagram.com/cizasupply" style="color:#E4405F;">📸</a>
+        <a href="https://instagram.com/cizashop_official" style="color:#E4405F;">📸</a>
+        <a href="https://www.facebook.com/909554205579421">📘</a>
     </div>
 <!-- LinkedIn ULTRA PREMIUM -->
 <div class="linkedin-box">
@@ -502,26 +657,19 @@ document.addEventListener("click", e => {
 });
 
 
-/* === MULTILINGUE FR / EN === */
-function switchLang(){
-    let current = localStorage.getItem("lang") || "fr";
-    let next = current === "fr" ? "en" : "fr";
-    localStorage.setItem("lang", next);
-    applyLang(next);
-}
-
-function applyLang(lang){
-    document.querySelectorAll("[data-fr]").forEach(el => {
-        el.textContent = lang === "fr" ? el.dataset.fr : el.dataset.en;
+/* === MULTILINGUE FR / EN / KI === */
+function setLang(l){
+    document.querySelectorAll("[data-fr]").forEach(el=>{
+        el.innerHTML = el.dataset[l];
     });
+    document.getElementById("lg-fr").classList.remove("active");
+    document.getElementById("lg-en").classList.remove("active");
+    document.getElementById("lg-ki").classList.remove("active");
+    document.getElementById("lg-"+l).classList.add("active");
+    localStorage.setItem("lang",l);
 }
-
-document.getElementById("lang-btn").onclick = switchLang;
-
-document.addEventListener("DOMContentLoaded", () => {
-    let saved = localStorage.getItem("lang") || "fr";
-    applyLang(saved);
-});
+let savedLang = localStorage.getItem("lang");
+setLang(savedLang ? savedLang : "fr");
 
 
 /* === SCROLL TO TOP === */

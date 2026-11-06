@@ -90,10 +90,15 @@ nav a{
 nav a:hover{color:var(--gold);}
 
 /* Buttons header */
-.lang-btn{
-    font-size:27px;
+.lang-switch span{
+    margin-left:10px;
     cursor:pointer;
-    margin-right:15px;
+    opacity:.6;
+    font-weight:700;
+}
+.lang-switch span.active{
+    color:var(--gold);
+    opacity:1;
 }
 .menu-icon{
     display:none;
@@ -269,94 +274,97 @@ footer img{
     </div>
 
     <nav>
-        <a href="index.html">Accueil</a>
-        <a href="business-diaspora.html">Diaspora</a>
-        <a href="investisseurs-premium.html">Investisseurs Premium</a>
-        <a href="a-propos.html">À propos</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+        <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+        <a href="investisseurs-premium.html" data-fr="Investisseurs Premium" data-en="Premium Investors" data-ki="Abashoramari Premium"></a>
+        <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
+        <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
     </nav>
 
     <div style="display:flex; align-items:center; gap:15px;">
-        <span class="lang-btn" onclick="toggleLang()">🌐</span>
+        <span class="lang-switch"><span onclick="setLang('fr')" id="lg-fr">FR</span><span onclick="setLang('en')" id="lg-en">EN</span><span onclick="setLang('ki')" id="lg-ki">KI</span></span>
         <span class="menu-icon" onclick="openMenu()">☰</span>
     </div>
 </header>
 
 <div id="mobileMenu">
     <div class="close-btn" onclick="closeMenu()">×</div>
-    <a href="index.html">Accueil</a>
-    <a href="business-diaspora.html">Diaspora</a>
-    <a href="investisseurs-premium.html">Investisseurs Premium</a>
-    <a href="a-propos.html">À propos</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+    <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+    <a href="investisseurs-premium.html" data-fr="Investisseurs Premium" data-en="Premium Investors" data-ki="Abashoramari Premium"></a>
+    <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
+    <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
 </div>
 
 <section class="hero">
-    <h1 data-fr="Espace Investisseurs" data-en="Investors Space">Espace Investisseurs</h1>
+    <h1 data-fr="Espace Investisseurs" data-en="Investors Space" data-ki="Ikibanza c'Abashoramari">Espace Investisseurs</h1>
     <p data-fr="Transparence, expertise et accompagnement professionnel pour vos projets d'investissement."
-       data-en="Transparency, expertise and professional guidance for your investment projects.">
+       data-en="Transparency, expertise and professional guidance for your investment projects."
+       data-ki="Ukuri, ubuhinga n'ugushigikirwa mu migambi yawe y'ishoramari.">
        Transparence, expertise et accompagnement professionnel pour vos projets d'investissement.
     </p>
-    <a href="investisseurs-premium.html" class="cta">Découvrir les services premium</a>
+    <a href="investisseurs-premium.html" class="cta" data-fr="Découvrir les services premium" data-en="Discover premium services" data-ki="Menya serivisi za Premium">Découvrir les services premium</a>
 </section>
 
 <section class="section">
-    <h2 data-fr="Pourquoi investir avec nous ?" data-en="Why invest with us?">Pourquoi investir avec nous ?</h2>
+    <h2 data-fr="Pourquoi investir avec nous ?" data-en="Why invest with us?" data-ki="Kubera iki wokwizeza hamwe natwe?">Pourquoi investir avec nous ?</h2>
     <div class="sep"></div>
     <div class="grid">
 
         <div class="card">
-            <h3>Expertise locale</h3>
-            <p>Analyse, inspection et compréhension du marché burundais.</p>
+            <h3 data-fr="Expertise locale" data-en="Local expertise" data-ki="Ubuhinga bw'iwacu">Expertise locale</h3>
+            <p data-fr="Analyse, inspection et compréhension du marché burundais." data-en="Analysis, inspection and understanding of the Burundian market." data-ki="Gusesengura, kugenzura no kumenya isoko ry'Uburundi.">Analyse, inspection et compréhension du marché burundais.</p>
         </div>
 
         <div class="card">
-            <h3>Transparence totale</h3>
-            <p>Photos, vidéos, rapports clairs et communication continue.</p>
+            <h3 data-fr="Transparence totale" data-en="Total transparency" data-ki="Ukuri guhambaye">Transparence totale</h3>
+            <p data-fr="Photos, vidéos, rapports clairs et communication continue." data-en="Photos, videos, clear reports and continuous communication." data-ki="Amafoto, amavidewo, raporo zisobanutse n'itumanaho rihoraho.">Photos, vidéos, rapports clairs et communication continue.</p>
         </div>
 
         <div class="card">
-            <h3>Sécurité & conformité</h3>
-            <p>Vérifications légales, documents et due diligence.</p>
+            <h3 data-fr="Sécurité & conformité" data-en="Security & compliance" data-ki="Umutekano n'amategeko">Sécurité & conformité</h3>
+            <p data-fr="Vérifications légales, documents et due diligence." data-en="Legal checks, documents and due diligence." data-ki="Kugenzura amategeko, inyandiko n'isesengura.">Vérifications légales, documents et due diligence.</p>
         </div>
 
         <div class="card">
-            <h3>Accompagnement</h3>
-            <p>Nous vous guidons à chaque étape de votre projet.</p>
+            <h3 data-fr="Accompagnement" data-en="Guidance" data-ki="Ugushigikirwa">Accompagnement</h3>
+            <p data-fr="Nous vous guidons à chaque étape de votre projet." data-en="We guide you at every step of your project." data-ki="Turabafasha mu ntambwe zose z'umugambi wanyu.">Nous vous guidons à chaque étape de votre projet.</p>
         </div>
 
     </div>
 </section>
 
 <section class="section">
-    <h2 data-fr="Nos domaines" data-en="Our fields">Nos domaines</h2>
+    <h2 data-fr="Nos domaines" data-en="Our fields" data-ki="Inzego dukoramo">Nos domaines</h2>
     <div class="sep"></div>
 
     <div class="grid">
-        <a href="#immobilier" class="card" style="text-decoration:none; color:white;">
-            <h3>🏢 Immobilier</h3>
-            <p>Inspection, documents, analyse.</p>
+        <a href="services-burundi.html" class="card" style="text-decoration:none; color:white;">
+            <h3 data-fr="🏢 Immobilier" data-en="🏢 Real estate" data-ki="🏢 Imitongo">🏢 Immobilier</h3>
+            <p data-fr="Inspection, documents, analyse." data-en="Inspection, documents, analysis." data-ki="Kugenzura, inyandiko, gusesengura.">Inspection, documents, analyse.</p>
         </a>
 
-        <a href="#logistique" class="card" style="text-decoration:none; color:white;">
-            <h3>🚚 Logistique</h3>
-            <p>Achat local, vérification qualité.</p>
+        <a href="services-burundi.html" class="card" style="text-decoration:none; color:white;">
+            <h3 data-fr="🚚 Logistique" data-en="🚚 Logistics" data-ki="🚚 Gutwara ibidandazwa">🚚 Logistique</h3>
+            <p data-fr="Achat local, vérification qualité." data-en="Local purchasing, quality checks." data-ki="Kugura hano, kugenzura ubwiza.">Achat local, vérification qualité.</p>
         </a>
 
-        <a href="#technologie" class="card" style="text-decoration:none; color:white;">
-            <h3>💻 Technologie</h3>
-            <p>Suivi digital et solutions modernes.</p>
+        <a href="entreprises.html" class="card" style="text-decoration:none; color:white;">
+            <h3 data-fr="💻 Technologie" data-en="💻 Technology" data-ki="💻 Ikoranabuhinga">💻 Technologie</h3>
+            <p data-fr="Suivi digital et solutions modernes." data-en="Digital follow-up and modern solutions." data-ki="Gukurikirana n'ibisubizo bijanye n'igihe.">Suivi digital et solutions modernes.</p>
         </a>
 
-        <a href="#administration" class="card" style="text-decoration:none; color:white;">
-            <h3>📑 Administration</h3>
-            <p>Accompagnement administratif complet.</p>
+        <a href="contact.html" class="card" style="text-decoration:none; color:white;">
+            <h3 data-fr="📑 Administration" data-en="📑 Administration" data-ki="📑 Ubutegetsi">📑 Administration</h3>
+            <p data-fr="Accompagnement administratif complet." data-en="Full administrative support." data-ki="Gufasha mu vy'ubutegetsi vyose.">Accompagnement administratif complet.</p>
         </a>
     </div>
 </section>
 
 <section class="section">
-    <h2 data-fr="Prêt à être accompagné ?" data-en="Ready to get support?">
+    <h2 data-fr="Prêt à être accompagné ?" data-en="Ready to get support?" data-ki="Witeguye gufashwa?">
         Prêt à être accompagné ?
     </h2>
     <div class="sep"></div>
@@ -369,7 +377,7 @@ footer img{
         text-decoration:none; 
         font-size:18px; 
         font-weight:700;">
-        Contactez-nous
+        <span data-fr="Contactez-nous" data-en="Contact us" data-ki="Tuvugishe">Contactez-nous</span>
     </a>
 </section>
 
@@ -377,23 +385,32 @@ footer img{
     <img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/d9ea509e70ba92632a6a6fb0e27a4b3453ce7656/logotransparent.png">
 
     <div class="footer-links">
-        <a href="index.html">Accueil</a>
-        <a href="business-diaspora.html">Diaspora</a>
-        <a href="investisseurs-premium.html">Investisseurs Premium</a>
-        <a href="a-propos.html">À propos</a>
-        <a href="contact.html">Contact</a>
-        <a href="mentions-legales.html">Mentions légales</a>
-        <a href="confidentialite.html">Confidentialité</a>
+        <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+        <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+        <a href="investisseurs-premium.html" data-fr="Investisseurs Premium" data-en="Premium Investors" data-ki="Abashoramari Premium"></a>
+        <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
+        <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
+        <a href="mentions-legales.html" data-fr="Mentions légales" data-en="Legal Notice" data-ki="Amategeko y'urubuga"></a>
+        <a href="confidentialite.html" data-fr="Confidentialité" data-en="Privacy" data-ki="Ubumfasoni"></a>
     </div>
 
     <div class="social" style="margin-top:25px;">
-        <a href="https://facebook.com/cizagroup_official">📘</a>
+        <a href="https://www.facebook.com/909554205579421">📘</a>
         <a href="https://instagram.com/cizagroup_official">📸</a>
+        <a href="https://instagram.com/cizasupply">📸</a>
+        <a href="https://instagram.com/cizashop_official">📸</a>
         <a href="https://youtube.com/@cizagroup?si=BkbiwUkk6OVL5fSS">▶️</a>
     </div>
 
-    <p style="opacity:.6; margin-top:20px;">
-        © 2025 CIZA GROUP — Tous droits réservés.
+    <p style="opacity:.75; margin-top:20px;">
+        Canada : +1 514 502 9503 &nbsp;•&nbsp; Burundi : +257 79 94 50 07 &nbsp;•&nbsp; Chine : +86 187 2139 6720<br>infos@cizagroup.com
+    </p>
+    <p style="opacity:.6;">
+        Ciza Group SURL — RC 0082870/26 — NIF 4003446905
+    </p>
+    <p style="opacity:.6; margin-top:10px;" data-fr="© 2026 CIZA GROUP — Tous droits réservés." data-en="© 2026 CIZA GROUP — All rights reserved." data-ki="© 2026 CIZA GROUP — Uburenganzira bwose burabitswe.">
+        © 2026 CIZA GROUP — Tous droits réservés.
     </p>
 </footer>
 
@@ -408,15 +425,18 @@ window.addEventListener("load", ()=>{
 function openMenu(){document.getElementById("mobileMenu").style.right="0";}
 function closeMenu(){document.getElementById("mobileMenu").style.right="-100%";}
 
-function toggleLang(){
+function setLang(l){
     document.querySelectorAll("[data-fr]").forEach(el=>{
-        if(el.innerHTML===el.getAttribute("data-fr")){
-            el.innerHTML=el.getAttribute("data-en");
-        } else {
-            el.innerHTML=el.getAttribute("data-fr");
-        }
+        el.innerHTML = el.dataset[l];
     });
+    document.getElementById("lg-fr").classList.remove("active");
+    document.getElementById("lg-en").classList.remove("active");
+    document.getElementById("lg-ki").classList.remove("active");
+    document.getElementById("lg-"+l).classList.add("active");
+    localStorage.setItem("lang",l);
 }
+let savedLang = localStorage.getItem("lang");
+setLang(savedLang ? savedLang : "fr");
 
 window.addEventListener("scroll",()=>{
     const btn=document.getElementById("scrollTop");
