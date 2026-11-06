@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <title>Conditions Générales d’Utilisation – CIZA GROUP</title>
 
 <!-- FONT -->
@@ -20,7 +21,7 @@ body {
 
 .container {
   max-width: 900px;
-  margin: 40px auto;
+  margin: 110px auto 40px;
   background: white;
   padding: 40px 28px;
   border-radius: 16px;
@@ -70,32 +71,69 @@ a { color:#0A3D91; }
 }
 .back:hover { background: #0d4bb8; }
 </style>
+<style>
+
+/* === EN-TÊTE STANDARD + HERO LÉGAL (série 3) === */
+header{box-sizing:border-box;position:fixed;top:0;left:0;width:100%;background:#06142edd;backdrop-filter:blur(6px);padding:15px 22px;z-index:999;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #0e2a50;}
+header img{height:55px;}
+nav a{color:#fff;margin:0 12px;text-decoration:none;font-weight:600;}
+nav a:hover{color:#F2B840;}
+.lang-switch span{margin-left:12px;cursor:pointer;opacity:.6;font-weight:700;color:#fff;}
+.lang-switch span.active,.lang-switch span.lang-active{color:#F2B840;opacity:1;}
+#mobile-open{display:none;font-size:32px;cursor:pointer;color:#fff;line-height:1;}
+#mobile-menu{position:fixed;top:0;right:-100%;width:70%;max-width:320px;height:100%;background:#0D1A2C;padding:40px 20px;transition:.35s;z-index:3000;display:flex;flex-direction:column;}
+#mobile-menu a{color:#fff;text-decoration:none;font-size:20px;padding:12px 0;font-weight:600;}
+#mobile-close{font-size:32px;cursor:pointer;margin-bottom:25px;text-align:right;color:#fff;}
+@media(max-width:900px){nav{display:none;}#mobile-open{display:block;}}
+.legal-hero{text-align:center;padding:50px 20px 40px;background:linear-gradient(180deg,#eaf1fb,#dbe7f7);border-radius:16px;margin-bottom:30px;}
+.legal-hero h1{font-size:30px;color:#0A3D91;margin:0 0 10px;}
+.legal-hero p{color:#333;font-size:16px;}
+.back-btn{display:inline-block;margin-top:18px;padding:12px 24px;background:#0A3D91;color:#fff !important;border-radius:10px;font-weight:700;text-decoration:none;}
+@media(max-width:640px){.legal-hero h1{font-size:24px;}}
+</style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
+    <img src="logotransparent.png" alt="CIZA GROUP">
+    <nav>
+        <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+        <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+        <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe"></a>
+        <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
+        <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
+        <span class="lang-switch"><span onclick="setLang('fr')" id="lg-fr">FR</span><span onclick="setLang('en')" id="lg-en">EN</span><span onclick="setLang('ki')" id="lg-ki">KI</span></span>
+    </nav>
+    <span id="mobile-open">☰</span>
+</header>
 
-<!-- LANGUAGE SWITCH -->
-<div class="lang-switcher">
-  <img src="https://flagcdn.com/fr.svg" onclick="setLang('fr')" title="Français">
-  <img src="https://flagcdn.com/gb.svg" onclick="setLang('en')" title="English">
-  <img src="https://flagcdn.com/bi.svg" onclick="setLang('ki')" title="Kirundi">
+<div id="mobile-menu">
+    <div id="mobile-close">✕</div>
+    <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+    <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+    <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe"></a>
+    <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
+    <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
 </div>
 
-<h1 class="lang" 
-    data-fr="Conditions Générales d’Utilisation"
-    data-en="Terms of Use"
-    data-ki="Amategeko y'Ukukoresha Urubuga">
-    Conditions Générales d’Utilisation
-</h1>
+<div class="container">
 
-<p class="lang" style="text-align:center;"
-   data-fr="Dernière mise à jour : 5 novembre 2026"
-   data-en="Last update: November 5, 2026"
-   data-ki="Yavuguruwe: Munyonyo 5, 2026">
-   Dernière mise à jour : 5 novembre 2026
-</p>
+<div class="legal-hero">
+<h1 class="lang" data-fr="Conditions Générales d’Utilisation" data-en="Terms of Use" data-ki="Amategeko y'Ukukoresha Urubuga">Conditions Générales d’Utilisation</h1>
+<p class="lang" data-fr="Dernière mise à jour : 5 novembre 2026" data-en="Last update: November 5, 2026" data-ki="Yavuguruwe: Munyonyo 5, 2026">Dernière mise à jour : 5 novembre 2026</p>
+<p class="lang" data-fr="Les règles d'utilisation de nos services et de notre site." data-en="The rules for using our services and website." data-ki="Amategeko yo gukoresha serivisi n'urubuga rwacu.">Les règles d'utilisation de nos services et de notre site.</p>
+<a href="index.html" class="back-btn lang" data-fr="← Accueil" data-en="← Home" data-ki="← Ahabanza">← Accueil</a>
+</div>
+
+
+
+<!-- LANGUAGE SWITCH -->
+
+
+
+
+
 
 <h2 class="lang"
     data-fr="1. Objet"
@@ -189,12 +227,7 @@ a { color:#0A3D91; }
 💬 WhatsApp Chine : <a href="https://wa.me/8618721396720">+86 187 2139 6720</a>
 </p>
 
-<div style="text-align:center;">
-  <a href="business-diaspora.html" class="back lang"
-     data-fr="← Retour"
-     data-en="← Back"
-     data-ki="← Subira">← Retour</a>
-</div>
+
 
 </div>
 
@@ -205,12 +238,18 @@ function setLang(lang) {
   document.querySelectorAll("[data-fr]").forEach(el => {
     if (el.dataset[lang]) el.innerHTML = el.dataset[lang];
   });
+  ["fr","en","ki"].forEach(l=>{var e=document.getElementById("lg-"+l); if(e) e.classList.remove("active");});
+  var cur=document.getElementById("lg-"+lang); if(cur) cur.classList.add("active");
 }
 
 (function () {
   const saved = localStorage.getItem("ciza_lang_cgu") || "fr";
   setLang(saved);
 })();
+/* === MENU MOBILE STANDARD === */
+document.getElementById("mobile-open").onclick = () => { document.getElementById("mobile-menu").style.right = "0"; };
+document.getElementById("mobile-close").onclick = () => { document.getElementById("mobile-menu").style.right = "-100%"; };
+document.addEventListener("click", e => { if(!e.target.closest("#mobile-menu") && !e.target.closest("#mobile-open")){ document.getElementById("mobile-menu").style.right = "-100%"; } });
 </script>
 
 </body>

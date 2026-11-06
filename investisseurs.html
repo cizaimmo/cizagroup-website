@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <title>CIZA GROUP — Investisseurs</title>
 
 <meta name="description" content="CIZA GROUP accompagne les investisseurs avec transparence, expertise et rigueur au Burundi. Inspection, due diligence, analyse et accompagnement premium.">
@@ -141,7 +142,7 @@ nav a:hover{color:var(--gold);}
 .hero{
     padding:120px 20px 70px;
     text-align:center;
-    background:linear-gradient(180deg,#0A1D36,#071528);
+    background:linear-gradient(rgba(6,20,46,.82),rgba(6,20,46,.88)),url('assets/hero-burundi.jpg') center/cover no-repeat;
 }
 .hero h1{
     font-size:40px;
@@ -262,6 +263,18 @@ footer img{
 
 @media(max-width:640px){ .hero h1{font-size:28px;} }
 </style>
+<style>
+/* === EN-TÊTE STANDARD (série 3) === */
+nav a{color:#fff;margin:0 12px;text-decoration:none;font-weight:600;}
+nav a:hover{color:#F2B840;}
+.lang-switch span{margin-left:12px;cursor:pointer;opacity:.6;font-weight:700;}
+.lang-switch span.active,.lang-switch span.lang-active{color:#F2B840;opacity:1;}
+#mobile-open{display:none;font-size:32px;cursor:pointer;color:#fff;line-height:1;}
+#mobile-menu{position:fixed;top:0;right:-100%;width:70%;max-width:320px;height:100%;background:#0D1A2C;padding:40px 20px;transition:.35s;z-index:3000;display:flex;flex-direction:column;}
+#mobile-menu a{color:#fff;text-decoration:none;font-size:20px;padding:12px 0;font-weight:600;}
+#mobile-close{font-size:32px;cursor:pointer;margin-bottom:25px;text-align:right;color:#fff;}
+@media(max-width:900px){nav{display:none;}#mobile-open{display:block;}}
+</style>
 </head>
 
 <body>
@@ -270,34 +283,25 @@ footer img{
 <div id="watermark"><img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/d9ea509e70ba92632a6a6fb0e27a4b3453ce7656/logotransparent.png"></div>
 
 <header>
-    <div style="display:flex; align-items:center; gap:15px;">
-        <a href="javascript:history.back()" style="color:var(--gold); font-size:26px; text-decoration:none;">←</a>
-        <a href="index.html"><img src="https://raw.githubusercontent.com/cizaimmo/cizagroup-website/d9ea509e70ba92632a6a6fb0e27a4b3453ce7656/logotransparent.png"></a>
-    </div>
-
+    <img src="logotransparent.png" alt="CIZA GROUP">
     <nav>
         <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
         <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
-        <a href="investisseurs-premium.html" data-fr="Investisseurs Premium" data-en="Premium Investors" data-ki="Abashoramari Premium"></a>
-        <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
+        <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe"></a>
+        <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
         <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
-        <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
-    </nav>
-
-    <div style="display:flex; align-items:center; gap:15px;">
         <span class="lang-switch"><span onclick="setLang('fr')" id="lg-fr">FR</span><span onclick="setLang('en')" id="lg-en">EN</span><span onclick="setLang('ki')" id="lg-ki">KI</span></span>
-        <span class="menu-icon" onclick="openMenu()">☰</span>
-    </div>
+    </nav>
+    <span id="mobile-open">☰</span>
 </header>
 
-<div id="mobileMenu">
-    <div class="close-btn" onclick="closeMenu()">×</div>
+<div id="mobile-menu">
+    <div id="mobile-close">✕</div>
     <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
     <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
-    <a href="investisseurs-premium.html" data-fr="Investisseurs Premium" data-en="Premium Investors" data-ki="Abashoramari Premium"></a>
-    <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
+    <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe"></a>
+    <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
     <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
-    <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
 </div>
 
 <section class="hero">
@@ -424,8 +428,6 @@ window.addEventListener("load", ()=>{
     document.getElementById("loader").style.display="none";
 });
 
-function openMenu(){document.getElementById("mobileMenu").style.right="0";}
-function closeMenu(){document.getElementById("mobileMenu").style.right="-100%";}
 
 function setLang(l){
     document.querySelectorAll("[data-fr]").forEach(el=>{
@@ -444,6 +446,10 @@ window.addEventListener("scroll",()=>{
     const btn=document.getElementById("scrollTop");
     btn.style.display=window.scrollY>300?"block":"none";
 });
+/* === MENU MOBILE STANDARD === */
+document.getElementById("mobile-open").onclick = () => { document.getElementById("mobile-menu").style.right = "0"; };
+document.getElementById("mobile-close").onclick = () => { document.getElementById("mobile-menu").style.right = "-100%"; };
+document.addEventListener("click", e => { if(!e.target.closest("#mobile-menu") && !e.target.closest("#mobile-open")){ document.getElementById("mobile-menu").style.right = "-100%"; } });
 </script>
 
 </body>

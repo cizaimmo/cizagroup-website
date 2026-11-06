@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>À propos — CIZA GROUP</title>
-<link rel="icon" href="logotransparent.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 
 <style>
 /* GLOBAL */
@@ -145,41 +145,44 @@ footer{
     #mobile-open{display:block;}
 }
 </style>
+<style>
+/* === EN-TÊTE STANDARD (série 3) === */
+nav a{color:#fff;margin:0 12px;text-decoration:none;font-weight:600;}
+nav a:hover{color:#F2B840;}
+.lang-switch span{margin-left:12px;cursor:pointer;opacity:.6;font-weight:700;}
+.lang-switch span.active,.lang-switch span.lang-active{color:#F2B840;opacity:1;}
+#mobile-open{display:none;font-size:32px;cursor:pointer;color:#fff;line-height:1;}
+#mobile-menu{position:fixed;top:0;right:-100%;width:70%;max-width:320px;height:100%;background:#0D1A2C;padding:40px 20px;transition:.35s;z-index:3000;display:flex;flex-direction:column;}
+#mobile-menu a{color:#fff;text-decoration:none;font-size:20px;padding:12px 0;font-weight:600;}
+#mobile-close{font-size:32px;cursor:pointer;margin-bottom:25px;text-align:right;color:#fff;}
+@media(max-width:900px){nav{display:none;}#mobile-open{display:block;}}
+</style>
 </head>
 
 <body>
 
 <!-- HEADER -->
 <header>
-    <img src="logotransparent.png">
-
-    <div class="nav-links">
+    <img src="logotransparent.png" alt="CIZA GROUP">
+    <nav>
         <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
-        <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
         <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
-        <a href="services-burundi.html" data-fr="Services" data-en="Services" data-ki="Serivisi"></a>
+        <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe"></a>
+        <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
         <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
-        <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
-    </div>
-
-    <div class="lang-switch">
-        <span onclick="setLang('fr')" id="lg-fr">FR</span>
-        <span onclick="setLang('en')" id="lg-en">EN</span>
-        <span onclick="setLang('ki')" id="lg-ki">KI</span>
-    </div>
+        <span class="lang-switch"><span onclick="setLang('fr')" id="lg-fr">FR</span><span onclick="setLang('en')" id="lg-en">EN</span><span onclick="setLang('ki')" id="lg-ki">KI</span></span>
+    </nav>
     <span id="mobile-open">☰</span>
 </header>
 
 <!-- MENU MOBILE -->
 <div id="mobile-menu">
     <div id="mobile-close">✕</div>
-
     <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
-    <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
     <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
-    <a href="services-burundi.html" data-fr="Services" data-en="Services" data-ki="Serivisi"></a>
+    <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe"></a>
+    <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
     <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
-    <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
 </div>
 
 

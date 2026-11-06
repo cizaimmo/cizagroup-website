@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mentions légales — CIZA GROUP</title>
-<link rel="icon" href="logotransparent.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 
 <style>
 body{
@@ -26,7 +26,7 @@ header{box-sizing:border-box;
 }
 header img{height:55px;}
 .wrapper{
-    max-width:900px;margin:auto;padding:140px 20px 60px;
+    max-width:900px;margin:auto;padding:40px 20px 60px;
 }
 .section{
     background:#0b1c34cc;padding:25px;border-radius:16px;
@@ -41,25 +41,58 @@ footer{
     color:white;font-size:13px;margin-top:40px;opacity:.8;
 }
 </style>
+<style>
+/* === EN-TÊTE STANDARD (série 3) === */
+nav a{color:#fff;margin:0 12px;text-decoration:none;font-weight:600;}
+nav a:hover{color:#F2B840;}
+.lang-switch span{margin-left:12px;cursor:pointer;opacity:.6;font-weight:700;}
+.lang-switch span.active,.lang-switch span.lang-active{color:#F2B840;opacity:1;}
+#mobile-open{display:none;font-size:32px;cursor:pointer;color:#fff;line-height:1;}
+#mobile-menu{position:fixed;top:0;right:-100%;width:70%;max-width:320px;height:100%;background:#0D1A2C;padding:40px 20px;transition:.35s;z-index:3000;display:flex;flex-direction:column;}
+#mobile-menu a{color:#fff;text-decoration:none;font-size:20px;padding:12px 0;font-weight:600;}
+#mobile-close{font-size:32px;cursor:pointer;margin-bottom:25px;text-align:right;color:#fff;}
+@media(max-width:900px){nav{display:none;}#mobile-open{display:block;}}
+/* === HERO LÉGAL + BOUTON RETOUR (série 3) === */
+.legal-hero{margin-top:86px;padding:70px 20px 50px;text-align:center;background:linear-gradient(rgba(6,20,46,.82),rgba(6,20,46,.88)),url('assets/hero-burundi.jpg') center/cover no-repeat;}
+.legal-hero h1{color:#F2B840;font-size:32px;margin:0 0 12px;}
+.legal-hero p{opacity:.9;font-size:17px;max-width:640px;margin:0 auto 22px;color:#fff;}
+.back-btn{display:inline-block;padding:12px 24px;border:2px solid #F2B840;color:#F2B840;border-radius:10px;font-weight:700;text-decoration:none;}
+.back-btn:hover{background:#F2B840;color:#06142e;}
+@media(max-width:640px){.legal-hero h1{font-size:26px;}}
+</style>
 </head>
 
 <body>
 
 <header>
-    <img src="logotransparent.png">
-
-    <div class="lang-switch">
-        <span onclick="setLang('fr')" id="lg-fr">FR</span>
-        <span onclick="setLang('en')" id="lg-en">EN</span>
-        <span onclick="setLang('ki')" id="lg-ki">KI</span>
-    </div>
+    <img src="logotransparent.png" alt="CIZA GROUP">
+    <nav>
+        <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+        <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+        <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe"></a>
+        <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
+        <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
+        <span class="lang-switch"><span onclick="setLang('fr')" id="lg-fr">FR</span><span onclick="setLang('en')" id="lg-en">EN</span><span onclick="setLang('ki')" id="lg-ki">KI</span></span>
+    </nav>
+    <span id="mobile-open">☰</span>
 </header>
 
-<div class="wrapper">
+<div id="mobile-menu">
+    <div id="mobile-close">✕</div>
+    <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+    <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+    <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe"></a>
+    <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
+    <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
+</div>
 
-    <h1 data-fr="Mentions légales"
-        data-en="Legal Notice"
-        data-ki="Amategeko y'urubuga"></h1>
+<section class="legal-hero">
+    <h1 data-fr="Mentions légales" data-en="Legal Notice" data-ki="Amategeko y'urubuga">Mentions légales</h1>
+    <p data-fr="Les informations légales du site CIZA GROUP." data-en="Legal information for the CIZA GROUP website." data-ki="Amakuru y'amategeko y'urubuga rwa CIZA GROUP.">Les informations légales du site CIZA GROUP.</p>
+    <a href="index.html" class="back-btn" data-fr="← Accueil" data-en="← Home" data-ki="← Ahabanza">← Accueil</a>
+</section>
+
+<div class="wrapper">
 
     <!-- SECTION 1 -->
     <div class="section">
@@ -164,6 +197,10 @@ function setLang(l){
     document.getElementById("lg-"+l).classList.add("lang-active");
 }
 setLang("fr");
+/* === MENU MOBILE STANDARD === */
+document.getElementById("mobile-open").onclick = () => { document.getElementById("mobile-menu").style.right = "0"; };
+document.getElementById("mobile-close").onclick = () => { document.getElementById("mobile-menu").style.right = "-100%"; };
+document.addEventListener("click", e => { if(!e.target.closest("#mobile-menu") && !e.target.closest("#mobile-open")){ document.getElementById("mobile-menu").style.right = "-100%"; } });
 </script>
 
 </body>
