@@ -108,6 +108,9 @@ header img{height:55px;}
     border-left:3px solid #F2B840;
     padding-left:12px;
 }
+.ceo-photo{margin:1.5rem auto 0;max-width:860px;text-align:center}
+.ceo-photo img{width:100%;height:auto;border-radius:16px;border:3px solid #d4af37;box-shadow:0 12px 32px rgba(0,0,0,.35);display:block}
+.ceo-photo figcaption{margin-top:.75rem;color:#d4af37;font-weight:600;font-size:1rem}
 
 /* CTA */
 .cta-btn{
@@ -130,6 +133,16 @@ footer{
 @media(max-width:600px){
     header img{height:45px;}
     .hero h1{font-size:26px;}
+}
+
+/* MENU MOBILE (burger) */
+#mobile-open{display:none;font-size:32px;cursor:pointer;color:#fff;line-height:1;}
+#mobile-menu{position:fixed;top:0;right:-100%;width:70%;max-width:320px;height:100%;background:#0D1A2C;padding:40px 20px;transition:.35s;z-index:3000;display:flex;flex-direction:column;}
+#mobile-menu a{color:#fff;text-decoration:none;font-size:20px;padding:12px 0;font-weight:600;}
+#mobile-close{font-size:32px;cursor:pointer;margin-bottom:25px;text-align:right;color:#fff;}
+@media(max-width:900px){
+    .nav-links,header nav{display:none;}
+    #mobile-open{display:block;}
 }
 </style>
 </head>
@@ -154,7 +167,21 @@ footer{
         <span onclick="setLang('en')" id="lg-en">EN</span>
         <span onclick="setLang('ki')" id="lg-ki">KI</span>
     </div>
+    <span id="mobile-open">☰</span>
 </header>
+
+<!-- MENU MOBILE -->
+<div id="mobile-menu">
+    <div id="mobile-close">✕</div>
+
+    <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+    <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
+    <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+    <a href="services-burundi.html" data-fr="Services" data-en="Services" data-ki="Serivisi"></a>
+    <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
+</div>
+
 
 <!-- HERO -->
 <section class="hero">
@@ -315,6 +342,11 @@ footer{
     <p class="ceo-quote" data-fr="« L’excellence n’est pas un objectif, c’est une discipline quotidienne. » — Fondateur & CEO, CIZA GROUP"
        data-en="“Excellence is not a goal, it is a daily discipline.” — Founder & CEO, CIZA GROUP"
        data-ki="« Ubuhinga si intumbero gusa, ahubwo ni ingeso yo ku munsi ku munsi. » — CEO, CIZA GROUP"></p>
+
+    <figure class="ceo-photo">
+        <img src="assets/panel-rapproche.jpg" alt="Ciza Misigaro, Fondateur &amp; CEO de CIZA GROUP, en panel" width="1125" height="635" loading="lazy">
+        <figcaption data-fr="Ciza Misigaro en panel — leadership et vision partagée" data-en="Ciza Misigaro on a panel — leadership and shared vision" data-ki="Ciza Misigaro mu nama — ubuyobozi n'icyerekezo">Ciza Misigaro en panel — leadership et vision partagée</figcaption>
+    </figure>
 </div>
 
 <!-- VALEURS -->
@@ -361,6 +393,22 @@ function setLang(l){
     document.getElementById("lg-"+l).classList.add("active");
 }
 setLang("fr");
+</script>
+
+
+<script>
+/* === MENU MOBILE (burger) === */
+document.getElementById("mobile-open").onclick = () => {
+    document.getElementById("mobile-menu").style.right = "0";
+};
+document.getElementById("mobile-close").onclick = () => {
+    document.getElementById("mobile-menu").style.right = "-100%";
+};
+document.addEventListener("click", e => {
+    if(!e.target.closest("#mobile-menu") && !e.target.closest("#mobile-open")){
+        document.getElementById("mobile-menu").style.right = "-100%";
+    }
+});
 </script>
 
 </body>

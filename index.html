@@ -121,13 +121,10 @@ nav a:hover{
 /* HERO */
 .hero{
     padding:110px 25px 90px;
+    text-align:center;
     background:linear-gradient(180deg,#0b1a33 0%,#061223 100%);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:48px;
 }
-.hero-text{flex:1 1 520px;max-width:620px;text-align:left;}
+.hero-text{max-width:800px;margin:0 auto;}
 .hero-text h1{
     font-size:36px;
     font-weight:800;
@@ -141,15 +138,13 @@ nav a:hover{
     margin-bottom:35px;
     line-height:1.6;
 }
-.hero-text .cta-box{justify-content:flex-start;}
-.hero-photo{flex:0 0 380px;max-width:420px;margin:0;text-align:center}
+.hero-photo{margin:2.5rem auto 0;max-width:900px;text-align:center}
 .hero-photo img{width:100%;height:auto;border-radius:16px;border:3px solid #d4af37;box-shadow:0 12px 32px rgba(0,0,0,.35);display:block}
 .hero-photo figcaption{margin-top:.75rem;color:#d4af37;font-weight:600;font-size:1rem}
 @media(max-width:860px){
-    .hero{flex-direction:column;text-align:center;gap:32px;padding:90px 20px 70px;}
-    .hero-text{max-width:100%;text-align:center;}
-    .hero-text .cta-box{justify-content:center;}
-    .hero-photo{flex:none;width:100%;max-width:480px;}
+    .hero{padding:90px 20px 70px;}
+    .hero-text h1{font-size:28px;}
+    .hero-photo{max-width:480px;}
 }
 
 /* CTA */
@@ -237,7 +232,10 @@ nav a:hover{
     </div>
 
     <figure class="hero-photo">
-        <img src="assets/fondateur-conference.jpg" alt="Ciza Misigaro, Fondateur &amp; CEO de CIZA GROUP, en conférence" width="800" height="1200" loading="eager">
+        <picture>
+            <source media="(max-width: 860px)" srcset="assets/fondateur-conference.jpg">
+            <img src="assets/panel-large.jpg" alt="Ciza Misigaro, Fondateur &amp; CEO de CIZA GROUP, en panel avec son équipe" width="1125" height="633" loading="eager">
+        </picture>
         <figcaption data-fr="Ciza Misigaro — Fondateur &amp; CEO, CIZA GROUP" data-en="Ciza Misigaro — Founder &amp; CEO, CIZA GROUP" data-ki="Ciza Misigaro — Umushinga &amp; Umuyobozi Mukuru, CIZA GROUP">Ciza Misigaro — Fondateur &amp; CEO, CIZA GROUP</figcaption>
     </figure>
 </section>
@@ -251,7 +249,7 @@ nav a:hover{
        data-en="The ecosystem film: CizaShop, CIZA SUPPLY, CizaLogistics, CizaImmo and Diaspora — one vision."
        data-ki="Filime y'ibikorwa vyacu: CizaShop, CIZA SUPPLY, CizaLogistics, CizaImmo n'Abadiaspora — intumbero imwe."></p>
     <div id="film-wrap" style="max-width:900px;margin:0 auto;position:relative;border-radius:16px;overflow:hidden;border:2px solid #F2B840;box-shadow:0 10px 40px rgba(0,0,0,.45);background:#000;">
-        <video id="film-video" poster="assets/film-cizagroup-poster.jpg" controls playsinline preload="none" style="display:block;width:100%;aspect-ratio:16/9;background:#000;"></video>
+        <video id="film-video" poster="assets/film-cizagroup-poster.jpg" controls playsinline preload="none" style="display:block;width:100%;aspect-ratio:854/540;background:#000;"></video>
         <div id="film-loading" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55);color:#F2B840;font-weight:700;pointer-events:none;">
             <span data-fr="Chargement de la vidéo…" data-en="Loading the video…" data-ki="Gutegura videwo…">Chargement de la vidéo…</span>
         </div>

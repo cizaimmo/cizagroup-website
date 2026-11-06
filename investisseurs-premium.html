@@ -136,6 +136,16 @@ footer{
     header img{height:45px;}
     .hero h1{font-size:30px;}
 }
+
+/* MENU MOBILE (burger) */
+#mobile-open{display:none;font-size:32px;cursor:pointer;color:#fff;line-height:1;}
+#mobile-menu{position:fixed;top:0;right:-100%;width:70%;max-width:320px;height:100%;background:#0D1A2C;padding:40px 20px;transition:.35s;z-index:3000;display:flex;flex-direction:column;}
+#mobile-menu a{color:#fff;text-decoration:none;font-size:20px;padding:12px 0;font-weight:600;}
+#mobile-close{font-size:32px;cursor:pointer;margin-bottom:25px;text-align:right;color:#fff;}
+@media(max-width:900px){
+    .nav-links,header nav{display:none;}
+    #mobile-open{display:block;}
+}
 </style>
 </head>
 
@@ -156,7 +166,20 @@ footer{
         <span onclick="setLang('en')" id="lg-en">EN</span>
         <span onclick="setLang('ki')" id="lg-ki">KI</span>
     </div>
+    <span id="mobile-open">☰</span>
 </header>
+
+<!-- MENU MOBILE -->
+<div id="mobile-menu">
+    <div id="mobile-close">✕</div>
+
+    <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+    <a href="business-diaspora.html" data-fr="Diaspora Business" data-en="Diaspora Business" data-ki="Abadiaspora"></a>
+    <a href="services-burundi.html" data-fr="Services" data-en="Services" data-ki="Serivisi"></a>
+    <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
+    <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
+</div>
+
 
 <section class="hero">
     <h1 data-fr="Programme Investisseurs Premium"
@@ -306,6 +329,22 @@ function setLang(l){
     document.getElementById("lg-"+l).classList.add("active");
 }
 setLang("fr");
+</script>
+
+
+<script>
+/* === MENU MOBILE (burger) === */
+document.getElementById("mobile-open").onclick = () => {
+    document.getElementById("mobile-menu").style.right = "0";
+};
+document.getElementById("mobile-close").onclick = () => {
+    document.getElementById("mobile-menu").style.right = "-100%";
+};
+document.addEventListener("click", e => {
+    if(!e.target.closest("#mobile-menu") && !e.target.closest("#mobile-open")){
+        document.getElementById("mobile-menu").style.right = "-100%";
+    }
+});
 </script>
 
 </body>
