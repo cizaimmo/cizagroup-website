@@ -85,6 +85,17 @@ button{
 }
 button:hover{background:#c99933;}
 
+/* FORM — résultat Web3Forms */
+.form-err{display:none;color:#ff9d9d;background:#3a0d0d;border:1px solid #7a1f1f;padding:12px;border-radius:10px;margin-top:14px;font-size:15px;}
+.form-err.show{display:block;}
+.form-result{display:none;margin-top:22px;padding:20px;border-radius:14px;border:1px solid #F2B840;background:#0f223d;}
+.form-result.show{display:block;}
+.form-result h3{color:#F2B840;margin:0 0 10px 0;font-size:20px;text-align:center;}
+.form-result .result-text{white-space:pre-wrap;font-size:15px;line-height:1.6;opacity:.92;}
+.result-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;justify-content:center;}
+.result-btn{display:inline-block;width:auto;padding:11px 18px;border-radius:10px;border:1px solid #F2B840;background:transparent;color:#F2B840;font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;}
+.result-btn:hover{background:#F2B840;color:#06142e;}
+
 /* PARTENAIRES */
 .partner-section{
     background:#0b1c34dd;padding:30px;
@@ -211,19 +222,18 @@ nav a:hover{color:#F2B840;}
        data-en="Choose your service and send us your request."
        data-ki="Hitamwo serivisi ukeneye, hanyuma urungike."></p>
 
-    <form action="https://formsubmit.co/infos@cizagroup.com" method="POST">
+    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
 
-        <!-- Hidden Premium -->
-        <input type="hidden" name="_next" value="https://cizagroup.com/merci.html">
-        <input type="hidden" name="_subject" value="Nouvelle demande — CIZA GROUP">
-        <input type="hidden" name="_autoresponse" value="Merci pour votre message. L’équipe CIZA GROUP vous répondra dans moins de 24h.">
-        <input type="hidden" name="_captcha" value="false">
+        <!-- Web3Forms — envoi vers infos@cizagroup.com (clé liée à cet e-mail, pas au domaine) -->
+        <input type="hidden" name="access_key" value="5dd75877-534a-4291-b280-5430afd92733">
+        <input type="hidden" name="subject" value="Contact — CIZA GROUP">
+        <input type="checkbox" name="botcheck" style="display:none">
 
-        <input type="text" name="name" placeholder="Nom complet / Full Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="phone" placeholder="Téléphone / Phone Number">
+        <input type="text" id="c-name" name="name" placeholder="Nom complet / Full Name" required>
+        <input type="email" id="c-email" name="email" placeholder="Email" required>
+        <input type="text" id="c-phone" name="phone" placeholder="Téléphone / Phone Number">
 
-        <select name="service" required>
+        <select id="c-service" name="service" required>
             <option value="">Choisissez un service</option>
             <option>CizaRide+ — Mobilité</option>
             <option>CIZA SUPPLY — Sourcing</option>
@@ -236,7 +246,7 @@ nav a:hover{color:#F2B840;}
             <option>CizaCarWash — Bientôt</option>
         </select>
 
-        <select name="type" required>
+        <select id="c-type" name="type" required>
             <option value="">Type de demande</option>
             <option>Devenir partenaire</option>
             <option>Demande d’information</option>
@@ -244,10 +254,23 @@ nav a:hover{color:#F2B840;}
             <option>Investissement</option>
         </select>
 
-        <textarea name="message" placeholder="Votre message..." required></textarea>
+        <textarea id="c-message" name="message" placeholder="Votre message..." required></textarea>
 
-        <button type="submit">Envoyer la demande</button>
+        <button type="submit" id="c-submit">Envoyer la demande</button>
     </form>
+
+    <p id="c-err" class="form-err" role="alert"></p>
+
+    <div id="c-result" class="form-result" aria-live="polite">
+        <h3 id="c-result-title"></h3>
+        <p id="c-result-text" class="result-text"></p>
+        <div class="result-actions">
+            <a id="c-mail" class="result-btn" href="#">Envoyer par e-mail</a>
+            <a id="c-wa" class="result-btn" href="#" target="_blank" rel="noopener">Envoyer par WhatsApp</a>
+            <button type="button" id="c-copy" class="result-btn">Copier</button>
+            <button type="button" id="c-dl" class="result-btn">Télécharger</button>
+        </div>
+    </div>
 </div>
 
 
@@ -354,6 +377,232 @@ document.addEventListener("click", e => {
         document.getElementById("mobile-menu").style.right = "-100%";
     }
 });
+</script>
+
+<script>
+/* ============ Formulaire de contact — Web3Forms ============
+   Envoi vers infos@cizagroup.com via Web3Forms
+   (https://api.web3forms.com/submit, aucun serveur propre).
+   La clé d'accès est liée à infos@cizagroup.com.
+   PAS D'ACCUSÉ AUTOMATIQUE : l'offre gratuite de Web3Forms n'envoie
+   aucun accusé de réception par e-mail au visiteur. La confirmation
+   se fait à l'écran, avec le numéro de référence ; c'est ensuite
+   l'équipe CIZA GROUP qui répond par e-mail.
+   Un envoi n'est tenu pour livré que si Web3Forms le confirme
+   (success:true) — pas sur un simple code 200. Si l'envoi n'est pas
+   confirmé, le panneau le dit clairement (« pas encore envoyée ») et
+   propose « Envoyer par e-mail » (messagerie du visiteur, demande
+   pré-écrite adressée à infos@cizagroup.com), WhatsApp, copie et
+   téléchargement. Rien n'est jamais perdu ni simulé. */
+(function(){
+  var FORM_ENDPOINT = "https://api.web3forms.com/submit";
+  var WEB3FORMS_KEY = "5dd75877-534a-4291-b280-5430afd92733";
+  var WA_NUMBER = "15145029503";
+
+  var TXT = {
+    fr: {
+      err: "Merci de remplir les champs obligatoires, avec une adresse e-mail valide.",
+      sentTitle: "Demande envoyée — merci !",
+      sentNote: "Votre demande est bien arrivée chez CIZA GROUP, dans notre boîte infos@cizagroup.com. Cette confirmation à l'écran — avec votre numéro de référence ci-dessous — est votre preuve d'envoi : il n'y a pas d'accusé automatique par e-mail. Notre équipe vous répondra par e-mail. Conservez aussi votre copie :",
+      readyTitle: "Votre demande n'est pas encore envoyée",
+      readyNote: "L'envoi automatique vers infos@cizagroup.com n'a pas abouti : rien n'a été reçu de notre côté. Un dernier geste suffit — touchez « Envoyer par e-mail » : votre messagerie s'ouvre avec la demande déjà écrite, adressée à infos@cizagroup.com, il ne reste qu'à l'envoyer. Vous pouvez aussi l'envoyer par WhatsApp, ou la copier / télécharger :",
+      mailBtn: "Envoyer par e-mail",
+      waFirst: "Envoyer par WhatsApp",
+      waAlso: "Envoyer aussi par WhatsApp",
+      copy: "Copier",
+      copied: "Copié ✓",
+      dl: "Télécharger",
+      sending: "Envoi en cours…"
+    },
+    en: {
+      err: "Please fill in the required fields, with a valid e-mail address.",
+      sentTitle: "Request sent — thank you!",
+      sentNote: "Your request has reached CIZA GROUP, in our infos@cizagroup.com inbox. This on-screen confirmation — with your reference number below — is your proof of sending: no automatic e-mail acknowledgement is sent. Our team will reply by e-mail. Keep your copy as well:",
+      readyTitle: "Your request has not been sent yet",
+      readyNote: "The automatic sending to infos@cizagroup.com did not go through: nothing has been received on our side. One last step is enough — tap “Send by e-mail”: your mail app opens with the request already written and addressed to infos@cizagroup.com, ready to send. You can also send it via WhatsApp, or copy / download it:",
+      mailBtn: "Send by e-mail",
+      waFirst: "Send via WhatsApp",
+      waAlso: "Send it via WhatsApp too",
+      copy: "Copy",
+      copied: "Copied ✓",
+      dl: "Download",
+      sending: "Sending…"
+    },
+    ki: {
+      err: "Uzuza ibibanza bikenewe, hamwe na aderesi ya e-mail ikwiye.",
+      sentTitle: "Ubutumwa bwoherejwe — murakoze !",
+      sentNote: "Ubutumwa bwawe bwageze kuri CIZA GROUP, mu isanduku infos@cizagroup.com. Iki cyemezo kiri kuri ecran — hamwe n'inomero yawe y'iyandikwa hepfo — ni cyo gihamya ko wohereje : nta butumwa bwa e-mail bwo kwemeza buza koherezwa. Itsinda ryacu rizagusubiza kuri e-mail. Bika kopi yawe :",
+      readyTitle: "Ubutumwa bwawe ntibwabashije koherezwa",
+      readyNote: "Kohereza mu buryo bwikora kuri infos@cizagroup.com ntibyakunze : nta kintu twakiriye. Kanda « Ohereza kuri e-mail » : porogaramu yawe ya e-mail ifunguka hamwe n'ubutumwa bwateguwe, bugenewe infos@cizagroup.com, hasigaye kubwohereza. Ushobora kandi kubwohereza kuri WhatsApp, cyangwa kubukoporora / kubumanura :",
+      mailBtn: "Ohereza kuri e-mail",
+      waFirst: "Ohereza kuri WhatsApp",
+      waAlso: "Ohereza nawe kuri WhatsApp",
+      copy: "Koporora",
+      copied: "Byakoporowe ✓",
+      dl: "Manura",
+      sending: "Kohereza…"
+    }
+  };
+
+  function currentLang(){
+    var a = document.querySelector(".lang-switch span.active");
+    if(a){
+      if(a.id === "lg-en") return "en";
+      if(a.id === "lg-ki") return "ki";
+    }
+    return "fr";
+  }
+  function t(){ return TXT[currentLang()] || TXT.fr; }
+  function makeRef(){
+    var d = new Date();
+    var ymd = "" + d.getFullYear() + ("0" + (d.getMonth() + 1)).slice(-2) + ("0" + d.getDate()).slice(-2);
+    return "CG-" + ymd + "-" + Math.floor(1000 + Math.random() * 9000);
+  }
+  function compose(ref, fields){
+    var L = currentLang();
+    var title = L === "en" ? "CONTACT REQUEST — CIZA GROUP"
+      : (L === "ki" ? "UBUSABE BWO KUTWANDIKIRA — CIZA GROUP" : "DEMANDE DE CONTACT — CIZA GROUP");
+    var lines = [title, "Référence / Reference : " + ref, ""];
+    fields.forEach(function(f){ if(f[1]) lines.push(f[0] + " : " + f[1]); });
+    lines.push("", "— CIZA GROUP (cizagroup.com)");
+    return lines.join("\n");
+  }
+
+  var form = document.getElementById("contact-form");
+  if(!form) return;
+  var errEl = document.getElementById("c-err");
+  var result = document.getElementById("c-result");
+  var rTitle = document.getElementById("c-result-title");
+  var rText = document.getElementById("c-result-text");
+  var submitBtn = document.getElementById("c-submit");
+  var mailBtn = document.getElementById("c-mail");
+  var waBtn = document.getElementById("c-wa");
+  var copyBtn = document.getElementById("c-copy");
+  var dlBtn = document.getElementById("c-dl");
+  var lastText = "";
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var T = t();
+    var name = document.getElementById("c-name").value.trim();
+    var email = document.getElementById("c-email").value.trim();
+    var phone = document.getElementById("c-phone").value.trim();
+    var service = document.getElementById("c-service").value;
+    var type = document.getElementById("c-type").value;
+    var message = document.getElementById("c-message").value.trim();
+    var ok = name && email && service && type && message &&
+             /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if(!ok){
+      errEl.textContent = T.err;
+      errEl.classList.add("show");
+      result.classList.remove("show");
+      return;
+    }
+    errEl.classList.remove("show");
+    var ref = makeRef();
+    var L = currentLang();
+    var labels = {
+      fr: ["Nom complet", "E-mail", "Téléphone", "Service", "Type de demande", "Message"],
+      en: ["Full name", "Email", "Phone", "Service", "Request type", "Message"],
+      ki: ["Izina ryuzuye", "E-mail", "Telefone", "Serivisi", "Ubwoko bw'ubusabe", "Ubutumwa"]
+    }[L] || ["Nom complet", "E-mail", "Téléphone", "Service", "Type de demande", "Message"];
+    var pairs = [[labels[0], name], [labels[1], email], [labels[2], phone],
+                 [labels[3], service], [labels[4], type], [labels[5], message]];
+    lastText = compose(ref, pairs);
+
+    var payload = {
+      "access_key": WEB3FORMS_KEY,
+      "subject": "Contact — CIZA GROUP — " + ref,
+      "from_name": "CIZA GROUP — site web",
+      "name": name,
+      "email": email,
+      "message": lastText,
+      "botcheck": false,
+      "Reference": ref,
+      "Phone": phone,
+      "Service": service,
+      "Request type": type
+    };
+
+    var oldLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = T.sending;
+
+    function show(sent){
+      var T2 = t();
+      rTitle.textContent = sent ? T2.sentTitle : T2.readyTitle;
+      rText.textContent = (sent ? T2.sentNote : T2.readyNote) + "\n\n" + lastText;
+      result.classList.add("show");
+      mailBtn.textContent = T2.mailBtn;
+      mailBtn.setAttribute("href", "mailto:infos@cizagroup.com?subject=" +
+        encodeURIComponent("Contact — CIZA GROUP — " + ref) +
+        "&body=" + encodeURIComponent(lastText));
+      mailBtn.style.display = sent ? "none" : "";
+      waBtn.textContent = sent ? T2.waAlso : T2.waFirst;
+      waBtn.setAttribute("href", "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(lastText));
+      copyBtn.textContent = T2.copy;
+      dlBtn.textContent = T2.dl;
+      result.scrollIntoView({behavior: "smooth", block: "nearest"});
+    }
+
+    function attempt(n){
+      var ctrl = ("AbortController" in window) ? new AbortController() : null;
+      var timer = ctrl ? setTimeout(function(){ ctrl.abort(); }, 15000) : null;
+      var opts = {
+        method: "POST",
+        headers: {"Content-Type": "application/json", "Accept": "application/json"},
+        body: JSON.stringify(payload)
+      };
+      if(ctrl) opts.signal = ctrl.signal;
+      return fetch(FORM_ENDPOINT, opts).then(function(r){
+        if(timer) clearTimeout(timer);
+        return r.json().catch(function(){ return null; }).then(function(data){
+          return r.ok && !!data && (data.success === true || String(data.success) === "true");
+        });
+      }).catch(function(){
+        if(timer) clearTimeout(timer);
+        if(n < 1){
+          return new Promise(function(res){ setTimeout(res, 1500); }).then(function(){ return attempt(n + 1); });
+        }
+        return false;
+      });
+    }
+    attempt(0).then(function(delivered){
+      show(delivered);
+      submitBtn.disabled = false;
+      submitBtn.textContent = oldLabel;
+    });
+  });
+
+  copyBtn.addEventListener("click", function(){
+    var done = function(){
+      var old = copyBtn.textContent;
+      copyBtn.textContent = t().copied;
+      setTimeout(function(){ copyBtn.textContent = old; }, 1800);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(lastText).then(done).catch(done);
+    } else {
+      var ta = document.createElement("textarea");
+      ta.value = lastText;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch(e){}
+      document.body.removeChild(ta);
+      done();
+    }
+  });
+  dlBtn.addEventListener("click", function(){
+    var blob = new Blob([lastText], {type: "text/plain;charset=utf-8"});
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "contact-ciza-group.txt";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+  });
+})();
 </script>
 
 </body>
