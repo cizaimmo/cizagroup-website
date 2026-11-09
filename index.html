@@ -219,13 +219,14 @@ header .lang-switch span.active,header .lang-switch span.lang-active{background:
 .cg-panel-nav a{color:#fff;text-decoration:none;font-size:clamp(22px,4.5vw,30px);font-weight:700;padding:13px 6px;min-height:44px;display:flex;align-items:center;border-bottom:1px solid rgba(212,175,55,.18);transition:color .2s,padding-left .2s}
 .cg-panel-nav a:hover{color:#D4AF37;padding-left:14px}
 .cg-panel-title{color:#D4AF37;text-transform:uppercase;letter-spacing:2px;font-size:13px;font-weight:800;margin:32px 0 12px}
-.cg-panel-divs{display:flex;flex-wrap:wrap;gap:10px}
-.cg-panel-divs a{color:#fff;text-decoration:none;border:1px solid rgba(212,175,55,.55);border-radius:999px;padding:11px 18px;min-height:44px;display:inline-flex;align-items:center;font-weight:600;font-size:15px;transition:background .2s,color .2s}
+.cg-panel-divs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.cg-panel-divs a{color:#fff;text-decoration:none;border:1px solid rgba(212,175,55,.55);border-radius:999px;padding:10px 18px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:15px;transition:background .2s,color .2s}
 .cg-panel-divs a:hover{background:#D4AF37;color:#0A1E3C}
 .cg-panel-lang{display:flex;gap:8px;margin-top:32px}
 .cg-lang-btn{background:transparent;border:1px solid rgba(255,255,255,.45);color:#fff;border-radius:999px;padding:10px 18px;min-height:44px;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
 .cg-lang-btn.cg-on{background:#D4AF37;border-color:#D4AF37;color:#0A1E3C}
-.cg-wa{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:26px;background:#25D366;color:#fff;text-decoration:none;font-weight:800;font-size:17px;padding:15px 22px;border-radius:12px;min-height:44px;transition:background .25s}
+.cg-wa{display:flex;flex-wrap:wrap;row-gap:2px;align-items:center;justify-content:center;gap:8px;margin-top:26px;background:#25D366;color:#fff;text-decoration:none;font-weight:800;font-size:17px;padding:15px 22px;border-radius:12px;min-height:44px;transition:background .25s}
+.cg-wa-num{white-space:nowrap}
 .cg-wa:hover{background:#1eb85a}
 body.cg-locked{overflow:hidden}
 </style>
@@ -285,7 +286,7 @@ body.cg-locked{overflow:hidden}
             <button type="button" class="cg-lang-btn" onclick="setLang('ki')">KI</button>
         </div>
 
-        <a class="cg-wa" href="https://wa.me/15145029503" target="_blank" rel="noopener">💬&nbsp;<span data-fr="WhatsApp Direct" data-en="WhatsApp Direct" data-ki="WhatsApp Direct"></span>&nbsp;+1 514 502 9503</a>
+        <a class="cg-wa" href="https://wa.me/15145029503" target="_blank" rel="noopener">💬&nbsp;<span data-fr="WhatsApp Direct" data-en="WhatsApp Direct" data-ki="WhatsApp Direct"></span>&nbsp;<span class="cg-wa-num">+1 514 502 9503</span></a>
     </div>
 </div>
 
@@ -571,7 +572,8 @@ footer{
     top:55%;
     left:50%;
     transform:translate(-50%,-50%);
-    font-size:140px;
+    font-size:clamp(36px,11.5vw,140px);
+    white-space:nowrap;
     font-weight:800;
     color:#F2B840;
     opacity:0.045;
@@ -581,7 +583,6 @@ footer{
 }
 @media(max-width:800px){
     .watermark-ciza{
-        font-size:60px;
         opacity:0.04;
     }
 }

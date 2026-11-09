@@ -26,14 +26,8 @@ body{
 a{text-decoration:none;color:#F2B840;}
 
 /* HEADER */
-header{box-sizing:border-box;
-    position:fixed;top:0;left:0;width:100%;
-    background:#06142eDD;backdrop-filter:blur(6px);
-    padding:15px 22px;z-index:999;
-    display:flex;align-items:center;justify-content:space-between;
-    border-bottom:1px solid #0e2a50;
-}
-header img{height:80px;}
+
+
 
 .nav-links{
     display:flex;gap:22px;font-size:15px;
@@ -46,14 +40,8 @@ header img{height:80px;}
 }
 
 /* LANG SWITCH */
-.lang-switch span{
-    margin-left:12px;cursor:pointer;
-    opacity:.5;font-weight:bold;
-    padding:4px 6px;border-radius:4px;
-}
-.lang-switch .active{
-    opacity:1;background:#F2B840;color:#06142e;
-}
+
+
 
 /* HERO */
 .hero{
@@ -156,30 +144,109 @@ footer{
 }
 
 /* MENU MOBILE (burger) */
-#mobile-open{display:none;font-size:32px;cursor:pointer;color:#fff;line-height:1;}
-#mobile-menu{position:fixed;top:0;right:-100%;width:70%;max-width:320px;height:100%;background:#0D1A2C;padding:40px 20px;transition:.35s;z-index:3000;display:flex;flex-direction:column;}
-#mobile-menu a{color:#fff;text-decoration:none;font-size:20px;padding:12px 0;font-weight:600;}
-#mobile-close{font-size:32px;cursor:pointer;margin-bottom:25px;text-align:right;color:#fff;}
+
+
+
+
 @media(max-width:900px){
-    .nav-links,header nav{display:none;}
-    #mobile-open{display:block;}
+    .nav-links{display:none;}
+    
 }
 </style>
 <style>
 /* === EN-TÊTE STANDARD (série 3) === */
-nav a{color:#fff;margin:0 12px;text-decoration:none;font-weight:600;}
-nav a:hover{color:#F2B840;}
-.lang-switch span{margin-left:12px;cursor:pointer;opacity:.6;font-weight:700;}
-.lang-switch span.active,.lang-switch span.lang-active{color:#F2B840;opacity:1;}
-#mobile-open{display:none;font-size:32px;cursor:pointer;color:#fff;line-height:1;}
-#mobile-menu{position:fixed;top:0;right:-100%;width:70%;max-width:320px;height:100%;background:#0D1A2C;padding:40px 20px;transition:.35s;z-index:3000;display:flex;flex-direction:column;}
-#mobile-menu a{color:#fff;text-decoration:none;font-size:20px;padding:12px 0;font-weight:600;}
-#mobile-close{font-size:32px;cursor:pointer;margin-bottom:25px;text-align:right;color:#fff;}
-@media(max-width:900px){nav{display:none;}#mobile-open{display:block;}header img{height:70px;}}
+
+
+
+
+
+
+
+
+
 </style>
 
 <style id="cg-menu-style">
 /* === MENU PREMIUM CIZA GROUP (cg) : en-tete + panneau plein ecran === */
+/* HEADER */
+header{box-sizing:border-box;
+    background:#07101F;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:3px solid #F2B840;
+    position:sticky;
+    top:0;
+    z-index:2000;
+}
+header img{
+    height:80px;
+}
+
+/* MENU DESKTOP */
+nav a{
+    color:white;
+    margin:0 12px;
+    text-decoration:none;
+    font-weight:600;
+}
+nav a:hover{
+    color:#F2B840;
+}
+
+/* LANG SWITCH */
+.lang-switch span{
+    margin-left:12px;
+    cursor:pointer;
+    opacity:.6;
+    font-weight:700;
+}
+.lang-switch span.active{
+    color:#F2B840;
+    opacity:1;
+}
+
+/* MENU MOBILE */
+#mobile-open{
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+}
+
+#mobile-menu{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:70%;
+    height:100%;
+    background:#0D1A2C;
+    padding:40px 20px;
+    transition:.35s;
+    z-index:3000;
+    display:flex;
+    flex-direction:column;
+}
+#mobile-menu a{
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    padding:10px 0;
+    font-weight:600;
+}
+#mobile-close{
+    font-size:32px;
+    cursor:pointer;
+    margin-bottom:25px;
+    text-align:right;
+}
+
+@media(max-width:900px){
+    nav{display:none;}
+    #mobile-open{display:block;}
+    header img{height:70px;}
+}
+
 .cg-head-actions{display:flex;align-items:center;gap:14px}
 header .lang-switch{display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.5);border-radius:999px;padding:4px}
 header .lang-switch span{margin:0;padding:6px 12px;border-radius:999px;font-size:13px;letter-spacing:.5px;line-height:1}
@@ -205,13 +272,14 @@ header .lang-switch span.active,header .lang-switch span.lang-active{background:
 .cg-panel-nav a{color:#fff;text-decoration:none;font-size:clamp(22px,4.5vw,30px);font-weight:700;padding:13px 6px;min-height:44px;display:flex;align-items:center;border-bottom:1px solid rgba(212,175,55,.18);transition:color .2s,padding-left .2s}
 .cg-panel-nav a:hover{color:#D4AF37;padding-left:14px}
 .cg-panel-title{color:#D4AF37;text-transform:uppercase;letter-spacing:2px;font-size:13px;font-weight:800;margin:32px 0 12px}
-.cg-panel-divs{display:flex;flex-wrap:wrap;gap:10px}
-.cg-panel-divs a{color:#fff;text-decoration:none;border:1px solid rgba(212,175,55,.55);border-radius:999px;padding:11px 18px;min-height:44px;display:inline-flex;align-items:center;font-weight:600;font-size:15px;transition:background .2s,color .2s}
+.cg-panel-divs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.cg-panel-divs a{color:#fff;text-decoration:none;border:1px solid rgba(212,175,55,.55);border-radius:999px;padding:10px 18px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:15px;transition:background .2s,color .2s}
 .cg-panel-divs a:hover{background:#D4AF37;color:#0A1E3C}
 .cg-panel-lang{display:flex;gap:8px;margin-top:32px}
 .cg-lang-btn{background:transparent;border:1px solid rgba(255,255,255,.45);color:#fff;border-radius:999px;padding:10px 18px;min-height:44px;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
 .cg-lang-btn.cg-on{background:#D4AF37;border-color:#D4AF37;color:#0A1E3C}
-.cg-wa{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:26px;background:#25D366;color:#fff;text-decoration:none;font-weight:800;font-size:17px;padding:15px 22px;border-radius:12px;min-height:44px;transition:background .25s}
+.cg-wa{display:flex;flex-wrap:wrap;row-gap:2px;align-items:center;justify-content:center;gap:8px;margin-top:26px;background:#25D366;color:#fff;text-decoration:none;font-weight:800;font-size:17px;padding:15px 22px;border-radius:12px;min-height:44px;transition:background .25s}
+.cg-wa-num{white-space:nowrap}
 .cg-wa:hover{background:#1eb85a}
 body.cg-locked{overflow:hidden}
 /* Bouton Retour premium (cg) : meme famille que le bouton Menu */
@@ -278,7 +346,7 @@ body.cg-locked{overflow:hidden}
             <button type="button" class="cg-lang-btn" onclick="setLang('ki')">KI</button>
         </div>
 
-        <a class="cg-wa" href="https://wa.me/15145029503" target="_blank" rel="noopener">💬&nbsp;<span data-fr="WhatsApp Direct" data-en="WhatsApp Direct" data-ki="WhatsApp Direct"></span>&nbsp;+1 514 502 9503</a>
+        <a class="cg-wa" href="https://wa.me/15145029503" target="_blank" rel="noopener">💬&nbsp;<span data-fr="WhatsApp Direct" data-en="WhatsApp Direct" data-ki="WhatsApp Direct"></span>&nbsp;<span class="cg-wa-num">+1 514 502 9503</span></a>
     </div>
 </div>
 <!-- ===================== BOUTON RETOUR PREMIUM ===================== -->
