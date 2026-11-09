@@ -164,6 +164,44 @@ nav a:hover{color:#F2B840;}
 #mobile-close{font-size:32px;cursor:pointer;margin-bottom:25px;text-align:right;color:#fff;}
 @media(max-width:900px){nav{display:none;}#mobile-open{display:block;}header img{height:70px;}}
 </style>
+
+<style id="cg-menu-style">
+/* === MENU PREMIUM CIZA GROUP (cg) : en-tete + panneau plein ecran === */
+.cg-head-actions{display:flex;align-items:center;gap:14px}
+header .lang-switch{display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.5);border-radius:999px;padding:4px}
+header .lang-switch span{margin:0;padding:6px 12px;border-radius:999px;font-size:13px;letter-spacing:.5px;line-height:1}
+header .lang-switch span.active,header .lang-switch span.lang-active{background:#D4AF37;color:#0A1E3C;opacity:1}
+.cg-menu-btn{display:inline-flex;align-items:center;gap:9px;background:#0A1E3C;color:#fff;border:1.5px solid #D4AF37;border-radius:999px;padding:11px 22px;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;cursor:pointer;min-height:46px;transition:background .25s,color .25s}
+.cg-menu-btn:hover{background:#D4AF37;color:#0A1E3C}
+.cg-menu-btn-ico{font-size:17px;line-height:1}
+#mobile-open{display:none;width:48px;height:48px;border-radius:50%;background:#0A1E3C;border:1.5px solid #D4AF37;color:#D4AF37;font-size:22px;line-height:1;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35);cursor:pointer}
+@media(max-width:900px){
+    .cg-menu-btn{display:none}
+    #mobile-open{display:inline-flex}
+    header .lang-switch span{padding:6px 9px}
+    .cg-head-actions{gap:10px}
+}
+.cg-panel{position:fixed;inset:0;z-index:4000;background:linear-gradient(160deg,#0A1E3C 0%,#07101F 100%);color:#fff;opacity:0;visibility:hidden;transform:translateY(-14px);transition:opacity .35s ease,transform .35s ease,visibility 0s linear .35s;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.cg-panel.cg-open{opacity:1;visibility:visible;transform:translateY(0);transition:opacity .35s ease,transform .35s ease}
+.cg-panel-inner{max-width:880px;margin:0 auto;padding:26px 24px 50px;box-sizing:border-box}
+.cg-panel-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.cg-panel-logo{height:62px}
+.cg-close{background:transparent;border:1.5px solid #D4AF37;color:#D4AF37;width:48px;height:48px;border-radius:50%;font-size:21px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background .25s,color .25s,transform .3s}
+.cg-close:hover{background:#D4AF37;color:#0A1E3C;transform:rotate(90deg)}
+.cg-panel-nav{display:flex;flex-direction:column}
+.cg-panel-nav a{color:#fff;text-decoration:none;font-size:clamp(22px,4.5vw,30px);font-weight:700;padding:13px 6px;min-height:44px;display:flex;align-items:center;border-bottom:1px solid rgba(212,175,55,.18);transition:color .2s,padding-left .2s}
+.cg-panel-nav a:hover{color:#D4AF37;padding-left:14px}
+.cg-panel-title{color:#D4AF37;text-transform:uppercase;letter-spacing:2px;font-size:13px;font-weight:800;margin:32px 0 12px}
+.cg-panel-divs{display:flex;flex-wrap:wrap;gap:10px}
+.cg-panel-divs a{color:#fff;text-decoration:none;border:1px solid rgba(212,175,55,.55);border-radius:999px;padding:11px 18px;min-height:44px;display:inline-flex;align-items:center;font-weight:600;font-size:15px;transition:background .2s,color .2s}
+.cg-panel-divs a:hover{background:#D4AF37;color:#0A1E3C}
+.cg-panel-lang{display:flex;gap:8px;margin-top:32px}
+.cg-lang-btn{background:transparent;border:1px solid rgba(255,255,255,.45);color:#fff;border-radius:999px;padding:10px 18px;min-height:44px;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.cg-lang-btn.cg-on{background:#D4AF37;border-color:#D4AF37;color:#0A1E3C}
+.cg-wa{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:26px;background:#25D366;color:#fff;text-decoration:none;font-weight:800;font-size:17px;padding:15px 22px;border-radius:12px;min-height:44px;transition:background .25s}
+.cg-wa:hover{background:#1eb85a}
+body.cg-locked{overflow:hidden}
+</style>
 </head>
 
 <body>
@@ -171,25 +209,56 @@ nav a:hover{color:#F2B840;}
 <!-- HEADER -->
 <header>
     <img src="logotransparent.png" alt="CIZA GROUP">
+
     <nav>
         <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
         <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
         <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe"></a>
         <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
         <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
-        <span class="lang-switch"><span onclick="setLang('fr')" id="lg-fr">FR</span><span onclick="setLang('en')" id="lg-en">EN</span><span onclick="setLang('ki')" id="lg-ki">KI</span></span>
     </nav>
-    <span id="mobile-open">☰</span>
+
+    <div class="cg-head-actions">
+        <span class="lang-switch"><span onclick="setLang('fr')" id="lg-fr">FR</span><span onclick="setLang('en')" id="lg-en">EN</span><span onclick="setLang('ki')" id="lg-ki">KI</span></span>
+        <button type="button" id="cg-menu-btn" class="cg-menu-btn" aria-haspopup="true" aria-expanded="false" aria-controls="cg-panel"><span class="cg-menu-btn-ico" aria-hidden="true">☰</span><span data-fr="Menu" data-en="Menu" data-ki="Menu">Menu</span></button>
+        <span id="mobile-open" role="button" tabindex="0" aria-haspopup="true" aria-controls="cg-panel" aria-label="Menu">☰</span>
+    </div>
 </header>
 
-<!-- MENU MOBILE -->
-<div id="mobile-menu">
-    <div id="mobile-close">✕</div>
-    <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
-    <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
-    <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe"></a>
-    <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
-    <a href="index.html#divisions" data-fr="Divisions" data-en="Divisions" data-ki="Amashami"></a>
+<!-- ===================== MENU PREMIUM CIZA GROUP ===================== -->
+<div id="cg-panel" class="cg-panel" aria-hidden="true">
+    <div class="cg-panel-inner">
+        <div class="cg-panel-top">
+            <img src="logotransparent.png" alt="CIZA GROUP" class="cg-panel-logo">
+            <button type="button" id="cg-close" class="cg-close" aria-label="Close / Fermer">✕</button>
+        </div>
+
+        <nav class="cg-panel-nav">
+            <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
+            <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+            <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe"></a>
+            <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
+            <a href="services-burundi.html" data-fr="Services au Burundi" data-en="Burundi Services" data-ki="Serivisi mu Burundi"></a>
+            <a href="contact.html" data-fr="Contactez-nous" data-en="Contact us" data-ki="Tuvugishe"></a>
+        </nav>
+
+        <p class="cg-panel-title" data-fr="Nos divisions" data-en="Our divisions" data-ki="Amashami yacu"></p>
+        <div class="cg-panel-divs">
+            <a href="https://cizasupply.com" target="_blank" rel="noopener">CIZA SUPPLY</a>
+            <a href="https://cizashop.com" target="_blank" rel="noopener">CizaShop</a>
+            <a href="services-burundi.html">CizaImmo</a>
+            <a href="services-burundi.html">CizaLogistics</a>
+            <a href="apropos.html">CizaVerify</a>
+        </div>
+
+        <div class="cg-panel-lang">
+            <button type="button" class="cg-lang-btn" onclick="setLang('fr')">FR</button>
+            <button type="button" class="cg-lang-btn" onclick="setLang('en')">EN</button>
+            <button type="button" class="cg-lang-btn" onclick="setLang('ki')">KI</button>
+        </div>
+
+        <a class="cg-wa" href="https://wa.me/15145029503" target="_blank" rel="noopener">💬&nbsp;<span data-fr="WhatsApp Direct" data-en="WhatsApp Direct" data-ki="WhatsApp Direct"></span>&nbsp;+1 514 502 9503</a>
+    </div>
 </div>
 
 
@@ -408,19 +477,49 @@ setLang("fr");
 
 
 <script>
-/* === MENU MOBILE (burger) === */
-document.getElementById("mobile-open").onclick = () => {
-    document.getElementById("mobile-menu").style.right = "0";
-};
-document.getElementById("mobile-close").onclick = () => {
-    document.getElementById("mobile-menu").style.right = "-100%";
-};
-document.addEventListener("click", e => {
-    if(!e.target.closest("#mobile-menu") && !e.target.closest("#mobile-open")){
-        document.getElementById("mobile-menu").style.right = "-100%";
+/* === MENU PREMIUM CIZA GROUP (cg) : panneau plein ecran === */
+(function(){
+    var cgPanel = document.getElementById("cg-panel");
+    if(!cgPanel) return;
+    function cgOpenPanel(){
+        cgPanel.classList.add("cg-open");
+        cgPanel.setAttribute("aria-hidden","false");
+        document.body.classList.add("cg-locked");
+        var cgBtn = document.getElementById("cg-menu-btn");
+        if(cgBtn) cgBtn.setAttribute("aria-expanded","true");
     }
-});
+    function cgClosePanel(){
+        cgPanel.classList.remove("cg-open");
+        cgPanel.setAttribute("aria-hidden","true");
+        document.body.classList.remove("cg-locked");
+        var cgBtn = document.getElementById("cg-menu-btn");
+        if(cgBtn) cgBtn.setAttribute("aria-expanded","false");
+    }
+    var cgBtn = document.getElementById("cg-menu-btn");
+    if(cgBtn) cgBtn.addEventListener("click", cgOpenPanel);
+    var cgBurger = document.getElementById("mobile-open");
+    if(cgBurger){
+        cgBurger.addEventListener("click", cgOpenPanel);
+        cgBurger.addEventListener("keydown", function(e){
+            if(e.key === "Enter" || e.key === " "){ e.preventDefault(); cgOpenPanel(); }
+        });
+    }
+    var cgCloseBtn = document.getElementById("cg-close");
+    if(cgCloseBtn) cgCloseBtn.addEventListener("click", cgClosePanel);
+    cgPanel.querySelectorAll("a").forEach(function(cgLink){
+        cgLink.addEventListener("click", cgClosePanel);
+    });
+    document.addEventListener("keydown", function(e){
+        if(e.key === "Escape") cgClosePanel();
+    });
+    var cgLangBtns = cgPanel.querySelectorAll(".cg-lang-btn");
+    cgLangBtns.forEach(function(cgLb){
+        cgLb.addEventListener("click", function(){
+            cgLangBtns.forEach(function(x){ x.classList.remove("cg-on"); });
+            cgLb.classList.add("cg-on");
+        });
+    });
+})();
 </script>
-
 </body>
 </html>
