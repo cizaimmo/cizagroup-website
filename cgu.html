@@ -18,86 +18,40 @@ gtag('config', 'G-8K18TWF8SX');
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-body {
-  font-family: Inter, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f5f6fa;
-  color: #222;
-  line-height: 1.7;
+body{
+    margin:0;
+    background:#06142e;
+    color:white;
+    font-family:'Inter',sans-serif;
+    line-height:1.7;
+}
+a{color:#F2B840;text-decoration:none;}
+h1,h2{color:#F2B840;}
+
+.wrapper{
+    max-width:900px;margin:auto;padding:40px 20px 50px;
+}
+.section{
+    background:#0b1c34cc;padding:25px;border-radius:16px;
+    border:1px solid #12335c;margin-bottom:25px;
 }
 
-.container {
-  max-width: 900px;
-  margin: 110px auto 40px;
-  background: white;
-  padding: 40px 28px;
-  border-radius: 16px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+.lang-active{opacity:1;color:#F2B840;}
+footer{
+    text-align:center;padding:20px;background:#020a16;
+    color:white;font-size:13px;margin-top:40px;opacity:.8;
 }
-
-/* TITRES */
-h1 {
-  font-size: 32px;
-  font-weight: 900;
-  color: #0A3D91;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-h2 {
-  margin-top: 32px;
-  font-size: 22px;
-  color: #0A3D91;
-  font-weight: 700;
-}
-
-.lang-switcher {
-  text-align: center;
-  margin-bottom: 25px;
-}
-.lang-switcher img {
-  width: 36px;
-  margin: 0 6px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: 0.2s;
-}
-.lang-switcher img:hover { transform: scale(1.1); }
-
-a { color:#0A3D91; }
-
-.back {
-  display: inline-block;
-  margin-top: 40px;
-  padding: 12px 22px;
-  background: #0A3D91;
-  color: white !important;
-  border-radius: 10px;
-  font-weight: 700;
-  text-decoration: none;
-}
-.back:hover { background: #0d4bb8; }
 </style>
 <style>
+/* === EN-TÊTE STANDARD (série 3) === */
 
-/* === EN-TÊTE STANDARD + HERO LÉGAL (série 3) === */
-
-
-
-
-
-
-
-
-
-
-
-.legal-hero{text-align:center;padding:50px 20px 40px;background:linear-gradient(180deg,#eaf1fb,#dbe7f7);border-radius:16px;margin-bottom:30px;}
-.legal-hero h1{font-size:30px;color:#0A3D91;margin:0 0 10px;}
-.legal-hero p{color:#333;font-size:16px;}
-.back-btn{display:inline-block;margin-top:18px;padding:12px 24px;background:#0A3D91;color:#fff !important;border-radius:10px;font-weight:700;text-decoration:none;}
-@media(max-width:640px){.legal-hero h1{font-size:24px;}}
+/* === HERO LÉGAL + BOUTON RETOUR (série 3) === */
+.legal-hero{margin-top:86px;padding:70px 20px 50px;text-align:center;background:linear-gradient(rgba(6,20,46,.82),rgba(6,20,46,.88)),url('assets/hero-burundi.jpg') center/cover no-repeat;}
+.legal-hero h1{color:#F2B840;font-size:32px;margin:0 0 12px;}
+.legal-hero p{opacity:.9;font-size:17px;max-width:640px;margin:0 auto 22px;color:#fff;}
+.back-btn{display:inline-block;padding:12px 24px;border:2px solid #F2B840;color:#F2B840;border-radius:10px;font-weight:700;text-decoration:none;}
+.back-btn:hover{background:#F2B840;color:#06142e;}
+@media(max-width:640px){.legal-hero h1{font-size:26px;}}
 </style>
 
 <style id="cg-menu-style">
@@ -288,24 +242,17 @@ body.cg-locked{overflow:hidden}
     <button type="button" id="cg-back" class="cg-back-btn"><span class="cg-back-ico" aria-hidden="true">←</span><span data-fr="Retour" data-en="Back" data-ki="Gusubira inyuma">Retour</span></button>
 </div>
 
-<div class="container">
-
-<div class="legal-hero">
+<section class="legal-hero">
 <h1 class="lang" data-fr="Conditions Générales d’Utilisation" data-en="Terms of Use" data-ki="Amategeko y'Ukukoresha Urubuga">Conditions Générales d’Utilisation</h1>
 <p class="lang" data-fr="Dernière mise à jour : 5 novembre 2026" data-en="Last update: November 5, 2026" data-ki="Yavuguruwe: Munyonyo 5, 2026">Dernière mise à jour : 5 novembre 2026</p>
 <p class="lang" data-fr="Les règles d'utilisation de nos services et de notre site." data-en="The rules for using our services and website." data-ki="Amategeko yo gukoresha serivisi n'urubuga rwacu.">Les règles d'utilisation de nos services et de notre site.</p>
 <a href="index.html" class="back-btn lang" data-fr="← Accueil" data-en="← Home" data-ki="← Ahabanza">← Accueil</a>
-</div>
+</section>
 
+<div class="wrapper">
 
-
-<!-- LANGUAGE SWITCH -->
-
-
-
-
-
-
+    <!-- SECTION 1 -->
+    <div class="section">
 <h2 class="lang"
     data-fr="1. Objet"
     data-en="1. Purpose"
@@ -319,7 +266,10 @@ body.cg-locked{overflow:hidden}
    data-ki="Aya mategeko agenga ingene serivisi n’urubuga rwa CIZA GROUP bikwiye gukoreshwa.">
    Les présentes Conditions Générales définissent les règles d’utilisation.
 </p>
+    </div>
 
+    <!-- SECTION 2 -->
+    <div class="section">
 <h2 class="lang"
     data-fr="2. Acceptation"
     data-en="2. Acceptance"
@@ -333,7 +283,10 @@ body.cg-locked{overflow:hidden}
    data-ki="Ukoresheje serivisi zacu, uba wemeye aya mategeko yose.">
    En utilisant nos services, vous acceptez ces conditions.
 </p>
+    </div>
 
+    <!-- SECTION 3 -->
+    <div class="section">
 <h2 class="lang"
     data-fr="3. Accès aux services"
     data-en="3. Service Access"
@@ -347,7 +300,10 @@ body.cg-locked{overflow:hidden}
    data-ki="CIZA GROUP itanga serivisi mu vy'ubutaka, gutwara abantu, gutwara ibidandazwa no gutunganya ibikorwa.">
    CIZA GROUP propose des services variés.
 </p>
+    </div>
 
+    <!-- SECTION 4 -->
+    <div class="section">
 <h2 class="lang"
     data-fr="4. Obligations de l'utilisateur"
     data-en="4. User Obligations"
@@ -360,7 +316,10 @@ body.cg-locked{overflow:hidden}
 <li class="lang" data-fr="Ne pas tenter de nuire aux services." data-en="Do not attempt to harm the services." data-ki="Ntugerageze kwonona serivisi.">Ne pas nuire aux services.</li>
 <li class="lang" data-fr="Respecter les lois en vigueur." data-en="Comply with applicable laws." data-ki="Kubahiriza amategeko.">Respecter les lois.</li>
 </ul>
+    </div>
 
+    <!-- SECTION 5 -->
+    <div class="section">
 <h2 class="lang"
     data-fr="5. Responsabilité"
     data-en="5. Liability"
@@ -374,7 +333,10 @@ body.cg-locked{overflow:hidden}
    data-ki="CIZA GROUP ntibazwa n’ukwononwa kudaturutse kuri yo.">
    CIZA GROUP n’est pas responsable d’une utilisation abusive.
 </p>
+    </div>
 
+    <!-- SECTION 6 -->
+    <div class="section">
 <h2 class="lang"
     data-fr="6. Modification des conditions"
     data-en="6. Terms Modification"
@@ -388,7 +350,10 @@ body.cg-locked{overflow:hidden}
    data-ki="Aya mategeko arashobora guhindurwa igihe cose.">
    Les conditions peuvent être modifiées à tout moment.
 </p>
+    </div>
 
+    <!-- SECTION 7 -->
+    <div class="section">
 <h2 class="lang" data-fr="7. Contact" data-en="7. Contact" data-ki="7. Aho mwandikira">7. Contact</h2>
 
 <p>
@@ -402,11 +367,19 @@ body.cg-locked{overflow:hidden}
 
 
 </div>
+    </div>
+
+</div>
+
+<footer>
+    Ciza Group SURL — RC 0082870/26 — NIF 4003446905<br>
+    © 2026 CIZA GROUP — Conditions Générales d’Utilisation
+</footer>
 
 <!-- MULTILINGUE JS -->
 <script>
 function setLang(lang) {
-  localStorage.setItem("ciza_lang_cgu", lang);
+  localStorage.setItem("lang", lang);
   document.querySelectorAll("[data-fr]").forEach(el => {
     if (el.dataset[lang]) el.innerHTML = el.dataset[lang];
   });
@@ -416,7 +389,7 @@ function setLang(lang) {
 }
 
 (function () {
-  const saved = localStorage.getItem("ciza_lang_cgu") || "fr";
+  const saved = localStorage.getItem("lang") || localStorage.getItem("ciza_lang_cgu") || "fr";
   setLang(saved);
 })();
 
