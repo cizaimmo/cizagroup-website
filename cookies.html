@@ -180,7 +180,8 @@ header .lang-switch span.active,header .lang-switch span.lang-active{background:
 .cg-panel-nav a:hover{color:#D4AF37;padding-left:14px}
 .cg-panel-title{color:#D4AF37;text-transform:uppercase;letter-spacing:2px;font-size:13px;font-weight:800;margin:32px 0 12px}
 .cg-panel-divs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.cg-panel-divs a{color:#fff;text-decoration:none;border:1px solid rgba(212,175,55,.55);border-radius:999px;padding:10px 18px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:15px;transition:background .2s,color .2s}
+.cg-panel-divs a{color:#fff;text-decoration:none;border:1px solid rgba(212,175,55,.55);border-radius:14px;padding:8px 16px;min-height:40px;display:inline-flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:15px;transition:background .2s,color .2s}
+.cg-panel-divs a.cg-div-full{grid-column:1/-1}
 .cg-panel-divs a:hover{background:#D4AF37;color:#0A1E3C}
 .cg-panel-lang{display:flex;gap:8px;margin-top:32px}
 .cg-lang-btn{background:transparent;border:1px solid rgba(255,255,255,.45);color:#fff;border-radius:999px;padding:10px 18px;min-height:44px;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
@@ -239,17 +240,17 @@ body.cg-locked{overflow:hidden}
 
         <p class="cg-panel-title" data-fr="Nos divisions" data-en="Our divisions" data-ki="Amashami yacu"></p>
         <div class="cg-panel-divs">
-            <a href="https://cizasupply.com" target="_blank" rel="noopener">CIZA SUPPLY</a>
+            <a href="https://cizasupply.com" target="_blank" rel="noopener">Ciza Supply</a>
             <a href="https://cizashop.com" target="_blank" rel="noopener">CizaShop</a>
             <a href="services-burundi.html">CizaImmo</a>
             <a href="services-burundi.html">CizaLogistics</a>
-            <a href="apropos.html">CizaVerify</a>
+            <a href="apropos.html" class="cg-div-full">CizaVerify</a>
         </div>
 
         <div class="cg-panel-lang">
-            <button type="button" class="cg-lang-btn" onclick="setLang('fr')">FR</button>
-            <button type="button" class="cg-lang-btn" onclick="setLang('en')">EN</button>
-            <button type="button" class="cg-lang-btn" onclick="setLang('ki')">KI</button>
+            <button type="button" class="cg-lang-btn" data-cglang="fr" onclick="setLang('fr')">FR</button>
+            <button type="button" class="cg-lang-btn" data-cglang="en" onclick="setLang('en')">EN</button>
+            <button type="button" class="cg-lang-btn" data-cglang="ki" onclick="setLang('ki')">KI</button>
         </div>
 
         <a class="cg-wa" href="https://wa.me/15145029503" target="_blank" rel="noopener">💬&nbsp;<span data-fr="WhatsApp Direct" data-en="WhatsApp Direct" data-ki="WhatsApp Direct"></span>&nbsp;<span class="cg-wa-num">+1 514 502 9503</span></a>
@@ -332,6 +333,7 @@ function setLang(l){
     document.querySelectorAll(".lang-switch span")
         .forEach(s=>s.classList.remove("lang-active"));
     document.getElementById("lg-"+l).classList.add("lang-active");
+    document.querySelectorAll(".cg-lang-btn").forEach(b=>b.classList.toggle("cg-on",b.dataset.cglang===l));
 }
 setLang("fr");
 
