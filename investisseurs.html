@@ -319,6 +319,13 @@ header .lang-switch span.active,header .lang-switch span.lang-active{background:
 .cg-wa{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:26px;background:#25D366;color:#fff;text-decoration:none;font-weight:800;font-size:17px;padding:15px 22px;border-radius:12px;min-height:44px;transition:background .25s}
 .cg-wa:hover{background:#1eb85a}
 body.cg-locked{overflow:hidden}
+/* Bouton Retour premium (cg) : meme famille que le bouton Menu */
+.cg-backbar{padding:18px 24px 0}
+.cg-back-btn{display:inline-flex;align-items:center;gap:9px;background:#0A1E3C;color:#fff;border:1.5px solid #D4AF37;border-radius:999px;padding:11px 22px 11px 18px;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;cursor:pointer;min-height:46px;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:background .25s,color .25s,transform .15s,box-shadow .25s}
+.cg-back-btn:hover{background:#D4AF37;color:#0A1E3C;box-shadow:0 8px 22px rgba(0,0,0,.4)}
+.cg-back-btn:active{transform:scale(.96)}
+.cg-back-ico{font-size:17px;line-height:1;transition:transform .25s}
+.cg-back-btn:hover .cg-back-ico{transform:translateX(-4px)}
 </style>
 </head>
 
@@ -379,6 +386,10 @@ body.cg-locked{overflow:hidden}
 
         <a class="cg-wa" href="https://wa.me/15145029503" target="_blank" rel="noopener">💬&nbsp;<span data-fr="WhatsApp Direct" data-en="WhatsApp Direct" data-ki="WhatsApp Direct"></span>&nbsp;+1 514 502 9503</a>
     </div>
+</div>
+<!-- ===================== BOUTON RETOUR PREMIUM ===================== -->
+<div class="cg-backbar">
+    <button type="button" id="cg-back" class="cg-back-btn"><span class="cg-back-ico" aria-hidden="true">←</span><span data-fr="Retour" data-en="Back" data-ki="Gusubira inyuma">Retour</span></button>
 </div>
 
 <section class="hero">
@@ -569,6 +580,15 @@ window.addEventListener("scroll",()=>{
             cgLangBtns.forEach(function(x){ x.classList.remove("cg-on"); });
             cgLb.classList.add("cg-on");
         });
+    });
+    var cgBack = document.getElementById("cg-back");
+    if(cgBack) cgBack.addEventListener("click", function(){
+        var cgRef = document.referrer || "";
+        if(window.history.length > 1 && cgRef && cgRef.indexOf(window.location.hostname) !== -1 && cgRef.split("#")[0] !== window.location.href.split("#")[0]){
+            window.history.back();
+        } else {
+            window.location.href = "index.html";
+        }
     });
 })();
 </script>
