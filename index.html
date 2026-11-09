@@ -234,6 +234,67 @@ body.cg-locked{overflow:hidden}
 </head>
 
 <body>
+<!-- ===================== VÉRIFICATION CONNEXION SÉCURISÉE (visuel) ===================== -->
+<style id="cgv-style">
+.cgv-overlay{position:fixed;inset:0;z-index:9999;background:linear-gradient(160deg,#0A1E3C 0%,#07101F 100%);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility 0s linear .3s;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.cgv-overlay.cgv-show{opacity:1;visibility:visible;transition:opacity .3s ease}
+.cgv-overlay.cgv-hide{opacity:0;visibility:hidden}
+.cgv-box{display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px;max-width:88vw;box-sizing:border-box}
+.cgv-logo{height:64px;margin-bottom:22px}
+.cgv-shield{width:54px;height:54px;margin-bottom:18px}
+.cgv-text{color:#fff;font-size:17px;font-weight:600;margin:0 0 20px;line-height:1.45}
+.cgv-bar{width:280px;max-width:70vw;height:4px;background:rgba(255,255,255,.16);border-radius:99px;overflow:hidden}
+.cgv-fill{height:100%;width:0;background:linear-gradient(90deg,#D4AF37,#F2B840);border-radius:99px;transition:width 1.6s ease}
+.cgv-fill.cgv-run{width:100%}
+.cgv-note{color:rgba(255,255,255,.55);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin:18px 0 0;font-weight:700}
+@media (prefers-reduced-motion: reduce){.cgv-overlay{transition-duration:.12s}.cgv-fill{transition-duration:.15s}}
+</style>
+<div id="cgv-overlay" class="cgv-overlay" role="status" aria-live="polite" aria-label="CIZA GROUP">
+    <div class="cgv-box">
+        <img src="logotransparent.png" alt="CIZA GROUP" class="cgv-logo">
+        <svg class="cgv-shield" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.2l7.6 2.9v6.1c0 4.8-3.2 9-7.6 10.6C7.6 20.2 4.4 16 4.4 11.2V5.1L12 2.2z" stroke="#D4AF37" stroke-width="1.5" fill="rgba(212,175,55,.08)"/><path d="M8.6 12.1l2.3 2.3 4.5-4.8" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p class="cgv-text" id="cgv-text">Vérification de la connexion sécurisée…</p>
+        <div class="cgv-bar"><div class="cgv-fill" id="cgv-fill"></div></div>
+        <p class="cgv-note">Ciza Group</p>
+    </div>
+</div>
+<script>
+(function(){
+"use strict";
+var KEY="cgv_verified";
+var overlay=document.getElementById("cgv-overlay");
+if(!overlay){return;}
+function remove(){if(overlay&&overlay.parentNode){overlay.parentNode.removeChild(overlay);overlay=null;}}
+var kill=setTimeout(remove,2500);
+var verified=false;
+try{verified=!!(window.sessionStorage&&sessionStorage.getItem(KEY));}catch(e){}
+if(!verified){try{if(window.sessionStorage){sessionStorage.setItem(KEY,"1");}}catch(e){}}
+if(verified){clearTimeout(kill);remove();return;}
+var TEXTS={
+fr:{run:"Vérification de la connexion sécurisée…",done:"Connexion sécurisée ✓"},
+en:{run:"Verifying the secure connection…",done:"Secure connection ✓"},
+ki:{run:"Turimo kugenzura umutekano w'ihuzwa…",done:"Umutekano w'ihuzwa wemejwe ✓"}
+};
+var lang="fr";
+try{lang=(window.localStorage&&localStorage.getItem("lang"))||"fr";}catch(e){}
+if(!TEXTS[lang]){lang="fr";}
+var T=TEXTS[lang];
+var textEl=document.getElementById("cgv-text");
+var fillEl=document.getElementById("cgv-fill");
+if(textEl){textEl.textContent=T.run;}
+var reduced=false;
+try{reduced=!!(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches);}catch(e){}
+var D=reduced?{done:220,fade:340,out:560}:{done:1680,fade:1900,out:2240};
+overlay.classList.add("cgv-show");
+setTimeout(function(){if(fillEl){fillEl.classList.add("cgv-run");}},40);
+setTimeout(function(){if(textEl){textEl.textContent=T.done;}},D.done);
+setTimeout(function(){if(overlay){overlay.classList.add("cgv-hide");}},D.fade);
+setTimeout(function(){clearTimeout(kill);remove();},D.out);
+})();
+</script>
+<!-- ===================== /VÉRIFICATION CONNEXION SÉCURISÉE ===================== -->
+
+
 
 <!-- ===================== HEADER ===================== -->
 <header>
