@@ -118,6 +118,13 @@ gtag('config', 'G-8K18TWF8SX');
     .emoji.div-logo-box{height:56px;display:flex;align-items:center;margin-bottom:10px}
     .emoji .div-logo-img{max-height:56px;max-width:88%;width:auto;object-fit:contain}
     .emoji .div-logo-img-sq{width:56px;height:56px;border-radius:10px}
+    .svc-head{display:flex;flex-direction:column;align-items:flex-start;gap:7px;margin-bottom:8px}
+    .svc-head .card-title{margin-bottom:0}
+    .svc-logo{height:30px;width:auto;max-width:110px;object-fit:contain;flex:none}
+    .svc-logo-sq{width:30px;height:30px;border-radius:6px}
+    .svc-list{list-style:none;margin:0;padding:0}
+    .svc-list li{font-size:13px;opacity:.85;padding:3px 0 3px 16px;position:relative}
+    .svc-list li::before{content:"—";position:absolute;left:0;color:#F2B840}
     .card-title{
         font-size:17px;
         font-weight:bold;
@@ -436,9 +443,9 @@ setTimeout(function(){clearTimeout(kill);remove();},D.out);
 <div class="container">
 
     <h2 class="section-title"
-        data-fr="Nos Services"
-        data-en="Our Services"
-        data-ki="Serivisi zacu"></h2>
+        data-fr="Nos divisions"
+        data-en="Our divisions"
+        data-ki="Amashami yacu"></h2>
 
     <div class="gold-line"></div>
 
@@ -531,6 +538,80 @@ setTimeout(function(){clearTimeout(kill);remove();},D.out);
     </div> <!-- fin grid -->
 
 </div> <!-- fin container -->
+
+<!-- SECTION : NOS SERVICES (prestations par division) -->
+<div class="container" style="margin-top:40px;">
+
+    <h2 class="section-title"
+        data-fr="Nos services"
+        data-en="Our services"
+        data-ki="Serivisi zacu"></h2>
+
+    <div class="gold-line"></div>
+
+    <div class="grid">
+
+        <div class="card" style="cursor:default;">
+            <div class="svc-head">
+                <img class="svc-logo" src="assets/divisions/logo-cizalogistics.png" alt="">
+                <div class="card-title">CizaLogistics</div>
+            </div>
+            <ul class="svc-list">
+                <li data-fr="Livraison de colis" data-en="Parcel delivery" data-ki="Gutanga ibidandazwa">Livraison de colis</li>
+                <li data-fr="Pli express entreprise" data-en="Express business mail" data-ki="Amabaruwa yihuta y'ibigo">Pli express entreprise</li>
+                <li data-fr="Collecte et stockage" data-en="Pickup &amp; storage" data-ki="Kwegeranya no kubika">Collecte et stockage</li>
+            </ul>
+        </div>
+
+        <div class="card" style="cursor:default;">
+            <div class="svc-head">
+                <img class="svc-logo" src="assets/divisions/logo-cizashop.png" alt="">
+                <div class="card-title">CizaShop</div>
+            </div>
+            <ul class="svc-list">
+                <li data-fr="Acheter en ligne" data-en="Buy online" data-ki="Kugura ku murongo">Acheter en ligne</li>
+                <li data-fr="Vendre sur la marketplace" data-en="Sell on the marketplace" data-ki="Kudandaza ku isoko ryo ku murongo">Vendre sur la marketplace</li>
+            </ul>
+        </div>
+
+        <div class="card" style="cursor:default;">
+            <div class="svc-head">
+                <img class="svc-logo" src="assets/divisions/logo-cizaimmo.png" alt="">
+                <div class="card-title">CizaImmo</div>
+            </div>
+            <ul class="svc-list">
+                <li data-fr="Gestion des loyers et des baux" data-en="Rent &amp; lease management" data-ki="Gucunga ubukode n'amasezerano">Gestion des loyers et des baux</li>
+                <li data-fr="Reçus et suivi des biens" data-en="Receipts &amp; property follow-up" data-ki="Inyemezabwishyu no gukurikirana imitongo">Reçus et suivi des biens</li>
+                <li data-fr="Achat et vente de biens" data-en="Property buying &amp; selling" data-ki="Kugura no kudandaza imitongo">Achat et vente de biens</li>
+                <li data-fr="Affichage de maisons à louer" data-en="Rental listings" data-ki="Kugaragaza amazu akodeshwa">Affichage de maisons à louer</li>
+            </ul>
+        </div>
+
+        <div class="card" style="cursor:default;">
+            <div class="svc-head">
+                <img class="svc-logo" src="assets/divisions/logo-cizasupply.png" alt="">
+                <div class="card-title">CIZA SUPPLY</div>
+            </div>
+            <ul class="svc-list">
+                <li data-fr="Sourcing direct usine" data-en="Direct factory sourcing" data-ki="Gushaka ibicuruzwa nyambere ku ruganda">Sourcing direct usine</li>
+                <li data-fr="Contrôle qualité et expédition" data-en="Quality control &amp; shipping" data-ki="Kugenzura ubwiza no kohereza">Contrôle qualité et expédition</li>
+            </ul>
+        </div>
+
+        <div class="card" style="cursor:default;">
+            <div class="svc-head">
+                <img class="svc-logo svc-logo-sq" src="assets/divisions/logo-cizaverify.png" alt="">
+                <div class="card-title">CizaVerify</div>
+            </div>
+            <ul class="svc-list">
+                <li data-fr="Vérification d'identité et de documents" data-en="Identity &amp; document verification" data-ki="Kugenzura indangamuntu n'inyandiko">Vérification d'identité et de documents</li>
+                <li data-fr="Passeport professionnel vérifié" data-en="Verified professional passport" data-ki="Passeport y'akazi yemewe">Passeport professionnel vérifié</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
 
 
 
