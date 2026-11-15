@@ -202,6 +202,32 @@ body.cg-locked{overflow:hidden}
 .cg-back-ico{font-size:14px;line-height:1;transition:transform .25s}
 .cg-back-btn:hover .cg-back-ico{transform:translateX(-4px)}
 </style>
+<style id="cgf-style">
+.cgf{background:linear-gradient(165deg,#0A1E3C 0%,#060F1F 100%);color:#E8EDF5;border-top:2px solid #F2B840;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:56px;text-align:left}
+.cgf-inner{max-width:1200px;margin:0 auto;padding:36px 20px 10px;display:flex;flex-direction:column;gap:32px}
+.cgf-logo{height:52px;width:auto;max-width:230px;object-fit:contain}
+.cgf-sig{font-weight:700;color:#FFFFFF;font-size:16px;margin:14px 0 6px;line-height:1.45}
+.cgf-slogan{color:#F2B840;font-style:italic;font-size:14.5px;margin:0;line-height:1.55;opacity:.95}
+.cgf-title{color:#F2B840;font-weight:700;text-transform:uppercase;letter-spacing:.09em;font-size:13px;margin:0 0 10px;padding-bottom:9px;border-bottom:1px solid rgba(242,184,64,.35)}
+.cgf-col{display:flex;flex-direction:column}
+.cgf-col a{display:flex;align-items:center;gap:11px;min-height:44px;color:#E8EDF5;text-decoration:none;font-size:15px;padding:3px 0}
+.cgf-col a:hover{color:#F2B840}
+.cgf-div img{height:26px;width:auto;max-width:104px;object-fit:contain;flex:none}
+.cgf-div img.cgf-sq{width:26px;border-radius:5px}
+.cgf-app-sub{font-size:14.5px;opacity:.88;margin:2px 0 12px;line-height:1.5}
+.cgf-store{display:flex;flex-direction:column;justify-content:center;min-height:52px;border:1.5px solid #F2B840;border-radius:11px;padding:7px 16px;margin:0 0 10px;max-width:250px}
+.cgf-store .s1{font-size:11.5px;opacity:.85;line-height:1.3}
+.cgf-store .s2{font-size:17px;font-weight:700;color:#FFFFFF;line-height:1.25}
+.cgf-store:hover .s2{color:#F2B840}
+.cgf-contact{margin-top:20px}
+.cgf-contact p{font-size:14.5px;line-height:1.55;margin:0 0 10px;opacity:.92}
+.cgf-contact a{display:inline;min-height:0;padding:0;color:#F2B840;font-weight:600}
+.cgf-legal{max-width:1200px;margin:0 auto;padding:17px 20px 24px;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-direction:column;gap:5px;font-size:12.5px;opacity:.78;line-height:1.5}
+@media(min-width:900px){
+.cgf-inner{display:grid;grid-template-columns:1.25fr .95fr .8fr 1.15fr;gap:38px;padding-top:46px}
+.cgf-legal{flex-direction:row;justify-content:space-between;gap:20px}
+}
+</style>
 </head>
 
 <body>
@@ -298,20 +324,21 @@ setTimeout(function(){clearTimeout(kill);remove();},D.out);
         <nav class="cg-panel-nav">
             <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza"></a>
             <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo"></a>
-            <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
+            <a href="index.html#divisions" data-fr="Nos divisions" data-en="Our divisions" data-ki="Amashami yacu"></a>
+            <a href="services-burundi.html" data-fr="Nos services" data-en="Our services" data-ki="Serivisi zacu"></a>
             <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe"></a>
+            <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora"></a>
             <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari"></a>
-            <a href="services-burundi.html" data-fr="Services au Burundi" data-en="Burundi Services" data-ki="Serivisi mu Burundi"></a>
-            <a href="contact.html" data-fr="Contactez-nous" data-en="Contact us" data-ki="Tuvugishe"></a>
+            <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe"></a>
         </nav>
 
         <p class="cg-panel-title" data-fr="Nos divisions" data-en="Our divisions" data-ki="Amashami yacu"></p>
         <div class="cg-panel-divs">
             <a href="https://cizasupply.com" target="_blank" rel="noopener"><img class="cg-div-logo" src="assets/divisions/logo-cizasupply.png" alt="">Ciza Supply</a>
             <a href="https://cizashop.com" target="_blank" rel="noopener"><img class="cg-div-logo" src="assets/divisions/logo-cizashop.png" alt="">CizaShop</a>
-            <a href="services-burundi.html"><img class="cg-div-logo" src="assets/divisions/logo-cizaimmo.png" alt="">CizaImmo</a>
+            <a href="services-burundi.html"><img class="cg-div-logo" src="assets/divisions/logo-cizaimmo-mini.png" alt="">CizaImmo</a>
             <a href="services-burundi.html"><img class="cg-div-logo" src="assets/divisions/logo-cizalogistics.png" alt="">CizaLogistics</a>
-            <a href="apropos.html" class="cg-div-full"><img class="cg-div-logo cg-div-logo-sq" src="assets/divisions/logo-cizaverify.png" alt="">CizaVerify</a>
+            <a href="apropos.html" class="cg-div-full"><img class="cg-div-logo cg-div-logo-sq" src="assets/divisions/logo-cizaverify-mini.png" alt="">CizaVerify</a>
         </div>
 
         <div class="cg-panel-lang">
@@ -368,10 +395,56 @@ setTimeout(function(){clearTimeout(kill);remove();},D.out);
 
 </div>
 
-<footer>
-    <span data-fr="Chine : No. 80, Xiujiang Road, Zhujing Town, Jinshan District, Shanghai" data-en="China: No. 80, Xiujiang Road, Zhujing Town, Jinshan District, Shanghai" data-ki="Ubushinwa : No. 80, Xiujiang Road, Zhujing Town, Jinshan District, Shanghai">Chine : No. 80, Xiujiang Road, Zhujing Town, Jinshan District, Shanghai</span><br>
-    Ciza Group SURL — RC 0082870/26 — NIF 4003446905<br>
-    © 2026 CIZA GROUP — Cookies
+<!-- ===================== FOOTER PREMIUM CIZA GROUP ===================== -->
+<footer class="cgf">
+    <div class="cgf-inner">
+        <div class="cgf-brand">
+            <img src="logotransparent.png" alt="CIZA GROUP" class="cgf-logo">
+            <p class="cgf-sig" data-fr="CIZA GROUP — Écosystème de Services" data-en="CIZA GROUP — Service Ecosystem" data-ki="CIZA GROUP — Ikoraniro ry'amaserivisi">CIZA GROUP — Écosystème de Services</p>
+            <p class="cgf-slogan" data-fr="Construisons aujourd'hui les solutions de demain." data-en="Building today the solutions of tomorrow." data-ki="Twubake uyu munsi ibisubizo vy'ejo.">Construisons aujourd'hui les solutions de demain.</p>
+        </div>
+
+        <nav class="cgf-col" aria-label="Nos divisions">
+            <p class="cgf-title" data-fr="Nos divisions" data-en="Our divisions" data-ki="Amashami yacu">Nos divisions</p>
+            <a class="cgf-div" href="https://cizasupply.com" target="_blank" rel="noopener"><img src="assets/divisions/logo-cizasupply.png" alt="">Ciza Supply</a>
+            <a class="cgf-div" href="https://cizashop.com" target="_blank" rel="noopener"><img src="assets/divisions/logo-cizashop.png" alt="">CizaShop</a>
+            <a class="cgf-div" href="services-burundi.html"><img src="assets/divisions/logo-cizaimmo-mini.png" alt="">CizaImmo</a>
+            <a class="cgf-div" href="services-burundi.html"><img src="assets/divisions/logo-cizalogistics.png" alt="">CizaLogistics</a>
+            <a class="cgf-div" href="apropos.html"><img class="cgf-sq" src="assets/divisions/logo-cizaverify-mini.png" alt="">CizaVerify</a>
+        </nav>
+
+        <nav class="cgf-col" aria-label="Menu">
+            <p class="cgf-title" data-fr="Menu" data-en="Menu" data-ki="Menu">Menu</p>
+            <a href="index.html" data-fr="Accueil" data-en="Home" data-ki="Ahabanza">Accueil</a>
+            <a href="index.html#divisions" data-fr="Nos divisions" data-en="Our divisions" data-ki="Amashami yacu">Nos divisions</a>
+            <a href="services-burundi.html" data-fr="Nos services" data-en="Our services" data-ki="Serivisi zacu">Nos services</a>
+            <a href="entreprises.html" data-fr="Entreprises" data-en="Businesses" data-ki="Amashirahamwe">Entreprises</a>
+            <a href="business-diaspora.html" data-fr="Diaspora" data-en="Diaspora" data-ki="Abadiaspora">Diaspora</a>
+            <a href="investisseurs.html" data-fr="Investisseurs" data-en="Investors" data-ki="Abashoramari">Investisseurs</a>
+            <a href="apropos.html" data-fr="À propos" data-en="About" data-ki="Abo turi bo">À propos</a>
+            <a href="contact.html" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe">Contact</a>
+        </nav>
+
+        <div class="cgf-col">
+            <p class="cgf-title" data-fr="L’application CIZA GROUP" data-en="The CIZA GROUP app" data-ki="Porogarame ya CIZA GROUP">L’application CIZA GROUP</p>
+            <p class="cgf-app-sub" data-fr="Un seul compte pour tous les services" data-en="One account for all services" data-ki="Konti imwe ku maserivisi yose">Un seul compte pour tous les services</p>
+            <a class="cgf-store" href="https://apps.apple.com/ca/app/ciza-group/id6757248912" target="_blank" rel="noopener"><span class="s1" data-fr="Télécharger dans l’" data-en="Download on the" data-ki="Kuramo muri">Télécharger dans l’</span><span class="s2">App Store</span></a>
+            <a class="cgf-store" href="https://play.google.com/store/apps/details?id=com.cizagroup.app" target="_blank" rel="noopener"><span class="s1" data-fr="Disponible sur" data-en="Get it on" data-ki="Iraboneka kuri">Disponible sur</span><span class="s2">Google Play</span></a>
+
+            <div class="cgf-contact">
+                <p class="cgf-title" data-fr="Contact" data-en="Contact" data-ki="Tuvugishe">Contact</p>
+                <p>✉️ <a href="mailto:infos@cizagroup.com">infos@cizagroup.com</a></p>
+                <p>💬 WhatsApp Canada : <a href="https://wa.me/15145029503" target="_blank" rel="noopener">+1 514 502 9503</a></p>
+                <p>📞 Burundi : <a href="https://wa.me/25779945007" target="_blank" rel="noopener">+257 79 94 50 07</a></p>
+                <p data-fr="Siège : 6ème Avenue N° 47, Quartier Buhomba, Zone Mutimbuzi, Commune Ntahangwa, Maramvya, Bujumbura, Burundi" data-en="Headquarters: 6ème Avenue N° 47, Quartier Buhomba, Zone Mutimbuzi, Commune Ntahangwa, Maramvya, Bujumbura, Burundi" data-ki="Icicaro : 6ème Avenue N° 47, Quartier Buhomba, Zone Mutimbuzi, Commune Ntahangwa, Maramvya, Bujumbura, Burundi">Siège : 6ème Avenue N° 47, Quartier Buhomba, Zone Mutimbuzi, Commune Ntahangwa, Maramvya, Bujumbura, Burundi</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cgf-legal">
+        <span>CIZA GROUP SURL — RC 0082870/26 — NIF 4003446905</span>
+        <span data-fr="© 2026 CIZA GROUP — Tous droits réservés" data-en="© 2026 CIZA GROUP — All Rights Reserved" data-ki="© 2026 CIZA GROUP — Uburenganzira bwose burakingiwe.">© 2026 CIZA GROUP — Tous droits réservés</span>
+    </div>
 </footer>
 
 <!-- Bannière cookies -->
