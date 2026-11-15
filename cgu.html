@@ -164,6 +164,10 @@ header .lang-switch span.active,header .lang-switch span.lang-active{background:
 .cg-panel-divs a{color:#fff;text-decoration:none;border:1px solid rgba(212,175,55,.55);border-radius:14px;padding:8px 16px;min-height:40px;display:inline-flex;align-items:center;justify-content:center;text-align:center;font-weight:600;font-size:15px;transition:background .2s,color .2s}
 .cg-panel-divs a.cg-div-full{grid-column:1/-1}
 .cg-panel-divs a:hover{background:#D4AF37;color:#0A1E3C}
+.cg-panel-divs a{flex-direction:column;gap:6px;padding:10px}
+.cg-panel-divs a .cg-div-logo{height:24px;width:auto;max-width:124px;object-fit:contain;padding:2px 6px;box-sizing:border-box}
+.cg-panel-divs a .cg-div-logo-sq{width:24px;border-radius:5px}
+.cg-panel-divs a:hover .cg-div-logo{background:rgba(10,30,60,.92);border-radius:6px}
 .cg-panel-lang{display:flex;gap:8px;margin-top:32px}
 .cg-lang-btn{background:transparent;border:1px solid rgba(255,255,255,.45);color:#fff;border-radius:999px;padding:10px 18px;min-height:44px;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
 .cg-lang-btn.cg-on{background:#D4AF37;border-color:#D4AF37;color:#0A1E3C}
@@ -282,11 +286,11 @@ setTimeout(function(){clearTimeout(kill);remove();},D.out);
 
         <p class="cg-panel-title" data-fr="Nos divisions" data-en="Our divisions" data-ki="Amashami yacu"></p>
         <div class="cg-panel-divs">
-            <a href="https://cizasupply.com" target="_blank" rel="noopener">Ciza Supply</a>
-            <a href="https://cizashop.com" target="_blank" rel="noopener">CizaShop</a>
-            <a href="services-burundi.html">CizaImmo</a>
-            <a href="services-burundi.html">CizaLogistics</a>
-            <a href="apropos.html" class="cg-div-full">CizaVerify</a>
+            <a href="https://cizasupply.com" target="_blank" rel="noopener"><img class="cg-div-logo" src="assets/divisions/logo-cizasupply.png" alt="">Ciza Supply</a>
+            <a href="https://cizashop.com" target="_blank" rel="noopener"><img class="cg-div-logo" src="assets/divisions/logo-cizashop.png" alt="">CizaShop</a>
+            <a href="services-burundi.html"><img class="cg-div-logo" src="assets/divisions/logo-cizaimmo.png" alt="">CizaImmo</a>
+            <a href="services-burundi.html"><img class="cg-div-logo" src="assets/divisions/logo-cizalogistics.png" alt="">CizaLogistics</a>
+            <a href="apropos.html" class="cg-div-full"><img class="cg-div-logo cg-div-logo-sq" src="assets/divisions/logo-cizaverify.png" alt="">CizaVerify</a>
         </div>
 
         <div class="cg-panel-lang">
